@@ -1,0 +1,69 @@
+{%- comment -%}
+  Performance monitoring and optimization
+  This snippet helps track and improve theme performance
+{%- endcomment -%}
+
+<script>
+  // Performance monitoring
+  if ('performance' in window) {
+    // Track page load performance
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const perfData = performance.getEntriesByType('navigation')[0];
+        const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
+        const domContentLoaded = perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart;
+        
+        // Log performance metrics (remove in production)
+        console.log('Page Load Time:', loadTime + 'ms');
+        console.log('DOM Content Loaded:', domContentLoaded + 'ms');
+        
+        // Send to analytics if needed
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'page_load_time', {
+            'custom_parameter_1': loadTime,
+            'custom_parameter_2': domContentLoaded
+          });
+        }
+      }, 0);
+    });
+  }
+
+  // Optimize scroll performance
+  let ticking = false;
+  function updateScrollPosition() {
+    // Throttled scroll handler
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateScrollPosition);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestTick, { passive: true });
+
+  // Preload next page on hover
+  function preloadOnHover() {
+    const links = document.querySelectorAll('a[href^="/"]');
+    links.forEach(link => {
+      link.addEventListener('mouseenter', function() {
+        const href = this.getAttribute('href');
+        if (href && !document.querySelector(`link[href="${href}"]`)) {
+          const preloadLink = document.createElement('link');
+          preloadLink.rel = 'prefetch';
+          preloadLink.href = href;
+          document.head.appendChild(preloadLink);
+        }
+      });
+    });
+  }
+
+  // Run preload on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', preloadOnHover);
+  } else {
+    preloadOnHover();
+  }
+</script>

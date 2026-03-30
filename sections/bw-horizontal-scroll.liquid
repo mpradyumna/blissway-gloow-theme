@@ -1,0 +1,357 @@
+<style>
+  .bw-hs-wrapper {
+    
+    
+    font-family: var(--font-body-family);
+  }
+
+  .bw-hs-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .bw-hs-track {
+    display: flex;
+    height: 100%;
+    will-change: transform;
+    transition: transform 0.1s linear;
+  }
+
+  .bw-hs-panel {
+    flex-shrink: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    border-right: 1px solid rgba(var(--color-foreground), 0.05);
+  }
+
+  .bw-hs-panel-inner {
+    max-width: 800px;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .bw-hs-panel-eyebrow {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: var(--font-body-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgb(var(--color-button));
+    margin-bottom: 1.5rem;
+  }
+
+  .bw-hs-panel-heading {
+    font-family: var(--font-heading-family);
+    font-size: calc(var(--font-heading-scale) * 4.5rem);
+    font-weight: var(--font-heading-weight);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  .bw-hs-panel-body {
+    font-size: calc(var(--font-heading-scale) * 1.25rem);
+    line-height: 1.6;
+    
+    margin-bottom: 3rem;
+    max-width: 600px;
+  }
+
+  .bw-hs-proof-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+  }
+
+  .bw-hs-proof-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    font-weight: var(--font-body-weight-bold);
+    margin-bottom: 12px;
+  }
+
+  .bw-hs-proof-list svg {
+    color: #10b981;
+    flex-shrink: 0;
+  }
+
+  .bw-hs-panel-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1.25rem 2.5rem;
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: var(--font-body-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+  }
+
+  .bw-hs-panel-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .bw-hs-panel-cta svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    fill: none;
+  }
+
+  .bw-hs-panel-num {
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+    font-size: 12rem;
+    font-weight: 900;
+    font-family: var(--font-heading-family);
+    line-height: 1;
+    
+    z-index: 1;
+    user-select: none;
+  }
+
+  .bw-hs-nav {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+  }
+
+  .bw-hs-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground), 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .bw-hs-dot.active {
+    background: rgb(var(--color-button));
+    width: 30px;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .bw-hs-sticky {
+      height: auto;
+      position: relative;
+    }
+    .bw-hs-track {
+      flex-direction: column;
+      height: auto !important;
+      transform: none !important;
+    }
+    .bw-hs-panel {
+      height: auto;
+      width: 100%;
+      padding: 5rem 1.5rem;
+    }
+    .bw-hs-panel-num {
+      font-size: 8rem;
+      bottom: 2rem;
+      right: 1.5rem;
+    }
+    .bw-hs-nav {
+      display: none;
+    }
+  }
+</style>
+
+<section class="bw-hs-wrapper color-{{ section.settings.color_scheme }} gradient" id="HS-{{ section.id }}" style="height: {{ section.blocks.size | times: 100 }}vh;">
+  <div class="bw-hs-sticky">
+    <div class="bw-hs-track" id="HS-Track-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="bw-hs-panel panel-{{ forloop.index }}" {{ block.shopify_attributes }} style="background: {{ block.settings.bg_color | default: 'rgb(var(--color-background))' }}; color: {{ block.settings.text_color | default: 'rgb(var(--color-foreground))' }};">
+          <div class="bw-hs-panel-inner">
+            {%- if block.settings.eyebrow != blank -%}
+              <span class="bw-hs-panel-eyebrow" style="color: {{ block.settings.eyebrow_color | default: 'rgb(var(--color-button))' }};">{{ block.settings.eyebrow }}</span>
+            {%- endif -%}
+            
+            {%- if block.settings.title != blank -%}
+              <h2 class="bw-hs-panel-heading" style="color: inherit;">{{ block.settings.title }}</h2>
+            {%- elsif block.settings.heading != blank -%}
+              <h2 class="bw-hs-panel-heading" style="color: inherit;">{{ block.settings.heading }}</h2>
+            {%- endif -%}
+            
+            {%- if block.settings.text != blank -%}
+              <div class="bw-hs-panel-body" style="color: inherit; opacity: 0.85;">{{ block.settings.text }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.list_items != blank -%}
+              {%- assign items = block.settings.list_items | split: '|' -%}
+              <ul class="bw-hs-proof-list">
+                {%- for item in items -%}
+                  <li style="color: inherit;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    {{ item | strip }}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- elsif forloop.first -%}
+              <ul class="bw-hs-proof-list">
+                <li style="color: inherit;">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Used in-house for 30 days before listing
+                </li>
+                <li style="color: inherit;">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Specs verified — no misleading claims
+                </li>
+                <li style="color: inherit;">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Only 4 products pass — so far
+                </li>
+              </ul>
+            {%- endif -%}
+
+            {%- assign btn_label = block.settings.btn_label | default: block.settings.button_label -%}
+            {%- assign btn_link = block.settings.btn_link | default: block.settings.button_link -%}
+            {%- if btn_label != blank -%}
+              <a href="{{ btn_link }}" class="bw-hs-panel-cta" style="background: {{ block.settings.btn_bg | default: 'rgb(var(--color-button))' }}; color: {{ block.settings.btn_text_color | default: 'rgb(var(--color-button-text))' }};">
+                {{ btn_label }}
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            {%- endif -%}
+          </div>
+          <div class="bw-hs-panel-num" style="color: inherit; opacity: 0.05;">0{{ forloop.index }}</div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <nav class="bw-hs-nav">
+      {%- for block in section.blocks -%}
+        <span class="bw-hs-dot {% if forloop.first %}active{% endif %}"></span>
+      {%- endfor -%}
+    </nav>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.querySelector('#HS-{{ section.id }}');
+    const track = document.querySelector('#HS-Track-{{ section.id }}');
+    const dots = wrapper.querySelectorAll('.bw-hs-dot');
+    const panels = wrapper.querySelectorAll('.bw-hs-panel');
+    
+    if (window.innerWidth > 768) {
+      window.addEventListener('scroll', () => {
+        const rect = wrapper.getBoundingClientRect();
+        const scrollPercent = Math.min(Math.max(-rect.top / (rect.height - window.innerHeight), 0), 1);
+        
+        const xTranslate = scrollPercent * (track.offsetWidth - window.innerWidth);
+        track.style.transform = `translateX(-${xTranslate}px)`;
+
+        // Update Dots
+        const activeIndex = Math.round(scrollPercent * (panels.length - 1));
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === activeIndex);
+        });
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "BW Horizontal Scroll",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 5,
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },],
+  "blocks": [
+    {
+      "type": "panel",
+      "name": "Panel",
+      "settings": [
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow"
+        },
+        {
+          "type": "color",
+          "id": "eyebrow_color",
+          "label": "Eyebrow Color"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "list_items",
+          "label": "List Items (pipe separated |)"
+        },
+        {
+          "type": "text",
+          "id": "btn_label",
+          "label": "Button Label",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "btn_bg",
+          "label": "Button Background Color"
+        },
+        {
+          "type": "color",
+          "id": "btn_text_color",
+          "label": "Button Text Color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW Horizontal Scroll",
+      "blocks": [
+        { "type": "panel", "settings": { "eyebrow": "Curated, Not Just Listed", "title": "We test everything before it reaches you.", "text": "<p>Every product in our store goes through real-world testing — in actual Indian homes, in real heat and humidity.</p>" } },
+        { "type": "panel", "settings": { "eyebrow": "Ships in 24 Hours", "title": "Order today. Open the box tomorrow.", "text": "<p>We dispatch the same day for orders placed before 3 PM. Pan-India delivery, tracked at every step.</p>" } },
+        { "type": "panel", "settings": { "eyebrow": "Built to Last", "title": "Quality you can feel. Not just read about.", "text": "<p>Premium materials, proper build quality, and specs that actually match what's in the box.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,25 @@
+
+<script>
+  window.lumintheme = {
+    moneyFormat: '{{ shop.money_format }}',
+    locale: '{{ request.locale.iso_code }}',
+    times: {
+      moments: {{ 'lumintheme.times.moments' | t | json }},
+      minute: {{ 'lumintheme.times.minute' | t | json }},
+      minutes: {{ 'lumintheme.times.minutes' | t | json }},
+      hour: {{ 'lumintheme.times.hour' | t | json }},
+      hours: {{ 'lumintheme.times.hours' | t | json }},
+      day: {{ 'lumintheme.times.day' | t | json }},
+      days: {{ 'lumintheme.times.days' | t | json }},
+      ago: {{ 'lumintheme.times.ago' | t | json }}
+    }
+  }
+</script>
+
+{{ 'lumin-product.css' | asset_url | stylesheet_tag }}
+{{ 'lumin-section.css' | asset_url | stylesheet_tag }}
+
+
+<script src="{{ 'lumin-main.js' | asset_url }}" defer></script>
+<script src="{{ 'product-lumin.js' | asset_url }}" defer></script>
+<script src="{{ 'lumin-section.js' | asset_url }}" defer></script>

@@ -1,0 +1,220 @@
+<style>
+  .bw-prepaid {
+    padding: 6rem 0;
+    
+    font-family: var(--font-body-family);
+  }
+  .bw-prepaid__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  @media (min-width: 768px) {
+    .bw-prepaid__container {
+      flex-direction: row;
+      align-items: center;
+      gap: 6rem;
+    }
+  }
+  .bw-prepaid__content {
+    flex: 1;
+    max-width: 540px;
+  }
+  .bw-prepaid__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #FEF3C7;
+    color: #D97706;
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    border: 1px solid #FDE68A;
+  }
+  .bw-prepaid__title {
+    font-family: var(--font-heading-family);
+    font-size: calc(var(--font-heading-scale) * 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    
+    margin: 0 0 1.5rem;
+  }
+  .bw-prepaid__desc {
+    
+    
+    line-height: 1.6;
+    margin: 0 0 2rem;
+  }
+  .bw-prepaid__methods {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .bw-prepaid__method {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+  .bw-prepaid__method svg { width: 1.25rem; height: 1.25rem; color: rgb(var(--color-button)); }
+  
+  .bw-prepaid__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem 2.5rem;
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    font-weight: 700;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 10px 25px rgba(var(--color-button), 0.2);
+    width: 100%;
+  }
+  @media (min-width: 640px) { .bw-prepaid__cta { width: auto; } }
+  .bw-prepaid__cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(var(--color-button), 0.3);
+  }
+
+  .bw-prepaid__visual {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(135deg, rgba(var(--color-button), 0.05), rgba(var(--color-button), 0.15));
+    border-radius: 2rem;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bw-prepaid__card {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1.58;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    color: #fff;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .bw-prepaid__card::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.1), transparent);
+    pointer-events: none;
+  }
+  .bw-prepaid__card-top {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;
+  }
+  .bw-prepaid__chip {
+    width: 2.5rem; height: 2rem; background: #fbbf24; border-radius: 0.375rem;
+  }
+  .bw-prepaid__card-num {
+    font-family: monospace;  letter-spacing: 0.2em; margin-bottom: 1.5rem; opacity: 0.9;
+  }
+  .bw-prepaid__card-bottom {
+    display: flex; justify-content: space-between; align-items: flex-end;
+  }
+  .bw-prepaid__card-label { font-size: 0.625rem; opacity: 0.6; margin-bottom: 0.25rem; }
+  .bw-prepaid__card-name { font-size: 0.875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  
+  .bw-prepaid__visual-badge {
+    position: absolute;
+    bottom: -1rem; right: -1rem;
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    width: 8rem; height: 8rem;
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 10px 25px rgba(var(--color-button), 0.3);
+    transform: rotate(-10deg);
+  }
+  .bw-prepaid__visual-badge span:first-child { font-size: 0.75rem; font-weight: 700; opacity: 0.9; }
+  .bw-prepaid__visual-badge span:last-child { font-size: 2.5rem; font-weight: 900; line-height: 1; font-family: var(--font-heading-family); }
+</style>
+
+<section class="bw-prepaid color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="bw-prepaid__container">
+    <div class="bw-prepaid__content">
+      <div class="bw-prepaid__badge">⚡ {{ section.settings.eyebrow }}</div>
+      <h2 class="bw-prepaid__title">{{ section.settings.heading }}</h2>
+      <p class="bw-prepaid__desc">{{ section.settings.text | strip_html }}</p>
+      
+      <div class="bw-prepaid__methods">
+        <div class="bw-prepaid__method">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+          UPI
+        </div>
+        <div class="bw-prepaid__method">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          Cards
+        </div>
+        <div class="bw-prepaid__method">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+          Wallets
+        </div>
+      </div>
+      
+      <a href="{{ section.settings.btn_link | default: '/collections/all' }}" class="bw-prepaid__cta">{{ section.settings.btn_label }}</a>
+    </div>
+
+    <div class="bw-prepaid__visual">
+      <div class="bw-prepaid__card">
+        <div class="bw-prepaid__card-top">
+          <div class="bw-prepaid__chip"></div>
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="bw-prepaid__card-num">•••• •••• •••• 4242</div>
+        <div class="bw-prepaid__card-bottom">
+          <div>
+            <div class="bw-prepaid__card-label">CARDHOLDER</div>
+            <div class="bw-prepaid__card-name">YOU</div>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><circle cx="8" cy="12" r="8" fill-opacity="0.5"/><circle cx="16" cy="12" r="8" fill-opacity="0.5"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="bw-prepaid__visual-badge">
+        <span>SAVE</span>
+        <span>5%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BW Prepaid Offer",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    { "type": "text", "id": "eyebrow", "label": "Badge Text", "default": "EXCLUSIVE OFFER" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Extra 5% Off on Prepaid" },
+    { "type": "textarea", "id": "text", "label": "Description", "default": "Pay via UPI, Cards, or Wallets and unlock instant savings on every order. Cash on Delivery available (but excludes this discount)." },
+    { "type": "text", "id": "btn_label", "label": "Button Label", "default": "Shop Now & Save" },
+    { "type": "url", "id": "btn_link", "label": "Button Link" }
+  ],
+  "presets": [
+    {
+      "name": "BW Prepaid Offer"
+    }
+  ]
+}
+{% endschema %}

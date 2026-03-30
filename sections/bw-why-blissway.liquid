@@ -1,0 +1,82 @@
+<style>
+  .why-blissway {
+    padding: 60px 0;
+    
+    border-top: 1px solid rgba(var(--color-foreground), 0.08);
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+  }
+  .why-blissway__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .why-item {
+    text-align: center;
+  }
+  .why-item svg {
+    width: 40px;
+    height: 40px;
+    stroke: rgb(var(--color-foreground));
+    margin: 0 auto 20px;
+  }
+  .why-item h3 {
+    
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    margin-bottom: 10px;
+    
+  }
+  .why-item p {
+    font-size: 0.95rem;
+    
+    line-height: 1.6;
+    font-family: var(--font-body-family);
+    font-weight: var(--font-body-weight);
+  }
+  @media (max-width: 768px) {
+    .why-blissway__grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+</style>
+
+<section class="why-blissway color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="container">
+    <div class="why-blissway__grid">
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h3>1-Year Warranty</h3>
+        <p>Hassle-free replacement for any manufacturing defects.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        <h3>Free Shipping</h3>
+        <p>On all orders above ₹499, delivered to 12,000+ pin codes.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 .49-3.44"></path></svg>
+        <h3>7-Day Easy Returns</h3>
+        <p>Changed your mind? Return it within 7 days. Unboxing video proof required for easy processing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BW Why Blissway",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },],
+  "presets": [
+    {
+      "name": "BW Why Blissway"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,363 @@
+{% if settings.enable_cart_upsell_product %}
+<style>
+    .cart-drawer-upsell-list form {
+      justify-content: {{ settings.title_text_align }};
+  }
+  .cart-drawer-upsell-list-item-left img {
+    border-top-left-radius:{{ settings.upsell_border_radius }}px;
+     {% if settings.list_style_cart_drawer == 'scroll' %}
+    border-top-right-radius:{{ settings.upsell_border_radius }}px;
+    {% else %}
+    border-bottom-left-radius:{{ settings.upsell_border_radius }}px;
+    {% endif %}
+  }
+  
+  /* Complete override for scroll mode - force slider layout */
+  .cart-drawer-upsell-list[data-list-style-cart-drawer="scroll"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    grid-template-columns: none !important;
+    grid-auto-columns: none !important;
+    grid-auto-rows: none !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    position: relative !important;
+    width: calc(100% - 2rem) !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+  
+  .cart-drawer-upsell-list[data-list-style-cart-drawer="scroll"] .cart-drawer-upsell-list-item {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+    padding: {{ settings.upsell_inner_padding | default: 0 }}px !important;
+    position: relative !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Header with navigation arrows on the right */
+  .cart-drawer-upsell-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .cart-drawer-upsell-title {
+    margin: 0;
+  }
+  
+  /* Navigation arrows positioned on the right side */
+  .cart-drawer-upsell-navigation {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .cart-drawer-upsell-nav-btn {
+    background: transparent;
+    color: var(--color-foreground);
+    border: 1px solid rgba(var(--color-foreground), 0.2);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  
+  .cart-drawer-upsell-nav-btn:hover {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    border-color: var(--color-foreground);
+  }
+  
+  .cart-drawer-upsell-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background: transparent;
+    color: rgba(var(--color-foreground), 0.3);
+    border-color: rgba(var(--color-foreground), 0.1);
+  }
+  
+  .cart-drawer-upsell-nav-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  /* Hide navigation when not in scroll mode */
+  .cart-drawer-upsell-navigation[data-list-style-cart-drawer="stack"] {
+    display: none;
+  }
+  
+  /* Stack mode styles - only apply when NOT in scroll mode */
+ /* .cart-drawer-upsell-list:not([data-list-style-cart-drawer="scroll"]) {
+    display: grid;
+  }*/
+  
+  .cart-drawer-upsell-list:not([data-list-style-cart-drawer="scroll"]) .cart-drawer-upsell-list-item {
+   {% if settings.upsell_product_per_page == 'one' %}
+    width:95%;
+      {% elsif settings.upsell_product_per_page == 'two' %}
+    width: 46%;
+        {% else %}
+    width: 30%;
+        {% endif %}
+  }
+  
+  {% if settings.list_style_cart_drawer == 'stack' %}
+  .lumin-wrapper{
+  flex-direction: column;
+}
+    .cart-drawer-upsell-list-item .cart-item__name {
+    -webkit-line-clamp: 2;
+}
+  {% endif %}}
+</style>
+
+<div id="cart-drawer-upsell-wrapper">
+  <div
+    id="cart-drawer-upsell"
+    class="gradient color-{{ settings.upsell_main_color_scheme }}"
+    style="padding: 1rem 0 1rem 2rem;border-top:.1rem solid rgba(var(--color-foreground), .06);"
+    {% if request.page_type == 'cart' and settings.show_empty_cart == false and cart.item_count == 0 %}
+      hidden
+    {% endif %}
+  >
+    <!-- Header with title and navigation arrows on the right -->
+    <div class="cart-drawer-upsell-header">
+      <h3
+        class="cart-drawer-upsell-title"
+        style="text-align: {{ settings.title_text_align }}"
+      >
+        <span>
+          {{ settings.title }}
+        </span>
+      </h3>
+      
+      <!-- Navigation arrows positioned on the right side -->
+      {% if settings.list_style_cart_drawer == 'scroll' %}
+      <div class="cart-drawer-upsell-navigation" data-list-style-cart-drawer="{{ settings.list_style_cart_drawer }}">
+        <button class="cart-drawer-upsell-nav-btn cart-drawer-upsell-prev" aria-label="Previous product">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="cart-drawer-upsell-nav-btn cart-drawer-upsell-next" aria-label="Next product">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+      {% endif %}
+    </div>
+    
+    <ul
+      class="cart-drawer-upsell-list"
+      data-list-style-cart-drawer="{{ settings.list_style_cart_drawer }}"
+      data-list-style-cart-page="{{ settings.list_style_cart_page }}"
+    >
+      {% for product in settings.collection.products limit: settings.limit %}
+        {% liquid
+          assign is_in_cart = false
+          for line_item in cart.items
+            if line_item.product.id == product.id
+              assign is_in_cart = true
+            endif
+          endfor
+        %}
+        {% if is_in_cart == false and product.available %}
+          <li
+            class="cart-drawer-upsell-list-item gradient color-{{ settings.upsell_color_scheme }}"
+            style="border-radius:{{ settings.upsell_border_radius }}px;{% if settings.upsell_border %} border: {{ settings.upsell_border_width }}px solid {{ settings.Upsell_border_color }};{% endif %}"
+          >
+            <div class="cart-drawer-upsell-list-item-left">
+              <a href="{{ product.url }}" tabindex="-1">
+                <img
+                  src="{{ product.featured_image | image_url: width: 300 }}"
+                  class="cart-item__image"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  width="150"
+                  height="{{ 150 | divided_by: product.featured_image.aspect_ratio | ceil }}"
+                  loading="lazy"
+                >
+              </a>
+            </div>
+            <div class="cart-drawer-upsell-list-item-right">
+              <a
+                href="{{ product.url }}"
+                class="cart-item__name h4 break"
+                style="text-align: {{ settings.product_text_align }}"
+              >
+                {{ product.title }}
+              </a>
+              <product-form data-section-id="{{ id }}">
+                {%- form 'product', product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                  <div class="lumin-wrapper" style="justify-items: {{ settings.product_text_align }};">
+                    {% if product.has_only_default_variant %}
+                      <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
+                      <div class="product-option">
+                        {% if product.compare_at_price > product.price %}
+                          <span class="visually-hidden visually-hidden--inline">
+                            {{ 'products.product.price.regular_price' | t }}
+                          </span>
+                          <s>
+                            {{ product.compare_at_price | money }}
+                          </s>
+                        {% endif %}
+                        {{ product.price | money }}
+                      </div>
+                    {% else %}
+                      <div class="field-wrapper">
+                        <div class="select">
+                          <select
+                            id="cart-drawer-upsell-selector-{{ forloop.index }}"
+                            name="id"
+                            class="select__select"
+                            aria-label="Select variant"
+                            onchange="onChangeKsUpsellVariantSelector(this, event)"
+                          >
+                            {% for variant in product.variants %}
+                              <option
+                                value="{{ variant.id }}"
+                                data-variant-img="{% if variant.image %}{{ variant.image | image_url: width: 300 }}{% endif %}"
+                                {% if variant.available == false %}
+                                  disabled
+                                {% endif %}
+                              >
+                                {{ variant.title }} -
+                                {% if variant.available == false %}
+                                  {{ 'products.product.sold_out' | t }}
+                                {% else %}
+                                  {{ variant.price | money }}
+                                {% endif %}
+                              </option>
+                            {% endfor %}
+                          </select>
+                          <!-- {% render 'icon-caret' %} -->
+                        </div>
+                      </div>
+                    {% endif %}
+                    <button
+                      type="submit"
+                      name="add"
+                      class="{% if settings.upsell_btn_style == 'link' %}link{% else %}button button--{{ settings.upsell_btn_style }}{% endif %}"
+                    >
+                      {% if settings.upsell_btn_text != blank %}
+                        {{ settings.upsell_btn_text }}
+                      {% else %}
+                        <span>{{ 'products.product.add_to_cart' | t }}</span>
+                      {% endif %}
+                      {%- render 'loading-spinner' -%}
+                    </button>
+                  </div>
+                {% endform %}
+              </product-form>
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize custom slider for cart upsell when in scroll mode
+  const upsellList = document.querySelector('.cart-drawer-upsell-list[data-list-style-cart-drawer="scroll"]');
+  
+  if (upsellList) {
+    console.log('Cart upsell slider initialized');
+    
+    // Get all items
+    const items = upsellList.querySelectorAll('.cart-drawer-upsell-list-item');
+    console.log('Found', items.length, 'items for slider');
+    
+    // Custom navigation buttons
+    const prevBtn = document.querySelector('.cart-drawer-upsell-prev');
+    const nextBtn = document.querySelector('.cart-drawer-upsell-next');
+    
+    if (prevBtn && nextBtn && items.length > 1) {
+      console.log('Navigation buttons found, setting up slider');
+      
+      // Previous button
+      prevBtn.addEventListener('click', function() {
+        const currentIndex = getCurrentVisibleIndex();
+        if (currentIndex > 0) {
+          scrollToIndex(currentIndex - 1);
+        }
+      });
+      
+      // Next button
+      nextBtn.addEventListener('click', function() {
+        const currentIndex = getCurrentVisibleIndex();
+        if (currentIndex < items.length - 1) {
+          scrollToIndex(currentIndex + 1);
+        }
+      });
+      
+      // Get current visible item index
+      function getCurrentVisibleIndex() {
+        const containerRect = upsellList.getBoundingClientRect();
+        for (let i = 0; i < items.length; i++) {
+          const itemRect = items[i].getBoundingClientRect();
+          if (itemRect.left >= containerRect.left && itemRect.right <= containerRect.right) {
+            return i;
+          }
+        }
+        return 0;
+      }
+      
+      // Scroll to specific index
+      function scrollToIndex(index) {
+        if (index >= 0 && index < items.length) {
+          items[index].scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'start'
+          });
+          
+          // Update button states after scroll
+          setTimeout(updateNavButtons, 300);
+        }
+      }
+      
+      // Update button states
+      function updateNavButtons() {
+        const currentIndex = getCurrentVisibleIndex();
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === items.length - 1;
+      }
+      
+      // Initialize button states
+      updateNavButtons();
+      
+      // Update button states on scroll
+      upsellList.addEventListener('scroll', updateNavButtons);
+      
+      // Also update on window resize
+      window.addEventListener('resize', updateNavButtons);
+    } else {
+      console.log('Navigation setup failed:', { prevBtn: !!prevBtn, nextBtn: !!nextBtn, itemsCount: items.length });
+    }
+  } else {
+    console.log('Cart upsell list not found or not in scroll mode');
+  }
+});
+</script>
+{% endif %}

@@ -1,0 +1,143 @@
+<style>
+  .bw-ugc {
+    padding: 6rem 0;
+    
+    font-family: var(--font-body-family);
+    overflow: hidden;
+  }
+  .bw-ugc__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .bw-ugc__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgb(var(--color-button));
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .bw-ugc__heading {
+    font-family: var(--font-heading-family);
+    font-size: calc(var(--font-heading-scale) * 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    
+    margin: 0;
+  }
+  .lumin-text__fancy1, em { background-image: var(--fancy-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-style: italic; }
+  
+  .bw-ugc__track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0 1.5rem 2rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .bw-ugc__track::-webkit-scrollbar { display: none; }
+  
+  .bw-ugc__item {
+    flex: 0 0 70vw;
+    scroll-snap-align: center;
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    aspect-ratio: 9/16;
+  }
+  @media (min-width: 640px) { .bw-ugc__item { flex: 0 0 40vw; } }
+  @media (min-width: 1024px) { .bw-ugc__item { flex: 0 0 25vw; aspect-ratio: 4/5; } }
+
+  .bw-ugc__item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .bw-ugc__item:hover img {
+    transform: scale(1.05);
+  }
+  .bw-ugc__overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 2rem 1.5rem 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+  }
+  .bw-ugc__user {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+  }
+  .bw-ugc__user svg {
+    width: 1rem; height: 1rem;
+    fill: currentColor;
+  }
+</style>
+
+<section class="bw-ugc color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="bw-ugc__header">
+    <span class="bw-ugc__label">{{ section.settings.eyebrow }}</span>
+    <h2 class="bw-ugc__heading">{{ section.settings.heading }}</h2>
+  </div>
+
+  <div class="bw-ugc__track">
+    {%- for block in section.blocks -%}
+      <div class="bw-ugc__item" {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+        {%- else -%}
+          {%- assign placeholder = 'collection-' | append: forloop.index -%}
+          {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+        
+        <div class="bw-ugc__overlay">
+          <span class="bw-ugc__user">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            {{ block.settings.author }}
+          </span>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BW Real Stories (UGC)",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Real Stories" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "From real Indian homes." }
+  ],
+  "blocks": [
+    {
+      "type": "ugc_image",
+      "name": "UGC Image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "author", "label": "Author & Location", "default": "Rahul, Delhi" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW Real Stories (UGC)",
+      "blocks": [
+        { "type": "ugc_image", "settings": { "author": "Rahul, Delhi" } },
+        { "type": "ugc_image", "settings": { "author": "Sneha, Hyderabad" } },
+        { "type": "ugc_image", "settings": { "author": "Karan, Bangalore" } },
+        { "type": "ugc_image", "settings": { "author": "Priya, Mumbai" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,209 @@
+{%- style -%}
+  .bw-timeline {
+    padding: 100px 0;
+    background: #F8FAFC;
+  }
+
+  .bw-timeline-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 80px;
+  }
+
+  .bw-timeline-title {
+    font-family: var(--bw-font-display);
+    font-size: calc(var(--font-heading-scale) * 3rem);
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--bw-text);
+  }
+
+  .bw-timeline-subtitle {
+    
+    color: var(--bw-text-2);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .bw-timeline-wrap {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .bw-timeline-line {
+    display: block !important;
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #E2E8F0;
+    border-radius: 4px;
+  }
+
+  .bw-timeline-item {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 60px;
+    position: relative;
+  }
+
+  .bw-timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .bw-timeline-icon {
+    width: 52px;
+    height: 52px;
+    background: #fff;
+    border: 4px solid var(--bw-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: var(--bw-primary);
+    z-index: 2;
+    position: relative;
+    font-weight: 700;
+    
+  }
+
+  .bw-timeline-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--bw-primary-lt);
+    color: var(--bw-primary);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .bw-timeline-item-title {
+    
+    font-weight: 700;
+    font-family: var(--bw-font-display);
+    color: var(--bw-text);
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+
+  .bw-timeline-item-text {
+    
+    line-height: 1.6;
+    color: var(--bw-text-2);
+    margin: 0;
+  }
+
+  @media (max-width: 767px) {
+    .bw-timeline-line {
+      left: 16px;
+    }
+    .bw-timeline-item {
+      gap: 24px;
+    }
+    .bw-timeline-icon {
+      width: 36px;
+      height: 36px;
+      border-width: 3px;
+      font-size: 0.9rem;
+    }
+  }
+{%- endstyle -%}
+
+<section class="bw-timeline color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="bw-container">
+    <div class="bw-timeline-header">
+      {%- if section.settings.title != blank -%}
+        <h2 class="bw-timeline-title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="bw-timeline-subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="bw-timeline-wrap">
+      <div class="bw-timeline-line"></div>
+      <div class="bw-timeline-items">
+        {%- for block in section.blocks -%}
+          <div class="bw-timeline-item" {{ block.shopify_attributes }}>
+            <div class="bw-timeline-icon">
+              {{ forloop.index }}
+            </div>
+            <div class="bw-timeline-content">
+              {%- if block.settings.badge != blank -%}
+                <span class="bw-timeline-badge">{{ block.settings.badge }}</span>
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}
+                <h3 class="bw-timeline-item-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              <p class="bw-timeline-item-text">{{ block.settings.text }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BW - Timeline Steps",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "How it works"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "A simple 3-step process to better living."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge (Optional)",
+          "default": "Step 1"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Prepare"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Step Description",
+          "default": "Describe what needs to be done in this step."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW - Timeline Steps",
+      "blocks": [
+        { "type": "step", "settings": { "badge": "Preparation", "title": "Unpack & Plug In" } },
+        { "type": "step", "settings": { "badge": "Operation", "title": "Select Speed" } },
+        { "type": "step", "settings": { "badge": "Results", "title": "Enjoy Pure Air" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

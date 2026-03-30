@@ -1,0 +1,35 @@
+{%- comment -%}
+  Critical CSS for above-the-fold content
+  This should be inlined in the head for fastest rendering
+{%- endcomment -%}
+
+<style>
+  /* Critical CSS for immediate rendering */
+  .gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+  .visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+  .skip-to-content-link { position: absolute; z-index: 9999; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  .skip-to-content-link:focus { position: fixed; left: 6px; top: 7px; width: auto; height: auto; padding: 8px; background: #000; color: #fff; text-decoration: none; z-index: 10000; }
+  
+  /* Critical layout styles */
+  html { box-sizing: border-box; font-size: calc(var(--font-body-scale) * 62.5%); height: 100%; }
+  body { display: grid; grid-template-rows: auto auto 1fr auto; grid-template-columns: 100%; min-height: 100%; margin: 0; font-size: 1.5rem; letter-spacing: var(--font-body-spacing); line-height: calc(1 + var(--font-body-height) / var(--font-body-scale)); font-family: var(--font-body-family); font-style: var(--font-body-style); font-weight: var(--font-body-weight); }
+  
+  /* Critical header styles */
+  .header { position: sticky; top: 0; z-index: 100; }
+  
+  /* Critical button styles */
+  .button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; border: none; cursor: pointer; }
+  
+  /* Critical loading states */
+  .loading { opacity: 0.6; pointer-events: none; }
+  
+  /* Critical responsive styles */
+  @media screen and (min-width: 750px) {
+    body { font-size: 1.6rem; }
+    .desktop-hidden { display: none !important; }
+  }
+  
+  @media screen and (max-width: 749px) {
+    .mobile-hidden { display: none !important; }
+  }
+</style>

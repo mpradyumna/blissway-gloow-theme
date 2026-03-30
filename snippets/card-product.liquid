@@ -1,0 +1,266 @@
+{% comment %}
+  Renders a product card
+  Accepts:
+  - card_product: {Object} Product Liquid object (optional)
+  - show_vendor: {Boolean} Show the product vendor. Default: false
+  - show_rating: {Boolean} Show the product rating. Default: false
+  - show_quick_add: {Boolean} Show the quick add button.
+  - section_id: {String} The ID of the section that contains this card.
+  
+  Usage:
+  {% render 'card-product', show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+
+{{ 'component-rating.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .bw-card {
+    background-color: rgb(var(--color-background));
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(var(--color-foreground), 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(var(--color-foreground), 0.04);
+    height: 100%;
+  }
+
+  .bw-card:hover {
+    box-shadow: 0 12px 24px rgba(var(--color-foreground), 0.12);
+    transform: translateY(-4px);
+  }
+
+  .bw-card__image-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  .bw-card__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 24px;
+    transition: transform 0.6s ease;
+  }
+
+  .bw-card:hover .bw-card__image-wrap img {
+    transform: scale(1.08);
+  }
+
+  .bw-card__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: rgb(var(--color-badge-background));
+    color: rgb(var(--color-badge-foreground));
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 99px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 4px 12px rgba(var(--color-foreground), 0.1);
+    z-index: 1;
+  }
+
+  .bw-card__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .bw-card__stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+  }
+
+  .bw-card__stars-icons {
+    color: #fbbf24;
+  }
+
+  .bw-card__reviews {
+    font-weight: 700;
+    font-size: 0.65rem;
+    color: rgba(29,29,29,0.4);
+  }
+
+  .bw-card__title {
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    color: rgb(var(--color-foreground));
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  .bw-card:hover .bw-card__title {
+    color: rgb(var(--color-button));
+  }
+
+  .bw-card__prices {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .bw-card__price {
+    font-weight: 700;
+    color: rgb(var(--color-foreground));
+  }
+
+  .bw-card__compare {
+    font-size: 0.85rem;
+    color: rgba(29,29,29,0.4);
+    text-decoration: line-through;
+  }
+
+  .bw-card__bottom {
+    margin-top: auto;
+  }
+
+  .bw-card__delivery {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #059669;
+    background: #ecfdf5;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #d1fae5;
+    margin-bottom: 12px;
+  }
+
+  .bw-card__delivery svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .bw-card__btn {
+    width: 100%;
+    background-color: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 44px;
+  }
+
+  .bw-card__btn:hover {
+    opacity: 0.85;
+  }
+
+  .bw-card__btn.loading span {
+    opacity: 0;
+  }
+
+  .bw-card__btn .loading__spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    display: flex;
+  }
+
+  .bw-card__btn .loading__spinner.hidden {
+    display: none;
+  }
+  
+  .bw-card__btn .spinner {
+    animation: rotator 1.4s linear infinite;
+  }
+  
+  .bw-card__btn .path {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    stroke: #ffffff;
+    animation: dash 1.4s ease-in-out infinite;
+  }
+{%- endstyle -%}
+
+{%- if card_product and card_product != empty -%}
+  <div class="bw-card">
+    <a href="{{ card_product.url }}" class="bw-card__link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex: 1;">
+      <div class="bw-card__image-wrap">
+        {%- if card_product.featured_media -%}
+          <img src="{{ card_product.featured_media | image_url: width: 600 }}" alt="{{ card_product.title | escape }}" loading="lazy" width="{{ card_product.featured_media.width }}" height="{{ card_product.featured_media.height }}">
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+        
+        {%- if card_product.available == false -%}
+          <span class="bw-card__badge" style="background-color: rgb(var(--color-background-contrast, var(--color-foreground))); color: rgb(var(--color-background));">Sold Out</span>
+        {%- elsif card_product.compare_at_price > card_product.price -%}
+          <span class="bw-card__badge">Sale</span>
+        {%- elsif card_product.tags contains 'Bestseller' -%}
+          <span class="bw-card__badge">Bestseller</span>
+        {%- endif -%}
+      </div>
+      
+      <div class="bw-card__content">
+        <div class="bw-card__stars">
+          <div class="bw-card__stars-icons">★★★★★</div>
+          <span class="bw-card__reviews">(4.8)</span>
+        </div>
+        
+        {%- if show_vendor -%}
+          <div class="bw-card__vendor" style="font-size: 0.7rem; color: #666; margin-bottom: 4px;">{{ card_product.vendor }}</div>
+        {%- endif -%}
+
+        <h3 class="bw-card__title">{{ card_product.title }}</h3>
+        
+        <div class="bw-card__prices">
+          <span class="bw-card__price">{{ card_product.price | money_without_trailing_zeros }}</span>
+          {%- if card_product.compare_at_price > card_product.price -%}
+            <span class="bw-card__compare">{{ card_product.compare_at_price | money_without_trailing_zeros }}</span>
+          {%- endif -%}
+        </div>
+      </div>
+    </a>
+
+    <div class="bw-card__bottom" style="padding: 0 20px 20px;">
+      <div class="bw-card__delivery">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        FREE DELIVERY BY THURSDAY
+      </div>
+      
+      <product-form class="product-form" data-cart-type="toast">
+        {%- assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id -%}
+        {%- form 'product', card_product, id: product_form_id, class: 'bw-card__form form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+          <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" class="product-variant-id">
+          <button type="submit" name="add" class="bw-card__btn quick-add__submit" {% unless card_product.available %}disabled{% endunless %} aria-haspopup="dialog" aria-live="polite" data-sold-out-message="true">
+            <span>{% if card_product.available %}Add to Cart{% else %}Sold Out{% endif %}</span>
+            <div class="loading__spinner hidden">
+              <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </button>
+        {%- endform -%}
+      </product-form>
+    </div>
+  </div>
+{%- endif -%}

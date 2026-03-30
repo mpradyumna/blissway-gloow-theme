@@ -1,0 +1,155 @@
+<style>
+  .bw-faq {
+    padding: 6rem 0;
+    
+    font-family: var(--font-body-family);
+  }
+  .bw-faq__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .bw-faq__label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgb(var(--color-button));
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .bw-faq__heading {
+    text-align: center;
+    font-family: var(--font-heading-family);
+    font-size: calc(var(--font-heading-scale) * 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    
+    margin: 0 0 4rem;
+  }
+  
+  .bw-faq__item {
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+  }
+  .bw-faq__question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    background: none;
+    border: none;
+    font-family: inherit;
+    
+    font-weight: 700;
+    
+    cursor: pointer;
+    text-align: left;
+  }
+  .bw-faq__icon {
+    width: 1.5rem; height: 1.5rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  .bw-faq__item.active .bw-faq__icon {
+    transform: rotate(180deg);
+  }
+  .bw-faq__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+  }
+  .bw-faq__item.active .bw-faq__answer {
+    opacity: 1;
+  }
+  .bw-faq__answer-inner {
+    padding-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    
+  }
+  .bw-faq__answer-inner p { margin: 0; }
+</style>
+
+<section class="bw-faq color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="bw-faq__container">
+    <span class="bw-faq__label">{{ section.settings.eyebrow }}</span>
+    <h2 class="bw-faq__heading">{{ section.settings.heading }}</h2>
+    
+    <div class="bw-faq__accordion" itemscope itemtype="https://schema.org/FAQPage">
+      {%- for block in section.blocks -%}
+        <div class="bw-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" {{ block.shopify_attributes }}>
+          <button class="bw-faq__question" aria-expanded="false">
+            <span itemprop="name">{{ block.settings.question }}</span>
+            <svg class="bw-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="bw-faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="bw-faq__answer-inner" itemprop="text">
+              <p>{{ block.settings.answer }}</p>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.bw-faq__item');
+    items.forEach(item => {
+      const btn = item.querySelector('.bw-faq__question');
+      const answer = item.querySelector('.bw-faq__answer');
+      btn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all
+        items.forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.bw-faq__question').setAttribute('aria-expanded', 'false');
+          i.querySelector('.bw-faq__answer').style.maxHeight = null;
+        });
+        
+        // Open clicked if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "BW FAQ",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Got Questions?" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently Asked Questions" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Is delivery really free?" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Yes, we offer free delivery across India on all orders above ₹499. No hidden charges." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW FAQ",
+      "blocks": [
+        { "type": "faq", "settings": { "question": "Is delivery really free?", "answer": "Yes, we offer free delivery across India on all orders above ₹499. No hidden charges." } },
+        { "type": "faq", "settings": { "question": "How does the 7-day return policy work?", "answer": "If you are not 100% satisfied, you can return your product within 7 days of delivery for a full refund." } },
+        { "type": "faq", "settings": { "question": "Do you offer Cash on Delivery (COD)?", "answer": "Yes! You can choose to pay when the product arrives at your doorstep." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

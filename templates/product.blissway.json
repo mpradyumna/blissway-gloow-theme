@@ -1,0 +1,402 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size_dt": 40,
+            "title_size_mb": 32,
+            "title_line_height": 1.5
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "hide_tax_shipping": false,
+            "reverse_price": false,
+            "save_text_size": 14,
+            "price_weight": "normal",
+            "price_text_size": 18,
+            "price_text_size_mb": 18,
+            "compare_price": "#808080",
+            "original_price": "#4caf50",
+            "show_save_price": true,
+            "save_text": "#14a627",
+            "save_bg": "#f2f2f2",
+            "save_border": "#f2f2f2",
+            "save_border_thickness": 1,
+            "save_corner_radius": 0,
+            "save_shadow_opacity": 0,
+            "save_shadow_horizontal_offset": 0,
+            "save_shadow_vertical_offset": 0,
+            "save_shadow_blur": 0,
+            "enable_price_box": true,
+            "price_box_bg": "#f8fafc",
+            "price_box_border": "#e2e8f0",
+            "price_box_radius": 16,
+            "emi_text": "No-cost EMI starting at ₹2,999/month"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "label_style": "body",
+            "font_size": 14,
+            "font_style": "normal",
+            "swatch_type": "color",
+            "swatch_shape": "circle",
+            "swatch_size": 2.8,
+            "swatch_image_height": "square",
+            "swatch_image_custom_radius_value": 2,
+            "size_trigger": "",
+            "chart_id": "Size Chart",
+            "size_page": "",
+            "size_icon": "hanger",
+            "spaced_size": false
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "enable_quantity_discounts": false,
+            "show_on_all_products": true,
+            "selected_product": [],
+            "selected_collection": "",
+            "quantity_style": "vertical",
+            "columns_block": "25",
+            "option_height": "auto",
+            "preselected": "2",
+            "discount_type": "percentage",
+            "show_strikethrough_price": "calculated",
+            "hide_checkbox": false,
+            "show_strikethrough": true,
+            "show_total_pricing": true,
+            "show_per_unit": true,
+            "badge_style": "tiered-option__badge",
+            "badge_font_size": 1.3,
+            "badge_font_size_mobile": 1,
+            "badge_bg_color": "#e71717",
+            "badge_background_gradient": "",
+            "badge_font_color": "#ffffff",
+            "option_1_show_label": true,
+            "option_1_show_image": false,
+            "option_1_label": "1 Pack",
+            "option_1_quantity": 1,
+            "option_1_fixed_discount": "0",
+            "option_1_discount_percentage": 0,
+            "option_1_badge_enable": false,
+            "option_1_badge_text": "Most Popular",
+            "option_1_unit_label": "($)/Pcs",
+            "option_1_save_text": "Save (%)",
+            "option_1_promo": "",
+            "option_2_show_label": true,
+            "option_2_show_image": false,
+            "option_2_label": "2 Pack",
+            "option_2_quantity": 2,
+            "option_2_fixed_discount": "5",
+            "option_2_discount_percentage": 20,
+            "option_2_badge_enable": true,
+            "option_2_badge_text": "Most Popular",
+            "option_2_unit_label": "($)/Pcs",
+            "option_2_save_text": "Save (%)",
+            "option_2_promo": "",
+            "option_3_show_label": true,
+            "option_3_show_image": false,
+            "option_3_label": "3 Pack",
+            "option_3_quantity": 3,
+            "option_3_fixed_discount": "10",
+            "option_3_discount_percentage": 30,
+            "option_3_badge_enable": false,
+            "option_3_badge_text": "Most Popular",
+            "option_3_unit_label": "($)/Pcs",
+            "option_3_save_text": "Save (%)",
+            "option_3_promo": "",
+            "option_4_show_label": false,
+            "option_4_show_image": false,
+            "option_4_label": "4 Pack",
+            "option_4_quantity": 0,
+            "option_4_fixed_discount": "0",
+            "option_4_discount_percentage": 0,
+            "option_4_badge_enable": false,
+            "option_4_badge_text": "Most Popular",
+            "option_4_unit_label": "($)/Pcs",
+            "option_4_save_text": "Save (%)",
+            "option_4_promo": "",
+            "option_5_show_label": false,
+            "option_5_show_image": false,
+            "option_5_label": "5 Pack",
+            "option_5_quantity": 0,
+            "option_5_fixed_discount": "0",
+            "option_5_discount_percentage": 0,
+            "option_5_badge_enable": false,
+            "option_5_badge_text": "Most Popular",
+            "option_5_unit_label": "($)/Pcs",
+            "option_5_save_text": "Save (%)",
+            "option_5_promo": "",
+            "option_6_show_label": false,
+            "option_6_show_image": false,
+            "option_6_label": "6 Pack",
+            "option_6_quantity": 0,
+            "option_6_fixed_discount": "0",
+            "option_6_discount_percentage": 0,
+            "option_6_badge_enable": false,
+            "option_6_badge_text": "Most Popular",
+            "option_6_unit_label": "($)/Pcs",
+            "option_6_save_text": "Save (%)",
+            "option_6_promo": "",
+            "show_quantity_label": true,
+            "hide_lines": false,
+            "show_head_border": false,
+            "title_text_align": "center",
+            "quantity_title_text": "Bundle & Save",
+            "quantity_subtitle_text": "",
+            "title_font_size": 1.8,
+            "subtitle_font_size": 1.3,
+            "title_color": "#333333",
+            "subtitle_color": "#333333",
+            "title_line_color": "#e6e6e6",
+            "title_bg_color": "#ffffff",
+            "bottom_image_size": 30,
+            "bottom_font_size": 12,
+            "bottom_content_alignment": "flex-start",
+            "promo_font_color": "#ffffff",
+            "promo_bg_color": "#000000",
+            "promo_border_color": "#000000",
+            "border_radius": 0.5,
+            "option_bottom_spacing": 2.5,
+            "option_height_spacing": 1.8,
+            "label_font_size": 2,
+            "compare_price_font_size": 1.3,
+            "final_price_font_size": 1.5,
+            "per_unit_font_size": 1,
+            "savings_label_font_size": 1.1,
+            "option_image_size": 60,
+            "buttons_border_thickness": 0.1,
+            "border_color_unselected": "#e6e6e6",
+            "text_color_unselected": "#333333",
+            "back_color_unselected": "#ffffff",
+            "border-color-hover-unselected": "#333333",
+            "text_color_selected": "#333333",
+            "selected_button_bg_color": "#f2f2f2",
+            "selected_button_dot_color": "#333333",
+            "selected_button_border_color": "#333333",
+            "savings_text_color": "#ffffff",
+            "savings_bg_color": "#333333",
+            "compare_font_color": "#e71717"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true,
+            "skip_cart": false,
+            "button_custom_style": false,
+            "button_font_size": 20,
+            "button_height": 45,
+            "lm_main_button": "#000000",
+            "lm_main_button_gr": "",
+            "lm_main_text": "#ffffff"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "collapsible_tab_1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Specifications",
+            "icon": "check_mark",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Delivery & Returns",
+            "icon": "truck",
+            "content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "collapsible_tab_1",
+        "collapsible_tab_2"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "no_scroll": false,
+        "color_scheme": "",
+        "block_padding": 1.5,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "vertical_left",
+        "thumbnail_size": 70,
+        "thumbnail_radius": 4,
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "mobile_thumbnails": "hide",
+        "show_full_image": false,
+        "first_image_size": 100,
+        "second_image_size": 0,
+        "show_container": false,
+        "container_bg": "#f9f9f9",
+        "container_radius": 0,
+        "container_padding": 30,
+        "container_border_color": "#f9f9f9",
+        "show_container_mb": false,
+        "container_bg_mb": "#f9f9f9",
+        "container_padding_mb": 20,
+        "container_radius_mb": 0,
+        "container_border_color_mb": "#f9f9f9",
+        "container_text": "",
+        "container_text_bg": "#212121",
+        "container_text_txt": "#ffffff",
+        "padding_top": 36,
+        "padding_top_mb": 0,
+        "padding_bottom": 36
+      }
+    },
+    "comparison": {
+      "type": "comparison-table",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "benefit": "Kid & Pet Safety",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "benefit": "Air Purification",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "benefit": "Sleep Quality",
+            "us": true,
+            "others": false
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3"
+      ],
+      "settings": {
+        "title": "How we outshine the rest.",
+        "heading_size": "h1",
+        "text": "<p>Talk about how and why is your brand better than the others.</p>",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "layout": "table_second",
+        "content_center": "left",
+        "color_scheme": "",
+        "logo_width": 90,
+        "mobile_logo_width": 60,
+        "us_label": "",
+        "others_label": "Standard Fan",
+        "benefit_color_scheme": "",
+        "icon_cells_color_scheme": "",
+        "checkmark_color": "#53af01",
+        "x_color": "#000000",
+        "checkmark_active_color": "#53af01",
+        "x_active_color": "#000000",
+        "active_color": "#212121",
+        "active_text_color": "#ffffff",
+        "active_border_color": "#212121",
+        "table_corner_radius": 8,
+        "font_size": 16,
+        "table_shadow_opacity": 15,
+        "table_shadow_horizontal_offset": 0,
+        "table_shadow_vertical_offset": 0,
+        "table_shadow_blur": 0,
+        "table_border_thickness": 1,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "highlight": {
+      "type": "bw-product-highlight",
+      "settings": {
+        "color_scheme": "",
+        "show_reviews": true,
+        "reviews_text": "4000+ Reviews",
+        "title": "Your Go-To for Style and Performance",
+        "text": "Enjoy the perfect balance of aesthetics and functionality. The AirLuxe fan blends seamlessly into modern Indian homes while providing unmatched cooling.",
+        "button_label": "GET YOURS NOW",
+        "button_link": "",
+        "guarantee_text": "30-Day satisfaction guarantee",
+        "scarcity_text": "Head’s up, we’re low on stock!"
+      }
+    },
+    "tech_center": {
+      "type": "bw-center-feature",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "The Core Technology",
+        "title": "Simple science is our secret ingredient"
+      }
+    },
+    "how_it_works": {
+      "type": "bw-timeline",
+      "settings": {
+        "color_scheme": "",
+        "title": "The Blissway Experience",
+        "subtitle": "A simple 3-step process to better living."
+      }
+    },
+    "newsletter": {
+      "type": "bw-newsletter",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "Join the club",
+        "heading": "10% off your first order.",
+        "text": "<p>Drop your email. Get the discount. We only send things worth reading — new launches, restocks, and deals that are actually good.</p>",
+        "placeholder": "your@email.com",
+        "button_label": "Get My 10% Off",
+        "bottom_note": "No spam, ever. Unsubscribe with one click."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "comparison",
+    "highlight",
+    "tech_center",
+    "how_it_works",
+    "newsletter"
+  ]
+}

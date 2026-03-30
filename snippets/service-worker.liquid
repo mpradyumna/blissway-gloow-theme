@@ -1,0 +1,47 @@
+{%- comment -%}
+  Service Worker for caching static assets and improving performance
+  This should be included in the theme.liquid head section
+{%- endcomment -%}
+
+<script>
+  // Register Service Worker for caching
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js')
+        .then(function(registration) {
+          console.log('ServiceWorker registration successful');
+        })
+        .catch(function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+
+  // Preload critical resources
+  function preloadCriticalResources() {
+    const criticalResources = [
+      '{{ "base.css" | asset_url }}',
+      '{{ "lumin-theme.css" | asset_url }}',
+      '{{ "global.js" | asset_url }}'
+    ];
+
+    criticalResources.forEach(resource => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.href = resource;
+      if (resource.endsWith('.css')) {
+        link.as = 'style';
+      } else if (resource.endsWith('.js')) {
+        link.as = 'script';
+      }
+      document.head.appendChild(link);
+    });
+  }
+
+  // Run preload on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', preloadCriticalResources);
+  } else {
+    preloadCriticalResources();
+  }
+</script>

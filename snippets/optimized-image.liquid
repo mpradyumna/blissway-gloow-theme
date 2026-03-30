@@ -1,0 +1,58 @@
+{%- comment -%}
+  Optimized image snippet with lazy loading and responsive images
+  Usage: {% render 'optimized-image', image: product.featured_image, alt: product.title, width: 400, height: 400, lazy: true %}
+{%- endcomment -%}
+
+{%- liquid
+  assign lazy = lazy | default: true
+  assign width = width | default: 400
+  assign height = height | default: 400
+  assign sizes = sizes | default: '(min-width: 750px) 400px, 100vw'
+  assign loading = 'lazy'
+  if lazy == false
+    assign loading = 'eager'
+  endif
+-%}
+
+{%- if image != blank -%}
+  <picture>
+    {%- comment -%} WebP format for better compression {%- endcomment -%}
+    <source 
+      srcset="
+        {{ image | image_url: width: width, height: height, format: 'webp' }} 1x,
+        {{ image | image_url: width: width | times: 2, height: height | times: 2, format: 'webp' }} 2x
+      "
+      media="(min-width: 750px)"
+      type="image/webp"
+    >
+    <source 
+      srcset="
+        {{ image | image_url: width: width | times: 0.5, height: height | times: 0.5, format: 'webp' }} 1x,
+        {{ image | image_url: width: width, height: height, format: 'webp' }} 2x
+      "
+      media="(max-width: 749px)"
+      type="image/webp"
+    >
+    
+    {%- comment -%} Fallback to original format {%- endcomment -%}
+    <img
+      src="{{ image | image_url: width: width, height: height }}"
+      srcset="
+        {{ image | image_url: width: width, height: height }} 1x,
+        {{ image | image_url: width: width | times: 2, height: height | times: 2 }} 2x
+      "
+      alt="{{ alt | escape }}"
+      width="{{ width }}"
+      height="{{ height }}"
+      loading="{{ loading }}"
+      decoding="async"
+      sizes="{{ sizes }}"
+      class="{{ class }}"
+      {% if lazy %}data-src="{{ image | image_url: width: width, height: height }}"{% endif %}
+    >
+  </picture>
+{%- else -%}
+  <div class="placeholder-image {{ class }}" style="width: {{ width }}px; height: {{ height }}px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+    <span style="color: #999;">No image</span>
+  </div>
+{%- endif -%}

@@ -1,0 +1,196 @@
+<style>
+  .bw-reviews-section {
+    padding: 6rem 0;
+    
+    font-family: var(--font-body-family);
+  }
+  .bw-reviews-section__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .bw-reviews-section__label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgb(var(--color-button));
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .bw-reviews-section__summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .bw-reviews-section__score {
+    font-family: var(--font-heading-family);
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    
+  }
+  .bw-reviews-section__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .bw-reviews-section__stars {
+    color: #fbbf24;
+    
+    letter-spacing: 0.2em;
+  }
+  .bw-reviews-section__count {
+    font-size: 0.875rem;
+    
+  }
+
+  /* Fallback static grid if Judge.me isn't active */
+  .bw-reviews-section__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .bw-reviews-section__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .bw-review-card {
+    background: #fff;
+    border: 1px solid rgba(var(--color-foreground), 0.08);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  }
+  .bw-review-card__stars {
+    color: #fbbf24;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .bw-review-card__title {
+    font-family: var(--font-heading-family);
+    
+    font-weight: 700;
+    
+    margin: 0 0 1rem 0;
+    line-height: 1.3;
+  }
+  .bw-review-card__body {
+    font-size: 1rem;
+    line-height: 1.6;
+    
+    margin: 0 0 1.5rem 0;
+  }
+  .bw-review-card__author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid rgba(var(--color-foreground), 0.08);
+    padding-top: 1.5rem;
+  }
+  .bw-review-card__avatar {
+    width: 2.5rem; height: 2.5rem;
+    background: rgba(var(--color-button), 0.1);
+    color: rgb(var(--color-button));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-family: var(--font-heading-family);
+    
+  }
+  .bw-review-card__name {
+    font-weight: 700;
+    
+    margin: 0 0 0.25rem 0;
+    font-size: 0.875rem;
+  }
+  .bw-review-card__verified {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: #10b981;
+    font-weight: 600;
+  }
+  .bw-review-card__verified svg { width: 0.875rem; height: 0.875rem; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+
+<section class="bw-reviews-section color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="bw-reviews-section__container">
+    <span class="bw-reviews-section__label">{{ section.settings.eyebrow }}</span>
+
+    <div class="bw-reviews-section__summary">
+      <span class="bw-reviews-section__score">{{ section.settings.score }}</span>
+      <div class="bw-reviews-section__meta">
+        <div class="bw-reviews-section__stars">★★★★★</div>
+        <span class="bw-reviews-section__count">{{ section.settings.subtext }}</span>
+      </div>
+    </div>
+
+    {%- if section.settings.enable_judgeme -%}
+      <!-- Judge.me Carousel Widget -->
+      <div class="jdgm-carousel-wrapper">
+        {% render 'judgeme_widgets', widget_type: 'judgeme_featured_carousel', concierge_install: false %}
+      </div>
+    {%- else -%}
+      <!-- Fallback Static Reviews (Matches Prototype) -->
+      <div class="bw-reviews-section__grid">
+        {%- for block in section.blocks -%}
+          <div class="bw-review-card">
+            <div class="bw-review-card__stars">★★★★★</div>
+            <h3 class="bw-review-card__title">"{{ block.settings.title }}"</h3>
+            <p class="bw-review-card__body">{{ block.settings.text }}</p>
+            <div class="bw-review-card__author">
+              <div class="bw-review-card__avatar">{{ block.settings.author | slice: 0 }}</div>
+              <div>
+                <p class="bw-review-card__name">{{ block.settings.author }}</p>
+                <span class="bw-review-card__verified">
+                  <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Verified Purchase
+                </span>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BW Judge.me Reviews",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    { "type": "checkbox", "id": "enable_judgeme", "label": "Enable Judge.me App Block", "default": false, "info": "Turn this on if you have Judge.me installed to replace the static reviews with live ones." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Real customers. Real words." },
+    { "type": "text", "id": "score", "label": "Average Score", "default": "4.8" },
+    { "type": "text", "id": "subtext", "label": "Subtext", "default": "From 5000+ verified buyers across India" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Static Review",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Headline", "default": "My baby finally sleeps through the night" },
+        { "type": "textarea", "id": "text", "label": "Review Text", "default": "Got the bladeless fan for our bedroom. Completely silent, no blade scare with my toddler running around. Best thing I've bought this year." },
+        { "type": "text", "id": "author", "label": "Author", "default": "Priya S. · Mumbai" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW Judge.me Reviews",
+      "blocks": [
+        { "type": "review", "settings": { "title": "My baby finally sleeps through the night", "author": "Priya S. · Mumbai" } },
+        { "type": "review", "settings": { "title": "I threw out my old dryer the same day", "author": "Aisha K. · Bangalore", "text": "Wasn't expecting much at this price but honestly — my hair dries faster, feels softer, and I'm not standing in front of the mirror forever." } },
+        { "type": "review", "settings": { "title": "Wear it on my morning walk. Life changed.", "author": "Rahul M. · Delhi", "text": "Delhi summers are brutal. The waist fan is hands-free, runs all morning, and doesn't look weird to wear." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

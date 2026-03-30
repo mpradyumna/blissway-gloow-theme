@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "bw-about",
+      "blocks": {
+        "how_it_began": {
+          "type": "content_block",
+          "settings": {
+            "label": "How it began",
+            "heading": "Fourteen years in the air. One idea on the ground.",
+            "text": "<p>Our founder spent over a decade on international aviation routes — Tokyo, London, New York, Dubai. Every layover was an education. In every city, there were well-engineered personal electronics that simply didn't exist in Indian retail, or arrived through grey markets at double the price with no accountability.</p><p>He came home to Bengaluru in early 2024 with a notebook full of products and a single question: why should access to quality be a function of geography?</p>",
+            "quote": "I spent years handing out noise-cancelling headphones to business-class passengers and thinking — why can't my mother find something half as good in a shop in Bengaluru? That gap became Blissway."
+          }
+        },
+        "divider_1": {
+          "type": "divider",
+          "settings": {}
+        },
+        "our_philosophy": {
+          "type": "content_block",
+          "settings": {
+            "label": "Our philosophy",
+            "heading": "We sell less. So you get more.",
+            "text": "<p>Blissway carries fewer than 60 products at any given time. That is not a limitation — it is a position. Every item on this site has survived a minimum of two weeks of real-world testing by our team. If we wouldn't give it as a gift, it does not reach your doorstep.</p><p>We work directly with verified manufacturers — most audited in person. No middlemen inflating margins, no generic imports dressed up with packaging. What you see is what was built, and it is priced to reflect that.</p>"
+          }
+        },
+        "pillars": {
+          "type": "pillars",
+          "settings": {}
+        },
+        "divider_2": {
+          "type": "divider",
+          "settings": {}
+        },
+        "where_headed": {
+          "type": "content_block",
+          "settings": {
+            "label": "Where we are headed",
+            "heading": "Still early. Deliberately so.",
+            "text": "<p>In 2025, we are expanding into personal wellness and smart home — with the same rigour we brought to audio and personal care. We are building same-day delivery coverage across India's top twelve cities. The catalogue will grow, but the standard will not move.</p><p>If you have found something here that surprised you, that is the point. And if you believe a product belongs on Blissway, write to us at <a href=\"mailto:care@blissway.online\">care@blissway.online</a> — we read every message.</p>"
+          }
+        },
+        "ctas": {
+          "type": "ctas",
+          "settings": {
+            "label1": "Explore the Collection",
+            "link1": "shopify://collections/all",
+            "label2": "Write to Us",
+            "link2": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "how_it_began",
+        "divider_1",
+        "our_philosophy",
+        "pillars",
+        "divider_2",
+        "where_headed",
+        "ctas"
+      ],
+      "settings": {
+        "eyebrow": "Our Story",
+        "hero_title": "Born in India. Built for those who demand more.",
+        "hero_sub": "We didn't set out to build a store. We set out to close a gap — between the products the world makes and what Indian consumers could actually access."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

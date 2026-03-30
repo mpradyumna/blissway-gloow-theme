@@ -1,0 +1,385 @@
+{%- style -%}
+/* ── Hero Slider (Alpine-style) ──────────────────────────── */
+.bw-hero-slider {
+  position: relative;
+  width: 100%;
+  height: 85dvh;
+  min-height: 520px;
+  overflow: hidden;
+  background: #000 !important; /* Force black background */
+}
+
+.bw-hero-slider__track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bw-hero-slider__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.bw-hero-slider__slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bw-hero-slider__bg {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.06);
+  transition: transform 6.5s ease;
+  will-change: transform;
+}
+
+.bw-hero-slider__slide.active .bw-hero-slider__bg {
+  transform: scale(1);
+}
+
+.bw-hero-slider__overlay {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(0,0,0,0.75) 0%,
+    rgba(0,0,0,0.40) 45%,
+    rgba(0,0,0,0.1) 100%
+  );
+  z-index: 1;
+}
+
+.bw-hero-slider__content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  color: #fff;
+  text-align: left;
+}
+
+.bw-hero-slider__eyebrow {
+  font-family: var(--bw-font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin: 0 0 1.25rem;
+  display: block;
+}
+
+.bw-hero-slider__heading {
+  font-family: var(--bw-font-display);
+  font-size: calc(var(--font-heading-scale) * 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #fff;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.lumin-text__fancy1, em { background-image: var(--fancy-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-style: italic; }
+
+.bw-hero-slider__sub {
+  font-family: var(--bw-font-body);
+  
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  margin: 0 0 2.5rem;
+  max-width: 480px;
+}
+
+.bw-hero-slider__actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.bw-hero-slider__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+}
+
+.bw-hero-slider__meta-stars {
+  color: #FBBF24;
+  letter-spacing: 2px;
+  font-size: 1rem;
+}
+
+/* Navigation */
+.bw-hero-slider__nav {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 5%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bw-hero-slider__arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--bw-ease);
+  padding: 0;
+}
+
+.bw-hero-slider__arrow:hover {
+  background: rgba(255,255,255,0.25);
+  border-color: #fff;
+  transform: scale(1.05);
+}
+
+.bw-hero-slider__arrow svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+.bw-hero-slider__dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bw-hero-slider__dot {
+  display: block !important;
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.4s var(--bw-ease);
+}
+
+.bw-hero-slider__dot.active {
+  background: #fff;
+  width: 32px;
+}
+
+@media (max-width: 767px) {
+  .bw-hero-slider { height: 90dvh; }
+  .bw-hero-slider__content { padding: 2rem 1.25rem; }
+  .bw-hero-slider__heading { font-size: 2.8rem; }
+  .bw-hero-slider__sub { font-size: 1rem; }
+  .bw-hero-slider__nav { 
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2rem;
+  }
+}
+{%- endstyle -%}
+
+<section class="bw-hero-slider color-{{ section.settings.color_scheme }} gradient" id="bw-hero-slider-{{ section.id }}" aria-label="Featured products slideshow">
+  <div class="bw-hero-slider__track">
+    {%- for block in section.blocks -%}
+      <div class="bw-hero-slider__slide {% if forloop.first %}active{% endif %}" data-slide="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          <div class="bw-hero-slider__bg" style="background-image: url('{{ block.settings.image | image_url: width: 2000 }}');"></div>
+        {%- else -%}
+          <div class="bw-hero-slider__bg" style="background-color: #111;"></div>
+        {%- endif -%}
+        <div class="bw-hero-slider__overlay"></div>
+        <div class="bw-hero-slider__content bw-container">
+          {%- if block.settings.eyebrow != blank -%}
+            <p class="bw-hero-slider__eyebrow">{{ block.settings.eyebrow }}</p>
+          {%- endif -%}
+          
+          {%- if block.settings.heading != blank -%}
+            <h1 class="bw-hero-slider__heading">{{ block.settings.heading }}</h1>
+          {%- endif -%}
+          
+          {%- if block.settings.subheading != blank -%}
+            <p class="bw-hero-slider__sub">{{ block.settings.subheading }}</p>
+          {%- endif -%}
+          
+          {%- if block.settings.button_label != blank and block.settings.link != blank -%}
+            <div class="bw-hero-slider__actions">
+              <a href="{{ block.settings.link }}" class="bw-btn bw-btn-primary">
+                {{ block.settings.button_label }}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          {%- endif -%}
+          
+          {%- if block.settings.meta_text != blank -%}
+            <div class="bw-hero-slider__meta">
+              <span class="bw-hero-slider__meta-stars" aria-hidden="true">★★★★★</span>
+              <span>{{ block.settings.meta_text }}</span>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  {%- if section.blocks.size > 1 -%}
+    <nav class="bw-hero-slider__nav" aria-label="Slide navigation">
+      <button class="bw-hero-slider__arrow bw-hero-slider__arrow--prev" id="hs-prev-{{ section.id }}" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="bw-hero-slider__dots" role="tablist">
+        {%- for block in section.blocks -%}
+          <button class="bw-hero-slider__dot {% if forloop.first %}active{% endif %}" data-dot="{{ forloop.index0 }}" aria-label="Slide {{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" role="tab"></button>
+        {%- endfor -%}
+      </div>
+      <button class="bw-hero-slider__arrow bw-hero-slider__arrow--next" id="hs-next-{{ section.id }}" aria-label="Next slide">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </nav>
+  {%- endif -%}
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sectionId = 'bw-hero-slider-{{ section.id }}';
+    const slider = document.getElementById(sectionId);
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll('.bw-hero-slider__slide');
+    const dots   = slider.querySelectorAll('.bw-hero-slider__dot');
+    const prev   = slider.querySelector(`#hs-prev-{{ section.id }}`);
+    const next   = slider.querySelector(`#hs-next-{{ section.id }}`);
+    if (!slides.length || slides.length === 1) return;
+
+    let current = 0;
+    let timer;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      dots[current].setAttribute('aria-selected', 'false');
+      
+      current = (index + slides.length) % slides.length;
+      
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      dots[current].setAttribute('aria-selected', 'true');
+      resetTimer();
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(function () { goTo(current + 1); }, 6500);
+    }
+
+    if (prev && next) {
+      prev.addEventListener('click', function () { goTo(current - 1); });
+      next.addEventListener('click', function () { goTo(current + 1); });
+    }
+    
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { goTo(i); });
+    });
+
+    // Basic touch support
+    let touchStartX = 0;
+    slider.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+    slider.addEventListener('touchend', e => {
+      let diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+    }, {passive: true});
+
+    resetTimer();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "BW - Hero Slider",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow Text",
+          "default": "Bestseller — 5,000+ Happy Customers"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Upgrade your\neveryday.\n<em>Not your budget.</em>",
+          "info": "Use <em> tags for the blue accent color."
+        },
+        {
+          "type": "textarea",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Fans that cool without the noise. Bladeless, silent, safe for kids."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Shop Fans"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "meta_text",
+          "label": "Meta Text (Stars)",
+          "default": "4.8 · 5,000+ verified buyers across India"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW - Hero Slider",
+      "blocks": [
+        { "type": "slide" },
+        { "type": "slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}

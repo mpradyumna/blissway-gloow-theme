@@ -1,0 +1,83 @@
+<section class="bw-trust-bar color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="bw-container">
+    <div class="bw-trust-grid">
+      {%- for block in section.blocks -%}
+        <div class="bw-trust-item" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon_html != blank -%}
+            {{ block.settings.icon_html }}
+          {%- else -%}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          {%- endif -%}
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BW - Trust Bar",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust Item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "icon_html",
+          "label": "Icon SVG HTML",
+          "info": "Paste SVG code here"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Trust Marker"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Reason why they should trust you."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW - Trust Bar",
+      "blocks": [
+        {
+          "type": "trust_item",
+          "settings": {
+            "title": "1-Year Warranty",
+            "text": "Hassle-free replacement for any manufacturing defects.",
+            "icon_html": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "title": "Free Shipping",
+            "text": "On all orders above ₹499, delivered to 12,000+ pin codes.",
+            "icon_html": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"></rect><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"></polygon><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"></circle><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"></circle></svg>"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "title": "7-Day Returns",
+            "text": "Not happy? Send it back within 7 days for a full refund.",
+            "icon_html": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"1 4 1 10 7 10\"></polyline><path d=\"M3.51 15a9 9 0 1 0 .49-3.44\"></path></svg>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

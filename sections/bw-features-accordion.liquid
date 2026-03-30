@@ -1,0 +1,291 @@
+<style>
+  .bw-feat52 {
+    padding: 6rem 0;
+    
+    font-family: var(--font-body-family);
+  }
+  .bw-feat52__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  @media (min-width: 768px) {
+    .bw-feat52__container {
+      flex-direction: row;
+      align-items: center;
+      gap: 6rem;
+    }
+  }
+  .bw-feat52__content {
+    flex: 1;
+  }
+  .bw-feat52__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgb(var(--color-button));
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .bw-feat52__heading {
+    font-family: var(--font-heading-family);
+    font-size: calc(var(--font-heading-scale) * 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    
+  }
+  .bw-feat52__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .bw-feat52__item {
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+    padding-bottom: 1rem;
+    cursor: pointer;
+  }
+  .bw-feat52__item.active .bw-feat52__body {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+  .bw-feat52__item.active .bw-feat52__icon {
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    border-color: rgb(var(--color-button));
+  }
+  .bw-feat52__item.active .bw-feat52__progress {
+    opacity: 1;
+  }
+  .bw-feat52__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .bw-feat52__icon {
+    width: 3rem; height: 3rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    display: flex; align-items: center; justify-content: center;
+    
+    transition: all 0.3s ease;
+  }
+  .bw-feat52__icon svg { width: 1.5rem; height: 1.5rem; }
+  .bw-feat52__title {
+    
+    font-weight: 700;
+    margin: 0;
+    
+    font-family: var(--font-heading-family);
+  }
+  .bw-feat52__body {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+  .bw-feat52__body-inner {
+    padding-left: 4rem;
+    padding-right: 1rem;
+  }
+  .bw-feat52__body-inner p {
+    margin: 0;
+    
+    line-height: 1.6;
+  }
+  .bw-feat52__progress {
+    height: 2px;
+    background: rgba(var(--color-foreground), 0.1);
+    margin-top: 1.5rem;
+    border-radius: 2px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .bw-feat52__progress-fill {
+    height: 100%;
+    background: rgb(var(--color-button));
+    width: 0%;
+    transition: width 5s linear;
+  }
+  .bw-feat52__item.active .bw-feat52__progress-fill {
+    width: 100%;
+  }
+
+  /* Media Side */
+  .bw-feat52__media {
+    flex: 1;
+    width: 100%;
+  }
+  .bw-feat52__media-inner {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  @media (min-width: 768px) {
+    .bw-feat52__media-inner { aspect-ratio: 3/4; }
+  }
+  .bw-feat52__img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .bw-feat52__img.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+  }
+</style>
+
+<section class="bw-feat52 color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="bw-feat52__container">
+    <div class="bw-feat52__content">
+      <span class="bw-feat52__label">{{ section.settings.eyebrow }}</span>
+      <h2 class="bw-feat52__heading">{{ section.settings.heading | newline_to_br }}</h2>
+
+      <div class="bw-feat52__accordion" id="feat52-accordion-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          <div class="bw-feat52__item {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+            <div class="bw-feat52__header">
+              <div class="bw-feat52__icon">
+                {%- if block.settings.icon == 'shield' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                {%- elsif block.settings.icon == 'sun' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                {%- elsif block.settings.icon == 'check' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                {%- elsif block.settings.icon == 'star' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                {%- else -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                {%- endif -%}
+              </div>
+              <h4 class="bw-feat52__title">{{ block.settings.title }}</h4>
+            </div>
+            <div class="bw-feat52__body">
+              <div class="bw-feat52__body-inner">
+                <p>{{ block.settings.text }}</p>
+              </div>
+            </div>
+            <div class="bw-feat52__progress"><div class="bw-feat52__progress-fill"></div></div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    
+    <div class="bw-feat52__media">
+      <div class="bw-feat52__media-inner" id="feat52-media-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 800 | image_tag: class: 'bw-feat52__img', data-img-index: forloop.index0 }}
+          {%- else -%}
+            {%- assign placeholder = 'collection-' | append: forloop.index -%}
+            {{ placeholder | placeholder_svg_tag: 'bw-feat52__img placeholder-svg' | replace: '<svg', '<svg data-img-index="' | append: forloop.index0 | append: '"' }}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('#feat52-accordion-{{ section.id }}');
+    if (!section) return;
+
+    const items = section.querySelectorAll('.bw-feat52__item');
+    const images = document.querySelectorAll('#feat52-media-{{ section.id }} .bw-feat52__img');
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    if (images.length > 0) {
+      images[0].classList.add('active');
+    }
+
+    function switchTab(index) {
+      items.forEach(i => i.classList.remove('active'));
+      images.forEach(img => img.classList.remove('active'));
+
+      items[index].classList.add('active');
+      const targetImg = document.querySelector(`#feat52-media-{{ section.id }} .bw-feat52__img[data-img-index="${index}"]`);
+      if (targetImg) targetImg.classList.add('active');
+
+      currentIndex = index;
+      resetAutoPlay();
+    }
+
+    function autoPlay() {
+      let nextIndex = (currentIndex + 1) % items.length;
+      switchTab(nextIndex);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(autoPlay, 5000);
+    }
+
+    items.forEach((item, index) => {
+      item.addEventListener('click', () => switchTab(index));
+    });
+
+    resetAutoPlay();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "BW Features Accordion",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Why people choose us" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "We source things\nthat actually work." }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "shield", "label": "Shield" },
+            { "value": "sun", "label": "Sun" },
+            { "value": "check", "label": "Checkmark" },
+            { "value": "star", "label": "Star" },
+            { "value": "smile", "label": "Smile" }
+          ],
+          "default": "shield"
+        },
+        { "type": "text", "id": "title", "label": "Title", "default": "Safe for the whole family" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "No exposed blades. Kids can touch it. Pets won't get hurt. Sleep with it on — it's that quiet." },
+        { "type": "image_picker", "id": "image", "label": "Image" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW Features Accordion",
+      "blocks": [
+        { "type": "feature", "settings": { "title": "Safe for the whole family", "icon": "shield" } },
+        { "type": "feature", "settings": { "title": "Perfect for Indian summers", "icon": "sun" } },
+        { "type": "feature", "settings": { "title": "Your stylist would approve", "icon": "smile" } },
+        { "type": "feature", "settings": { "title": "Buy it. Try it. Love it.", "icon": "check" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

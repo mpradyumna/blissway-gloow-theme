@@ -1,0 +1,289 @@
+{%- style -%}
+  .bw-email-section {
+    padding: 40px 16px;
+    background: transparent;
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+  }
+
+  .bw-email-section__wrapper {
+    background: var(--color-background, #ffffff);
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: 16px;
+    padding: 40px 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  }
+
+  .bw-email-section__decoration {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(20%, -20%);
+    z-index: 0;
+  }
+
+  .bw-email-section__decoration::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 75px;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 0 0 75px 75px;
+    opacity: 0.5;
+  }
+
+  .bw-email-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .bw-email-section__wrapper {
+      padding: 48px;
+    }
+    .bw-email-section .container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .bw-email-section__content {
+      flex: 1;
+      max-width: 400px;
+    }
+    .bw-email-section__form-container {
+      flex: 1;
+      max-width: 360px;
+      margin-top: 0;
+    }
+  }
+
+  .bw-email-section__content .label {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--color-foreground, #111827);
+    margin-bottom: 8px;
+  }
+
+  .bw-email-section__content h2 {
+    font-family: var(--font-heading-family, inherit);
+    font-weight: 700;
+    font-size: calc(var(--font-heading-scale) * 2.5rem);
+    letter-spacing: -.02em;
+    color: var(--color-foreground, #111827);
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+
+  .bw-email-section__content p:not(.label) {
+    margin-top: 0;
+    color: var(--color-foreground-75, #4b5563);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .bw-email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .bw-email-form input[type="email"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border, #d1d5db);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .bw-email-form input[type="email"]:focus {
+    border-color: var(--color-foreground, #111827);
+  }
+
+  .bw-email-form .btn {
+    padding: 14px 24px;
+    background: var(--color-button, #2563eb);
+    color: var(--color-button-text, #ffffff);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    font-size: 1rem;
+  }
+
+  .bw-email-form .btn:hover {
+    opacity: 0.9;
+  }
+
+  @media (min-width: 480px) {
+    .bw-email-form {
+      flex-direction: row;
+    }
+    .bw-email-form input { flex: 1; }
+    .bw-email-form .btn { flex-shrink: 0; }
+  }
+
+  .bw-email-note {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--color-foreground-50, #6b7280);
+  }
+
+  .bw-form-message {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  .bw-form-message--success {
+    color: #059669;
+  }
+  .bw-form-message--error {
+    color: #dc2626;
+  }
+{%- endstyle -%}
+
+<section class="bw-email-section color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up" aria-label="Newsletter signup">
+  <div class="bw-email-section__wrapper">
+    <div class="bw-email-section__decoration" aria-hidden="true"></div>
+    <div class="container">
+      <div class="bw-email-section__content">
+        {%- if section.settings.subheading != blank -%}
+          <p class="label">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+        
+        {%- if section.settings.heading != blank -%}
+          <h2>{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        
+        {%- if section.settings.text != blank -%}
+          <div class="description">
+            {{ section.settings.text }}
+          </div>
+        {%- endif -%}
+      </div>
+      
+      <div class="bw-email-section__form-container">
+        {% form 'customer', class: 'bw-email-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          
+          {%- if form.posted_successfully? -%}
+            <div class="bw-form-message bw-form-message--success" tabindex="-1" autofocus>
+              Thank you for subscribing!
+            </div>
+          {%- elsif form.errors -%}
+            <div class="bw-form-message bw-form-message--error">
+              {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
+            </div>
+          {%- endif -%}
+
+          <div class="bw-email-form">
+            <input
+              id="NewsletterForm--{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              class="field__input"
+              value="{{ form.email }}"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              {% if form.errors %}
+                autofocus
+                aria-invalid="true"
+                aria-describedby="Newsletter-error--{{ section.id }}"
+              {% elsif form.posted_successfully? %}
+                aria-describedby="Newsletter-success--{{ section.id }}"
+              {% endif %}
+              placeholder="{{ section.settings.placeholder }}"
+              required
+            >
+            <button type="submit" class="btn btn-primary" name="commit">
+              {{ section.settings.button_label }}
+            </button>
+          </div>
+        {% endform %}
+        
+        {%- if section.settings.bottom_note != blank -%}
+          <p class="bw-email-note">{{ section.settings.bottom_note }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BW - Newsletter Card",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "Join the club",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "10% off your first order.",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "default": "<p>Drop your email. Get the discount. We only send things worth reading — new launches, restocks, and deals that are actually good.</p>",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "default": "your@email.com",
+      "label": "Input Placeholder"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Get My 10% Off",
+      "label": "Button Label"
+    },
+    {
+      "type": "text",
+      "id": "bottom_note",
+      "default": "No spam, ever. Unsubscribe with one click.",
+      "label": "Bottom Note"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW - Newsletter Card"
+    }
+  ]
+}
+{% endschema %}

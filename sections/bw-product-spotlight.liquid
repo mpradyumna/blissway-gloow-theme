@@ -1,0 +1,349 @@
+<style>
+  .bw-product-spotlight {
+    padding: 6rem 0;
+    
+    overflow: hidden;
+    position: relative;
+    font-family: var(--font-body-family);
+  }
+  .bw-product-spotlight__bg-shape-1 {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(var(--color-button), 0.05);
+    transform: skewY(-6deg);
+    transform-origin: top left;
+  }
+  .bw-product-spotlight__bg-shape-2 {
+    position: absolute;
+    right: -16rem; top: 5rem;
+    width: 24rem; height: 24rem;
+    background-color: rgba(var(--color-button), 0.1);
+    border-radius: 50%;
+    filter: blur(3rem);
+  }
+  .bw-product-spotlight__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  @media (min-width: 768px) {
+    .bw-product-spotlight__container {
+      flex-direction: row;
+      align-items: center;
+      gap: 6rem;
+    }
+  }
+  .bw-product-spotlight__content {
+    flex: 1;
+    max-width: 600px;
+  }
+  .bw-product-spotlight__stars-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .bw-product-spotlight__stars {
+    color: #fbbf24;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+  }
+  .bw-product-spotlight__reviews-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .bw-product-spotlight__heading {
+    font-family: var(--font-heading-family);
+    font-size: calc(var(--font-heading-scale) * 3.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 2rem;
+    
+  }
+  .lumin-text__fancy1, em { background-image: var(--fancy-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-style: italic; }
+  .bw-product-spotlight__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .bw-product-spotlight__feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+    
+    
+  }
+  .bw-product-spotlight__feature-icon {
+    flex-shrink: 0;
+    width: 2rem; height: 2rem;
+    border-radius: 50%;
+    background-color: rgba(var(--color-button), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--color-button));
+  }
+  .bw-product-spotlight__feature-icon svg {
+    width: 1rem; height: 1rem;
+  }
+  .bw-product-spotlight__desc {
+    
+    
+    line-height: 1.7;
+    margin: 0 0 2.5rem;
+  }
+  .bw-product-spotlight__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .bw-product-spotlight__actions {
+      flex-direction: row;
+    }
+  }
+  .bw-product-spotlight__btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background-color: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    font-weight: 700;
+    border-radius: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 10px 25px rgba(var(--color-button), 0.2);
+  }
+  @media (min-width: 640px) {
+    .bw-product-spotlight__btn { width: auto; }
+  }
+  .bw-product-spotlight__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(var(--color-button), 0.3);
+  }
+  .bw-product-spotlight__btn svg {
+    width: 1.25rem; height: 1.25rem;
+    transition: transform 0.3s;
+  }
+  .bw-product-spotlight__btn:hover svg {
+    transform: translateX(4px);
+  }
+  .bw-product-spotlight__guarantee {
+    font-size: 0.75rem;
+    font-weight: 700;
+    
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  @media (min-width: 640px) {
+    .bw-product-spotlight__guarantee { text-align: left; }
+  }
+
+  /* Image Side */
+  .bw-product-spotlight__image-wrap {
+    flex: 1;
+    width: 100%;
+  }
+  .bw-product-spotlight__image-inner {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    aspect-ratio: 4/5;
+  }
+  @media (min-width: 768px) {
+    .bw-product-spotlight__image-inner { aspect-ratio: auto; height: 700px; }
+  }
+  .bw-product-spotlight__image-inner img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s ease-out;
+  }
+  .bw-product-spotlight__image-inner:hover img {
+    transform: scale(1.05);
+  }
+  .bw-product-spotlight__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .bw-product-spotlight__image-inner:hover .bw-product-spotlight__image-overlay {
+    opacity: 1;
+  }
+  .bw-product-spotlight__badge {
+    position: absolute;
+    bottom: 2rem; left: 2rem;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: translateY(1rem);
+    opacity: 0;
+    transition: all 0.5s 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .bw-product-spotlight__image-inner:hover .bw-product-spotlight__badge {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .bw-product-spotlight__badge-icon {
+    width: 3rem; height: 3rem;
+    background: rgba(var(--color-button), 0.1);
+    border-radius: 0.75rem;
+    display: flex; align-items: center; justify-content: center;
+    color: rgb(var(--color-button));
+  }
+  .bw-product-spotlight__badge-icon svg { width: 1.5rem; height: 1.5rem; }
+  .bw-product-spotlight__badge-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.125rem;
+  }
+  .bw-product-spotlight__badge-price {
+    
+    font-weight: 700;
+    line-height: 1;
+    
+  }
+  .bw-product-spotlight__badge-compare {
+    font-size: 0.875rem;
+    text-decoration: line-through;
+    
+    font-weight: 400;
+    margin-left: 0.25rem;
+  }
+</style>
+
+<section class="bw-product-spotlight color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="bw-product-spotlight__bg-shape-1"></div>
+  <div class="bw-product-spotlight__bg-shape-2"></div>
+
+  <div class="bw-product-spotlight__container">
+    <div class="bw-product-spotlight__content">
+      <div class="bw-product-spotlight__stars-wrap">
+        <div class="bw-product-spotlight__stars">★★★★★</div>
+        <span class="bw-product-spotlight__reviews-text">{{ section.settings.reviews_text }}</span>
+      </div>
+      
+      <h2 class="bw-product-spotlight__heading">
+        {{ section.settings.heading }}
+      </h2>
+
+      <ul class="bw-product-spotlight__features">
+        {%- for block in section.blocks -%}
+          <li class="bw-product-spotlight__feature">
+            <div class="bw-product-spotlight__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            {{ block.settings.title }}
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <p class="bw-product-spotlight__desc">
+        {{ section.settings.text }}
+      </p>
+      
+      <div class="bw-product-spotlight__actions">
+        <a href="{{ section.settings.btn_link }}" class="bw-product-spotlight__btn">
+          {{ section.settings.btn_label }}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <span class="bw-product-spotlight__guarantee">
+          {{ section.settings.guarantee | newline_to_br }}
+        </span>
+      </div>
+    </div>
+
+    <div class="bw-product-spotlight__image-wrap">
+      <div class="bw-product-spotlight__image-inner">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1200 | image_tag: class: 'object-cover', loading: 'lazy' }}
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+        <div class="bw-product-spotlight__image-overlay"></div>
+        
+        <div class="bw-product-spotlight__badge">
+          <div class="bw-product-spotlight__badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <p class="bw-product-spotlight__badge-label">Special Price</p>
+            <p class="bw-product-spotlight__badge-price">
+              {{ section.settings.price }} 
+              <span class="bw-product-spotlight__badge-compare">{{ section.settings.compare_price }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BW Product Spotlight",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    { "type": "text", "id": "reviews_text", "label": "Reviews Text", "default": "4.9 · 5,000+ Reviews" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Dry your hair in <span>half</span> the <span>time.</span>" },
+    { "type": "textarea", "id": "text", "label": "Description", "default": "Tourmaline ceramic. 2200W. Your hair goes from wet to done in under 8 minutes — and actually looks good after." },
+    { "type": "text", "id": "btn_label", "label": "Button Label", "default": "Get the Aura Dryer" },
+    { "type": "url", "id": "btn_link", "label": "Button Link" },
+    { "type": "textarea", "id": "guarantee", "label": "Guarantee Text", "default": "7-Day easy returns\nNo questions asked" },
+    { "type": "image_picker", "id": "image", "label": "Product Image" },
+    { "type": "text", "id": "price", "label": "Price", "default": "₹4,299" },
+    { "type": "text", "id": "compare_price", "label": "Compare at Price", "default": "₹5,499" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Feature Text", "default": "2200W Professional Power" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW Product Spotlight",
+      "blocks": [
+        { "type": "feature", "settings": { "title": "2200W Professional Power" } },
+        { "type": "feature", "settings": { "title": "Tourmaline Ceramic Ionic" } },
+        { "type": "feature", "settings": { "title": "Dries in under 8 minutes" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

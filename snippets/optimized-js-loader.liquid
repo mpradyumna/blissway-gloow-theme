@@ -1,0 +1,22 @@
+{%- comment -%}
+  Optimized JavaScript loader that loads scripts efficiently
+  Usage: {% render 'optimized-js-loader', files: 'file1.js,file2.js', priority: 'high' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign files = files | split: ','
+  assign priority = priority | default: 'normal'
+  assign async = async | default: false
+  assign defer = defer | default: true
+-%}
+
+{%- for file in files -%}
+  {%- assign file = file | strip -%}
+  {%- if file != blank -%}
+    {%- if priority == 'high' -%}
+      <script src="{{ file | asset_url }}"{% if async %} async{% endif %}{% if defer %} defer{% endif %}></script>
+    {%- else -%}
+      <script src="{{ file | asset_url }}"{% if async %} async{% endif %}{% if defer %} defer{% endif %}></script>
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

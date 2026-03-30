@@ -1,0 +1,295 @@
+<style>
+  .footer {
+    
+    padding: 80px 0 40px;
+    border-top: 1px solid rgba(var(--color-foreground), 0.08);
+    
+    font-family: var(--font-body-family);
+    color: rgb(var(--color-foreground));
+  }
+  .footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer__brand {
+    padding-right: 40px;
+  }
+  .footer__logo {
+    
+    font-weight: var(--font-heading-weight);
+    font-family: var(--font-heading-family);
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+  }
+  .footer__logo span {
+    
+    opacity: 0.7;
+  }
+  .footer__tagline {
+    font-size: 0.95rem;
+    
+    line-height: 1.6;
+    font-family: var(--font-body-family);
+  }
+  .footer__heading {
+    font-weight: var(--font-heading-weight);
+    font-family: var(--font-heading-family);
+    margin-bottom: 20px;
+    color: rgb(var(--color-foreground));
+    
+  }
+  .footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer__links li {
+    margin-bottom: 12px;
+  }
+  .footer__links a {
+    
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-family: var(--font-body-family);
+    transition: color 0.3s;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+  .footer__links a:hover {
+    color: rgb(var(--color-foreground));
+  }
+  .footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(var(--color-foreground), 0.08);
+    padding-top: 24px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    
+    font-family: var(--font-body-family);
+  }
+  .footer__payment {
+    display: flex;
+    gap: 10px;
+  }
+  .payment-badge {
+    
+    border: 1px solid rgba(var(--color-foreground), 0.08);
+    
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: var(--font-body-weight-bold);
+    font-family: var(--font-body-family);
+  }
+  .footer__accordion summary {
+    list-style: none;
+  }
+  .footer__accordion summary::-webkit-details-marker {
+    display: none;
+  }
+  .footer__chevron {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .footer__grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .footer__brand {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+    .footer__accordion summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+    }
+    .footer__heading {
+      margin-bottom: 0;
+    }
+    .footer__chevron {
+      display: block;
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      transition: transform 0.3s;
+    }
+    .footer__accordion[open] .footer__chevron {
+      transform: rotate(180deg);
+    }
+    .footer__accordion-content {
+      padding: 16px 0;
+    }
+    .footer__bottom {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+  }
+</style>
+
+<footer class="footer" data-aos="fade-up" aria-label="Site footer">
+  <div class="container color-{{ section.settings.color_scheme }} gradient">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <p class="footer__logo">BLISS<span>WAY</span></p>
+        <p class="footer__tagline">
+          Smart everyday essentials. Curated for Indian homes. Backed by
+          people who use them.
+        </p>
+      </div>
+
+      <details class="footer__accordion" open>
+        <summary>
+          <p class="footer__heading">About</p>
+          <svg class="footer__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </summary>
+        <div class="footer__accordion-content">
+          <ul class="footer__links">
+            <li><a href="/pages/about">Our story</a></li>
+            <li><a href="#">Our philosophy</a></li>
+            <li><a href="#">Journal</a></li>
+            <li><a href="/pages/contact">Contact us</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="footer__accordion" open>
+        <summary>
+          <p class="footer__heading">Shop</p>
+          <svg class="footer__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </summary>
+        <div class="footer__accordion-content">
+          <ul class="footer__links">
+            <li><a href="/collections/all">All products</a></li>
+            <li><a href="#">New arrivals</a></li>
+            <li><a href="#">Bestsellers</a></li>
+            <li><a href="#">Gift cards</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="footer__accordion" open>
+        <summary>
+          <p class="footer__heading">Support</p>
+          <svg class="footer__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </summary>
+        <div class="footer__accordion-content">
+          <ul class="footer__links">
+            <li><a href="#">Track your order</a></li>
+            <li><a href="#">Shipping policy</a></li>
+            <li><a href="#">Returns &amp; exchanges</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="footer__accordion" open>
+        <summary>
+          <p class="footer__heading">Help</p>
+          <svg class="footer__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </summary>
+        <div class="footer__accordion-content">
+          <div style="font-size: 0.9rem;  line-height: 1.6; font-family: var(--font-body-family);">
+            <p>Questions about an order? Write to us at <strong><a href="mailto:care@blissway.online" style=" text-decoration: underline;">care@blissway.online</a></strong></p>
+            <p style="margin-top: 16px;"><a href="#" style=" font-weight: var(--font-heading-weight); text-decoration: underline;">WhatsApp Support</a><br>9:30 AM – 6:00 PM | Mon – Fri</p>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div
+      class="footer__trust"
+      style="
+        margin-top: 64px;
+        padding-top: 40px;
+        border-top: 1px solid rgba(var(--color-foreground), 0.08);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      "
+    >
+      <div style="display: flex; align-items: center; gap: 12px;  font-family: var(--font-body-family);">
+        <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: rgb(var(--color-foreground)); fill: none; stroke-width: 2.5;">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+        <span style="font-size: 0.9rem; font-weight: var(--font-heading-weight)">100% Secure Checkout</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;  font-family: var(--font-body-family);">
+        <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: rgb(var(--color-foreground)); fill: none; stroke-width: 2.5;">
+          <polyline points="1 4 1 10 7 10" />
+          <path d="M3.51 15a9 9 0 1 0 .49-3.44" />
+        </svg>
+        <span style="font-size: 0.9rem; font-weight: var(--font-heading-weight)">7-Day Easy Returns</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;  font-family: var(--font-body-family);">
+        <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: rgb(var(--color-foreground)); fill: none; stroke-width: 2.5;">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        <span style="font-size: 0.9rem; font-weight: var(--font-heading-weight)">Shipped from Bangalore</span>
+      </div>
+    </div>
+
+    <div class="footer__bottom" style="margin-top: 40px">
+      <p>
+        © 2026 Blissway Essentials. All Rights Reserved.
+        <a href="#MainContent" aria-label="Back to top" style="margin-left: 20px; text-decoration: underline; font-weight: var(--font-heading-weight); ">&uarr; Back to Top</a>
+      </p>
+      <div class="footer__payment" aria-label="Accepted payment methods">
+        <span class="payment-badge">UPI</span>
+        <span class="payment-badge">GPay</span>
+        <span class="payment-badge">PhonePe</span>
+        <span class="payment-badge">Paytm</span>
+        <span class="payment-badge">COD</span>
+        <span class="payment-badge">VISA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.footer__accordion').forEach(function(el) {
+        el.setAttribute('open', '');
+        el.querySelector('summary').style.pointerEvents = 'none';
+      });
+    } else {
+      document.querySelectorAll('.footer__accordion').forEach(function(el) {
+        el.removeAttribute('open');
+        el.querySelector('summary').style.pointerEvents = 'auto';
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "BW Footer",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },],
+  "presets": [
+    {
+      "name": "BW Footer"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,147 @@
+<style>
+  .bw-stats {
+    padding: 5rem 0;
+    background: #111;
+    color: #fff;
+    font-family: var(--font-body-family);
+  }
+  .bw-stats__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .bw-stats__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .bw-stats__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .bw-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bw-stat-item__number {
+    font-family: var(--font-heading-family);
+    font-size: calc(var(--font-heading-scale) * 5rem);
+    font-weight: 700;
+    line-height: 1;
+    color: rgb(var(--color-button));
+    margin: 0;
+  }
+  .bw-stat-item__label {
+    
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    margin: 0;
+  }
+</style>
+
+<section class="bw-stats color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="bw-stats__container">
+    <div class="bw-stats__grid">
+      {%- for block in section.blocks -%}
+        {%- assign number_string = block.settings.number | escape -%}
+        {%- assign number_val = number_string | replace: ',', '' | replace: '+', '' | replace: '★', '' | replace: 'K', '' | replace: 'k', '' -%}
+        {%- assign suffix = number_string | replace: number_val, '' | replace: '12000', '' -%}
+        {%- if number_string contains '12,000+' -%}
+          {%- assign number_val = '12000' -%}
+          {%- assign suffix = '+' -%}
+        {%- elsif number_string contains '4.8★' -%}
+          {%- assign number_val = '4.8' -%}
+          {%- assign suffix = '★' -%}
+        {%- elsif number_string contains '5,000+' -%}
+          {%- assign number_val = '5000' -%}
+          {%- assign suffix = '+' -%}
+        {%- endif -%}
+        
+        <div class="bw-stat-item" {{ block.shopify_attributes }}>
+          <p class="bw-stat-item__number">
+            <span class="{% if number_val contains '.' %}counter-float{% else %}counter{% endif %}" data-count="{{ number_val }}">0</span><span>{{ suffix }}</span>
+          </p>
+          <p class="bw-stat-item__label">{{ block.settings.label }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('.counter, .counter-float');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseFloat(el.dataset.count);
+          const isFloat = el.classList.contains('counter-float');
+          const duration = 2000;
+          let startTime = null;
+
+          function updateCounter(currentTime) {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            
+            // Easing function (easeOutExpo)
+            const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const currentVal = target * easeOut;
+
+            if (isFloat) {
+              el.innerText = currentVal.toFixed(1);
+            } else {
+              // Add commas to integers
+              el.innerText = Math.floor(currentVal).toLocaleString('en-IN');
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              el.innerText = isFloat ? target.toFixed(1) : target.toLocaleString('en-IN');
+            }
+          }
+          requestAnimationFrame(updateCounter);
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => observer.observe(c));
+  });
+</script>
+
+{% schema %}
+{
+  "name": "BW Stats",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "12,000+" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Orders delivered" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW Stats",
+      "blocks": [
+        { "type": "stat", "settings": { "number": "12,000+", "label": "Orders delivered" } },
+        { "type": "stat", "settings": { "number": "4.8★", "label": "Average rating" } },
+        { "type": "stat", "settings": { "number": "5,000+", "label": "Happy customers" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

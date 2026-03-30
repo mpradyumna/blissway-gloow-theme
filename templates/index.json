@@ -1,0 +1,536 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "bw_hero_slider": {
+      "type": "bw-hero-slider",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/bw-hero-airluxe-fan.jpg",
+            "eyebrow": "Bestseller — 5,000+ Happy Customers",
+            "heading": "Upgrade your\neveryday.\n<em>Not your budget.</em>",
+            "subheading": "Fans that cool without the noise. Bladeless, silent, safe for kids.",
+            "button_label": "Shop Fans",
+            "link": "shopify://collections/all",
+            "meta_text": "4.8 · 5,000+ verified buyers across India"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/bw-hero-hair-dryer.jpg",
+            "eyebrow": "Premium Hair Care",
+            "heading": "Dry your hair\nin half\n<em>the time.</em>",
+            "subheading": "2200W tourmaline ceramic ionic. 40% faster, visibly less frizz.",
+            "button_label": "Shop Hair Care",
+            "link": "shopify://collections/all",
+            "meta_text": "4.9 · 44 verified reviews"
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/bw-ch-clutch-2.jpg",
+            "eyebrow": "New Arrival",
+            "heading": "Carry everything,\n<em>effortlessly.</em>",
+            "subheading": "Premium bags for real Indian life — smart, stylish, and built to last.",
+            "button_label": "Shop Bags",
+            "link": "shopify://collections/all",
+            "meta_text": "4.7 · 38 verified reviews"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2",
+        "slide_3"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "trust_bar": {
+      "type": "bw-trust-bar",
+      "blocks": {
+        "item_1": {
+          "type": "trust_item",
+          "settings": {
+            "icon_html": "<svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"></path></svg>",
+            "title": "1-Year Warranty",
+            "text": "Hassle-free replacement for any manufacturing defects."
+          }
+        },
+        "item_2": {
+          "type": "trust_item",
+          "settings": {
+            "icon_html": "<svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"></rect><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"></polygon><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"></circle><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"></circle></svg>",
+            "title": "Free Shipping",
+            "text": "On all orders above ₹499, delivered to 12,000+ pin codes."
+          }
+        },
+        "item_3": {
+          "type": "trust_item",
+          "settings": {
+            "icon_html": "<svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"1 4 1 10 7 10\"></polyline><path d=\"M3.51 15a9 9 0 1 0 .49-3.44\"></path></svg>",
+            "title": "7-Day Returns",
+            "text": "Not happy? Send it back within 7 days for a full refund."
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "logo_scroll_brands": {
+      "type": "Logo-scroll",
+      "blocks": {
+        "brand_1": {
+          "type": "image",
+          "settings": {
+            "logo_image_width": 134
+          }
+        },
+        "brand_2": {
+          "type": "image",
+          "settings": {
+            "logo_image_width": 134
+          }
+        },
+        "brand_3": {
+          "type": "image",
+          "settings": {
+            "logo_image_width": 134
+          }
+        },
+        "brand_4": {
+          "type": "image",
+          "settings": {
+            "logo_image_width": 134
+          }
+        }
+      },
+      "block_order": [
+        "brand_1",
+        "brand_2",
+        "brand_3",
+        "brand_4"
+      ],
+      "settings": {
+        "scroll_speed": 15,
+        "color_scheme": "",
+        "fade": false,
+        "background_color": "#ffffff",
+        "announcement_head": "As Featured In",
+        "announcement_head_d": 18,
+        "announcement_head_m": 15,
+        "announcement_color": "#212121",
+        "padding_desktop": 16,
+        "padding_mobile": 8,
+        "padding_item_desktop": 36,
+        "padding_item_mobile": 24,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "alpine_showcase": {
+      "type": "bw-showcase",
+      "blocks": {
+        "cat_1": {
+          "type": "product_tab",
+          "settings": {
+            "title": "All Products",
+            "collection": "frontpage"
+          }
+        },
+        "cat_2": {
+          "type": "product_tab",
+          "settings": {
+            "title": "Fans",
+            "collection": ""
+          }
+        },
+        "cat_3": {
+          "type": "product_tab",
+          "settings": {
+            "title": "Bags",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "cat_1",
+        "cat_2",
+        "cat_3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "image": "shopify://shop_images/bw-showcase-lifestyle.jpg",
+        "eyebrow": "Discover",
+        "heading": "Bestselling Products",
+        "cta_label": "View all",
+        "cta_link": "",
+        "products_to_show": 4,
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true
+      }
+    },
+    "horizontal_scroll": {
+      "type": "bw-horizontal-scroll",
+      "blocks": {
+        "panel_1": {
+          "type": "panel",
+          "settings": {
+            "bg_color": "#f8f9fa",
+            "text_color": "#1d1d1d",
+            "eyebrow": "Curated, Not Just Listed",
+            "eyebrow_color": "#2563eb",
+            "title": "We test everything before it reaches you.",
+            "text": "<p>Every product in our store goes through real-world testing — in actual Indian homes. If it doesn't hold up, it doesn't make the cut.</p>",
+            "list_items": "Used in-house for 30 days | Specs verified | Only 4 products pass",
+            "btn_label": "Browse the collection",
+            "btn_link": "",
+            "btn_bg": "#2563eb",
+            "btn_text_color": "#ffffff"
+          }
+        },
+        "panel_2": {
+          "type": "panel",
+          "settings": {
+            "bg_color": "#2563eb",
+            "text_color": "#ffffff",
+            "eyebrow": "Ships in 24 Hours",
+            "eyebrow_color": "#ffffff",
+            "title": "Order today. Open the box tomorrow.",
+            "text": "<p>We dispatch the same day for orders placed before 3 PM. Pan-India delivery, tracked at every step.</p>",
+            "list_items": "",
+            "btn_label": "Browse the collection",
+            "btn_link": "",
+            "btn_bg": "#ffffff",
+            "btn_text_color": "#2563eb"
+          }
+        },
+        "panel_3": {
+          "type": "panel",
+          "settings": {
+            "bg_color": "#111111",
+            "text_color": "#ffffff",
+            "eyebrow": "Built to Last",
+            "eyebrow_color": "#ffffff",
+            "title": "Quality you can feel.",
+            "text": "<p>Premium materials, proper build quality, and specs that actually match what's in the box.</p>",
+            "list_items": "",
+            "btn_label": "Browse the collection",
+            "btn_link": "",
+            "btn_bg": "#2563eb",
+            "btn_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "panel_1",
+        "panel_2",
+        "panel_3"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "bw_product_spotlight": {
+      "type": "bw-product-spotlight",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "title": "2200W Professional Power"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "title": "Tourmaline Ceramic Ionic"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "title": "Dries in under 8 minutes"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "reviews_text": "4.9 · 5,000+ Reviews",
+        "heading": "Dry your hair in half the time.",
+        "text": "Tourmaline ceramic. 2200W. Your hair goes from wet to done in under 8 minutes — and actually looks good after.",
+        "btn_label": "Get the Aura Dryer",
+        "btn_link": "shopify://products/leafless-supersonic™-hair-dryer-fast-drying-no-heat-damage-5-attachments-7-styling-3-speed-3-heat-settings-travel-friendly-unisex-usage-intelligent-heat-control",
+        "guarantee": "7-Day easy returns\nNo questions asked",
+        "image": "shopify://shop_images/bw-hero-hair-dryer.jpg",
+        "price": "₹4,299",
+        "compare_price": "₹5,499"
+      }
+    },
+    "bw_features_accordion": {
+      "type": "bw-features-accordion",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "title": "Safe for the whole family",
+            "text": "No exposed blades. Kids can touch it. Pets won't get hurt. Sleep with it on — it's that quiet.",
+            "image": "shopify://shop_images/bw-ch-fan-2.jpg"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "sun",
+            "title": "Perfect for Indian summers",
+            "text": "Our waist fan runs 12 hours straight. Through commutes, kitchens, weddings, and everything in between.",
+            "image": "shopify://shop_images/bw-ch-frostclip-1_b30d1599-a21d-460f-bc89-861f7cc09cca.jpg"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "smile",
+            "title": "Your stylist would approve",
+            "text": "Tourmaline ceramic cuts drying time by 40% and leaves less frizz than your old dryer ever could.",
+            "image": "shopify://shop_images/bw-ch-hair-dryer-2_802ca4fb-c42f-4c65-96cb-b785a6878507.jpg"
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "check",
+            "title": "Buy it. Try it. Love it.",
+            "text": "COD on every order. 7-day returns if it's not right. We don't make returning things complicated.",
+            "image": "shopify://shop_images/bw-hero-dumpling-clutch.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "eyebrow": "Why people choose us",
+        "heading": "We source things\nthat actually work."
+      }
+    },
+    "bw_reviews": {
+      "type": "bw-reviews",
+      "settings": {
+        "color_scheme": "",
+        "enable_judgeme": true,
+        "eyebrow": "Real customers. Real words.",
+        "score": "4.8",
+        "subtext": "From 5000+ verified buyers across India"
+      }
+    },
+    "bw_ugc": {
+      "type": "bw-ugc",
+      "blocks": {
+        "ugc_1": {
+          "type": "ugc_image",
+          "settings": {
+            "image": "shopify://shop_images/bw-ch-clutch-2.jpg",
+            "author": "Rahul, Delhi"
+          }
+        },
+        "ugc_2": {
+          "type": "ugc_image",
+          "settings": {
+            "image": "shopify://shop_images/bw-ch-frostclip-2.jpg",
+            "author": "Sneha, Hyderabad"
+          }
+        },
+        "ugc_3": {
+          "type": "ugc_image",
+          "settings": {
+            "image": "shopify://shop_images/bw-blog-travel.jpg",
+            "author": "Karan, Bangalore"
+          }
+        },
+        "ugc_4": {
+          "type": "ugc_image",
+          "settings": {
+            "image": "shopify://shop_images/bw-ch-frostclip-1_b30d1599-a21d-460f-bc89-861f7cc09cca.jpg",
+            "author": "Priya, Mumbai"
+          }
+        }
+      },
+      "block_order": [
+        "ugc_1",
+        "ugc_2",
+        "ugc_3",
+        "ugc_4"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "eyebrow": "Real Stories",
+        "heading": "From real Indian homes."
+      }
+    },
+    "bw_our_philosophy": {
+      "type": "bw-our-philosophy",
+      "settings": {
+        "color_scheme": "",
+        "bg_image": "shopify://shop_images/about-lifestyle.jpg",
+        "eyebrow": "Our Philosophy",
+        "heading": "\"We don't list products. We live with them first — and only sell what we'd recommend to our own families.\"",
+        "text": "<p>Every product in the Blissway catalogue is tested in real Indian homes before it ships. If it doesn't hold up to daily life — the heat, the humidity, the long hours — it doesn't make the cut.</p>",
+        "button_label": "Our Story & Standards",
+        "button_link": ""
+      }
+    },
+    "bw_stats": {
+      "type": "bw-stats",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "12,000+",
+            "label": "Orders delivered"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "4.8★",
+            "label": "Average rating"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "5,000+",
+            "label": "Happy customers"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "bw_journal": {
+      "type": "bw-journal",
+      "settings": {
+        "color_scheme": "",
+        "eyebrow": "Blissway Journal",
+        "heading": "Insights for the modern home.",
+        "btn_label": "View all articles",
+        "btn_link": "",
+        "blog": "news",
+        "post_limit": 3
+      }
+    },
+    "bw_prepaid_offer": {
+      "type": "bw-prepaid-offer",
+      "settings": {
+        "color_scheme": "",
+        "eyebrow": "EXCLUSIVE OFFER",
+        "heading": "Extra 5% Off on Prepaid",
+        "text": "Pay via UPI, Cards, or Wallets and unlock instant savings on every order. Cash on Delivery available (but excludes this discount).",
+        "btn_label": "Shop Now & Save",
+        "btn_link": "shopify://collections/all"
+      }
+    },
+    "bw_faq": {
+      "type": "bw-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is delivery really free?",
+            "answer": "Yes, we offer free delivery across India on all orders above ₹499. No hidden charges."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "How does the 7-day return policy work?",
+            "answer": "If you are not 100% satisfied, you can return your product within 7 days of delivery for a full refund."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you offer Cash on Delivery (COD)?",
+            "answer": "Yes! You can choose to pay when the product arrives at your doorstep."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "eyebrow": "Got Questions?",
+        "heading": "Frequently Asked Questions"
+      }
+    },
+    "newsletter_card": {
+      "type": "bw-newsletter",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "Join the club",
+        "heading": "10% off your first order.",
+        "text": "<p>Drop your email. Get the discount. We only send things worth reading — new launches, restocks, and deals that are actually good.</p>",
+        "placeholder": "your@email.com",
+        "button_label": "Get My 10% Off",
+        "bottom_note": "No spam, ever. Unsubscribe with one click."
+      }
+    }
+  },
+  "order": [
+    "bw_hero_slider",
+    "trust_bar",
+    "logo_scroll_brands",
+    "alpine_showcase",
+    "horizontal_scroll",
+    "bw_product_spotlight",
+    "bw_features_accordion",
+    "bw_reviews",
+    "bw_ugc",
+    "bw_our_philosophy",
+    "bw_stats",
+    "bw_journal",
+    "bw_prepaid_offer",
+    "bw_faq",
+    "newsletter_card"
+  ]
+}

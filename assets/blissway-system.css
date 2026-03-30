@@ -1,0 +1,664 @@
+/* ═══════════════════════════════════════════════════════════
+   BLISSWAY DESIGN SYSTEM v1.0 — Gloow-16-5-2
+   Style: Liquid Glass + Futuristic Premium
+   Inspiration: Alpine-level product clarity + futuristic tech
+   Typography: Orbitron (display) + Exo 2 (body)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── 1. Google Fonts ─────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ─── 2. Design Tokens ────────────────────────────────────── */
+:root {
+  /* Brand Colors */
+  --bw-bg:             #F5F5F5;
+  --bw-surface:        #FFFFFF;
+  --bw-surface-raised: #FAFAFA;
+  --bw-primary:        #2563EB;
+  --bw-primary-dk:     #1D4ED8;
+  --bw-primary-lt:     rgba(37, 99, 235, 0.08);
+  --bw-primary-glow:   rgba(37, 99, 235, 0.18);
+  --bw-accent:         #1D1D1D;
+  --bw-text:           #1D1D1D;
+  --bw-text-muted:     rgba(29, 29, 29, 0.52);
+  --bw-border:         rgba(29, 29, 29, 0.08);
+  --bw-border-blue:    rgba(37, 99, 235, 0.18);
+  --bw-success:        #10B981;
+  --bw-warning:        #F59E0B;
+
+  /* Elevation / Shadows */
+  --bw-shadow-xs:   0 1px 4px rgba(0, 0, 0, 0.04);
+  --bw-shadow-sm:   0 2px 8px rgba(37, 99, 235, 0.06);
+  --bw-shadow:      0 4px 24px rgba(37, 99, 235, 0.10);
+  --bw-shadow-lg:   0 16px 48px rgba(37, 99, 235, 0.16);
+  --bw-shadow-card: 0 2px 12px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(37, 99, 235, 0.05);
+
+  /* Typography */
+  --bw-font-display: 'Orbitron', 'SF Pro Display', system-ui, sans-serif;
+  --bw-font-body:    'Exo 2', 'SF Pro Text', system-ui, sans-serif;
+
+  /* Fluid Type Scale */
+  --bw-text-xs:    clamp(0.6875rem, 1.5vw,  0.75rem);
+  --bw-text-sm:    clamp(0.8125rem, 1.8vw,  0.875rem);
+  --bw-text-base:  clamp(0.9375rem, 2.2vw,  1rem);
+  --bw-text-lg:    clamp(1rem,      2.5vw,  1.125rem);
+  --bw-text-xl:    clamp(1.125rem,  3vw,    1.25rem);
+  --bw-text-2xl:   clamp(1.25rem,   3.5vw,  1.5rem);
+  --bw-text-3xl:   clamp(1.5rem,    4.5vw,  2rem);
+  --bw-text-4xl:   clamp(1.875rem,  6vw,    2.75rem);
+  --bw-text-5xl:   clamp(2.25rem,   8vw,    4rem);
+  --bw-text-hero:  clamp(2.5rem,    10vw,   5.5rem);
+
+  /* Spacing */
+  --bw-section-gap: clamp(56px, 9vw, 104px);
+  --bw-gap:         clamp(16px, 3vw,  24px);
+  --bw-radius:      12px;
+  --bw-radius-lg:   20px;
+  --bw-radius-xl:   32px;
+
+  /* Motion */
+  --bw-ease:      cubic-bezier(0.16, 1, 0.3, 1);
+  --bw-ease-in:   cubic-bezier(0.4, 0, 1, 1);
+  --bw-dur-fast:  150ms;
+  --bw-dur:       250ms;
+  --bw-dur-slow:  420ms;
+
+  /* Z-index */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 40;
+  --z-modal:   100;
+  --z-toast:   1000;
+}
+
+/* ─── 3. Global Background Reset ─────────────────────────── */
+body,
+#MainContent,
+main,
+.shopify-section {
+  background-color: var(--bw-bg) !important;
+}
+
+/* Kill the purple gradient Gloow ships with */
+body.gradient,
+.gradient:not(.card):not(.button):not(.badge) {
+  background: var(--bw-bg) !important;
+  background-image: none !important;
+}
+
+.color-background-1,
+.color-background-1.gradient,
+[class*="color-scheme-"] {
+  background-color: var(--bw-bg) !important;
+  background-image: none !important;
+}
+
+/* White surfaces: cards, panels, drawers stay white */
+.card,
+.card--product,
+.card__inner,
+.product-form,
+.cart-drawer__inner,
+.predictive-search,
+.global-settings-popup {
+  background-color: var(--bw-surface) !important;
+}
+
+/* ─── 4. Typography System ────────────────────────────────── */
+body,
+p,
+li,
+span:not([class*="icon"]),
+.body,
+label,
+input,
+textarea,
+select,
+.card__information,
+.price,
+.caption,
+[class*="text-body"] {
+  font-family: var(--bw-font-body) !important;
+  font-size: var(--bw-text-base);
+  color: var(--bw-text);
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4,
+.card__heading,
+.section__header .title,
+[class*="heading"],
+.announcement__title {
+  font-family: var(--bw-font-display) !important;
+  color: var(--bw-text) !important;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+h1, .h1 { font-size: var(--bw-text-5xl); font-weight: 700; }
+h2, .h2 { font-size: var(--bw-text-4xl); font-weight: 600; }
+h3, .h3 { font-size: var(--bw-text-3xl); font-weight: 600; }
+h4, .h4 { font-size: var(--bw-text-2xl); font-weight: 500; }
+h5, .h5 { font-size: var(--bw-text-xl);  font-weight: 500; }
+h6, .h6 { font-size: var(--bw-text-lg);  font-weight: 500; }
+
+/* Hero / Display text */
+.hero__heading,
+.slideshow__text h2,
+.lumin-hero__title,
+[class*="hero"] h1,
+[class*="hero"] h2 {
+  font-size: var(--bw-text-hero) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* Label / overline utility */
+.bw-label {
+  font-family: var(--bw-font-body) !important;
+  font-size: var(--bw-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bw-primary);
+}
+
+/* ─── 5. Links ────────────────────────────────────────────── */
+a {
+  color: var(--bw-primary);
+  transition: color var(--bw-dur-fast) var(--bw-ease);
+}
+
+a:hover {
+  color: var(--bw-primary-dk);
+}
+
+/* ─── 6. Button System ────────────────────────────────────── */
+.button,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--bw-font-body) !important;
+  font-size: var(--bw-text-sm) !important;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  min-height: 48px;
+  padding: 0 1.75rem;
+  border-radius: var(--bw-radius) !important;
+  cursor: pointer;
+  transition: all var(--bw-dur) var(--bw-ease) !important;
+  touch-action: manipulation;
+}
+
+/* Primary button */
+.button:not(.button--secondary):not(.button--tertiary):not(.button--link),
+[class*="button--primary"] {
+  background: var(--bw-primary) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.28) !important;
+}
+
+.button:not(.button--secondary):not(.button--tertiary):not(.button--link):hover,
+[class*="button--primary"]:hover {
+  background: var(--bw-primary-dk) !important;
+  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.38) !important;
+  transform: translateY(-1px);
+}
+
+/* Secondary / Ghost button */
+.button--secondary {
+  background: transparent !important;
+  color: var(--bw-primary) !important;
+  border: 1.5px solid var(--bw-primary) !important;
+  box-shadow: none !important;
+}
+
+.button--secondary:hover {
+  background: var(--bw-primary-lt) !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile: full-width primary actions */
+@media (max-width: 749px) {
+  .product-form__submit,
+  .cart__checkout-button,
+  .shopify-payment-button__button {
+    width: 100% !important;
+  }
+}
+
+/* ─── 7. Card System ──────────────────────────────────────── */
+.card-wrapper {
+  border-radius: var(--bw-radius-lg) !important;
+  overflow: hidden;
+  background: var(--bw-surface) !important;
+  box-shadow: var(--bw-shadow-card) !important;
+  transition: box-shadow var(--bw-dur) var(--bw-ease),
+              transform var(--bw-dur) var(--bw-ease) !important;
+}
+
+.card-wrapper:hover {
+  box-shadow: var(--bw-shadow-lg) !important;
+  transform: translateY(-3px);
+}
+
+.card--product .card__inner {
+  border-radius: var(--bw-radius-lg) var(--bw-radius-lg) 0 0 !important;
+}
+
+/* Product card image aspect ratio */
+.card__media,
+.card--product .media {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.card__media img,
+.card--product .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 500ms var(--bw-ease);
+  background-color: #fdfdfd;
+}
+
+.card-wrapper:hover .card__media img,
+.card-wrapper:hover .card--product .media img {
+  transform: scale(1.04);
+}
+
+/* ─── 8. Product Prices ───────────────────────────────────── */
+.price__sale .price-item--sale,
+.price--on-sale .price-item--sale {
+  color: var(--bw-primary) !important;
+  font-weight: 700;
+}
+
+.price__compare .price-item--regular,
+.price--on-sale .price-item--regular {
+  color: var(--bw-text-muted) !important;
+  text-decoration: line-through;
+  font-size: 0.875em;
+}
+
+.price {
+  font-family: var(--bw-font-body) !important;
+  font-size: var(--bw-text-lg) !important;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── 9. Header ───────────────────────────────────────────── */
+.header {
+  background: rgba(245, 245, 245, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid var(--bw-border) !important;
+}
+
+.header__heading-link,
+.header__menu-item,
+.header__menu-item a,
+.header__icon,
+.header__icon-wrapper {
+  font-family: var(--bw-font-body) !important;
+  font-weight: 500;
+  color: var(--bw-text) !important;
+  font-size: var(--bw-text-sm) !important;
+  letter-spacing: 0.04em;
+}
+
+.header__menu-item:hover,
+.header__menu-item a:hover {
+  color: var(--bw-primary) !important;
+}
+
+/* ─── 10. Announcement Bar ────────────────────────────────── */
+.announcement-bar,
+.announcement-bar__link,
+.announcement-bar p,
+.scrolling-promotions,
+.scrolling-promotions__item {
+  background: var(--bw-primary) !important;
+  color: #FFFFFF !important;
+  font-family: var(--bw-font-body) !important;
+  font-size: var(--bw-text-sm) !important;
+}
+
+.announcement-bar a {
+  color: #FFFFFF !important;
+}
+
+/* ─── 11. Section Spacing ─────────────────────────────────── */
+.shopify-section {
+  padding-top: var(--bw-section-gap);
+  padding-bottom: var(--bw-section-gap);
+}
+
+/* Sections that should bleed to edges */
+.shopify-section:has(.lumin-hero),
+.shopify-section:has(.slideshow),
+.shopify-section:has(.image-banner),
+.shopify-section:has(.announcement-bar),
+.shopify-section:has(.scrolling-promotions) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ─── 12. Input Fields ────────────────────────────────────── */
+.field__input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+textarea,
+select {
+  font-family: var(--bw-font-body) !important;
+  font-size: var(--bw-text-base) !important;
+  color: var(--bw-text) !important;
+  background: var(--bw-surface) !important;
+  border: 1.5px solid var(--bw-border) !important;
+  border-radius: var(--bw-radius) !important;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  transition: border-color var(--bw-dur-fast) var(--bw-ease),
+              box-shadow var(--bw-dur-fast) var(--bw-ease);
+}
+
+.field__input:focus,
+input:focus,
+textarea:focus {
+  border-color: var(--bw-primary) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
+  outline: none !important;
+}
+
+/* ─── 13. Scroll-Driven Reveal (Zero JS) ──────────────────── */
+@keyframes bw-reveal-up {
+  from {
+    opacity: 0;
+    translate: 0 48px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes bw-reveal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bw-clip-reveal {
+  from { clip-path: inset(0 100% 0 0 round 4px); }
+  to   { clip-path: inset(0 0%   0 0 round 4px); }
+}
+
+/* Apply entrance animations via view() timeline — zero JS */
+.shopify-section:not(:first-child) .section-content,
+.shopify-section:not(:first-child) .page-width > *:not(style):not(script) {
+  animation: bw-reveal-up linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
+}
+
+/* Stagger grid children */
+.collection-product-list > *,
+.product-grid > *,
+.lumin-grid > * {
+  animation: bw-reveal-up linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 40%;
+}
+
+.collection-product-list > *:nth-child(2),
+.product-grid > *:nth-child(2) { animation-delay: 80ms; }
+.collection-product-list > *:nth-child(3),
+.product-grid > *:nth-child(3) { animation-delay: 160ms; }
+.collection-product-list > *:nth-child(4),
+.product-grid > *:nth-child(4) { animation-delay: 240ms; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ─── 14. Judge.me Review Widget Styling ──────────────────── */
+#judgeme-product-reviews,
+.jdgm-widget,
+.jdgm-rev-widg,
+.jdgm-carousel-widget {
+  font-family: var(--bw-font-body) !important;
+  background: transparent !important;
+}
+
+.jdgm-rev__title,
+.jdgm-rev__author,
+.jdgm-summary__rating,
+.jdgm-carousel__heading {
+  font-family: var(--bw-font-display) !important;
+  color: var(--bw-text) !important;
+}
+
+.jdgm-rev__body,
+.jdgm-rev__timestamp {
+  font-family: var(--bw-font-body) !important;
+  color: var(--bw-text-muted) !important;
+  line-height: 1.65;
+}
+
+.jdgm-write-rev-link,
+.jdgm-paginate__arrow,
+.jdgm-paginate__page {
+  color: var(--bw-primary) !important;
+  border-color: var(--bw-border-blue) !important;
+  font-family: var(--bw-font-body) !important;
+}
+
+.jdgm-paginate__page.jdgm-paginate__page--active,
+.jdgm-write-rev-link:hover {
+  background: var(--bw-primary) !important;
+  color: #FFFFFF !important;
+}
+
+/* Judge.me star color — warm amber for trust */
+.jdgm-star,
+.jdgm-preview-badge .jdgm-star,
+.jdgm-rev__stars .jdgm-star {
+  color: #F59E0B !important;
+}
+
+/* Review cards */
+.jdgm-rev {
+  border: 1px solid var(--bw-border) !important;
+  border-radius: var(--bw-radius) !important;
+  padding: 1.5rem !important;
+  background: var(--bw-surface) !important;
+  transition: box-shadow var(--bw-dur) var(--bw-ease);
+}
+
+.jdgm-rev:hover {
+  box-shadow: var(--bw-shadow) !important;
+}
+
+/* Preview badge (star rating on product cards / PDPs) */
+.jdgm-preview-badge {
+  font-family: var(--bw-font-body) !important;
+  font-size: var(--bw-text-sm) !important;
+}
+
+/* ─── 15. Pagination ──────────────────────────────────────── */
+.pagination__list a,
+.pagination .page-link {
+  font-family: var(--bw-font-body) !important;
+  color: var(--bw-primary) !important;
+  border-color: var(--bw-border) !important;
+  border-radius: 8px !important;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.pagination__list .current,
+.pagination .page-link--current {
+  background: var(--bw-primary) !important;
+  color: #FFFFFF !important;
+  border-color: var(--bw-primary) !important;
+}
+
+/* ─── 16. Accessibility — Focus States ───────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--bw-primary) !important;
+  outline-offset: 3px !important;
+  border-radius: 4px;
+}
+
+/* ─── 17. Trust Badges Strip ─────────────────────────────── */
+.trust-badges,
+.trust-badges__list {
+  border-top: 1px solid var(--bw-border);
+  border-bottom: 1px solid var(--bw-border);
+  background: var(--bw-surface) !important;
+  font-family: var(--bw-font-body) !important;
+}
+
+.trust-badges__icon svg path {
+  fill: var(--bw-primary) !important;
+}
+
+/* ─── 18. Footer ──────────────────────────────────────────── */
+.footer {
+  background: var(--bw-accent) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.footer__heading,
+.footer h2,
+.footer h3 {
+  font-family: var(--bw-font-display) !important;
+  color: #FFFFFF !important;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.footer a:hover {
+  color: #FFFFFF !important;
+}
+
+.footer input[type="email"] {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.20) !important;
+  color: #FFFFFF !important;
+}
+
+.footer input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+/* ─── 19. Badge / Tags ────────────────────────────────────── */
+.badge,
+.card__badge,
+[class*="badge"] {
+  font-family: var(--bw-font-body) !important;
+  font-size: var(--bw-text-xs) !important;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 6px !important;
+}
+
+.badge--sale,
+[class*="badge--sale"] {
+  background: var(--bw-primary) !important;
+  color: #FFFFFF !important;
+}
+
+/* ─── 20. Collection hero ─────────────────────────────────── */
+.main-collection-banner {
+  background: var(--bw-bg) !important;
+}
+
+.main-collection-banner h1 {
+  font-size: var(--bw-text-5xl);
+  font-family: var(--bw-font-display) !important;
+  color: var(--bw-text) !important;
+}
+
+/* ─── 21. Product page ────────────────────────────────────── */
+.product__title {
+  font-family: var(--bw-font-display) !important;
+  font-size: var(--bw-text-4xl) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em;
+}
+
+.product__description,
+.product__description * {
+  font-family: var(--bw-font-body) !important;
+  line-height: 1.75;
+  color: var(--bw-text-muted);
+}
+
+.product__accordion .accordion__title {
+  font-family: var(--bw-font-body) !important;
+  font-weight: 600;
+}
+
+/* Sticky ATC mobile */
+@media (max-width: 749px) {
+  .product-form__submit {
+    position: sticky;
+    bottom: 0;
+    z-index: var(--z-raised);
+  }
+}
+
+/* ─── 22. Responsive Breakpoints Reference ────────────────── */
+/* 375px  — mobile (base) */
+/* 768px  — tablet   @media (min-width: 750px)  */
+/* 1280px — desktop  @media (min-width: 1280px) */
+
+@media (min-width: 750px) {
+  :root {
+    --bw-gap: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --bw-gap: 32px;
+  }
+}
+
+/* ─── 23. Utility Classes ─────────────────────────────────── */
+.bw-surface {
+  background: var(--bw-surface);
+  border-radius: var(--bw-radius-lg);
+  box-shadow: var(--bw-shadow-card);
+}
+
+.bw-glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--bw-radius-lg);
+}
+
+.bw-text-primary { color: var(--bw-primary) !important; }
+.bw-text-muted   { color: var(--bw-text-muted) !important; }
+.bw-text-display { font-family: var(--bw-font-display) !important; }
+.bw-text-body    { font-family: var(--bw-font-body) !important; }

@@ -1,0 +1,633 @@
+{%- style -%}
+  .bw-showcase {
+    display: flex;
+    align-items: flex-start;
+    background-color: rgb(var(--color-background));
+    position: relative;
+  }
+
+  /* ── Left sticky lifestyle panel ── */
+  .bw-showcase__left {
+    position: sticky;
+    top: 0;
+    width: 42%;
+    height: 100vh;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .bw-showcase__left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .bw-showcase__left-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(var(--color-foreground), 0.68) 0%, rgba(var(--color-foreground), 0.04) 55%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+  }
+
+  .bw-showcase__eyebrow {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin: 0 0 0.5rem;
+  }
+
+  .bw-showcase__heading {
+    font-family: var(--font-heading-family);
+    font-size: calc(var(--font-heading-scale) * 3.5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 0.95;
+    margin: 0 0 1.75rem;
+  }
+
+  .bw-showcase__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 0.2rem;
+    width: fit-content;
+    transition: border-color 0.25s;
+  }
+  .bw-showcase__cta:hover { border-color: #fff; }
+
+  /* ── Right: filters + grid ── */
+  .bw-showcase__right {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .bw-showcase__filters {
+    display: flex;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+    padding: 2rem 2rem 1.5rem;
+  }
+
+  .bw-showcase__filter-btn {
+    padding: 0.6rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    font-family: inherit;
+    background-color: rgb(var(--color-background));
+    color: rgba(29,29,29,0.55);
+  }
+
+  .bw-showcase__filter-btn.active {
+    background: rgb(var(--color-button));
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+  }
+
+  .bw-showcase__filter-btn:not(.active):hover {
+    background: rgba(37,99,235,0.08);
+    color: rgb(var(--color-button));
+  }
+
+  .bw-showcase__grid {
+    padding: 0 2rem 3rem;
+  }
+
+  .bw-showcase__grid-inner {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .bw-showcase__grid-inner.active {
+    display: grid;
+  }
+
+  /* Theme card styling integration */
+  .bw-showcase__grid-inner .card-wrapper {
+    height: 100%;
+  }
+
+  /* ── Custom Product Card ── */
+  .bw-card {
+    background-color: rgb(var(--color-background));
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(var(--color-foreground), 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(var(--color-foreground), 0.04);
+    height: 100%;
+  }
+
+  .bw-card:hover {
+    box-shadow: 0 12px 24px rgba(var(--color-foreground), 0.12);
+    transform: translateY(-4px);
+  }
+
+  .bw-card__image-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    
+    overflow: hidden;
+  }
+
+  .bw-card__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 24px;
+    transition: transform 0.6s ease;
+  }
+
+  .bw-card:hover .bw-card__image-wrap img {
+    transform: scale(1.08);
+  }
+
+  .bw-card__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: rgb(var(--color-badge-background));
+    color: rgb(var(--color-badge-foreground));
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 99px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 4px 12px rgba(var(--color-foreground), 0.1);
+  }
+
+  .bw-card__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .bw-card__stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+  }
+
+  .bw-card__stars-icons {
+    color: #fbbf24;
+  }
+
+  .bw-card__reviews {
+    font-weight: 700;
+    font-size: 0.65rem;
+    color: rgba(29,29,29,0.4);
+  }
+
+  .bw-card__title {
+    
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    color: rgb(var(--color-foreground));
+  }
+
+  .bw-card:hover .bw-card__title {
+    color: rgb(var(--color-button));
+  }
+
+  .bw-card__prices {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .bw-card__price {
+    
+    font-weight: 700;
+    color: rgb(var(--color-foreground));
+  }
+
+  .bw-card__compare {
+    font-size: 0.85rem;
+    color: rgba(29,29,29,0.4);
+    text-decoration: line-through;
+  }
+
+  .bw-card__bottom {
+    margin-top: auto;
+  }
+
+  .bw-card__delivery {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #059669;
+    background: #ecfdf5;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #d1fae5;
+    margin-bottom: 12px;
+  }
+
+  .bw-card__delivery svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .bw-card__btn {
+    width: 100%;
+    background-color: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .bw-card__btn:hover {
+    opacity: 0.85;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 767px) {
+    .bw-showcase {
+      flex-direction: column;
+    }
+
+    .bw-showcase__left {
+      position: relative;
+      width: 100%;
+      height: 80vw;
+      flex-shrink: 0;
+    }
+
+    .bw-showcase__left-overlay {
+      padding: 1.5rem;
+    }
+
+    .bw-showcase__heading {
+      font-size: 2.2rem;
+    }
+
+    .bw-showcase__right {
+      width: 100%;
+    }
+
+    .bw-showcase__filters {
+      padding: 1.25rem 1rem 1rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .bw-showcase__filters::-webkit-scrollbar { display: none; }
+
+    .bw-showcase__grid {
+      padding: 0 1rem 2rem;
+    }
+
+    .bw-showcase__grid-inner.active {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .bw-showcase__grid-inner.active::-webkit-scrollbar { display: none; }
+
+    .bw-showcase__grid-inner > * {
+      flex: 0 0 82vw;
+      scroll-snap-align: start;
+    }
+  }
+{%- endstyle -%}
+
+<section class="bw-showcase color-{{ section.settings.color_scheme }} gradient" id="Showcase-{{ section.id }}" data-section-id="{{ section.id }}">
+  <!-- Left: Sticky lifestyle panel -->
+  <div class="bw-showcase__left">
+    {%- if section.settings.image != blank -%}
+      {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: section.settings.heading }}
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+    
+    <div class="bw-showcase__left-overlay">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="bw-showcase__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      
+      {%- if section.settings.heading != blank -%}
+        <h2 class="bw-showcase__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_link }}" class="bw-showcase__cta">
+          {{ section.settings.cta_label }}
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <!-- Right: Filters + product grid -->
+  <div class="bw-showcase__right">
+    <div class="bw-showcase__filters" role="tablist">
+      {%- for block in section.blocks -%}
+        <button 
+          class="bw-showcase__filter-btn {% if forloop.first %}active{% endif %}" 
+          role="tab" 
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          data-tab-index="{{ forloop.index0 }}"
+          {{ block.shopify_attributes }}
+        >
+          {{ block.settings.title }}
+        </button>
+      {%- endfor -%}
+    </div>
+
+    <div class="bw-showcase__grid" id="ProductGrid-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="bw-showcase__grid-inner {% if forloop.first %}active{% endif %}" data-tab-content="{{ forloop.index0 }}">
+          {%- if block.settings.collection != blank -%}
+            {%- for product in block.settings.collection.products limit: section.settings.products_to_show -%}
+              <div class="bw-showcase__item">
+                  <div class="bw-card">
+                    <a href="{{ product.url }}" class="bw-card__link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex: 1;">
+                      <div class="bw-card__image-wrap">
+                        {%- if product.featured_media -%}
+                          <img src="{{ product.featured_media | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
+                        {%- else -%}
+                          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {%- endif -%}
+                        
+                        {%- if product.available == false -%}
+                          <span class="bw-card__badge" style="background-color: rgb(var(--color-background-contrast, var(--color-foreground))); color: rgb(var(--color-background));">Sold Out</span>
+                        {%- elsif product.compare_at_price > product.price -%}
+                          <span class="bw-card__badge">Sale</span>
+                        {%- elsif product.tags contains 'Bestseller' -%}
+                          <span class="bw-card__badge">Bestseller</span>
+                        {%- endif -%}
+                      </div>
+                      
+                      <div class="bw-card__content">
+                        <div class="bw-card__stars">
+                          <div class="bw-card__stars-icons">★★★★★</div>
+                          <span class="bw-card__reviews">(4.8)</span>
+                        </div>
+                        
+                        <h3 class="bw-card__title">{{ product.title }}</h3>
+                        
+                        <div class="bw-card__prices">
+                          <span class="bw-card__price">{{ product.price | money_without_trailing_zeros }}</span>
+                          {%- if product.compare_at_price > product.price -%}
+                            <span class="bw-card__compare">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    </a>
+
+                    <div class="bw-card__bottom" style="padding: 0 20px 20px;">
+                      <div class="bw-card__delivery">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        FREE DELIVERY BY THURSDAY
+                      </div>
+                      
+                      <product-form class="product-form" data-cart-type="toast">
+                        {%- assign product_form_id = 'quick-add-' | append: section.id | append: product.id -%}
+                        {%- form 'product', product, id: product_form_id, class: 'bw-card__form form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="product-variant-id">
+                          <button type="submit" name="add" class="bw-card__btn quick-add__submit" {% unless product.available %}disabled{% endunless %} aria-haspopup="dialog" aria-live="polite" data-sold-out-message="true">
+                            <span>{% if product.available %}Add to Cart{% else %}Sold Out{% endif %}</span>
+                            <div class="loading__spinner hidden">
+                              <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                              </svg>
+                            </div>
+                          </button>
+                        {%- endform -%}
+                      </product-form>
+                    </div>
+                  </div>
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            {%- for i in (1..section.settings.products_to_show) -%}
+              <div class="bw-showcase__item">
+                {%- assign placeholder_image = 'product-' | append: forloop.index -%}
+                <div class="bw-card">
+                  <div class="bw-card__image-wrap">
+                    {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                  
+                  <div class="bw-card__content">
+                    <div class="bw-card__stars">
+                      <div class="bw-card__stars-icons">★★★★★</div>
+                      <span class="bw-card__reviews">(0)</span>
+                    </div>
+                    <h3 class="bw-card__title">Sample Product</h3>
+                    <div class="bw-card__prices">
+                      <span class="bw-card__price">₹2,499</span>
+                      <span class="bw-card__compare">₹3,999</span>
+                    </div>
+                    <div class="bw-card__bottom">
+                      <div class="bw-card__delivery">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        FREE DELIVERY BY THURSDAY
+                      </div>
+                      <button class="bw-card__btn">Add to Cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('#Showcase-{{ section.id }}');
+    const buttons = section.querySelectorAll('.bw-showcase__filter-btn');
+    const contents = section.querySelectorAll('.bw-showcase__grid-inner');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (button.classList.contains('active')) return;
+
+        // UI Feedback
+        buttons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        
+        const tabIndex = button.dataset.tabIndex;
+
+        contents.forEach(content => {
+          if (content.dataset.tabContent === tabIndex) {
+            content.style.display = 'grid';
+            content.classList.add('active');
+          } else {
+            content.style.display = 'none';
+            content.classList.remove('active');
+          }
+        });
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "BW - Alpine Showcase",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    {
+      "type": "header",
+      "content": "Lifestyle Panel (Left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Lifestyle Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Discover"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Bestselling Products"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label",
+      "default": "View all"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "header",
+      "content": "Product Grid (Right)"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Products to show"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        { "value": "adapt", "label": "Adapt to image" },
+        { "value": "portrait", "label": "Portrait" },
+        { "value": "square", "label": "Square" }
+      ],
+      "default": "square",
+      "label": "Image ratio"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "Show second image on hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "Show product rating"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": false,
+      "label": "Enable quick add button"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_tab",
+      "name": "Product Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab Name",
+          "default": "Tab Name"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW - Alpine Showcase",
+      "blocks": [
+        { "type": "product_tab", "settings": { "title": "All Products" } },
+        { "type": "product_tab", "settings": { "title": "Fans" } },
+        { "type": "product_tab", "settings": { "title": "Bags" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

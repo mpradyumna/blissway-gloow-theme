@@ -1,0 +1,28 @@
+{%- comment -%}
+  Optimized CSS loader that combines multiple CSS files and loads them efficiently
+  Usage: {% render 'optimized-css-loader', files: 'file1.css,file2.css', critical: true %}
+{%- endcomment -%}
+
+{%- liquid
+  assign files = files | split: ','
+  assign critical = critical | default: false
+  assign media = media | default: 'all'
+-%}
+
+{%- if critical -%}
+  {%- comment -%} Load critical CSS immediately {%- endcomment -%}
+  {%- for file in files -%}
+    {%- assign file = file | strip -%}
+    {%- if file != blank -%}
+      {{ file | asset_url | stylesheet_tag: preload: true }}
+    {%- endif -%}
+  {%- endfor -%}
+{%- else -%}
+  {%- comment -%} Load non-critical CSS normally {%- endcomment -%}
+  {%- for file in files -%}
+    {%- assign file = file | strip -%}
+    {%- if file != blank -%}
+      {{ file | asset_url | stylesheet_tag }}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

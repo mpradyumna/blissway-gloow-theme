@@ -1,0 +1,188 @@
+{%- style -%}
+  .bw-center-feature {
+    padding: 100px 0;
+    background: #F3F4F6;
+    text-align: center;
+  }
+
+  .bw-center-feature-title {
+    font-family: var(--bw-font-display);
+    font-size: calc(var(--font-heading-scale) * 3rem);
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: var(--bw-text);
+  }
+
+  .bw-center-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 992px) {
+    .bw-center-feature-grid {
+      grid-template-columns: 1fr auto 1fr;
+      gap: 20px;
+      text-align: left;
+    }
+  }
+
+  .bw-center-feature-col {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (min-width: 992px) {
+    .bw-center-feature-col:first-child {
+      text-align: right;
+    }
+  }
+
+  .bw-center-feature-item-title {
+    
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--bw-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .bw-center-feature-item-text {
+    font-size: 1rem;
+    color: var(--bw-text-2);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .bw-center-feature-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 991px) {
+    .bw-center-feature-image {
+      order: -1;
+    }
+  }
+{%- endstyle -%}
+
+<section class="bw-center-feature color-{{ section.settings.color_scheme }} gradient" data-aos="fade-up">
+  <div class="bw-container">
+    {%- if section.settings.subheading != blank -%}
+      <p class="bw-label" style="margin-bottom: 12px;">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+    {%- if section.settings.title != blank -%}
+      <h2 class="bw-center-feature-title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    <div class="bw-center-feature-grid">
+      <!-- Left Column -->
+      <div class="bw-center-feature-col">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'feature' and block.settings.column == 'left' -%}
+            <div class="bw-center-feature-item" {{ block.shopify_attributes }}>
+              <h3 class="bw-center-feature-item-title">{{ block.settings.title }}</h3>
+              <p class="bw-center-feature-item-text">{{ block.settings.text }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      <!-- Center Image -->
+      <div class="bw-center-feature-image">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      <!-- Right Column -->
+      <div class="bw-center-feature-col">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'feature' and block.settings.column == 'right' -%}
+            <div class="bw-center-feature-item" {{ block.shopify_attributes }}>
+              <h3 class="bw-center-feature-item-title">{{ block.settings.title }}</h3>
+              <p class="bw-center-feature-item-text">{{ block.settings.text }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BW - Center Feature",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "The Core Technology"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Simple science is our secret ingredient"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Center Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Point",
+      "settings": [
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Column",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title",
+          "default": "Feature Name"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Feature Description",
+          "default": "Detailed explanation of this feature and its benefit."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW - Center Feature",
+      "blocks": [
+        { "type": "feature", "settings": { "column": "left", "title": "Aerodynamic Multiplier" } },
+        { "type": "feature", "settings": { "column": "left", "title": "Whisper-Quiet Motor" } },
+        { "type": "feature", "settings": { "column": "right", "title": "True HEPA H13 Filter" } },
+        { "type": "feature", "settings": { "column": "right", "title": "Smart Air Sensor" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

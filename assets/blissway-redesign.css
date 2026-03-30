@@ -1,0 +1,273 @@
+/* ============================================================
+   BLISSWAY DESIGN SYSTEM - Shopify Theme Overrides
+   Space Grotesk (display) + Plus Jakarta Sans (body)
+   ============================================================ */
+
+:root {
+  /* Colors */
+  --bw-bg:           #F5F5F5;
+  --bw-surface:      #FFFFFF;
+  --bw-primary:      #2563EB;
+  --bw-primary-dk:   #1D4ED8;
+  --bw-primary-lt:   rgba(37,99,235,.08);
+  --bw-text:         #1D1D1D;
+  --bw-text-2:       rgba(29,29,29,.55);
+  --bw-text-3:       rgba(29,29,29,.40);
+  --bw-border:       rgba(29,29,29,.09);
+  
+  /* Shadows & Radius */
+  --bw-shadow-card:  0 2px 12px rgba(0,0,0,.06), 0 0 0 1px rgba(37,99,235,.05);
+  --bw-shadow-hover: 0 12px 40px rgba(37,99,235,.15);
+  --bw-radius:       14px;
+  --bw-radius-sm:    8px;
+  
+  /* Animation */
+  --bw-ease:         cubic-bezier(.16,1,.3,1);
+  
+  /* Typography */
+  --bw-font-display: 'Space Grotesk', system-ui, sans-serif;
+  --bw-font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* ── Global Force Overrides ────────────────────────────── */
+body, p, span, a, div, input, button {
+  font-family: var(--bw-font-body) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
+  font-family: var(--bw-font-display) !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* ── Header Redesign ────────────────────────────────────── */
+.header-wrapper {
+  background: rgba(255,255,255,0.98) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--bw-border) !important;
+}
+
+.header {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  min-height: 60px !important;
+}
+
+.header__heading-link .h2, .header__heading-link span {
+  font-family: var(--bw-font-display) !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: -0.03em !important;
+  color: transparent !important;
+  text-transform: uppercase !important;
+  position: relative;
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 1.5rem;
+}
+
+.header__heading-link .h2::before, .header__heading-link span::before {
+  content: "BLISS";
+  color: var(--bw-text);
+  visibility: visible;
+}
+
+.header__heading-link .h2::after, .header__heading-link span::after {
+  content: "WAY";
+  color: var(--bw-primary);
+  visibility: visible;
+  margin-left: 0.15rem;
+}
+
+.header__menu-item {
+  font-family: var(--bw-font-body) !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: var(--bw-text) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* ── Announcement Bar ───────────────────────────────────── */
+.announcement-bar-section {
+  background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%) !important;
+  min-height: 32px !important;
+}
+
+.announcement-bar p {
+  font-size: 0.75rem !important;
+  padding: 6px 0 !important;
+}
+
+/* ── Global Section Spacing ─────────────────────────────── */
+.section, .shopify-section {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── Trust Bar ────────────────────────────────────────── */
+.bw-trust-bar {
+  padding: 40px 0;
+  background: var(--bw-surface);
+  border-bottom: 1px solid var(--bw-border);
+}
+
+.bw-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .bw-trust-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.bw-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bw-trust-item svg {
+  width: 32px;
+  height: 32px;
+  color: var(--bw-primary);
+  margin-bottom: 16px;
+}
+
+.bw-trust-item h3 {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+/* ── Logo Scroll ───────────────────────────────────────── */
+.Logo-scroll-section {
+  padding: 30px 0 !important;
+  border-bottom: 1px solid var(--bw-border);
+}
+
+.Logo-scroll-container .announcement-head {
+  font-size: 0.8rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  margin-bottom: 20px !important;
+  color: var(--bw-text-2) !important;
+}
+
+/* ── Button System ───────────────────────────────────────── */
+.btn-primary, .button--primary, .bw-btn-primary {
+  background: var(--bw-primary) !important;
+  color: #ffffff !important;
+  border-radius: var(--bw-radius-sm) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 700 !important;
+  border: none !important;
+  box-shadow: 0 4px 18px rgba(37,99,235,.22) !important;
+  transition: all 0.3s var(--bw-ease) !important;
+  padding: 14px 28px !important;
+}
+
+/* ── Hero Slider Fixes ──────────────────────────────────── */
+.bw-hero-slider__heading {
+  line-height: 1.1 !important;
+}
+
+.bw-hero-slider__heading em {
+  font-style: italic !important;
+  color: var(--bw-primary) !important;
+}
+
+/* ── Alpine Showcase Port ──────────────────────────────── */
+.bw-showcase {
+  padding: 80px 0 !important;
+}
+
+.bw-showcase__grid {
+  gap: 24px !important;
+}
+
+/* Fix for broken product cards in showcase */
+.bw-showcase__grid .card-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--bw-border);
+  transition: transform 0.3s var(--bw-ease);
+}
+
+.bw-showcase__grid .card-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--bw-shadow-hover);
+}
+
+.bw-showcase__grid .card__heading {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  margin: 12px 0 4px !important;
+  padding: 0 12px !important;
+  line-height: 1.3 !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+.bw-showcase__grid .price {
+  padding: 0 12px 12px !important;
+  font-size: 0.9rem !important;
+  color: var(--bw-primary) !important;
+  font-weight: 700 !important;
+}
+
+/* ── Animations ────────────────────────────────────────── */
+/* ── PDP Refinements ──────────────────────────────────── */
+.product__title h1 {
+  font-family: var(--bw-font-display) !important;
+  font-size: clamp(32px, 5vw, 42px) !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  color: var(--bw-text) !important;
+  letter-spacing: -0.02em !important;
+}
+
+.price--large {
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  color: var(--bw-primary) !important;
+  font-family: var(--bw-font-display) !important;
+}
+
+.product__description {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: var(--bw-text-2) !important;
+}
+
+.product__accordion {
+  border-top: 1px solid var(--bw-border) !important;
+  border-bottom: none !important;
+}
+
+.product__accordion summary {
+  padding: 1.5rem 0 !important;
+}
+
+.product__media-list .product__modal-opener {
+  background: #F8FAFC !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+[data-bw-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--bw-ease), transform 0.8s var(--bw-ease);
+}
+
+[data-bw-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

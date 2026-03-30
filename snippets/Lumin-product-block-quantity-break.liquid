@@ -1,0 +1,599 @@
+{% for collection in product.collections %}
+  {% assign currect_collection = collection.id %}
+{% endfor %}
+
+{% assign selected_product = block.settings.selected_product %}
+{% assign selected_collection = block.settings.selected_collection %}
+{% assign all_products_true = block.settings.show_on_all_products %}
+{% assign auto_add_product = block.settings.auto_add_product %}
+
+{% comment %} Determine which variant to auto-add based on settings {% endcomment %}
+{% assign auto_add_variant = null %}
+{% if auto_add_product != blank %}
+  {% case block.settings.auto_add_variant_selection %}
+    {% when 'default' %}
+      {% assign auto_add_variant = auto_add_product.selected_or_first_available_variant %}
+    {% when 'lowest_price' %}
+      {% assign auto_add_variant = auto_add_product.variants | sort: 'price' | first %}
+    {% else %}
+      {% assign auto_add_variant = auto_add_product.selected_or_first_available_variant %}
+  {% endcase %}
+{% endif %}
+
+{% if selected_product != blank or selected_collection != blank or all_products_true != blank %}
+  {% assign show_block = false %}
+
+   {% comment %}
+    Check if the current product matches any of the selected products in the list
+  {% endcomment %}
+  {% if selected_product != blank %}
+    {% for selected_item in selected_product %}
+      {% if product.id == selected_item.id %}
+        {% assign show_block = true %}
+      {% endif %}
+    {% endfor %}
+  {% endif %} 
+
+  {% comment %}
+    Check if the current collection matches the selected collection
+  {% endcomment %}
+  {% if selected_collection != blank and currect_collection == selected_collection.id %}
+    {% assign show_block = true %}
+  {% endif %}
+
+  {% comment %}
+    Check if all products is selected
+  {% endcomment %}
+
+  {% if all_products_true %}
+    {% assign show_block = true %}
+  {% endif %}
+
+  {% if show_block %}
+{% liquid
+  assign border_radius = block.settings.border_radius
+  assign border_thickness = block.settings.border_thickness
+  assign current_variant = product.selected_or_first_available_variant
+
+  assign qty = block.settings.qty
+  assign discount = block.settings.discount
+  assign fixed_price = block.settings.fixed_price
+  assign current_price = qty | times: product.selected_or_first_available_variant.price
+  assign compare_total = current_price
+  assign total_compare_price = qty | times: product.selected_or_first_available_variant.compare_at_price
+  
+
+  if block.settings.discount_type == 'percentage'
+  assign discountq = discount | append: '%'
+  assign raw_total = 100 | minus: discount | divided_by: 100.0 | times: current_price
+  assign rounded_total = raw_total | times: 100 | ceil | divided_by: 100.0
+  assign unitprice = rounded_total | divided_by: qty | money
+  assign total_saving_amount = current_price | minus: rounded_total | money
+else
+  assign discountq = fixed_price | money
+  assign total_cents = current_price | minus: fixed_price
+  assign rounded_total = total_cents  | times: 100 | ceil | divided_by: 100.0
+  assign unitprice = rounded_total | divided_by: qty | money
+  assign total_saving_amount = current_price | minus: rounded_total | money
+endif
+
+ 
+
+  assign original_compare_price = total_compare_price
+  if original_compare_price == 0 or original_compare_price == blank
+    assign original_compare_price = current_price
+  endif
+  
+  if original_compare_price > rounded_total and original_compare_price > 0
+    assign actual_discount_percentage = original_compare_price | minus: rounded_total | times: 100.0 | divided_by: original_compare_price | round: 1
+    assign actual_discount_display = actual_discount_percentage | append: '%'
+  else
+    assign actual_discount_percentage = 0
+    assign actual_discount_display = ''
+  endif
+  
+  comment 
+  Set up placeholders:
+  [unit] = per unit price (after discount)
+  [$] = total saving amount (from compare price if original type, otherwise from block discount)
+  [%] = saving percentage (calculated if compare_price_type is original, otherwise block settings)
+  endcomment
+  
+  comment 
+  Per unit price placeholder 
+  endcomment
+  assign unit_placeholder = unitprice
+  
+  comment 
+  Total saving amount placeholder (for entire quantity break)
+  endcomment
+  if block.settings.compare_price_type == 'original' and original_compare_price > rounded_total
+    assign saving_amount_placeholder = original_compare_price | minus: rounded_total | money
+  else
+    assign saving_amount_placeholder = total_saving_amount
+  endif
+  
+  comment Saving percentage placeholder 
+  endcomment
+  if block.settings.compare_price_type == 'original' and actual_discount_display != blank and actual_discount_display != ''
+    assign saving_percentage_placeholder = actual_discount_display
+  else
+    assign saving_percentage_placeholder = discountq
+  endif
+
+  for count in (1..qty)
+    unless forloop.last
+      assign current_variant_ids = current_variant_ids | append: current_variant.id | append: ','
+    else
+      assign current_variant_ids = current_variant_ids | append: current_variant.id
+    endunless
+  endfor
+%} 
+
+{%- style -%}
+
+  #lumin-product-block-qty-break-{{ block.id }} {
+    margin-top: {{ block.settings.mt }}px;
+    margin-bottom: {{ block.settings.mb }}px;
+  }
+  .bs-form-check input + label:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 2rem;
+    width: 1.4rem;
+    height: 1.4rem; 
+    box-shadow: none;
+    border-radius: 50px;
+}
+  
+  .lumin-product-block-qty-break .lumin-bundles__bar-radio {
+  display: flex;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 0px;
+  background: rgba(var(--color-background), 1);
+  border: 3px solid rgba(var(--color-background), 1);
+  box-sizing: border-box;
+  box-shadow: 0 0 0 2px rgba(var(--color-button), 0.4);
+}
+ .lumin-product-block-qty-break .bs-form-check input[type="radio"]:checked + label .lumin-bundles__bar-radio {
+  background: rgba(var(--color-button, 1));
+  box-shadow: 0 0 0 2px rgba(var(--color-button, #000));
+}
+.lumin-product-block-qty-break-{{block.id}} .bs-form-check  {
+  border-radius: {{ border_radius }}px;
+}
+
+  
+.lumin-qty-break-{{ block.id }} {
+{% if block.settings.badge != blank %}
+  padding: 2.5rem 1rem 1.5rem 3.5rem;
+  {% else %}
+  padding: 2rem 1.2rem 2rem 3.5rem;
+  {% endif %}
+}
+.lumin-qty-bottom-{{block.id}} {
+ /* {% if block.settings.badge != blank %}
+  margin: 3rem -1rem -2.5rem -1.5rem;
+  {% else %}
+  margin: 3rem -1.2rem -3rem -1.5rem;
+  {% endif %}*/
+    background: #212121;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+  /*    border-bottom-left-radius: calc({{ border_radius }}px - {{ border_thickness | times: 2 }}px);
+    border-bottom-right-radius: calc({{ border_radius }}px - {{ border_thickness | times: 1.5 }}px);*/
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    justify-content: {{ block.settings.bottom_content_alignment }};
+}
+.lumin-qty-bottom-{{block.id}} img, .lumin-qty-bottom-{{block.id}} svg {
+    height: auto;
+    margin-right: calc({{ block.settings.bottom_image_width }}px / 4);
+    border-radius: {{ block.settings.bottom_image_radius }}px;
+}
+.lumin-qty-image-{{block.id}} img, .lumin-qty-image-{{block.id}} svg {
+    height: auto;
+    border-radius: {{ block.settings.qty_image_radius }}px;
+}
+.lumin-product-block-qty-break-title-{{block.id}} { 
+  font-size: {{block.settings.title_size}}px;
+}
+
+.lumin-product-block-qty-break-subtitle-{{block.id}} {
+  opacity: 1;
+  font-size: {{block.settings.subtitle_size}}px;
+  background-color: {{block.settings.subtitle_bg_color}};
+  color: {{block.settings.subtitle_color_small}};
+  padding: 2px 5px 3px;
+  border-radius: 3px;
+  border: 1px solid {{block.settings.subtitle_border_color}};
+}
+
+.lumin-product-block-qty-break-auto-add-{{block.id}} {
+  font-size: 11px;
+  color: {{ block.settings.auto_add_indicator_color | default: '#666666' }};
+  margin-top: 2px;
+  opacity: 0.8;
+}
+
+.lumin-auto-add-indicator-{{block.id}} {
+  background: {{ block.settings.auto_add_indicator_bg_color }} !important;
+  color: {{ block.settings.auto_add_indicator_text_color }} !important;
+  padding: 0.7rem 1.5rem !important;
+  border-bottom-left-radius: calc({{ border_radius }}px - {{ border_thickness | times: 2 }}px) !important;
+  border-bottom-right-radius: calc({{ border_radius }}px - {{ border_thickness | times: 1.5 }}px) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  /*margin: 0 -1rem -2.5rem -1.5rem !important;*/
+  position: relative;
+  z-index: 1;
+}
+
+.lumin-auto-add-indicator-{{block.id}} img {
+  width: {{ block.settings.auto_add_image_size }}px !important;
+  height: {{ block.settings.auto_add_image_size }}px !important;
+  object-fit: cover !important;
+  border-radius: 4px !important;
+  flex-shrink: 0;
+}
+.bottom-bars {
+    margin: 2rem -1rem -1.5rem -1.5rem !important;
+}
+.bottom-bars .lumin-qty-bottom-{{block.id}}:last-child { 
+  border-bottom-left-radius: calc({{ border_radius }}px - {{ border_thickness | times: 1.3 }}px) !important;
+  border-bottom-right-radius: calc({{ border_radius }}px - {{ border_thickness | times: 1.3 }}px) !important;
+}
+
+  .lumin-product-block-qty-break-{{block.id}} .bs-form-check input[type="radio"] + label {
+  border-radius: {{ border_radius }}px;
+  border: {{border_thickness}}px solid rgba(var(--color-button), 0.5);
+}
+.lumin-product-block-qty-break-{{block.id}}  .bs-form-check input[type="radio"]:checked + label {
+  {% if border_thickness == 1 or border_thickness == 2 %}
+  border: 2px solid rgba(var(--color-button), 1);
+  {% else %}
+  border: {{border_thickness | plus: 1 }}px solid rgba(var(--color-button), 1);
+  {% endif %}
+}
+  .lumin-product-block-qty-break .bs-form-check input[type="radio"] + label:hover {
+  background: {{border_thickness }}px solid rgba(var(--color-foreground), 1);
+}
+
+  
+
+  {% if block.settings.custom_color %}
+  .lumin-product-block-qty-break-{{block.id}} .bs-form-check input[type="radio"] + label {
+  background: {{block.settings.uncheck_bg_color}};
+  border-radius: {{ border_radius }}px;
+  border: {{border_thickness}}px solid {{block.settings.border_color}};
+  color: {{block.settings.text_color}};
+}
+.lumin-product-block-qty-break-{{block.id}}  .bs-form-check input[type="radio"]:checked + label {
+  background-color: {{block.settings.checked_bg_color}};
+  border: {{border_thickness}}px solid {{block.settings.checked_border_color}}; 
+  color: {{block.settings.checked_text_color}};
+}
+.lumin-product-block-qty-break-total-{{block.id}} s {
+    opacity: 1;
+    color: {{block.settings.discount_color}};
+}
+.lumin-product-block-qty-break-title-{{block.id}} { 
+  color: {{block.settings.title_color}};
+  font-size: {{block.settings.title_size}}px;
+}
+
+/*.lumin-product-block-qty-break-subtitle-{{block.id}} {
+  color: {{block.settings.subtitle_color}};
+  opacity: 1;
+  font-size: {{block.settings.subtitle_size}}px;
+}*/
+.lumin-product-block-qty-break-variant-option-{{block.id}} .lumin-form-select {
+    background-color: rgba(var(--color-background), 1);
+    border: 1px solid rgba(var(--color-foreground), .2);
+    color: rgba(var(--color-foreground), 1);
+    padding: .25rem;
+    width: 100%;
+}
+.bs-form-check-{{ block.id }} input[type="radio"] + label:before {
+   /* content: "";*/
+   border: 8px solid rgba(var(--color-background), 1);
+    outline: 2px solid {{block.settings.dot_color}};
+  display:none;
+   /* box-shadow: 0px 0px 0px 3px rgba({{ block.settings.dot_color.red }}, {{ block.settings.dot_color.green }}, {{ block.settings.dot_color.blue }}, 1); */
+}
+.bs-form-check-{{ block.id }} input[type="radio"]:checked + label:before {
+    /*content: "";*/
+    display:none;
+    border: 4px solid {{block.settings.dot_check_color}};
+    outline: 1px solid rgba(var(--color-background), 1);
+    box-shadow: 0px 0px 0px 2px rgba({{ block.settings.dot_check_color.red }}, {{ block.settings.dot_check_color.green }}, {{ block.settings.dot_check_color.blue }}, 1);
+ 
+}
+{% endif %}
+{%- endstyle -%}
+<lumin-product-qty-break
+  id="lumin-product-block-qty-break-{{ block.id }}"
+  class="lumin-product-block-qty-break quick-add-hidden lumin-product-block-qty-break-{{ block.id }}"
+  data-product-url="{{ product.url }}"
+  data-block-id="{{ block.id }}"
+  data-qty="{{ qty }}"
+  data-discount="{{ discount }}"
+  data-discount-type="{{ block.settings.discount_type }}"
+  data-fixed-price="{{ fixed_price }}"
+  data-compare-price-type="{{ block.settings.compare_price_type }}"
+  data-auto-add-product="{{ auto_add_product.id | default: '' }}"
+  data-auto-add-variant="{{ auto_add_variant.id | default: '' }}"
+  data-auto-add-quantity="{{ block.settings.auto_add_quantity | default: 1 }}"
+  data-auto-add-only-when-selected="{{ block.settings.auto_add_only_when_selected | default: true }}"
+  data-debug-auto-add="{{ auto_add_product.title | default: 'NO_PRODUCT' }}"
+  data-debug-product-id="{{ auto_add_product.id | default: 'NO_ID' }}"
+  data-debug-variant-id="{{ auto_add_variant.id | default: 'NO_VARIANT_ID' }}"
+  data-index=""
+  {{ block.shopify_attributes }}
+>
+{% unless block.settings.heading_title == blank or block.settings.heading_title_show == false %}
+<div class="bundle-save-banner" style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; padding: 0 1rem;">
+  <div style="display: block; flex: 1; height: 2px;{% if block.settings.use_custom_title_color %} background-color: {{ block.settings.heading_title_color }}; opacity: 0.4;{% else %} background-color: rgba(var(--color-foreground), 0.3);{% endif %}"></div>
+  <div style="padding: 0 1rem; font-size: {{ block.settings.heading_title_size }}px;{% if block.settings.use_custom_title_color %} color: {{ block.settings.heading_title_color }};{% endif %}">
+    {{ block.settings.heading_title | replace: '[', '<span class="lumin-text__fancy1">|</span>' | replace: ']', '</span>'  }}
+  </div>
+  <div style="display: block; flex: 1; height: 2px;{% if block.settings.use_custom_title_color %} background-color: {{ block.settings.heading_title_color }}; opacity: 0.4;{% else %} background-color: rgba(var(--color-foreground), 0.3);{% endif %}"></div>
+</div>
+{% endunless %}
+  <div class="bs-form-check bs-form-check-{{ block.id }} color-{{ block.settings.color_scheme }}">
+    <input
+      class="bs-form-check-input"
+      type="radio"
+      name="qty-break-{{ product.id }}" 
+      id="lumin-qty-break-{{ block.id }}"
+      value="{{ current_variant_ids }}"
+      {% if block.settings.selected %}
+        checked
+      {% endif %}
+    >
+    <label for="lumin-qty-break-{{ block.id }}" class="bs-form-check-label"
+    {% if block.settings.badge_show and block.settings.badge != blank %}
+      style="padding: 2.5rem 1rem 1.5rem 1.5rem;"
+    {% else %}
+      style="padding: 2rem 1.2rem 2rem 1.5rem;"
+    {% endif %}>
+      {% if block.settings.badge_show %}
+      {% unless block.settings.badge == blank %}
+        <span
+          class="{{ block.settings.badge_style }}"
+          style="color: {{ block.settings.badge_color }}; font-size: {{ block.settings.badge_size }}px;--c: {{ block.settings.badge_bg_color }};--bg-color: {{ block.settings.badge_bg_color }};--bg-gradient: {{ block.settings.badge_background_gradient }};"
+          data-original-text="{{ block.settings.badge }}"
+        >
+          {{ block.settings.badge | replace: '[unit]', unit_placeholder | replace: '[$]', saving_amount_placeholder | replace: '[%]', saving_percentage_placeholder }}
+        </span>
+      {% endunless %}
+      {% endif %}
+      <div class="lumin-product-block-qty-break-inner">
+        <div class="" style="display: flex; gap: 1.75rem;align-items:center;">
+    {% if block.settings.qty_show_image %}
+          <div class="lumin-qty-image-{{block.id}}" style="font-size: 0px;">
+          {% assign show_foto = false %}
+        
+          {% if block.settings.qty_image == null %}
+            {% assign show_foto = true %}
+            {% assign image = product.selected_or_first_available_variant.image | default: product.featured_image %}
+          {% elsif block.settings.qty_image != null %}
+            {% assign show_foto = true %}
+            {% assign image = block.settings.qty_image %}
+          {% endif %}
+     
+        {% if show_foto %}
+          <img
+            src="{{ image.src | image_url: width: 160 }}"
+            alt="Selected Variant Image"
+            width="{{ block.settings.qty_image_width}}px"
+            height="{{ block.settings.qty_image_width | divided_by: image.aspect_ratio | round }}"
+            loading="lazy"
+          >
+         {% endif %}
+         </div>
+             {% endif %}
+
+         <div class="lumin-bundles__bar-radio"></div>
+         <div style=" display: flex; gap: 5px;align-items: center;flex-wrap: wrap;">
+            <div class="lumin-product-block-qty-break-title lumin-product-block-qty-break-title-{{block.id}}" data-original-text="{{ block.settings.title }}">
+              {{ block.settings.title | replace: '[unit]', unit_placeholder | replace: '[$]', saving_amount_placeholder | replace: '[%]', saving_percentage_placeholder }}
+            </div>
+            {% if block.settings.subtitle != blank %}
+            <div class="lumin-product-block-qty-break-subtitle lumin-product-block-qty-break-subtitle-{{block.id}}" data-original-text="{{ block.settings.subtitle }}">
+              {{ block.settings.subtitle | replace: '[unit]', unit_placeholder | replace: '[$]', saving_amount_placeholder | replace: '[%]', saving_percentage_placeholder }}
+            </div>
+            {% endif %}
+            {% if block.settings.extra_text != blank %}
+                <div class="lumin-product-block-qty-break-extra-text" style="font-size: {{block.settings.extra_text_size}}px; color: {{ block.settings.extra_text_color }};" data-original-text="{{ block.settings.extra_text }}">
+              {{ block.settings.extra_text | replace: '[unit]', unit_placeholder | replace: '[$]', saving_amount_placeholder | replace: '[%]', saving_percentage_placeholder }}
+              </div>
+              {% endif %}
+          </div>
+        </div>
+        <div class="lumin-product-block-qty-break-total lumin-product-block-qty-break-total-{{block.id}} ms-3" style="font-size: {{block.settings.total_price_size}}px;">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span>{{ rounded_total | money }}</span>
+            
+          </div>
+         
+            {% if block.settings.compare_price_type == 'original' %}
+              {% assign variant_price = product.selected_or_first_available_variant.price %}
+              {% assign variant_compare_at = product.selected_or_first_available_variant.compare_at_price %}
+              {% if variant_compare_at and variant_compare_at > variant_price %}
+                {% if total_compare_price > rounded_total %}
+                  <div>
+                    <s>{{ total_compare_price | money }}</s>
+                  </div>
+                {% endif %}
+              {% else %}
+                {% if compare_total > rounded_total %}
+                  <div>
+                    <s>{{ compare_total | money }}</s>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% elsif block.settings.compare_price_type == 'calculated' %}
+              {% if compare_total > rounded_total %}
+                <div>
+                  <s>{{ compare_total | money }}</s>
+                </div>
+              {% endif %}
+            {% endif %}
+        </div>
+      </div>
+
+      <div
+        class="lumin-product-block-qty-break-variants{% if product.has_only_default_variant or block.settings.hide_variant %} hidden{% endif %}"
+        role="list"
+        aria-label="Select variants"
+        {% if product.has_only_default_variant %}
+          hidden
+        {% endif %}
+      >
+      {% assign option_names = '' %}
+      {% for option in product.options_with_values %}
+        {% if option_names == '' %}
+          {% assign option_names = option.name %}
+        {% else %}
+          {% assign option_names = option_names | append: ', ' | append: option.name %}
+        {% endif %}
+      {% endfor %}
+      <label class="lumin-option-label" style="font-size: 11px;color: rgba(var(--color-foreground),0.7);padding-left: 3.75rem;">{{ option_names }}</label>
+        {% for count in (1..qty) %}
+
+          <div
+            class="lumin-product-block-qty-break-variant"
+            role="listitem"
+          >
+            <div class="lumin-product-block-qty-break-variant-title" aria-hidden="true">{{ count }}.</div>
+            
+            <div
+              class="lumin-product-block-qty-break-variant-options"
+              role="list"
+              aria-label="Variant options"
+            >
+            
+              {% for option in product.options_with_values %}
+                <div
+                  class="lumin-product-block-qty-break-variant-option"
+                  role="listitem"
+                >
+                  <select
+                    class="lumin-form-select"
+                    aria-label="{{ option.name }}"
+                  >
+                    {% for value in option.values %}
+                      <option
+                        value="{{ value | escape }}"
+                        {% if value == option.selected_value %}
+                          selected
+                        {% endif %}
+                      >
+                        {{ value }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="bottom-bars">
+      {% if block.settings.bottom_text_show %}
+      {%- unless block.settings.bottom_image == blank and block.settings.bottom_text == blank -%}
+        <div  class="lumin-qty-bottom lumin-qty-bottom-{{block.id}}" style="
+          background: {{ block.settings.bg_color_bottom }};
+          background-image: {{ block.settings.bottom_background_gradient }};
+          color:{{ block.settings.text_color_bottom }} ; font-size:{{ block.settings.bottom_text_size }}px;
+      ">
+      {% if block.settings.bottom_image != blank %}
+      {%- assign image_bottom = block.settings.bottom_image -%}
+        <img
+             src="{{ image_bottom.src | image_url: width: 200 }}"
+           alt="lumin quantity Image"
+           width="{{ block.settings.bottom_image_width}}px"
+           height="{{ block.settings.bottom_image_width | divided_by: image_bottom.aspect_ratio | round }}"
+           loading="lazy"
+         >
+     {% endif %}
+     <span data-original-text="{{block.settings.bottom_text }}">{{block.settings.bottom_text | replace: '[unit]', unit_placeholder | replace: '[$]', saving_amount_placeholder | replace: '[%]', saving_percentage_placeholder }}</span>
+    </div>
+      {%- endunless -%} 
+      {% endif %}
+
+      {% comment %} Auto-add indicator bar {% endcomment %}
+      {% if auto_add_product != blank and block.settings.show_auto_add_indicator %}
+        <div class="lumin-auto-add-indicator lumin-auto-add-indicator-{{block.id}}" style="
+          background: #212121;
+          color: #fff;
+          padding: 0.7rem 1.5rem;
+          border-bottom-left-radius: calc({{ border_radius }}px - {{ border_thickness | times: 2 }}px);
+          border-bottom-right-radius: calc({{ border_radius }}px - {{ border_thickness | times: 1.5 }}px);
+          display: flex;
+          justify-content: space-between;
+            align-items: center;
+            /*margin: 0 -1.2rem -3rem -1.5rem;*/
+        ">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            {% if block.settings.show_auto_add_image %}
+              {% assign auto_add_image_size = block.settings.auto_add_image_size | times: 2 %}
+              {% if auto_add_variant.image %}
+                <img 
+                  src="{{ auto_add_variant.image.src | image_url: width: auto_add_image_size }}" 
+                  alt="{{ auto_add_product.title }}"
+                  width="{{ block.settings.auto_add_image_size }}"
+                  height="{{ block.settings.auto_add_image_size }}"
+                  style="width: {{ block.settings.auto_add_image_size }}px; height: {{ block.settings.auto_add_image_size }}px; object-fit: cover; border-radius: 4px;"
+                >
+              {% elsif auto_add_product.featured_image %}
+                <img 
+                  src="{{ auto_add_product.featured_image.src | image_url: width: auto_add_image_size }}" 
+                  alt="{{ auto_add_product.title }}"
+                  width="{{ block.settings.auto_add_image_size }}"
+                  height="{{ block.settings.auto_add_image_size }}"
+                  style="width: {{ block.settings.auto_add_image_size }}px; height: {{ block.settings.auto_add_image_size }}px; object-fit: cover; border-radius: 4px;"
+                >
+              {% endif %}
+            {% endif %}
+            <span style="font-size: {{block.settings.auto_add_indicator_text_size}}px;">{{ block.settings.auto_add_indicator_text | default: '+ FREE Gift' }}</span>
+          </div>
+          {% if block.settings.show_auto_add_discount %}
+            {% assign original_price = auto_add_variant.compare_at_price | default: auto_add_variant.price %}
+            {% if block.settings.auto_add_discount_type == 'percentage' %}
+              {% assign discount_amount = original_price | times: block.settings.auto_add_discount_value | divided_by: 100.0 %}
+              {% assign discounted_price = original_price | minus: discount_amount %}
+            {% elsif block.settings.auto_add_discount_type == 'fixed' %}
+              {% assign discount_amount = block.settings.auto_add_discount_value_text | times: 100 %}
+              {% assign discounted_price = original_price | minus: discount_amount %}
+            {% endif %}
+            
+            {% if discount_amount > 0 %}
+              <div style="display: flex; align-items: flex-end; gap: 5px;">
+                <span style="text-decoration: line-through; opacity: 0.8; font-size: {{block.settings.auto_add_indicator_price_size}}px; color: {{ block.settings.auto_add_indicator_sale_color }};">{{ original_price | money }}</span>
+                <span style="font-weight: 600; color: {{ block.settings.auto_add_indicator_price_color }}; font-size: {{block.settings.auto_add_indicator_price_size}}px;">{{ discounted_price | money }}</span>
+              </div>
+            {% else %}
+              <span style="font-weight: 600;font-size: {{block.settings.auto_add_indicator_price_size}}px; color: {{ block.settings.auto_add_indicator_price_color }};">{{ discounted_price | money }}</span>
+            {% endif %}
+          {% elsif auto_add_variant.compare_at_price and auto_add_variant.compare_at_price > auto_add_variant.price %}
+            <span style="opacity: 0.8; font-size: {{block.settings.auto_add_indicator_price_size}}px; color: {{ block.settings.auto_add_indicator_sale_color }};">{{ auto_add_variant.compare_at_price | money }}</span> 
+          {% endif %}
+        </div>
+      {% endif %}
+      </div>
+    </label>
+    </div>
+</lumin-product-qty-break>
+{% endif %}
+{% endif %}
+ 
