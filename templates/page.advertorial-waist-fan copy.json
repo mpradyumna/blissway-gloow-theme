@@ -1,0 +1,145 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "advertorial": {
+      "type": "advertorial",
+      "blocks": {
+        "top_header": {
+          "type": "top_header",
+          "settings": {
+            "main_text": "SUMMER SURVIVAL GUIDE",
+            "trending_text": "Trending Now"
+          }
+        },
+        "headline": {
+          "type": "headline",
+          "settings": {
+            "headline": "Why Thousands of Indians Are Switching to This \"Wearable AC\" to Survive the 45°C Heat",
+            "headline_size": 42
+          }
+        },
+        "author": {
+          "type": "author",
+          "settings": {
+            "author_name": "By Tech & Lifestyle Editor",
+            "author_name_size": 16
+          }
+        },
+        "rating": {
+          "type": "rating_summary",
+          "settings": {
+            "rating": 4.9,
+            "review_count": "12,400+ Verified Buyers"
+          }
+        },
+        "image_hero": {
+          "type": "image",
+          "settings": {
+            "image_radius": 12
+          }
+        },
+        "intro_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Let's be honest: Indian summers are brutal.</strong> Whether you're commuting on a crowded train, working outdoors, or just trying to survive another sudden power cut at home, traditional fans aren't enough. They just push hot air around, and ceiling fans can't follow you outside.</p><p>But a viral new wearable device is changing how people beat the heat. It's called the <strong>FrostClip™ Turbo</strong>, and it's flying off the shelves faster than they can restock.</p>",
+            "text_size": 18
+          }
+        },
+        "feature_split_1": {
+          "type": "two_column",
+          "settings": {
+            "image_position": "left",
+            "title": "Hands-Free Cooling, Wherever You Go.",
+            "text": "<p>Unlike bulky handheld fans that tie up your hands, the FrostClip™ features a heavy-duty clip. You simply attach it to your belt, pants, or shirt, and it blasts a powerful stream of cool air straight up your torso—exactly where you need it most.</p><p>Whether you're on a crowded Mumbai local train, navigating a Delhi market, or stuck in a hostel during a power cut, the FrostClip™ keeps your hands free to hold onto railings, carry groceries, or text on your phone. It even comes with a lanyard option so you can wear it as a neck fan while cooking, walking, or riding your bike.</p>"
+          }
+        },
+        "feature_split_2": {
+          "type": "two_column",
+          "settings": {
+            "image_position": "right",
+            "title": "A Massive 10,000mAh Battery (That Charges Your Phone).",
+            "text": "<p>Most portable fans die after an hour, leaving you stranded in the heat. The FrostClip™ is built with a massive 10,000mAh battery that delivers up to <strong>40 hours of continuous cooling on a single charge</strong>.</p><p>Even better? It doubles as a high-speed power bank. If your phone dies during a long commute or a sudden power outage, just plug it right into the fan and get back to full charge. It's three devices in one: fan, power bank, and emergency flashlight.</p>"
+          }
+        },
+        "bullet_benefits": {
+          "type": "bullet_points",
+          "settings": {
+            "point_1": "15,500 RPM Turbo Motor with Industrial-Grade Airflow",
+            "point_2": "Up to 40 Hours of Continuous Cooling on a Single Charge",
+            "point_3": "Built-in 10,000mAh Emergency Power Bank for Your Phone",
+            "point_4": "Integrated LED Flashlight with Emergency Mode",
+            "point_5": "Lightweight (360g), Portable, and Hands-Free Waist Clip Design"
+          }
+        },
+        "review_highlight": {
+          "type": "customer_review",
+          "settings": {
+            "customer_name": "Rohit M.",
+            "review_title": "A Lifesaver for My Daily Mumbai Commute",
+            "review_text": "<p>I bought this for my daily bus and train commute in Mumbai and it is a complete game-changer. The battery lasts me through the whole week, and the airflow is incredibly strong. Honestly, it feels like having a personal mini-AC that I can take anywhere. No more sweating through my shirt by the time I reach the office.</p>",
+            "rating": 5
+          }
+        },
+        "conclusion_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you hate sweating through your clothes during your commute, or if you constantly deal with summer power cuts and unreliable cooling at home, the FrostClip™ Turbo isn't just a luxury—it's a necessity. With peak summer months approaching fast and inventory running incredibly low, this is the time to grab one before they sell out. The current 15% discount plus an extra 10% off on prepaid and UPI orders won't last long.</p>",
+            "text_size": 18
+          }
+        },
+        "promo_action": {
+          "type": "promotional",
+          "settings": {
+            "show_rating": true,
+            "review_count": "4,530+ Reviews",
+            "headline_top": "SUMMER SALE IS LIVE",
+            "headline": "FrostClip™ Turbo Waist Fan (10,000mAh)",
+            "headline_subline": "<p>Currently 15% OFF. Extra 10% OFF on UPI/Prepaid orders. Ships in 24 hours with 7-day easy returns.</p>",
+            "button_text": "Check Availability & Claim Your Discount ➔",
+            "button_url": "/products/frostclip-turbo-waist-fan-10000mah-portable-cooling",
+            "guarantee_text": "7-Day Easy Returns | 24-Hour Shipping | 4.9★ from 4,530+ Verified Buyers"
+          }
+        }
+      },
+      "block_order": [
+        "top_header",
+        "headline",
+        "author",
+        "rating",
+        "image_hero",
+        "intro_text",
+        "feature_split_1",
+        "feature_split_2",
+        "bullet_benefits",
+        "review_highlight",
+        "conclusion_text",
+        "promo_action"
+      ],
+      "settings": {
+        "section_color_scheme": "scheme-1",
+        "max_width": 800,
+        "section_padding_top": 20,
+        "section_padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "advertorial"
+  ]
+}

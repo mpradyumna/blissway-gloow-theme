@@ -44,7 +44,7 @@
     "spacing_grid_vertical": 8,
     "animations_reveal_on_scroll": true,
     "animations_hover_elements": "default",
-    "show_sticky_cart_button": false,
+    "show_sticky_cart_button": true,
     "show_vendor_atc": false,
     "desktop_sticky_position": "bottom",
     "show_atc_desktop_full": false,
@@ -198,11 +198,12 @@
     "show_save_price": true,
     "save_price_text": "Save ($)",
     "drawer_save_price_color": "#08864e",
-    "edit_mode": false,
+    "edit_mode": true,
     "drawer_box": true,
-    "drawer_size": "40rem",
-    "hide_cart_heading": false,
+    "drawer_size": "56rem",
+    "hide_cart_heading": true,
     "cart_title": "Cart • [x]",
+    "header_size": 15,
     "cart_head_text_align": "center",
     "show_promo_message": true,
     "head_message": "<p>Limited-Time Offer — While Supplies Last</p>",
@@ -210,13 +211,14 @@
     "cart_text_align_2": "center",
     "cart_message_below": true,
     "cart_head_text_size": 10,
-    "show_line_separator": false,
+    "show_line_separator": true,
     "hide_tax_drawer": true,
-    "hide_total_drawer": false,
+    "hide_total_drawer": true,
     "total_price_bold": true,
-    "show_extra_line": false,
+    "show_extra_line": true,
     "show_total_save_price": true,
     "total_save_price_text": "You save",
+    "total_save_price_font_size": 14,
     "drawer_savings": "#08864e",
     "show_cart_button": false,
     "view_cart_text": "View Cart",
@@ -225,7 +227,7 @@
     "show_payment_icons": true,
     "original": "custom",
     "payment_icon": "visa,master,paypal,apple_pay,shopify-pay,google-pay,ideal",
-    "show_drawer_image": false,
+    "show_drawer_image": true,
     "image_size": 100,
     "padding_top_image": 16,
     "padding_bottom_image": 0,
@@ -332,6 +334,58 @@
         "type": "main-password-footer",
         "settings": {
           "color_scheme": "scheme-1"
+        }
+      },
+      "bw-footer-new": {
+        "type": "bw-footer-new",
+        "blocks": {
+          "bw-footer-new-0": {
+            "type": "brand_information",
+            "settings": {
+              "logo_text": "BLISSWAY",
+              "tagline": "<p>Smart everyday essentials. Curated for Indian homes. Backed by people who use them.</p>"
+            }
+          },
+          "bw-footer-new-1": {
+            "type": "link_list",
+            "settings": {
+              "heading": "About",
+              "menu": "footer-col-1"
+            }
+          },
+          "bw-footer-new-2": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Shop",
+              "menu": "footer-col-1-copy"
+            }
+          },
+          "bw-footer-new-3": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Support",
+              "menu": "policies"
+            }
+          },
+          "bw-footer-new-4": {
+            "type": "text",
+            "settings": {
+              "heading": "Help",
+              "subtext": "<p>Questions about an order? Write to us at <strong><a href=\"\\&quot;mailto:care@blissway.online\\&quot;\">care@blissway.online</a></strong></p><p><a href=\"\\&quot;#\\&quot;\">WhatsApp Support</a><br>9:30 AM – 6:00 PM | Mon – Fri</p>"
+            }
+          }
+        },
+        "block_order": [
+          "bw-footer-new-0",
+          "bw-footer-new-1",
+          "bw-footer-new-2",
+          "bw-footer-new-3",
+          "bw-footer-new-4"
+        ],
+        "settings": {
+          "padding_top": 64,
+          "padding_bottom": 40,
+          "margin_top": 0
         }
       }
     },

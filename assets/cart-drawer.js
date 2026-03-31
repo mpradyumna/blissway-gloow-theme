@@ -92,7 +92,7 @@ class CartDrawer extends HTMLElement {
     cartDrawerNote.parentElement.addEventListener("keyup", onKeyUpEscape);
   }
 
-  renderContents(parsedState, openDrawer = true) {
+  renderContents(parsedState) {
     this.querySelector(".drawer__inner").classList.contains("is-empty") &&
       this.querySelector(".drawer__inner").classList.remove("is-empty");
     this.productId = parsedState.id;
@@ -108,15 +108,13 @@ class CartDrawer extends HTMLElement {
       );
     });
 
-    if (openDrawer) {
-      setTimeout(() => {
-        this.querySelector("#CartDrawer-Overlay").addEventListener(
-          "click",
-          this.close.bind(this)
-        );
-        this.open();
-      });
-    }
+    setTimeout(() => {
+      this.querySelector("#CartDrawer-Overlay").addEventListener(
+        "click",
+        this.close.bind(this)
+      );
+      this.open();
+    });
   }
 
   getSectionInnerHTML(html, selector = ".shopify-section") {

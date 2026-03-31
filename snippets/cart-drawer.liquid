@@ -389,36 +389,6 @@
         <div class="cart-timer {% if settings.timer_text_style == 'uppercase' %} caption-with-letter-spacing{% elsif settings.timer_text_style == 'subtitle' %} subtitle{% endif %}" id="cart-timer"></div>
       {% endif %}
       {% render 'cart-progress-bar' %}
-      
-      <!-- Mobile FOMO / Witty Intermediary Layer (CRO) -->
-      <div class="cart-drawer__fomo-banner" style="background-color: #fff8e1; color: #b45309; padding: 12px 20px; font-size: 1.2rem; font-weight: 700; border-bottom: 1px solid #fde68a; display: flex; align-items: center; gap: 10px; transition: all 0.3s;">
-        <span style="font-size: 1.6rem;">🔥</span>
-        <span id="fomo-text-drawer" style="transition: opacity 0.3s;">45 people have already bought this in the last hour!</span>
-      </div>
-      <script>
-        (function() {
-          const fomoMessages = [
-            "45 people have already bought this in the last hour!",
-            "Only a few left in stock — don't miss out!",
-            "This is trending in India right now! 🇮🇳",
-            "Price drop alert! You're getting the best deal today.",
-            "Witty fact: This product was tested in real Indian homes!"
-          ];
-          let fomoIdx = 0;
-          setInterval(() => {
-            const el = document.getElementById('fomo-text-drawer');
-            if (el) {
-              el.style.opacity = '0';
-              setTimeout(() => {
-                fomoIdx = (fomoIdx + 1) % fomoMessages.length;
-                el.textContent = fomoMessages[fomoIdx];
-                el.style.opacity = '1';
-              }, 300);
-            }
-          }, 4500);
-        })();
-      </script>
-
       {% if settings.show_timer and settings.timer_position == 'bottom' %}
         <div class="cart-timer {% if settings.timer_text_style == 'uppercase' %} caption-with-letter-spacing{% elsif settings.timer_text_style == 'subtitle' %} subtitle{% endif %}" id="cart-timer"></div>
       {% endif %}
@@ -893,15 +863,6 @@
             {% endif %}
           {% endfor %}
 
-          {% if true %}
-            <div class="cart-drawer__success-banner" style="background-color: #e6f4ea; color: #137333; padding: 1.2rem; border-radius: 8px; display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; font-weight: 700; font-size: 1.3rem; border: 1px solid #c6e7d1; text-transform: uppercase;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              <span>YOU ARE SAVING {{ total_savings | money }} ON THIS ORDER!</span>
-            </div>
-          {% endif %}
-
           {% if total_savings > 0 and settings.show_total_save_price %}
             <div class="totals" role="status">
               <h2 class="totals__total">{{ settings.total_save_price_text }}</h2>
@@ -998,26 +959,6 @@
             {%- if settings.show_checkout_price %} • {{ cart.total_price | money }}{% endif %}
           </button>
           
-          <div class="cart-drawer__trust-badges" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
-            <div style="text-align: center;">
-              <div style="background: #f8f8f8; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              </div>
-              <div style="font-size: 1rem; font-weight: 600; line-height: 1.2; text-transform: uppercase; color: #666;">Secure<br>Checkout</div>
-            </div>
-            <div style="text-align: center;">
-              <div style="background: #f8f8f8; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-              </div>
-              <div style="font-size: 1rem; font-weight: 600; line-height: 1.2; text-transform: uppercase; color: #666;">Fast<br>Shipping</div>
-            </div>
-            <div style="text-align: center;">
-              <div style="background: #f8f8f8; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </div>
-              <div style="font-size: 1rem; font-weight: 600; line-height: 1.2; text-transform: uppercase; color: #666;">Quality<br>Guarantee</div>
-            </div>
-          </div>
 
         </div>
         {%- if settings.show_payment_icons -%}

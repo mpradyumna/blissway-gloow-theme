@@ -106,29 +106,19 @@ if (!customElements.get("product-form")) {
               });
             this.error = false;
             const quickAddModal = this.closest("quick-add-modal");
-            const shouldOpenDrawer = this.dataset.cartType !== 'toast';
-            
-            const isDesktop = window.innerWidth > 768;
-            const isPDP = !this.dataset.cartType; // PDP doesn't have 'toast' type
-
-            if (isDesktop && isPDP) {
-              window.location = window.routes.cart_url;
-              return;
-            }
-
             if (quickAddModal) {
               document.body.addEventListener(
                 "modalClosed",
                 () => {
                   setTimeout(() => {
-                    this.cart.renderContents(response, shouldOpenDrawer);
+                    this.cart.renderContents(response);
                   });
                 },
                 { once: true }
               );
               quickAddModal.hide(true);
             } else {
-              this.cart.renderContents(response, shouldOpenDrawer);
+              this.cart.renderContents(response);
             }
           })
           .catch((e) => {

@@ -70,7 +70,28 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.02);
   }
   .bw-prepaid__method svg { width: 1.25rem; height: 1.25rem; color: rgb(var(--color-button)); }
+  .prepaid-trust {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+    flex-wrap: wrap;
+  }
+  .trust-line-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .trust-line-icon {
+    width: 20px;
+    height: 20px;
+    color: #10B981;
+    flex-shrink: 0;
+  }
   
+
+
   .bw-prepaid__cta {
     display: inline-flex;
     align-items: center;
@@ -173,7 +194,9 @@
       </div>
       
       <a href="{{ section.settings.btn_link | default: '/collections/all' }}" class="bw-prepaid__cta">{{ section.settings.btn_label }}</a>
+     
     </div>
+    
 
     <div class="bw-prepaid__visual">
       <div class="bw-prepaid__card">
@@ -197,7 +220,28 @@
         <span>5%</span>
       </div>
     </div>
+    
   </div>
+   <div class="prepaid-trust">
+          <div class="trust-line-item">
+            <svg class="trust-line-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+            </svg>
+            <span>Secure &amp; Encrypted</span>
+          </div>
+          <div class="trust-line-item">
+            <svg class="trust-line-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+            </svg>
+            <span>Instant Discount Applied</span>
+          </div>
+          <div class="trust-line-item">
+            <svg class="trust-line-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+            </svg>
+            <span>No Code Required</span>
+          </div>
+        </div>
 </section>
 
 {% schema %}

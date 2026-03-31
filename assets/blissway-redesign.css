@@ -237,7 +237,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
 }
 
 .price--large {
-  font-size: 3.52rem !important;
   font-weight: 700 !important;
   color: var(--bw-primary) !important;
   font-family: var(--bw-font-display) !important;

@@ -129,9 +129,9 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    
+    color: rgb(29 29 29 / 0.4);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 0.75rem;
@@ -143,18 +143,23 @@
   }
   .bw-journal-card__title {
     font-family: var(--font-heading-family);
-    font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 1rem;
     transition: color 0.3s;
     color: rgb(var(--color-foreground));
+    line-height: 1.375;
+    font-size: 2rem;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    margin-bottom: 0.75rem;
   }
   .bw-journal-card:hover .bw-journal-card__title {
     color: rgb(var(--color-button));
   }
   .bw-journal-card__excerpt {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     margin: 0;
     color: rgba(var(--color-foreground), 0.7);

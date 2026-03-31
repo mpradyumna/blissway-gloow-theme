@@ -100,6 +100,9 @@
       subscribe(PUB_SUB_EVENTS.cartUpdate, function(event) {
         const cart = event.cartData || event;
         const bar = document.getElementById('sticky-cart-notification');
+        console.log("listener for sticky-cart-notification ") 
+        console.log("sticky-cart-notification "+bar) 
+        console.log(" Event Source : " + event.source)
         if (!bar) return;
 
         if (cart && cart.item_count > 0) {
