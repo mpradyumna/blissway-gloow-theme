@@ -51,16 +51,13 @@
 
   .bw-hs-panel-heading {
     font-family: var(--font-heading-family);
-    font-size: calc(var(--font-heading-scale) * 4.5rem);
     font-weight: var(--font-heading-weight);
     line-height: 1.1;
     margin-bottom: 2rem;
   }
 
   .bw-hs-panel-body {
-    font-size: calc(var(--font-heading-scale) * 1.25rem);
     line-height: 1.6;
-    
     margin-bottom: 3rem;
     max-width: 600px;
   }
@@ -181,25 +178,42 @@
   <div class="bw-hs-sticky">
     <div class="bw-hs-track" id="HS-Track-{{ section.id }}">
       {%- for block in section.blocks -%}
-        <div class="bw-hs-panel panel-{{ forloop.index }}" {{ block.shopify_attributes }} style="background: {{ block.settings.bg_color | default: 'rgb(var(--color-background))' }}; color: {{ block.settings.text_color | default: 'rgb(var(--color-foreground))' }};">
-          <div class="bw-hs-panel-inner">
+        {%- liquid
+          assign text_align = block.settings.text_alignment | default: 'left'
+          assign vertical_align = block.settings.vertical_alignment | default: 'center'
+          assign button_align = 'flex-start'
+          if text_align == 'center'
+            assign button_align = 'center'
+          elsif text_align == 'right'
+            assign button_align = 'flex-end'
+          endif
+        -%}
+        <div class="bw-hs-panel panel-{{ forloop.index }}" {{ block.shopify_attributes }} 
+          style="background: {{ block.settings.bg_color | default: 'rgb(var(--color-background))' }}; 
+                 color: {{ block.settings.text_color | default: 'rgb(var(--color-foreground))' }};
+                 align-items: {{ vertical_align }};
+                 text-align: {{ text_align }};">
+          <div class="bw-hs-panel-inner" style="
+            margin-left: {% if text_align == 'center' %}auto{% elsif text_align == 'right' %}auto{% else %}0{% endif %};
+            margin-right: {% if text_align == 'center' %}auto{% elsif text_align == 'left' %}auto{% else %}0{% endif %};
+          ">
             {%- if block.settings.eyebrow != blank -%}
               <span class="bw-hs-panel-eyebrow" style="color: {{ block.settings.eyebrow_color | default: 'rgb(var(--color-button))' }};">{{ block.settings.eyebrow }}</span>
             {%- endif -%}
             
             {%- if block.settings.title != blank -%}
-              <h2 class="bw-hs-panel-heading" style="color: inherit;">{{ block.settings.title }}</h2>
+              <h2 class="bw-hs-panel-heading {{ block.settings.heading_size | default: 'h1' }}" style="color: inherit;">{{ block.settings.title }}</h2>
             {%- elsif block.settings.heading != blank -%}
-              <h2 class="bw-hs-panel-heading" style="color: inherit;">{{ block.settings.heading }}</h2>
+              <h2 class="bw-hs-panel-heading {{ block.settings.heading_size | default: 'h1' }}" style="color: inherit;">{{ block.settings.heading }}</h2>
             {%- endif -%}
             
             {%- if block.settings.text != blank -%}
-              <div class="bw-hs-panel-body" style="color: inherit; opacity: 0.85;">{{ block.settings.text }}</div>
+              <div class="bw-hs-panel-body" style="color: inherit; opacity: 0.85; margin-left: {% if text_align == 'center' %}auto{% elsif text_align == 'right' %}auto{% else %}0{% endif %}; margin-right: {% if text_align == 'center' %}auto{% elsif text_align == 'left' %}auto{% else %}0{% endif %};">{{ block.settings.text }}</div>
             {%- endif -%}
 
             {%- if block.settings.list_items != blank -%}
               {%- assign items = block.settings.list_items | split: '|' -%}
-              <ul class="bw-hs-proof-list">
+              <ul class="bw-hs-proof-list" style="justify-content: {{ button_align }}; display: flex; flex-direction: column; align-items: {{ button_align }};">
                 {%- for item in items -%}
                   <li style="color: inherit;">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -208,7 +222,7 @@
                 {%- endfor -%}
               </ul>
             {%- elsif forloop.first -%}
-              <ul class="bw-hs-proof-list">
+              <ul class="bw-hs-proof-list" style="justify-content: {{ button_align }}; display: flex; flex-direction: column; align-items: {{ button_align }};">
                 <li style="color: inherit;">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   Used in-house for 30 days before listing
@@ -227,10 +241,12 @@
             {%- assign btn_label = block.settings.btn_label | default: block.settings.button_label -%}
             {%- assign btn_link = block.settings.btn_link | default: block.settings.button_link -%}
             {%- if btn_label != blank -%}
-              <a href="{{ btn_link }}" class="bw-hs-panel-cta" style="background: {{ block.settings.btn_bg | default: 'rgb(var(--color-button))' }}; color: {{ block.settings.btn_text_color | default: 'rgb(var(--color-button-text))' }};">
-                {{ btn_label }}
-                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
+              <div style="display: flex; justify-content: {{ button_align }};">
+                <a href="{{ btn_link }}" class="bw-hs-panel-cta" style="background: {{ block.settings.btn_bg | default: 'rgb(var(--color-button))' }}; color: {{ block.settings.btn_text_color | default: 'rgb(var(--color-button-text))' }};">
+                  {{ btn_label }}
+                  <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
             {%- endif -%}
           </div>
           <div class="bw-hs-panel-num" style="color: inherit; opacity: 0.05;">0{{ forloop.index }}</div>
@@ -284,6 +300,47 @@
       "type": "panel",
       "name": "Panel",
       "settings": [
+        {
+          "type": "header",
+          "content": "Typography & Alignment"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            { "value": "h2", "label": "Small" },
+            { "value": "h1", "label": "Medium" },
+            { "value": "h0", "label": "Large" }
+          ],
+          "default": "h1",
+          "label": "Heading Size"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "vertical_alignment",
+          "label": "Vertical Alignment",
+          "options": [
+            { "value": "flex-start", "label": "Top" },
+            { "value": "center", "label": "Middle" },
+            { "value": "flex-end", "label": "Bottom" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
         {
           "type": "color",
           "id": "bg_color",

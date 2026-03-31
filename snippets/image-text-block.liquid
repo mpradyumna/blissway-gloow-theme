@@ -72,7 +72,7 @@
 {% assign image_size = block.settings.image_width_percent | times: 10 | append: 'x' %}
 <div class="qa-feature-{{ block.id }}" {{ block.shopify_attributes }}>
   {%- if block.settings.icon != blank -%}
-    <img src="{{ block.settings.icon | img_url: image_size }}" width="50" height="50">
+    <img src="{{ block.settings.icon | image_url: width: 100 }}" width="50" height="50" loading="lazy">
   {%- else -%}
     {{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
   {%- endif -%}

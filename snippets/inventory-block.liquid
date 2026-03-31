@@ -8,9 +8,6 @@
   endif
   assign text_untracked = block.settings.text_untracked | replace: '[qty]', current_variant.inventory_quantity
   assign text_soldout = block.settings.text_soldout | replace: '[qty]', current_variant.inventory_quantity
-  assign low_pill_color = block.settings.low_pill_color
-  assign untrack_pill_color = block.settings.untrack_pill_color
-  assign untrack_bg_color = block.settings.untrack_background_bar
 %}
 <p
   class="no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"

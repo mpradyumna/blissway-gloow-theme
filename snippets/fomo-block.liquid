@@ -14,9 +14,8 @@
   // Update the random number every 3 seconds (adjust the interval as needed)
   setInterval(updateRandomNumber, {{ block.settings.fomo_speed | append: "000" }});
 </script>
-{% assign scheme1 = settings.color_schemes | first %}
 {% assign before_text = block.settings.fomo_text_before %}
-{% assign randomNumber = block.settings.fomo_min | plus: 2 | prepend: '<span id="randomNumber">' | append: '</span>' %}
+{% assign random_number_html = block.settings.fomo_min | plus: 2 | prepend: '<span id="randomNumber">' | append: '</span>' %}
 <div
   class="lk-fomo-buys"
   {{ block.shopify_attributes }}
@@ -27,12 +26,19 @@
     style="--pill-color:{{ block.settings.pill_color.red }}, {{ block.settings.pill_color.green }}, {{ block.settings.pill_color.blue }};display:block;"
   ></span>
   {% elsif block.settings.fomo_icon_style == 'image' %}
-  <img src="{{ block.settings.fomo_icon | img_url: 'master' }}" alt="FOMO Icon" class="fomo-icon">
+  <img 
+    src="{{ block.settings.fomo_icon | image_url: width: 100 }}" 
+    alt="FOMO Icon" 
+    class="fomo-icon"
+    width="{{ block.settings.fomo_icon.width }}"
+    height="{{ block.settings.fomo_icon.height }}"
+    loading="lazy"
+  >
   {% endif %}
   <span class="message-buys{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}">
     {{
       before_text
-      | replace: '(x)', randomNumber
+      | replace: '(x)', random_number_html
     }}
   </span>
 </div>

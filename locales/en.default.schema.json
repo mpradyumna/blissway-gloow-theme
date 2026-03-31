@@ -4746,7 +4746,7 @@
       "success_message_settings": "Success Message Settings",
       "success_message_title": "Thank you for your review!",
       "success_message_body": "Your review has been submitted successfully and will be forwarded to our team.",
-      "success_message_body_info": "You can use HTML tags like <strong>, <em>, <br> for formatting",
+      "success_message_body_info": "You can use HTML tags like <strong>, <em></em>, <br> for formatting",
       "success_message_duration": "Message Display Duration (seconds)",
       "success_message_duration_info": "How long the success message stays visible",
       "success_message_bg": "Success Message Background Color",
@@ -4843,7 +4843,7 @@
       "review_text": "Review Text",
       "likes": "Likes",
       "dislikes": "Dislikes",
-      "font_size": "Font size"
+      "font_size": "16"
     }
   }
 }

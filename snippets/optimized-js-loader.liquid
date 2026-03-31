@@ -13,10 +13,14 @@
 {%- for file in files -%}
   {%- assign file = file | strip -%}
   {%- if file != blank -%}
-    {%- if priority == 'high' -%}
-      <script src="{{ file | asset_url }}"{% if async %} async{% endif %}{% if defer %} defer{% endif %}></script>
+    {%- if async and defer -%}
+      <script src="{{ file | asset_url }}" async defer></script>
+    {%- elsif async -%}
+      <script src="{{ file | asset_url }}" async></script>
+    {%- elsif defer -%}
+      <script src="{{ file | asset_url }}" defer></script>
     {%- else -%}
-      <script src="{{ file | asset_url }}"{% if async %} async{% endif %}{% if defer %} defer{% endif %}></script>
+      <script src="{{ file | asset_url }}"></script>
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}

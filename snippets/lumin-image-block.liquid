@@ -250,6 +250,9 @@
         src="{{ block.settings.image | image_url: width: 2000 }}"
         alt="{{ block.settings.image.alt | escape }}"
         class="lumin-lightbox-image-{{ lumin_id }}"
+        width="{{ block.settings.image.width }}"
+        height="{{ block.settings.image.height }}"
+        loading="lazy"
       >
     </div>
   {% endif %}

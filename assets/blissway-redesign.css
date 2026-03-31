@@ -25,17 +25,17 @@
   --bw-ease:         cubic-bezier(.16,1,.3,1);
   
   /* Typography */
-  --bw-font-display: 'Space Grotesk', system-ui, sans-serif;
-  --bw-font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --bw-font-display: var(--font-heading-family);
+  --bw-font-body: var(--font-body-family);
 }
 
 /* ── Global Force Overrides ────────────────────────────── */
-body, p, span, a, div, input, button {
-  font-family: var(--bw-font-body) !important;
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
-  font-family: var(--bw-font-display) !important;
   letter-spacing: -0.02em !important;
 }
 
@@ -56,14 +56,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
 .header__heading-link .h2, .header__heading-link span {
   font-family: var(--bw-font-display) !important;
   font-weight: 700 !important;
-  font-size: 1.5rem !important;
+  font-size: calc(var(--font-heading-scale) * 2.4rem) !important;
   letter-spacing: -0.03em !important;
   color: transparent !important;
   text-transform: uppercase !important;
   position: relative;
   display: inline-flex !important;
   align-items: center !important;
-  height: 1.5rem;
+  height: 2.4rem;
 }
 
 .header__heading-link .h2::before, .header__heading-link span::before {
@@ -76,16 +76,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
   content: "WAY";
   color: var(--bw-primary);
   visibility: visible;
-  margin-left: 0.15rem;
+  margin-left: 0.24rem;
 }
 
 .header__menu-item {
-  font-family: var(--bw-font-body) !important;
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
+  font-family: var(--font-menu-family) !important;
+  font-size: var(--menu-text-size) !important;
+  font-weight: var(--font-menu-weight) !important;
   color: var(--bw-text) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
+  text-transform: var(--font-menu-style) !important;
+  letter-spacing: var(--menu-text-space) !important;
 }
 
 /* ── Announcement Bar ───────────────────────────────────── */
@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
 }
 
 .announcement-bar p {
-  font-size: 0.75rem !important;
+  font-size: 1.2rem !important;
   padding: 6px 0 !important;
 }
 
@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
 }
 
 .bw-trust-item h3 {
-  font-size: 1.1rem !important;
+  font-size: 1.76rem !important;
   font-weight: 700 !important;
   margin-bottom: 8px !important;
 }
@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
 }
 
 .Logo-scroll-container .announcement-head {
-  font-size: 0.8rem !important;
+  font-size: 1.28rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.1em !important;
   margin-bottom: 20px !important;
@@ -163,13 +163,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
   background: var(--bw-primary) !important;
   color: #ffffff !important;
   border-radius: var(--bw-radius-sm) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  font-weight: 700 !important;
+  font-family: var(--font-button-family) !important;
+  font-size: var(--button-text-size) !important;
+  font-weight: var(--font-button-weight) !important;
+  letter-spacing: var(--button-text-space) !important;
+  text-transform: var(--font-button-style) !important;
   border: none !important;
   box-shadow: 0 4px 18px rgba(37,99,235,.22) !important;
   transition: all 0.3s var(--bw-ease) !important;
   padding: 14px 28px !important;
+  text-decoration: none;
 }
 
 /* ── Hero Slider Fixes ──────────────────────────────────── */
@@ -206,7 +209,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
 }
 
 .bw-showcase__grid .card__heading {
-  font-size: 0.85rem !important;
+  font-size: 1.36rem !important;
   font-weight: 600 !important;
   margin: 12px 0 4px !important;
   padding: 0 12px !important;
@@ -217,7 +220,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
 
 .bw-showcase__grid .price {
   padding: 0 12px 12px !important;
-  font-size: 0.9rem !important;
+  font-size: 1.44rem !important;
   color: var(--bw-primary) !important;
   font-weight: 700 !important;
 }
@@ -234,14 +237,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
 }
 
 .price--large {
-  font-size: 2.2rem !important;
+  font-size: 3.52rem !important;
   font-weight: 700 !important;
   color: var(--bw-primary) !important;
   font-family: var(--bw-font-display) !important;
 }
 
 .product__description {
-  font-size: 1rem !important;
+  font-size: 1.6rem !important;
   line-height: 1.6 !important;
   color: var(--bw-text-2) !important;
 }
@@ -252,7 +255,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display {
 }
 
 .product__accordion summary {
-  padding: 1.5rem 0 !important;
+  padding: 2.4rem 0 !important;
 }
 
 .product__media-list .product__modal-opener {

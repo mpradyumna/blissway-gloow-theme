@@ -27,7 +27,7 @@
       }
     }
 </style>
-{% assign scheme1 = settings.color_schemes | first %}
+{%- comment -%} End schema check {%- endcomment -%}
 <div
   class="section-{{ block.id }}-padding gradient color-{{ block.settings.tabs_color_scheme }} content-container"
   {% unless block.settings.no_paddings %}style="padding: 1rem 2rem;"{% endunless %}

@@ -1,0 +1,136 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "advertorial": {
+      "type": "advertorial",
+      "blocks": {
+        "top_header": {
+          "type": "top_header",
+          "settings": {
+            "main_text": "SUMMER SURVIVAL GUIDE",
+            "trending_text": "Trending Now"
+          }
+        },
+        "headline": {
+          "type": "headline",
+          "settings": {
+            "headline": "Why Thousands of Indians Are Switching to This \"Wearable AC\" to Survive the 45°C Heat",
+            "headline_size": 42
+          }
+        },
+        "author": {
+          "type": "author",
+          "settings": {
+            "author_name": "By Tech & Lifestyle Editor",
+            "author_name_size": 16
+          }
+        },
+        "rating": {
+          "type": "rating_summary",
+          "settings": {
+            "rating": 4.9,
+            "review_count": "12,400+ Verified Buyers"
+          }
+        },
+        "image_hero": {
+          "type": "image",
+          "settings": {
+            "image_radius": 12
+          }
+        },
+        "intro_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Let's be honest: Indian summers are brutal.</strong> Whether you're commuting on a crowded train, working outdoors, or just trying to survive another sudden power cut at home, traditional fans aren't enough. They just push hot air around, and ceiling fans can't follow you outside.</p><p>But a viral new wearable device is changing how people beat the heat. It's called the <strong>FrostClip™ Turbo</strong>, and it's flying off the shelves faster than they can restock.</p>",
+            "text_size": 18
+          }
+        },
+        "feature_split_1": {
+          "type": "two_column",
+          "settings": {
+            "image_position": "left",
+            "title": "Hands-Free Cooling, Wherever You Go.",
+            "text": "<p>Unlike bulky handheld fans that tie up your hands, the FrostClip™ features a heavy-duty clip. You simply attach it to your belt, pants, or shirt, and it blasts an 18,000 RPM stream of cool air straight up your torso.</p><p>Need it closer to your face? It comes with a lanyard so you can wear it as a neck fan while cooking, walking, or riding your bike.</p>"
+          }
+        },
+        "feature_split_2": {
+          "type": "two_column",
+          "settings": {
+            "image_position": "right",
+            "title": "A Massive 10,000mAh Battery (That Charges Your Phone)",
+            "text": "<p>Most portable fans die after an hour. The FrostClip™ is built with a massive 10,000mAh battery that lasts up to <strong>40 hours on a single charge</strong>.</p><p>Even better? It doubles as a high-speed Power Bank. If your phone dies during a commute or a power outage, just plug it right into the fan.</p>"
+          }
+        },
+        "bullet_benefits": {
+          "type": "bullet_points",
+          "settings": {
+            "point_1": "18,000 RPM Turbo Motor (Up to 8m/s wind speed)",
+            "point_2": "Up to 40 Hours of continuous cooling",
+            "point_3": "Built-in Emergency Power Bank for your phone",
+            "point_4": "Integrated LED Flashlight with SOS mode",
+            "point_5": "Rugged, Drop-Proof & Dust-Proof Silicone Armor"
+          }
+        },
+        "review_highlight": {
+          "type": "customer_review",
+          "settings": {
+            "customer_name": "Rahul M.",
+            "review_title": "A Lifesaver for Mumbai Local",
+            "review_text": "<p>I bought this for my daily metro commute in Mumbai and it is a lifesaver. The battery lasts me the whole week, and the airflow is shockingly strong. Honestly, it feels like having a personal mini-AC.</p>",
+            "rating": 5
+          }
+        },
+        "conclusion_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you hate sweating through your clothes during your commute, or if you constantly deal with summer power cuts, the FrostClip™ Turbo isn't just a luxury—it's a necessity. Due to extremely high demand this summer, inventory is incredibly low. Check below to see if they are still in stock (and grab the current 10% prepaid discount while it lasts).</p>",
+            "text_size": 18
+          }
+        },
+        "promo_action": {
+          "type": "promotional",
+          "settings": {
+            "show_rating": true,
+            "review_count": "12,400+ Reviews",
+            "headline_top": "SUMMER SALE IS LIVE",
+            "headline": "FrostClip™ Turbo Waist Fan (10,000mAh)",
+            "headline_subline": "<p>Currently 15% OFF. Extra 10% OFF on UPI/Prepaid orders.</p>",
+            "button_text": "Check Availability & Claim Discount ➔",
+            "button_url": "/products/frostclip-turbo-waist-fan-10000mah-portable-cooling",
+            "guarantee_text": "7-Day Replacement Guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "top_header",
+        "headline",
+        "author",
+        "rating",
+        "image_hero",
+        "intro_text",
+        "feature_split_1",
+        "feature_split_2",
+        "bullet_benefits",
+        "review_highlight",
+        "conclusion_text",
+        "promo_action"
+      ],
+      "settings": {
+        "section_color_scheme": "scheme-1",
+        "max_width": 800,
+        "section_padding_top": 20,
+        "section_padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "advertorial"
+  ]
+}

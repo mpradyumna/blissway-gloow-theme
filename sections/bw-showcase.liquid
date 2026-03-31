@@ -268,7 +268,6 @@
     border: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-size: 0.7rem;
     cursor: pointer;
     transition: all 0.3s ease;
   }
@@ -382,63 +381,11 @@
           {%- if block.settings.collection != blank -%}
             {%- for product in block.settings.collection.products limit: section.settings.products_to_show -%}
               <div class="bw-showcase__item">
-                  <div class="bw-card">
-                    <a href="{{ product.url }}" class="bw-card__link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex: 1;">
-                      <div class="bw-card__image-wrap">
-                        {%- if product.featured_media -%}
-                          <img src="{{ product.featured_media | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
-                        {%- else -%}
-                          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-                        {%- endif -%}
-                        
-                        {%- if product.available == false -%}
-                          <span class="bw-card__badge" style="background-color: rgb(var(--color-background-contrast, var(--color-foreground))); color: rgb(var(--color-background));">Sold Out</span>
-                        {%- elsif product.compare_at_price > product.price -%}
-                          <span class="bw-card__badge">Sale</span>
-                        {%- elsif product.tags contains 'Bestseller' -%}
-                          <span class="bw-card__badge">Bestseller</span>
-                        {%- endif -%}
-                      </div>
-                      
-                      <div class="bw-card__content">
-                        <div class="bw-card__stars">
-                          <div class="bw-card__stars-icons">★★★★★</div>
-                          <span class="bw-card__reviews">(4.8)</span>
-                        </div>
-                        
-                        <h3 class="bw-card__title">{{ product.title }}</h3>
-                        
-                        <div class="bw-card__prices">
-                          <span class="bw-card__price">{{ product.price | money_without_trailing_zeros }}</span>
-                          {%- if product.compare_at_price > product.price -%}
-                            <span class="bw-card__compare">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
-                          {%- endif -%}
-                        </div>
-                      </div>
-                    </a>
-
-                    <div class="bw-card__bottom" style="padding: 0 20px 20px;">
-                      <div class="bw-card__delivery">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        FREE DELIVERY BY THURSDAY
-                      </div>
-                      
-                      <product-form class="product-form" data-cart-type="toast">
-                        {%- assign product_form_id = 'quick-add-' | append: section.id | append: product.id -%}
-                        {%- form 'product', product, id: product_form_id, class: 'bw-card__form form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="product-variant-id">
-                          <button type="submit" name="add" class="bw-card__btn quick-add__submit" {% unless product.available %}disabled{% endunless %} aria-haspopup="dialog" aria-live="polite" data-sold-out-message="true">
-                            <span>{% if product.available %}Add to Cart{% else %}Sold Out{% endif %}</span>
-                            <div class="loading__spinner hidden">
-                              <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                              </svg>
-                            </div>
-                          </button>
-                        {%- endform -%}
-                      </product-form>
-                    </div>
-                  </div>
+                {% render 'card-product',
+                  card_product: product,
+                  show_vendor: section.settings.show_vendor,
+                  show_rating: section.settings.show_rating
+                %}
               </div>
             {%- endfor -%}
           {%- else -%}

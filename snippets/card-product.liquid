@@ -156,7 +156,6 @@
     border: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-size: 0.7rem;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -206,7 +205,7 @@
     <a href="{{ card_product.url }}" class="bw-card__link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex: 1;">
       <div class="bw-card__image-wrap">
         {%- if card_product.featured_media -%}
-          <img src="{{ card_product.featured_media | image_url: width: 600 }}" alt="{{ card_product.title | escape }}" loading="lazy" width="{{ card_product.featured_media.width }}" height="{{ card_product.featured_media.height }}">
+          <img src="{{ card_product.featured_media | image_url: width: 600 }}" alt="{{ card_product.featured_media.alt | default: card_product.title | escape }}" loading="lazy" width="{{ card_product.featured_media.width }}" height="{{ card_product.featured_media.height }}">
         {%- else -%}
           {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
         {%- endif -%}

@@ -79,7 +79,7 @@
   {%- comment -%} Error and success messages for submitted form {%- endcomment -%}
   <div class="lumin-section__form-response lumin-section__text">
     {%- if form.posted_successfully? -%}
-      <p class="lumin-section__form-reply--success">{{ 'success' | t }}</p>
+      <p class="lumin-section__form-reply--success">{{ 'newsletter.success' | t }}</p>
     {%- elsif form.errors -%}
       {%- for field in form.errors -%}
         <p class="lumin-section__form-reply--error">{{ field }} - {{ form.errors.messages[field] }}</p>

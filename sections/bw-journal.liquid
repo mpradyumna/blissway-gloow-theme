@@ -81,16 +81,22 @@
   }
   .bw-journal-card__image-wrap {
     position: relative;
-    aspect-ratio: 16/10;
-    border-radius: 1rem;
+    aspect-ratio: {{ section.settings.image_ratio | default: '1/1' }};
+    border-radius: 1.5rem;
     overflow: hidden;
     margin-bottom: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    background: rgb(var(--color-background)); /* Use theme background for contain */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .bw-journal-card__image-wrap img {
     width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.7s ease;
+    object-fit: contain; /* Ensure full image is visible */
+    object-position: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
   }
   .bw-journal-card:hover .bw-journal-card__image-wrap img {
     transform: scale(1.1);
@@ -98,7 +104,12 @@
   .bw-journal-card__image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+  .bw-journal-card:hover .bw-journal-card__image-overlay {
+    opacity: 1;
   }
   .bw-journal-card__tag {
     position: absolute;
@@ -132,21 +143,21 @@
   }
   .bw-journal-card__title {
     font-family: var(--font-heading-family);
-    
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 1.3;
-    
-    margin: 0 0 0.75rem;
+    line-height: 1.2;
+    margin: 0 0 1rem;
     transition: color 0.3s;
+    color: rgb(var(--color-foreground));
   }
   .bw-journal-card:hover .bw-journal-card__title {
     color: rgb(var(--color-button));
   }
   .bw-journal-card__excerpt {
-    font-size: 1rem;
-    
+    font-size: 1.1rem;
     line-height: 1.6;
     margin: 0;
+    color: rgba(var(--color-foreground), 0.7);
   }
 </style>
 
@@ -224,6 +235,15 @@
   "name": "BW Journal",
   "settings": [
     { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    { "type": "select", "id": "image_ratio", "label": "Image Aspect Ratio", 
+      "options": [
+        { "value": "16/10", "label": "Wide (16:10)" },
+        { "value": "4/3", "label": "Standard (4:3)" },
+        { "value": "1/1", "label": "Square (1:1)" },
+        { "value": "4/5", "label": "Portrait (4:5)" }
+      ],
+      "default": "1/1"
+    },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Blissway Journal" },
     { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Insights for the <span>modern home</span>." },
     { "type": "text", "id": "btn_label", "label": "Button Label", "default": "View all articles" },

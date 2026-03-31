@@ -106,7 +106,6 @@
         style="display:flex;flex-wrap: wrap;"
       >
         {% assign custom_names = block.settings.names | split: ',' %}
-        {% assign base_store_files_url = '//' | append: shop.permanent_domain | append: '/cdn/shop/files/' %}
         {% for related_product in related_products %}
           {% if product.handle == related_product.handle %}
             <legend class="form__label form__label-{{block.id}} form__label-variant_picker-{{block.id}} {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}">
@@ -116,8 +115,7 @@
               </span>
             </legend>
           {% endif %}
-          {% assign thumb_image = block.settings.combined_listing_swatch_size | times: 2 | append: 'x' %}
-          {% assign variant_image_url = related_product.featured_image | img_url: thumb_image %}
+          {% assign variant_image_url = related_product.featured_image | image_url: width: 100 %}
 
           <div class="product-form__swatch">
             <input

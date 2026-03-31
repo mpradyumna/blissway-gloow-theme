@@ -1,4 +1,10 @@
 {%- style -%}
+  #bw-hero-slider-{{ section.id }} {
+    --text-align: {{ section.settings.text_align }};
+    --vertical-align: {{ section.settings.vertical_align }};
+    --button-align: {% if section.settings.text_align == 'center' %}center{% elsif section.settings.text_align == 'right' %}flex-end{% else %}flex-start{% endif %};
+  }
+
 /* ── Hero Slider (Alpine-style) ──────────────────────────── */
 .bw-hero-slider {
   position: relative;
@@ -22,7 +28,7 @@
   transition: opacity 0.9s ease;
   pointer-events: none;
   display: flex;
-  align-items: center;
+  align-items: var(--vertical-align, center);
 }
 
 .bw-hero-slider__slide.active {
@@ -67,12 +73,11 @@
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
   color: #fff;
-  text-align: left;
+  text-align: var(--text-align, left);
 }
 
 .bw-hero-slider__eyebrow {
   font-family: var(--bw-font-body);
-  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -83,7 +88,6 @@
 
 .bw-hero-slider__heading {
   font-family: var(--bw-font-display);
-  font-size: calc(var(--font-heading-scale) * 4.5rem);
   font-weight: 700;
   line-height: 1.05;
   color: #fff;
@@ -95,23 +99,27 @@
 
 .bw-hero-slider__sub {
   font-family: var(--bw-font-body);
-  
+  font-size: 1.325rem;
   color: rgba(255,255,255,0.85);
   line-height: 1.6;
   margin: 0 0 2.5rem;
   max-width: 480px;
+  margin-left: {% if section.settings.text_align == 'center' %}auto{% elsif section.settings.text_align == 'right' %}auto{% else %}0{% endif %};
+  margin-right: {% if section.settings.text_align == 'center' %}auto{% elsif section.settings.text_align == 'left' %}auto{% else %}0{% endif %};
 }
 
 .bw-hero-slider__actions {
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: var(--button-align, flex-start);
   margin-bottom: 2.5rem;
 }
 
 .bw-hero-slider__meta {
   display: flex;
   align-items: center;
+  justify-content: var(--button-align, flex-start);
   gap: 0.75rem;
   font-size: 0.85rem;
   color: rgba(255,255,255,0.7);
@@ -191,8 +199,6 @@
 @media (max-width: 767px) {
   .bw-hero-slider { height: 90dvh; }
   .bw-hero-slider__content { padding: 2rem 1.25rem; }
-  .bw-hero-slider__heading { font-size: 2.8rem; }
-  .bw-hero-slider__sub { font-size: 1rem; }
   .bw-hero-slider__nav { 
     right: auto;
     left: 50%;
@@ -218,7 +224,7 @@
           {%- endif -%}
           
           {%- if block.settings.heading != blank -%}
-            <h1 class="bw-hero-slider__heading">{{ block.settings.heading }}</h1>
+            <h1 class="bw-hero-slider__heading {{ section.settings.heading_size }}">{{ block.settings.heading }}</h1>
           {%- endif -%}
           
           {%- if block.settings.subheading != blank -%}
@@ -322,7 +328,54 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },],
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "header",
+      "content": "Placement"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "vertical_align",
+      "label": "Vertical Alignment",
+      "options": [
+        { "value": "flex-start", "label": "Top" },
+        { "value": "center", "label": "Middle" },
+        { "value": "flex-end", "label": "Bottom" }
+      ],
+      "default": "center"
+    }
+  ],
   "blocks": [
     {
       "type": "slide",

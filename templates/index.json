@@ -55,7 +55,10 @@
         "slide_3"
       ],
       "settings": {
-        "color_scheme": ""
+        "color_scheme": "",
+        "heading_size": "h0",
+        "text_align": "left",
+        "vertical_align": "center"
       }
     },
     "trust_bar": {
@@ -197,6 +200,9 @@
         "panel_1": {
           "type": "panel",
           "settings": {
+            "heading_size": "h0",
+            "text_alignment": "left",
+            "vertical_alignment": "center",
             "bg_color": "#f8f9fa",
             "text_color": "#1d1d1d",
             "eyebrow": "Curated, Not Just Listed",
@@ -213,6 +219,9 @@
         "panel_2": {
           "type": "panel",
           "settings": {
+            "heading_size": "h0",
+            "text_alignment": "left",
+            "vertical_alignment": "center",
             "bg_color": "#2563eb",
             "text_color": "#ffffff",
             "eyebrow": "Ships in 24 Hours",
@@ -229,6 +238,9 @@
         "panel_3": {
           "type": "panel",
           "settings": {
+            "heading_size": "h0",
+            "text_alignment": "left",
+            "vertical_alignment": "center",
             "bg_color": "#111111",
             "text_color": "#ffffff",
             "eyebrow": "Built to Last",
@@ -448,6 +460,7 @@
       "type": "bw-journal",
       "settings": {
         "color_scheme": "",
+        "image_ratio": "1/1",
         "eyebrow": "Blissway Journal",
         "heading": "Insights for the modern home.",
         "btn_label": "View all articles",

@@ -1,0 +1,76 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'section-bw-footer-new.css' | asset_url | stylesheet_tag }}
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">
+          BLISSWAY<span>.</span>
+        </a>
+        <p class="footer__tagline">
+          Curated for Indian homes. Backed by people who use them.
+        </p>
+      </div>
+
+      {%- for block in section.blocks -%}
+        <details class="footer__accordion">
+          <summary>
+            <h2 class="footer__heading">{{ block.settings.heading }}</h2>
+            <svg class="footer__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="footer__accordion-content">
+            {%- if block.type == 'link_list' and block.settings.menu != blank -%}
+              <ul class="footer__links">
+                {%- for link in block.settings.menu.links -%}
+                  <li>
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+        </details>
+      {%- endfor -%}
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__copyright">
+        © 2026 Blissway Essentials. All Rights Reserved.
+      </div>
+      <div class="footer__payment">
+        <span>Payment Methods</span>
+        <img src="https://cdn.shopify.com/s/files/1/0607/2828/0101/files/payment-icons.png?v=1637654631" alt="Payment methods">
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "BW Footer New",
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Link List",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Shop"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "default": "footer"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}

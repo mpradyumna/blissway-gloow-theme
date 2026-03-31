@@ -168,7 +168,7 @@
 
     {%- if section.settings.logo_position != 'middle-center' -%}
             {%- if request.page_type == 'index' -%}
-              <h1 class="header__heading">
+              <div class="header__heading">
             {%- endif -%}
          {% if template == 'index' %}
           {% if section.settings.enable_transparent-header %}
@@ -225,7 +225,7 @@
 
 
       {%- if request.page_type == 'index' -%}
-        </h1>
+        </div>
       {%- endif -%}
     {%- endif -%}
 
@@ -241,7 +241,7 @@
 
     {%- if section.settings.logo_position == 'middle-center' -%}
                 {%- if request.page_type == 'index' -%}
-                  <h1 class="header__heading">
+                  <div class="header__heading">
                 {%- endif -%}
         {% if template == 'index' %}
           {% if section.settings.enable_transparent-header %}
@@ -292,11 +292,10 @@
        <span class="h2">{{ shop.name }}</span>
       {%- endif -%}
    </a>
-{% endif %}
-      {%- if request.page_type == 'index' -%} 
-        </h1>
-      {%- endif -%}
-    {%- endif -%}
+   {% endif %}
+      {%- if request.page_type == 'index' -%}
+        </div>
+      {%- endif -%}    {%- endif -%}
 
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">

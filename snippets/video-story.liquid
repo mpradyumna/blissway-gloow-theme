@@ -298,7 +298,7 @@
         <div class="lumin-video-story-slide-{{ block_id }}" data-index="{{ forloop.index0 }}">
           <div class="lumin-video-story-video-wrapper-{{ block_id }}">
             {% assign video_class = 'lumin-video-story-video-' | append: block_id %}
-            {% assign poster = block.settings[video_key] | img_url: 'master' %}
+            {% assign poster = block.settings[video_key] | image_url: width: 1000 %}
             {% if block.settings.autoplay %}
               {{
                 block.settings[video_key]

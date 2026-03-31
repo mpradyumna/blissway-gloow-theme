@@ -10,10 +10,6 @@
   {% render 'sticky-atc-custom', block: block, product: product, product_form_id: product_form_id, section_id: section.id %}
 {% endcomment %}
 
-{% assign has_variants = true %}
-{% if product.options.size == 1 and product.options.first == 'Title' %}
-  {% assign has_variants = false %}
-{% endif %}
 
 <div
   class="product-form sticky-atc{% unless settings.enable_atc_slide_out %} always-visible{% endunless %} quick-add-hidden"

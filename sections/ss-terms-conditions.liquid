@@ -1,0 +1,957 @@
+{%- liquid 
+  assign padding_horizontal = section.settings.padding_horizontal
+  assign padding_horizontal_mobile = section.settings.padding_horizontal_mobile
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.settings.padding_bottom
+  assign border_color = section.settings.border_color
+  assign border_thickness = section.settings.border_thickness
+  assign margin_top = section.settings.margin_top
+  assign margin_bottom = section.settings.margin_bottom
+  assign background_color = section.settings.background_color
+  assign background_gradient = section.settings.background_gradient
+
+  assign class_placing = section.settings.class_placing
+  assign class_button = section.settings.class_button
+
+  assign label = section.settings.label
+  assign label_size = section.settings.label_size
+  assign label_size_mobile = section.settings.label_size_mobile
+  assign label_color = section.settings.label_color
+  assign label_link_color = section.settings.label_link_color
+  assign label_font = section.settings.label_font
+  assign label_height = section.settings.label_height
+  assign label_custom = section.settings.label_custom
+  assign label_align_mobile = section.settings.label_align_mobile
+  assign label_align = section.settings.label_align
+
+  assign error = section.settings.error
+  assign error_size = section.settings.error_size
+  assign error_size_mobile = section.settings.error_size_mobile
+  assign error_color = section.settings.error_color
+  assign error_font = section.settings.error_font
+  assign error_height = section.settings.error_height
+  assign error_custom = section.settings.error_custom
+  assign error_mt = section.settings.error_mt
+  assign error_align_mobile = section.settings.error_align_mobile
+  assign error_align = section.settings.error_align
+
+  assign checkbox_size_mobile = section.settings.checkbox_size_mobile
+  assign checkbox_size = section.settings.checkbox_size
+  assign checkbox_bg_color = section.settings.checkbox_bg_color
+  assign checkbox_bg_active_color = section.settings.checkbox_bg_active_color
+  assign checkbox_border_color = section.settings.checkbox_border_color
+  assign checkbox_border_active_color = section.settings.checkbox_border_active_color
+  assign checkbox_arrow_color = section.settings.checkbox_arrow_color
+  assign checkbox_radius = section.settings.checkbox_radius
+  assign checkbox_radius_mobile = section.settings.checkbox_radius_mobile
+  assign checkbox_border_thickness = section.settings.checkbox_border_thickness
+  assign checkbox_style = section.settings.checkbox_style
+  assign checkbox_margin_right = section.settings.checkbox_margin_right
+
+  assign checkbox_text_size = ""
+  assign checkbox_text_size_mobile = ""
+
+  assign checkbox_text_size = label_size | divided_by: 10
+  assign checkbox_text_size_mobile = label_size_mobile | divided_by: 10  
+-%}
+
+<style>
+
+  {{ label_font | font_face: font_display: 'swap' }}
+  {{ error_font | font_face: font_display: 'swap' }}
+
+  .section-{{ section.id }} {
+    border-top: solid {{ border_color }} {{ border_thickness }}px;
+    border-bottom: solid {{ border_color }} {{ border_thickness }}px;
+    margin-top: {{ margin_top | times: 0.75 | round: 0 }}px;
+    margin-bottom: {{ margin_bottom | times: 0.75 | round: 0 }}px;
+  }
+  
+  .section-{{ section.id }}-settings {
+    margin: 0 auto;
+    padding-top: {{ padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-left: {{ padding_horizontal }}rem;
+    padding-right: {{ padding_horizontal_mobile }}rem;
+  }
+
+  .checkbox-row-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    justify-content: {{ label_align_mobile }};
+    position: relative;
+  }
+
+  .checkbox-input-{{ section.id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .checkbox-label-{{ section.id }} {
+    display: flex;
+    align-items: start;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: fit-content;
+    cursor: pointer;
+    gap: {{ checkbox_margin_right | times: 0.75 | round: 0 }}px;
+  }
+
+  .checkbox-label-{{ section.id }} * {
+    margin: 0px;
+    font-size: {{ label_size_mobile }}px;
+    color: {{ label_color }};
+    line-height: {{ label_height }}%;
+    text-transform: unset;
+    text-decoration: none;
+  }
+
+  .checkbox-label-{{ section.id }} a {
+    color: {{ label_link_color }};
+    text-decoration: underline;
+  }
+
+  .checkbox-error-{{ section.id }} {
+    display: none;
+    margin-top: {{ error_mt | times: 0.75 | round: 0 }}px;
+    text-align: {{ error_align_mobile }};
+  }
+
+  .checkbox-error-{{ section.id }}.active {
+    display: block;
+  }
+
+  .checkbox-error-{{ section.id }} * {
+    margin: 0px;
+    font-size: {{ error_size_mobile }}px;
+    color: {{ error_color }};
+    line-height: {{ error_height }}%;
+    text-transform: unset;
+    text-decoration: none;
+  }
+
+  @media(min-width: 1024px) {
+    
+    .section-{{ section.id }} {
+      margin-top: {{ margin_top }}px;
+      margin-bottom: {{ margin_bottom }}px;
+    }
+    
+    .section-{{ section.id }}-settings {
+      padding: 0 5rem;
+      padding-top: {{ padding_top }}px;
+      padding-bottom: {{ padding_bottom }}px;
+      padding-left: {{ padding_horizontal }}rem;
+      padding-right: {{ padding_horizontal }}rem;
+    }
+
+    .checkbox-row-{{ section.id }} {
+      justify-content: {{ label_align }};
+    }
+
+    .checkbox-label-{{ section.id }} {
+      gap: {{ checkbox_margin_right }}px;
+    }
+
+    .checkbox-label-{{ section.id }} * {
+      font-size: {{ label_size }}px;
+    }
+
+    .checkbox-error-{{ section.id }} {
+      text-align: {{ error_align }};
+      margin-top: {{ error_mt }}px;
+    }
+
+    .checkbox-error-{{ section.id }} * {
+      font-size: {{ error_size }}px;
+    }
+  }
+
+</style>
+
+{% if label_custom %}
+  <style>
+    .checkbox-label-{{ section.id }} * {
+      font-family: {{ label_font.family }}, {{ label_font.fallback_families }};
+      font-weight: {{ label_font.weight }};
+      font-style: {{ label_font.style }};
+    }
+  </style>
+{% endif %}
+
+{% if error_custom %}
+  <style>
+    .checkbox-error-{{ section.id }} * {
+      font-family: {{ error_font.family }}, {{ error_font.fallback_families }};
+      font-weight: {{ error_font.weight }};
+      font-style: {{ error_font.style }};
+    }
+  </style>
+{% endif %}
+
+{% if checkbox_style == "first" %}
+  <style>
+    .checkbox-label-{{ section.id }}:before {
+      content: '';
+      flex: 0 0 {{ checkbox_size_mobile }}px;
+      height: {{ checkbox_size_mobile }}px;
+      border-radius: {{ checkbox_radius_mobile }}px;
+      border: {{ checkbox_border_thickness }}px solid {{ checkbox_border_color }};
+      background-color: {{ checkbox_bg_color }};
+      transition: all 0.25s ease 0s;
+    }
+
+    .checkbox-label-{{ section.id }}:after {
+        position: absolute;
+        display: block;
+        content: "";
+        left: calc({{ checkbox_size_mobile | times: 0.5 | round: 0 }}px - {{ checkbox_size_mobile | times: 0.15 | round: 0 }}px);
+        top: 48%;
+        width: {{ checkbox_size_mobile | times: 0.25 | round: 0 }}px;
+        height: {{ checkbox_size_mobile | times: 0.5 | round: 0 }}px;
+        border: solid {{ checkbox_arrow_color }};
+        border-width: 0 2px 2px 0;
+        transform: translateY(-50%) rotate(45deg);
+        -webkit-transform: translateY(-50%) rotate(45deg);
+        -moz-transform: translateY(-50%) rotate(45deg);
+        -ms-transform: translateY(-50%) rotate(45deg);
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+
+    .checkbox-input-{{ section.id }}:checked + .checkbox-label-{{ section.id }}:before {
+      transition: all 0.25s ease 0s;
+      border: {{ checkbox_border_thickness }}px solid {{ checkbox_border_active_color }};
+      background-color: {{ checkbox_bg_active_color }};
+    }
+
+    .checkbox-input-{{ section.id }}:checked + .checkbox-label-{{ section.id }}:after {
+      opacity: 1;
+      transition: all 0.2s ease;
+    }
+
+     @media(min-width: 1024px) {
+
+      .checkbox-label-{{ section.id }}:before {
+        border-radius: {{ checkbox_radius }}px;
+        flex: 0 0 {{ checkbox_size }}px;
+        height: {{ checkbox_size }}px;
+      }
+      
+      .checkbox-label-{{ section.id }}:after {
+        left: calc({{ checkbox_size | times: 0.5 | round: 0 }}px - {{ checkbox_size | times: 0.15 | round: 0 }}px);
+        width: {{ checkbox_size | times: 0.25 | round: 0 }}px;
+        height: {{ checkbox_size | times: 0.5 | round: 0 }}px;
+      }
+    }
+  </style>
+{% elsif checkbox_style == "second" %}
+  <style>
+    .checkbox-label-{{ section.id }}:before {
+      content: '';
+      flex: 0 0 {{ checkbox_size_mobile }}px;
+      height: {{ checkbox_size_mobile }}px;
+      border-radius: {{ checkbox_radius_mobile }}px;
+      border: {{ checkbox_border_thickness }}px solid {{ checkbox_border_color }};
+      background-color: {{ checkbox_bg_color }};
+      transition: all 0.25s ease 0s;
+      margin-top: {{ checkbox_top_mobile }}px;
+    }
+
+    .checkbox-label-{{ section.id }}:after {
+      position: absolute;
+      display: block;
+      content: "";
+      left: 3px;
+      top: 3px;
+      width: calc({{ checkbox_size_mobile  }}px - 6px);
+      height: calc({{ checkbox_size_mobile  }}px - 6px);
+      background-color: {{ checkbox_bg_active_color }};
+      border-radius: calc({{ checkbox_radius_mobile }}px - 2px);
+      opacity: 0;
+      transition: all 0.2s ease;
+      margin-top: {{ checkbox_top_mobile }}px;
+    }
+
+    .checkbox-input-{{ section.id }}:checked + .checkbox-label-{{ section.id }}:before {
+      transition: all 0.25s ease 0s;
+      border: {{ checkbox_border_thickness }}px solid {{ checkbox_border_active_color }};
+    }
+
+    .checkbox-input-{{ section.id }}:checked + .checkbox-label-{{ section.id }}:after {
+      opacity: 1;
+      transition: all 0.2s ease;
+    }
+
+    @media(min-width: 1024px) {
+
+      .checkbox-label-{{ section.id }}:before  {
+        border-radius: {{ checkbox_radius }}px;
+        flex: 0 0 {{ checkbox_size }}px;
+        height: {{ checkbox_size }}px;
+        margin-top: {{ checkbox_top }}px;
+      }
+      
+      .checkbox-label-{{ section.id }}:after {
+        width: calc({{ checkbox_size  }}px - 6px);
+        height: calc({{ checkbox_size  }}px - 6px);
+        border-radius: calc({{ checkbox_radius }}px - 2px);
+        margin-top: {{ checkbox_top }}px;
+      }
+    }
+  </style>
+{% elsif checkbox_style == "third" %}
+  <style>
+    .checkbox-label-{{ section.id }}:before {
+      content: '';
+      flex: 0 0 {{ checkbox_size_mobile }}px;
+      height: 10px;
+      border-radius: {{ checkbox_radius_mobile }}px;
+      border: 1px solid #E2E2E2;
+      background-color: #EEEEEE;
+      margin-top: {{ checkbox_top_mobile }}px;
+    }
+
+    .checkbox-label-{{ section.id }}:after {
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: -5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: {{ checkbox_bg_color }};
+      border: {{ checkbox_border_thickness }}px solid {{ checkbox_border_color }};
+      transition: all 0.25s ease 0s;
+      margin-top: {{ checkbox_top_mobile }}px;
+    }
+
+    .checkbox-input-{{ section.id }}:checked + .checkbox-label-{{ section.id }}:after {
+      left: calc({{ checkbox_size_mobile }}px - 14px);
+      background-color: {{ checkbox_bg_active_color }};
+      border: {{ checkbox_border_thickness }}px solid {{ checkbox_border_active_color }};
+      transition: all 0.25s ease 0s;
+    }
+
+    @media(min-width: 1024px) {
+      .checkbox-label-{{ section.id }}:before {
+        flex: 0 0 {{ checkbox_size }}px;
+        border-radius: {{ checkbox_radius }}px;
+        margin-top: {{ checkbox_top }}px;
+      }
+
+      .checkbox-input-{{ section.id }}:checked + .checkbox-label-{{ section.id }}:after {
+        left: calc({{ checkbox_size }}px - 14px);
+        margin-top: {{ checkbox_top }}px;
+      }
+    }
+  </style>
+{% elsif checkbox_style == "fourth" %}
+  <style>
+    .checkbox-label-{{ section.id }}:before {
+      content: '';
+      flex: 0 0 {{ checkbox_size_mobile }}px;
+      height: 20px;
+      border: {{ checkbox_border_thickness }}px solid {{ checkbox_border_color }};
+      border-radius: {{ checkbox_radius_mobile }}px;
+      border: 1px solid #E2E2E2;
+      transition: all 0.25s ease 0s;
+      margin-top: {{ checkbox_top_mobile }}px;
+    }
+
+    .checkbox-label-{{ section.id }}:after {
+      content: '';
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      border-radius: 50%;
+      border: {{ checkbox_border_thickness }}px solid {{ checkbox_border_color }};
+      background-color: {{ checkbox_bg_color }};
+      transition: all 0.25s ease 0s;
+      margin-top: {{ checkbox_top_mobile }}px;
+    }
+
+    .checkbox-input-{{ section.id }}:checked + .checkbox-label-{{ section.id }}:after {
+      left: calc({{ checkbox_size_mobile }}px - 17px);
+      border: {{ checkbox_border_thickness }}px solid {{ checkbox_border_active_color }};
+      background-color: {{ checkbox_bg_active_color }};
+      transition: all 0.25s ease 0s;
+    }
+
+    .checkbox-input-{{ section.id }}:checked + .checkbox-label-{{ section.id }}:before {
+      border: {{ checkbox_border_thickness }}px solid {{ checkbox_border_active_color }};
+      transition: all 0.25s ease 0s;
+    }
+
+     @media(min-width: 1024px) {
+      .checkbox-label-{{ section.id }}:before {
+        flex: 0 0 {{ checkbox_size }}px;
+        border-radius: {{ checkbox_radius }}px;
+        margin-top: {{ checkbox_top }}px;
+      }
+
+      .checkbox-input-{{ section.id }}:checked + .checkbox-label-{{ section.id }}:after {
+        left: calc({{ checkbox_size }}px - 17px);
+        margin-top: {{ checkbox_top }}px;
+      }
+    }
+  </style>
+{% endif %}
+
+<script>
+  (function () {
+    function moreLoadProductForm() {
+    {% if class_placing != blank %}
+    var productForm = document.querySelector('.{{ class_placing }}');
+    {% endif %}
+    if (!productForm){
+      var productForm = document.querySelector('.cart__footer .cart__ctas');
+      if (!productForm) return;
+      }
+      const templateContent = document.querySelector(
+        '#ss-terms-condition-checkbox-{{ section.id }}'
+      ).content;
+
+      productForm.insertAdjacentElement(
+        'beforebegin',
+        templateContent.firstElementChild
+      );
+    }
+
+    window.addEventListener('DOMContentLoaded', moreLoadProductForm);
+  })();
+</script>
+  
+<template id="ss-terms-condition-checkbox-{{ section.id }}">
+  <div class="section-{{ section.id }} checkbox-{{ section.id }}" style="background-color:{{ background_color }}; background-image: {{ background_gradient }};">
+      <div class="section-{{ section.id }}-settings" id="ss-terms-condition-checkbox-body-{{ section.id }}">
+        <div class="checkbox-row-{{ section.id }}">
+          <input type="checkbox" class="checkbox-input-{{ section.id }}" name="terms-conditions" id="terms-conditions">
+          <label for="terms-conditions" class="checkbox-label-{{ section.id }}">
+            {{ label }}
+          </label>
+        </div>
+        {% if error != blank %}
+        <div class="checkbox-error-{{ section.id }}">
+          {{ error }}
+        </div>
+        {% endif %}
+      </div>
+  </div>
+</template>
+    
+<script>
+  function initTermsConditionCheckbox() {
+    let button = document.querySelector('.cart__footer .cart__ctas');
+    let checkbox = document.querySelector('.checkbox-input-{{ section.id }}');
+    let error = document.querySelector('.checkbox-error-{{ section.id }}');
+
+    console.log(button);
+    
+    if (checkbox) {
+      if (button) {
+        button.setAttribute('data-disabled', 'true');
+      }
+      
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          if (button) {
+            button.removeAttribute('data-disabled');
+          }
+          if (error) {
+            error.classList.remove('active');
+          }
+        } else {
+          if (button) {
+            button.setAttribute('data-disabled', 'true');
+          }
+        }
+        
+      });
+    }
+    
+    if (button) {
+      setTimeout(() => {
+        let submit = button.querySelector('button');
+
+        button.addEventListener('mouseenter', () => {
+          if(button.hasAttribute('data-disabled')) {
+            submit.style.pointerEvents = 'none'
+          } else {
+            submit.style.pointerEvents = 'all'
+          }         
+        })      
+
+       button.addEventListener('click', (e) => {          
+          if (button.hasAttribute('data-disabled')) {
+            e.preventDefault();
+            if (error) {
+              error.classList.add('active');
+            }
+          } 
+        });
+      }, 2500)     
+    }
+  }
+
+  window.addEventListener('load', () => {
+    setTimeout(initTermsConditionCheckbox, 500);
+  });
+
+  if (Shopify.designMode) {
+    document.addEventListener('shopify:section:unload', initTermsConditionCheckbox);
+    document.addEventListener('shopify:section:load', () => {
+      setTimeout(initTermsConditionCheckbox, 500);
+    });
+  }
+</script>
+
+
+{% schema %}
+  {
+    "name": "SS - Terms Checkbox",
+    "settings": [
+      {
+        "type": "header",
+        "content":"Save settings to see section in action"
+      },
+      {
+        "type": "header",
+        "content":"Label Settings"
+      },
+      {
+        "type": "richtext",
+        "id": "label",
+        "label": "Label Text",
+        "default": "<p>Terms & Conditions</p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "label_custom",
+        "label": "Use Custom Font",
+        "default": false
+      },
+      {
+        "type": "font_picker",
+        "id": "label_font",
+        "label": "Label Font Family",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "range",
+        "id": "label_size",
+        "min": 0,
+        "max": 72,
+        "step": 2,
+        "unit": "px",
+        "label": "Label Size",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "label_size_mobile",
+        "min": 0,
+        "max": 72,
+        "step": 2,
+        "unit": "px",
+        "label": "Label Size - Mobile",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "label_height",
+        "min": 50,
+        "max": 200,
+        "step": 10,
+        "unit": "%",
+        "label": "Label Line Height",
+        "default": 100
+      },
+      {
+        "type": "select",
+        "id": "label_align",
+        "label": "Label Align",
+        "default": "start",
+        "options": [
+          {
+            "label": "Left",
+            "value": "start"
+          },
+          {
+            "label": "Center",
+            "value": "center"
+          },
+          {
+            "label": "Right",
+            "value": "end"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "label_align_mobile",
+        "label": "Label Align - Mobile",
+        "default": "start",
+        "options": [
+          {
+            "label": "Left",
+            "value": "start"
+          },
+          {
+            "label": "Center",
+            "value": "center"
+          },
+          {
+            "label": "Right",
+            "value": "end"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content":"Error Message Settings"
+      },
+      {
+        "type": "richtext",
+        "id": "error",
+        "label": "Error Message Text",
+        "default": "<p>Please agree to the terms and conditions before making a purchase!</p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "error_custom",
+        "label": "Use Custom Font",
+        "default": false
+      },
+      {
+        "type": "font_picker",
+        "id": "error_font",
+        "label": "Error Message Font Family",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "range",
+        "id": "error_size",
+        "min": 0,
+        "max": 72,
+        "step": 2,
+        "unit": "px",
+        "label": "Error Message Size",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "error_size_mobile",
+        "min": 0,
+        "max": 72,
+        "step": 2,
+        "unit": "px",
+        "label": "Error Message Size - Mobile",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "error_height",
+        "min": 50,
+        "max": 200,
+        "step": 10,
+        "unit": "%",
+        "label": "Error Message Line Height",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "error_mt",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Error Margin Top",
+        "default": 10
+      },
+      {
+        "type": "text_alignment",
+        "id": "error_align",
+        "label": "Error Align"
+      },
+      {
+        "type": "text_alignment",
+        "id": "error_align_mobile",
+        "label": "Error Align - Mobile"
+      },
+      {
+        "type": "header",
+        "content": "Checkbox Settings"
+      },
+      {
+        "type": "select",
+        "id": "checkbox_style",
+        "label": "Checkbox Style",
+        "default": "first",
+        "options": [
+          {
+            "label": "First",
+            "value": "first"
+          },
+          {
+            "label": "Second",
+            "value": "second"
+          },
+          {
+            "label": "Third",
+            "value": "third"
+          },
+          {
+            "label": "Fourth",
+            "value": "fourth"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "checkbox_size",
+        "min": 10,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Checkbox Size",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "checkbox_size_mobile",
+        "min": 10,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Checkbox Size - Mobile",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "checkbox_radius",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Checkbox Border Radius",
+        "default": 6
+      },
+      {
+        "type": "range",
+        "id": "checkbox_radius_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Checkbox Border Radius - Mobile",
+        "default": 6
+      },
+      {
+        "type": "range",
+        "id": "checkbox_border_thickness",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Checkbox Border Thickness",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "checkbox_margin_right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Checkbox Margin Right",
+        "default": 10
+      },
+      {
+        "type": "header",
+        "content": "Label Colors"
+      },
+      {
+        "type": "color",
+        "label": "Label Color",
+        "id": "label_color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "label": "Label Link Color",
+        "id": "label_link_color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "label": "Error Color",
+        "id": "error_color",
+        "default": "#FF0000"
+      },
+      {
+        "type": "header",
+        "content": "Checkbox Colors"
+      },
+      {
+        "type": "color",
+        "label": "Checkbox Background Color",
+        "id": "checkbox_bg_color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "label": "Checkbox Background Active Color",
+        "id": "checkbox_bg_active_color",
+        "default": "#4a67e8"
+      },
+      {
+        "type": "color",
+        "label": "Checkbox Border Color",
+        "id": "checkbox_border_color",
+        "default": "#ACACAC"
+      },
+      {
+        "type": "color",
+        "label": "Checkbox Border Active Color",
+        "id": "checkbox_border_active_color",
+        "default": "#4a67e8"
+      },
+      {
+        "type": "color",
+        "label": "Checkbox Tick Color",
+        "id": "checkbox_arrow_color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "header",
+        "content": "Section Colors"
+      },
+      {
+        "type": "color",
+        "label": "Section background",
+        "id": "background_color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color_background",
+        "id": "background_gradient",
+        "label": "Section background gradient"
+      },
+      {
+        "type": "color",
+        "label": "Border",
+        "id": "border_color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "Section margin (outside)"
+      },
+      {
+        "type": "range",
+        "id": "margin_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Margin top",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "margin_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Margin bottom",
+        "default": 16
+      },
+      {
+        "type": "header",
+        "content": "Section padding (inside)"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 0
+      },
+      {
+         "type": "range",
+         "id": "padding_bottom",
+         "min": 0,
+         "max": 100,
+         "step": 4,
+         "unit": "px",
+         "label": "Padding bottom",
+         "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_horizontal",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "rem",
+        "label": "Padding sides",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_horizontal_mobile",
+        "min": 0,
+        "max": 15,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Padding sides mobile",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Section Settings"
+      },
+      {
+        "type": "range",
+        "id": "border_thickness",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Border thickness",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Custom placement"
+      },
+      {
+        "type": "text",
+        "id": "class_placing",
+        "label": "Custom class for placing checkbox"
+      },
+      {
+        "type": "text",
+        "id": "class_button",
+        "label": "Custom class for checkout button",
+        "info":"Useful if snippet goes into same line with checkout button"
+      }
+    ],
+    "presets": [
+      {
+        "name": "SS - Terms Checkbox"
+      }
+    ]
+  }
+{% endschema %}

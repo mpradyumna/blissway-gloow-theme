@@ -553,11 +553,6 @@
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1 class="product-title-desktop product-title-mobile" style="line-height: {{ block.settings.title_line_height }};">{{ product.title | escape }}</h1>
-                  <a href="{{ product.url }}" class="product__title">
-                    <h2 class="h1 product-title-desktop product-title-mobile" style="line-height: {{ block.settings.title_line_height }};">
-                      {{ product.title | escape }}
-                    </h2>
-                  </a>
                 </div>
                 <style>
                   @media screen and (min-width: 750px) {
@@ -615,28 +610,6 @@
                     height: calc({{ block.settings.save_text_size }}px + 2px);
                     vertical-align: sub;
                   }
-                  .product-savings-{{block.id}} .price {
-                    color: {{block.settings.original_price}};
-                    font-size: {{ block.settings.price_text_size }}px;
-                    font-weight: {{block.settings.price_weight}};
-                    display: flex;
-                    align-items: center;
-                  }
-                  .product-savings-{{block.id}} .price--on-sale .price-item--regular {
-                    color: {{block.settings.compare_price}};
-                    font-size: {{ block.settings.price_text_size }}px;
-                  }
-                  @media screen and (max-width: 749px) {
-                    .product-savings-{{block.id}} .price {
-                      color: {{block.settings.original_price}};
-                      font-size: {{ block.settings.price_text_size_mb }}px;  
-                    }
-                    .product-savings-{{block.id}} .price--on-sale .price-item--regular {
-                      color: {{block.settings.compare_price}};
-                      font-size: {{ block.settings.price_text_size_mb }}px; 
-                    }
-                  }
-
                   {% if block.settings.enable_price_box %}
                   .pdp-price-box-{{ block.id }} {
                     background: {{ block.settings.price_box_bg }};
@@ -645,18 +618,35 @@
                     margin-bottom: 2rem;
                     border: 1px solid {{ block.settings.price_box_border }};
                   }
-                  .pdp-emi-notice {
-                    font-size: 0.85rem;
-                    color: #16a34a;
-                    font-weight: 600;
+                  .pdp-emi-notice-wrapper-{{ block.id }} {
                     margin-top: 12px;
+                    padding-top: 12px;
+                    border-top: 1px dashed rgba(0,0,0,0.08);
+                    position: relative;
+                    height: calc({{ block.settings.notice_text_size }}px + 12px);
+                  }
+                  .pdp-rotating-notice {
+                    font-size: {{ block.settings.notice_text_size }}px;
+                    color: {{ block.settings.notice_text_color }};
+                    font-weight: 600;
                     display: flex;
                     align-items: center;
                     gap: 6px;
+                    position: absolute;
+                    top: 12px;
+                    left: 0;
+                    width: 100%;
+                    opacity: 0;
+                    transform: translateY(10px);
+                    transition: opacity 0.5s ease, transform 0.5s ease;
                   }
-                  .pdp-emi-notice svg {
-                    width: 16px;
-                    height: 16px;
+                  .pdp-rotating-notice.active {
+                    opacity: 1;
+                    transform: translateY(0);
+                  }
+                  .pdp-rotating-notice svg {
+                    width: calc({{ block.settings.notice_text_size }}px + 4px);
+                    height: calc({{ block.settings.notice_text_size }}px + 4px);
                     flex-shrink: 0;
                   }
                   .pdp-price-box-{{ block.id }} .price__container {
@@ -674,11 +664,68 @@
                   show_badges: block.settings.show_save_price,
                   price_class: 'price--large'
                 -%}
-                {% if block.settings.enable_price_box and block.settings.emi_text != blank %}
-                  <div class="pdp-emi-notice">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                    {{ block.settings.emi_text }}
+                
+                {% if block.settings.enable_price_box and block.settings.notice_enable %}
+                  <div class="pdp-emi-notice-wrapper-{{ block.id }}" id="rotating-notices-{{ block.id }}">
+                    {% assign notice_count = 0 %}
+                    
+                    {% if block.settings.notice_1_text != blank %}
+                      <div class="pdp-rotating-notice active" data-index="0">
+                        {% if block.settings.notice_1_icon != blank %}{{ block.settings.notice_1_icon }}{% else %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>{% endif %}
+                        {{ block.settings.notice_1_text }}
+                      </div>
+                      {% assign notice_count = notice_count | plus: 1 %}
+                    {% endif %}
+                    
+                    {% if block.settings.notice_2_text != blank %}
+                      <div class="pdp-rotating-notice {% if notice_count == 0 %}active{% endif %}" data-index="1">
+                        {% if block.settings.notice_2_icon != blank %}{{ block.settings.notice_2_icon }}{% else %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>{% endif %}
+                        {{ block.settings.notice_2_text }}
+                      </div>
+                      {% assign notice_count = notice_count | plus: 1 %}
+                    {% endif %}
+                    
+                    {% if block.settings.notice_3_text != blank %}
+                      <div class="pdp-rotating-notice {% if notice_count == 0 %}active{% endif %}" data-index="2">
+                        {% if block.settings.notice_3_icon != blank %}{{ block.settings.notice_3_icon }}{% else %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>{% endif %}
+                        {{ block.settings.notice_3_text }}
+                      </div>
+                      {% assign notice_count = notice_count | plus: 1 %}
+                    {% endif %}
+
+                    {% if block.settings.notice_4_text != blank %}
+                      <div class="pdp-rotating-notice {% if notice_count == 0 %}active{% endif %}" data-index="3">
+                        {% if block.settings.notice_4_icon != blank %}{{ block.settings.notice_4_icon }}{% else %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>{% endif %}
+                        {{ block.settings.notice_4_text }}
+                      </div>
+                      {% assign notice_count = notice_count | plus: 1 %}
+                    {% endif %}
                   </div>
+                  
+                  {% if notice_count > 1 %}
+                    <script>
+                      document.addEventListener('DOMContentLoaded', function() {
+                        const container = document.getElementById('rotating-notices-{{ block.id }}');
+                        if(!container) return;
+                        const notices = container.querySelectorAll('.pdp-rotating-notice');
+                        if(notices.length <= 1) return;
+                        
+                        let currentIndex = 0;
+                        const speed = {{ block.settings.notice_speed | default: 3 }} * 1000;
+                        
+                        setInterval(() => {
+                          notices[currentIndex].classList.remove('active');
+                          notices[currentIndex].style.transform = 'translateY(-10px)';
+                          
+                          setTimeout(() => {
+                            notices[currentIndex].style.transform = 'translateY(10px)';
+                            currentIndex = (currentIndex + 1) % notices.length;
+                            notices[currentIndex].classList.add('active');
+                          }, 500); // Wait for fade out
+                        }, speed);
+                      });
+                    </script>
+                  {% endif %}
                 {% endif %}
               </div>                {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
@@ -795,6 +842,54 @@
                     {%- endif -%}
                   </div>
                 </div>
+                {%- endif -%}
+
+              {%- when 'bw-product-drawers' -%}
+                {% render 'bw-product-drawers', block: block %}
+
+              {%- when 'bw-drawer' -%}
+                <div class="bw-drawers" id="bw-drawers-{{ block.id }}" data-section-id="{{ block.id }}" {{ block.shopify_attributes }}>
+                  <div class="bw-drawers__triggers">
+                    <ul class="bw-drawers__list" role="list">
+                      <li class="bw-drawers__item">
+                        <button class="bw-drawers__btn" type="button" aria-expanded="false" aria-controls="bw-drawer-{{ block.id }}" data-drawer-index="0">
+                          <span>{{ block.settings.label }}</span>
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M9 18l6-6-6-6"/>
+                          </svg>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bw-drawer-panels" style="display:none" aria-hidden="true">
+                    <div class="bw-drawer-panel" id="bw-panel-{{ block.id }}-0" data-label="{{ block.settings.label | escape }}">
+                      <div class="bw-di">
+                        <div class="bw-di__body bw-di__body--always-open">
+                          <div class="bw-di__inner">{{ block.settings.content }}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bw-drawer" id="bw-drawer-{{ block.id }}" role="dialog" aria-modal="true" aria-labelledby="bw-drawer-title-{{ block.id }}" aria-hidden="true">
+                    <div class="bw-drawer__inner">
+                      <div class="bw-drawer__header">
+                        <p class="bw-drawer__title" id="bw-drawer-title-{{ block.id }}"></p>
+                        <button class="bw-drawer__close" type="button" aria-label="Close">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M18 6 6 18M6 6l12 12"/>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="bw-drawer__body" id="bw-drawer-body-{{ block.id }}"></div>
+                    </div>
+                  </div>
+                  <div class="bw-drawer-overlay" id="bw-drawer-overlay-{{ block.id }}" aria-hidden="true"></div>
+                </div>
+                <script src="{{ 'bw-product-drawers.js' | asset_url }}" defer></script>
+                {%- if forloop.first == false -%}
+                  <style>
+                    .bw-drawers + .bw-drawers .bw-drawers__list { border-top: none !important; }
+                  </style>
                 {%- endif -%}
 
               {%- when 'collapsible_tab' -%}
@@ -1361,7 +1456,7 @@
             {{- 'icon-close.svg' | inline_asset_content -}}
           </button>
           <div class="product-popup-modal__content-info">
-            <h1 class="h2">{{ block.settings.page.title | escape }}</h1>
+            <h2 class="h2">{{ block.settings.page.title | escape }}</h2>
             {{ block.settings.page.content }}
           </div>
         </div>
@@ -2715,10 +2810,108 @@
         "default": 16
       },
       {
+        "type": "header",
+        "content": "Rotating Notice Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "notice_enable",
+        "label": "Enable Rotating Notices",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "notice_speed",
+        "label": "Rotation Speed (Seconds)",
+        "min": 2,
+        "max": 10,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "color",
+        "id": "notice_text_color",
+        "label": "Notice Text Color",
+        "default": "#16a34a"
+      },
+      {
+        "type": "range",
+        "id": "notice_text_size",
+        "label": "Notice Font Size",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 13
+      },
+      {
         "type": "text",
-        "id": "emi_text",
-        "label": "EMI Notice Text",
+        "id": "notice_1_text",
+        "label": "Notice 1 Text",
         "default": "No-cost EMI starting at ₹2,999/month"
+      },
+      {
+        "type": "html",
+        "id": "notice_1_icon",
+        "label": "Notice 1 SVG Icon (Optional)",
+        "info": "Paste raw SVG code here"
+      },
+      {
+        "type": "text",
+        "id": "notice_2_text",
+        "label": "Notice 2 Text",
+        "default": "COD available with extra Rs 49/-"
+      },
+      {
+        "type": "html",
+        "id": "notice_2_icon",
+        "label": "Notice 2 SVG Icon (Optional)"
+      },
+      {
+        "type": "text",
+        "id": "notice_3_text",
+        "label": "Notice 3 Text"
+      },
+      {
+        "type": "html",
+        "id": "notice_3_icon",
+        "label": "Notice 3 SVG Icon (Optional)"
+      },
+      {
+        "type": "text",
+        "id": "notice_4_text",
+        "label": "Notice 4 Text"
+      },
+      {
+        "type": "html",
+        "id": "notice_4_icon",
+        "label": "Notice 4 SVG Icon (Optional)"
+      },
+      {
+        "type": "header",
+        "content": "MRP Text"
+      },
+      {
+        "type": "text",
+        "id": "mrp_text",
+        "label": "MRP Custom Text",
+        "default": "MRP incl. of all taxes"
+      },
+      {
+        "type": "color",
+        "id": "mrp_color",
+        "label": "MRP Text Color",
+        "default": "#6b7280"
+      },
+      {
+        "type": "range",
+        "id": "mrp_size",
+        "label": "MRP Font Size",
+        "min": 8,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 11
       }    
       ]
     },
@@ -6193,6 +6386,127 @@
           "type": "page",
           "id": "page",
           "label": "Page content"
+        }
+      ]
+    },
+    {
+      "type": "bw-product-drawers",
+      "name": "BW Product Drawers",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Renders trigger buttons from product.metafields.custom.product_drawers.value. Each drawer links to a flyout panel with nested accordions."
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "apple", "label": "Apple" },
+            { "value": "banana", "label": "Banana" },
+            { "value": "bottle", "label": "Bottle" },
+            { "value": "box", "label": "Box" },
+            { "value": "carrot", "label": "Carrot" },
+            { "value": "chat_bubble", "label": "Chat bubble" },
+            { "value": "check_mark", "label": "Check mark" },
+            { "value": "clipboard", "label": "Clipboard" },
+            { "value": "dairy", "label": "Dairy" },
+            { "value": "dairy_free", "label": "Dairy free" },
+            { "value": "dryer", "label": "Dryer" },
+            { "value": "eye", "label": "Eye" },
+            { "value": "fire", "label": "Fire" },
+            { "value": "gluten_free", "label": "Gluten free" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "iron", "label": "Iron" },
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "leather", "label": "Leather" },
+            { "value": "lightning_bolt", "label": "Lightning bolt" },
+            { "value": "lipstick", "label": "Lipstick" },
+            { "value": "lock", "label": "Lock" },
+            { "value": "map_pin", "label": "Map pin" },
+            { "value": "nut_free", "label": "Nut free" },
+            { "value": "pants", "label": "Pants" },
+            { "value": "paw_print", "label": "Paw print" },
+            { "value": "pepper", "label": "Pepper" },
+            { "value": "perfume", "label": "Perfume" },
+            { "value": "plane", "label": "Plane" },
+            { "value": "plant", "label": "Plant" },
+            { "value": "price_tag", "label": "Price tag" },
+            { "value": "question_mark", "label": "Question mark" },
+            { "value": "recycle", "label": "Recycle" },
+            { "value": "return", "label": "Return" },
+            { "value": "ruler", "label": "Ruler" },
+            { "value": "serving_dish", "label": "Serving dish" },
+            { "value": "shirt", "label": "Shirt" },
+            { "value": "shoe", "label": "Shoe" },
+            { "value": "silhouette", "label": "Silhouette" },
+            { "value": "snowflake", "label": "Snowflake" },
+            { "value": "star", "label": "Star" },
+            { "value": "stopwatch", "label": "Stopwatch" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "washing", "label": "Washing" },
+            { "value": "plus", "label": "Plus" }
+          ],
+          "default": "none",
+          "label": "Icon before text"
+        },
+        {
+          "type": "range",
+          "id": "font_size_desktop",
+          "min": 10,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size (Desktop)",
+          "default": 13
+        },
+        {
+          "type": "range",
+          "id": "font_size_mobile",
+          "min": 10,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Trigger font size (Mobile)",
+          "default": 13
+        },
+        {
+          "type": "range",
+          "id": "content_font_size_desktop",
+          "min": 10,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Content font size (Desktop)",
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "content_font_size_mobile",
+          "min": 10,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Content font size (Mobile)",
+          "default": 14
+        }
+      ]
+    },
+    {
+      "type": "bw-drawer",
+      "name": "BW Drawer (Single)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Trigger label",
+          "default": "Product Details"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
         }
       ]
     },

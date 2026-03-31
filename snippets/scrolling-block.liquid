@@ -8,8 +8,11 @@
 {% elsif block.type == 'image' %}
   <div class="scrolling-block image-block">
     <img 
-      src="{{ block.settings.image | img_url: 'master' }}" 
-      alt="Scrolling Image" 
+      src="{{ block.settings.image | image_url: width: 1000 }}" 
+      alt="{{ block.settings.image.alt | default: 'Scrolling Image' }}" 
+      width="{{ block.settings.image.width }}"
+      height="{{ block.settings.image.height }}"
+      loading="lazy"
       style="width: {{ block.settings.image_width }}px; height: auto; border-radius: {{ block.settings.image_radius }}px;"
     />
   </div>

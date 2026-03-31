@@ -1,0 +1,1085 @@
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
+
+<section
+  id="bw-ps-{{ section.id }}"
+  class="bw-ps bw-ps--{{ section.settings.theme }}"
+  data-section-id="{{ section.id }}"
+>
+  <div class="bw-ps__inner">
+
+    {%- comment -%} ── LEFT — Scrolling benefit chapters ── {%- endcomment -%}
+    <div class="bw-ps__left">
+
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="bw-ps__eyebrow" data-bw-fade-up>{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'chapter' -%}
+          <div
+            class="bw-ps__chapter"
+            data-chapter-index="{{ forloop.index0 }}"
+            {{ block.shopify_attributes }}
+          >
+            <span class="bw-ps__chapter-num">0{{ forloop.index }}</span>
+            <h3 class="bw-ps__chapter-title" data-bw-chars data-bw-stagger="28">
+              {{ block.settings.heading }}
+            </h3>
+            {%- if block.settings.body != blank -%}
+              <p class="bw-ps__chapter-body" data-bw-lines data-bw-delay="120">
+                {{ block.settings.body }}
+              </p>
+            {%- endif -%}
+            {%- if block.settings.highlight_value != blank -%}
+              <div class="bw-ps__chapter-stat" data-bw-fade-up data-bw-delay="240">
+                <span class="bw-ps__stat-value">{{ block.settings.highlight_value }}</span>
+                <span class="bw-ps__stat-label">{{ block.settings.highlight_label }}</span>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+    </div>
+
+    {%- comment -%} ── RIGHT — Sticky product + ATC panel ── {%- endcomment -%}
+    <div class="bw-ps__right">
+      <div class="bw-ps__sticky">
+
+        {%- comment -%} Image gallery — switches per chapter, all media as thumbnails {%- endcomment -%}
+
+        {%- comment -%} Build master image list: chapter images first, then remaining product media {%- endcomment -%}
+        {%- assign has_chapter_images = false -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'chapter' and block.settings.image != blank -%}
+            {%- assign has_chapter_images = true -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        <div class="bw-ps__gallery" aria-label="{{ product.title | escape }} gallery">
+
+          {%- comment -%} Main images — chapter images (or product media fallback) {%- endcomment -%}
+          {%- if has_chapter_images -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'chapter' -%}
+                {%- assign img = block.settings.image | default: product.featured_image -%}
+                <div class="bw-ps__img-wrap{% if forloop.first %} active{% endif %}" data-img-index="{{ forloop.index0 }}" data-chapter-img="{{ forloop.index0 }}">
+                  {%- if img != blank -%}
+                    <img
+                      src="{{ img | image_url: width: 900 }}"
+                      srcset="{{ img | image_url: width: 450 }} 450w, {{ img | image_url: width: 900 }} 900w, {{ img | image_url: width: 1200 }} 1200w"
+                      sizes="(max-width: 767px) 100vw, 45vw"
+                      alt="{{ product.title | escape }}"
+                      width="900" height="900"
+                      loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                    >
+                  {%- else -%}
+                    {{ 'product-1' | placeholder_svg_tag: 'bw-ps__placeholder' }}
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+            {%- comment -%} Extra product media beyond chapter count {%- endcomment -%}
+            {%- assign chapter_count = section.blocks | where: 'type', 'chapter' | size -%}
+            {%- for media in product.media offset: chapter_count -%}
+              {%- assign extra_idx = forloop.index0 | plus: chapter_count -%}
+              <div class="bw-ps__img-wrap" data-img-index="{{ extra_idx }}">
+                <img
+                  src="{{ media | image_url: width: 900 }}"
+                  srcset="{{ media | image_url: width: 450 }} 450w, {{ media | image_url: width: 900 }} 900w, {{ media | image_url: width: 1200 }} 1200w"
+                  sizes="(max-width: 767px) 100vw, 45vw"
+                  alt="{{ product.title | escape }}"
+                  width="900" height="900"
+                  loading="lazy"
+                >
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            {%- for media in product.media -%}
+              <div class="bw-ps__img-wrap{% if forloop.first %} active{% endif %}" data-img-index="{{ forloop.index0 }}">
+                <img
+                  src="{{ media | image_url: width: 900 }}"
+                  srcset="{{ media | image_url: width: 450 }} 450w, {{ media | image_url: width: 900 }} 900w, {{ media | image_url: width: 1200 }} 1200w"
+                  sizes="(max-width: 767px) 100vw, 45vw"
+                  alt="{{ product.title | escape }}"
+                  width="900" height="900"
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                >
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+
+          {%- comment -%} Thumbnail strip — mirrors imgWrap order exactly {%- endcomment -%}
+          {%- assign total_imgs = 0 -%}
+          {%- if has_chapter_images -%}
+            {%- assign total_imgs = chapter_count | plus: product.media.size | minus: chapter_count -%}
+          {%- else -%}
+            {%- assign total_imgs = product.media.size -%}
+          {%- endif -%}
+          {%- if total_imgs > 1 -%}
+            <div class="bw-ps__thumbs" role="list" aria-label="Product images">
+              {%- if has_chapter_images -%}
+                {%- comment -%} First N thumbs = chapter images (same as imgWraps 0..N-1) {%- endcomment -%}
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'chapter' -%}
+                    {%- assign thumb_src = block.settings.image | default: product.featured_image -%}
+                    <button
+                      class="bw-ps__thumb{% if forloop.first %} active{% endif %}"
+                      data-thumb-index="{{ forloop.index0 }}"
+                      role="listitem"
+                      aria-label="View image {{ forloop.index }}"
+                      type="button"
+                    >
+                      <img
+                        src="{{ thumb_src | image_url: width: 120 }}"
+                        alt="{{ product.title | escape }}"
+                        width="120" height="120"
+                        loading="lazy"
+                      >
+                    </button>
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- comment -%} Remaining thumbs = extra product media (imgWraps N..) {%- endcomment -%}
+                {%- for media in product.media offset: chapter_count -%}
+                  {%- assign extra_thumb_idx = forloop.index0 | plus: chapter_count -%}
+                  <button
+                    class="bw-ps__thumb"
+                    data-thumb-index="{{ extra_thumb_idx }}"
+                    role="listitem"
+                    aria-label="View image {{ extra_thumb_idx | plus: 1 }}"
+                    type="button"
+                  >
+                    <img
+                      src="{{ media | image_url: width: 120 }}"
+                      alt="{{ product.title | escape }}"
+                      width="120" height="120"
+                      loading="lazy"
+                    >
+                  </button>
+                {%- endfor -%}
+              {%- else -%}
+                {%- for media in product.media -%}
+                  <button
+                    class="bw-ps__thumb{% if forloop.first %} active{% endif %}"
+                    data-thumb-index="{{ forloop.index0 }}"
+                    role="listitem"
+                    aria-label="View image {{ forloop.index }}"
+                    type="button"
+                  >
+                    <img
+                      src="{{ media | image_url: width: 120 }}"
+                      alt="{{ product.title | escape }}"
+                      width="120" height="120"
+                      loading="lazy"
+                    >
+                  </button>
+                {%- endfor -%}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+        </div>
+
+        {%- comment -%} Buy panel {%- endcomment -%}
+        <div class="bw-ps__buy-panel">
+
+          <div class="bw-ps__product-meta">
+            <h2 class="bw-ps__product-title">{{ product.title }}</h2>
+            <div class="bw-ps__price-wrap" id="bw-ps-price-{{ section.id }}">
+              {%- if selected_variant.compare_at_price > selected_variant.price -%}
+                <s class="bw-ps__price-was">{{ selected_variant.compare_at_price | money }}</s>
+                <span class="bw-ps__price bw-ps__price--sale">{{ selected_variant.price | money }}</span>
+                {%- assign saving_pct = selected_variant.compare_at_price | minus: selected_variant.price | times: 100 | divided_by: selected_variant.compare_at_price -%}
+                <span class="bw-ps__sale-badge">{{ saving_pct }}% OFF</span>
+              {%- else -%}
+                <span class="bw-ps__price">{{ selected_variant.price | money }}</span>
+              {%- endif -%}
+            </div>
+          </div>
+
+          {%- comment -%} Variant picker {%- endcomment -%}
+          {%- unless product.has_only_default_variant -%}
+            <div class="bw-ps__variants" id="bw-ps-variants-{{ section.id }}">
+              {%- for option in product.options_with_values -%}
+                <div class="bw-ps__option-group">
+                  <p class="bw-ps__option-label">
+                    {{ option.name }}:
+                    <span class="bw-ps__option-selected">{{ option.selected_value }}</span>
+                  </p>
+                  <div class="bw-ps__option-pills" role="group" aria-label="{{ option.name }}">
+                    {%- for value in option.values -%}
+                      <button
+                        type="button"
+                        class="bw-ps__pill{% if option.selected_value == value %} active{% endif %}"
+                        data-option-pos="{{ option.position }}"
+                        data-value="{{ value | escape }}"
+                        aria-pressed="{% if option.selected_value == value %}true{% else %}false{% endif %}"
+                      >
+                        {{ value }}
+                      </button>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div>
+          {%- endunless -%}
+
+          {%- comment -%} Add to cart form — wrapped in product-form custom element to trigger cart drawer {%- endcomment -%}
+          <product-form data-section-id="{{ section.id }}" data-url="{{ product.url }}" data-cart-behavior="pdp">
+            <form
+              action="/cart/add"
+              method="post"
+              class="bw-ps__form"
+              id="bw-ps-form-{{ section.id }}"
+              enctype="multipart/form-data"
+            >
+              <input
+                type="hidden"
+                name="id"
+                id="bw-ps-variant-id-{{ section.id }}"
+                value="{{ selected_variant.id }}"
+              >
+              <input type="hidden" name="quantity" value="1">
+
+              <button
+                type="submit"
+                name="add"
+                class="bw-ps__atc"
+                id="bw-ps-atc-{{ section.id }}"
+                {% unless selected_variant.available %}disabled{% endunless %}
+              >
+                <span class="bw-ps__atc-label">
+                  {%- if selected_variant.available -%}Add to Cart{%- else -%}Sold Out{%- endif -%}
+                </span>
+                {%- render 'loading-spinner' -%}
+                <svg class="bw-ps__atc-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M2.25 2.25H3.75L6 11.25H13.5L15.75 5.25H5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8" cy="14.75" r="1.25" fill="currentColor"/>
+                  <circle cx="12.5" cy="14.75" r="1.25" fill="currentColor"/>
+                </svg>
+              </button>
+            </form>
+          </product-form>
+
+          {%- comment -%} Micro-trust strip {%- endcomment -%}
+          <ul class="bw-ps__trust" role="list">
+            {%- if section.settings.trust_1 != blank -%}
+              <li class="bw-ps__trust-item">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                  <path d="M6.5 1L8 4.2L11.5 4.7L9 7.1L9.6 10.6L6.5 9L3.4 10.6L4 7.1L1.5 4.7L5 4.2L6.5 1Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+                {{ section.settings.trust_1 }}
+              </li>
+            {%- endif -%}
+            {%- if section.settings.trust_2 != blank -%}
+              <li class="bw-ps__trust-item">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                  <path d="M6.5 1.5L11 3.5V6.5C11 9 9 11.3 6.5 12C4 11.3 2 9 2 6.5V3.5L6.5 1.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+                {{ section.settings.trust_2 }}
+              </li>
+            {%- endif -%}
+            {%- if section.settings.trust_3 != blank -%}
+              <li class="bw-ps__trust-item">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                  <path d="M2 6.5h9M7.5 2.5l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {{ section.settings.trust_3 }}
+              </li>
+            {%- endif -%}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{%- comment -%} ── Styles ── {%- endcomment -%}
+<style>
+/* ─────────────────────────────────────────────────────────────
+   BW Product Sticky Split  |  sections/bw-product-sticky.liquid
+   OneClock-inspired: left scrolls, right product stays pinned
+   ───────────────────────────────────────────────────────────── */
+
+.bw-ps {
+  background: var(--bw-bg, #F5F5F5);
+  position: relative;
+}
+
+.bw-ps--dark {
+  background: #1D1D1D;
+}
+
+/* Grid */
+.bw-ps__inner {
+  display: grid;
+  grid-template-columns: 56% 44%;
+  align-items: start;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ── LEFT ── */
+.bw-ps__eyebrow {
+  font-family: var(--bliss-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bw-primary, #2563EB);
+  padding: 80px 64px 0;
+  margin: 0;
+  display: block;
+}
+
+.bw-ps__chapter {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 64px;
+  border-bottom: 1px solid var(--bw-border, rgba(29,29,29,0.08));
+}
+
+.bw-ps__chapter:last-child {
+  border-bottom: none;
+  padding-bottom: 120px;
+}
+
+.bw-ps--dark .bw-ps__chapter {
+  border-bottom-color: rgba(255,255,255,0.07);
+}
+
+.bw-ps__chapter-num {
+  display: block;
+  font-family: var(--bliss-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bw-primary, #2563EB);
+  margin-bottom: 28px;
+}
+
+.bw-ps__chapter-title {
+  font-family: var(--bliss-font-display);
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--bw-accent, #1D1D1D);
+  margin: 0 0 28px;
+}
+
+.bw-ps--dark .bw-ps__chapter-title {
+  color: #F5F5F5;
+}
+
+.bw-ps__chapter-body {
+  font-family: var(--bliss-font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--bw-secondary, #4B5563);
+  margin: 0;
+  max-width: 46ch;
+}
+
+.bw-ps--dark .bw-ps__chapter-body {
+  color: rgba(245,245,245,0.6);
+}
+
+.bw-ps__chapter-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--bw-border, rgba(29,29,29,0.08));
+}
+
+.bw-ps--dark .bw-ps__chapter-stat {
+  border-top-color: rgba(255,255,255,0.1);
+}
+
+.bw-ps__stat-value {
+  font-family: var(--bliss-font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--bw-primary, #2563EB);
+}
+
+.bw-ps__stat-label {
+  font-family: var(--bliss-font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bw-secondary, #4B5563);
+}
+
+/* ── RIGHT — Sticky ── */
+.bw-ps__right {
+  position: sticky;
+  top: 72px;
+  height: calc(100vh - 72px);
+  overflow: hidden;
+}
+
+.bw-ps__sticky {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 32px 40px 32px 24px;
+  gap: 20px;
+}
+
+/* Gallery */
+.bw-ps__gallery {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #EBEBEB;
+}
+
+.bw-ps--dark .bw-ps__gallery {
+  background: #2A2A2A;
+}
+
+.bw-ps__img-wrap {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.bw-ps__img-wrap.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bw-ps__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bw-ps__placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+/* Buy panel */
+.bw-ps__buy-panel {
+  flex-shrink: 0;
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 2px 20px rgba(29,29,29,0.07);
+}
+
+.bw-ps--dark .bw-ps__buy-panel {
+  background: rgba(255,255,255,0.05);
+  box-shadow: none;
+  border: 1px solid rgba(255,255,255,0.09);
+}
+
+.bw-ps__product-title {
+  font-family: var(--bliss-font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bw-accent, #1D1D1D);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.bw-ps--dark .bw-ps__product-title { color: #F5F5F5; }
+
+.bw-ps__price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bw-ps__price {
+  font-family: var(--bliss-font-body);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--bw-accent, #1D1D1D);
+  line-height: 1;
+}
+
+.bw-ps--dark .bw-ps__price { color: #F5F5F5; }
+
+.bw-ps__price--sale { color: var(--bw-primary, #2563EB); }
+
+.bw-ps__price-was {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--bw-text-muted, rgba(29,29,29,0.45));
+  text-decoration: line-through;
+}
+
+.bw-ps__sale-badge {
+  font-family: var(--bliss-font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--bw-primary, #2563EB);
+  color: #fff;
+  padding: 3px 7px;
+  border-radius: 4px;
+  line-height: 1.4;
+}
+
+/* Variants */
+.bw-ps__variants {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bw-ps__option-group { display: flex; flex-direction: column; gap: 8px; }
+
+.bw-ps__option-label {
+  font-family: var(--bliss-font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--bw-secondary, #4B5563);
+  margin: 0;
+}
+
+.bw-ps__option-selected {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--bw-accent, #1D1D1D);
+}
+
+.bw-ps__option-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.bw-ps__pill {
+  font-family: var(--bliss-font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 13px;
+  border: 1.5px solid rgba(29,29,29,0.15);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--bw-accent, #1D1D1D);
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s, background 0.18s;
+  line-height: 1;
+}
+
+.bw-ps__pill.active,
+.bw-ps__pill:hover {
+  border-color: var(--bw-primary, #2563EB);
+  color: var(--bw-primary, #2563EB);
+  background: rgba(37,99,235,0.06);
+}
+
+/* ATC */
+.bw-ps__atc {
+  width: 100%;
+  height: 50px;
+  background: var(--bw-primary, #2563EB);
+  color: #fff;
+  font-family: var(--bliss-font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.bw-ps__atc:hover:not(:disabled) {
+  background: var(--bw-primary-dk, #1D4ED8);
+  transform: translateY(-1px);
+}
+
+.bw-ps__atc:active:not(:disabled) { transform: translateY(0); }
+
+.bw-ps__atc:disabled {
+  background: var(--bw-secondary, #4B5563);
+  cursor: not-allowed;
+}
+
+/* Trust */
+.bw-ps__trust {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.bw-ps__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--bliss-font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--bw-secondary, #4B5563);
+  flex: 1;
+  min-width: max-content;
+}
+
+.bw-ps__trust-item svg { color: var(--bw-primary, #2563EB); flex-shrink: 0; }
+
+/* Thumbnail strip */
+.bw-ps__thumbs {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  max-width: calc(100% - 24px);
+  overflow-x: auto;
+  padding: 6px 8px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  z-index: 2;
+  scrollbar-width: none;
+}
+
+.bw-ps__thumbs::-webkit-scrollbar { display: none; }
+
+.bw-ps--dark .bw-ps__thumbs {
+  background: rgba(29,29,29,0.7);
+}
+
+.bw-ps__thumb {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 0;
+  background: #EBEBEB;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.15s;
+  outline: none;
+}
+
+.bw-ps__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bw-ps__thumb:hover {
+  border-color: rgba(37,99,235,0.5);
+  transform: scale(1.05);
+}
+
+.bw-ps__thumb.active {
+  border-color: var(--bw-primary, #2563EB);
+  transform: scale(1.05);
+}
+
+.bw-ps--dark .bw-ps__thumb { background: #3A3A3A; }
+
+/* Gallery placeholder gradient */
+.bw-ps__gallery:not(:has(.bw-ps__img-wrap.active img)) {
+  background: linear-gradient(135deg, #E8EEF8 0%, #F0F4FF 50%, #E8EEF8 100%);
+}
+
+.bw-ps__placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #dde6f5 0%, #edf2ff 100%);
+}
+
+/* Loading spinner in ATC */
+.bw-ps__atc .loading__spinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.bw-ps__atc .loading__spinner svg {
+  width: 20px;
+  height: 20px;
+  stroke: #fff;
+}
+
+.bw-ps__atc {
+  position: relative;
+}
+
+/* Chapter number treatment */
+.bw-ps__chapter-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bw-ps__chapter-num::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: var(--bw-primary, #2563EB);
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+/* Section top accent */
+.bw-ps {
+  position: relative;
+}
+
+.bw-ps::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bw-primary, #2563EB) 0%, #60A5FA 100%);
+  z-index: 1;
+}
+
+/* ── Mobile ──────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .bw-ps__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Image + buy panel first on mobile */
+  .bw-ps__right {
+    position: relative;
+    top: auto;
+    height: auto;
+    order: -1;
+  }
+
+  .bw-ps__sticky {
+    padding: 16px 16px 0;
+    gap: 14px;
+  }
+
+  .bw-ps__gallery {
+    height: 72vw;
+    max-height: 380px;
+    border-radius: 14px;
+  }
+
+  .bw-ps__img-wrap {
+    position: relative;
+    inset: auto;
+    height: 100%;
+    opacity: 0;
+    display: none;
+  }
+
+  .bw-ps__img-wrap.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .bw-ps__buy-panel {
+    border-radius: 14px;
+    margin-bottom: 8px;
+  }
+
+  .bw-ps__eyebrow { padding: 48px 20px 0; }
+
+  .bw-ps__chapter {
+    min-height: auto;
+    padding: 52px 20px;
+  }
+
+  .bw-ps__chapter-title {
+    font-size: clamp(1.75rem, 7vw, 2.4rem);
+  }
+
+  .bw-ps__chapter-stat { margin-top: 32px; padding-top: 28px; }
+}
+
+/* ── Tablet ──────────────────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .bw-ps__inner { grid-template-columns: 52% 48%; }
+  .bw-ps__chapter { padding: 60px 40px; min-height: 80vh; }
+  .bw-ps__eyebrow { padding: 60px 40px 0; }
+  .bw-ps__sticky { padding: 24px 24px 24px 16px; }
+  .bw-ps__right { top: 68px; height: calc(100vh - 68px); }
+  /* Bump buy panel fonts at tablet */
+  .bw-ps__product-title { font-size: 1.15rem; }
+  .bw-ps__price { font-size: 1.5rem; }
+  .bw-ps__trust-item { font-size: 0.82rem; }
+  .bw-ps__pill { font-size: 0.88rem; }
+  .bw-ps__atc { font-size: 0.925rem; height: 52px; }
+}
+
+/* ── Desktop ──────────────────────────────────────────────── */
+@media (min-width: 1100px) {
+  .bw-ps__product-title { font-size: 1.35rem; line-height: 1.25; }
+  .bw-ps__price { font-size: 1.7rem; }
+  .bw-ps__price-was { font-size: 1rem; }
+  .bw-ps__trust-item { font-size: 0.875rem; }
+  .bw-ps__trust { gap: 16px; }
+  .bw-ps__pill { font-size: 0.9rem; padding: 8px 16px; }
+  .bw-ps__option-label { font-size: 0.85rem; }
+  .bw-ps__atc { height: 56px; font-size: 1rem; }
+  .bw-ps__buy-panel { padding: 24px 24px 20px; gap: 16px; }
+  .bw-ps__chapter-body { font-size: 1.1rem; max-width: 50ch; }
+}
+</style>
+
+{%- comment -%} ── JS: chapter → image switch + variant picker ── {%- endcomment -%}
+<script>
+(function () {
+  var sid = '{{ section.id }}';
+  var section = document.getElementById('bw-ps-' + sid);
+  if (!section) return;
+
+  /* Image switching on chapter scroll-into-view */
+  var chapters  = Array.from(section.querySelectorAll('.bw-ps__chapter'));
+  var imgWraps  = Array.from(section.querySelectorAll('.bw-ps__img-wrap'));
+
+  if (chapters.length && imgWraps.length && window.innerWidth >= 768) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var idx = parseInt(entry.target.dataset.chapterIndex, 10);
+        var target = idx % imgWraps.length;
+        imgWraps.forEach(function (w, i) {
+          w.classList.toggle('active', i === target);
+        });
+        thumbs.forEach(function (t, i) {
+          t.classList.toggle('active', i === target);
+        });
+      });
+    }, { threshold: 0.45, rootMargin: '-5% 0px -45% 0px' });
+
+    chapters.forEach(function (ch) { io.observe(ch); });
+  }
+
+  /* Thumbnail click → switch active image */
+  var thumbs = Array.from(section.querySelectorAll('.bw-ps__thumb'));
+
+  function showImage(idx) {
+    imgWraps.forEach(function (w, i) {
+      w.classList.toggle('active', i === idx);
+    });
+    thumbs.forEach(function (t, i) {
+      t.classList.toggle('active', i === idx);
+    });
+  }
+
+  thumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () {
+      var idx = parseInt(thumb.dataset.thumbIndex, 10);
+      showImage(idx);
+    });
+  });
+
+  /* Variant picker */
+  var variantInput = document.getElementById('bw-ps-variant-id-' + sid);
+  var atcBtn       = document.getElementById('bw-ps-atc-' + sid);
+  var atcLabel     = atcBtn ? atcBtn.querySelector('.bw-ps__atc-label') : null;
+  var pills        = Array.from(section.querySelectorAll('.bw-ps__pill'));
+  var variants     = {{ product.variants | json }};
+
+  var selectedOpts = [
+    {{ product.selected_or_first_available_variant.option1 | json }},
+    {{ product.selected_or_first_available_variant.option2 | json }},
+    {{ product.selected_or_first_available_variant.option3 | json }}
+  ];
+
+  function updateVariant() {
+    var match = variants.find(function (v) {
+      return v.option1 === selectedOpts[0]
+          && (!v.option2 || v.option2 === selectedOpts[1])
+          && (!v.option3 || v.option3 === selectedOpts[2]);
+    });
+    if (!match) return;
+
+    if (variantInput) variantInput.value = match.id;
+
+    /* Price */
+    var priceWrap = document.getElementById('bw-ps-price-' + sid);
+    if (priceWrap) {
+      var fmt = function (cents) {
+        return '₹' + (cents / 100).toLocaleString('en-IN', { minimumFractionDigits: 2 });
+      };
+      if (match.compare_at_price && match.compare_at_price > match.price) {
+        var pct = Math.round((match.compare_at_price - match.price) * 100 / match.compare_at_price);
+        priceWrap.innerHTML =
+          '<s class="bw-ps__price-was">' + fmt(match.compare_at_price) + '</s>' +
+          '<span class="bw-ps__price bw-ps__price--sale">' + fmt(match.price) + '</span>' +
+          '<span class="bw-ps__sale-badge">' + pct + '% OFF</span>';
+      } else {
+        priceWrap.innerHTML = '<span class="bw-ps__price">' + fmt(match.price) + '</span>';
+      }
+    }
+
+    /* ATC state */
+    if (atcBtn) {
+      atcBtn.disabled = !match.available;
+      if (atcLabel) atcLabel.textContent = match.available ? 'Add to Cart' : 'Sold Out';
+    }
+  }
+
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      var pos = parseInt(pill.dataset.optionPos, 10) - 1;
+      selectedOpts[pos] = pill.dataset.value;
+
+      /* Update active pill in group */
+      var group = pill.closest('.bw-ps__option-pills');
+      if (group) {
+        group.querySelectorAll('.bw-ps__pill').forEach(function (p) {
+          p.classList.remove('active');
+          p.setAttribute('aria-pressed', 'false');
+        });
+      }
+      pill.classList.add('active');
+      pill.setAttribute('aria-pressed', 'true');
+
+      /* Update label */
+      var label = pill.closest('.bw-ps__option-group').querySelector('.bw-ps__option-selected');
+      if (label) label.textContent = pill.dataset.value;
+
+      updateVariant();
+    });
+  });
+})();
+</script>
+
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "BW — Product Sticky",
+  "tag": "section",
+  "class": "bw-product-sticky",
+  "settings": [
+    {
+      "type": "select",
+      "id": "theme",
+      "label": "Color theme",
+      "options": [
+        { "value": "light", "label": "Light (F5F5F5)" },
+        { "value": "dark",  "label": "Dark (1D1D1D)"  }
+      ],
+      "default": "light"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label (above chapters)",
+      "placeholder": "Why you'll love it"
+    },
+    {
+      "type": "header",
+      "content": "Trust strip (below ATC)"
+    },
+    { "type": "text", "id": "trust_1", "label": "Trust item 1", "default": "7-Day Returns" },
+    { "type": "text", "id": "trust_2", "label": "Trust item 2", "default": "Secure Checkout" },
+    { "type": "text", "id": "trust_3", "label": "Trust item 3", "default": "Ships in 24h" }
+  ],
+  "blocks": [
+    {
+      "type": "chapter",
+      "name": "Benefit chapter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Engineered for real life"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body copy",
+          "default": "Built to fit seamlessly into your daily routine — powerful when you need it, effortless when you don't."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Chapter image (overrides product image)"
+        },
+        {
+          "type": "text",
+          "id": "highlight_value",
+          "label": "Stat figure",
+          "placeholder": "8h"
+        },
+        {
+          "type": "text",
+          "id": "highlight_label",
+          "label": "Stat label",
+          "placeholder": "Battery life"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW — Product Sticky",
+      "blocks": [
+        {
+          "type": "chapter",
+          "settings": {
+            "heading": "Designed around you",
+            "body": "Ergonomically shaped to fit naturally. No adjustment period, no awkward angles — just immediate comfort."
+          }
+        },
+        {
+          "type": "chapter",
+          "settings": {
+            "heading": "Powerful where it matters",
+            "body": "Precision-engineered internals that deliver results you can actually feel, every single time you use it."
+          }
+        },
+        {
+          "type": "chapter",
+          "settings": {
+            "heading": "Built to last",
+            "body": "Premium materials, IPX-rated, and backed by our warranty. The kind of build quality you notice on day one and appreciate for years."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

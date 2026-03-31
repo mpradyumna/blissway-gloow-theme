@@ -1,0 +1,3509 @@
+{% comment %}
+---------------------------------------------------------
+Copyright © 2025 Section Store. All rights reserved.
+Unauthorized copying, modification, distribution, or use
+of this code or any portion of it, is strictly prohibited.
+Violators will be prosecuted to the fullest extent of the law.
+For inquiries or permissions, contact daniel@section.store
+---------------------------------------------------------
+{% endcomment %}
+
+{%- liquid 
+  assign padding_horizontal = section.settings.padding_horizontal
+  assign padding_horizontal_mobile = section.settings.padding_horizontal_mobile
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.settings.padding_bottom
+  assign border_color = section.settings.border_color
+  assign border_thickness = section.settings.border_thickness
+  assign margin_top = section.settings.margin_top
+  assign margin_bottom = section.settings.margin_bottom
+  assign margin_horizontal_mobile = section.settings.margin_horizontal_mobile
+  assign margin_horizontal = section.settings.margin_horizontal
+  assign background_color = section.settings.background_color
+  assign background_gradient = section.settings.background_gradient
+  assign full_width = section.settings.full_width
+  assign content_width = section.settings.content_width
+  assign lazy = section.settings.lazy
+  assign section_radius = section.settings.section_radius
+
+  assign content_align = section.settings.content_align
+  assign content_align_mobile = section.settings.content_align_mobile
+  assign content_max_width = section.settings.content_max_width
+  assign content_max_width_mobile = section.settings.content_max_width_mobile
+
+  assign heading = section.settings.heading
+  assign heading_custom = section.settings.heading_custom
+  assign heading_font = section.settings.heading_font
+  assign heading_size = section.settings.heading_size
+  assign heading_size_mobile = section.settings.heading_size_mobile
+  assign heading_height = section.settings.heading_height
+  assign heading_color = section.settings.heading_color
+
+  assign text = section.settings.text
+  assign text_custom = section.settings.text_custom
+  assign text_font = section.settings.text_font
+  assign text_size = section.settings.text_size
+  assign text_size_mobile = section.settings.text_size_mobile
+  assign text_height = section.settings.text_height
+  assign text_color = section.settings.text_color
+  assign text_mt = section.settings.text_mt
+  assign text_mt_mobile = section.settings.text_mt_mobile
+
+  assign table_columns = section.settings.table_columns
+  assign table_column_bg_color = section.settings.table_column_bg_color
+  assign table_column_active_bg_color = section.settings.table_column_active_bg_color
+  assign table_column_border_color = section.settings.table_column_border_color
+  assign table_column_active_border_color = section.settings.table_column_active_border_color
+  assign table_column_border_thickness = section.settings.table_column_border_thickness
+  assign table_radius = section.settings.table_radius
+  assign table_mt = section.settings.table_mt  
+  assign table_mt_mobile = section.settings.table_mt_mobile
+  assign table_bg_image_color = section.settings.table_bg_image_color
+  assign table_bg_image_active_color = section.settings.table_bg_image_active_color
+
+  assign first_heading = section.settings.first_heading
+  assign first_heading_image = section.settings.first_heading_image
+  assign first_heading_url = section.settings.first_heading_url
+  assign second_heading = section.settings.second_heading
+  assign second_heading_image = section.settings.second_heading_image
+  assign second_heading_url = section.settings.second_heading_url
+  assign third_heading = section.settings.third_heading
+  assign third_heading_image = section.settings.third_heading_image
+  assign third_heading_url = section.settings.third_heading_url
+  assign fourth_heading = section.settings.fourth_heading
+  assign fourth_heading_image = section.settings.fourth_heading_image
+  assign fourth_heading_url = section.settings.fourth_heading_url
+  assign fifth_heading = section.settings.fifth_heading
+  assign fifth_heading_image = section.settings.fifth_heading_image
+  assign fifth_heading_url = section.settings.fifth_heading_url
+  assign sixth_heading = section.settings.sixth_heading
+  assign sixth_heading_image = section.settings.sixth_heading_image
+  assign sixth_heading_url = section.settings.sixth_heading_url
+
+  assign heading_image_size_mobile = section.settings.heading_image_size_mobile
+  assign heading_image_size = section.settings.heading_image_size   
+  assign heading_image_border_thickness = section.settings.heading_image_border_thickness
+  assign heading_image_border_color = section.settings.heading_image_border_color
+  assign heading_image_radius = section.settings.heading_image_radius
+  assign use_background_image = section.settings.use_background_image
+
+  assign column_heading_size = section.settings.column_heading_size
+  assign column_heading_size_mobile = section.settings.column_heading_size_mobile
+  assign column_heading_color = section.settings.column_heading_color
+  assign column_heading_active_color = section.settings.column_heading_active_color
+  assign column_heading_custom = section.settings.column_heading_custom
+  assign column_heading_font = section.settings.column_heading_font
+  assign column_heading_height = section.settings.column_heading_height
+  assign column_heading_align = section.settings.column_heading_align
+  assign column_heading_align_mobile = section.settings.column_heading_align_mobile
+  assign column_heading_padding_horizontal = section.settings.column_heading_padding_horizontal
+  assign column_heading_padding_horizontal_mobile = section.settings.column_heading_padding_horizontal_mobile
+  assign column_heading_padding_vertical = section.settings.column_heading_padding_vertical
+  assign column_heading_padding_vertical_mobile = section.settings.column_heading_padding_vertical_mobile
+
+  assign row_padding_horizontal = section.settings.row_padding_horizontal
+  assign row_padding_horizontal_mobile = section.settings.row_padding_horizontal_mobile
+  assign row_padding_vertical = section.settings.row_padding_vertical
+  assign row_padding_vertical_mobile = section.settings.row_padding_vertical_mobile
+  assign row_border_thickness = section.settings.row_border_thickness
+  assign row_border_color = section.settings.row_border_color
+
+  assign row_heading_size = section.settings.row_heading_size
+  assign row_heading_size_mobile = section.settings.row_heading_size_mobile
+  assign row_heading_color = section.settings.row_heading_color
+  assign row_heading_custom = section.settings.row_heading_custom
+  assign row_heading_font = section.settings.row_heading_font
+  assign row_heading_height = section.settings.row_heading_height
+  assign row_heading_border_color = section.settings.row_heading_border_color
+
+  assign value_size = section.settings.value_size
+  assign value_size_mobile = section.settings.value_size_mobile
+  assign value_color = section.settings.value_color
+  assign value_active_color = section.settings.value_active_color
+  assign value_custom = section.settings.value_custom
+  assign value_font = section.settings.value_font
+  assign value_height = section.settings.value_height
+
+  assign value_icon_size = section.settings.value_icon_size
+  assign value_icon_size_mobile = section.settings.value_icon_size_mobile
+  assign value_icon_color = section.settings.value_icon_color
+  assign value_icon_active_color = section.settings.value_icon_active_color
+  assign value_icon_check = section.settings.value_icon_check
+  assign value_icon_cross = section.settings.value_icon_cross
+-%}
+
+{%- style -%}
+  {{ heading_font | font_face: font_display: 'swap' }}
+  {{ text_font | font_face: font_display: 'swap' }}
+  {{ column_heading_font | font_face: font_display: 'swap' }}
+  {{ row_heading_font | font_face: font_display: 'swap' }}
+  {{ value_font | font_face: font_display: 'swap' }}
+  
+  .section-{{ section.id }} {
+    border-top: solid {{ border_color }} {{ border_thickness }}px;
+    border-bottom: solid {{ border_color }} {{ border_thickness }}px;
+    margin-top: {{ margin_top | times: 0.75 | round: 0 }}px;
+    margin-bottom: {{ margin_bottom | times: 0.75 | round: 0 }}px;
+    margin-left: {{ margin_horizontal_mobile }}rem;
+    margin-right: {{ margin_horizontal_mobile }}rem;
+    border-radius: {{ section_radius | times: 0.6 | round: 0 }}px;
+    overflow: hidden;
+  }
+  
+  .section-{{ section.id }}-settings {
+    margin: 0 auto;
+    padding-top: {{ padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-left: {{ padding_horizontal_mobile }}rem;
+    padding-right: {{ padding_horizontal_mobile }}rem;
+  }  
+
+  
+  .comparison-heading-{{ section.id }} {
+    text-align: {{ content_align_mobile }};
+  }
+
+  .comparison-heading-{{ section.id }} * {
+    margin: 0;
+    font-size: {{ heading_size_mobile }}px;
+    color: {{ heading_color }};
+    line-height: {{ heading_height }}%;
+    text-transform: unset;
+    text-decoration: none;
+  }
+
+  .comparison-text-{{ section.id }} {
+    margin-top: {{ text_mt_mobile }}px;
+    text-align: {{ content_align_mobile }};
+  }
+
+  .comparison-text-{{ section.id }} * {
+    margin: 0;
+    font-size: {{ text_size_mobile }}px;
+    color: {{ text_color }};
+    line-height: {{ text_height }}%;
+    text-transform: unset;
+    text-decoration: none;
+  }
+
+  .comparison-grid-{{ section.id }} {
+    display: flex;
+    gap: 25px;
+  }
+
+  .comparison-table-wrapper-{{ section.id }} {
+    padding-top: {{ heading_image_size_mobile | divided_by: 2 }}px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    margin-left: -{{ padding_horizontal_mobile }}rem;
+    margin-right: -{{ padding_horizontal_mobile }}rem;
+  }
+
+  .comparison-table-inner-{{ section.id }} {
+    min-width: 724px;
+    padding-left: {{ padding_horizontal_mobile }}rem;
+    padding-right: {{ padding_horizontal_mobile }}rem;
+  }
+
+  .comparison-table-wrapper-{{ section.id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .comparison-table-{{ section.id }} {
+    padding-bottom: 25px;
+    padding-right: 25px;
+    margin-top: {{ table_mt_mobile }}px;
+  }
+
+  .comparison-item-{{ section.id }} {
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .comparison-item-bg-image-{{ section.id }} {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: {{ table_radius }}px;
+    border-top-right-radius: {{ table_radius }}px;
+    overflow: hidden;
+  }
+  
+  .comparison-item-bg-image-{{ section.id }} img,
+  .comparison-item-bg-image-{{ section.id }} svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .comparison-{{ section.id }} .comparison-item-{{ section.id }} .comparison-item-bg-image-{{ section.id }} svg defs linearGradient stop {
+    stop-color: {{ table_bg_image_color }} !important;
+  }
+
+  .comparison-{{ section.id }} .comparison-item-{{ section.id }}.active .comparison-item-bg-image-{{ section.id }} svg defs linearGradient stop {
+    stop-color: {{ table_bg_image_active_color }} !important;
+  }
+  
+  .comparison-item-{{ section.id }}:first-child {
+    flex-direction: row;
+    justify-content: start;
+    gap: 20px;
+    padding: {{ column_heading_padding_vertical_mobile }} {{ }}
+  }
+
+  .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }}:first-child:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 70%;
+    height: {{ row_border_thickness }}px;
+    background-color: {{ row_heading_border_color }};
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 57%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }} {
+    padding: {{ column_heading_padding_vertical_mobile }}px {{ column_heading_padding_horizontal_mobile }}px;  
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }}:not(:first-child) {
+    border-top: {{ table_column_border_thickness }}px solid {{ table_column_border_color }};
+    border-left: {{ table_column_border_thickness }}px solid {{ table_column_border_color }};
+    border-right: {{ table_column_border_thickness }}px solid {{ table_column_border_color }};
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }}:not(:first-child).active {
+    border-top: {{ table_column_border_thickness }}px solid {{ table_column_active_border_color }};
+    border-left: {{ table_column_border_thickness }}px solid {{ table_column_active_border_color }};
+    border-right: {{ table_column_border_thickness }}px solid {{ table_column_active_border_color }};
+  }
+
+  .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }}:not(:first-child) {
+    border-left: {{ table_column_border_thickness }}px solid {{ table_column_border_color }};
+    border-right: {{ table_column_border_thickness }}px solid {{ table_column_border_color }};
+  }
+
+  .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }}:not(:first-child).active {  
+    border-left: {{ table_column_border_thickness }}px solid {{ table_column_active_border_color }};
+    border-right: {{ table_column_border_thickness }}px solid {{ table_column_active_border_color }};
+  }
+
+  .comparison-grid-rows-{{ section.id }}:last-child .comparison-item-{{ section.id }}:not(:first-child) {
+    border-left: {{ table_column_border_thickness }}px solid {{ table_column_border_color }};
+    border-right: {{ table_column_border_thickness }}px solid {{ table_column_border_color }};
+    border-bottom: {{ table_column_border_thickness }}px solid {{ table_column_border_color }};
+  }
+
+  .comparison-grid-rows-{{ section.id }}:last-child .comparison-item-{{ section.id }}:not(:first-child).active {  
+    border-left: {{ table_column_border_thickness }}px solid {{ table_column_active_border_color }};
+    border-right: {{ table_column_border_thickness }}px solid {{ table_column_active_border_color }};
+    border-bottom: {{ table_column_border_thickness }}px solid {{ table_column_active_border_color }};
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }}:not(:first-child),
+  .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }}:not(:first-child) {
+    background-color: {{ table_column_bg_color }};
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }}.active {
+    background-color: {{ table_column_active_bg_color }};    
+  }
+
+  .comparison-grid-rows-{{ section.id }}:not(:last-child) .comparison-item-{{ section.id }}:not(:first-child):after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: {{ row_border_thickness }}px;
+    background-color: {{ table_column_border_color }};
+  }
+
+  .comparison-grid-rows-{{ section.id }}:not(:last-child) .comparison-item-{{ section.id }}.active:after {
+    background-color: {{ table_column_active_border_color }};
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }}.active {
+    border: 0px;
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-column-heading-{{ section.id }} {
+    margin: 16px 0 0 0;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    font-size: {{ column_heading_size_mobile }}px;
+    color: {{ column_heading_color }};
+    line-height: {{ column_heading_height }}%;
+    text-transform: unset;
+    text-align: {{ column_heading_align_mobile }};
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }}.active h3,
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }}.active a {
+    color: {{ column_heading_active_color }};
+  }
+
+  .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }} {
+    padding: {{ row_padding_vertical_mobile }}px {{ row_padding_horizontal_mobile }}px;
+  }
+
+  .comparison-grid-header-{{ section.id }} + .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }}:first-child {
+    border-top-left-radius: {{ table_radius }}px;
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }} {
+    border-top-left-radius: {{ table_radius }}px;
+    border-top-right-radius: {{ table_radius }}px;
+  }
+
+  .comparison-grid-rows-{{ section.id }}:last-child .comparison-item-{{ section.id }} {
+    border-bottom-left-radius: {{ table_radius }}px;
+    border-bottom-right-radius: {{ table_radius }}px;
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }}:nth-child(3) {
+    border-top-left-radius: {{ table_radius }}px;
+  }
+
+  .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }}.active {
+    background-color: {{ table_column_active_bg_color }};
+  }
+
+  .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }}:first-child {
+    border: 0px;
+  }
+
+  .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }}:first-child h3 {
+    display: block;
+    margin: 0;
+    font-size: {{ row_heading_size_mobile }}px;
+    color: {{ row_heading_color }};
+    line-height: {{ row_heading_height }}%;
+    text-transform: unset;
+    text-align: left;
+    font-weight: 700;
+  }
+
+  .comparison-item-heading-image-{{ section.id }} {
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin-top: calc(-{{ heading_image_size_mobile | divided_by: 2 }}px - {{ column_heading_padding_vertical_mobile }}px);
+    border: {{ heading_image_border_thickness }}px solid {{ heading_image_border_color }};
+    border-radius: {{ heading_image_radius }}px;
+    width: 100%;
+    max-width: {{ heading_image_size_mobile }}px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+  }
+
+  .comparison-item-heading-image-{{ section.id }} img,
+  .comparison-item-heading-image-{{ section.id }} svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .comparison-item-heading-image-{{ section.id }} svg {
+    background-color: #AFAFAF;
+  }
+
+  .comparison-value-{{ section.id }} {
+    margin: 0;
+    font-size: {{ value_size_mobile }}px;
+    color: {{ value_color }};
+    line-height: {{ value_height }}%;
+    word-break: break-word;
+    text-transform: unset;
+    text-align: center;
+  }
+
+  .comparison-item-{{ section.id }}.active .comparison-value-{{ section.id }} {
+    color: {{ value_active_color }};
+  }
+
+  .comparison-value-icon-{{ section.id }} {
+    width: {{ value_icon_size_mobile }}px;
+    height: {{ value_icon_size_mobile }}px;    
+  }
+
+  .comparison-value-icon-{{ section.id }} img,
+  .comparison-value-icon-{{ section.id }} svg {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .comparison-value-icon-{{ section.id }} svg path {
+    stroke: transparent;
+  }
+
+  .comparison-value-icon-{{ section.id }} svg path {
+    fill: {{ value_icon_color }}
+  }
+
+  .comparison-item-{{ section.id }}.active .comparison-value-icon-{{ section.id }} svg path {
+    fill: {{ value_icon_active_color }}
+  }
+  
+   .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }} {
+      width: 220px;
+   }
+
+   .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }} {
+     width: 220px;
+   }
+  
+  @media(min-width: 1024px) {
+
+    .section-{{ section.id }} {
+      margin-top: {{ margin_top }}px;
+      margin-bottom: {{ margin_bottom }}px;
+      margin-left: {{ margin_horizontal }}rem;
+      margin-right: {{ margin_horizontal }}rem;
+      border-radius: {{ section_radius }}px;
+    }
+    
+    .section-{{ section.id }}-settings {
+      padding: 0 5rem;
+      padding-top: {{ padding_top }}px;
+      padding-bottom: {{ padding_bottom }}px;
+      padding-left: {{ padding_horizontal }}rem;
+      padding-right: {{ padding_horizontal }}rem;
+    }  
+    
+    .comparison-heading-{{ section.id }} {
+      text-align: {{ content_align }};
+    }
+  
+    .comparison-heading-{{ section.id }} * {
+      font-size: {{ heading_size }}px;
+    }
+
+    .comparison-text-{{ section.id }} {
+      margin-top: {{ text_mt }}px;
+      text-align: {{ content_align }};
+    }
+  
+    .comparison-text-{{ section.id }} * {
+      font-size: {{ text_size }}px;
+    }
+
+    .comparison-grid-{{ section.id }} {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .comparison-table-wrapper-{{ section.id }} {
+      padding-top: {{ heading_image_size | divided_by: 2 }}px;
+      margin-left: 0rem;
+      margin-right: 0rem;
+    }
+
+    .comparison-table-inner-{{ section.id }} {
+      padding-left: 0rem;
+      padding-right: 0rem;
+    }
+
+    .comparison-table-{{ section.id }} {
+      margin-top: {{ table_mt }}px;
+    }
+
+    .comparison-item-heading-image-{{ section.id }} {
+      margin-top: calc(-{{ heading_image_size | divided_by: 2 }}px - {{ column_heading_padding_vertical }}px);
+      max-width: {{ heading_image_size }}px;
+    }
+
+    .comparison-grid-header-{{ section.id }} .comparison-item-{{ section.id }} {
+      padding: {{ column_heading_padding_vertical }}px {{ column_heading_padding_horizontal }}px;
+    }
+
+    .comparison-grid-header-{{ section.id }} .comparison-column-heading-{{ section.id }} {
+      text-align: {{ column_heading_align }};
+      font-size: {{ column_heading_size }}px;
+    }
+
+    .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }} {
+      padding: {{ row_padding_vertical }}px {{ row_padding_horizontal }}px;
+    }
+
+    .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }}:first-child h3 {
+      font-size: {{ row_heading_size }}px;
+    }
+
+    .comparison-value-{{ section.id }} {
+      font-size: {{ value_size }}px;
+    }
+
+    .comparison-value-icon-{{ section.id }}{
+      width: {{ value_icon_size }}px;
+      height: {{ value_icon_size }}px;
+    }
+  }
+  
+{%- endstyle -%}
+
+{% unless full_width %}
+  <style>
+    .section-{{ section.id }}-settings {
+      max-width: {{ content_width }}px;
+    }
+  </style>
+{% endunless %}
+
+{% if margin_horizontal_mobile > 0 %}
+  <style>
+    .section-{{ section.id }} {
+      border-left: solid {{ border_color }} {{ border_thickness }}px;
+      border-right: solid {{ border_color }} {{ border_thickness }}px;
+    }
+    
+    @media(min-width: 1024px) {
+      .section-{{ section.id }} {
+        border-left: 0px;
+        border-right: 0px;
+      }
+    }
+  </style>
+{% endif %}
+
+{% if margin_horizontal > 0 %}
+  <style>
+    @media(min-width: 1024px) {
+      .section-{{ section.id }} {
+        border-left: solid {{ border_color }} {{ border_thickness }}px;
+        border-right: solid {{ border_color }} {{ border_thickness }}px;
+      }
+    }
+  </style>
+{% endif %}
+
+{% if heading_custom %}
+  <style>
+    .comparison-heading-{{ section.id }} * {
+      font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+      font-weight: {{ heading_font.weight }};
+      font-style: {{ heading_font.style }};
+    }
+  </style>
+{% endif %}
+
+{% if text_custom %}
+  <style>
+    .comparison-text-{{ section.id }} * {
+      font-family: {{ text_font.family }}, {{ text_font.fallback_families }};
+      font-weight: {{ text_font.weight }};
+      font-style: {{ text_font.style }};
+    }
+  </style>
+{% endif %}
+
+{% if column_heading_custom %}
+  <style>
+    .comparison-grid-header-{{ section.id }} .comparison-column-heading-{{ section.id }} {
+      font-family: {{ column_heading_font.family }}, {{ column_heading_font.fallback_families }};
+      font-weight: {{ column_heading_font.weight }};
+      font-style: {{ column_heading_font.style }};
+    }
+  </style>
+{% endif %}
+
+{% if row_heading_custom %}
+  <style>
+    .comparison-grid-rows-{{ section.id }} .comparison-item-{{ section.id }}:first-child h3 {
+      font-family: {{ row_heading_font.family }}, {{ row_heading_font.fallback_families }};
+      font-weight: {{ row_heading_font.weight }};
+      font-style: {{ row_heading_font.style }};
+    }
+  </style>
+{% endif %}
+
+{% if value_custom %}
+  <style>
+    .comparison-value-{{ section.id }} {
+      font-family: {{ value_font.family }}, {{ value_font.fallback_families }};
+      font-weight: {{ value_font.weight }};
+      font-style: {{ value_font.style }};
+    }
+  </style>
+{% endif %}
+
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'text' %}
+      <style>
+        {{  block.settings.text_font | font_face: font_display: 'swap' }}
+
+        .comparison-text-{{ block.id }} {
+          align-items: center;
+          gap: 12px;         
+          margin-top: {{ block.settings.text_mt_mobile }}px;
+          text-align: {{ content_align_mobile }};
+          max-width: 100%;
+        }
+
+        .comparison-text-{{ block.id }} * {          
+          margin: 0;            
+          font-size: {{ block.settings.text_size_mobile }}px;
+          color: {{ block.settings.text_color }};
+          line-height: {{ block.settings.text_height }}%;
+          text-transform: unset;
+          text-decoration: none;
+          word-break: break-word;
+        }          
+
+        @media(min-width: 1024px) {
+          .comparison-text-{{ block.id }} {
+            max-width: {{ content_max_width }}%;
+            margin-top: {{ block.settings.text_mt }}px;
+            text-align: {{ content_align }};
+          }
+
+          .comparison-text-{{ block.id }} * {                
+            font-size: {{ block.settings.text_size }}px;
+          }  
+        }
+      </style>
+
+      {% if block.settings.text_custom %}
+        <style>
+          .comparison-text-{{ block.id }} * {
+            font-family: {{ block.settings.text_font.family }}, {{ block.settings.text_font.fallback_families }};
+            font-weight: {{ block.settings.text_font.weight }};
+            font-style: {{ block.settings.text_font.style }};
+          }
+        </style>
+      {% endif %}
+
+         {% if content_align_mobile == "center" %}
+          <style>
+            .comparison-text-{{ block.id }} {
+              margin-left: auto;
+              margin-right: auto;
+            }
+          </style>
+        {% elsif content_align_mobile == "right" %}
+          <style>
+            .comparison-text-{{ block.id }} {
+              margin-left: auto;
+            }
+          </style>
+        {% endif %}
+        
+        {% if content_align == "center" %}
+          <style>
+            @media(min-width: 1024px) {
+              .comparison-text-{{ block.id }} {
+                margin-left: auto;
+                margin-right: auto;
+              } 
+            }
+          </style>
+        {% elsif content_align == "right" %}
+          <style>
+            @media(min-width: 1024px) {
+              .comparison-text-{{ block.id }} {
+                margin-left: auto;
+                margin-right: 0px;
+              } 
+            }
+          </style>
+        {% else %}
+          <style>
+            @media(min-width: 1024px) {
+              .comparison-text-{{ block.id }} {
+                margin-left: 0px;
+                margin-right: 0px;
+              } 
+            }
+          </style>
+        {% endif %}
+
+    {% when 'heading' %}
+      <style>
+        {{  block.settings.heading_font | font_face: font_display: 'swap' }}
+
+        .comparison-heading-{{ block.id }} {
+          max-width: 100%;
+          margin-top: {{ block.settings.heading_mt_mobile }}px;
+          text-align: {{ content_align_mobile }};
+        }
+
+        .comparison-heading-{{ block.id }} * {          
+          margin: 0;            
+          font-size: {{ block.settings.heading_size_mobile }}px;
+          color: {{ block.settings.heading_color }};
+          line-height: {{ block.settings.heading_height }}%;
+          text-transform: unset;
+          text-decoration: none;
+          word-break: break-word;
+          font-weight: 700;
+        }          
+
+        @media(min-width: 1024px) {
+          .comparison-heading-{{ block.id }} {
+            max-width: {{ content_max_width }}%;
+            margin-top: {{ block.settings.heading_mt }}px;
+            text-align: {{ content_align }};
+          }
+
+          .comparison-heading-{{ block.id }} * {                
+            font-size: {{ block.settings.heading_size }}px;
+          }  
+        }
+      </style>
+
+      {% if block.settings.heading_custom %}
+        <style>
+          .comparison-heading-{{ block.id }} * {
+            font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+            font-weight: {{ block.settings.heading_font.weight }};
+            font-style: {{ block.settings.heading_font.style }};
+          }
+        </style>
+      {% endif %}
+
+      {% if content_align_mobile == "center" %}
+        <style>
+          .comparison-heading-{{ block.id }} {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        </style>
+      {% elsif content_align_mobile == "right" %}
+        <style>
+          .comparison-heading-{{ block.id }} {
+            margin-left: auto;
+          }
+        </style>
+      {% endif %}
+      
+      {% if content_align == "center" %}
+        <style>
+          @media(min-width: 1024px) {
+            .comparison-heading-{{ block.id }} {
+              margin-left: auto;
+              margin-right: auto;
+            } 
+          }
+        </style>
+      {% elsif content_align == "right" %}
+        <style>
+          @media(min-width: 1024px) {
+            .comparison-heading-{{ block.id }} {
+              margin-left: auto;
+              margin-right: 0px;
+            } 
+          }
+        </style>
+      {% else %}
+        <style>
+          @media(min-width: 1024px) {
+            .comparison-heading-{{ block.id }} {
+              margin-left: 0px;
+              margin-right: 0px;
+            } 
+          }
+        </style>
+      {% endif %}
+  {% endcase %}
+{% endfor %}
+
+<div class="section-{{ section.id }} comparison-{{ section.id }}" style="background-color:{{ background_color }}; background-image: {{ background_gradient }};">
+  <div class="section-{{ section.id }}-settings">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'heading' %}
+          {% if block.settings.heading != blank %}
+            <div class="comparison-heading-{{ block.id }}">
+              {{ block.settings.heading }}
+            </div>  
+          {% endif %}
+        {% when 'text' %}
+          {% if block.settings.text != blank %}
+            <div class="comparison-text-{{ block.id }}">
+              {{ block.settings.text }}
+            </div>  
+          {% endif %}
+        {% else %}
+          
+      {% endcase %}
+    {% endfor %}
+   
+    <div class="comparison-table-wrapper-{{ section.id }}">
+      <div class="comparison-table-inner-{{ section.id }}">
+        <div class="comparison-table-{{ section.id }}">
+          <div class="comparison-grid-{{ section.id }} comparison-grid-header-{{ section.id }}">
+            <div class="comparison-item-{{ section.id }}"></div>
+            {% if first_heading != blank %}
+              <div class="comparison-item-{{ section.id }} active">
+                <{% if first_heading_url != blank %}a href="{{ first_heading_url }}"{% else %}div{% endif %} class="comparison-item-heading-image-{{ section.id }}">               
+                  {% if first_heading_image != blank %}                
+                    {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                      {{ first_heading_image | image_url: width: 535 | image_tag:
+                        loading: loading_attribute,
+                        width: first_heading_image.width,
+                        height: first_heading_image.height,
+                        sizes: sizes,
+                        widths: '535, 750, 1070, 1500'
+                      }}
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endif %}   
+                </{% if first_heading_url != blank %}a{% else %}div{% endif %}>  
+                {% if use_background_image %}
+                  <div class="comparison-item-bg-image-{{ section.id }}">
+                    <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.5">
+                      <path d="M0 99.9993H4.54V71.0927L0 67.8621V99.9993Z" fill="url(#paint0_linear_106_198-{{ section.id }})"/>
+                      <path d="M5.90234 72.0574V99.9968H10.4448V75.288L6.45234 72.449L5.90234 72.0574Z" fill="url(#paint1_linear_106_198-{{ section.id }})"/>
+                      <path d="M12.2026 73.9499L11.8076 74.4186V99.9967H16.3476V69.0312L13.8801 71.9593L12.2026 73.9499Z" fill="url(#paint2_linear_106_198-{{ section.id }})"/>
+                      <path d="M17.71 67.4164V99.9986H22.2525V62.0261L18.27 66.7519L17.71 67.4164Z" fill="url(#paint3_linear_106_198-{{ section.id }})"/>
+                      <path d="M23.6152 60.4093V99.9987H28.1552V55.022L26.6902 56.7604L23.6152 60.4093Z" fill="url(#paint4_linear_106_198-{{ section.id }})"/>
+                      <path d="M29.5176 99.9994H34.0576V48.0156L29.5176 53.4059V99.9994Z" fill="url(#paint5_linear_106_198-{{ section.id }})"/>
+                      <path d="M37.6899 44.972L37.3224 44.7525L37.1374 44.6427L37.0449 44.5893L36.9999 44.5627C36.9999 44.5627 36.9849 44.5508 36.9774 44.5508L36.9599 44.5715L35.4224 46.396V99.9936H39.9624V46.3159L39.0074 45.7493L37.6899 44.9691V44.972Z" fill="url(#paint6_linear_106_198-{{ section.id }})"/>
+                      <path d="M41.3252 47.1289V99.9997H45.8652V49.8255L42.6302 47.9032L41.3252 47.1289Z" fill="url(#paint7_linear_106_198-{{ section.id }})"/>
+                      <path d="M47.2275 50.6331V100H51.77V53.3267L49.8725 52.2024L47.2275 50.6331Z" fill="url(#paint8_linear_106_198-{{ section.id }})"/>
+                      <path d="M53.1328 54.1355V99.9992H57.6728V56.8292L57.1178 56.4999L53.1328 54.1355Z" fill="url(#paint9_linear_106_198-{{ section.id }})"/>
+                      <path d="M63.0777 59.9299L63.0427 59.9714C63.0427 59.9714 63.0202 60.01 63.0027 59.9922L62.9127 59.9388L62.5527 59.7252L61.8302 59.298L59.0352 57.6396V99.9998H63.5752V59.3425L63.2202 59.7637L63.0777 59.9328V59.9299Z" fill="url(#paint10_linear_106_198-{{ section.id }})"/>
+                      <path d="M64.9375 57.7208V99.9979H69.48V52.3335L66.505 55.8608L64.9375 57.7208Z" fill="url(#paint11_linear_106_198-{{ section.id }})"/>
+                      <path d="M70.8428 99.9967H75.3828V45.3281L70.8428 50.7155V99.9967Z" fill="url(#paint12_linear_106_198-{{ section.id }})"/>
+                      <path d="M76.7451 43.7121V99.9975H81.2876V38.3218L77.9601 42.2703L76.7451 43.7121Z" fill="url(#paint13_linear_106_198-{{ section.id }})"/>
+                      <path d="M82.6479 36.705V99.9975H87.1905V31.3176L87.0155 31.5223L82.6479 36.705Z" fill="url(#paint14_linear_106_198-{{ section.id }})"/>
+                      <path d="M89.1297 29.1446C89.1047 29.1297 89.0823 29.1149 89.0573 29.103L88.9997 29.1713L88.8848 29.3077L88.6547 29.5807L88.5522 29.7023V99.9989H93.0922V31.4941L89.7097 29.4887L89.1273 29.1446H89.1297Z" fill="url(#paint15_linear_106_198-{{ section.id }})"/>
+                      <path d="M94.4556 32.3035V99.9984H98.9981V34.9971L94.8606 32.5438L94.4556 32.3035Z" fill="url(#paint16_linear_106_198-{{ section.id }})"/>
+                      <path d="M100.359 99.9963H104.899V38.4986L100.359 35.802V99.9963Z" fill="url(#paint17_linear_106_198-{{ section.id }})"/>
+                      <path d="M106.263 39.3057V99.9964H110.803V41.9993L106.315 39.3353L106.263 39.3057Z" fill="url(#paint18_linear_106_198-{{ section.id }})"/>
+                      <path d="M115.434 44.1531L115.209 44.4201C115.172 44.4616 115.134 44.512 115.097 44.5506L114.954 44.4646L112.672 43.1118L112.167 42.8122V99.9994H116.707V42.6431L115.884 43.6191L115.434 44.1531Z" fill="url(#paint19_linear_106_198-{{ section.id }})"/>
+                      <path d="M118.069 41.0261V99.9992H122.609V35.6357L119.634 39.169L118.069 41.0261Z" fill="url(#paint20_linear_106_198-{{ section.id }})"/>
+                      <path d="M123.972 99.9977H128.515V28.6301L123.972 34.0175V99.9977Z" fill="url(#paint21_linear_106_198-{{ section.id }})"/>
+                      <path d="M129.878 27.0148V99.9992H134.418V21.6274L131.09 25.576L129.878 27.0148Z" fill="url(#paint22_linear_106_198-{{ section.id }})"/>
+                      <path d="M136.815 18.7795L135.78 20.0107V99.9992H140.322V14.6204L139.68 15.3828L136.815 18.7795Z" fill="url(#paint23_linear_106_198-{{ section.id }})"/>
+                      <path d="M141.683 99.9997H146.225V16.6055L141.683 13.9534V99.9997Z" fill="url(#paint24_linear_106_198-{{ section.id }})"/>
+                      <path d="M147.587 99.9979H152.127V20.0479L147.587 17.3958V99.9979Z" fill="url(#paint25_linear_106_198-{{ section.id }})"/>
+                      <path d="M153.489 20.8438V99.9987H158.032V23.4929L154.399 21.3718L153.489 20.8438Z" fill="url(#paint26_linear_106_198-{{ section.id }})"/>
+                      <path d="M159.395 24.2881V99.9988H163.935V26.9373L161.668 25.6142L159.395 24.2881Z" fill="url(#paint27_linear_106_198-{{ section.id }})"/>
+                      <path d="M167.88 28.0091L167.31 28.6855L167.237 28.7715L167.202 28.8131C167.202 28.8131 167.192 28.8309 167.185 28.8309L167.162 28.819L166.982 28.7122L166.62 28.5016L165.3 27.7303V99.9967H169.84V25.6863L169.022 26.6564L167.882 28.0091H167.88Z" fill="url(#paint28_linear_106_198-{{ section.id }})"/>
+                      <path d="M171.2 99.9997H175.742V18.6821L171.2 24.0695V99.9997Z" fill="url(#paint29_linear_106_198-{{ section.id }})"/>
+                      <path d="M177.104 99.9973H181.645V11.6755L177.104 17.0629V99.9973Z" fill="url(#paint30_linear_106_198-{{ section.id }})"/>
+                      <path d="M183.007 99.998H187.55V4.66919L183.007 10.0595V99.998Z" fill="url(#paint31_linear_106_198-{{ section.id }})"/>
+                      <path d="M191.353 0.15723L188.913 3.05263V99.9983H193.453V2.33175L191.485 0L191.353 0.15723Z" fill="url(#paint32_linear_106_198-{{ section.id }})"/>
+                      <path d="M194.815 3.94531V99.998H200V9.62043L194.815 3.94531Z" fill="url(#paint33_linear_106_198-{{ section.id }})"/>
+                      </g>
+                      <defs>
+                      <linearGradient id="paint0_linear_106_198-{{ section.id }}" x1="2.27" y1="67.8621" x2="2.27" y2="99.9993" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint1_linear_106_198-{{ section.id }}" x1="8.17359" y1="72.0574" x2="8.17359" y2="99.9968" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint2_linear_106_198-{{ section.id }}" x1="14.0776" y1="69.0312" x2="14.0776" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint3_linear_106_198-{{ section.id }}" x1="19.9812" y1="62.0261" x2="19.9812" y2="99.9986" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint4_linear_106_198-{{ section.id }}" x1="25.8852" y1="55.022" x2="25.8852" y2="99.9986" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint5_linear_106_198-{{ section.id }}" x1="31.7876" y1="48.0156" x2="31.7876" y2="99.9994" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint6_linear_106_198-{{ section.id }}" x1="37.6924" y1="44.5508" x2="37.6924" y2="99.9936" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint7_linear_106_198-{{ section.id }}" x1="43.5952" y1="47.1289" x2="43.5952" y2="99.9997" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint8_linear_106_198-{{ section.id }}" x1="49.4988" y1="50.6331" x2="49.4988" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint9_linear_106_198-{{ section.id }}" x1="55.4028" y1="54.1355" x2="55.4028" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint10_linear_106_198-{{ section.id }}" x1="61.3052" y1="57.6396" x2="61.3052" y2="99.9998" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint11_linear_106_198-{{ section.id }}" x1="67.2088" y1="52.3335" x2="67.2088" y2="99.9979" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint12_linear_106_198-{{ section.id }}" x1="73.1128" y1="45.3281" x2="73.1128" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint13_linear_106_198-{{ section.id }}" x1="79.0164" y1="38.3218" x2="79.0164" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint14_linear_106_198-{{ section.id }}" x1="84.9192" y1="31.3176" x2="84.9192" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint15_linear_106_198-{{ section.id }}" x1="90.8222" y1="29.103" x2="90.8222" y2="99.9989" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint16_linear_106_198-{{ section.id }}" x1="96.7268" y1="32.3035" x2="96.7268" y2="99.9984" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint17_linear_106_198-{{ section.id }}" x1="102.629" y1="35.802" x2="102.629" y2="99.9963" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint18_linear_106_198-{{ section.id }}" x1="108.533" y1="39.3057" x2="108.533" y2="99.9964" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint19_linear_106_198-{{ section.id }}" x1="114.437" y1="42.6431" x2="114.437" y2="99.9994" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint20_linear_106_198-{{ section.id }}" x1="120.339" y1="35.6357" x2="120.339" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint21_linear_106_198-{{ section.id }}" x1="126.243" y1="28.6301" x2="126.243" y2="99.9977" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint22_linear_106_198-{{ section.id }}" x1="132.148" y1="21.6274" x2="132.148" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint23_linear_106_198-{{ section.id }}" x1="138.051" y1="14.6204" x2="138.051" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint24_linear_106_198-{{ section.id }}" x1="143.954" y1="13.9534" x2="143.954" y2="99.9997" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint25_linear_106_198-{{ section.id }}" x1="149.857" y1="17.3958" x2="149.857" y2="99.9979" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint26_linear_106_198-{{ section.id }}" x1="155.761" y1="20.8438" x2="155.761" y2="99.9987" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint27_linear_106_198-{{ section.id }}" x1="161.665" y1="24.2881" x2="161.665" y2="99.9988" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint28_linear_106_198-{{ section.id }}" x1="167.57" y1="25.6863" x2="167.57" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint29_linear_106_198-{{ section.id }}" x1="173.471" y1="18.6821" x2="173.471" y2="99.9997" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint30_linear_106_198-{{ section.id }}" x1="179.374" y1="11.6755" x2="179.374" y2="99.9973" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint31_linear_106_198-{{ section.id }}" x1="185.279" y1="4.66919" x2="185.279" y2="99.998" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint32_linear_106_198-{{ section.id }}" x1="191.183" y1="0" x2="191.183" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint33_linear_106_198-{{ section.id }}" x1="197.407" y1="3.94531" x2="197.407" y2="99.998" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#9DB324"/>
+                      <stop offset="1" stop-color="#9DB324" stop-opacity="0"/>
+                      </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                {% endif %}
+                <{% if first_heading_url != blank %}a href="{{ first_heading_url }}"{% else %}h3{% endif %} class="comparison-column-heading-{{ section.id }}">{{ first_heading }}</{% if first_heading_url != blank %}a{% else %}h3{% endif %}>                  
+              </div>
+            {% endif %}
+            {% if table_columns > 1 and second_heading != blank %}
+              <div class="comparison-item-{{ section.id }}">   
+                <{% if second_heading_url != blank %}a href="{{ second_heading_url }}"{% else %}div{% endif %} class="comparison-item-heading-image-{{ section.id }}">                     
+                  {% if second_heading_image != blank %}                     
+                    {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                      {{ second_heading_image | image_url: width: 535 | image_tag:
+                        loading: loading_attribute,
+                        width: second_heading_image.width,
+                        height: second_heading_image.height,
+                        sizes: sizes,
+                        widths: '535, 750, 1070, 1500'
+                      }}              
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endif %}    
+                </{% if second_heading_url != blank %}a{% else %}div{% endif %}>   
+                {% if use_background_image %}
+                  <div class="comparison-item-bg-image-{{ section.id }}">
+                    <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.5">
+                      <path d="M200 99.999H195.46V71.0925L200 67.8618V99.999Z" fill="url(#paint0_linear_106_234-{{ section.id }})"/>
+                      <path d="M194.098 72.0571V99.9966H189.555V75.2878L193.548 72.4487L194.098 72.0571Z" fill="url(#paint1_linear_106_234-{{ section.id }})"/>
+                      <path d="M187.797 73.9499L188.192 74.4186V99.9967H183.652V69.0312L186.12 71.9593L187.797 73.9499Z" fill="url(#paint2_linear_106_234-{{ section.id }})"/>
+                      <path d="M182.29 67.4164V99.9986H177.748V62.0261L181.73 66.7519L182.29 67.4164Z" fill="url(#paint3_linear_106_234-{{ section.id }})"/>
+                      <path d="M176.385 60.4096V99.9989H171.845V55.0222L173.31 56.7606L176.385 60.4096Z" fill="url(#paint4_linear_106_234-{{ section.id }})"/>
+                      <path d="M170.483 99.9994H165.943V48.0156L170.483 53.4059V99.9994Z" fill="url(#paint5_linear_106_234-{{ section.id }})"/>
+                      <path d="M162.31 44.972L162.678 44.7525L162.863 44.6427L162.955 44.5893L163 44.5627C163 44.5627 163.015 44.5508 163.023 44.5508L163.04 44.5715L164.578 46.396V99.9936H160.038V46.3159L160.993 45.7493L162.31 44.9691V44.972Z" fill="url(#paint6_linear_106_234-{{ section.id }})"/>
+                      <path d="M158.675 47.1292V100H154.135V49.8258L157.37 47.9034L158.675 47.1292Z" fill="url(#paint7_linear_106_234-{{ section.id }})"/>
+                      <path d="M152.772 50.6328V100H148.23V53.3265L150.127 52.2021L152.772 50.6328Z" fill="url(#paint8_linear_106_234-{{ section.id }})"/>
+                      <path d="M146.867 54.1355V99.9992H142.327V56.8292L142.882 56.4999L146.867 54.1355Z" fill="url(#paint9_linear_106_234-{{ section.id }})"/>
+                      <path d="M136.922 59.9301L136.957 59.9716C136.957 59.9716 136.98 60.0102 136.997 59.9924L137.087 59.939L137.447 59.7254L138.17 59.2982L140.965 57.6399V100H136.425V59.3427L136.78 59.764L136.922 59.9331V59.9301Z" fill="url(#paint10_linear_106_234-{{ section.id }})"/>
+                      <path d="M135.062 57.7211V99.9982H130.52V52.3337L133.495 55.861L135.062 57.7211Z" fill="url(#paint11_linear_106_234-{{ section.id }})"/>
+                      <path d="M129.157 99.9967H124.617V45.3281L129.157 50.7155V99.9967Z" fill="url(#paint12_linear_106_234-{{ section.id }})"/>
+                      <path d="M123.255 43.7121V99.9975H118.712V38.3218L122.04 42.2703L123.255 43.7121Z" fill="url(#paint13_linear_106_234-{{ section.id }})"/>
+                      <path d="M117.353 36.705V99.9975H112.81V31.3176L112.985 31.5223L117.353 36.705Z" fill="url(#paint14_linear_106_234-{{ section.id }})"/>
+                      <path d="M110.87 29.1443C110.895 29.1295 110.918 29.1146 110.943 29.1028L111 29.171L111.115 29.3075L111.345 29.5804L111.448 29.702V99.9987H106.908V31.4939L110.29 29.4884L110.873 29.1443H110.87Z" fill="url(#paint15_linear_106_234-{{ section.id }})"/>
+                      <path d="M105.545 32.3035V99.9984H101.003V34.9971L105.14 32.5438L105.545 32.3035Z" fill="url(#paint16_linear_106_234-{{ section.id }})"/>
+                      <path d="M99.6396 99.9966H95.0997V38.4989L99.6396 35.8022V99.9966Z" fill="url(#paint17_linear_106_234-{{ section.id }})"/>
+                      <path d="M93.7378 39.3059V99.9967H89.1978V41.9996L93.6853 39.3356L93.7378 39.3059Z" fill="url(#paint18_linear_106_234-{{ section.id }})"/>
+                      <path d="M84.5655 44.1528L84.7905 44.4198C84.828 44.4614 84.8655 44.5118 84.903 44.5504L85.0455 44.4643L87.328 43.1115L87.833 42.8119V99.9992H83.293V42.6428L84.1155 43.6188L84.5655 44.1528Z" fill="url(#paint19_linear_106_234-{{ section.id }})"/>
+                      <path d="M81.9297 41.0261V99.9992H77.3897V35.6357L80.3647 39.169L81.9297 41.0261Z" fill="url(#paint20_linear_106_234-{{ section.id }})"/>
+                      <path d="M76.0273 99.9977H71.4849V28.6301L76.0273 34.0175V99.9977Z" fill="url(#paint21_linear_106_234-{{ section.id }})"/>
+                      <path d="M70.1226 27.0148V99.9992H65.5826V21.6274L68.9101 25.576L70.1226 27.0148Z" fill="url(#paint22_linear_106_234-{{ section.id }})"/>
+                      <path d="M63.1847 18.7793L64.2197 20.0104V99.999H59.6772V14.6201L60.3197 15.3825L63.1847 18.7793Z" fill="url(#paint23_linear_106_234-{{ section.id }})"/>
+                      <path d="M58.3174 99.9997H53.7749V16.6055L58.3174 13.9534V99.9997Z" fill="url(#paint24_linear_106_234-{{ section.id }})"/>
+                      <path d="M52.4126 99.9979H47.8726V20.0479L52.4126 17.3958V99.9979Z" fill="url(#paint25_linear_106_234-{{ section.id }})"/>
+                      <path d="M46.5103 20.8442V99.9992H41.9678V23.4934L45.6003 21.3723L46.5103 20.8442Z" fill="url(#paint26_linear_106_234-{{ section.id }})"/>
+                      <path d="M40.605 24.2878V99.9985H36.065V26.937L38.3325 25.6139L40.605 24.2878Z" fill="url(#paint27_linear_106_234-{{ section.id }})"/>
+                      <path d="M32.1202 28.0089L32.6902 28.6853L32.7627 28.7713L32.7977 28.8128C32.7977 28.8128 32.8077 28.8306 32.8152 28.8306L32.8377 28.8188L33.0177 28.712L33.3802 28.5013L34.7002 27.73V99.9965H30.1602V25.686L30.9777 26.6561L32.1177 28.0089H32.1202Z" fill="url(#paint28_linear_106_234-{{ section.id }})"/>
+                      <path d="M28.8003 100H24.2578V18.6824L28.8003 24.0697V100Z" fill="url(#paint29_linear_106_234-{{ section.id }})"/>
+                      <path d="M22.895 99.9975H18.355V11.6758L22.895 17.0631V99.9975Z" fill="url(#paint30_linear_106_234-{{ section.id }})"/>
+                      <path d="M16.9927 99.998H12.4502V4.66919L16.9927 10.0595V99.998Z" fill="url(#paint31_linear_106_234-{{ section.id }})"/>
+                      <path d="M8.64742 0.15723L11.0874 3.05263V99.9983H6.54741V2.33175L8.51491 0L8.64742 0.15723Z" fill="url(#paint32_linear_106_234-{{ section.id }})"/>
+                      <path d="M5.18555 3.94556V99.9983H0.000553025V9.62067L5.18555 3.94556Z" fill="url(#paint33_linear_106_234-{{ section.id }})"/>
+                      </g>
+                      <defs>
+                      <linearGradient id="paint0_linear_106_234-{{ section.id }}" x1="197.73" y1="67.8618" x2="197.73" y2="99.999" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint1_linear_106_234-{{ section.id }}" x1="191.826" y1="72.0571" x2="191.826" y2="99.9966" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint2_linear_106_234-{{ section.id }}" x1="185.922" y1="69.0312" x2="185.922" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint3_linear_106_234-{{ section.id }}" x1="180.019" y1="62.0261" x2="180.019" y2="99.9986" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint4_linear_106_234-{{ section.id }}" x1="174.115" y1="55.0222" x2="174.115" y2="99.9989" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint5_linear_106_234-{{ section.id }}" x1="168.213" y1="48.0156" x2="168.213" y2="99.9994" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint6_linear_106_234-{{ section.id }}" x1="162.308" y1="44.5508" x2="162.308" y2="99.9936" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint7_linear_106_234-{{ section.id }}" x1="156.405" y1="47.1292" x2="156.405" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint8_linear_106_234-{{ section.id }}" x1="150.501" y1="50.6328" x2="150.501" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint9_linear_106_234-{{ section.id }}" x1="144.597" y1="54.1355" x2="144.597" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint10_linear_106_234-{{ section.id }}" x1="138.695" y1="57.6399" x2="138.695" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint11_linear_106_234-{{ section.id }}" x1="132.791" y1="52.3337" x2="132.791" y2="99.9982" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint12_linear_106_234-{{ section.id }}" x1="126.887" y1="45.3281" x2="126.887" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint13_linear_106_234-{{ section.id }}" x1="120.984" y1="38.3218" x2="120.984" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint14_linear_106_234-{{ section.id }}" x1="115.081" y1="31.3176" x2="115.081" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint15_linear_106_234-{{ section.id }}" x1="109.178" y1="29.1028" x2="109.178" y2="99.9987" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint16_linear_106_234-{{ section.id }}" x1="103.274" y1="32.3035" x2="103.274" y2="99.9984" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint17_linear_106_234-{{ section.id }}" x1="97.3696" y1="35.8022" x2="97.3696" y2="99.9966" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint18_linear_106_234-{{ section.id }}" x1="91.4678" y1="39.3059" x2="91.4678" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint19_linear_106_234-{{ section.id }}" x1="85.563" y1="42.6428" x2="85.563" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint20_linear_106_234-{{ section.id }}" x1="79.6597" y1="35.6357" x2="79.6597" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint21_linear_106_234-{{ section.id }}" x1="73.7561" y1="28.6301" x2="73.7561" y2="99.9977" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint22_linear_106_234-{{ section.id }}" x1="67.8526" y1="21.6274" x2="67.8526" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint23_linear_106_234-{{ section.id }}" x1="61.9485" y1="14.6201" x2="61.9485" y2="99.999" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint24_linear_106_234-{{ section.id }}" x1="56.0461" y1="13.9534" x2="56.0461" y2="99.9997" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint25_linear_106_234-{{ section.id }}" x1="50.1426" y1="17.3958" x2="50.1426" y2="99.9979" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint26_linear_106_234-{{ section.id }}" x1="44.239" y1="20.8442" x2="44.239" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint27_linear_106_234-{{ section.id }}" x1="38.335" y1="24.2878" x2="38.335" y2="99.9985" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint28_linear_106_234-{{ section.id }}" x1="32.4302" y1="25.686" x2="32.4302" y2="99.9965" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint29_linear_106_234-{{ section.id }}" x1="26.529" y1="18.6824" x2="26.529" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint30_linear_106_234-{{ section.id }}" x1="20.625" y1="11.6758" x2="20.625" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint31_linear_106_234-{{ section.id }}" x1="14.7214" y1="4.66919" x2="14.7214" y2="99.998" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint32_linear_106_234-{{ section.id }}" x1="8.81741" y1="0" x2="8.81741" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint33_linear_106_234-{{ section.id }}" x1="2.59305" y1="3.94556" x2="2.59305" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                {% endif %}        
+                <{% if second_heading_url != blank %}a href="{{ second_heading_url }}"{% else %}h3{% endif %} class="comparison-column-heading-{{ section.id }}">{{ second_heading }}</{% if second_heading_url != blank %}a{% else %}h3{% endif %}>                  
+              </div>
+            {% endif %}
+            {% if table_columns > 2 and third_heading != blank %}
+              <div class="comparison-item-{{ section.id }}">
+                <{% if third_heading_url != blank %}a href="{{ third_heading_url }}"{% else %}div{% endif %} class="comparison-item-heading-image-{{ section.id }}">                
+                  {% if third_heading_image != blank %}                
+                    {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                      {{ third_heading_image | image_url: width: 535 | image_tag:
+                        loading: loading_attribute,
+                        width: third_heading_image.width,
+                        height: third_heading_image.height,
+                        sizes: sizes,
+                        widths: '535, 750, 1070, 1500'
+                      }}
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endif %}  
+                </{% if third_heading_url != blank %}a{% else %}div{% endif %}> 
+                {% if use_background_image %}
+                  <div class="comparison-item-bg-image-{{ section.id }}">
+                    <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.5">
+                      <path d="M200 99.999H195.46V71.0925L200 67.8618V99.999Z" fill="url(#paint0_linear_106_234-{{ section.id }})"/>
+                      <path d="M194.098 72.0571V99.9966H189.555V75.2878L193.548 72.4487L194.098 72.0571Z" fill="url(#paint1_linear_106_234-{{ section.id }})"/>
+                      <path d="M187.797 73.9499L188.192 74.4186V99.9967H183.652V69.0312L186.12 71.9593L187.797 73.9499Z" fill="url(#paint2_linear_106_234-{{ section.id }})"/>
+                      <path d="M182.29 67.4164V99.9986H177.748V62.0261L181.73 66.7519L182.29 67.4164Z" fill="url(#paint3_linear_106_234-{{ section.id }})"/>
+                      <path d="M176.385 60.4096V99.9989H171.845V55.0222L173.31 56.7606L176.385 60.4096Z" fill="url(#paint4_linear_106_234-{{ section.id }})"/>
+                      <path d="M170.483 99.9994H165.943V48.0156L170.483 53.4059V99.9994Z" fill="url(#paint5_linear_106_234-{{ section.id }})"/>
+                      <path d="M162.31 44.972L162.678 44.7525L162.863 44.6427L162.955 44.5893L163 44.5627C163 44.5627 163.015 44.5508 163.023 44.5508L163.04 44.5715L164.578 46.396V99.9936H160.038V46.3159L160.993 45.7493L162.31 44.9691V44.972Z" fill="url(#paint6_linear_106_234-{{ section.id }})"/>
+                      <path d="M158.675 47.1292V100H154.135V49.8258L157.37 47.9034L158.675 47.1292Z" fill="url(#paint7_linear_106_234-{{ section.id }})"/>
+                      <path d="M152.772 50.6328V100H148.23V53.3265L150.127 52.2021L152.772 50.6328Z" fill="url(#paint8_linear_106_234-{{ section.id }})"/>
+                      <path d="M146.867 54.1355V99.9992H142.327V56.8292L142.882 56.4999L146.867 54.1355Z" fill="url(#paint9_linear_106_234-{{ section.id }})"/>
+                      <path d="M136.922 59.9301L136.957 59.9716C136.957 59.9716 136.98 60.0102 136.997 59.9924L137.087 59.939L137.447 59.7254L138.17 59.2982L140.965 57.6399V100H136.425V59.3427L136.78 59.764L136.922 59.9331V59.9301Z" fill="url(#paint10_linear_106_234-{{ section.id }})"/>
+                      <path d="M135.062 57.7211V99.9982H130.52V52.3337L133.495 55.861L135.062 57.7211Z" fill="url(#paint11_linear_106_234-{{ section.id }})"/>
+                      <path d="M129.157 99.9967H124.617V45.3281L129.157 50.7155V99.9967Z" fill="url(#paint12_linear_106_234-{{ section.id }})"/>
+                      <path d="M123.255 43.7121V99.9975H118.712V38.3218L122.04 42.2703L123.255 43.7121Z" fill="url(#paint13_linear_106_234-{{ section.id }})"/>
+                      <path d="M117.353 36.705V99.9975H112.81V31.3176L112.985 31.5223L117.353 36.705Z" fill="url(#paint14_linear_106_234-{{ section.id }})"/>
+                      <path d="M110.87 29.1443C110.895 29.1295 110.918 29.1146 110.943 29.1028L111 29.171L111.115 29.3075L111.345 29.5804L111.448 29.702V99.9987H106.908V31.4939L110.29 29.4884L110.873 29.1443H110.87Z" fill="url(#paint15_linear_106_234-{{ section.id }})"/>
+                      <path d="M105.545 32.3035V99.9984H101.003V34.9971L105.14 32.5438L105.545 32.3035Z" fill="url(#paint16_linear_106_234-{{ section.id }})"/>
+                      <path d="M99.6396 99.9966H95.0997V38.4989L99.6396 35.8022V99.9966Z" fill="url(#paint17_linear_106_234-{{ section.id }})"/>
+                      <path d="M93.7378 39.3059V99.9967H89.1978V41.9996L93.6853 39.3356L93.7378 39.3059Z" fill="url(#paint18_linear_106_234-{{ section.id }})"/>
+                      <path d="M84.5655 44.1528L84.7905 44.4198C84.828 44.4614 84.8655 44.5118 84.903 44.5504L85.0455 44.4643L87.328 43.1115L87.833 42.8119V99.9992H83.293V42.6428L84.1155 43.6188L84.5655 44.1528Z" fill="url(#paint19_linear_106_234-{{ section.id }})"/>
+                      <path d="M81.9297 41.0261V99.9992H77.3897V35.6357L80.3647 39.169L81.9297 41.0261Z" fill="url(#paint20_linear_106_234-{{ section.id }})"/>
+                      <path d="M76.0273 99.9977H71.4849V28.6301L76.0273 34.0175V99.9977Z" fill="url(#paint21_linear_106_234-{{ section.id }})"/>
+                      <path d="M70.1226 27.0148V99.9992H65.5826V21.6274L68.9101 25.576L70.1226 27.0148Z" fill="url(#paint22_linear_106_234-{{ section.id }})"/>
+                      <path d="M63.1847 18.7793L64.2197 20.0104V99.999H59.6772V14.6201L60.3197 15.3825L63.1847 18.7793Z" fill="url(#paint23_linear_106_234-{{ section.id }})"/>
+                      <path d="M58.3174 99.9997H53.7749V16.6055L58.3174 13.9534V99.9997Z" fill="url(#paint24_linear_106_234-{{ section.id }})"/>
+                      <path d="M52.4126 99.9979H47.8726V20.0479L52.4126 17.3958V99.9979Z" fill="url(#paint25_linear_106_234-{{ section.id }})"/>
+                      <path d="M46.5103 20.8442V99.9992H41.9678V23.4934L45.6003 21.3723L46.5103 20.8442Z" fill="url(#paint26_linear_106_234-{{ section.id }})"/>
+                      <path d="M40.605 24.2878V99.9985H36.065V26.937L38.3325 25.6139L40.605 24.2878Z" fill="url(#paint27_linear_106_234-{{ section.id }})"/>
+                      <path d="M32.1202 28.0089L32.6902 28.6853L32.7627 28.7713L32.7977 28.8128C32.7977 28.8128 32.8077 28.8306 32.8152 28.8306L32.8377 28.8188L33.0177 28.712L33.3802 28.5013L34.7002 27.73V99.9965H30.1602V25.686L30.9777 26.6561L32.1177 28.0089H32.1202Z" fill="url(#paint28_linear_106_234-{{ section.id }})"/>
+                      <path d="M28.8003 100H24.2578V18.6824L28.8003 24.0697V100Z" fill="url(#paint29_linear_106_234-{{ section.id }})"/>
+                      <path d="M22.895 99.9975H18.355V11.6758L22.895 17.0631V99.9975Z" fill="url(#paint30_linear_106_234-{{ section.id }})"/>
+                      <path d="M16.9927 99.998H12.4502V4.66919L16.9927 10.0595V99.998Z" fill="url(#paint31_linear_106_234-{{ section.id }})"/>
+                      <path d="M8.64742 0.15723L11.0874 3.05263V99.9983H6.54741V2.33175L8.51491 0L8.64742 0.15723Z" fill="url(#paint32_linear_106_234-{{ section.id }})"/>
+                      <path d="M5.18555 3.94556V99.9983H0.000553025V9.62067L5.18555 3.94556Z" fill="url(#paint33_linear_106_234-{{ section.id }})"/>
+                      </g>
+                      <defs>
+                      <linearGradient id="paint0_linear_106_234-{{ section.id }}" x1="197.73" y1="67.8618" x2="197.73" y2="99.999" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint1_linear_106_234-{{ section.id }}" x1="191.826" y1="72.0571" x2="191.826" y2="99.9966" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint2_linear_106_234-{{ section.id }}" x1="185.922" y1="69.0312" x2="185.922" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint3_linear_106_234-{{ section.id }}" x1="180.019" y1="62.0261" x2="180.019" y2="99.9986" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint4_linear_106_234-{{ section.id }}" x1="174.115" y1="55.0222" x2="174.115" y2="99.9989" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint5_linear_106_234-{{ section.id }}" x1="168.213" y1="48.0156" x2="168.213" y2="99.9994" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint6_linear_106_234-{{ section.id }}" x1="162.308" y1="44.5508" x2="162.308" y2="99.9936" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint7_linear_106_234-{{ section.id }}" x1="156.405" y1="47.1292" x2="156.405" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint8_linear_106_234-{{ section.id }}" x1="150.501" y1="50.6328" x2="150.501" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint9_linear_106_234-{{ section.id }}" x1="144.597" y1="54.1355" x2="144.597" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint10_linear_106_234-{{ section.id }}" x1="138.695" y1="57.6399" x2="138.695" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint11_linear_106_234-{{ section.id }}" x1="132.791" y1="52.3337" x2="132.791" y2="99.9982" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint12_linear_106_234-{{ section.id }}" x1="126.887" y1="45.3281" x2="126.887" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint13_linear_106_234-{{ section.id }}" x1="120.984" y1="38.3218" x2="120.984" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint14_linear_106_234-{{ section.id }}" x1="115.081" y1="31.3176" x2="115.081" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint15_linear_106_234-{{ section.id }}" x1="109.178" y1="29.1028" x2="109.178" y2="99.9987" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint16_linear_106_234-{{ section.id }}" x1="103.274" y1="32.3035" x2="103.274" y2="99.9984" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint17_linear_106_234-{{ section.id }}" x1="97.3696" y1="35.8022" x2="97.3696" y2="99.9966" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint18_linear_106_234-{{ section.id }}" x1="91.4678" y1="39.3059" x2="91.4678" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint19_linear_106_234-{{ section.id }}" x1="85.563" y1="42.6428" x2="85.563" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint20_linear_106_234-{{ section.id }}" x1="79.6597" y1="35.6357" x2="79.6597" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint21_linear_106_234-{{ section.id }}" x1="73.7561" y1="28.6301" x2="73.7561" y2="99.9977" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint22_linear_106_234-{{ section.id }}" x1="67.8526" y1="21.6274" x2="67.8526" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint23_linear_106_234-{{ section.id }}" x1="61.9485" y1="14.6201" x2="61.9485" y2="99.999" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint24_linear_106_234-{{ section.id }}" x1="56.0461" y1="13.9534" x2="56.0461" y2="99.9997" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint25_linear_106_234-{{ section.id }}" x1="50.1426" y1="17.3958" x2="50.1426" y2="99.9979" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint26_linear_106_234-{{ section.id }}" x1="44.239" y1="20.8442" x2="44.239" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint27_linear_106_234-{{ section.id }}" x1="38.335" y1="24.2878" x2="38.335" y2="99.9985" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint28_linear_106_234-{{ section.id }}" x1="32.4302" y1="25.686" x2="32.4302" y2="99.9965" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint29_linear_106_234-{{ section.id }}" x1="26.529" y1="18.6824" x2="26.529" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint30_linear_106_234-{{ section.id }}" x1="20.625" y1="11.6758" x2="20.625" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint31_linear_106_234-{{ section.id }}" x1="14.7214" y1="4.66919" x2="14.7214" y2="99.998" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint32_linear_106_234-{{ section.id }}" x1="8.81741" y1="0" x2="8.81741" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint33_linear_106_234-{{ section.id }}" x1="2.59305" y1="3.94556" x2="2.59305" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                {% endif %} 
+                <{% if third_heading_url != blank %}a href="{{ third_heading_url }}"{% else %}h3{% endif %} class="comparison-column-heading-{{ section.id }}">{{ third_heading }}</{% if third_heading_url != blank %}a{% else %}h3{% endif %}>
+              </div>
+            {% endif %}
+            {% if table_columns > 3 and fourth_heading != blank %}
+              <div class="comparison-item-{{ section.id }}">
+                <{% if fourth_heading_url != blank %}a href="{{ fourth_heading_url }}"{% else %}div{% endif %} class="comparison-item-heading-image-{{ section.id }}">                
+                  {% if fourth_heading_image != blank %}                
+                    {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                      {{ fourth_heading_image | image_url: width: 535 | image_tag:
+                        loading: loading_attribute,
+                        width: fourth_heading_image.width,
+                        height: fourth_heading_image.height,
+                        sizes: sizes,
+                        widths: '535, 750, 1070, 1500'
+                      }}
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endif %} 
+                </{% if fourth_heading_url != blank %}a{% else %}div{% endif %}> 
+                {% if use_background_image %}
+                  <div class="comparison-item-bg-image-{{ section.id }}">
+                    <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.5">
+                      <path d="M200 99.999H195.46V71.0925L200 67.8618V99.999Z" fill="url(#paint0_linear_106_234-{{ section.id }})"/>
+                      <path d="M194.098 72.0571V99.9966H189.555V75.2878L193.548 72.4487L194.098 72.0571Z" fill="url(#paint1_linear_106_234-{{ section.id }})"/>
+                      <path d="M187.797 73.9499L188.192 74.4186V99.9967H183.652V69.0312L186.12 71.9593L187.797 73.9499Z" fill="url(#paint2_linear_106_234-{{ section.id }})"/>
+                      <path d="M182.29 67.4164V99.9986H177.748V62.0261L181.73 66.7519L182.29 67.4164Z" fill="url(#paint3_linear_106_234-{{ section.id }})"/>
+                      <path d="M176.385 60.4096V99.9989H171.845V55.0222L173.31 56.7606L176.385 60.4096Z" fill="url(#paint4_linear_106_234-{{ section.id }})"/>
+                      <path d="M170.483 99.9994H165.943V48.0156L170.483 53.4059V99.9994Z" fill="url(#paint5_linear_106_234-{{ section.id }})"/>
+                      <path d="M162.31 44.972L162.678 44.7525L162.863 44.6427L162.955 44.5893L163 44.5627C163 44.5627 163.015 44.5508 163.023 44.5508L163.04 44.5715L164.578 46.396V99.9936H160.038V46.3159L160.993 45.7493L162.31 44.9691V44.972Z" fill="url(#paint6_linear_106_234-{{ section.id }})"/>
+                      <path d="M158.675 47.1292V100H154.135V49.8258L157.37 47.9034L158.675 47.1292Z" fill="url(#paint7_linear_106_234-{{ section.id }})"/>
+                      <path d="M152.772 50.6328V100H148.23V53.3265L150.127 52.2021L152.772 50.6328Z" fill="url(#paint8_linear_106_234-{{ section.id }})"/>
+                      <path d="M146.867 54.1355V99.9992H142.327V56.8292L142.882 56.4999L146.867 54.1355Z" fill="url(#paint9_linear_106_234-{{ section.id }})"/>
+                      <path d="M136.922 59.9301L136.957 59.9716C136.957 59.9716 136.98 60.0102 136.997 59.9924L137.087 59.939L137.447 59.7254L138.17 59.2982L140.965 57.6399V100H136.425V59.3427L136.78 59.764L136.922 59.9331V59.9301Z" fill="url(#paint10_linear_106_234-{{ section.id }})"/>
+                      <path d="M135.062 57.7211V99.9982H130.52V52.3337L133.495 55.861L135.062 57.7211Z" fill="url(#paint11_linear_106_234-{{ section.id }})"/>
+                      <path d="M129.157 99.9967H124.617V45.3281L129.157 50.7155V99.9967Z" fill="url(#paint12_linear_106_234-{{ section.id }})"/>
+                      <path d="M123.255 43.7121V99.9975H118.712V38.3218L122.04 42.2703L123.255 43.7121Z" fill="url(#paint13_linear_106_234-{{ section.id }})"/>
+                      <path d="M117.353 36.705V99.9975H112.81V31.3176L112.985 31.5223L117.353 36.705Z" fill="url(#paint14_linear_106_234-{{ section.id }})"/>
+                      <path d="M110.87 29.1443C110.895 29.1295 110.918 29.1146 110.943 29.1028L111 29.171L111.115 29.3075L111.345 29.5804L111.448 29.702V99.9987H106.908V31.4939L110.29 29.4884L110.873 29.1443H110.87Z" fill="url(#paint15_linear_106_234-{{ section.id }})"/>
+                      <path d="M105.545 32.3035V99.9984H101.003V34.9971L105.14 32.5438L105.545 32.3035Z" fill="url(#paint16_linear_106_234-{{ section.id }})"/>
+                      <path d="M99.6396 99.9966H95.0997V38.4989L99.6396 35.8022V99.9966Z" fill="url(#paint17_linear_106_234-{{ section.id }})"/>
+                      <path d="M93.7378 39.3059V99.9967H89.1978V41.9996L93.6853 39.3356L93.7378 39.3059Z" fill="url(#paint18_linear_106_234-{{ section.id }})"/>
+                      <path d="M84.5655 44.1528L84.7905 44.4198C84.828 44.4614 84.8655 44.5118 84.903 44.5504L85.0455 44.4643L87.328 43.1115L87.833 42.8119V99.9992H83.293V42.6428L84.1155 43.6188L84.5655 44.1528Z" fill="url(#paint19_linear_106_234-{{ section.id }})"/>
+                      <path d="M81.9297 41.0261V99.9992H77.3897V35.6357L80.3647 39.169L81.9297 41.0261Z" fill="url(#paint20_linear_106_234-{{ section.id }})"/>
+                      <path d="M76.0273 99.9977H71.4849V28.6301L76.0273 34.0175V99.9977Z" fill="url(#paint21_linear_106_234-{{ section.id }})"/>
+                      <path d="M70.1226 27.0148V99.9992H65.5826V21.6274L68.9101 25.576L70.1226 27.0148Z" fill="url(#paint22_linear_106_234-{{ section.id }})"/>
+                      <path d="M63.1847 18.7793L64.2197 20.0104V99.999H59.6772V14.6201L60.3197 15.3825L63.1847 18.7793Z" fill="url(#paint23_linear_106_234-{{ section.id }})"/>
+                      <path d="M58.3174 99.9997H53.7749V16.6055L58.3174 13.9534V99.9997Z" fill="url(#paint24_linear_106_234-{{ section.id }})"/>
+                      <path d="M52.4126 99.9979H47.8726V20.0479L52.4126 17.3958V99.9979Z" fill="url(#paint25_linear_106_234-{{ section.id }})"/>
+                      <path d="M46.5103 20.8442V99.9992H41.9678V23.4934L45.6003 21.3723L46.5103 20.8442Z" fill="url(#paint26_linear_106_234-{{ section.id }})"/>
+                      <path d="M40.605 24.2878V99.9985H36.065V26.937L38.3325 25.6139L40.605 24.2878Z" fill="url(#paint27_linear_106_234-{{ section.id }})"/>
+                      <path d="M32.1202 28.0089L32.6902 28.6853L32.7627 28.7713L32.7977 28.8128C32.7977 28.8128 32.8077 28.8306 32.8152 28.8306L32.8377 28.8188L33.0177 28.712L33.3802 28.5013L34.7002 27.73V99.9965H30.1602V25.686L30.9777 26.6561L32.1177 28.0089H32.1202Z" fill="url(#paint28_linear_106_234-{{ section.id }})"/>
+                      <path d="M28.8003 100H24.2578V18.6824L28.8003 24.0697V100Z" fill="url(#paint29_linear_106_234-{{ section.id }})"/>
+                      <path d="M22.895 99.9975H18.355V11.6758L22.895 17.0631V99.9975Z" fill="url(#paint30_linear_106_234-{{ section.id }})"/>
+                      <path d="M16.9927 99.998H12.4502V4.66919L16.9927 10.0595V99.998Z" fill="url(#paint31_linear_106_234-{{ section.id }})"/>
+                      <path d="M8.64742 0.15723L11.0874 3.05263V99.9983H6.54741V2.33175L8.51491 0L8.64742 0.15723Z" fill="url(#paint32_linear_106_234-{{ section.id }})"/>
+                      <path d="M5.18555 3.94556V99.9983H0.000553025V9.62067L5.18555 3.94556Z" fill="url(#paint33_linear_106_234-{{ section.id }})"/>
+                      </g>
+                      <defs>
+                      <linearGradient id="paint0_linear_106_234-{{ section.id }}" x1="197.73" y1="67.8618" x2="197.73" y2="99.999" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint1_linear_106_234-{{ section.id }}" x1="191.826" y1="72.0571" x2="191.826" y2="99.9966" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint2_linear_106_234-{{ section.id }}" x1="185.922" y1="69.0312" x2="185.922" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint3_linear_106_234-{{ section.id }}" x1="180.019" y1="62.0261" x2="180.019" y2="99.9986" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint4_linear_106_234-{{ section.id }}" x1="174.115" y1="55.0222" x2="174.115" y2="99.9989" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint5_linear_106_234-{{ section.id }}" x1="168.213" y1="48.0156" x2="168.213" y2="99.9994" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint6_linear_106_234-{{ section.id }}" x1="162.308" y1="44.5508" x2="162.308" y2="99.9936" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint7_linear_106_234-{{ section.id }}" x1="156.405" y1="47.1292" x2="156.405" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint8_linear_106_234-{{ section.id }}" x1="150.501" y1="50.6328" x2="150.501" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint9_linear_106_234-{{ section.id }}" x1="144.597" y1="54.1355" x2="144.597" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint10_linear_106_234-{{ section.id }}" x1="138.695" y1="57.6399" x2="138.695" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint11_linear_106_234-{{ section.id }}" x1="132.791" y1="52.3337" x2="132.791" y2="99.9982" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint12_linear_106_234-{{ section.id }}" x1="126.887" y1="45.3281" x2="126.887" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint13_linear_106_234-{{ section.id }}" x1="120.984" y1="38.3218" x2="120.984" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint14_linear_106_234-{{ section.id }}" x1="115.081" y1="31.3176" x2="115.081" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint15_linear_106_234-{{ section.id }}" x1="109.178" y1="29.1028" x2="109.178" y2="99.9987" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint16_linear_106_234-{{ section.id }}" x1="103.274" y1="32.3035" x2="103.274" y2="99.9984" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint17_linear_106_234-{{ section.id }}" x1="97.3696" y1="35.8022" x2="97.3696" y2="99.9966" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint18_linear_106_234-{{ section.id }}" x1="91.4678" y1="39.3059" x2="91.4678" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint19_linear_106_234-{{ section.id }}" x1="85.563" y1="42.6428" x2="85.563" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint20_linear_106_234-{{ section.id }}" x1="79.6597" y1="35.6357" x2="79.6597" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint21_linear_106_234-{{ section.id }}" x1="73.7561" y1="28.6301" x2="73.7561" y2="99.9977" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint22_linear_106_234-{{ section.id }}" x1="67.8526" y1="21.6274" x2="67.8526" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint23_linear_106_234-{{ section.id }}" x1="61.9485" y1="14.6201" x2="61.9485" y2="99.999" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint24_linear_106_234-{{ section.id }}" x1="56.0461" y1="13.9534" x2="56.0461" y2="99.9997" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint25_linear_106_234-{{ section.id }}" x1="50.1426" y1="17.3958" x2="50.1426" y2="99.9979" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint26_linear_106_234-{{ section.id }}" x1="44.239" y1="20.8442" x2="44.239" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint27_linear_106_234-{{ section.id }}" x1="38.335" y1="24.2878" x2="38.335" y2="99.9985" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint28_linear_106_234-{{ section.id }}" x1="32.4302" y1="25.686" x2="32.4302" y2="99.9965" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint29_linear_106_234-{{ section.id }}" x1="26.529" y1="18.6824" x2="26.529" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint30_linear_106_234-{{ section.id }}" x1="20.625" y1="11.6758" x2="20.625" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint31_linear_106_234-{{ section.id }}" x1="14.7214" y1="4.66919" x2="14.7214" y2="99.998" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint32_linear_106_234-{{ section.id }}" x1="8.81741" y1="0" x2="8.81741" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint33_linear_106_234-{{ section.id }}" x1="2.59305" y1="3.94556" x2="2.59305" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                {% endif %} 
+                <{% if fourth_heading_url != blank %}a href="{{ fourth_heading_url }}"{% else %}h3{% endif %} class="comparison-column-heading-{{ section.id }}">{{ fourth_heading }}</{% if fourth_heading_url != blank %}a{% else %}h3{% endif %}>
+              </div>
+            {% endif %}
+            {% if table_columns > 4 and fifth_heading != blank %}
+              <div class="comparison-item-{{ section.id }}">
+                <{% if fifth_heading_url != blank %}a href="{{ fifth_heading_url }}"{% else %}div{% endif %} class="comparison-item-heading-image-{{ section.id }}">             
+                  {% if fifth_heading_image != blank %}                
+                    {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                      {{ fifth_heading_image | image_url: width: 535 | image_tag:
+                        loading: loading_attribute,
+                        width: fifth_heading_image.width,
+                        height: fifth_heading_image.height,
+                        sizes: sizes,
+                        widths: '535, 750, 1070, 1500'
+                      }}
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endif %} 
+                </{% if fifth_heading_url != blank %}a{% else %}div{% endif %}>   
+                {% if use_background_image %}
+                  <div class="comparison-item-bg-image-{{ section.id }}">
+                    <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.5">
+                      <path d="M200 99.999H195.46V71.0925L200 67.8618V99.999Z" fill="url(#paint0_linear_106_234-{{ section.id }})"/>
+                      <path d="M194.098 72.0571V99.9966H189.555V75.2878L193.548 72.4487L194.098 72.0571Z" fill="url(#paint1_linear_106_234-{{ section.id }})"/>
+                      <path d="M187.797 73.9499L188.192 74.4186V99.9967H183.652V69.0312L186.12 71.9593L187.797 73.9499Z" fill="url(#paint2_linear_106_234-{{ section.id }})"/>
+                      <path d="M182.29 67.4164V99.9986H177.748V62.0261L181.73 66.7519L182.29 67.4164Z" fill="url(#paint3_linear_106_234-{{ section.id }})"/>
+                      <path d="M176.385 60.4096V99.9989H171.845V55.0222L173.31 56.7606L176.385 60.4096Z" fill="url(#paint4_linear_106_234-{{ section.id }})"/>
+                      <path d="M170.483 99.9994H165.943V48.0156L170.483 53.4059V99.9994Z" fill="url(#paint5_linear_106_234-{{ section.id }})"/>
+                      <path d="M162.31 44.972L162.678 44.7525L162.863 44.6427L162.955 44.5893L163 44.5627C163 44.5627 163.015 44.5508 163.023 44.5508L163.04 44.5715L164.578 46.396V99.9936H160.038V46.3159L160.993 45.7493L162.31 44.9691V44.972Z" fill="url(#paint6_linear_106_234-{{ section.id }})"/>
+                      <path d="M158.675 47.1292V100H154.135V49.8258L157.37 47.9034L158.675 47.1292Z" fill="url(#paint7_linear_106_234-{{ section.id }})"/>
+                      <path d="M152.772 50.6328V100H148.23V53.3265L150.127 52.2021L152.772 50.6328Z" fill="url(#paint8_linear_106_234-{{ section.id }})"/>
+                      <path d="M146.867 54.1355V99.9992H142.327V56.8292L142.882 56.4999L146.867 54.1355Z" fill="url(#paint9_linear_106_234-{{ section.id }})"/>
+                      <path d="M136.922 59.9301L136.957 59.9716C136.957 59.9716 136.98 60.0102 136.997 59.9924L137.087 59.939L137.447 59.7254L138.17 59.2982L140.965 57.6399V100H136.425V59.3427L136.78 59.764L136.922 59.9331V59.9301Z" fill="url(#paint10_linear_106_234-{{ section.id }})"/>
+                      <path d="M135.062 57.7211V99.9982H130.52V52.3337L133.495 55.861L135.062 57.7211Z" fill="url(#paint11_linear_106_234-{{ section.id }})"/>
+                      <path d="M129.157 99.9967H124.617V45.3281L129.157 50.7155V99.9967Z" fill="url(#paint12_linear_106_234-{{ section.id }})"/>
+                      <path d="M123.255 43.7121V99.9975H118.712V38.3218L122.04 42.2703L123.255 43.7121Z" fill="url(#paint13_linear_106_234-{{ section.id }})"/>
+                      <path d="M117.353 36.705V99.9975H112.81V31.3176L112.985 31.5223L117.353 36.705Z" fill="url(#paint14_linear_106_234-{{ section.id }})"/>
+                      <path d="M110.87 29.1443C110.895 29.1295 110.918 29.1146 110.943 29.1028L111 29.171L111.115 29.3075L111.345 29.5804L111.448 29.702V99.9987H106.908V31.4939L110.29 29.4884L110.873 29.1443H110.87Z" fill="url(#paint15_linear_106_234-{{ section.id }})"/>
+                      <path d="M105.545 32.3035V99.9984H101.003V34.9971L105.14 32.5438L105.545 32.3035Z" fill="url(#paint16_linear_106_234-{{ section.id }})"/>
+                      <path d="M99.6396 99.9966H95.0997V38.4989L99.6396 35.8022V99.9966Z" fill="url(#paint17_linear_106_234-{{ section.id }})"/>
+                      <path d="M93.7378 39.3059V99.9967H89.1978V41.9996L93.6853 39.3356L93.7378 39.3059Z" fill="url(#paint18_linear_106_234-{{ section.id }})"/>
+                      <path d="M84.5655 44.1528L84.7905 44.4198C84.828 44.4614 84.8655 44.5118 84.903 44.5504L85.0455 44.4643L87.328 43.1115L87.833 42.8119V99.9992H83.293V42.6428L84.1155 43.6188L84.5655 44.1528Z" fill="url(#paint19_linear_106_234-{{ section.id }})"/>
+                      <path d="M81.9297 41.0261V99.9992H77.3897V35.6357L80.3647 39.169L81.9297 41.0261Z" fill="url(#paint20_linear_106_234-{{ section.id }})"/>
+                      <path d="M76.0273 99.9977H71.4849V28.6301L76.0273 34.0175V99.9977Z" fill="url(#paint21_linear_106_234-{{ section.id }})"/>
+                      <path d="M70.1226 27.0148V99.9992H65.5826V21.6274L68.9101 25.576L70.1226 27.0148Z" fill="url(#paint22_linear_106_234-{{ section.id }})"/>
+                      <path d="M63.1847 18.7793L64.2197 20.0104V99.999H59.6772V14.6201L60.3197 15.3825L63.1847 18.7793Z" fill="url(#paint23_linear_106_234-{{ section.id }})"/>
+                      <path d="M58.3174 99.9997H53.7749V16.6055L58.3174 13.9534V99.9997Z" fill="url(#paint24_linear_106_234-{{ section.id }})"/>
+                      <path d="M52.4126 99.9979H47.8726V20.0479L52.4126 17.3958V99.9979Z" fill="url(#paint25_linear_106_234-{{ section.id }})"/>
+                      <path d="M46.5103 20.8442V99.9992H41.9678V23.4934L45.6003 21.3723L46.5103 20.8442Z" fill="url(#paint26_linear_106_234-{{ section.id }})"/>
+                      <path d="M40.605 24.2878V99.9985H36.065V26.937L38.3325 25.6139L40.605 24.2878Z" fill="url(#paint27_linear_106_234-{{ section.id }})"/>
+                      <path d="M32.1202 28.0089L32.6902 28.6853L32.7627 28.7713L32.7977 28.8128C32.7977 28.8128 32.8077 28.8306 32.8152 28.8306L32.8377 28.8188L33.0177 28.712L33.3802 28.5013L34.7002 27.73V99.9965H30.1602V25.686L30.9777 26.6561L32.1177 28.0089H32.1202Z" fill="url(#paint28_linear_106_234-{{ section.id }})"/>
+                      <path d="M28.8003 100H24.2578V18.6824L28.8003 24.0697V100Z" fill="url(#paint29_linear_106_234-{{ section.id }})"/>
+                      <path d="M22.895 99.9975H18.355V11.6758L22.895 17.0631V99.9975Z" fill="url(#paint30_linear_106_234-{{ section.id }})"/>
+                      <path d="M16.9927 99.998H12.4502V4.66919L16.9927 10.0595V99.998Z" fill="url(#paint31_linear_106_234-{{ section.id }})"/>
+                      <path d="M8.64742 0.15723L11.0874 3.05263V99.9983H6.54741V2.33175L8.51491 0L8.64742 0.15723Z" fill="url(#paint32_linear_106_234-{{ section.id }})"/>
+                      <path d="M5.18555 3.94556V99.9983H0.000553025V9.62067L5.18555 3.94556Z" fill="url(#paint33_linear_106_234-{{ section.id }})"/>
+                      </g>
+                      <defs>
+                      <linearGradient id="paint0_linear_106_234-{{ section.id }}" x1="197.73" y1="67.8618" x2="197.73" y2="99.999" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint1_linear_106_234-{{ section.id }}" x1="191.826" y1="72.0571" x2="191.826" y2="99.9966" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint2_linear_106_234-{{ section.id }}" x1="185.922" y1="69.0312" x2="185.922" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint3_linear_106_234-{{ section.id }}" x1="180.019" y1="62.0261" x2="180.019" y2="99.9986" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint4_linear_106_234-{{ section.id }}" x1="174.115" y1="55.0222" x2="174.115" y2="99.9989" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint5_linear_106_234-{{ section.id }}" x1="168.213" y1="48.0156" x2="168.213" y2="99.9994" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint6_linear_106_234-{{ section.id }}" x1="162.308" y1="44.5508" x2="162.308" y2="99.9936" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint7_linear_106_234-{{ section.id }}" x1="156.405" y1="47.1292" x2="156.405" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint8_linear_106_234-{{ section.id }}" x1="150.501" y1="50.6328" x2="150.501" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint9_linear_106_234-{{ section.id }}" x1="144.597" y1="54.1355" x2="144.597" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint10_linear_106_234-{{ section.id }}" x1="138.695" y1="57.6399" x2="138.695" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint11_linear_106_234-{{ section.id }}" x1="132.791" y1="52.3337" x2="132.791" y2="99.9982" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint12_linear_106_234-{{ section.id }}" x1="126.887" y1="45.3281" x2="126.887" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint13_linear_106_234-{{ section.id }}" x1="120.984" y1="38.3218" x2="120.984" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint14_linear_106_234-{{ section.id }}" x1="115.081" y1="31.3176" x2="115.081" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint15_linear_106_234-{{ section.id }}" x1="109.178" y1="29.1028" x2="109.178" y2="99.9987" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint16_linear_106_234-{{ section.id }}" x1="103.274" y1="32.3035" x2="103.274" y2="99.9984" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint17_linear_106_234-{{ section.id }}" x1="97.3696" y1="35.8022" x2="97.3696" y2="99.9966" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint18_linear_106_234-{{ section.id }}" x1="91.4678" y1="39.3059" x2="91.4678" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint19_linear_106_234-{{ section.id }}" x1="85.563" y1="42.6428" x2="85.563" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint20_linear_106_234-{{ section.id }}" x1="79.6597" y1="35.6357" x2="79.6597" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint21_linear_106_234-{{ section.id }}" x1="73.7561" y1="28.6301" x2="73.7561" y2="99.9977" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint22_linear_106_234-{{ section.id }}" x1="67.8526" y1="21.6274" x2="67.8526" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint23_linear_106_234-{{ section.id }}" x1="61.9485" y1="14.6201" x2="61.9485" y2="99.999" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint24_linear_106_234-{{ section.id }}" x1="56.0461" y1="13.9534" x2="56.0461" y2="99.9997" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint25_linear_106_234-{{ section.id }}" x1="50.1426" y1="17.3958" x2="50.1426" y2="99.9979" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint26_linear_106_234-{{ section.id }}" x1="44.239" y1="20.8442" x2="44.239" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint27_linear_106_234-{{ section.id }}" x1="38.335" y1="24.2878" x2="38.335" y2="99.9985" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint28_linear_106_234-{{ section.id }}" x1="32.4302" y1="25.686" x2="32.4302" y2="99.9965" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint29_linear_106_234-{{ section.id }}" x1="26.529" y1="18.6824" x2="26.529" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint30_linear_106_234-{{ section.id }}" x1="20.625" y1="11.6758" x2="20.625" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint31_linear_106_234-{{ section.id }}" x1="14.7214" y1="4.66919" x2="14.7214" y2="99.998" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint32_linear_106_234-{{ section.id }}" x1="8.81741" y1="0" x2="8.81741" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint33_linear_106_234-{{ section.id }}" x1="2.59305" y1="3.94556" x2="2.59305" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                {% endif %} 
+                <{% if fifth_heading_url != blank %}a href="{{ fifth_heading_url }}"{% else %}h3{% endif %} class="comparison-column-heading-{{ section.id }}">{{ fifth_heading }}</{% if fifth_heading_url != blank %}a{% else %}h3{% endif %}>
+              </div>
+            {% endif %}
+            {% if table_columns > 5 and sixth_heading != blank %}
+              <div class="comparison-item-{{ section.id }}">
+                <{% if sixth_heading_url != blank %}a href="{{ sixth_heading_url }}"{% else %}div{% endif %} class="comparison-item-heading-image-{{ section.id }}">              
+                  {% if sixth_heading_image != blank %}                
+                    {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                      {{ sixth_heading_image | image_url: width: 535 | image_tag:
+                        loading: loading_attribute,
+                        width: sixth_heading_image.width,
+                        height: sixth_heading_image.height,
+                        sizes: sizes,
+                        widths: '535, 750, 1070, 1500'
+                      }}
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endif %}   
+                </{% if sixth_heading_url != blank %}a{% else %}div{% endif %}> 
+                {% if use_background_image %}
+                  <div class="comparison-item-bg-image-{{ section.id }}">
+                    <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.5">
+                      <path d="M200 99.999H195.46V71.0925L200 67.8618V99.999Z" fill="url(#paint0_linear_106_234-{{ section.id }})"/>
+                      <path d="M194.098 72.0571V99.9966H189.555V75.2878L193.548 72.4487L194.098 72.0571Z" fill="url(#paint1_linear_106_234-{{ section.id }})"/>
+                      <path d="M187.797 73.9499L188.192 74.4186V99.9967H183.652V69.0312L186.12 71.9593L187.797 73.9499Z" fill="url(#paint2_linear_106_234-{{ section.id }})"/>
+                      <path d="M182.29 67.4164V99.9986H177.748V62.0261L181.73 66.7519L182.29 67.4164Z" fill="url(#paint3_linear_106_234-{{ section.id }})"/>
+                      <path d="M176.385 60.4096V99.9989H171.845V55.0222L173.31 56.7606L176.385 60.4096Z" fill="url(#paint4_linear_106_234-{{ section.id }})"/>
+                      <path d="M170.483 99.9994H165.943V48.0156L170.483 53.4059V99.9994Z" fill="url(#paint5_linear_106_234-{{ section.id }})"/>
+                      <path d="M162.31 44.972L162.678 44.7525L162.863 44.6427L162.955 44.5893L163 44.5627C163 44.5627 163.015 44.5508 163.023 44.5508L163.04 44.5715L164.578 46.396V99.9936H160.038V46.3159L160.993 45.7493L162.31 44.9691V44.972Z" fill="url(#paint6_linear_106_234-{{ section.id }})"/>
+                      <path d="M158.675 47.1292V100H154.135V49.8258L157.37 47.9034L158.675 47.1292Z" fill="url(#paint7_linear_106_234-{{ section.id }})"/>
+                      <path d="M152.772 50.6328V100H148.23V53.3265L150.127 52.2021L152.772 50.6328Z" fill="url(#paint8_linear_106_234-{{ section.id }})"/>
+                      <path d="M146.867 54.1355V99.9992H142.327V56.8292L142.882 56.4999L146.867 54.1355Z" fill="url(#paint9_linear_106_234-{{ section.id }})"/>
+                      <path d="M136.922 59.9301L136.957 59.9716C136.957 59.9716 136.98 60.0102 136.997 59.9924L137.087 59.939L137.447 59.7254L138.17 59.2982L140.965 57.6399V100H136.425V59.3427L136.78 59.764L136.922 59.9331V59.9301Z" fill="url(#paint10_linear_106_234-{{ section.id }})"/>
+                      <path d="M135.062 57.7211V99.9982H130.52V52.3337L133.495 55.861L135.062 57.7211Z" fill="url(#paint11_linear_106_234-{{ section.id }})"/>
+                      <path d="M129.157 99.9967H124.617V45.3281L129.157 50.7155V99.9967Z" fill="url(#paint12_linear_106_234-{{ section.id }})"/>
+                      <path d="M123.255 43.7121V99.9975H118.712V38.3218L122.04 42.2703L123.255 43.7121Z" fill="url(#paint13_linear_106_234-{{ section.id }})"/>
+                      <path d="M117.353 36.705V99.9975H112.81V31.3176L112.985 31.5223L117.353 36.705Z" fill="url(#paint14_linear_106_234-{{ section.id }})"/>
+                      <path d="M110.87 29.1443C110.895 29.1295 110.918 29.1146 110.943 29.1028L111 29.171L111.115 29.3075L111.345 29.5804L111.448 29.702V99.9987H106.908V31.4939L110.29 29.4884L110.873 29.1443H110.87Z" fill="url(#paint15_linear_106_234-{{ section.id }})"/>
+                      <path d="M105.545 32.3035V99.9984H101.003V34.9971L105.14 32.5438L105.545 32.3035Z" fill="url(#paint16_linear_106_234-{{ section.id }})"/>
+                      <path d="M99.6396 99.9966H95.0997V38.4989L99.6396 35.8022V99.9966Z" fill="url(#paint17_linear_106_234-{{ section.id }})"/>
+                      <path d="M93.7378 39.3059V99.9967H89.1978V41.9996L93.6853 39.3356L93.7378 39.3059Z" fill="url(#paint18_linear_106_234-{{ section.id }})"/>
+                      <path d="M84.5655 44.1528L84.7905 44.4198C84.828 44.4614 84.8655 44.5118 84.903 44.5504L85.0455 44.4643L87.328 43.1115L87.833 42.8119V99.9992H83.293V42.6428L84.1155 43.6188L84.5655 44.1528Z" fill="url(#paint19_linear_106_234-{{ section.id }})"/>
+                      <path d="M81.9297 41.0261V99.9992H77.3897V35.6357L80.3647 39.169L81.9297 41.0261Z" fill="url(#paint20_linear_106_234-{{ section.id }})"/>
+                      <path d="M76.0273 99.9977H71.4849V28.6301L76.0273 34.0175V99.9977Z" fill="url(#paint21_linear_106_234-{{ section.id }})"/>
+                      <path d="M70.1226 27.0148V99.9992H65.5826V21.6274L68.9101 25.576L70.1226 27.0148Z" fill="url(#paint22_linear_106_234-{{ section.id }})"/>
+                      <path d="M63.1847 18.7793L64.2197 20.0104V99.999H59.6772V14.6201L60.3197 15.3825L63.1847 18.7793Z" fill="url(#paint23_linear_106_234-{{ section.id }})"/>
+                      <path d="M58.3174 99.9997H53.7749V16.6055L58.3174 13.9534V99.9997Z" fill="url(#paint24_linear_106_234-{{ section.id }})"/>
+                      <path d="M52.4126 99.9979H47.8726V20.0479L52.4126 17.3958V99.9979Z" fill="url(#paint25_linear_106_234-{{ section.id }})"/>
+                      <path d="M46.5103 20.8442V99.9992H41.9678V23.4934L45.6003 21.3723L46.5103 20.8442Z" fill="url(#paint26_linear_106_234-{{ section.id }})"/>
+                      <path d="M40.605 24.2878V99.9985H36.065V26.937L38.3325 25.6139L40.605 24.2878Z" fill="url(#paint27_linear_106_234-{{ section.id }})"/>
+                      <path d="M32.1202 28.0089L32.6902 28.6853L32.7627 28.7713L32.7977 28.8128C32.7977 28.8128 32.8077 28.8306 32.8152 28.8306L32.8377 28.8188L33.0177 28.712L33.3802 28.5013L34.7002 27.73V99.9965H30.1602V25.686L30.9777 26.6561L32.1177 28.0089H32.1202Z" fill="url(#paint28_linear_106_234-{{ section.id }})"/>
+                      <path d="M28.8003 100H24.2578V18.6824L28.8003 24.0697V100Z" fill="url(#paint29_linear_106_234-{{ section.id }})"/>
+                      <path d="M22.895 99.9975H18.355V11.6758L22.895 17.0631V99.9975Z" fill="url(#paint30_linear_106_234-{{ section.id }})"/>
+                      <path d="M16.9927 99.998H12.4502V4.66919L16.9927 10.0595V99.998Z" fill="url(#paint31_linear_106_234-{{ section.id }})"/>
+                      <path d="M8.64742 0.15723L11.0874 3.05263V99.9983H6.54741V2.33175L8.51491 0L8.64742 0.15723Z" fill="url(#paint32_linear_106_234-{{ section.id }})"/>
+                      <path d="M5.18555 3.94556V99.9983H0.000553025V9.62067L5.18555 3.94556Z" fill="url(#paint33_linear_106_234-{{ section.id }})"/>
+                      </g>
+                      <defs>
+                      <linearGradient id="paint0_linear_106_234-{{ section.id }}" x1="197.73" y1="67.8618" x2="197.73" y2="99.999" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint1_linear_106_234-{{ section.id }}" x1="191.826" y1="72.0571" x2="191.826" y2="99.9966" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint2_linear_106_234-{{ section.id }}" x1="185.922" y1="69.0312" x2="185.922" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint3_linear_106_234-{{ section.id }}" x1="180.019" y1="62.0261" x2="180.019" y2="99.9986" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint4_linear_106_234-{{ section.id }}" x1="174.115" y1="55.0222" x2="174.115" y2="99.9989" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint5_linear_106_234-{{ section.id }}" x1="168.213" y1="48.0156" x2="168.213" y2="99.9994" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint6_linear_106_234-{{ section.id }}" x1="162.308" y1="44.5508" x2="162.308" y2="99.9936" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint7_linear_106_234-{{ section.id }}" x1="156.405" y1="47.1292" x2="156.405" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint8_linear_106_234-{{ section.id }}" x1="150.501" y1="50.6328" x2="150.501" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint9_linear_106_234-{{ section.id }}" x1="144.597" y1="54.1355" x2="144.597" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint10_linear_106_234-{{ section.id }}" x1="138.695" y1="57.6399" x2="138.695" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint11_linear_106_234-{{ section.id }}" x1="132.791" y1="52.3337" x2="132.791" y2="99.9982" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint12_linear_106_234-{{ section.id }}" x1="126.887" y1="45.3281" x2="126.887" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint13_linear_106_234-{{ section.id }}" x1="120.984" y1="38.3218" x2="120.984" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint14_linear_106_234-{{ section.id }}" x1="115.081" y1="31.3176" x2="115.081" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint15_linear_106_234-{{ section.id }}" x1="109.178" y1="29.1028" x2="109.178" y2="99.9987" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint16_linear_106_234-{{ section.id }}" x1="103.274" y1="32.3035" x2="103.274" y2="99.9984" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint17_linear_106_234-{{ section.id }}" x1="97.3696" y1="35.8022" x2="97.3696" y2="99.9966" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint18_linear_106_234-{{ section.id }}" x1="91.4678" y1="39.3059" x2="91.4678" y2="99.9967" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint19_linear_106_234-{{ section.id }}" x1="85.563" y1="42.6428" x2="85.563" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint20_linear_106_234-{{ section.id }}" x1="79.6597" y1="35.6357" x2="79.6597" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint21_linear_106_234-{{ section.id }}" x1="73.7561" y1="28.6301" x2="73.7561" y2="99.9977" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint22_linear_106_234-{{ section.id }}" x1="67.8526" y1="21.6274" x2="67.8526" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint23_linear_106_234-{{ section.id }}" x1="61.9485" y1="14.6201" x2="61.9485" y2="99.999" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint24_linear_106_234-{{ section.id }}" x1="56.0461" y1="13.9534" x2="56.0461" y2="99.9997" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint25_linear_106_234-{{ section.id }}" x1="50.1426" y1="17.3958" x2="50.1426" y2="99.9979" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint26_linear_106_234-{{ section.id }}" x1="44.239" y1="20.8442" x2="44.239" y2="99.9992" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint27_linear_106_234-{{ section.id }}" x1="38.335" y1="24.2878" x2="38.335" y2="99.9985" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint28_linear_106_234-{{ section.id }}" x1="32.4302" y1="25.686" x2="32.4302" y2="99.9965" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint29_linear_106_234-{{ section.id }}" x1="26.529" y1="18.6824" x2="26.529" y2="100" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint30_linear_106_234-{{ section.id }}" x1="20.625" y1="11.6758" x2="20.625" y2="99.9975" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint31_linear_106_234-{{ section.id }}" x1="14.7214" y1="4.66919" x2="14.7214" y2="99.998" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint32_linear_106_234-{{ section.id }}" x1="8.81741" y1="0" x2="8.81741" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="paint33_linear_106_234-{{ section.id }}" x1="2.59305" y1="3.94556" x2="2.59305" y2="99.9983" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFA9A9"/>
+                      <stop offset="1" stop-color="#FFA9A9" stop-opacity="0"/>
+                      </linearGradient>
+                      </defs>
+                    </svg> 
+                  </div>
+                {% endif %} 
+                <{% if sixth_heading_url != blank %}a href="{{ sixth_heading_url }}"{% else %}h3{% endif %} class="comparison-column-heading-{{ section.id }}">{{ sixth_heading }}</{% if sixth_heading_url != blank %}a{% else %}h3{% endif %}>
+              </div>
+            {% endif %}
+          </div>
+            {% for block in section.blocks %}
+              {% if block.type == 'table_row' %}
+                <div class="comparison-grid-{{ section.id }} comparison-grid-rows-{{ section.id }}">
+                  <div class="comparison-item-{{ section.id }}">
+                      <h3>{{ block.settings.row_heading }}</h3>
+                  </div>
+                  {% if first_heading != blank or first_heading_image != blank %}
+                    <div class="comparison-item-{{ section.id }} active">
+                      {% if block.settings.first_column_image != blank or block.settings.first_column_icon != "none" %}
+                        <div class="comparison-value-icon-{{ section.id }}">
+                          {% if block.settings.first_column_image != blank %}
+                            {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                              {{ block.settings.first_column_image | image_url: width: 535 | image_tag:
+                                loading: loading_attribute,
+                                width: block.settings.first_column_image.width,
+                                height: block.settings.first_column_image.height,
+                                sizes: sizes,
+                                widths: '535, 750, 1070, 1500'
+                              }}
+                          {% else %}
+                            {% if block.settings.first_column_icon == "check" %}
+                              {% if value_icon_check != blank %}
+                                  <img src="{{ value_icon_check | image_url }}" alt="{{ value_icon_check.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="27" viewBox="0 0 35 27" fill="none">
+                                  <path d="M34.0312 5.00946L12.1162 25.321L0.706055 13.1432L4.92773 9.18719L12.0713 16.8112L12.4121 17.1745L12.7764 16.8356L30.1074 0.756531L34.0312 5.00946Z" fill="#6CB324" stroke="#FBFFE8"/>
+                                </svg>
+                              {% endif %}
+                            {% elsif block.settings.first_column_icon == "cross" %}
+                              {% if value_icon_cross != blank %}
+                                  <img src="{{ value_icon_cross | image_url }}" alt="{{ value_icon_cross.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                  <path d="M25.7313 3.27235L22.5085 0.0494995L12.8657 9.69232L3.22285 0.0494995L0 3.27235L9.64282 12.9152L0 22.558L3.22285 25.7808L12.8657 16.138L22.5085 25.7808L25.7313 22.558L16.0885 12.9152L25.7313 3.27235Z" fill="#FF1616"/>
+                                </svg>
+                              {% endif %}                             
+                            {% endif %}
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.first_column != blank %}
+                        <p class="comparison-value-{{ section.id }}">{{ block.settings.first_column }}</p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if table_columns > 1 and second_heading != blank or second_heading_image != blank %}
+                    <div class="comparison-item-{{ section.id }}">
+                      {% if block.settings.second_column_image != blank or block.settings.second_column_icon != "none" %}
+                        <div class="comparison-value-icon-{{ section.id }}">
+                          {% if block.settings.second_column_image != blank %}
+                            {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                              {{ block.settings.second_column_image | image_url: width: 535 | image_tag:
+                                loading: loading_attribute,
+                                width: block.settings.second_column_image.width,
+                                height: block.settings.second_column_image.height,
+                                sizes: sizes,
+                                widths: '535, 750, 1070, 1500'
+                              }}
+                          {% else %}
+                            {% if block.settings.second_column_icon == "check" %}
+                              {% if value_icon_check != blank %}
+                                  <img src="{{ value_icon_check | image_url }}" alt="{{ value_icon_check.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="27" viewBox="0 0 35 27" fill="none">
+                                  <path d="M34.0312 5.00946L12.1162 25.321L0.706055 13.1432L4.92773 9.18719L12.0713 16.8112L12.4121 17.1745L12.7764 16.8356L30.1074 0.756531L34.0312 5.00946Z" fill="#6CB324" stroke="#FBFFE8"/>
+                                </svg>
+                              {% endif %}
+                            {% elsif block.settings.second_column_icon == "cross" %}
+                              {% if value_icon_cross != blank %}
+                                <img src="{{ value_icon_cross | image_url }}" alt="{{ value_icon_cross.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                  <path d="M25.7313 3.27235L22.5085 0.0494995L12.8657 9.69232L3.22285 0.0494995L0 3.27235L9.64282 12.9152L0 22.558L3.22285 25.7808L12.8657 16.138L22.5085 25.7808L25.7313 22.558L16.0885 12.9152L25.7313 3.27235Z" fill="#FF1616"/>
+                                </svg>
+                              {% endif %}
+                            {% endif %}
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.second_column != blank %}
+                        <p class="comparison-value-{{ section.id }}">{{ block.settings.second_column }}</p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if table_columns > 2 and third_heading != blank or third_heading_image != blank %}
+                    <div class="comparison-item-{{ section.id }}">
+                      {% if block.settings.third_column_image != blank or block.settings.third_column_icon != "none" %}
+                        <div class="comparison-value-icon-{{ section.id }}">
+                          {% if block.settings.third_column_image != blank %}
+                            {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                              {{ block.settings.third_column_image | image_url: width: 535 | image_tag:
+                                loading: loading_attribute,
+                                width: block.settings.third_column_image.width,
+                                height: block.settings.third_column_image.height,
+                                sizes: sizes,
+                                widths: '535, 750, 1070, 1500'
+                              }}
+                          {% else %}
+                            {% if block.settings.third_column_icon == "check" %}
+                              {% if value_icon_check != blank %}
+                                  <img src="{{ value_icon_check | image_url }}" alt="{{ value_icon_check.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="27" viewBox="0 0 35 27" fill="none">
+                                  <path d="M34.0312 5.00946L12.1162 25.321L0.706055 13.1432L4.92773 9.18719L12.0713 16.8112L12.4121 17.1745L12.7764 16.8356L30.1074 0.756531L34.0312 5.00946Z" fill="#6CB324" stroke="#FBFFE8"/>
+                                </svg>
+                              {% endif %}
+                            {% elsif block.settings.third_column_icon == "cross" %}
+                              {% if value_icon_cross != blank %}
+                                <img src="{{ value_icon_cross | image_url }}" alt="{{ value_icon_cross.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                  <path d="M25.7313 3.27235L22.5085 0.0494995L12.8657 9.69232L3.22285 0.0494995L0 3.27235L9.64282 12.9152L0 22.558L3.22285 25.7808L12.8657 16.138L22.5085 25.7808L25.7313 22.558L16.0885 12.9152L25.7313 3.27235Z" fill="#FF1616"/>
+                                </svg>
+                              {% endif %}
+                            {% endif %}
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.third_column != blank %}
+                        <p class="comparison-value-{{ section.id }}">{{ block.settings.third_column }}</p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if table_columns > 3 and fourth_heading != blank or fourth_heading_image != blank %}
+                    <div class="comparison-item-{{ section.id }}">
+                      {% if block.settings.fourth_column_image != blank or block.settings.fourth_column_icon != "none" %}
+                        <div class="comparison-value-icon-{{ section.id }}">
+                          {% if block.settings.fourth_column_image != blank %}
+                            {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                              {{ block.settings.fourth_column_image | image_url: width: 535 | image_tag:
+                                loading: loading_attribute,
+                                width: block.settings.fourth_column_image.width,
+                                height: block.settings.fourth_column_image.height,
+                                sizes: sizes,
+                                widths: '535, 750, 1070, 1500'
+                              }}
+                          {% else %}
+                            {% if block.settings.fourth_column_icon == "check" %}
+                              {% if value_icon_check != blank %}
+                                  <img src="{{ value_icon_check | image_url }}" alt="{{ value_icon_check.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="27" viewBox="0 0 35 27" fill="none">
+                                  <path d="M34.0312 5.00946L12.1162 25.321L0.706055 13.1432L4.92773 9.18719L12.0713 16.8112L12.4121 17.1745L12.7764 16.8356L30.1074 0.756531L34.0312 5.00946Z" fill="#6CB324" stroke="#FBFFE8"/>
+                                </svg>
+                              {% endif %}
+                            {% elsif block.settings.fourth_column_icon == "cross" %}
+                              {% if value_icon_cross != blank %}
+                                <img src="{{ value_icon_cross | image_url }}" alt="{{ value_icon_cross.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                  <path d="M25.7313 3.27235L22.5085 0.0494995L12.8657 9.69232L3.22285 0.0494995L0 3.27235L9.64282 12.9152L0 22.558L3.22285 25.7808L12.8657 16.138L22.5085 25.7808L25.7313 22.558L16.0885 12.9152L25.7313 3.27235Z" fill="#FF1616"/>
+                                </svg>
+                              {% endif %}
+                            {% endif %}
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.fourth_column != blank %}
+                        <p class="comparison-value-{{ section.id }}">{{ block.settings.fourth_column }}</p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if table_columns > 4 and fifth_heading != blank or fifth_heading_image != blank %}
+                    <div class="comparison-item-{{ section.id }}">
+                      {% if block.settings.fifth_column_image != blank or block.settings.fifth_column_icon != "none" %}
+                        <div class="comparison-value-icon-{{ section.id }}">
+                          {% if block.settings.fifth_column_image != blank %}
+                            {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                              {{ block.settings.fifth_column_image | image_url: width: 535 | image_tag:
+                                loading: loading_attribute,
+                                width: block.settings.fifth_column_image.width,
+                                height: block.settings.fifth_column_image.height,
+                                sizes: sizes,
+                                widths: '535, 750, 1070, 1500'
+                              }}
+                          {% else %}
+                            {% if block.settings.fifth_column_icon == "check" %}
+                              {% if value_icon_check != blank %}
+                                  <img src="{{ value_icon_check | image_url }}" alt="{{ value_icon_check.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="27" viewBox="0 0 35 27" fill="none">
+                                  <path d="M34.0312 5.00946L12.1162 25.321L0.706055 13.1432L4.92773 9.18719L12.0713 16.8112L12.4121 17.1745L12.7764 16.8356L30.1074 0.756531L34.0312 5.00946Z" fill="#6CB324" stroke="#FBFFE8"/>
+                                </svg>
+                              {% endif %}
+                            {% elsif block.settings.fifth_column_icon == "cross" %}
+                              {% if value_icon_cross != blank %}
+                                <img src="{{ value_icon_cross | image_url }}" alt="{{ value_icon_cross.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                  <path d="M25.7313 3.27235L22.5085 0.0494995L12.8657 9.69232L3.22285 0.0494995L0 3.27235L9.64282 12.9152L0 22.558L3.22285 25.7808L12.8657 16.138L22.5085 25.7808L25.7313 22.558L16.0885 12.9152L25.7313 3.27235Z" fill="#FF1616"/>
+                                </svg>
+                              {% endif %}
+                            {% endif %}
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.fifth_column != blank %}
+                        <p class="comparison-value-{{ section.id }}">{{ block.settings.fifth_column }}</p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if table_columns > 5 and sixth_heading != blank or sixth_heading_image != blank %}
+                    <div class="comparison-item-{{ section.id }}">
+                      {% if block.settings.sixth_column_image != blank or block.settings.sixth_column_icon != "none" %}
+                        <div class="comparison-value-icon-{{ section.id }}">
+                          {% if block.settings.sixth_column_image != blank %}
+                            {%- capture sizes -%}(min-width: {{ content_width }}px) {{ content_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                              {{ block.settings.sixth_column_image | image_url: width: 535 | image_tag:
+                                loading: loading_attribute,
+                                width: block.settings.sixth_column_image.width,
+                                height: block.settings.sixth_column_image.height,
+                                sizes: sizes,
+                                widths: '535, 750, 1070, 1500'
+                              }}
+                          {% else %}
+                            {% if block.settings.sixth_column_icon == "check" %}
+                              {% if value_icon_check != blank %}
+                                  <img src="{{ value_icon_check | image_url }}" alt="{{ value_icon_check.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="27" viewBox="0 0 35 27" fill="none">
+                                  <path d="M34.0312 5.00946L12.1162 25.321L0.706055 13.1432L4.92773 9.18719L12.0713 16.8112L12.4121 17.1745L12.7764 16.8356L30.1074 0.756531L34.0312 5.00946Z" fill="#6CB324" stroke="#FBFFE8"/>
+                                </svg>
+                              {% endif %}
+                            {% elsif block.settings.sixth_column_icon == "cross" %}
+                              {% if value_icon_cross != blank %}
+                                <img src="{{ value_icon_cross | image_url }}" alt="{{ value_icon_cross.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+                              {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                  <path d="M25.7313 3.27235L22.5085 0.0494995L12.8657 9.69232L3.22285 0.0494995L0 3.27235L9.64282 12.9152L0 22.558L3.22285 25.7808L12.8657 16.138L22.5085 25.7808L25.7313 22.558L16.0885 12.9152L25.7313 3.27235Z" fill="#FF1616"/>
+                                </svg>
+                              {% endif %}
+                            {% endif %}
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.sixth_column != blank %}
+                        <p class="comparison-value-{{ section.id }}">{{ block.settings.sixth_column }}</p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>     
+              {% endif %}
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "SS - Comparison table #22",
+    "settings": [    
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "range",
+        "id": "content_max_width",
+        "min": 30,
+        "max": 100,
+        "step": 2,
+        "unit": "%",
+        "label": "Max width",
+        "default": 80
+      },  
+      {
+        "type": "text_alignment",
+        "id": "content_align",
+        "label": "Alignment",
+        "default": "center"
+      },
+      {
+        "type": "text_alignment",
+        "id": "content_align_mobile",
+        "label": "Alignment - mobile",
+        "default": "center"
+      },      
+      {
+        "type": "header",
+        "content": "Table"
+      },
+      {
+        "type": "range",
+        "id": "table_columns",
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "label": "Number of columns",
+        "default": 3
+      },
+      {
+        "type": "range",
+        "id": "table_radius",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "Roundness",
+        "default": 20
+      },    
+      {
+        "type": "range",
+        "id": "table_mt",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Margin top",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "table_mt_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Margin top - mobile",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "table_column_border_thickness",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Border thickness",
+        "default": 2
+      },
+      {
+        "type": "header",
+        "content": "Column 1"
+      },
+      {
+        "type": "text",
+        "id": "first_heading",
+        "label": "Heading",
+        "default": "Our Brand"
+      },
+      {
+        "type": "image_picker",
+        "id": "first_heading_image",
+        "label": "Image"
+      },
+      {
+        "type": "url",
+        "id": "first_heading_url",
+        "label": "Link"
+      },
+      {
+        "type": "header",
+        "content": "Column 2"
+      },
+      {
+        "type": "text",
+        "id": "second_heading",
+        "label": "Heading",
+        "default": "Other 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "second_heading_image",
+        "label": "Image"
+      },
+      {
+        "type": "url",
+        "id": "second_heading_url",
+        "label": "Link"
+      },
+      {
+        "type": "header",
+        "content": "Column 3"
+      },
+      {
+        "type": "text",
+        "id": "third_heading",
+        "label": "Heading",
+        "default":"Other 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "third_heading_image",
+        "label": "Image"
+      },
+      {
+        "type": "url",
+        "id": "third_heading_url",
+        "label": "Link"
+      },
+      {
+        "type": "header",
+        "content": "Column 4"
+      },
+      {
+        "type": "text",
+        "id": "fourth_heading",
+        "label": "Heading",
+        "default":"Other 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "fourth_heading_image",
+        "label": "Image"
+      },
+      {
+        "type": "url",
+        "id": "fourth_heading_url",
+        "label": "Link"
+      },
+      {
+        "type": "header",
+        "content": "Column 5"
+      },
+      {
+        "type": "text",
+        "id": "fifth_heading",
+        "label": "Heading",
+        "default":"Other 4"
+      },
+      {
+        "type": "image_picker",
+        "id": "fifth_heading_image",
+        "label": "Image"
+      },
+      {
+        "type": "url",
+        "id": "fifth_heading_url",
+        "label": "Link"
+      },
+      {
+        "type": "header",
+        "content": "Column 6"
+      },
+      {
+        "type": "text",
+        "id": "sixth_heading",
+        "label": "Heading",
+        "default":"Other 5"
+      },
+      {
+        "type": "image_picker",
+        "id": "sixth_heading_image",
+        "label": "Image"
+      },
+      {
+        "type": "url",
+        "id": "sixth_heading_url",
+        "label": "Link"
+      },
+      {
+        "type": "header",
+        "content": "Heading image"
+      },
+      {
+        "type": "range",
+        "id": "heading_image_size",
+        "min": 80,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Max width",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "heading_image_size_mobile",
+        "min": 50,
+        "max": 130,
+        "step": 2,
+        "unit": "px",
+        "label": "Max width - mobile",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "heading_image_radius",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Roundness",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "heading_image_border_thickness",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Border thickness",
+        "default": 0
+      },
+      {
+        "type": "checkbox",
+        "id": "use_background_image",
+        "label": "Use background image",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Column heading"
+      },
+      {
+        "type": "checkbox",
+        "id": "column_heading_custom",
+        "label": "Use custom font",
+        "default": false
+      },
+      {
+        "type": "font_picker",
+        "id": "column_heading_font",
+        "label": "Font Family",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "range",
+        "id": "column_heading_size",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "column_heading_size_mobile",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size - mobile",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "column_heading_height",
+        "min": 50,
+        "max": 200,
+        "step": 10,
+        "unit": "%",
+        "label": "Line height",
+        "default": 150
+      },
+      {
+        "type": "text_alignment",
+        "id": "column_heading_align",
+        "label": "Alignment",
+        "default": "center"
+      },
+      {
+        "type": "text_alignment",
+        "id": "column_heading_align_mobile",
+        "label": "Alignment - mobile",
+        "default": "center"
+      },
+      {
+        "type": "range",
+        "id": "column_heading_padding_horizontal",
+        "min": 0,
+        "max": 30,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding horizontal",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "column_heading_padding_horizontal_mobile",
+        "min": 0,
+        "max": 30,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding horizontal - mobile",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "column_heading_padding_vertical",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding vertical",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "column_heading_padding_vertical_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding vertical - mobile",
+        "default": 8
+      },
+      {
+        "type": "header",
+        "content": "Row"
+      },
+      {
+        "type": "range",
+        "id": "row_padding_horizontal",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding horizontal",
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "row_padding_horizontal_mobile",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding horizontal - mobile",
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "row_padding_vertical",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding vertical",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "row_padding_vertical_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding vertical - mobile",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "row_border_thickness",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Border thickness",
+        "default": 1
+      },
+      {
+        "type": "header",
+        "content": "Row heading"
+      },
+      {
+        "type": "checkbox",
+        "id": "row_heading_custom",
+        "label": "Use custom font",
+        "default": false
+      },
+      {
+        "type": "font_picker",
+        "id": "row_heading_font",
+        "label": "Font family",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "range",
+        "id": "row_heading_size",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "row_heading_size_mobile",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size - mobile",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "row_heading_height",
+        "min": 50,
+        "max": 200,
+        "step": 10,
+        "unit": "%",
+        "label": "Line height",
+        "default": 150
+      },
+      {
+        "type": "header",
+        "content": "Value"
+      },
+      {
+        "type": "checkbox",
+        "id": "value_custom",
+        "label": "Use custom font",
+        "default": false
+      },
+      {
+        "type": "font_picker",
+        "id": "value_font",
+        "label": "Font family",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "range",
+        "id": "value_size",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "value_size_mobile",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size - mobile",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "value_height",
+        "min": 50,
+        "max": 200,
+        "step": 10,
+        "unit": "%",
+        "label": "Line height",
+        "default": 150
+      },
+      {
+        "type": "header",
+        "content": "Value icon"
+      },
+      {
+        "type": "image_picker",
+        "id": "value_icon_check",
+        "label": "Custom check icon"
+      },
+      {
+        "type": "image_picker",
+        "id": "value_icon_cross",
+        "label": "Custom cross icon"
+      },
+      {
+        "type": "range",
+        "id": "value_icon_size",
+        "min": 20,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Size",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "value_icon_size_mobile",
+        "min": 20,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Size - mobile",
+        "default": 24
+      },      
+      {
+        "type": "header",
+        "content": "Active column colors"
+      },
+      {
+        "type": "color",
+        "label": "Heading",
+        "id": "column_heading_active_color",
+        "default": "#121212"
+      }, 
+      {
+        "type": "color",
+        "label": "Text",
+        "id": "value_active_color",
+        "default": "#6CB324"
+      },
+      {
+        "type": "color",
+        "label": "Background",
+        "id": "table_column_active_bg_color",
+        "default": "#FCFFEA"
+      },
+      {
+        "type": "color",
+        "label": "Background image",
+        "id": "table_bg_image_active_color",
+        "default": "#c6d182"
+      },
+      {
+        "type": "color",
+        "label": "Border",
+        "id": "table_column_active_border_color",
+        "default": "#9DB324"
+      },
+      {
+        "type": "header",
+        "content": "Default column colors"
+      },
+      {
+        "type": "color",
+        "label": "Heading",
+        "id": "column_heading_color",
+        "default": "#121212"
+      },
+      {
+        "type": "color",
+        "label": "Text",
+        "id": "value_color",
+        "default": "#FF1616"
+      },
+      {
+        "type": "color",
+        "label": "Background",
+        "id": "table_column_bg_color",
+        "default": "#FFF3F3"
+      },
+      {
+        "type": "color",
+        "label": "Background image",
+        "id": "table_bg_image_color",
+        "default": "#f1aaaa"
+      },          
+      {
+        "type": "color",
+        "label": "Border",
+        "id": "table_column_border_color",
+        "default": "#FF1616"
+      },
+      {
+        "type": "color",
+        "id": "heading_image_border_color",
+        "label": "Image border",
+        "default": "#121212"
+      },
+      {
+        "type": "header",
+        "content": "Row colors"
+      },
+      {
+        "type": "color",
+        "label": "Heading",
+        "id": "row_heading_color",
+        "default": "#121212"
+      },
+      {
+        "type": "color",
+        "label": "Border",
+        "id": "row_heading_border_color",
+        "default": "#121212"
+      },      
+      {
+        "type": "header",
+        "content": "Value icon colors"
+      },
+      {
+        "type": "color",
+        "label": "Active",
+        "id": "value_icon_active_color",
+        "default": "#6CB324"
+      },
+      {
+        "type": "color",
+        "label": "Default",
+        "id": "value_icon_color",
+        "default": "#FF1616"
+      },
+      {
+        "type": "header",
+        "content": "Section colors"
+      },     
+      {
+        "type": "color",
+        "label": "Section background",
+        "id": "background_color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color_background",
+        "id": "background_gradient",
+        "label": "Section background gradient"
+      },
+      {
+        "type": "color",
+        "label": "Border",
+        "id": "border_color",
+        "default": "#121212"
+      },
+      {
+        "type": "header",
+        "content": "Section margin (outside)"
+      },
+      {
+        "type": "range",
+        "id": "margin_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Margin top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "margin_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Margin bottom",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "margin_horizontal",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "rem",
+        "label": "Margin sides",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "margin_horizontal_mobile",
+        "min": 0,
+        "max": 15,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Margin sides mobile",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Section padding (inside)"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 36
+      },
+      {
+         "type": "range",
+         "id": "padding_bottom",
+         "min": 0,
+         "max": 100,
+         "step": 4,
+         "unit": "px",
+         "label": "Padding bottom",
+         "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_horizontal",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "rem",
+        "label": "Padding sides",
+        "default": 5
+      },
+      {
+        "type": "range",
+        "id": "padding_horizontal_mobile",
+        "min": 0,
+        "max": 15,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Padding sides mobile",
+        "default": 1.5
+      },
+      {
+        "type": "header",
+        "content": "Section"
+      },
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Full width",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "content_width",
+        "min": 800,
+        "max": 2000,
+        "step": 100,
+        "unit": "px",
+        "label": "Section content width",
+        "default": 1200
+      },
+      {
+        "type": "range",
+        "id": "border_thickness",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Border thickness",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "section_radius",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Section roundness",
+        "default": 0
+      },
+      {
+        "type": "checkbox",
+        "id": "lazy",
+        "label": "Lazy load",
+        "info": "Lazy load images for speed optimisation",
+        "default": true
+      }
+    ],
+    "blocks": [     
+      {
+        "type": "heading",
+        "name": "Heading",
+        "settings": [    
+          {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading",
+            "default": "<h2>Comparison table #22</h2>"
+          },
+          {
+            "type": "checkbox",
+            "id": "heading_custom",
+            "label": "Use custom font",
+            "default": false
+          },
+          {
+            "type": "font_picker",
+            "id": "heading_font",
+            "label": "Font family",
+            "default": "josefin_sans_n4"
+          },
+          {
+            "type": "range",
+            "id": "heading_size",
+            "min": 0,
+            "max": 72,
+            "step": 2,
+            "unit": "px",
+            "label": "Font size",
+            "default": 40
+          },
+          {
+            "type": "range",
+            "id": "heading_size_mobile",
+            "min": 0,
+            "max": 72,
+            "step": 2,
+            "unit": "px",
+            "label": "Font size - mobile",
+            "default": 40
+          },
+          {
+            "type": "range",
+            "id": "heading_height",
+            "min": 50,
+            "max": 200,
+            "step": 10,
+            "unit": "%",
+            "label": "Line height",
+            "default": 130
+          },
+          {
+            "type": "range",
+            "id": "heading_mt",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin top",
+            "default": 0
+          },
+          {
+            "type": "range",
+            "id": "heading_mt_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin top - mobile",
+            "default": 0
+          },
+          {
+            "type": "color",
+            "label": "Color",
+            "id": "heading_color",
+            "default": "#121212"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Text",
+        "settings": [    
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Tell your story</p>"
+          },
+          {
+            "type": "checkbox",
+            "id": "text_custom",
+            "label": "Use custom font",
+            "default": false
+          },
+          {
+            "type": "font_picker",
+            "id": "text_font",
+            "label": "Font family",
+            "default": "josefin_sans_n4"
+          },
+          {
+            "type": "range",
+            "id": "text_size",
+            "min": 0,
+            "max": 40,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 20
+          },
+          {
+            "type": "range",
+            "id": "text_size_mobile",
+            "min": 0,
+            "max": 40,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size - mobile",
+            "default": 16
+          },
+          {
+            "type": "range",
+            "id": "text_height",
+            "min": 50,
+            "max": 200,
+            "step": 10,
+            "unit": "%",
+            "label": "Line height",
+            "default": 150
+          },
+          {
+            "type": "range",
+            "id": "text_mt",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin top",
+            "default": 24
+          },
+          {
+            "type": "range",
+            "id": "text_mt_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin top - mobile",
+            "default": 16
+          },
+          {
+            "type": "color",
+            "label": "Color",
+            "id": "text_color",
+            "default": "#121212"
+          }
+        ]
+      }, 
+      {
+        "type": "table_row",
+        "name": "Table row",
+        "settings": [
+          {
+            "type": "text",
+            "id": "row_heading",
+            "label": "Row heading",
+            "default": "Row heading"
+          },
+          {
+            "type": "header",
+            "content": "Column 1"
+          },
+          {
+            "type": "text",
+            "id": "first_column",
+            "label": "Value"
+          },
+          {
+            "type": "image_picker",
+            "id": "first_column_image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "first_column_icon",
+            "label": "Icon",
+            "default": "check",
+            "options": [
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "Cross",
+                "value": "cross"
+              }, 
+              {
+                "label": "None",
+                "value": "none"
+              }
+            ]
+          },
+          {
+            "type": "header",
+            "content": "Column 2"
+          },
+          {
+            "type": "text",
+            "id": "second_column",
+            "label": "Value"
+          },
+          {
+            "type": "image_picker",
+            "id": "second_column_image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "second_column_icon",
+            "label": "Icon",
+            "default": "cross",
+            "options": [
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "Cross",
+                "value": "cross"
+              },
+              {
+                "label": "None",
+                "value": "none"
+              }
+            ]
+          },
+          {
+            "type": "header",
+            "content": "Column 3"
+          },
+          {
+            "type": "text",
+            "id": "third_column",
+            "label": "Value"
+          },
+          {
+            "type": "image_picker",
+            "id": "third_column_image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "third_column_icon",
+            "label": "Icon",
+            "default": "cross",
+            "options": [
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "Cross",
+                "value": "cross"
+              },
+              {
+                "label": "None",
+                "value": "none"
+              }
+            ]
+          },
+          {
+            "type": "header",
+            "content": "Column 4"
+          },
+          {
+            "type": "text",
+            "id": "fourth_column",
+            "label": "Value"
+          },
+          {
+            "type": "image_picker",
+            "id": "fourth_column_image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "fourth_column_icon",
+            "label": "Icon",
+            "default": "cross",
+            "options": [
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "Cross",
+                "value": "cross"
+              },
+              {
+                "label": "None",
+                "value": "none"
+              }
+            ]
+          },
+          {
+            "type": "header",
+            "content": "Column 5"
+          },
+          {
+            "type": "text",
+            "id": "fifth_column",
+            "label": "Value"
+          },
+          {
+            "type": "image_picker",
+            "id": "fifth_column_image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "fifth_column_icon",
+            "label": "Icon",
+            "default": "cross",
+            "options": [
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "Cross",
+                "value": "cross"
+              },
+              {
+                "label": "None",
+                "value": "none"
+              }
+            ]
+          },
+          {
+            "type": "header",
+            "content": "Column 6"
+          },
+          {
+            "type": "text",
+            "id": "sixth_column",
+            "label": "Value"
+          },
+          {
+            "type": "image_picker",
+            "id": "sixth_column_image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "sixth_column_icon",
+            "label": "Icon",
+            "default": "cross",
+            "options": [
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "Cross",
+                "value": "cross"
+              },
+              {
+                "label": "None",
+                "value": "none"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "SS - Comparison table #22",
+        "blocks": [  
+          {
+            "type": "heading"
+          }, 
+          {
+            "type": "text"
+          },         
+          {
+            "type": "table_row",
+            "settings": {
+              "row_heading": "Feature 1",
+              "first_column_icon": "none",
+              "first_column": "First column",
+              "second_column_icon": "none",
+              "second_column": "Second column",
+              "third_column_icon": "none",
+              "third_column": "Third column"
+            
+            }
+          },
+          {
+            "type": "table_row",
+            "settings": {
+              "row_heading": "Feature 2",
+              "second_column_icon": "none",
+              "second_column": "Second column"        
+            }
+          },
+          {
+            "type": "table_row",
+            "settings": {
+              "row_heading": "Feature 3"
+            }
+          }       
+        ]
+      }
+    ]
+  }
+{% endschema %}

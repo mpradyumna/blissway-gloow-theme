@@ -109,38 +109,42 @@
           </span>
         {%- endif -%}
       </div>
-      <div class="price__sale">
-       <span class="lumin-price-container">
-        {%- unless product.price_varies == false and product.compare_at_price_varies %}
-          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-          <span>
-             <s class="price-item price-item--regular">
-              {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money_with_currency }}</br>
-              {% else %}
-                {{ compare_at_price | money }}
-              {% endif %}
-            </s>
+      <div class="price__sale" style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px;">
+        <div style="display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap;">
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+          <span class="price-item price-item--sale price-item--last" style="font-size: clamp(2.4rem, 5vw, 3.2rem); font-weight: 700; color: rgb(var(--color-foreground)); line-height: 1; letter-spacing: -0.02em;">
+            {{ money_price }}
           </span>
-        {%- endunless -%}
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-        <span class="price-item price-item--sale price-item--last">
-          {{ money_price }}
-        </span>
-        </span>
-         {%- if show_saving -%}
-        {% if product.compare_at_price > product.price %}
-          {%- assign savings = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price -%}
-          {%- assign savings_percent = savings | times: 100 | divided_by: product.selected_or_first_available_variant.compare_at_price | append: '%' -%}
-          <span class="product-savings-{{ block.id }}">
-            {% if settings.sale_message != blank %}
-              {%- render 'icon-badge' %} {{ settings.sale_message | replace: '[$]', savings | replace: '[%]', savings_percent }}{% else %}
-              {{ 'products.product.on_sale' | t }}{% endif %}
-          </span>
-        {% endif %}
-        {% endif %}<br/>
+
+          {%- unless product.price_varies == false and product.compare_at_price_varies %}
+            <div style="display: flex; flex-direction: column; justify-content: flex-end;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+                <s class="price-item price-item--regular" style="font-size: 1.4rem; color: #6b7280; font-weight: 500; text-decoration-thickness: 1.5px;">
+                  {% if settings.currency_code_enabled %}
+                    {{ compare_at_price | money_with_currency }}
+                  {% else %}
+                    {{ compare_at_price | money }}
+                  {% endif %}
+                </s>
+
+                {%- if show_saving and product.compare_at_price > product.price -%}
+                  {%- assign savings = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price -%}
+                  {%- assign savings_percent = savings | times: 100 | divided_by: product.selected_or_first_available_variant.compare_at_price | append: '%' -%}
+                  <span class="product-savings-{{ block.id }}" style="background-color: #ecfdf5; color: #059669; font-size: 1.2rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.5px; border: 1px solid #d1fae5;">
+                    {% if settings.sale_message != blank %}
+                      {{ settings.sale_message | replace: '[$]', savings | replace: '[%]', savings_percent }}
+                    {% else %}
+                      {{ 'products.product.on_sale' | t }}
+                    {% endif %}
+                  </span>
+                {%- endif -%}
+              </div>
+              <div class="mrp-style" style="font-size: 1.1rem; color: #6b7280; margin-top: 4px; line-height: 1;">MRP incl. of all taxes</div>
+            </div>
+          {%- endunless -%}
+        </div>
       </div>
-                <div class="mrp-style">MRP incl. of all taxes</div>
       <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
         <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
         <span class="price-item price-item--last">

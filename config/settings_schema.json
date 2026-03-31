@@ -385,7 +385,7 @@
         "default": 90,
         "info": "*Some sections has there own line hight and will not effect by this settings."
       },
-      { 
+      {
         "type": "range",
         "id": "heading_scale",
         "min": 80,
@@ -394,8 +394,7 @@
         "unit": "%",
         "label": "t:settings_schema.typography.settings.heading_scale.label",
         "default": 100
-      },
-      {
+      },      {
         "type": "header",
         "content": "t:settings_schema.typography.settings.header__2.content"
       },
@@ -562,7 +561,7 @@
         "default": "normal", 
         "label": "t:settings_schema.lumintheme.typography-alt.settings.text.label_weight"
       },
-      { 
+      {
         "type": "range",
         "id": "menu_text_size",
         "min": 8,
@@ -572,7 +571,7 @@
         "label": "t:settings_schema.lumintheme.typography-alt.settings.text.label_size",
         "default": 14
       },
-      { 
+      {
         "type": "range",
         "id": "menu_text_size_mb",
         "min": 8,
@@ -581,8 +580,7 @@
         "unit": "px",
         "label": "t:settings_schema.lumintheme.typography-alt.settings.text.label_size_mobile",
         "default": 14
-      },
-      {
+      },      {
         "type": "select",
         "id": "menu_transformation",
         "options": [

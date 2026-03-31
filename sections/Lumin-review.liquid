@@ -1350,11 +1350,13 @@
                                 {% if block.settings.customer_image != blank %}
 
                                   {% comment %} Try to get the original image URL first {% endcomment %}
-                                  {% assign original_image_url = block.settings.customer_image | img_url: 'medium' %}
+                                  {% assign original_image_url = block.settings.customer_image | image_url: width: 300 %}
                                   {% comment %} Debug: customer_image object = {{ block.settings.customer_image | json }} {% endcomment %}
                                   <img src="{{ original_image_url }}" 
                                        alt="{{ block.settings.name_text | append: ' avatar' }}" 
                                        loading="lazy" 
+                                       width="{{ block.settings.customer_image.width | default: 100 }}"
+                                       height="{{ block.settings.customer_image.height | default: 100 }}"
                                        onerror="console.log('Customer image failed to load:', this.src); this.style.display='none'; this.nextElementSibling.style.display='flex';"
                                        style="width: 100%; height: 100%; object-fit: cover;">
                                   
@@ -1499,6 +1501,8 @@
                                   <img src="https://flagcdn.com/{{ flag_code }}.svg" 
                                        alt="{{ country_code | append: ' flag' }}" 
                                        loading="lazy"
+                                       width="20"
+                                       height="15"
                                        onerror="this.style.display='none'; this.parentElement.style.display='none';"
                                        style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
@@ -1563,6 +1567,8 @@
                                alt="{{ block.settings.img_block.alt | escape }}" 
                                loading="lazy" 
                                class="review-image"
+                               width="{{ block.settings.img_block.width }}"
+                               height="{{ block.settings.img_block.height }}"
                                style="max-width: {{section.settings.rw_img_size}}px ; height: auto; object-fit: contain;">
                         {% endif %}
                         {% if block.settings.img_block2 != blank %}
@@ -1570,6 +1576,8 @@
                                alt="{{ block.settings.img_block2.alt | escape }}" 
                                loading="lazy" 
                                class="review-image"
+                               width="{{ block.settings.img_block2.width }}"
+                               height="{{ block.settings.img_block2.height }}"
                                style="max-width: {{section.settings.rw_img_size}}px; height: auto; object-fit: contain;">
                         {% endif %}
 
