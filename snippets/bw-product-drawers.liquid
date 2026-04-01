@@ -1,45 +1,29 @@
 {{ 'bw-product-drawers.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-  assign raw_drawers = product.metafields.custom.custom_product_drawers.value | default: product.metafields.custom.product_drawers.value
-  assign drawers_count = 0
-  assign is_single = false
-
-  if raw_drawers != blank
-    if raw_drawers.system.id != blank
-      # Single metaobject reference
-      assign drawers_count = 1
-      assign is_single = true
-    else
-      # List of metaobjects reference
-      assign drawers_count = raw_drawers.count | default: raw_drawers.size
-    endif
-  endif
-
-  assign use_meta = false
-  if drawers_count > 0
-    assign use_meta = true
-  endif
+  # Grab the JSON array from custom.custom_product_drawers
+  assign drawers_array = product.metafields.custom.custom_product_drawers.value
+  assign sid = block.id | default: section.id | replace: '-', '_'
 -%}
 
-{%- if use_meta -%}
+{%- if drawers_array != blank -%}
 
 <style>
-  #bw-drawers-{{ section.id }} .bw-drawers__btn {
+  #bw-drawers-{{ sid }} .bw-drawers__btn {
     font-size: {{ block.settings.font_size_mobile | default: 13 }}px;
   }
-  #bw-drawer-{{ section.id }} .bw-di__header,
-  #bw-drawer-{{ section.id }} .bw-di__inner,
-  #bw-drawer-{{ section.id }} .bw-di__inner p {
+  #bw-drawer-{{ sid }} .bw-di__header,
+  #bw-drawer-{{ sid }} .bw-di__inner,
+  #bw-drawer-{{ sid }} .bw-di__inner p {
     font-size: {{ block.settings.content_font_size_mobile | default: 14 }}px;
   }
   @media screen and (min-width: 750px) {
-    #bw-drawers-{{ section.id }} .bw-drawers__btn {
+    #bw-drawers-{{ sid }} .bw-drawers__btn {
       font-size: {{ block.settings.font_size_desktop | default: 13 }}px;
     }
-    #bw-drawer-{{ section.id }} .bw-di__header,
-    #bw-drawer-{{ section.id }} .bw-di__inner,
-    #bw-drawer-{{ section.id }} .bw-di__inner p {
+    #bw-drawer-{{ sid }} .bw-di__header,
+    #bw-drawer-{{ sid }} .bw-di__inner,
+    #bw-drawer-{{ sid }} .bw-di__inner p {
       font-size: {{ block.settings.content_font_size_desktop | default: 14 }}px;
     }
   }
@@ -47,162 +31,80 @@
 
 <div
   class="bw-drawers"
-  id="bw-drawers-{{ section.id }}"
-  data-section-id="{{ section.id }}"
+  id="bw-drawers-{{ sid }}"
+  data-section-id="{{ sid }}"
 >
 
-  {%- comment -%} TRIGGER LIST {%- endcomment -%}
+  {%- comment -%} TRIGGER LIST (The Labels) {%- endcomment -%}
   <div class="bw-drawers__triggers">
     <ul class="bw-drawers__list" role="list">
-      {%- if is_single -%}
+      {%- for drawer in drawers_array -%}
         <li class="bw-drawers__item">
           <button
             class="bw-drawers__btn"
             type="button"
             aria-expanded="false"
-            aria-controls="bw-drawer-{{ section.id }}"
-            data-drawer-index="0"
+            aria-controls="bw-drawer-{{ sid }}"
+            data-drawer-index="{{ forloop.index0 }}"
           >
             <span style="display:flex; align-items:center; gap: 8px;">
               {%- if block.settings.icon and block.settings.icon != 'none' -%}
                 {% render 'icon-accordion', icon: block.settings.icon %}
               {%- endif -%}
-              <span>{{ raw_drawers.label.value | default: raw_drawers.label }}</span>
+              <span>{{ drawer.label }}</span>
             </span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M9 18l6-6-6-6"/>
             </svg>
           </button>
         </li>
-      {%- else -%}
-        {%- for drawer in raw_drawers -%}
-          <li class="bw-drawers__item">
-            <button
-              class="bw-drawers__btn"
-              type="button"
-              aria-expanded="false"
-              aria-controls="bw-drawer-{{ section.id }}"
-              data-drawer-index="{{ forloop.index0 }}"
-            >
-              <span style="display:flex; align-items:center; gap: 8px;">
-                {%- if block.settings.icon and block.settings.icon != 'none' -%}
-                  {% render 'icon-accordion', icon: block.settings.icon %}
-                {%- endif -%}
-                <span>{{ drawer.label.value | default: drawer.label }}</span>
-              </span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M9 18l6-6-6-6"/>
-              </svg>
-            </button>
-          </li>
-        {%- endfor -%}
-      {%- endif -%}
+      {%- endfor -%}
     </ul>
   </div>
 
 
-  {%- comment -%} PRE-RENDERED DRAWER PANELS (hidden) {%- endcomment -%}
+  {%- comment -%} PRE-RENDERED DRAWER PANELS (The inner accordions) {%- endcomment -%}
   <div class="bw-drawer-panels" style="display:none" aria-hidden="true">
-    {%- if is_single -%}
+    {%- for drawer in drawers_array -%}
       <div
         class="bw-drawer-panel"
-        id="bw-panel-{{ section.id }}-0"
-        data-label="{{ raw_drawers.label.value | default: raw_drawers.label | escape }}"
+        id="bw-panel-{{ sid }}-{{ forloop.index0 }}"
+        data-label="{{ drawer.label | escape }}"
       >
-        {%- assign items = raw_drawers.draweritems.value -%}
-        {%- if items != blank -%}
-          {%- if items.system.id != blank -%}
-            {%- comment -%} Single drawer_item metaobject {%- endcomment -%}
-            {%- assign item_heading = items.heading.value | default: items.heading -%}
-            <div class="bw-di">
-              {%- if item_heading != blank -%}
-                <button class="bw-di__header" type="button" aria-expanded="false">
-                  <span>{{ item_heading }}</span>
-                  <span class="bw-di__icon" aria-hidden="true"><span></span><span></span></span>
-                </button>
-                <div class="bw-di__body" role="region"><div class="bw-di__inner">{{ items.body | metafield_tag }}</div></div>
-              {%- else -%}
-                <div class="bw-di__body bw-di__body--always-open"><div class="bw-di__inner">{{ items.body | metafield_tag }}</div></div>
-              {%- endif -%}
-            </div>
-          {%- else -%}
-            {%- comment -%} List of drawer_item metaobjects {%- endcomment -%}
-            {%- for item in items -%}
-              {%- assign item_heading = item.heading.value | default: item.heading -%}
-              <div class="bw-di">
-                {%- if item_heading != blank -%}
-                  <button class="bw-di__header" type="button" aria-expanded="false">
-                    <span>{{ item_heading }}</span>
-                    <span class="bw-di__icon" aria-hidden="true"><span></span><span></span></span>
-                  </button>
-                  <div class="bw-di__body" role="region"><div class="bw-di__inner">{{ item.body | metafield_tag }}</div></div>
-                {%- else -%}
-                  <div class="bw-di__body bw-di__body--always-open"><div class="bw-di__inner">{{ item.body | metafield_tag }}</div></div>
-                {%- endif -%}
-              </div>
-            {%- endfor -%}
-          {%- endif -%}
-        {%- endif -%}
-      </div>
-    {%- else -%}
-      {%- for drawer in raw_drawers -%}
-        <div
-          class="bw-drawer-panel"
-          id="bw-panel-{{ section.id }}-{{ forloop.index0 }}"
-          data-label="{{ drawer.label.value | default: drawer.label | escape }}"
-        >
-          {%- assign items = drawer.draweritems.value -%}
-          {%- if items != blank -%}
-            {%- if items.system.id != blank -%}
-              {%- comment -%} Single drawer_item metaobject {%- endcomment -%}
-              {%- assign item_heading = items.heading.value | default: items.heading -%}
-              <div class="bw-di">
-                {%- if item_heading != blank -%}
-                  <button class="bw-di__header" type="button" aria-expanded="false">
-                    <span>{{ item_heading }}</span>
-                    <span class="bw-di__icon" aria-hidden="true"><span></span><span></span></span>
-                  </button>
-                  <div class="bw-di__body" role="region"><div class="bw-di__inner">{{ items.body | metafield_tag }}</div></div>
-                {%- else -%}
-                  <div class="bw-di__body bw-di__body--always-open"><div class="bw-di__inner">{{ items.body | metafield_tag }}</div></div>
-                {%- endif -%}
+        {%- for item in drawer.items -%}
+          <div class="bw-di">
+            {%- if item.heading != blank -%}
+              <button class="bw-di__header" type="button" aria-expanded="false">
+                <span>{{ item.heading }}</span>
+                <span class="bw-di__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+              <div class="bw-di__body" role="region">
+                <div class="bw-di__inner">{{ item.body }}</div>
               </div>
             {%- else -%}
-              {%- comment -%} List of drawer_item metaobjects {%- endcomment -%}
-              {%- for item in items -%}
-                {%- assign item_heading = item.heading.value | default: item.heading -%}
-                <div class="bw-di">
-                  {%- if item_heading != blank -%}
-                    <button class="bw-di__header" type="button" aria-expanded="false">
-                      <span>{{ item_heading }}</span>
-                      <span class="bw-di__icon" aria-hidden="true"><span></span><span></span></span>
-                    </button>
-                    <div class="bw-di__body" role="region"><div class="bw-di__inner">{{ item.body | metafield_tag }}</div></div>
-                  {%- else -%}
-                    <div class="bw-di__body bw-di__body--always-open"><div class="bw-di__inner">{{ item.body | metafield_tag }}</div></div>
-                  {%- endif -%}
-                </div>
-              {%- endfor -%}
+              <div class="bw-di__body bw-di__body--always-open">
+                <div class="bw-di__inner">{{ item.body }}</div>
+              </div>
             {%- endif -%}
-          {%- endif -%}
-        </div>
-      {%- endfor -%}
-    {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
   </div>
 
 
   {%- comment -%} DRAWER SHELL {%- endcomment -%}
   <div
     class="bw-drawer"
-    id="bw-drawer-{{ section.id }}"
+    id="bw-drawer-{{ sid }}"
     role="dialog"
     aria-modal="true"
-    aria-labelledby="bw-drawer-title-{{ section.id }}"
+    aria-labelledby="bw-drawer-title-{{ sid }}"
     aria-hidden="true"
   >
     <div class="bw-drawer__inner">
       <div class="bw-drawer__header">
-        <p class="bw-drawer__title" id="bw-drawer-title-{{ section.id }}"></p>
+        <p class="bw-drawer__title" id="bw-drawer-title-{{ sid }}"></p>
         <button
           class="bw-drawer__close"
           type="button"
@@ -215,7 +117,7 @@
       </div>
       <div
         class="bw-drawer__body"
-        id="bw-drawer-body-{{ section.id }}"
+        id="bw-drawer-body-{{ sid }}"
       ></div>
     </div>
   </div>
@@ -224,7 +126,7 @@
   {%- comment -%} Overlay {%- endcomment -%}
   <div
     class="bw-drawer-overlay"
-    id="bw-drawer-overlay-{{ section.id }}"
+    id="bw-drawer-overlay-{{ sid }}"
     aria-hidden="true"
   ></div>
 

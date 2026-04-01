@@ -74,6 +74,7 @@
                   min-width: {{ block.settings.announcement_size }}px;
                   height: {{ block.settings.announcement_size }}px;
                   min-height: {{ block.settings.announcement_size }}px;
+                  fill: {{ block.settings.announcement_color }};
                 }
                 @media screen and (max-width: 749px) {
                   .lumin-text-{{ block.id }} {
@@ -162,7 +163,7 @@
   }
 .announcement-bar-{{ section.id }} svg{
   margin-right:12px;
-  fill:rgb(var(--color-foreground));
+  fill: {{ section.settings.announcement_color }};
 }
   
 .announcement-bar-{{ section.id }} .announcement-bar-{{ section.id }}__link{

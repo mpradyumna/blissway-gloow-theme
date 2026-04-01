@@ -731,7 +731,7 @@
                     var position = isMobile ? mobilePosition : desktopPosition;
                     
                     // Determine if sticky ATC should be shown
-                    var shouldShow = !isMainAtcVisible;
+                    var shouldShow = !isMainAtcVisible && entry.boundingClientRect.bottom < 0;
                     
                     // Hide when footer is visible (for bottom position)
                     if (position === 'bottom' && isFooterInView) {
@@ -773,7 +773,7 @@
                                 var isMainAtcVisible = mainAtcRect.top >= 0 && mainAtcRect.bottom <= window.innerHeight;
                                 var isHeaderInView = isElementInViewport(headerElement);
                                 
-                                var shouldShow = !isMainAtcVisible;
+                                var shouldShow = !isMainAtcVisible && mainAtcRect.bottom < 0;
                                 
                                 // Hide when header is visible (for top position)
                                 if (position === 'top' && isHeaderInView) {
@@ -808,7 +808,7 @@
                                 var isMainAtcVisible = mainAtcRect.top >= 0 && mainAtcRect.bottom <= window.innerHeight;
                                 var isFooterInView = isElementInViewport(footerElement);
                                 
-                                var shouldShow = !isMainAtcVisible;
+                                var shouldShow = !isMainAtcVisible && mainAtcRect.bottom < 0;
                                 
                                 // Hide when footer is visible (for bottom position)
                                 if (position === 'bottom' && isFooterInView) {
@@ -828,7 +828,7 @@
         } else {
             // Fallback to scroll listener for older browsers
             window.addEventListener("scroll", function() {
-                var isTargetElementOutOfView = targetElement && targetElement.getBoundingClientRect().top < 0;
+                var isTargetElementOutOfView = targetElement && targetElement.getBoundingClientRect().bottom < 0;
                 var isFooterInView = isElementInViewport(footerElement);
                 var isHeaderInView = isElementInViewport(headerElement);
                 var isMobile = window.innerWidth < 750;

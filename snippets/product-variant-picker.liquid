@@ -120,6 +120,18 @@
             picker_type: picker_type
           %}
         </fieldset>
+      {%- elsif picker_type == 'circle' -%}
+        <fieldset class="js product-form__input product-form__input--circle">
+          <legend class="form__label{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}">{{ option.name }}: <span data-selected-value>
+              {{- option.selected_value -}}
+            </span></legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
+        </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
         {% if is_size %} <div style="display: flex;align-items: center;width:100%;{% if block.settings.spaced_size %}justify-content: space-between;{% endif %}"> {% endif %}
@@ -221,5 +233,70 @@
 
 .product-form__input--variant-image {
   margin-bottom: 1.5rem;
+}
+
+/* Circle Picker Styles */
+.product-form__input--circle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.circle-picker-radio {
+  display: none;
+}
+
+.circle-picker-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px 6px 6px;
+  border: 1px solid #e2e2e2;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fff;
+  gap: 12px;
+  margin-bottom: 0 !important;
+}
+
+.circle-picker-radio:checked + .circle-picker-label {
+  border-color: #000;
+  background: #fafafa;
+}
+
+.circle-picker-image {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+.circle-picker-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.circle-picker-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.circle-picker-sku {
+  font-size: 12px;
+  color: #5352ED;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.circle-picker-sku .copy-icon {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
 }
 </style>

@@ -1,0 +1,273 @@
+{{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .bw-philosophy-{{ section.id }} {
+    position: relative;
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 750px) {
+    .bw-philosophy-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .bw-philosophy__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+    z-index: 1;
+  }
+
+  .bw-philosophy__container {
+    position: relative;
+    max-width: var(--page-width, 1200px);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    z-index: 2;
+  }
+
+  .bw-philosophy__card {
+    max-width: 48rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.7s ease;
+  }
+
+  .bw-philosophy__card:hover {
+    transform: scale(1.02);
+  }
+
+  @media screen and (min-width: 768px) {
+    .bw-philosophy__card {
+      padding: 4rem;
+    }
+  }
+
+  .bw-philosophy__label {
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .bw-philosophy__heading {
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    color: #111827;
+  }
+
+  @media screen and (min-width: 768px) {
+    .bw-philosophy__heading {
+      font-size: 3rem;
+    }
+  }
+
+  .bw-philosophy__heading em,
+  .bw-philosophy__heading i {
+    color: #2563eb;
+    font-style: italic;
+  }
+
+  .bw-philosophy__text {
+    font-size: 1.125rem;
+    color: rgba(17, 24, 39, 0.7);
+    line-height: 1.625;
+    margin-bottom: 2.5rem;
+  }
+  
+  .bw-philosophy__text p {
+    margin: 0;
+  }
+
+  .bw-philosophy__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+  }
+  
+  .bw-philosophy__button.button--secondary {
+    background-color: #111827;
+  }
+  .bw-philosophy__button.button--secondary:hover {
+    background-color: #2563eb;
+  }
+
+  .bw-philosophy__button:hover {
+    background-color: #1d4ed8;
+  }
+
+  .bw-philosophy__button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .bw-philosophy__button:hover svg {
+    transform: translateX(0.25rem);
+  }
+</style>
+
+<div class="bw-philosophy-{{ section.id }}" {% if section.settings.image != blank %}style="background-image: url('{{ section.settings.image | image_url: width: 2000 }}');"{% endif %}>
+  <div class="bw-philosophy__overlay"></div>
+  <div class="bw-philosophy__container">
+    <div class="bw-philosophy__card">
+      {%- if section.settings.label != blank -%}
+        <span class="bw-philosophy__label">{{ section.settings.label | escape }}</span>
+      {%- endif -%}
+      
+      {%- if section.settings.heading != blank -%}
+        <blockquote class="bw-philosophy__heading">
+          {{ section.settings.heading | replace: '<p>', '' | replace: '</p>', '' }}
+        </blockquote>
+      {%- endif -%}
+      
+      {%- if section.settings.text != blank -%}
+        <div class="bw-philosophy__text">
+          {{ section.settings.text }}
+        </div>
+      {%- endif -%}
+      
+      {%- if section.settings.button_label != blank -%}
+        <a {% if section.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link }}"{% endif %} class="bw-philosophy__button {% if section.settings.button_style == 'dark' %}button--secondary{% endif %}">
+          {{ section.settings.button_label | escape }}
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BW Philosophy",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Image overlay opacity",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "default": "Our Philosophy",
+      "label": "Subheading Label"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "default": "<p>\"We don't list products. We <em>live with them first</em> — and only sell what we'd recommend to our own families.\"</p>",
+      "label": "Heading",
+      "info": "Use italic text to highlight in blue."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "default": "<p>Every product in the Blissway catalogue is tested in real Indian homes before it ships. If it doesn't hold up to daily life — the heat, the humidity, the long hours — it doesn't make the cut.</p>",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Our Story & Standards",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "options": [
+        {
+          "value": "blue",
+          "label": "Blue"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "blue",
+      "label": "Button Style"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 128
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 128
+    }
+  ],
+  "presets": [
+    {
+      "name": "BW Philosophy",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

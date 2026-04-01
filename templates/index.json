@@ -101,36 +101,44 @@
     "logo_scroll_brands": {
       "type": "Logo-scroll",
       "blocks": {
+        "image_mxjyff": {
+          "type": "image",
+          "settings": {
+            "logo_image": "shopify://shop_images/Marie_Claire_Magazine_logo.svg",
+            "logo_image_width": 134
+          }
+        },
         "brand_1": {
           "type": "image",
           "settings": {
-            "logo_image": "shopify://shop_images/logo-1754254824665-gq.svg",
+            "logo_image": "shopify://shop_images/GQ_Logo.svg",
             "logo_image_width": 134
           }
         },
         "brand_2": {
           "type": "image",
           "settings": {
-            "logo_image": "shopify://shop_images/logo-1754254845316-forbes.svg",
+            "logo_image": "shopify://shop_images/Cosmopolitan_logo.svg",
             "logo_image_width": 134
           }
         },
         "brand_3": {
           "type": "image",
           "settings": {
-            "logo_image": "shopify://shop_images/logo-1754254836477-vogue.svg",
+            "logo_image": "shopify://shop_images/VOGUE_LOGO.svg",
             "logo_image_width": 134
           }
         },
         "brand_4": {
           "type": "image",
           "settings": {
-            "logo_image": "shopify://shop_images/logo-1754254852210-elle.svg",
+            "logo_image": "shopify://shop_images/ELLE_Magazine_Logo_svg.png",
             "logo_image_width": 134
           }
         }
       },
       "block_order": [
+        "image_mxjyff",
         "brand_1",
         "brand_2",
         "brand_3",
@@ -149,8 +157,8 @@
         "padding_mobile": 8,
         "padding_item_desktop": 36,
         "padding_item_mobile": 24,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "alpine_showcase": {
@@ -690,21 +698,25 @@
         "ugc_4"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "eyebrow": "Real Stories",
         "heading": "From real Indian homes."
       }
     },
-    "bw_our_philosophy": {
-      "type": "bw-our-philosophy",
+    "bw_philosophy_rx7GWC": {
+      "type": "bw-philosophy",
+      "name": "BW Philosophy",
       "settings": {
-        "color_scheme": "",
-        "bg_image": "shopify://shop_images/about-lifestyle.jpg",
-        "eyebrow": "Our Philosophy",
-        "heading": "\"We don't list products. We live with them first — and only sell what we'd recommend to our own families.\"",
+        "image": "shopify://shop_images/about-lifestyle.jpg",
+        "overlay_opacity": 20,
+        "label": "Our Philosophy",
+        "heading": "<p>\"We don't list products. We <em>live with them first</em> — and only sell what we'd recommend to our own families.\"</p>",
         "text": "<p>Every product in the Blissway catalogue is tested in real Indian homes before it ships. If it doesn't hold up to daily life — the heat, the humidity, the long hours — it doesn't make the cut.</p>",
         "button_label": "Our Story & Standards",
-        "button_link": ""
+        "button_link": "",
+        "button_style": "blue",
+        "padding_top": 128,
+        "padding_bottom": 128
       }
     },
     "bw_stats": {
@@ -749,8 +761,6 @@
           "settings": {
             "article": "news/ultimate-guide-bladeless-fans-airluxe-2026",
             "product": "bladeless-rechargeable-table-fan-air-multiplier",
-            "product_bg_color": "#ffffff",
-            "product_text_color": "#121212",
             "custom_badge": "",
             "custom_badge_bg_color": "#334fb4"
           }
@@ -760,8 +770,6 @@
           "settings": {
             "article": "news/what-are-bladeless-fans-how-they-work-benefits",
             "product": "bladeless-rechargeable-table-fan-air-multiplier",
-            "product_bg_color": "#ffffff",
-            "product_text_color": "#121212",
             "custom_badge": "",
             "custom_badge_bg_color": "#334fb4"
           }
@@ -771,8 +779,6 @@
           "settings": {
             "article": "news/how-negative-ion-hair-dryers-are-changing-the-way-we-dry-our-hair",
             "product": "leafless-supersonic™-hair-dryer-fast-drying-no-heat-damage-5-attachments-7-styling-3-speed-3-heat-settings-travel-friendly-unisex-usage-intelligent-heat-control",
-            "product_bg_color": "#ffffff",
-            "product_text_color": "#121212",
             "custom_badge": "",
             "custom_badge_bg_color": "#334fb4"
           }
@@ -862,7 +868,7 @@
     "bw_features_accordion",
     "lumin_review_7N3Mdi",
     "bw_ugc",
-    "bw_our_philosophy",
+    "bw_philosophy_rx7GWC",
     "bw_stats",
     "bw_journal",
     "bw_prepaid_offer",

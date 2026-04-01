@@ -58,8 +58,8 @@
             "compare_price": "#808080",
             "original_price": "#4caf50",
             "show_save_price": true,
-            "save_text": "#14a627",
-            "save_bg": "#f2f2f2",
+            "save_text": "#ffffff",
+            "save_bg": "#2663eb",
             "save_border": "#f2f2f2",
             "save_border_thickness": 1,
             "save_corner_radius": 0,
@@ -75,13 +75,13 @@
             "notice_speed": 3,
             "notice_text_color": "#16a34a",
             "notice_text_size": 13,
-            "notice_1_text": "No-cost EMI starting at ₹2,999/month",
+            "notice_1_text": "COD available with extra Rs 49/-",
             "notice_1_icon": "",
-            "notice_2_text": "COD available with extra Rs 49/-",
+            "notice_2_text": "Unlock 5% Extra Savings with Prepaid",
             "notice_2_icon": "",
-            "notice_3_text": "",
+            "notice_3_text": "Order Today, Dispatch Within 24 Hours",
             "notice_3_icon": "",
-            "notice_4_text": "",
+            "notice_4_text": "Try Risk-Free — Easy Replacement Available",
             "notice_4_icon": "",
             "mrp_text": "MRP incl. of all taxes",
             "mrp_color": "#6b7280",
@@ -91,11 +91,11 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
+            "picker_type": "circle",
             "label_style": "body",
             "font_size": 14,
             "font_style": "normal",
-            "swatch_type": "color",
+            "swatch_type": "variant_image",
             "swatch_shape": "circle",
             "swatch_size": 2.8,
             "swatch_image_height": "square",
@@ -325,6 +325,7 @@
         },
         "feature_range_UVMVdF": {
           "type": "feature_range",
+          "disabled": true,
           "settings": {
             "title": "From barely noticeable to instantly cooling your entire body",
             "low_range_label": "Weak Breeze",
@@ -340,6 +341,7 @@
         },
         "feature_range_b9cr9k": {
           "type": "feature_range",
+          "disabled": true,
           "settings": {
             "title": "Built for full shifts, not short breaks",
             "low_range_label": "Dies in 2 Hours",
@@ -355,6 +357,7 @@
         },
         "feature_range_NHTVAp": {
           "type": "feature_range",
+          "disabled": true,
           "settings": {
             "title": "Work, ride, or move freely — no need to hold anything.",
             "low_range_label": "Hands Busy",
@@ -429,6 +432,19 @@
         "container_text_txt": "#ffffff",
         "padding_top": 36,
         "padding_top_mb": 0,
+        "padding_bottom": 36
+      }
+    },
+    "product_metafield_images_BragTz": {
+      "type": "product-metafield-images",
+      "name": "Product Metafield Images",
+      "settings": {
+        "desktop_metafield_key": "desktop_images",
+        "mobile_metafield_key": "mobile_images",
+        "image_gap": 20,
+        "image_radius": 0,
+        "color_scheme": "",
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
@@ -529,6 +545,7 @@
         "ai_gen_block_0c9e73f_jUbGQQ",
         "ai_gen_block_0c9e73f_yE34CP"
       ],
+      "disabled": true,
       "settings": {}
     },
     "comparison": {
@@ -564,6 +581,7 @@
         "row_2",
         "row_3"
       ],
+      "disabled": true,
       "settings": {
         "title": "How we outshine the rest.",
         "heading_size": "h1",
@@ -600,6 +618,7 @@
     },
     "highlight": {
       "type": "bw-product-highlight",
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "image": "shopify://shop_images/3_38db617a-3548-4805-b2c7-c2bd6a6c094d.png",
@@ -628,6 +647,7 @@
   },
   "order": [
     "main",
+    "product_metafield_images_BragTz",
     "17750222206e38cea0",
     "comparison",
     "highlight",

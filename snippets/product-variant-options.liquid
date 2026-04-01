@@ -209,6 +209,55 @@
         {{ label_unavailable }}
       </label>
     {% endif %}
+  {%- elsif picker_type == 'circle' -%}
+    {%- capture help_text -%}
+      <span class="visually-hidden">{{ value | escape }}</span>
+      {{ label_unavailable }}
+    {%- endcapture -%}
+    <input
+      type="radio"
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+      {{ input_dataset }}
+      class="circle-picker-radio"
+    >
+    {%- liquid
+      assign option_index = option.position | minus: 1
+      assign current_variant = nil
+      for variant in product.variants
+        if variant.options[option_index] == value
+          assign current_variant = variant
+          break
+        endif
+      endfor
+      
+      assign circle_image = product.featured_image
+      if current_variant and current_variant.image != blank
+        assign circle_image = current_variant.image
+      endif
+    -%}
+    <label class="circle-picker-label" for="{{ input_id }}">
+      <div class="circle-picker-image">
+        {% if circle_image %}
+          <img src="{{ circle_image.src | image_url: width: 100 }}" alt="{{ value | escape }}" width="50" height="50" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+        {% endif %}
+      </div>
+      <div class="circle-picker-info">
+        <span class="circle-picker-title">{{ value -}}</span>
+        {%- if current_variant and current_variant.sku != blank -%}
+          <span class="circle-picker-sku">SKU: {{ current_variant.sku }}</span>
+        {%- endif -%}
+      </div>
+      {{ label_unavailable }}
+    </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       id="{{ input_id }}"

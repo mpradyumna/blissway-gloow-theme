@@ -1,0 +1,239 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .responsive-gallery-list-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.image_gap }}px;
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .responsive-gallery-list-{{ section.id }} {
+      padding: 0 5rem;
+    }
+  }
+
+  .responsive-gallery-item {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+
+  .responsive-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    {% if section.settings.image_radius > 0 %}
+      border-radius: {{ section.settings.image_radius }}px;
+    {% endif %}
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- assign desktop_key = section.settings.desktop_metafield_key | default: 'desktop_images' | strip -%}
+  {%- assign mobile_key = section.settings.mobile_metafield_key | default: 'mobile_images' | strip -%}
+  
+  {%- assign desktop_metafield = product.metafields.custom[desktop_key] -%}
+  {%- assign mobile_metafield = product.metafields.custom[mobile_key] -%}
+
+  {%- if desktop_metafield and desktop_metafield.value -%}
+
+    <div class="responsive-gallery-list-{{ section.id }}">
+      {%- assign is_desktop_list = false -%}
+      {%- if desktop_metafield.type contains 'list' -%}
+        {%- assign is_desktop_list = true -%}
+      {%- endif -%}
+
+      {%- if is_desktop_list -%}
+        {%- for desktop_img in desktop_metafield.value -%}
+          <div class="responsive-gallery-item">
+            {%- assign mobile_img = nil -%}
+            {%- if mobile_metafield and mobile_metafield.value -%}
+              {%- if mobile_metafield.type contains 'list' -%}
+                {%- assign current_idx = forloop.index0 -%}
+                {%- for m_img in mobile_metafield.value -%}
+                  {%- if forloop.index0 == current_idx -%}
+                    {%- assign mobile_img = m_img -%}
+                    {%- break -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- else -%}
+                {%- if forloop.first -%}
+                  {%- assign mobile_img = mobile_metafield.value -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- endif -%}
+
+            <picture>
+              {%- if mobile_img -%}
+                <source
+                  media="(max-width: 749px)"
+                  srcset="{{ mobile_img | image_url: width: 750 }} 750w,
+                          {{ mobile_img | image_url: width: 1500 }} 1500w"
+                >
+              {%- endif -%}
+              <img
+                src="{{ desktop_img | image_url: width: 1600 }}"
+                srcset="{{ desktop_img | image_url: width: 800 }} 800w,
+                        {{ desktop_img | image_url: width: 1600 }} 1600w,
+                        {{ desktop_img | image_url: width: 2400 }} 2400w"
+                alt="{{ desktop_img.alt | escape }}"
+                loading="lazy"
+                width="{{ desktop_img.width }}"
+                height="{{ desktop_img.height }}"
+              >
+            </picture>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        <div class="responsive-gallery-item">
+          {%- assign desktop_img = desktop_metafield.value -%}
+          {%- assign mobile_img = nil -%}
+          
+          {%- if mobile_metafield and mobile_metafield.value -%}
+            {%- if mobile_metafield.type contains 'list' -%}
+              {%- for m_img in mobile_metafield.value -%}
+                {%- assign mobile_img = m_img -%}
+                {%- break -%}
+              {%- endfor -%}
+            {%- else -%}
+              {%- assign mobile_img = mobile_metafield.value -%}
+            {%- endif -%}
+          {%- endif -%}
+
+          <picture>
+            {%- if mobile_img -%}
+              <source
+                media="(max-width: 749px)"
+                srcset="{{ mobile_img | image_url: width: 750 }} 750w,
+                        {{ mobile_img | image_url: width: 1500 }} 1500w"
+              >
+            {%- endif -%}
+            <img
+              src="{{ desktop_img | image_url: width: 1600 }}"
+              srcset="{{ desktop_img | image_url: width: 800 }} 800w,
+                      {{ desktop_img | image_url: width: 1600 }} 1600w,
+                      {{ desktop_img | image_url: width: 2400 }} 2400w"
+              alt="{{ desktop_img.alt | escape }}"
+              loading="lazy"
+              width="{{ desktop_img.width }}"
+              height="{{ desktop_img.height }}"
+            >
+          </picture>
+        </div>
+      {%- endif -%}
+    </div>
+  {%- else -%}
+    {%- if request.design_mode -%}
+      <div class="responsive-gallery-list-{{ section.id }}">
+        <div class="responsive-gallery-item" style="background: #f4f4f4; padding: 40px; text-align: center; border: 1px dashed #ccc;">
+          <p><strong>Metafield Images Section</strong></p>
+          <p>Please ensure you have configured the metafields correctly in Settings > Custom Data > Products.</p>
+          <p>Desktop Key: <code>custom.{{ desktop_key }}</code></p>
+          <p>Mobile Key: <code>custom.{{ mobile_key }}</code></p>
+          <p><em>Note: If you just added the data, you may need to save the product and refresh this page.</em></p>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Product Metafield Images",
+  "tag": "section",
+  "class": "section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "This section displays a list of images from product metafields. You must create two 'List of files' (Images) metafields in Shopify Admin > Settings > Custom Data."
+    },
+    {
+      "type": "text",
+      "id": "desktop_metafield_key",
+      "label": "Desktop Metafield Key",
+      "info": "Enter the key only (e.g., 'desktop_images' if the full namespace is 'custom.desktop_images')",
+      "default": "desktop_images"
+    },
+    {
+      "type": "text",
+      "id": "mobile_metafield_key",
+      "label": "Mobile Metafield Key",
+      "info": "Enter the key only (e.g., 'mobile_images' if the full namespace is 'custom.mobile_images')",
+      "default": "mobile_images"
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap between images",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 0
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Metafield Images"
+    }
+  ]
+}
+{% endschema %}
