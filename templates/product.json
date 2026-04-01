@@ -12,6 +12,17 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "breadcrumbs_HCRL73": {
+          "type": "breadcrumbs",
+          "settings": {
+            "title_home": "Home",
+            "padding_top": 0,
+            "padding_top_mb": 0,
+            "padding_bottom": 0,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -20,10 +31,25 @@
             "title_line_height": 1.5
           }
         },
+        "review_ALwzxD": {
+          "type": "review",
+          "settings": {
+            "lrw_text": "4.8 From 136 Reviews",
+            "text_size": 14,
+            "star_style": "star",
+            "star_size": 1,
+            "star_rating": 4.5,
+            "lrw_star_color": "#000000",
+            "lrw_star_color_disable": "#eeeeee",
+            "lrw_color": "#000000",
+            "margin_top": 10,
+            "margin_bottom": 10
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
-            "hide_tax_shipping": false,
+            "hide_tax_shipping": true,
             "reverse_price": false,
             "save_text_size": 14,
             "price_weight": "normal",
@@ -84,14 +110,14 @@
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
-            "enable_quantity_discounts": false,
+            "enable_quantity_discounts": true,
             "show_on_all_products": true,
             "selected_product": [],
             "selected_collection": "",
             "quantity_style": "vertical",
             "columns_block": "25",
-            "option_height": "auto",
-            "preselected": "2",
+            "option_height": "fit-content",
+            "preselected": "none",
             "discount_type": "percentage",
             "show_strikethrough_price": "calculated",
             "hide_checkbox": false,
@@ -101,7 +127,7 @@
             "badge_style": "tiered-option__badge",
             "badge_font_size": 1.3,
             "badge_font_size_mobile": 1,
-            "badge_bg_color": "#e71717",
+            "badge_bg_color": "#6fd42f",
             "badge_background_gradient": "",
             "badge_font_color": "#ffffff",
             "option_1_show_label": true,
@@ -214,7 +240,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
             "skip_cart": false,
             "button_custom_style": false,
@@ -225,6 +251,37 @@
             "lm_main_text": "#ffffff"
           }
         },
+        "order_timeline_KGzERA": {
+          "type": "order_timeline",
+          "settings": {
+            "timeline_color_scheme": "background-1",
+            "order_within_label": "Order within",
+            "ships_within_label": "Ships within",
+            "reset_hour": 16,
+            "shipping_lead_days": 1,
+            "date_locale": "en-US",
+            "label_size": 14,
+            "time_size": 16,
+            "border_width": 2,
+            "border_opacity": 0.1,
+            "border_radius": 16
+          }
+        },
+        "payment_gRj76G": {
+          "type": "payment",
+          "settings": {
+            "original": "custom",
+            "payment_icon": "visa,master,google-pay,upi,cash_on_delivery",
+            "payment_content_alignment": "center",
+            "custom_icon_1_width": 34,
+            "custom_icon_2_width": 34,
+            "custom_icon_3_width": 34,
+            "custom_icon_4_width": 34,
+            "custom_icon_5_width": 34,
+            "custom_icon_6_width": 34,
+            "custom_icon_7_width": 34
+          }
+        },
         "description": {
           "type": "description",
           "disabled": true,
@@ -232,7 +289,21 @@
         },
         "bw_product_drawers_kVaaMN": {
           "type": "bw-product-drawers",
-          "settings": {}
+          "settings": {
+            "icon": "none",
+            "font_size_desktop": 13,
+            "font_size_mobile": 13,
+            "content_font_size_desktop": 14,
+            "content_font_size_mobile": 14
+          }
+        },
+        "trust_badges_aQ3P7T": {
+          "type": "trust_badges",
+          "settings": {
+            "badge_1_text": "7 days Returns",
+            "badge_2_text": "Secure Checkout",
+            "badge_3_text": "1 Year Warranty"
+          }
         },
         "collapsible_tab_1": {
           "type": "collapsible_tab",
@@ -251,18 +322,78 @@
             "content": "",
             "page": ""
           }
+        },
+        "feature_range_UVMVdF": {
+          "type": "feature_range",
+          "settings": {
+            "title": "From barely noticeable to instantly cooling your entire body",
+            "low_range_label": "Weak Breeze",
+            "high_range_label": "Turbo Cooling Blast",
+            "level": 10,
+            "line_color": "#283144",
+            "dot_color": "#2f62d4",
+            "line_size": 1,
+            "dot_size": 18,
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "feature_range_b9cr9k": {
+          "type": "feature_range",
+          "settings": {
+            "title": "Built for full shifts, not short breaks",
+            "low_range_label": "Dies in 2 Hours",
+            "high_range_label": "All-Day 40H Power",
+            "level": 10,
+            "line_color": "#283144",
+            "dot_color": "#2f62d4",
+            "line_size": 1,
+            "dot_size": 18,
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "feature_range_NHTVAp": {
+          "type": "feature_range",
+          "settings": {
+            "title": "Work, ride, or move freely — no need to hold anything.",
+            "low_range_label": "Hands Busy",
+            "high_range_label": "100% Hands-Free",
+            "level": 10,
+            "line_color": "#283144",
+            "dot_color": "#2f62d4",
+            "line_size": 1,
+            "dot_size": 18,
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "share_UJBDKb": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
         }
       },
       "block_order": [
+        "breadcrumbs_HCRL73",
         "title",
+        "review_ALwzxD",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "order_timeline_KGzERA",
+        "payment_gRj76G",
         "description",
         "bw_product_drawers_kVaaMN",
+        "trust_badges_aQ3P7T",
         "collapsible_tab_1",
-        "collapsible_tab_2"
+        "collapsible_tab_2",
+        "feature_range_UVMVdF",
+        "feature_range_b9cr9k",
+        "feature_range_NHTVAp",
+        "share_UJBDKb"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -301,15 +432,104 @@
         "padding_bottom": 36
       }
     },
-    "bw_product_sticky": {
-      "type": "bw-product-sticky",
-      "settings": {
-        "theme": "light",
-        "eyebrow": "",
-        "trust_1": "7-Day Returns",
-        "trust_2": "Secure Checkout",
-        "trust_3": "Ships in 24h"
-      }
+    "17750222206e38cea0": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_0c9e73f_jUbGQQ": {
+          "type": "ai_gen_block_0c9e73f",
+          "name": "Image with text",
+          "settings": {
+            "image_desktop": "shopify://shop_images/712A3x_BHZL._AC_SL1500.jpg",
+            "image_mobile": "shopify://shop_images/712A3x_BHZL._AC_SL1500.jpg",
+            "desktop_width_percent": 100,
+            "image_border_radius": 16,
+            "image_border_radius_mobile": 10,
+            "heading": "Image with heading",
+            "heading_tag": "h2",
+            "heading_size": 36,
+            "heading_size_mobile": 28,
+            "heading_weight": "700",
+            "heading_transform": "none",
+            "heading_line_height": 1.2,
+            "heading_color": "#000000",
+            "heading_spacing": 16,
+            "heading_spacing_mobile": 12,
+            "enable_fancy_text": false,
+            "fancy_text_word": "",
+            "subtext": "<p>Add a description or additional details about your image</p>",
+            "subtext_size": 16,
+            "subtext_size_mobile": 14,
+            "subtext_line_height": 1.5,
+            "subtext_color": "#333333",
+            "subtext_opacity": 85,
+            "text_alignment": "center",
+            "content_spacing": 24,
+            "content_spacing_mobile": 16,
+            "background_color": "#ffffff",
+            "background_gradient": "",
+            "border_thickness": 0,
+            "border_color": "#e0e0e0",
+            "border_radius": 0,
+            "border_radius_mobile": 0,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 40,
+            "padding_top_mobile": 20,
+            "padding_bottom_mobile": 20,
+            "padding_horizontal_mobile": 20
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_0c9e73f_yE34CP": {
+          "type": "ai_gen_block_0c9e73f",
+          "settings": {
+            "image_desktop": "shopify://shop_images/865341f7-6bad-4e83-9d3e-11b0546fcb9f.__CR0_0_1464_600_PT0_SX1464_V1.jpg",
+            "image_mobile": "shopify://shop_images/Waist_Cooler_7.png",
+            "desktop_width_percent": 100,
+            "image_border_radius": 0,
+            "image_border_radius_mobile": 0,
+            "heading": "Image with heading",
+            "heading_tag": "h2",
+            "heading_size": 36,
+            "heading_size_mobile": 28,
+            "heading_weight": "700",
+            "heading_transform": "none",
+            "heading_line_height": 1.2,
+            "heading_color": "#000000",
+            "heading_spacing": 16,
+            "heading_spacing_mobile": 12,
+            "enable_fancy_text": false,
+            "fancy_text_word": "",
+            "subtext": "<p>Add a description or additional details about your image</p>",
+            "subtext_size": 16,
+            "subtext_size_mobile": 14,
+            "subtext_line_height": 1.5,
+            "subtext_color": "#333333",
+            "subtext_opacity": 85,
+            "text_alignment": "center",
+            "content_spacing": 24,
+            "content_spacing_mobile": 16,
+            "background_color": "#ffffff",
+            "background_gradient": "",
+            "border_thickness": 0,
+            "border_color": "#e0e0e0",
+            "border_radius": 0,
+            "border_radius_mobile": 0,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 40,
+            "padding_top_mobile": 20,
+            "padding_bottom_mobile": 20,
+            "padding_horizontal_mobile": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_0c9e73f_jUbGQQ",
+        "ai_gen_block_0c9e73f_yE34CP"
+      ],
+      "settings": {}
     },
     "comparison": {
       "type": "comparison-table",
@@ -382,6 +602,7 @@
       "type": "bw-product-highlight",
       "settings": {
         "color_scheme": "",
+        "image": "shopify://shop_images/3_38db617a-3548-4805-b2c7-c2bd6a6c094d.png",
         "show_reviews": true,
         "reviews_text": "4000+ Reviews",
         "title": "Your Go-To for Style and Performance",
@@ -390,22 +611,6 @@
         "button_link": "",
         "guarantee_text": "30-Day satisfaction guarantee",
         "scarcity_text": "Head’s up, we’re low on stock!"
-      }
-    },
-    "tech_center": {
-      "type": "bw-center-feature",
-      "settings": {
-        "color_scheme": "",
-        "subheading": "The Core Technology",
-        "title": "Simple science is our secret ingredient"
-      }
-    },
-    "how_it_works": {
-      "type": "bw-timeline",
-      "settings": {
-        "color_scheme": "",
-        "title": "The Blissway Experience",
-        "subtitle": "A simple 3-step process to better living."
       }
     },
     "newsletter": {
@@ -423,11 +628,9 @@
   },
   "order": [
     "main",
-    "bw_product_sticky",
+    "17750222206e38cea0",
     "comparison",
     "highlight",
-    "tech_center",
-    "how_it_works",
     "newsletter"
   ]
 }

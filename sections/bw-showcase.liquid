@@ -16,6 +16,17 @@
     overflow: hidden;
   }
 
+  .card--card .quick-add {
+    margin: 0 1.3rem 1rem;
+}
+
+.quick-add {
+    position: relative;
+    grid-row-start: 4;
+    margin: 0 0 1rem;
+    z-index: 1;
+}
+
   .bw-showcase__left img {
     width: 100%;
     height: 100%;
@@ -69,211 +80,28 @@
   }
   .bw-showcase__cta:hover { border-color: #fff; }
 
-  /* ── Right: filters + grid ── */
+  /* ── Right: grid ── */
   .bw-showcase__right {
     flex: 1;
     min-width: 0;
-  }
-
-  .bw-showcase__filters {
     display: flex;
-    gap: 0.625rem;
-    flex-wrap: wrap;
-    padding: 2rem 2rem 1.5rem;
-  }
-
-  .bw-showcase__filter-btn {
-    padding: 0.6rem 1.5rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    border: none;
-    transition: all 0.2s;
-    font-family: inherit;
-    background-color: rgb(var(--color-background));
-    color: rgba(29,29,29,0.55);
-  }
-
-  .bw-showcase__filter-btn.active {
-    background: rgb(var(--color-button));
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
-  }
-
-  .bw-showcase__filter-btn:not(.active):hover {
-    background: rgba(37,99,235,0.08);
-    color: rgb(var(--color-button));
+    align-items: center;
   }
 
   .bw-showcase__grid {
-    padding: 0 2rem 3rem;
+    width: 100%;
+    padding: 3rem 2rem 3rem;
   }
 
   .bw-showcase__grid-inner {
-    display: none;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-  }
-
-  .bw-showcase__grid-inner.active {
-    display: grid;
   }
 
   /* Theme card styling integration */
   .bw-showcase__grid-inner .card-wrapper {
     height: 100%;
-  }
-
-  /* ── Custom Product Card ── */
-  .bw-card {
-    background-color: rgb(var(--color-background));
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(var(--color-foreground), 0.06);
-    display: flex;
-    flex-direction: column;
-    transition: all 0.4s ease;
-    border: 1px solid rgba(var(--color-foreground), 0.04);
-    height: 100%;
-  }
-
-  .bw-card:hover {
-    box-shadow: 0 12px 24px rgba(var(--color-foreground), 0.12);
-    transform: translateY(-4px);
-  }
-
-  .bw-card__image-wrap {
-    position: relative;
-    aspect-ratio: 1 / 1;
-    
-    overflow: hidden;
-  }
-
-  .bw-card__image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 24px;
-    transition: transform 0.6s ease;
-  }
-
-  .bw-card:hover .bw-card__image-wrap img {
-    transform: scale(1.08);
-  }
-
-  .bw-card__badge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background-color: rgb(var(--color-badge-background));
-    color: rgb(var(--color-badge-foreground));
-    font-size: 0.65rem;
-    font-weight: 700;
-    padding: 4px 12px;
-    border-radius: 99px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    box-shadow: 0 4px 12px rgba(var(--color-foreground), 0.1);
-  }
-
-  .bw-card__content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .bw-card__stars {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: 8px;
-    font-size: 0.75rem;
-  }
-
-  .bw-card__stars-icons {
-    color: #fbbf24;
-  }
-
-  .bw-card__reviews {
-    font-weight: 700;
-    font-size: 0.65rem;
-    color: rgba(29,29,29,0.4);
-  }
-
-  .bw-card__title {
-    
-    font-weight: 700;
-    margin: 0 0 4px 0;
-    transition: color 0.3s ease;
-    text-decoration: none;
-    color: rgb(var(--color-foreground));
-  }
-
-  .bw-card:hover .bw-card__title {
-    color: rgb(var(--color-button));
-  }
-
-  .bw-card__prices {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-
-  .bw-card__price {
-    
-    font-weight: 700;
-    color: rgb(var(--color-foreground));
-  }
-
-  .bw-card__compare {
-    font-size: 0.85rem;
-    color: rgba(29,29,29,0.4);
-    text-decoration: line-through;
-  }
-
-  .bw-card__bottom {
-    margin-top: auto;
-  }
-
-  .bw-card__delivery {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: #059669;
-    background: #ecfdf5;
-    padding: 6px 12px;
-    border-radius: 8px;
-    border: 1px solid #d1fae5;
-    margin-bottom: 12px;
-  }
-
-  .bw-card__delivery svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .bw-card__btn {
-    width: 100%;
-    background-color: rgb(var(--color-button));
-    color: rgb(var(--color-button-text));
-    font-weight: 700;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .bw-card__btn:hover {
-    opacity: 0.85;
   }
 
   /* ── Mobile ── */
@@ -301,20 +129,11 @@
       width: 100%;
     }
 
-    .bw-showcase__filters {
-      padding: 1.25rem 1rem 1rem;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .bw-showcase__filters::-webkit-scrollbar { display: none; }
-
     .bw-showcase__grid {
-      padding: 0 1rem 2rem;
+      padding: 2rem 1rem 2rem;
     }
 
-    .bw-showcase__grid-inner.active {
+    .bw-showcase__grid-inner {
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
@@ -323,7 +142,7 @@
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
-    .bw-showcase__grid-inner.active::-webkit-scrollbar { display: none; }
+    .bw-showcase__grid-inner::-webkit-scrollbar { display: none; }
 
     .bw-showcase__grid-inner > * {
       flex: 0 0 82vw;
@@ -359,105 +178,41 @@
     </div>
   </div>
 
-  <!-- Right: Filters + product grid -->
+  <!-- Right: Product grid -->
   <div class="bw-showcase__right">
-    <div class="bw-showcase__filters" role="tablist">
-      {%- for block in section.blocks -%}
-        <button 
-          class="bw-showcase__filter-btn {% if forloop.first %}active{% endif %}" 
-          role="tab" 
-          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-          data-tab-index="{{ forloop.index0 }}"
-          {{ block.shopify_attributes }}
-        >
-          {{ block.settings.title }}
-        </button>
-      {%- endfor -%}
-    </div>
-
     <div class="bw-showcase__grid" id="ProductGrid-{{ section.id }}">
-      {%- for block in section.blocks -%}
-        <div class="bw-showcase__grid-inner {% if forloop.first %}active{% endif %}" data-tab-content="{{ forloop.index0 }}">
-          {%- if block.settings.collection != blank -%}
-            {%- for product in block.settings.collection.products limit: section.settings.products_to_show -%}
-              <div class="bw-showcase__item">
-                {% render 'card-product',
-                  card_product: product,
-                  show_vendor: section.settings.show_vendor,
-                  show_rating: section.settings.show_rating
-                %}
-              </div>
-            {%- endfor -%}
-          {%- else -%}
-            {%- for i in (1..section.settings.products_to_show) -%}
-              <div class="bw-showcase__item">
-                {%- assign placeholder_image = 'product-' | append: forloop.index -%}
-                <div class="bw-card">
-                  <div class="bw-card__image-wrap">
-                    {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
-                  </div>
-                  
-                  <div class="bw-card__content">
-                    <div class="bw-card__stars">
-                      <div class="bw-card__stars-icons">★★★★★</div>
-                      <span class="bw-card__reviews">(0)</span>
-                    </div>
-                    <h3 class="bw-card__title">Sample Product</h3>
-                    <div class="bw-card__prices">
-                      <span class="bw-card__price">₹2,499</span>
-                      <span class="bw-card__compare">₹3,999</span>
-                    </div>
-                    <div class="bw-card__bottom">
-                      <div class="bw-card__delivery">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        FREE DELIVERY BY THURSDAY
-                      </div>
-                      <button class="bw-card__btn">Add to Cart</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {%- endfor -%}
-          {%- endif -%}
-        </div>
-      {%- endfor -%}
+      <div class="bw-showcase__grid-inner">
+        {%- if section.settings.collection != blank -%}
+          {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+            <div class="bw-showcase__item">
+              {%- assign quick_add_mode = 'none' -%}
+              {%- if section.settings.enable_quick_add -%}
+                {%- assign quick_add_mode = 'standard' -%}
+              {%- endif -%}
+              {% render 'card-product',
+                card_product: product,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating,
+                quick_add: quick_add_mode,
+                section_id: section.id
+              %}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          {%- for i in (1..section.settings.products_to_show) -%}
+            <div class="bw-showcase__item">
+              {% render 'card-product',
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating,
+                section_id: section.id
+              %}
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
     </div>
   </div>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const section = document.querySelector('#Showcase-{{ section.id }}');
-    const buttons = section.querySelectorAll('.bw-showcase__filter-btn');
-    const contents = section.querySelectorAll('.bw-showcase__grid-inner');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        if (button.classList.contains('active')) return;
-
-        // UI Feedback
-        buttons.forEach(btn => {
-          btn.classList.remove('active');
-          btn.setAttribute('aria-selected', 'false');
-        });
-        button.classList.add('active');
-        button.setAttribute('aria-selected', 'true');
-        
-        const tabIndex = button.dataset.tabIndex;
-
-        contents.forEach(content => {
-          if (content.dataset.tabContent === tabIndex) {
-            content.style.display = 'grid';
-            content.classList.add('active');
-          } else {
-            content.style.display = 'none';
-            content.classList.remove('active');
-          }
-        });
-      });
-    });
-  });
-</script>
 
 {% schema %}
 {
@@ -501,6 +256,11 @@
     {
       "type": "header",
       "content": "Product Grid (Right)"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
     },
     {
       "type": "range",
@@ -547,33 +307,9 @@
       "label": "Enable quick add button"
     }
   ],
-  "blocks": [
-    {
-      "type": "product_tab",
-      "name": "Product Tab",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Tab Name",
-          "default": "Tab Name"
-        },
-        {
-          "type": "collection",
-          "id": "collection",
-          "label": "Collection"
-        }
-      ]
-    }
-  ],
   "presets": [
     {
-      "name": "BW - Alpine Showcase",
-      "blocks": [
-        { "type": "product_tab", "settings": { "title": "All Products" } },
-        { "type": "product_tab", "settings": { "title": "Fans" } },
-        { "type": "product_tab", "settings": { "title": "Bags" } }
-      ]
+      "name": "BW - Alpine Showcase"
     }
   ]
 }

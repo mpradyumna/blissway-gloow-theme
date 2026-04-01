@@ -77,7 +77,7 @@
           "settings": {
             "icon_html": "<svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"></rect><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"></polygon><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"></circle><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"></circle></svg>",
             "title": "Free Shipping",
-            "text": "On all orders above ₹₹1499, delivered to 12,000+ pin codes."
+            "text": "On all orders above ₹1499, delivered to 12,000+ pin codes."
           }
         },
         "item_3": {
@@ -104,24 +104,28 @@
         "brand_1": {
           "type": "image",
           "settings": {
+            "logo_image": "shopify://shop_images/logo-1754254824665-gq.svg",
             "logo_image_width": 134
           }
         },
         "brand_2": {
           "type": "image",
           "settings": {
+            "logo_image": "shopify://shop_images/logo-1754254845316-forbes.svg",
             "logo_image_width": 134
           }
         },
         "brand_3": {
           "type": "image",
           "settings": {
+            "logo_image": "shopify://shop_images/logo-1754254836477-vogue.svg",
             "logo_image_width": 134
           }
         },
         "brand_4": {
           "type": "image",
           "settings": {
+            "logo_image": "shopify://shop_images/logo-1754254852210-elle.svg",
             "logo_image_width": 134
           }
         }
@@ -134,10 +138,10 @@
       ],
       "settings": {
         "scroll_speed": 15,
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "fade": false,
         "background_color": "#ffffff",
-        "announcement_head": "As Featured In",
+        "announcement_head": "Seen on",
         "announcement_head_d": 18,
         "announcement_head_m": 15,
         "announcement_color": "#212121",
@@ -151,34 +155,6 @@
     },
     "alpine_showcase": {
       "type": "bw-showcase",
-      "blocks": {
-        "cat_1": {
-          "type": "product_tab",
-          "settings": {
-            "title": "All Products",
-            "collection": "frontpage"
-          }
-        },
-        "cat_2": {
-          "type": "product_tab",
-          "settings": {
-            "title": "Fans",
-            "collection": ""
-          }
-        },
-        "cat_3": {
-          "type": "product_tab",
-          "settings": {
-            "title": "Bags",
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "cat_1",
-        "cat_2",
-        "cat_3"
-      ],
       "settings": {
         "color_scheme": "",
         "image": "shopify://shop_images/bw-showcase-lifestyle.jpg",
@@ -186,6 +162,7 @@
         "heading": "Bestselling Products",
         "cta_label": "View all",
         "cta_link": "",
+        "collection": "frontpage",
         "products_to_show": 4,
         "image_ratio": "square",
         "show_secondary_image": false,
@@ -356,14 +333,322 @@
         "heading": "We source things\nthat actually work."
       }
     },
-    "bw_reviews": {
-      "type": "bw-reviews",
+    "lumin_review_7N3Mdi": {
+      "type": "Lumin-review",
+      "blocks": {
+        "rating_summary_eEJCxp": {
+          "type": "rating_summary",
+          "settings": {
+            "rating_summary_score": "4.8",
+            "rating_summary_total": "731 Reviews",
+            "rating_bar_5_width": 85,
+            "rating_bar_5_count": "624",
+            "rating_bar_4_width": 14,
+            "rating_bar_4_count": "104",
+            "rating_bar_3_width": 1,
+            "rating_bar_3_count": "3",
+            "rating_bar_2_width": 0,
+            "rating_bar_2_count": "0",
+            "rating_bar_1_width": 0,
+            "rating_bar_1_count": "0",
+            "rating_summary_border_radius": 12,
+            "rating_summary_bg": "#fafafa",
+            "rating_summary_score_color": "#333333",
+            "rating_summary_text_color": "#666666",
+            "rating_bar_bg": "#e5e5e5",
+            "rating_bar_fill": "#333333",
+            "rating_summary_border_color": "#dddddd"
+          }
+        },
+        "thumbnail_gallery_LtibiK": {
+          "type": "thumbnail_gallery",
+          "disabled": true,
+          "settings": {
+            "thumbnail_align": "center",
+            "gallery_title": "Customer Reviews",
+            "gallery_bg": "#f8f8f8",
+            "gallery_title_color": "#333333",
+            "gallery_accent_color": "#000000",
+            "border_thickness": 0,
+            "border_radius": 8,
+            "image_size": 60
+          }
+        },
+        "review_n3aFBz": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Rahul Sharma, Mumbai",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "June 2025",
+            "review_head": "Desk looks a lot cleaner now",
+            "review_text": "I bought this 3-in-1 Wireless charger for my office desk to finally get rid of the wire mess. It charges my phone and watch just fine, but  the earbud spot is a bit finicky—you have to place it exactly right or it doesn't pick up. Still, it saves me from hunting for three different cables  every morning",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_QGXAGf": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Priya Desai, Bengaluru",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "June 5, 2025",
+            "review_head": "Surprisingly relaxing",
+            "review_text": "Honestly, I wasn't sure if a Hair Scalp Massager was just another gimmick. I've been using it twice a week with my regular oiling routine and  it feels great after a long day in traffic. The silicon bristles are softer than I expected. My only gripe is that the handle is a bit small for my  hands.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_egMz6V": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Amit Verma, Delhi",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "June 18, 2025",
+            "review_head": "Sturdy enough for our roads",
+            "review_text": " This Car Phone Holder actually sticks to the dashboard properly, even on those terrible patches in Gurgaon. My phone hasn't fallen off once.  The release button is at the back which is a bit awkward to reach, but you get used to it. Does the job well enough.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_w3f88i": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Sneha Reddy, Hyderabad",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "April 2, 2026",
+            "review_head": "Modern look, decent air",
+            "review_text": "Got this Bladeless fan for the kids' room because I was worried about them sticking fingers in a regular fan. It looks very sleek and the  airflow is good for a small bedroom. It gets a bit noisy if you crank it up to the highest speed, so we usually just leave it on medium at night.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_nWbraL": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Vikram Singh, Pune",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "August, 2025",
+            "review_head": "Lifesaver for my evening walks",
+            "review_text": "I bought this Waist fan mostly for my walks. It’s surprisingly powerful for its size. The battery lasts about 4 hours on the medium setting.  It looks a little funny wearing it over a t-shirt, so I usually just tuck it under a light jacket. Really helps when the humidity gets bad.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_bUy4VG": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Rohit Kapoor, Noida",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "Dec 2025",
+            "review_head": "Keeps me cozy at night",
+            "review_text": "Delhi winters can be brutal, so I finally ordered this Heating Blanket. It warms up in about 10 minutes and the material is quite soft. You  can slightly feel the wires inside if you roll over directly on them, but it’s not a dealbreaker. Much better than running the heater all night.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_rDwxXk": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Neha Joshi, Mumbai",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "Feb 2025",
+            "review_head": "Great for quick kitchen notes",
+            "review_text": "Using the LED Writing Board to leave reminders for my husband in the kitchen. The markers are bright and it wipes clean easily with a damp  cloth. The stand is a little flimsy though—if you bump the counter it tends to wobble. It's a fun little addition to the house though.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_jjeUqc": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Siddharth Nair, Bengaluru",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "Dec 2025",
+            "review_head": "No more waking up with a dry throat",
+            "review_text": "With the AC running all night, the air gets too dry. This Humidifier definitely fixed that for me. The water tank lasts the whole night on  the low setting. The blue LED light was way too bright for my liking, so I ended up putting a small piece of tape over it. Otherwise, it works  silently.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_CWGzNk": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Pooja Iyer, Chennai",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "Dec 2025",
+            "review_head": "Powerful, but my arm gets tired",
+            "review_text": "This is a decent Hair Dryer for everyday use. It dries my thick hair in about 15 minutes and the cool shot button actually works. It is a bit  heavier than my old one, so my arm gets a little tired if I’m doing a full blowout, but the attachments fit very securely.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_MnCPfG": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Karan Malhotra, Delhi",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "Dec 2025",
+            "review_head": "Good bedside companion",
+            "review_text": "I ordered a second 3-in-1 Wireless charger for my bedside table. It looks very clean compared to having cables everywhere. The charging speed  isn't lightning fast, especially if you have everything on there at once, but since I just leave it overnight while I sleep, it doesn't really matter.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_CkUp8z": {
+          "type": "review",
+          "settings": {
+            "selected_product": "",
+            "star_rating": 5,
+            "name_text": "Divya Rao, Hyderabad",
+            "country_code": "IN",
+            "show_country_flag": true,
+            "date_text": "Dec 2025",
+            "review_head": "Saves my nails during shampooing",
+            "review_text": "I’ve started using the Hair Scalp Massager while shampooing. It really lathers up well and saves my nails from getting ruined. The color is  exactly as shown in the pictures. It can get a bit slippery and fall out of your hand if you use too much conditioner, but overall I’m happy with it.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        }
+      },
+      "block_order": [
+        "rating_summary_eEJCxp",
+        "thumbnail_gallery_LtibiK",
+        "review_n3aFBz",
+        "review_QGXAGf",
+        "review_egMz6V",
+        "review_w3f88i",
+        "review_nWbraL",
+        "review_bUy4VG",
+        "review_rDwxXk",
+        "review_jjeUqc",
+        "review_CWGzNk",
+        "review_MnCPfG",
+        "review_CkUp8z"
+      ],
+      "name": "Lumin Review",
       "settings": {
-        "color_scheme": "",
-        "enable_judgeme": true,
-        "eyebrow": "Real customers. Real words.",
-        "score": "4.8",
-        "subtext": "From 5000+ verified buyers across India"
+        "editing": true,
+        "color_scheme": "background-1",
+        "header_text": "what our customers say about us",
+        "show_top": true,
+        "rating_text": "4.8",
+        "rating_range": 4.5,
+        "star_size_top": 1,
+        "rating_count": "Based on 16 Reviews",
+        "show_customer_images": true,
+        "show_country_flags": true,
+        "customer_image_size": 40,
+        "customer_image_radius": 30,
+        "customer_initials_bg": "#ffd700",
+        "customer_initials_color": "#000000",
+        "review_column_mobile": 1,
+        "review_column_tab": 2,
+        "review_column_desk": 3,
+        "review_load": 6,
+        "load_text": "Load More",
+        "rw_img_size": 90,
+        "rw_img_radius": 6,
+        "block_name_size": 20,
+        "date_size": 12,
+        "block_head_size": 18,
+        "block_text_size": 14,
+        "star_style": "star_bg",
+        "star_size": 0.7,
+        "star_radius": 0,
+        "feature_svg_color": "#59b946",
+        "inactive_star_color": "#e2e2e2",
+        "show_border": true,
+        "rw_border": "#f2f2f2",
+        "border_radius": 10,
+        "section_bg3": "#000000",
+        "section_bg2": "#000000",
+        "verify_text": "Verified Buyer",
+        "review_bg": "#ffffff",
+        "feature_acc_color": "#000000",
+        "review_pd": 20,
+        "review_pd_m": 20,
+        "show_footer": true,
+        "show_product": true,
+        "product_image_radius": 4,
+        "like_text": "Was this helpful?",
+        "show_add_review_button": true,
+        "review_cta_heading": "Review this product",
+        "review_cta_subtext": "Share your thoughts with other customers",
+        "add_review_button_text": "Add Your Review",
+        "review_cta_heading_color": "#333333",
+        "review_cta_subtext_color": "#666666",
+        "add_review_button_bg": "#000000",
+        "add_review_button_text_color": "#ffffff",
+        "modal_title": "Write Your Review",
+        "name_label": "Your Name",
+        "rating_label": "Rating",
+        "title_label": "Review Title",
+        "review_label": "Your Review",
+        "email_label": "Your Email",
+        "date_format": "detailed",
+        "cancel_button_text": "Cancel",
+        "submit_button_text": "Submit Review",
+        "success_message_title": "Thank you for your review!",
+        "success_message_body": "Your review has been submitted successfully and will be forwarded to our team.",
+        "success_message_duration": "3",
+        "success_message_bg": "#4caf50",
+        "success_message_text": "#ffffff",
+        "success_message_position": "top-right",
+        "success_message_font_size": 16,
+        "success_message_show_icon": true,
+        "email_subject": "New Review Submitted",
+        "email_method": "real_form",
+        "rw_margin": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable_review_popup": true,
+        "popup_helpful_text": "Was this helpful?",
+        "show_popup_helpful_buttons": true,
+        "show_popup_product_info": true,
+        "popup_image_quality": "800",
+        "popup_customer_image_size": 60,
+        "enable_image_enlarge": true
       }
     },
     "bw_ugc": {
@@ -458,15 +743,53 @@
     },
     "bw_journal": {
       "type": "bw-journal",
+      "blocks": {
+        "article_WzBwwr": {
+          "type": "article",
+          "settings": {
+            "article": "news/ultimate-guide-bladeless-fans-airluxe-2026",
+            "product": "bladeless-rechargeable-table-fan-air-multiplier",
+            "product_bg_color": "#ffffff",
+            "product_text_color": "#121212",
+            "custom_badge": "",
+            "custom_badge_bg_color": "#334fb4"
+          }
+        },
+        "article_DqeAC6": {
+          "type": "article",
+          "settings": {
+            "article": "news/what-are-bladeless-fans-how-they-work-benefits",
+            "product": "bladeless-rechargeable-table-fan-air-multiplier",
+            "product_bg_color": "#ffffff",
+            "product_text_color": "#121212",
+            "custom_badge": "",
+            "custom_badge_bg_color": "#334fb4"
+          }
+        },
+        "article_YGJtX3": {
+          "type": "article",
+          "settings": {
+            "article": "news/how-negative-ion-hair-dryers-are-changing-the-way-we-dry-our-hair",
+            "product": "leafless-supersonic™-hair-dryer-fast-drying-no-heat-damage-5-attachments-7-styling-3-speed-3-heat-settings-travel-friendly-unisex-usage-intelligent-heat-control",
+            "product_bg_color": "#ffffff",
+            "product_text_color": "#121212",
+            "custom_badge": "",
+            "custom_badge_bg_color": "#334fb4"
+          }
+        }
+      },
+      "block_order": [
+        "article_WzBwwr",
+        "article_DqeAC6",
+        "article_YGJtX3"
+      ],
       "settings": {
         "color_scheme": "",
         "image_ratio": "1/1",
         "eyebrow": "Blissway Journal",
         "heading": "Insights for the modern home.",
         "btn_label": "View all articles",
-        "btn_link": "",
-        "blog": "news",
-        "post_limit": 3
+        "btn_link": ""
       }
     },
     "bw_prepaid_offer": {
@@ -537,7 +860,7 @@
     "horizontal_scroll",
     "bw_product_spotlight",
     "bw_features_accordion",
-    "bw_reviews",
+    "lumin_review_7N3Mdi",
     "bw_ugc",
     "bw_our_philosophy",
     "bw_stats",

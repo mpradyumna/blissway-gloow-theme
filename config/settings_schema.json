@@ -3484,6 +3484,74 @@
          "default": 34,
          "visible_if": "{{ settings.show_payment_icons and settings.cart_type == 'drawer' and settings.original == 'custom' }}"
        },
+       {
+         "type": "image_picker",
+         "id": "custom_icon_4",
+         "label": "BHIM Icon",
+         "visible_if": "{{ settings.show_payment_icons and settings.cart_type == 'drawer' and settings.original == 'custom' }}"
+       },
+       {
+         "type": "range",
+         "id": "custom_icon_4_width",
+         "min": 10,
+         "max": 80,
+         "step": 1,
+         "unit": "px",
+         "label": "Icon Size",
+         "default": 34,
+         "visible_if": "{{ settings.show_payment_icons and settings.cart_type == 'drawer' and settings.original == 'custom' }}"
+       },
+       {
+         "type": "image_picker",
+         "id": "custom_icon_5",
+         "label": "WALLETS Icon",
+         "visible_if": "{{ settings.show_payment_icons and settings.cart_type == 'drawer' and settings.original == 'custom' }}"
+       },
+       {
+         "type": "range",
+         "id": "custom_icon_5_width",
+         "min": 10,
+         "max": 80,
+         "step": 1,
+         "unit": "px",
+         "label": "Icon Size",
+         "default": 34,
+         "visible_if": "{{ settings.show_payment_icons and settings.cart_type == 'drawer' and settings.original == 'custom' }}"
+       },
+       {
+         "type": "image_picker",
+         "id": "custom_icon_6",
+         "label": "UPI Icon",
+         "visible_if": "{{ settings.show_payment_icons and settings.cart_type == 'drawer' and settings.original == 'custom' }}"
+       },
+       {
+         "type": "range",
+         "id": "custom_icon_6_width",
+         "min": 10,
+         "max": 80,
+         "step": 1,
+         "unit": "px",
+         "label": "Icon Size",
+         "default": 34,
+         "visible_if": "{{ settings.show_payment_icons and settings.cart_type == 'drawer' and settings.original == 'custom' }}"
+       },
+       {
+         "type": "image_picker",
+         "id": "custom_icon_7",
+         "label": "COD Icon",
+         "visible_if": "{{ settings.show_payment_icons and settings.cart_type == 'drawer' and settings.original == 'custom' }}"
+       },
+       {
+         "type": "range",
+         "id": "custom_icon_7_width",
+         "min": 10,
+         "max": 80,
+         "step": 1,
+         "unit": "px",
+         "label": "Icon Size",
+         "default": 34,
+         "visible_if": "{{ settings.show_payment_icons and settings.cart_type == 'drawer' and settings.original == 'custom' }}"
+       },
       {
         "type": "header",
         "content": "t:settings_schema.lumintheme.cart_drawer.settings.text.header_7",

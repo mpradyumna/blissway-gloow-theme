@@ -1,0 +1,30 @@
+{%- case type -%}
+  {%- when 'bhim' -%}
+    <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg">
+      <rect width="38" height="24" rx="2" fill="white"/>
+      <path d="M7 6H9.5L11 10.5L12.5 6H15L12 15H9.5L7 6Z" fill="#E57E24"/>
+      <path d="M16 6H21V8.5H18.5V10.5H21V13H18.5V15H16V6Z" fill="#0074B9"/>
+      <path d="M23 6H25.5V15H23V6Z" fill="#009A49"/>
+      <path d="M27 6H29.5L31 10.5L32.5 6H35L32 15H29.5L27 6Z" fill="#E57E24"/>
+      <path d="M4 18H34V19H4V18Z" fill="#CCCCCC"/>
+    </svg>
+  {%- when 'upi' -%}
+    <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg">
+      <rect width="38" height="24" rx="3" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="19" y="16" font-family="Arial, sans-serif" font-size="11" font-weight="bold" font-style="italic" fill="#F05E23" text-anchor="middle">UPI</text>
+    </svg>
+  {%- when 'wallets' -%}
+    <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg">
+      <rect width="38" height="24" rx="2" fill="white" stroke="#EEEEEE" stroke-width="0.5"/>
+      <path d="M10 8H24C25.1046 8 26 8.89543 26 10V14C26 15.1046 25.1046 16 24 16H10C8.89543 16 8 15.1046 8 14V10C8 8.89543 8.89543 8 10 8Z" stroke="#333333" stroke-width="1.2"/>
+      <path d="M22 11H26V13H22V11Z" fill="#333333"/>
+      <circle cx="24" cy="12" r="1" fill="white"/>
+    </svg>
+  {%- when 'cash_on_delivery' -%}
+    <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg">
+      <rect width="38" height="24" rx="3" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="19" y="16" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">COD</text>
+    </svg>
+  {%- else -%}
+    {{ type | payment_type_svg_tag: class: 'icon-svg' }}
+{%- endcase -%}

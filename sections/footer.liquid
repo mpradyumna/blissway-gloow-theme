@@ -644,7 +644,7 @@
          "type": "textarea",
           "id": "payment_icon",
           "label": "Payment Methods (Custom)",
-          "default": "visa,master,paypal,apple_pay,shopify-pay,google-pay",
+          "default": "visa,master,paypal,apple_pay,shopify-pay,google-pay,ideal,bhim,wallets,upi,cash_on_delivery",
          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}",
           "info": "Add the payment method keys separated by (,) commas. (e.g., visa,master,paypal,apple_pay). You can find all payment methods [here](https://lumintheme.com/pages/payment-method-list)."
         },
@@ -688,22 +688,90 @@
          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
        },
         {
-         "type": "image_picker",
-         "id": "custom_icon_3",
-         "label": "Extra Icon 3",
-         "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
-       },
-       {
-         "type": "range",
-         "id": "custom_icon_3_width",
-         "min": 10,
-         "max": 80,
-         "step": 1,
-         "unit": "px",
-         "label": "Icon Size",
-         "default": 34,
-         "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
-       },
+          "type": "image_picker",
+          "id": "custom_icon_3",
+          "label": "Extra Icon 3",
+          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
+        },
+        {
+          "type": "range",
+          "id": "custom_icon_3_width",
+          "min": 10,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "label": "Icon Size",
+          "default": 34,
+          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon_4",
+          "label": "BHIM Icon",
+          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
+        },
+        {
+          "type": "range",
+          "id": "custom_icon_4_width",
+          "min": 10,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "label": "Icon Size",
+          "default": 34,
+          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon_5",
+          "label": "WALLETS Icon",
+          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
+        },
+        {
+          "type": "range",
+          "id": "custom_icon_5_width",
+          "min": 10,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "label": "Icon Size",
+          "default": 34,
+          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon_6",
+          "label": "UPI Icon",
+          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
+        },
+        {
+          "type": "range",
+          "id": "custom_icon_6_width",
+          "min": 10,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "label": "Icon Size",
+          "default": 34,
+          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon_7",
+          "label": "COD Icon",
+          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
+        },
+        {
+          "type": "range",
+          "id": "custom_icon_7_width",
+          "min": 10,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "label": "Icon Size",
+          "default": 34,
+          "visible_if": "{{ section.settings.payment_enable and section.settings.original == 'custom' }}"
+        },
       {
         "type": "checkbox",
         "id": "show_policy",

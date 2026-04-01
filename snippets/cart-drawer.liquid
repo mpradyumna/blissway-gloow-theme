@@ -944,6 +944,9 @@
               {{- settings.view_cart_text -}}
             </a>
           {% endif %}
+
+          <div class="shiprocket-headless" data-type="mini-cart"></div>
+{%- comment -%} 
           <button
             type="submit"
             id="CartDrawer-Checkout"
@@ -958,7 +961,7 @@
             {{ 'sections.cart.checkout' | t -}}
             {%- if settings.show_checkout_price %} • {{ cart.total_price | money }}{% endif %}
           </button>
-          
+          {%- endcomment -%} 
 
         </div>
         {%- if settings.show_payment_icons -%}

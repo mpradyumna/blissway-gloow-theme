@@ -1,8 +1,13 @@
 <style>
-  .list-payment-lm{ display: flex;flex-wrap: wrap;padding-left: 0;justify-content:{{ settings.payment_content_alignment }};}
+  .list-payment-lm{ display: flex;flex-wrap: wrap;padding-left: 0;justify-content:{{ settings.payment_content_alignment }}; list-style: none; margin: 0; padding: 0; }
+  .list-payment-lm li { list-style: none; }
   .lumin-payment-icon img{ width: {{ settings.custom_icon_1_width }}px; height: auto; }
   .lumin-payment-icon-2 img{ width: {{ settings.custom_icon_2_width }}px; height: auto; }
   .lumin-payment-icon-3 img{ width: {{ settings.custom_icon_3_width }}px; height: auto; }
+  .lumin-payment-icon-4 img{ width: {{ settings.custom_icon_4_width }}px; height: auto; }
+  .lumin-payment-icon-5 img{ width: {{ settings.custom_icon_5_width }}px; height: auto; }
+  .lumin-payment-icon-6 img{ width: {{ settings.custom_icon_6_width }}px; height: auto; }
+  .lumin-payment-icon-7 img{ width: {{ settings.custom_icon_7_width }}px; height: auto; }
 </style>
 <div class="footer__payment" {{ shopify_attributes }}>
   <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
@@ -23,7 +28,7 @@
       %}
       {% for type in enabled_payment_types %}
         {% if type != '' %}
-          <li class="list-payment__item">{{ type | payment_type_svg_tag: class: 'icon-svg' }}</li>
+          <li class="list-payment__item">{% render 'snippet-payment-icons-svg', type: type %}</li>
         {% endif %}
       {%- endfor -%}
       {% if settings.custom_icon_1 != blank %}
@@ -34,6 +39,18 @@
           {% endif %}
        {% if settings.custom_icon_3 != blank %}
           <li class="list-payment__item lumin-payment-icon-3">{{ settings.custom_icon_3 | image_url: width: 100 | image_tag }}</li>
+        {% endif %}
+       {% if settings.custom_icon_4 != blank %}
+          <li class="list-payment__item lumin-payment-icon-4">{{ settings.custom_icon_4 | image_url: width: 100 | image_tag }}</li>
+        {% endif %}
+       {% if settings.custom_icon_5 != blank %}
+          <li class="list-payment__item lumin-payment-icon-5">{{ settings.custom_icon_5 | image_url: width: 100 | image_tag }}</li>
+        {% endif %}
+       {% if settings.custom_icon_6 != blank %}
+          <li class="list-payment__item lumin-payment-icon-6">{{ settings.custom_icon_6 | image_url: width: 100 | image_tag }}</li>
+        {% endif %}
+       {% if settings.custom_icon_7 != blank %}
+          <li class="list-payment__item lumin-payment-icon-7">{{ settings.custom_icon_7 | image_url: width: 100 | image_tag }}</li>
         {% endif %}
     {% endif %}
   </ul>

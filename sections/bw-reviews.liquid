@@ -134,27 +134,33 @@
     {%- if section.settings.enable_judgeme -%}
       <!-- Judge.me Carousel Widget -->
       <div class="jdgm-carousel-wrapper">
-        {% render 'judgeme_widgets', widget_type: 'judgeme_featured_carousel', concierge_install: false %}
       </div>
     {%- else -%}
       <!-- Fallback Static Reviews (Matches Prototype) -->
       <div class="bw-reviews-section__grid">
         {%- for block in section.blocks -%}
-          <div class="bw-review-card">
-            <div class="bw-review-card__stars">★★★★★</div>
-            <h3 class="bw-review-card__title">"{{ block.settings.title }}"</h3>
-            <p class="bw-review-card__body">{{ block.settings.text }}</p>
-            <div class="bw-review-card__author">
-              <div class="bw-review-card__avatar">{{ block.settings.author | slice: 0 }}</div>
-              <div>
-                <p class="bw-review-card__name">{{ block.settings.author }}</p>
-                <span class="bw-review-card__verified">
-                  <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Verified Purchase
-                </span>
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              <div class="bw-reviews-app-block" style="grid-column: 1 / -1;">
+                {% render block %}
               </div>
-            </div>
-          </div>
+            {%- when 'review' -%}
+              <div class="bw-review-card" {{ block.shopify_attributes }}>
+                <div class="bw-review-card__stars">★★★★★</div>
+                <h3 class="bw-review-card__title">"{{ block.settings.title }}"</h3>
+                <p class="bw-review-card__body">{{ block.settings.text }}</p>
+                <div class="bw-review-card__author">
+                  <div class="bw-review-card__avatar">{{ block.settings.author | slice: 0 }}</div>
+                  <div>
+                    <p class="bw-review-card__name">{{ block.settings.author }}</p>
+                    <span class="bw-review-card__verified">
+                      <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                      Verified Purchase
+                    </span>
+                  </div>
+                </div>
+              </div>
+          {%- endcase -%}
         {%- endfor -%}
       </div>
     {%- endif -%}
@@ -172,6 +178,9 @@
     { "type": "text", "id": "subtext", "label": "Subtext", "default": "From 5000+ verified buyers across India" }
   ],
   "blocks": [
+    {
+      "type": "@app"
+    },
     {
       "type": "review",
       "name": "Static Review",
