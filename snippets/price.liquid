@@ -51,11 +51,70 @@
 -%}
 
 <style>
+  /* Option A — Linear scan flow
+     Override specificity: component-price.css has
+     .price--on-sale .price__sale { flex-direction: row }
+     We match with two-class selector to win the cascade.
+  */
+
+  .price--on-sale .price__sale--container {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    gap: 0 !important;
+    margin-bottom: 12px;
+  }
+
+  /* Row 1: compare price + badge inline */
+  .price__sale--top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .price-item--regular-sale {
+    font-size: 1.3rem;
+    color: #9ca3af;
+    font-weight: 400;
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+    margin: 0 !important;
+  }
+
+  .price__discount-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    background: #2563eb;
+    padding: 2px 9px;
+    border-radius: 4px;
+    line-height: 1.6;
+  }
+
+  /* Row 2: sale price — visual hero */
+  .price--on-sale .price__sale--container .price-item--sale.price-item--last {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 2.6rem);
+    font-weight: 700;
+    color: #1D1D1D;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 4px 0;
+  }
+
+  /* Row 3: tax note — directly below sale price */
   .mrp-style {
-      font-weight:300;
-      font-size: 13px;
-      line-height: 60%;
-      padding-top:10px
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #9ca3af;
+    line-height: 1;
+    margin-bottom: 0;
   }
 </style>
 
@@ -109,41 +168,33 @@
           </span>
         {%- endif -%}
       </div>
-      <div class="price__sale" style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px;">
-        <div style="display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap;">
-          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-          <span class="price-item price-item--sale price-item--last" style="font-size: clamp(2rem, 5vw, 2rem); font-weight: 700; color: rgb(var(--color-foreground)); line-height: 1; letter-spacing: -0.02em;">
-            {{ money_price }}
-          </span>
-
-          {%- unless product.price_varies == false and product.compare_at_price_varies %}
-            <div style="display: flex; flex-direction: column; justify-content: flex-end;">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-                <s class="price-item price-item--regular" style="font-size: 1.4rem; color: #6b7280; font-weight: 500; text-decoration-thickness: 1.5px;">
-                  {% if settings.currency_code_enabled %}
-                    {{ compare_at_price | money_with_currency }}
-                  {% else %}
-                    {{ compare_at_price | money }}
-                  {% endif %}
-                </s>
-
-                {%- if show_saving and product.compare_at_price > product.price -%}
-                  {%- assign savings = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price -%}
-                  {%- assign savings_percent = savings | times: 100 | divided_by: product.selected_or_first_available_variant.compare_at_price | append: '%' -%}
-                  <span class="product-savings-{{ block.id }}" style="background-color: #ecfdf5; color: #059669; font-size: 1.2rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.5px; border: 1px solid #d1fae5;">
-                    {% if settings.sale_message != blank %}
-                      {{ settings.sale_message | replace: '[$]', savings | replace: '[%]', savings_percent }}
-                    {% else %}
-                      {{ 'products.product.on_sale' | t }}
-                    {% endif %}
-                  </span>
+      <div class="price__sale price__sale--container">
+        {%- unless product.price_varies == false and product.compare_at_price_varies %}
+          {%- if compare_at_price > price -%}
+            {%- liquid
+              assign savings_pct = compare_at_price | minus: price | times: 100 | divided_by: compare_at_price | round | append: '% OFF'
+            -%}
+            <!-- Row 1: compare price + discount badge -->
+            <div class="price__sale--top">
+              <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+              <s class="price-item price-item--regular price-item--regular-sale">
+                {%- if settings.currency_code_enabled -%}
+                  {{ compare_at_price | money_with_currency }}
+                {%- else -%}
+                  {{ compare_at_price | money }}
                 {%- endif -%}
-              </div>
-              <div class="mrp-style" style="font-size: 1.1rem; color: #6b7280; margin-top: 4px; line-height: 1;">MRP incl. of all taxes</div>
+              </s>
+              <span class="price__discount-badge">{{ savings_pct }}</span>
             </div>
-          {%- endunless -%}
-        </div>
+          {%- endif -%}
+        {%- endunless -%}
+
+        <!-- Row 2: sale price hero -->
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+        <span class="price-item price-item--sale price-item--last">{{ money_price }}</span>
+
+        <!-- Row 3: tax note -->
+        <div class="mrp-style">MRP incl. of all taxes</div>
       </div>
       <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
         <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>

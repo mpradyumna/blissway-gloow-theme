@@ -1,0 +1,93 @@
+{%- comment -%} Waist Fan — Product USP Icon Strip {%- endcomment -%}
+<div class="wf-usp-strip">
+  <div class="wf-usp-strip__inner">
+
+    <div class="wf-usp-item">
+      <div class="wf-usp-item__icon">
+        <img src="{{ 'usp-cooling.png' | asset_url }}" alt="Instant Cooling" width="56" height="56" loading="lazy">
+      </div>
+      <span class="wf-usp-item__label">Instant<br>Cooling</span>
+    </div>
+
+    <div class="wf-usp-item">
+      <div class="wf-usp-item__icon">
+        <img src="{{ 'usp-battery.png' | asset_url }}" alt="8-Hour Battery" width="56" height="56" loading="lazy">
+      </div>
+      <span class="wf-usp-item__label">8-Hr<br>Battery</span>
+    </div>
+
+    <div class="wf-usp-item">
+      <div class="wf-usp-item__icon">
+        <img src="{{ 'usp-quiet.png' | asset_url }}" alt="Whisper Quiet" width="56" height="56" loading="lazy">
+      </div>
+      <span class="wf-usp-item__label">Whisper<br>Quiet</span>
+    </div>
+
+    <div class="wf-usp-item">
+      <div class="wf-usp-item__icon">
+        <img src="{{ 'usp-handsfree.png' | asset_url }}" alt="Hands-Free Clip" width="56" height="56" loading="lazy">
+      </div>
+      <span class="wf-usp-item__label">Hands-Free<br>Clip</span>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .wf-usp-strip {
+    background: #ffffff;
+    border-top: 1px solid rgba(29,29,29,.07);
+    border-bottom: 1px solid rgba(29,29,29,.07);
+    padding: 20px 16px;
+  }
+  .wf-usp-strip__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .wf-usp-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+  .wf-usp-item__icon {
+    width: 56px;
+    height: 56px;
+    background: #F0F5FF;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .wf-usp-item__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .wf-usp-item__label {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1D1D1D;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+  }
+  @media screen and (min-width: 750px) {
+    .wf-usp-strip__inner {
+      max-width: 640px;
+      gap: 16px;
+    }
+    .wf-usp-item__icon {
+      width: 64px;
+      height: 64px;
+    }
+    .wf-usp-item__label {
+      font-size: 14px;
+    }
+  }
+</style>

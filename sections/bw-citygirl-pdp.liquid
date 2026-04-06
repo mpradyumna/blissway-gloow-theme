@@ -1,0 +1,1122 @@
+{%- comment -%}
+  BW CityGirl Dumpling Clutch — Conversion PDP Section
+  Target: India, Paid Traffic (Meta/Instagram)
+  Goal: Handle every objection. Build desire. Drive Add-to-Cart.
+  Flow: Trust → Pain Hook → Features → Capacity → Styling → Proof → Reviews → Compare → FAQ → Guarantee → CTA
+{%- endcomment -%}
+
+{%- assign product_url = product.url -%}
+{%- assign primary_variant = product.selected_or_first_available_variant -%}
+
+<style>
+  /* ── Local tokens ── */
+  .cg-pdp {
+    --cg-bg:       #F5F5F5;
+    --cg-surface:  #FFFFFF;
+    --cg-dark:     #0D0D12;
+    --cg-text:     #1D1D1D;
+    --cg-muted:    rgba(29,29,29,.52);
+    --cg-blue:     #2563EB;
+    --cg-blue-dk:  #1D4ED8;
+    --cg-blue-lt:  rgba(37,99,235,.08);
+    --cg-border:   rgba(29,29,29,.08);
+    --cg-warm:     #C8102E;
+    --cg-warm-lt:  rgba(200,16,46,.07);
+    --cg-radius:   12px;
+    --cg-radius-lg: 20px;
+    font-family: var(--bw-font-body, var(--font-body-family));
+  }
+
+  /* ── Section scaffolding ── */
+  .cg-section           { padding: 64px 20px; background: var(--cg-bg); }
+  .cg-section--white    { background: var(--cg-surface); }
+  .cg-section--dark     { background: var(--cg-dark); }
+  .cg-section--warm-lt  { background: #FDF8F8; }
+  .cg-container         { max-width: 1120px; margin: 0 auto; }
+  .cg-center            { text-align: center; }
+
+  .cg-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--cg-blue);
+    margin-bottom: 10px;
+  }
+  .cg-eyebrow--warm  { color: var(--cg-warm); }
+  .cg-eyebrow--light { color: rgba(255,255,255,.5); }
+
+  .cg-h2 {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--cg-text);
+    margin: 0 0 16px;
+  }
+  .cg-h2--white { color: #fff; }
+  .cg-sub {
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
+    line-height: 1.65;
+    color: var(--cg-muted);
+    max-width: 560px;
+    margin: 0 0 40px;
+  }
+  .cg-sub--white { color: rgba(255,255,255,.6); }
+  .cg-center .cg-sub { margin-inline: auto; }
+
+  /* ── TRUST BAR ── */
+  .cg-trust {
+    background: var(--cg-dark);
+    padding: 13px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px 24px;
+  }
+  .cg-trust__item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,.85);
+    letter-spacing: .03em;
+    white-space: nowrap;
+  }
+  .cg-trust__item svg {
+    width: 14px; height: 14px;
+    color: var(--cg-blue);
+    flex-shrink: 0;
+  }
+  .cg-trust__sep {
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.2);
+    flex-shrink: 0;
+  }
+  @media (max-width: 480px) { .cg-trust__sep { display: none; } }
+
+  /* ── PAIN HOOK ── */
+  .cg-hook {
+    padding: 72px 20px;
+    background: var(--cg-dark);
+    border-top: 1px solid rgba(37,99,235,.15);
+  }
+  .cg-hook__inner {
+    max-width: 740px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cg-hook__headline {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin: 0 0 20px;
+  }
+  .cg-hook__headline em {
+    font-style: normal;
+    color: var(--cg-blue);
+  }
+  .cg-hook__sub {
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
+    color: rgba(255,255,255,.58);
+    line-height: 1.65;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .cg-hook__rule {
+    width: 48px; height: 3px;
+    background: var(--cg-blue);
+    border-radius: 2px;
+    margin: 24px auto 0;
+  }
+
+  /* ── FEATURE CARDS ── */
+  .cg-features__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 768px) {
+    .cg-features__grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  }
+  .cg-feature-card {
+    background: var(--cg-surface);
+    border: 1px solid var(--cg-border);
+    border-radius: var(--cg-radius-lg);
+    padding: 28px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .cg-feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,0,0,.06);
+  }
+  .cg-feature-card__icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: var(--cg-blue-lt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .cg-feature-card__icon img {
+    width: 36px; height: 36px;
+    object-fit: contain;
+  }
+  .cg-feature-card__title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cg-text);
+    margin: 0 0 4px;
+    line-height: 1.3;
+  }
+  .cg-feature-card__desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--cg-muted);
+    margin: 0;
+  }
+
+  /* ── WHAT FITS INSIDE ── */
+  .cg-fits {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    .cg-fits { grid-template-columns: 1fr 1fr; }
+  }
+  .cg-fits__visual {
+    background: var(--cg-surface);
+    border-radius: var(--cg-radius-lg);
+    border: 1px solid var(--cg-border);
+    padding: 32px 28px;
+  }
+  .cg-fits__title {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--cg-text);
+    margin: 0 0 20px;
+  }
+  .cg-fits__list {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cg-fits__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--cg-text);
+  }
+  .cg-fits__check {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: #EDFAF4;
+    border: 1.5px solid #22C55E;
+    color: #22C55E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .cg-fits__note {
+    margin-top: 20px;
+    padding: 14px 16px;
+    background: var(--cg-blue-lt);
+    border-radius: 10px;
+    border-left: 3px solid var(--cg-blue);
+    font-size: 13px;
+    color: var(--cg-blue-dk);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .cg-fits__content {}
+  .cg-fits__content-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--cg-warm);
+    background: var(--cg-warm-lt);
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin-bottom: 14px;
+  }
+
+  /* ── OCCASION CARDS ── */
+  .cg-occasions__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 600px) {
+    .cg-occasions__grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .cg-occasion {
+    background: var(--cg-surface);
+    border: 1px solid var(--cg-border);
+    border-radius: var(--cg-radius-lg);
+    padding: 28px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cg-occasion::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--cg-blue);
+  }
+  .cg-occasion__icon { font-size: 32px; margin-bottom: 14px; display: block; }
+  .cg-occasion__label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--cg-blue);
+    margin-bottom: 6px;
+  }
+  .cg-occasion__title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--cg-text);
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+  .cg-occasion__desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--cg-muted);
+    margin: 0;
+  }
+
+  /* ── STATS ── */
+  .cg-stats__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 600px) {
+    .cg-stats__grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .cg-stat {
+    text-align: center;
+    padding: 28px 16px;
+    border-radius: var(--cg-radius-lg);
+    border: 1px solid rgba(255,255,255,.07);
+    background: rgba(255,255,255,.04);
+  }
+  .cg-stat__num {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--cg-blue);
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .cg-stat__label {
+    font-size: 13px;
+    color: rgba(255,255,255,.6);
+    line-height: 1.45;
+  }
+
+  /* ── REVIEWS ── */
+  .cg-reviews__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .cg-reviews__rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cg-rating__stars { color: #F59E0B; font-size: 20px; letter-spacing: 2px; }
+  .cg-rating__num {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--cg-text);
+    line-height: 1;
+  }
+  .cg-rating__count { font-size: 13px; color: var(--cg-muted); }
+  .cg-reviews__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 768px) { .cg-reviews__grid { grid-template-columns: repeat(3, 1fr); } }
+  .cg-review {
+    background: var(--cg-surface);
+    border: 1px solid var(--cg-border);
+    border-radius: var(--cg-radius-lg);
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cg-review__stars { color: #F59E0B; font-size: 14px; letter-spacing: 2px; }
+  .cg-review__badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    background: var(--cg-blue-lt);
+    color: var(--cg-blue);
+    padding: 3px 8px;
+    border-radius: 4px;
+    width: fit-content;
+  }
+  .cg-review__text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--cg-text);
+    margin: 0;
+    flex: 1;
+  }
+  .cg-review__author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid var(--cg-border);
+  }
+  .cg-review__avatar {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: var(--cg-blue-lt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cg-blue);
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+  .cg-review__name {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--cg-text);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  .cg-review__location { font-size: 11px; color: var(--cg-muted); }
+
+  /* ── COMPARISON TABLE ── */
+  .cg-compare { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cg-compare__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 440px;
+  }
+  .cg-compare__table th,
+  .cg-compare__table td {
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 13.5px;
+    border-bottom: 1px solid var(--cg-border);
+  }
+  .cg-compare__table th {
+    font-size: 12px;
+    font-weight: 700;
+    background: var(--cg-bg);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--cg-muted);
+  }
+  .cg-compare__table th:nth-child(2) {
+    background: var(--cg-blue);
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+  }
+  .cg-compare__table td:nth-child(2) {
+    background: var(--cg-blue-lt);
+    font-weight: 600;
+  }
+  .cg-compare__table td:first-child { text-align: left; font-weight: 600; color: var(--cg-text); }
+  .cg-compare__table tr:last-child td { border-bottom: none; }
+  .cg-chk   { color: #22C55E; font-size: 18px; font-weight: 700; }
+  .cg-cross  { color: #D1D5DB; font-size: 18px; }
+  .cg-maybe  { color: #F59E0B; font-size: 12px; font-weight: 600; }
+
+  /* ── FAQ ── */
+  .cg-faq__list { max-width: 740px; margin: 0 auto; }
+  .cg-faq__item { border-bottom: 1px solid var(--cg-border); }
+  .cg-faq__btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cg-text);
+    cursor: pointer;
+    text-align: left;
+    gap: 16px;
+  }
+  .cg-faq__chevron {
+    width: 20px; height: 20px;
+    flex-shrink: 0;
+    transition: transform .25s ease;
+    color: var(--cg-blue);
+  }
+  .cg-faq__item.is-open .cg-faq__chevron { transform: rotate(180deg); }
+  .cg-faq__body {
+    display: none;
+    padding: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--cg-muted);
+  }
+  .cg-faq__item.is-open .cg-faq__body { display: block; }
+
+  /* ── GUARANTEE ── */
+  .cg-guarantee {
+    background: var(--cg-dark);
+    border-radius: var(--cg-radius-lg);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    max-width: 680px;
+    margin: 0 auto;
+    border: 1px solid rgba(37,99,235,.2);
+  }
+  .cg-guarantee__seal {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(37,99,235,.3);
+    background: rgba(37,99,235,.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cg-guarantee__seal img { width: 40px; height: 40px; object-fit: contain; filter: brightness(0) invert(1); }
+  .cg-guarantee__title {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+  }
+  .cg-guarantee__text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.6);
+    max-width: 480px;
+    margin: 0;
+  }
+  .cg-guarantee__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+    margin-top: 4px;
+  }
+  .cg-guarantee__point {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,.8);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cg-guarantee__point::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--cg-blue);
+    display: block;
+  }
+
+  /* ── FINAL CTA ── */
+  .cg-final-cta {
+    background: var(--cg-blue);
+    padding: 72px 20px;
+    text-align: center;
+  }
+  .cg-final-cta__heading {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 12px;
+    line-height: 1.1;
+  }
+  .cg-final-cta__sub {
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
+    color: rgba(255,255,255,.75);
+    margin: 0 0 32px;
+  }
+  .cg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-family: var(--bw-font-body, var(--font-body-family));
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .cg-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.25); }
+  .cg-btn--white { background: #fff; color: var(--cg-blue); }
+  .cg-btn--blue  { background: var(--cg-blue); color: #fff; box-shadow: 0 4px 20px rgba(37,99,235,.35); }
+  .cg-btn--dark  { background: var(--cg-dark); color: #fff; }
+  .cg-final-cta__note {
+    margin-top: 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,.6);
+  }
+
+  /* ── SECTION DIVIDER ── */
+  .cg-divider {
+    height: 1px;
+    background: var(--cg-border);
+    margin: 0;
+  }
+
+  /* ── Scroll-reveal utility ── */
+  .cg-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  .cg-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+{%- comment -%} ═══ 1. TRUST BAR ═══ {%- endcomment -%}
+<div class="cg-pdp">
+<div class="cg-trust">
+  <div class="cg-trust__item">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m7 10 2 2 4-4"/></svg>
+    Free Delivery above ₹499
+  </div>
+  <span class="cg-trust__sep"></span>
+  <div class="cg-trust__item">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7"/><path d="M6 13s.5-3 4-3 4 3 4 3"/><path d="M3 10H1m2.5-5.5L2 3"/></svg>
+    7-Day Easy Returns
+  </div>
+  <span class="cg-trust__sep"></span>
+  <div class="cg-trust__item">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5 12 7l5 .75-3.5 3.5.8 5L9.5 14l-4.8 2.25.8-5L2 7.75 7 7Z"/></svg>
+    500+ Happy Customers
+  </div>
+  <span class="cg-trust__sep"></span>
+  <div class="cg-trust__item">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="16" height="11" rx="2"/><path d="M6 6V5a4 4 0 0 1 8 0v1"/></svg>
+    100% Secure Checkout
+  </div>
+  <span class="cg-trust__sep"></span>
+  <div class="cg-trust__item">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M10 6v4l3 3"/></svg>
+    Cash on Delivery Available
+  </div>
+</div>
+
+{%- comment -%} ═══ 2. PAIN HOOK ═══ {%- endcomment -%}
+<div class="cg-hook">
+  <div class="cg-hook__inner cg-reveal">
+    <span class="cg-eyebrow cg-eyebrow--light">The bag that stops conversations</span>
+    <h2 class="cg-hook__headline">
+      Most bags just carry things.<br>
+      <em>This one gets noticed.</em>
+    </h2>
+    <p class="cg-hook__sub">You know that moment — someone across the room leans over and asks "where is that bag from?" That's the whole point of this one. It's bold enough to get asked about, practical enough to actually live in.</p>
+    <div class="cg-hook__rule"></div>
+  </div>
+</div>
+
+{%- comment -%} ═══ 3. FEATURE CARDS ═══ {%- endcomment -%}
+<div class="cg-section cg-section--white">
+  <div class="cg-container">
+    <div class="cg-center" style="margin-bottom: 40px;">
+      <span class="cg-eyebrow">What makes it different</span>
+      <h2 class="cg-h2">Built for women who notice<br>the details — and so does everyone else</h2>
+    </div>
+    <div class="cg-features__grid">
+
+      <div class="cg-feature-card cg-reveal">
+        <div class="cg-feature-card__icon">
+          <img src="{{ 'icon-knit-fabric.png' | asset_url }}" alt="Soft knit fabric" width="36" height="36" loading="lazy">
+        </div>
+        <div>
+          <p class="cg-feature-card__title">Soft knit that holds its shape</p>
+          <p class="cg-feature-card__desc">The fabric has this satisfying tactile quality — soft enough to squeeze, structured enough to sit right. It doesn't collapse or lose form through a full day of use.</p>
+        </div>
+      </div>
+
+      <div class="cg-feature-card cg-reveal" style="transition-delay: .08s;">
+        <div class="cg-feature-card__icon">
+          <img src="{{ 'icon-spacious.png' | asset_url }}" alt="Fits your essentials" width="36" height="36" loading="lazy">
+        </div>
+        <div>
+          <p class="cg-feature-card__title">Compact outside. Surprisingly roomy inside.</p>
+          <p class="cg-feature-card__desc">Phone, cards, lip gloss, keys — all in, no stuffing. The main compartment opens wider than it looks. Nothing gets crushed.</p>
+        </div>
+      </div>
+
+      <div class="cg-feature-card cg-reveal" style="transition-delay: .16s;">
+        <div class="cg-feature-card__icon">
+          <img src="{{ 'icon-colorblock.png' | asset_url }}" alt="Vibrant colorblock" width="36" height="36" loading="lazy">
+        </div>
+        <div>
+          <p class="cg-feature-card__title">Bold colors that go with more than you think</p>
+          <p class="cg-feature-card__desc">We skipped neutral on purpose. The colorblock stripes look intentional with everything from a white kurta to an all-black outfit. That's the trick.</p>
+        </div>
+      </div>
+
+      <div class="cg-feature-card cg-reveal" style="transition-delay: .24s;">
+        <div class="cg-feature-card__icon">
+          <img src="{{ 'icon-lightweight.png' | asset_url }}" alt="Lightweight to carry" width="36" height="36" loading="lazy">
+        </div>
+        <div>
+          <p class="cg-feature-card__title">Carries everything. Feels like nothing.</p>
+          <p class="cg-feature-card__desc">Light enough to hold all evening without your arm getting tired. The wrist loop distributes the weight naturally — no awkward gripping required.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="cg-divider"></div>
+
+{%- comment -%} ═══ 4. WHAT FITS INSIDE ═══ {%- endcomment -%}
+<div class="cg-section">
+  <div class="cg-container">
+    <div class="cg-fits">
+      <div class="cg-fits__visual cg-reveal">
+        <p class="cg-fits__title">What actually fits inside</p>
+        <ul class="cg-fits__list">
+          <li class="cg-fits__item"><span class="cg-fits__check">✓</span> Smartphone (up to 6.7 inch)</li>
+          <li class="cg-fits__item"><span class="cg-fits__check">✓</span> Card holder or slim wallet</li>
+          <li class="cg-fits__item"><span class="cg-fits__check">✓</span> Lip gloss or compact</li>
+          <li class="cg-fits__item"><span class="cg-fits__check">✓</span> Keys (no bulk keychains)</li>
+          <li class="cg-fits__item"><span class="cg-fits__check">✓</span> Earphones / earpods case</li>
+          <li class="cg-fits__item"><span class="cg-fits__check">✓</span> A folded note or small receipt</li>
+        </ul>
+        <div class="cg-fits__note">
+          This is a clutch, not a tote — and that's exactly the point. It has everything you need for an evening out, and nothing you don't.
+        </div>
+      </div>
+      <div class="cg-fits__content cg-reveal" style="transition-delay: .1s;">
+        <span class="cg-fits__content-tag">Real talk</span>
+        <h2 class="cg-h2" style="margin-bottom: 16px;">The "is it big enough" question — answered honestly</h2>
+        <p class="cg-sub" style="margin-bottom: 24px;">If you're looking for something to carry a laptop and three notebooks, this isn't it. But if you're heading to a wedding, brunch, or a night out and want a bag that makes the outfit — this is the one.</p>
+        <p style="font-size: 14px; line-height: 1.7; color: var(--cg-muted);">The opening is wider than it looks in photos. Several customers were genuinely surprised by how much fits. The secret is the way the knit fabric gives slightly without losing its shape — so things settle in without looking bulgy.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cg-divider"></div>
+
+{%- comment -%} ═══ 5. STYLING OCCASIONS ═══ {%- endcomment -%}
+<div class="cg-section cg-section--white">
+  <div class="cg-container">
+    <div class="cg-center" style="margin-bottom: 40px;">
+      <span class="cg-eyebrow">How to wear it</span>
+      <h2 class="cg-h2">Three outfits. One bag.<br>That's the whole strategy.</h2>
+      <p class="cg-sub">You won't have to think twice about whether it goes. The colorblock does the work of making any outfit look more put-together than it actually is.</p>
+    </div>
+    <div class="cg-occasions__grid">
+      <div class="cg-occasion cg-reveal">
+        <span class="cg-occasion__icon">☕</span>
+        <p class="cg-occasion__label">Weekend Brunch</p>
+        <p class="cg-occasion__title">Jeans, linen top, this bag</p>
+        <p class="cg-occasion__desc">The boldness of the colorblock does all the heavy lifting. You can wear literally the simplest outfit and still look like you put thought into it.</p>
+      </div>
+      <div class="cg-occasion cg-reveal" style="transition-delay: .08s;">
+        <span class="cg-occasion__icon">🥂</span>
+        <p class="cg-occasion__label">Parties & Weddings</p>
+        <p class="cg-occasion__title">Evening wear, no stress</p>
+        <p class="cg-occasion__desc">It sits beautifully in hand or on a wrist. Small enough to not get in the way on the dance floor. Striking enough to deserve its own compliments.</p>
+      </div>
+      <div class="cg-occasion cg-reveal" style="transition-delay: .16s;">
+        <span class="cg-occasion__icon">🌆</span>
+        <p class="cg-occasion__label">Work to Evening</p>
+        <p class="cg-occasion__title">Office day, dinner after</p>
+        <p class="cg-occasion__desc">Leave the large work bag at your desk and switch to this. It's the detail that makes the transition from meeting to dinner feel intentional.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- comment -%} ═══ 6. PROOF STATS ═══ {%- endcomment -%}
+<div class="cg-section cg-section--dark">
+  <div class="cg-container">
+    <div class="cg-center" style="margin-bottom: 40px;">
+      <span class="cg-eyebrow cg-eyebrow--light">The numbers</span>
+      <h2 class="cg-h2 cg-h2--white">Bought on impulse.<br>Kept forever.</h2>
+    </div>
+    <div class="cg-stats__grid">
+      <div class="cg-stat cg-reveal">
+        <span class="cg-stat__num">500+</span>
+        <span class="cg-stat__label">Women wearing it across India</span>
+      </div>
+      <div class="cg-stat cg-reveal" style="transition-delay: .08s;">
+        <span class="cg-stat__num">4.8★</span>
+        <span class="cg-stat__label">Average rating from verified buyers</span>
+      </div>
+      <div class="cg-stat cg-reveal" style="transition-delay: .16s;">
+        <span class="cg-stat__num">6+</span>
+        <span class="cg-stat__label">Colorways to match your mood</span>
+      </div>
+      <div class="cg-stat cg-reveal" style="transition-delay: .24s;">
+        <span class="cg-stat__num">91%</span>
+        <span class="cg-stat__label">Buyers who rated it 4 or 5 stars</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- comment -%} ═══ 7. REVIEWS ═══ {%- endcomment -%}
+<div class="cg-section cg-section--white">
+  <div class="cg-container">
+    <div class="cg-reviews__header">
+      <div>
+        <span class="cg-eyebrow">Customer reviews</span>
+        <h2 class="cg-h2" style="margin-bottom: 0;">What they said<br>after it arrived</h2>
+      </div>
+      <div class="cg-reviews__rating">
+        <span class="cg-rating__num">4.8</span>
+        <div>
+          <div class="cg-rating__stars">★★★★★</div>
+          <div class="cg-rating__count">Based on 500+ orders</div>
+        </div>
+      </div>
+    </div>
+    <div class="cg-reviews__grid">
+
+      <div class="cg-review cg-reveal">
+        <div class="cg-review__stars">★★★★★</div>
+        <span class="cg-review__badge">Verified Purchase</span>
+        <p class="cg-review__text">"Genuinely wasn't expecting this quality at this price. Got so many compliments at my friend's wedding — one aunty literally stopped me in the middle of the shaadi to ask about it. The red-purple one looks even better in person than in the photos."</p>
+        <div class="cg-review__author">
+          <div class="cg-review__avatar">A</div>
+          <div>
+            <div class="cg-review__name">Anika R.</div>
+            <div class="cg-review__location">Delhi · Bought: Red & Purple Stripe</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cg-review cg-reveal" style="transition-delay: .08s;">
+        <div class="cg-review__stars">★★★★★</div>
+        <span class="cg-review__badge">Verified Purchase</span>
+        <p class="cg-review__text">"Wore it to a work dinner and three people asked where I got it from. Ordered a second colorway the same night — that's how fast I decided. The size is perfect. Fits my phone, card case and gloss without looking stuffed."</p>
+        <div class="cg-review__author">
+          <div class="cg-review__avatar">S</div>
+          <div>
+            <div class="cg-review__name">Simran K.</div>
+            <div class="cg-review__location">Mumbai · Bought: 2 colorways</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cg-review cg-reveal" style="transition-delay: .16s;">
+        <div class="cg-review__stars">★★★★☆</div>
+        <span class="cg-review__badge">Verified Purchase</span>
+        <p class="cg-review__text">"It's smaller than I expected but I actually love it — forced me to carry only what matters. The knit feels premium, not at all cheap. Used it at two events already and it photographs so well. Definitely coming back for more colours."</p>
+        <div class="cg-review__author">
+          <div class="cg-review__avatar">P</div>
+          <div>
+            <div class="cg-review__name">Priya S.</div>
+            <div class="cg-review__location">Bangalore · Bought: Blue Colorblock</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="cg-divider"></div>
+
+{%- comment -%} ═══ 8. COMPARISON TABLE ═══ {%- endcomment -%}
+<div class="cg-section">
+  <div class="cg-container">
+    <div class="cg-center" style="margin-bottom: 40px;">
+      <span class="cg-eyebrow">How it compares</span>
+      <h2 class="cg-h2">Not all clutches are made equal.<br>Here's the honest breakdown.</h2>
+    </div>
+    <div class="cg-compare">
+      <table class="cg-compare__table">
+        <thead>
+          <tr>
+            <th style="text-align:left;">Feature</th>
+            <th>CityGirl Clutch</th>
+            <th>Cheap Fabric Bag</th>
+            <th>Plain Wallet Clutch</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Head-turning design</td>
+            <td><span class="cg-chk">✓</span></td>
+            <td><span class="cg-cross">✗</span></td>
+            <td><span class="cg-cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Soft premium knit fabric</td>
+            <td><span class="cg-chk">✓</span></td>
+            <td><span class="cg-cross">✗</span></td>
+            <td><span class="cg-cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Fits phone + cards + gloss</td>
+            <td><span class="cg-chk">✓</span></td>
+            <td><span class="cg-maybe">Sometimes</span></td>
+            <td><span class="cg-cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Structured — holds its shape</td>
+            <td><span class="cg-chk">✓</span></td>
+            <td><span class="cg-cross">✗</span></td>
+            <td><span class="cg-chk">✓</span></td>
+          </tr>
+          <tr>
+            <td>7-day return policy</td>
+            <td><span class="cg-chk">✓</span></td>
+            <td><span class="cg-cross">✗</span></td>
+            <td><span class="cg-maybe">Varies</span></td>
+          </tr>
+          <tr>
+            <td>Worth buying twice</td>
+            <td><span class="cg-chk">✓</span></td>
+            <td><span class="cg-cross">✗</span></td>
+            <td><span class="cg-cross">✗</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{%- comment -%} ═══ 9. FAQ ═══ {%- endcomment -%}
+<div class="cg-section cg-section--white">
+  <div class="cg-container">
+    <div class="cg-center" style="margin-bottom: 40px;">
+      <span class="cg-eyebrow">Questions people actually ask</span>
+      <h2 class="cg-h2">Answers before you<br>have to ask</h2>
+    </div>
+    <div class="cg-faq__list">
+
+      <div class="cg-faq__item">
+        <button class="cg-faq__btn" aria-expanded="false">
+          Will this fit my phone? I have a large one.
+          <svg class="cg-faq__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 5 5 5-5"/></svg>
+        </button>
+        <div class="cg-faq__body">
+          Yes — it fits phones up to 6.7 inches. That covers most current iPhone and Android models including iPhone 14 Pro Max. The knit gives slightly so there's no forcing it in. Just slides in and out easily.
+        </div>
+      </div>
+
+      <div class="cg-faq__item">
+        <button class="cg-faq__btn" aria-expanded="false">
+          The colors look different on different screens. What do they look like in person?
+          <svg class="cg-faq__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 5 5 5-5"/></svg>
+        </button>
+        <div class="cg-faq__body">
+          Bolder and richer than most screens show. The red is a deep cherry red — not orange-red. The purple is more lavender in natural light. A few customers said they were pleasantly surprised because it looked even better in hand than in the listing. That said, if you're unsure, our 7-day return policy means there's no real risk.
+        </div>
+      </div>
+
+      <div class="cg-faq__item">
+        <button class="cg-faq__btn" aria-expanded="false">
+          Can I wash it? What if it gets dirty at an event?
+          <svg class="cg-faq__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 5 5 5-5"/></svg>
+        </button>
+        <div class="cg-faq__body">
+          For light surface dirt, a damp cloth works perfectly — the knit doesn't absorb stains easily. We recommend spot cleaning rather than machine washing to keep the structure intact. The colorblock stays vibrant through careful cleaning.
+        </div>
+      </div>
+
+      <div class="cg-faq__item">
+        <button class="cg-faq__btn" aria-expanded="false">
+          I've ordered from Instagram shops before and been disappointed. Why is this different?
+          <svg class="cg-faq__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 5 5 5-5"/></svg>
+        </button>
+        <div class="cg-faq__body">
+          Completely fair concern. A few things that might help: we have a 7-day return policy — no questions about whether you "used" it. We don't use AI or retouch product images to misrepresent the product. And the reviews on this page are from real verified purchases. If it isn't what you expected, we'll sort it out.
+        </div>
+      </div>
+
+      <div class="cg-faq__item">
+        <button class="cg-faq__btn" aria-expanded="false">
+          How long does delivery take? I need it for an event.
+          <svg class="cg-faq__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 5 5 5-5"/></svg>
+        </button>
+        <div class="cg-faq__body">
+          Metro cities (Delhi, Mumbai, Bangalore, Hyderabad, Chennai, Pune) typically receive orders in 3-5 business days. Tier 2 cities take 5-7 days. If you have a specific event date, drop us a message before ordering and we'll confirm if we can make it in time.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{%- comment -%} ═══ 10. GUARANTEE ═══ {%- endcomment -%}
+<div class="cg-section cg-section--dark">
+  <div class="cg-container">
+    <div class="cg-guarantee cg-reveal">
+      <div class="cg-guarantee__seal">
+        <img src="{{ 'icon-guarantee.png' | asset_url }}" alt="Blissway Guarantee" width="40" height="40" loading="lazy">
+      </div>
+      <h3 class="cg-guarantee__title">The Blissway Promise</h3>
+      <p class="cg-guarantee__text">We're confident you'll love it. But if for any reason it's not right — the colour isn't what you imagined, the size isn't working, or it just isn't for you — reach out within 7 days and we'll make it right.</p>
+      <div class="cg-guarantee__items">
+        <span class="cg-guarantee__point">7-day returns, no drama</span>
+        <span class="cg-guarantee__point">Exchange for another colour</span>
+        <span class="cg-guarantee__point">Full refund if eligible</span>
+        <span class="cg-guarantee__point">Real humans answering</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- comment -%} ═══ 11. FINAL CTA ═══ {%- endcomment -%}
+<div class="cg-final-cta">
+  <div class="cg-container cg-center">
+    <div class="cg-reveal">
+      <span class="cg-eyebrow" style="color: rgba(255,255,255,.6);">Still reading?</span>
+      <h2 class="cg-final-cta__heading">Your next "where is<br>that bag from?" moment</h2>
+      <p class="cg-final-cta__sub">Limited colorways. Once a shade sells out, it's gone.</p>
+      <a href="{{ product.url }}" class="cg-btn cg-btn--white">
+        Shop The CityGirl Clutch
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12m-6-6 6 6-6 6"/></svg>
+      </a>
+      <p class="cg-final-cta__note">Free delivery · 7-day returns · COD available</p>
+    </div>
+  </div>
+</div>
+
+</div>{%- comment -%} /.cg-pdp {%- endcomment -%}
+
+<script>
+  // Scroll-reveal
+  (function () {
+    var els = document.querySelectorAll('.cg-reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+
+  // FAQ accordion
+  document.querySelectorAll('.cg-faq__btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.cg-faq__item');
+      var isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.cg-faq__item.is-open').forEach(function (open) { open.classList.remove('is-open'); });
+      if (!isOpen) item.classList.add('is-open');
+      btn.setAttribute('aria-expanded', item.classList.contains('is-open'));
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "CityGirl Clutch PDP",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_bar",
+      "label": "Show trust bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pain_hook",
+      "label": "Show pain hook section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Stats"
+    },
+    {
+      "type": "text",
+      "id": "stat_customers",
+      "label": "Customers stat",
+      "default": "500+"
+    },
+    {
+      "type": "text",
+      "id": "stat_rating",
+      "label": "Rating stat",
+      "default": "4.8★"
+    },
+    {
+      "type": "text",
+      "id": "stat_colors",
+      "label": "Colors stat",
+      "default": "6+"
+    },
+    {
+      "type": "text",
+      "id": "stat_percent",
+      "label": "Satisfaction percent",
+      "default": "91%"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CityGirl Clutch PDP"
+    }
+  ]
+}
+{% endschema %}

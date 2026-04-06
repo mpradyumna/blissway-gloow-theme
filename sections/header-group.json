@@ -154,11 +154,22 @@
         "padding_top": 12,
         "padding_bottom": 12
       }
+    },
+    "custom_liquid_FbrJTH": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Prepaid Ticker Banner - Custom HTML/CSS -->\n<!-- Scrolling promotional banner with trust signals -->\n<!-- Midnight Luxe Design System -->\n\n<div class=\"blissway-ticker-banner\">\n  <div class=\"ticker-content\">\n    <!-- Repeating ticker items -->\n    <div class=\"ticker-item\">⚡ Extra 5% OFF on Prepaid / UPI orders</div>\n    <div class=\"ticker-separator\">·</div>\n    <div class=\"ticker-item\">🔒 Secure Checkout</div>\n    <div class=\"ticker-separator\">·</div>\n    <div class=\"ticker-item\">💳 UPI · Cards · Wallets</div>\n    <div class=\"ticker-separator\">·</div>\n    <div class=\"ticker-item\">📦 COD Available</div>\n    <div class=\"ticker-separator\">·</div>\n    <div class=\"ticker-item\">🚚 Ships in 24 Hours</div>\n    <div class=\"ticker-separator\">·</div>\n    <div class=\"ticker-item\">↩️ 7-Day Easy Returns</div>\n    \n    <!-- Repeat for continuous scroll -->\n    <div class=\"ticker-item\">⚡ Extra 10% OFF on Prepaid / UPI orders</div>\n    <div class=\"ticker-separator\">·</div>\n    <div class=\"ticker-item\">🔒 Secure Checkout</div>\n    <div class=\"ticker-separator\">·</div>\n    <div class=\"ticker-item\">💳 UPI · Cards · Wallets</div>\n    <div class=\"ticker-separator\">·</div>\n    <div class=\"ticker-item\">📦 COD Available</div>\n    <div class=\"ticker-separator\">·</div>\n    <div class=\"ticker-item\">🚚 Ships in 24 Hours</div>\n    <div class=\"ticker-separator\">·</div>\n    <div class=\"ticker-item\">↩️ 7-Day Easy Returns</div>\n  </div>\n</div>\n\n<style>\n  /* Midnight Luxe Color Palette */\n  :root {\n    --color-bg: #0F0F14;\n    --color-surface: #1A1A22;\n    --color-text-primary: #F0EDE8;\n    --color-text-secondary: #8A8A95;\n    --color-accent: #00D4AA;\n    --color-accent-dark: #00A080;\n    --color-gold: #C9A96E;\n    --color-border: rgba(255, 255, 255, 0.08);\n  }\n\n  /* Ticker Banner Container */\n  .blissway-ticker-banner {\n    background: linear-gradient(90deg, #0F0F14 0%, #1A1A22 50%, #0F0F14 100%);\n    border-top: 1px solid var(--color-border);\n    border-bottom: 1px solid var(--color-border);\n    padding: 12px 0;\n    overflow: hidden;\n    position: relative;\n  }\n\n  /* Ticker Content */\n  .ticker-content {\n    display: flex;\n    gap: 24px;\n    align-items: center;\n    animation: scroll-left 30s linear infinite;\n    white-space: nowrap;\n    padding: 0 20px;\n  }\n\n  /* Pause animation on hover */\n  .blissway-ticker-banner:hover .ticker-content {\n    animation-play-state: paused;\n  }\n\n  /* Ticker Item */\n  .ticker-item {\n    font-size: 14px;\n    font-weight: 600;\n    color: var(--color-text-primary);\n    letter-spacing: 0.02em;\n    flex-shrink: 0;\n    display: inline-block;\n  }\n\n  /* Separator */\n  .ticker-separator {\n    font-size: 14px;\n    color: var(--color-accent);\n    flex-shrink: 0;\n    display: inline-block;\n    opacity: 0.6;\n  }\n\n  /* Scroll Animation */\n  @keyframes scroll-left {\n    0% {\n      transform: translateX(0);\n    }\n    100% {\n      transform: translateX(50%);\n    }\n  }\n\n  /* Mobile Responsive */\n  @media (max-width: 768px) {\n    .blissway-ticker-banner {\n      padding: 10px 0;\n    }\n\n    .ticker-content {\n      gap: 16px;\n      padding: 0 16px;\n      animation-duration: 20s;\n    }\n\n    .ticker-item {\n      font-size: 12px;\n    }\n\n    .ticker-separator {\n      font-size: 12px;\n    }\n  }\n\n  /* Dark Mode Support */\n  @media (prefers-color-scheme: dark) {\n    .blissway-ticker-banner {\n      background: linear-gradient(90deg, #0F0F14 0%, #1A1A22 50%, #0F0F14 100%);\n    }\n  }\n</style>",
+        "color_scheme": "background-2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "announcement_bar_scrolling_VL3jq6",
     "announcement-bar",
-    "header"
+    "header",
+    "custom_liquid_FbrJTH"
   ]
 }

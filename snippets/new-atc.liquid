@@ -678,26 +678,6 @@
         }
     });
 
-    function updateStickyPosition() {
-        var isMobile = window.innerWidth < 750;
-        var position = isMobile ? mobilePosition : desktopPosition;
-        
-        if (isMobile) {
-            atcElement.style.top = position === 'top' ? '-200px' : 'auto';
-            atcElement.style.bottom = position === 'bottom' ? '-200px' : 'auto';
-            atcElement.style.transform = 'translateY(100%)';
-        } else {
-            // Desktop positioning with centering
-            //atcElement.style.left = '50%';
-            atcElement.style.top = position === 'top' ? '-200px' : 'auto';
-            atcElement.style.bottom = position === 'bottom' ? '-200px' : 'auto';
-            atcElement.style.transform = 'translateX(-50%) translateY(100%)';
-        }
-    }
-
-    updateStickyPosition();
-    window.addEventListener('resize', updateStickyPosition);
-
     function isElementInViewport(el) {
         if (!el) return false;
         var rect = el.getBoundingClientRect();
@@ -731,7 +711,7 @@
                     var position = isMobile ? mobilePosition : desktopPosition;
                     
                     // Determine if sticky ATC should be shown
-                    var shouldShow = !isMainAtcVisible && entry.boundingClientRect.bottom < 0;
+                    var shouldShow = !isMainAtcVisible;
                     
                     // Hide when footer is visible (for bottom position)
                     if (position === 'bottom' && isFooterInView) {
@@ -773,7 +753,7 @@
                                 var isMainAtcVisible = mainAtcRect.top >= 0 && mainAtcRect.bottom <= window.innerHeight;
                                 var isHeaderInView = isElementInViewport(headerElement);
                                 
-                                var shouldShow = !isMainAtcVisible && mainAtcRect.bottom < 0;
+                                var shouldShow = !isMainAtcVisible;
                                 
                                 // Hide when header is visible (for top position)
                                 if (position === 'top' && isHeaderInView) {
@@ -808,7 +788,7 @@
                                 var isMainAtcVisible = mainAtcRect.top >= 0 && mainAtcRect.bottom <= window.innerHeight;
                                 var isFooterInView = isElementInViewport(footerElement);
                                 
-                                var shouldShow = !isMainAtcVisible && mainAtcRect.bottom < 0;
+                                var shouldShow = !isMainAtcVisible;
                                 
                                 // Hide when footer is visible (for bottom position)
                                 if (position === 'bottom' && isFooterInView) {
@@ -828,13 +808,13 @@
         } else {
             // Fallback to scroll listener for older browsers
             window.addEventListener("scroll", function() {
-                var isTargetElementOutOfView = targetElement && targetElement.getBoundingClientRect().bottom < 0;
+                var isTargetElementVisible = isElementInViewport(targetElement);
                 var isFooterInView = isElementInViewport(footerElement);
                 var isHeaderInView = isElementInViewport(headerElement);
                 var isMobile = window.innerWidth < 750;
                 var position = isMobile ? mobilePosition : desktopPosition;
                 
-                var shouldShow = isTargetElementOutOfView;
+                var shouldShow = !isTargetElementVisible;
                 
                 // Hide when footer is visible (for bottom position)
                 if (position === 'bottom' && isFooterInView) {
@@ -889,13 +869,23 @@
   max-width: 100%;
   overflow: hidden;
   }
+  .sticky-atc-price .price-item--regular {
+    color: {{settings.sticky_atc_box_text}};
+    font-size: {{ settings.sticky_atc_price_font_size }}rem;
+    opacity: 0.7;
+  }
+  .sticky-atc-price .price-item--sale {
+    color: {{settings.sticky_atc_price_font_color}};
+    font-size: {{ settings.sticky_atc_price_font_size }}rem;
+  }
   .sticky-atc-price .price--on-sale .price-item--regular {
     color: {{settings.sticky_atc_price_sale_color}};
     font-size: {{ settings.sticky_atc_price_font_size }}rem;
   }
   .sticky-atc-price .price--on-sale s {
-    color: {{settings.sticky_atc_price_sale_color}};
+    color: {{settings.sticky_atc_box_text}};
     font-size: {{ settings.sticky_atc_price_font_size }}rem;
+    opacity: 0.7;
   }
 
   #selectedVariantImage-mobile,
@@ -920,13 +910,12 @@
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
-    top: auto;
-    bottom: auto;
   }
 
   .sticky-atc.always-visible {
-    top: auto !important;
-    bottom: auto !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .sticky-atc .sticky-atc-variant-selects {
@@ -1133,7 +1122,25 @@
     }
   }
 
-
+  .atc-button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .atc-button-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    vertical-align: middle;
+  }
+  .atc-button-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
+  }
 
   /* Disabled state styling */
   .sticky-atc-button:disabled {
@@ -1410,7 +1417,7 @@
       gap: 20px;
     }
 
-        .sticky-atc-desktop {
+    .sticky-atc-desktop {
       display: flex;
       align-items: center;
       gap: 20px;
@@ -1418,7 +1425,7 @@
       justify-content: space-between;
       padding-bottom: 10px;
       padding-top: 10px;
-  }
+    }
 
     .sticky-atc-image {
       flex: 0 0 {{ settings.sticky_atc_desktop_img_width }}px;
@@ -1436,10 +1443,6 @@
       width:100%;
     }
 
-    .sticky-atc-title {
-      /* flex: 0 0 25%; */
-    }
-
     .sticky-atc-contents {
       flex: 0 0  calc(100% - {{ settings.sticky_atc_desktop_img_width }}px - 240px);
       overflow: hidden;
@@ -1448,15 +1451,6 @@
       align-items: center;
       justify-content: space-between;
     }
-
-   /* .sticky-atc-price {
-     flex: none;
-    }*/
-
-    /*.atc-button-container {
-      flex: 0 0 30%;
-      max-width: 200px;
-    }*/
 
     .sticky-atc-title-desktop {
       font-size: {{ settings.sticky_atc_title_font_size }}rem;
@@ -1495,15 +1489,6 @@
       min-width: 50px;
       max-width: 250px;
     }
-
-  }
-
-  @media (min-width: 990px) {
-    {% if settings.desktop_sticky_position == "top" %}
-    .sticky-atc.show {
-      top: {{ settings.desktop_sticky_top_offset }}px;
-    }
-    {% endif %}
 
     .sticky-atc-active-variant {
       gap: 0;

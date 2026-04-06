@@ -589,6 +589,52 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Table Styles for Advertorial Content */
+.content-text table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.content-text table thead tr {
+  background-color: #be185d;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-text table th,
+.content-text table td {
+  padding: 12px 15px;
+  border: 1px solid #eeeeee;
+}
+
+.content-text table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-text table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-text table tbody tr:last-of-type {
+  border-bottom: 2px solid #be185d;
+}
+
+@media (max-width: 600px) {
+  .content-text {
+    overflow-x: auto;
+  }
+  .content-text table {
+    min-width: 100%;
+  }
+}
+
 
 
 /* Countdown Timer Styles */
@@ -1960,7 +2006,14 @@
   }
 }
 
-</style>
+{% for block in section.blocks %}
+  {% if block.type == 'custom_css' %}
+    <style>
+      {{ block.settings.css }}
+    </style>
+  {% endif %}
+{% endfor %}
+
 
 {% assign has_right_column = false %}
 {% for block in section.blocks %}
@@ -2153,7 +2206,12 @@
     <!-- Left Column - Content Blocks -->
     <div class="content-left-column">
       {% for block in section.blocks %}
-        {% unless block.type == 'countdown_timer' %}
+        {% assign is_content_block = false %}
+        {% if block.type == 'headline' or block.type == 'image' or block.type == 'author' or block.type == 'rating_summary' or block.type == 'text' or block.type == 'bullet_points' or block.type == 'button' or block.type == 'customer_review' or block.type == 'promotional' or block.type == 'two_column' %}
+          {% assign is_content_block = true %}
+        {% endif %}
+        
+        {% if is_content_block %}
           <div class="content-block" {{ block.shopify_attributes }} style="padding-top: {{ block.settings.top_padding }}px; padding-bottom: {{ block.settings.bottom_padding }}px;">
             {% case block.type %}
             {% when 'headline' %}
@@ -2272,7 +2330,7 @@
                 }
                 }
               </style>
-              <div class="content-text content-text-{{ block.id }}" style="font-size: {{ block.settings.text_size }}px; color: {{ block.settings.text_color }};">
+              <div class="content-text content-text-{{ block.id }} content-text-type-{{ block.type }} block-{{ block.id }}" style="font-size: {{ block.settings.text_size }}px; color: {{ block.settings.text_color }};">
                 {% assign return_text = block.settings.text %}
                 
                 {% comment %} Process highlighted text using \\ syntax {% endcomment %}
@@ -2636,7 +2694,7 @@
             
             {% endcase %}
           </div>
-        {% endunless %}
+        {% endif %}
       {% endfor %}
     </div>
 
@@ -6811,6 +6869,18 @@
             { "value": "right", "label": "Right" }
           ],
           "default": "center"
+        }
+      ]
+    },
+    {
+      "type": "custom_css",
+      "name": "Custom CSS",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "css",
+          "label": "Custom CSS",
+          "default": "/* Add your custom CSS here */"
         }
       ]
     }

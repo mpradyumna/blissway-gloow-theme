@@ -1,0 +1,2593 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ss_feature_52_tjqghd": {
+      "type": "ss-feature-52",
+      "blocks": {
+        "heading_Mr6mXD": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Bladeless Desktop Fan </h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 20,
+            "heading_size_mobile": 12,
+            "heading_advanced": false,
+            "heading_height": 130,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#ffffff"
+          }
+        },
+        "feature_V4x8mP": {
+          "type": "feature",
+          "settings": {
+            "heading": "<h3>Portable & Rechargeable</h3>",
+            "text": "<p>Use for hours without plugging in — perfect for desk, couch, bedroom, travel, gym or car</p>"
+          }
+        },
+        "feature_KH9hC9": {
+          "type": "feature",
+          "settings": {
+            "heading": "<h3>Safe & Child-Friendly</h3>",
+            "text": "<p>No exposed blades — peace of mind for homes with kids or pets. </p>"
+          }
+        },
+        "feature_hW3tg6": {
+          "type": "feature",
+          "settings": {
+            "heading": "<h3>Quiet & Smooth Airflow</h3>",
+            "text": "<p>Experience a gentle, consistent breeze — no choppy airflow like traditional fans.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Mr6mXD",
+        "feature_V4x8mP",
+        "feature_KH9hC9",
+        "feature_hW3tg6"
+      ],
+      "name": "SS - Feature #52",
+      "settings": {
+        "layout": "content_image",
+        "layout_mobile": "image_content",
+        "image_width": 35,
+        "layout_gap": 32,
+        "layout_gap_mobile": 32,
+        "content_align": "left",
+        "content_align_mobile": "left",
+        "image": "shopify://shop_images/7_24bbc95a-f77a-48de-8f59-8bbdd8cadf3b.png",
+        "image_ratio": "square",
+        "image_ratio_mobile": "square",
+        "image_radius": 16,
+        "image_border_thickness": 0,
+        "feature_accordion_advanced": false,
+        "feature_accordion_mt": 16,
+        "feature_accordion_mt_mobile": 20,
+        "feature_accordion_gap": 30,
+        "feature_accordion_gap_mobile": 30,
+        "feature_accordion_width": 70,
+        "feature_accordion_animate_duration": 7,
+        "feature_item_padding": 0,
+        "feature_item_padding_mobile": 0,
+        "feature_item_border_radius": 0,
+        "feature_item_border_thickness": 0,
+        "feature_heading_custom": false,
+        "feature_heading_font": "josefin_sans_n4",
+        "feature_heading_size": 40,
+        "feature_heading_size_mobile": 24,
+        "feature_heading_height": 130,
+        "feature_text_custom": false,
+        "feature_text_font": "josefin_sans_n4",
+        "feature_text_size": 22,
+        "feature_text_size_mobile": 16,
+        "feature_text_height": 150,
+        "progress_bar_margin": 10,
+        "progress_bar_margin_mobile": 10,
+        "progress_bar_height": 2,
+        "controls_advanced": false,
+        "controls_mt": 16,
+        "controls_mt_mobile": 20,
+        "controls_gap": 20,
+        "controls_gap_mobile": 20,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": true,
+        "arrow_size": 48,
+        "arrow_size_mobile": 48,
+        "arrow_icon_size": 10,
+        "arrow_icon_size_mobile": 10,
+        "arrow_radius": 100,
+        "arrow_border_thickness": 0,
+        "arrow_hover_effect": "color",
+        "controls_text_custom": false,
+        "controls_text_font": "josefin_sans_n4",
+        "controls_text_size": 16,
+        "controls_text_size_mobile": 16,
+        "controls_text_height": 150,
+        "feature_heading_color": "#ffffff",
+        "feature_text_color": "#f2f2f2",
+        "progress_bar_bg": "#f0eeff",
+        "feature_item_bg_color": "rgba(0,0,0,0)",
+        "feature_item_border_color": "#121212",
+        "arrow_color": "#000000",
+        "arrow_hover_color": "#ffffff",
+        "arrow_bg_color": "#f7f7f7",
+        "arrow_bg_hover_color": "#000000",
+        "arrow_border_color": "#121212",
+        "arrow_border_hover_color": "#121212",
+        "controls_text_color": "#ffffff",
+        "image_border_color": "#121212",
+        "background_style": "solid",
+        "background_color": "#000000",
+        "background_gradient": "linear-gradient(180deg, rgba(116, 183, 227, 1), rgba(242, 242, 242, 1) 100%)",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "custom_liquid_KUjCKC": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section id=\"shopify-section-template--18249071952201__17a25933-8c69-48a5-95b9-76741e61440d\" class=\"shopify-section banner-section\"><style>\n\n .section-template--18249071952201__17a25933-8c69-48a5-95b9-76741e61440d-padding {\n    max-width: 120rem;\n }\n  \n.media {\n  background-color:unset;\n}\n  \n.banner-section {\n  padding-top: 60px;\n  position: relative;\n  padding-bottom: 80px;\n}\n.banner-section::after {\n  content: \"\";\n  width: 100%;\n  height: 200px;\n  position: absolute;\n  display: block;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center bottom;\n}\n.banner-section .banner-curves > img {\n  max-width: 100%;\n  width: 100%;\n  display: block;\n}\n.banner-section .ss-row-grid {\n  display: flex;\n  flex-wrap: wrap;\n  margin-left: -10px;\n  margin-right: -10px;\n  align-items: flex-start;\n}\n.banner-section .ss-row-grid .ss-col-grid-7,\n.banner-section .ss-row-grid .ss-col-grid-5{\n  width:100%;\n  min-height:1px;\n  flex:0 0 auto;\n  position:relative;\n  padding-left:10px;\n  padding-right:10px;\n}\n@media only screen and (min-width:768px){\n  .banner-section .ss-row-grid .ss-col-grid-5{\n    width:45%;\n  }\n  .banner-section .ss-row-grid .ss-col-grid-7{\n    width:55%;\n  }\n}\n\n.banner-section .ss-global-media-settings {\n  background-color: transparent;\n  border: none;\n}\n.banner-section .ss-banner__media {\n  position: relative;\n  z-index: 1;\n}\n\n.ss-banner-content {\n  margin-bottom: 200px;\n}\n.banner-section .ss-title {\n  font-family: 'Raleway', sans-serif;\n  font-style: normal;\n  font-weight: 800;\n  margin-top: 0px;\n  margin-bottom: 16px;\n}\n.banner-section .ss-desc {\n  font-family: 'Raleway', sans-serif;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 1.3;\n  margin-bottom: 30px;\n}\n.banner-section .ss-btn.btn-outline{\n  background-color:#ffffff;\n}\n.banner-section .ss-b-bold{\n  font-family: 'Raleway', sans-serif;\n  font-style: normal;\n  font-weight: 700;\n  line-height: 1.3;\n}\n\n.ss-banner-flex {\n  display: flex;\n  align-items: center;\n  flex-wrap: nowrap;\n}\n.ss-banner-flex .ss-b-button {\n  margin-right: 28px;\n}\n\n@media only screen and (max-width:1499px){\n  .banner-section {\n    padding-top: 50px;\n    padding-bottom: 50px;\n  }\n}\n@media only screen and (max-width:1024px){\n  .banner-section {\n    padding-top: 50px;\n    padding-bottom: 100px;\n  }\n  .banner-section .ss-title {\n    font-size: 45px;\n    line-height: 1.3;\n  }\n  .banner-section .ss-b-bold {\n    font-size: 18px;\n  }\n}\n@media only screen and (max-width:767px){\n  .ss-banner-content {\n    margin-bottom: 20px;\n    padding: 0px 30px;\n  }\n  .banner-section {\n    padding-bottom: 60px;\n  }\n  .banner-section::after {\n    background-position: 70% 50%;\n  }\n  .ss-banner__media .ss-media--adapt.media {\n  }\n  .ss-banner__media img {\n    object-fit: contain;\n  }\n  .ss-banner-flex {\n    align-items: self-start;\n    flex-wrap: wrap;\n    flex-direction: column-reverse;\n  }\n  .banner-section .ss-desc {\n    line-height:1.3;\n    margin-bottom: 20px;\n    font-size:23px;\n  }\n  .banner-section .ss-b-bold {\n    margin-bottom: 20px;\n    font-size:15px;\n  }\n  .banner-section .ss-title {\n    font-size: 34px;\n    line-height: 1.3;\n  }\n}\n@media only screen and (max-width:479px){\n  .ss-banner-content {\n    padding: 0px 0px 0px 0px;\n  }\n}\n  .banner-section{\n    background-color: #00ff0;\n  }\n  .banner-section:after {\n    background-image: url(\"data:image/svg+xml; utf8,<svg viewBox='0 0 1512 157' xmlns='http://www.w3.org/2000/svg'><path d='M716 88.9999C408.8 7.39994 109.333 65.6666 -2 105H-56L-32 1H1544V88.9999C1352 165 1100 191 716 88.9999Z' fill='%23233e16' stroke='%23233e16'/><path d='M 716 82 C 408.8 0.4 109.333 58.667 -2 98 L -56 98 L -32 -6 L 1544 -6 L 1544 82 C 1352 158 1100 184 716 82 Z' fill='%23ccedbe' stroke='%23ccedbe'/></svg>\");\n    background-color: #ffffff;\n  }\n  .banner-section .ss-title{\n    font-size:45px;\n    color: #233e16;\n  }\n  .banner-section .ss-desc{\n    font-size:30px;\n    color: #233e16;\n  }\n  .banner-section .ss-b-bold{\n    font-size:20px;\n    color: #233e16;\n  }\n  .ss-btn.btn-outline{\n    border-radius:40px;\n    padding: 18px 40px;\n    text-decoration: none;\n    text-transform: uppercase;\n    font-weight: 600;\n    display: inline-block;\n  \tfont-size:20px;\n    color: #233e16;\n    box-shadow: 5px 5px 0px 0px #233e16;\n    border:1px solid #233e16;\n    text-align:center;\n    transition: box-shadow 0.3s ease-in-out;\n  }\n  .ss-btn.btn-outline:hover{\n    box-shadow: -5px -5px 0px 0px #233e16;\n    transition: box-shadow 0.3s ease-in-out;\n  }\n  @media only screen and (max-width: 767px){\n\n    .banner-section .ss-desc {\n    line-height:1.3;\n    margin-bottom: 20px;\n    font-size:23px;\n  }\n\n\n    @media only screen and (max-width: 467px){\n\n    .ss-banner-flex .ss-b-button {\n      width:100%;\n      margin-right:0;\n    }\n\n      .ss-btn.btn-outline {\n        width:100%;\n      }\n    \n    .banner-section .ss-title {\n      font-size: 34px;\n    }\n\n    .banner-section .ss-b-bold {\n      margin-bottom: 20px;\n      font-size:15px;\n    }\n  }\n  @media only screen and (max-width: 1024px){\n    .banner-section .ss-b-bold {\n    }\n  }\n</style>\n\n\n\n\n\n\n</section>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "section_divider_cMmnbR": {
+      "type": "section-divider",
+      "disabled": true,
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "diagonal_1",
+        "flip_horizontal": true,
+        "flip_vertical": false,
+        "shape_color": "scheme-78d2e301-66be-46b4-8bf3-c85455b81fc4",
+        "use_custom_shape_color": false,
+        "custom_shape_color": "#2870b2",
+        "background_color": "scheme-cfd7bb8e-8fe7-42ea-8907-a8e728ed4619",
+        "use_custom_background_color": true,
+        "custom_background_color": "#2870b2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_divider_EhKQe4": {
+      "type": "section-divider",
+      "disabled": true,
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "diagonal_1",
+        "flip_horizontal": true,
+        "flip_vertical": false,
+        "shape_color": "scheme-78d2e301-66be-46b4-8bf3-c85455b81fc4",
+        "use_custom_shape_color": false,
+        "custom_shape_color": "#2870b2",
+        "background_color": "scheme-cfd7bb8e-8fe7-42ea-8907-a8e728ed4619",
+        "use_custom_background_color": true,
+        "custom_background_color": "#2870b2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_liquid_aYAn7F": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product-block-liquid pt-3 pb-3\">\n  \n<style>\n  .label-container {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 10px; /* Space between labels */\n  }\n  .label {\n    background-color: #f1f1f1; /* Default background color */\n    color: #333; /* Text color */\n    border-radius: 10px;\n    padding: 5px 15px; /* Adjust padding for spacing */\n    font-size: 14px;\n    display: inline-block; /* Ensure labels stack properly */\n    white-space: normal; /* Allow text to wrap if needed */\n    line-height: 1.5; /* Add line height for better readability */\n  }\n  .label:nth-child(1) { background-color: #FFDDC1; } /* Example color */\n  .label:nth-child(2) { background-color: #FFABAB; } /* Example color */\n  .label:nth-child(3) { background-color: #FFC3A0; } /* Example color */\n  /* Add more colors as needed */\n</style>\n\n<div class=\"label-container\">\n \n <div class=\"label\">Most-Sold</div>\n<div class=\"label\">High-In-Demand</div>\n</div>\n</div>"
+          }
+        },
+        "review_mMj4kD": {
+          "type": "review",
+          "settings": {
+            "lrw_text": "<strong>4.8 From 4000+ Reviews</strong>",
+            "text_size": 12,
+            "star_style": "star_bg_2",
+            "star_size": 0.9,
+            "star_rating": 4.5,
+            "lrw_star_color": "#fec11a",
+            "lrw_star_color_disable": "#eeeeee",
+            "lrw_color": "#000000",
+            "margin_top": 10,
+            "margin_bottom": 10
+          }
+        },
+        "title_Fnnnm3": {
+          "type": "title",
+          "settings": {
+            "title_size_dt": 34,
+            "title_size_mb": 30,
+            "title_line_height": 1.1
+          }
+        },
+        "custom_liquid_U4Ejci": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product-info-title\">\n\n</div>\n\n<style>\n  .product-info-title {\n    font-family: Obviously;\n    font-weight: 600;\n    font-size: 35px;\n    line-height: 97%;\n    letter-spacing: -2px;\n    text-transform: none;\n    opacity: .2;\n  }\n \n</style>"
+          }
+        },
+        "custom_liquid_GAEVcY": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"product-block-liquid pt-3 pb-3\">\n  <div class=\"custom-full-width-image\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0595/5570/9024/files/fan-features-4.png?v=1769949823\" alt=\"Benefits Image\">\n</div>\n\n<style>\n  .custom-full-width-image {\n    width: 100%;\n    max-width: 100%;\n    display: block;\n  }\n  .custom-full-width-image img {\n    width: 100%;\n    height: auto;\n    display: block;\n  }\n</style>\n</div>"
+          }
+        },
+        "custom_liquid_YhdhdD": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div style=\"max-width: 900px; margin: 0 auto;  color: #1f2937; line-height: 1.6;\">\n  <h3 style=\"font-size: 22px; font-weight: 700; margin-bottom: 10px;\">\n    4D Kneading Massage to Relax Your Neck and Shoulders\n  </h3>\n\n  <p style=\"font-size: 16px; margin-bottom: 20px;\">\n    The Shiatsu Neck and Back Massager provides a <strong>4D kneading massage</strong> that delivers a deeply comfortable experience while helping relieve neck muscle tension. \n    The upper massage head follows the natural physiological arc of the palm while grasping, fully wrapping and supporting the cervical spine. \n    The lower massage head mimics the motion of a human thumb to gently push and work the shoulders and upper back.\n  </p>\n\n\n</div>"
+          }
+        },
+        "text_dWdWWa": {
+          "type": "text",
+          "settings": {
+            "text": "The quiet, bladeless desk fan built for India's WFH summer. 9 speeds. Built-in mist. Rechargeable battery. Zero blade risk — perfect for your desk, your baby's room, or your bedroom.",
+            "text_style": "body",
+            "text_alignment": "left",
+            "text_size_dt": 21,
+            "use_custom_color": true,
+            "text_color": "#000000",
+            "padding_top": 12,
+            "padding_bottom": 24
+          }
+        },
+        "review_v1_mz6mzj": {
+          "type": "review_v1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/people-1.webp",
+            "image_2": "shopify://shop_images/stylish-african-american-woman-smiling_23-2148770405.avif",
+            "image_3": "shopify://shop_images/smiley-woman-posing-close-up_1.webp",
+            "name": "Michelle",
+            "badge": "shopify://shop_images/istockphoto-1320651997-612x612.jpg",
+            "text": "and 758 people purchased",
+            "background_review": "#eeecff",
+            "text_color": "#000000",
+            "verified_badge": "#1c9cef",
+            "border_color": "#7f76c9",
+            "border_style": "dashed",
+            "border_size": 0.2,
+            "font_size": 12,
+            "padding_top": 5,
+            "padding_bottom": 15
+          }
+        },
+        "inventory_4fpVhP": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "text_style": "uppercase",
+            "bar_font_size": 16,
+            "inventory_threshold": 20,
+            "show_inventory_bar": true,
+            "show_inventory_pill": true,
+            "text_soldout": "Unfortunately this item is sold-out!",
+            "text_untracked": "Currently this item has stock!",
+            "text_low_one": "Hurry up! Only 1 item is in stock",
+            "text_low_many": "Hurry up! Only [qty] items are in stock.",
+            "text_normal": "Currently [qty] items are in stock!",
+            "inv_bar_height": 3,
+            "inv_bar_radius": 0,
+            "inv_bar_width_normal": 70,
+            "inv_bar_width_low": 15,
+            "inv_bar_width_untrack": 50,
+            "inv_bar_width_sold": 0,
+            "normal_pill_color": "#5140d6",
+            "normal_color": "#5140d6",
+            "normal_color_2": "#5140d6",
+            "low_pill_color": "#d20982",
+            "low_color": "#d20982",
+            "low_color_2": "#d20982",
+            "untrack_pill_color": "#0acfac",
+            "untrack_background_bar": "#0acfac",
+            "sold_pill_color": "#c8c8c8",
+            "background_bar": "#eff6fc"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "label_style": "body",
+            "font_size": 14,
+            "font_style": "normal",
+            "swatch_type": "variant_image",
+            "swatch_shape": "circle",
+            "swatch_size": 3.5,
+            "swatch_image_height": "square",
+            "swatch_image_custom_radius_value": 2,
+            "size_trigger": "",
+            "chart_id": "Size Chart",
+            "size_page": "",
+            "size_icon": "hanger",
+            "spaced_size": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "hide_tax_shipping": true,
+            "reverse_price": true,
+            "save_text_size": 16,
+            "price_weight": "normal",
+            "price_text_size": 24,
+            "price_text_size_mb": 18,
+            "compare_price": "#e44242",
+            "original_price": "#000000",
+            "show_save_price": false,
+            "save_text": "#ffffff",
+            "save_bg": "#e44242",
+            "save_border": "#f4f4ff",
+            "save_border_thickness": 0,
+            "save_corner_radius": 4,
+            "save_shadow_opacity": 0,
+            "save_shadow_horizontal_offset": 2,
+            "save_shadow_vertical_offset": 2,
+            "save_shadow_blur": 5,
+            "enable_price_box": true,
+            "price_box_bg": "#f8fafc",
+            "price_box_border": "#e2e8f0",
+            "price_box_radius": 16,
+            "notice_enable": true,
+            "notice_speed": 3,
+            "notice_text_color": "#16a34a",
+            "notice_text_size": 13,
+            "notice_1_text": "",
+            "notice_1_icon": "",
+            "notice_2_text": "COD available with extra Rs 49/-",
+            "notice_2_icon": "",
+            "notice_3_text": "",
+            "notice_3_icon": "",
+            "notice_4_text": "",
+            "notice_4_icon": "",
+            "mrp_text": "MRP incl. of all taxes",
+            "mrp_color": "#6b7280",
+            "mrp_size": 11
+          }
+        },
+        "why_customers_love_it_bf": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Why customers love it</strong>",
+            "text_style": "body",
+            "text_alignment": "left",
+            "text_size_dt": 18,
+            "use_custom_color": true,
+            "text_color": "#626060",
+            "padding_top": 0,
+            "padding_bottom": 8
+          }
+        },
+        "feature_bf_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 24,
+            "heading": "9 Speed settings — precise airflow for every mood",
+            "heading_size": 16,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "feature_bf_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 24,
+            "heading": "Built-in mist — refreshing coolness on hot days",
+            "heading_size": 16,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "feature_bf_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 24,
+            "heading": "Bladeless & safe — zero risk for kids, pets & bedrooms",
+            "heading_size": 16,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "feature_bf_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 24,
+            "heading": "Rechargeable battery — no wall outlet needed",
+            "heading_size": 16,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "feature_bf_5": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 24,
+            "heading": "Whisper-quiet — won't disrupt work calls or sleep",
+            "heading_size": 16,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "fomo_bf": {
+          "type": "fomo",
+          "settings": {
+            "fomo_text_before": "Hurry! (x) are viewing this!",
+            "fomo_text_alignment": "left",
+            "text_style": "body",
+            "text_size": 14,
+            "fomo_icon_style": "pill",
+            "fomo_text_color": "#000000",
+            "fomo_bg_color": "#f9f9f9",
+            "fomo_border_color": "#f2f2f2",
+            "pill_color": "#fd0234",
+            "fomo_border_activate": true,
+            "fomo_border": 20,
+            "fomo_min": 5,
+            "fomo_max": 9,
+            "fomo_speed": 3,
+            "padding_top": 4,
+            "padding_bottom": 12,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "lumin_quantity_break_d9qNcH": {
+          "type": "lumin-quantity-break",
+          "disabled": true,
+          "settings": {
+            "show_on_all_products": true,
+            "selected_product": [],
+            "selected_collection": "",
+            "selected": true,
+            "hide_variant": false,
+            "compare_price_type": "calculated",
+            "discount_type": "percentage",
+            "discount": 0,
+            "fixed_price": 0,
+            "qty": 1,
+            "color_scheme": "scheme-71514112-6a87-4937-a0e0-b16d10e5984c",
+            "title": "<strong>Single</strong>",
+            "title_size": 30,
+            "subtitle": "+ free Shipping",
+            "subtitle_size": 12,
+            "subtitle_bg_color": "#e8e8f7",
+            "subtitle_color_small": "#685fa9",
+            "subtitle_border_color": "rgba(0,0,0,0)",
+            "badge_show": false,
+            "badge": "✨ 20% Off + free Shipping",
+            "badge_size": 14,
+            "badge_style": "lumin-ribbon lumin-top-short",
+            "badge_bg_color": "#0606ef",
+            "badge_background_gradient": "linear-gradient(118deg, rgba(149, 181, 252, 1) 5%, rgba(221, 136, 253, 1) 92%)",
+            "badge_color": "#ffffff",
+            "qty_show_image": false,
+            "qty_image_width": 60,
+            "qty_image_radius": 0,
+            "heading_title_show": true,
+            "heading_title": "",
+            "heading_title_alignment": "center",
+            "heading_title_size": 18,
+            "use_custom_title_color": false,
+            "heading_title_color": "#000000",
+            "bottom_text_show": true,
+            "bottom_image_width": 24,
+            "bottom_image_radius": 0,
+            "bottom_text": "",
+            "bottom_content_alignment": "center",
+            "bottom_text_size": 12,
+            "text_color_bottom": "#ffffff",
+            "bg_color_bottom": "#7947ec",
+            "bottom_background_gradient": "",
+            "border_thickness": 2,
+            "border_radius": 6,
+            "mt": 16,
+            "mb": 12,
+            "custom_color": false,
+            "title_color": "#7947ec",
+            "subtitle_color": "#7947ec",
+            "discount_color": "#df0397",
+            "uncheck_bg_color": "#ffffff",
+            "border_color": "#7947ec",
+            "dot_color": "#eee8ff",
+            "text_color": "#7947ec",
+            "checked_bg_color": "#eee8ff",
+            "checked_border_color": "#7947ec",
+            "dot_check_color": "#7947ec",
+            "checked_text_color": "#7947ec"
+          }
+        },
+        "lumin_quantity_break_rdqCtM": {
+          "type": "lumin-quantity-break",
+          "disabled": true,
+          "settings": {
+            "show_on_all_products": true,
+            "selected_product": [],
+            "selected_collection": "",
+            "selected": false,
+            "hide_variant": false,
+            "compare_price_type": "calculated",
+            "discount_type": "percentage",
+            "discount": 20,
+            "fixed_price": 0,
+            "qty": 2,
+            "color_scheme": "accent-2",
+            "title": "<strong>Duo</strong>",
+            "title_size": 30,
+            "subtitle": "you save 20%",
+            "subtitle_size": 12,
+            "subtitle_bg_color": "#e8e8f7",
+            "subtitle_color_small": "#685fa9",
+            "subtitle_border_color": "rgba(0,0,0,0)",
+            "badge_show": true,
+            "badge": "✨Most Popular",
+            "badge_size": 14,
+            "badge_style": "lumin-ribbon lumin-top-short",
+            "badge_bg_color": "#7069bc",
+            "badge_background_gradient": "linear-gradient(118deg, rgba(149, 181, 252, 1) 5%, rgba(221, 136, 253, 1) 92%)",
+            "badge_color": "#ffffff",
+            "qty_show_image": false,
+            "qty_image_width": 60,
+            "qty_image_radius": 0,
+            "heading_title_show": true,
+            "heading_title": "",
+            "heading_title_alignment": "center",
+            "heading_title_size": 18,
+            "use_custom_title_color": false,
+            "heading_title_color": "#000000",
+            "bottom_text_show": false,
+            "bottom_image_width": 24,
+            "bottom_image_radius": 0,
+            "bottom_text": "Free Shipping With This Offer",
+            "bottom_content_alignment": "center",
+            "bottom_text_size": 12,
+            "text_color_bottom": "#ffffff",
+            "bg_color_bottom": "#8262d9",
+            "bottom_background_gradient": "",
+            "border_thickness": 2,
+            "border_radius": 6,
+            "mt": 16,
+            "mb": 12,
+            "custom_color": false,
+            "title_color": "#000000",
+            "subtitle_color": "#000000",
+            "discount_color": "#df0321",
+            "uncheck_bg_color": "#ffffff",
+            "border_color": "#0606ef",
+            "dot_color": "#d9d9fd",
+            "text_color": "#0606ef",
+            "checked_bg_color": "#f5f5ff",
+            "checked_border_color": "#0606ef",
+            "dot_check_color": "#0606ef",
+            "checked_text_color": "#0606ef"
+          }
+        },
+        "lumin_quantity_break_8xfAAC": {
+          "type": "lumin-quantity-break",
+          "disabled": true,
+          "settings": {
+            "show_on_all_products": true,
+            "selected_product": [],
+            "selected_collection": "",
+            "selected": false,
+            "hide_variant": false,
+            "compare_price_type": "calculated",
+            "discount_type": "percentage",
+            "discount": 20,
+            "fixed_price": 0,
+            "qty": 3,
+            "color_scheme": "scheme-71514112-6a87-4937-a0e0-b16d10e5984c",
+            "title": "<strong>Trio</strong>",
+            "title_size": 30,
+            "subtitle": "you save 20%",
+            "subtitle_size": 12,
+            "subtitle_bg_color": "#e8e8f7",
+            "subtitle_color_small": "#685fa9",
+            "subtitle_border_color": "rgba(0,0,0,0)",
+            "badge_show": true,
+            "badge": "✨ 20% Off + free Shipping",
+            "badge_size": 14,
+            "badge_style": "lumin-ribbon lumin-top-short",
+            "badge_bg_color": "#0606ef",
+            "badge_background_gradient": "linear-gradient(118deg, rgba(149, 181, 252, 1) 5%, rgba(221, 136, 253, 1) 92%)",
+            "badge_color": "#ffffff",
+            "qty_show_image": false,
+            "qty_image_width": 60,
+            "qty_image_radius": 0,
+            "heading_title_show": true,
+            "heading_title": "",
+            "heading_title_alignment": "center",
+            "heading_title_size": 18,
+            "use_custom_title_color": false,
+            "heading_title_color": "#000000",
+            "bottom_text_show": true,
+            "bottom_image_width": 24,
+            "bottom_image_radius": 0,
+            "bottom_text": "✦ Best Value + Free Shipping",
+            "bottom_content_alignment": "center",
+            "bottom_text_size": 12,
+            "text_color_bottom": "#ffffff",
+            "bg_color_bottom": "#8262d9",
+            "bottom_background_gradient": "",
+            "border_thickness": 2,
+            "border_radius": 6,
+            "mt": 16,
+            "mb": 12,
+            "custom_color": false,
+            "title_color": "#0606ef",
+            "subtitle_color": "#0606ef",
+            "discount_color": "#df0397",
+            "uncheck_bg_color": "#ffffff",
+            "border_color": "#0606ef",
+            "dot_color": "#d9d9fd",
+            "text_color": "#0606ef",
+            "checked_bg_color": "#f5f5ff",
+            "checked_border_color": "#0606ef",
+            "dot_check_color": "#0606ef",
+            "checked_text_color": "#0606ef"
+          }
+        },
+        "shipping_YPQeeF": {
+          "type": "shipping",
+          "settings": {
+            "ship_days": 2,
+            "cut_off_time": 16,
+            "icon": "shopify://shop_images/free-shipping.png",
+            "hide_icon": false,
+            "icon_size": 40,
+            "image_ani": "none",
+            "text_size": 10,
+            "text_style": "uppercase",
+            "text": "Order in (timer) and Get delivery By (date)",
+            "hours": "h",
+            "minutes": "m",
+            "date_locale": "en-US",
+            "ship_bg": "rgba(0,0,0,0)",
+            "show_border": true,
+            "ship_border": "#01d5b2",
+            "border_radius": 0,
+            "padding_top": 12,
+            "padding_bottom": 12,
+            "margin_top": 16,
+            "margin_bottom": 16
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "skip_cart": false,
+            "button_custom_style": true,
+            "button_font_size": 24,
+            "button_height": 60,
+            "lm_main_button": "#01d5b2",
+            "lm_main_button_gr": "",
+            "lm_main_text": "#ffffff"
+          }
+        },
+        "payment_pcDBqV": {
+          "type": "payment",
+          "settings": {
+            "original": "custom",
+            "payment_icon": "visa,master,apple_pay,google-pay",
+            "payment_content_alignment": "center",
+            "custom_icon_1_width": 34,
+            "custom_icon_2_width": 34,
+            "custom_icon_3_width": 34
+          }
+        },
+        "order_timeline_9VkjVk": {
+          "type": "order_timeline",
+          "disabled": true,
+          "settings": {
+            "timeline_color_scheme": "scheme-914127ba-0ed4-4eb9-968b-f1cfaca8c83c",
+            "order_within_label": "Order in",
+            "ships_within_label": "Ships",
+            "reset_hour": 16,
+            "shipping_lead_days": 1,
+            "date_locale": "en-US",
+            "label_size": 14,
+            "time_size": 14,
+            "border_width": 1,
+            "border_opacity": 0.1,
+            "border_radius": 10
+          }
+        },
+        "collapsible_tab_MhnGWV": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Product Features",
+            "icon": "none",
+            "content": "<p><strong>Bladeless fan with ambient light, shaking head </strong></p><p>1. Pioneering dual fan and dual duct design, providing stronger wind power. </p><p>2. Three phase brushless motor, quieter, rotates smoothly, and has no lag. </p><p>3. Leafless design, suitable for mother and baby, safe and worry free. </p><p>4. 9-speed wind speed, thoughtful gear memory function, caring about your usage habits.</p><p> 5. Press and hold to turn on, press and hold to turn off any gear. </p><p>6. Shake your head around 60 degrees to achieve wide-angle air supply, with a wider coverage, making coolness everywhere. </p><p>7. 9-hour timed schedule </p><p>8. 3-speed ambient night light adjustment, independent operation (turn off win</p><p>d speed, night light can also be turned on)9. Spray humidification design, cooling and water supplement more delicate. </p><p>Detachable water tank, more convenient to use (optional).</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_mj7J3N": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Technical Details",
+            "icon": "none",
+            "content": "<p>PRODUCT MODEL  F12</p><p>DUAL-CORE BLADELESS COOL MIST FAN</p><p>9 GEAR ADJUSTABLE</p><p>ABS</p><p>MOTOR THREE-PHASE  ELECTRIC MOTOR</p><p>BATTERY CAPACITY  3500mah</p><p>PRODUCT COLOR  GOLD/GREY</p><p>PRODUCT SIZE <strong> </strong>146 × 146 × 360.95mm</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_REGx6b": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Package Included",
+            "icon": "none",
+            "content": "<p>Desktop Fan * 1<br/>USB Data Cable* 1<br/>User Manual* 1</p>",
+            "page": ""
+          }
+        },
+        "testimonial_slider_dHXgpn": {
+          "type": "testimonial-slider",
+          "disabled": true,
+          "settings": {
+            "slide_image": "shopify://shop_images/happycustomer1.webp",
+            "block_heading": "Solid purchase",
+            "text_1": "<p>This remote control airplane is exactly what we needed for our 10-year-old. As a first rc airplane, it's perfect - the foam construction makes it durable, and the simple controls make it easy to learn. It's a great drone for kids that focuses on pure flying fun without complicated cameras or GPS. Highly recommend this airplane for any beginner! ★★★★★</p>",
+            "show_slide_2": true,
+            "slide_image_2": "shopify://shop_images/ChatGPT_Image_Jan_17_2026_11_05_51_AM.png",
+            "block_heading_2": "Highly recommended",
+            "text_2": "<p>This is great. It charged in minutes and although my step-son was uncertain about it at first, once he started flying it he absolutely loved it. It is easy to fly and easy to learn tricks with. Highly recommend. ★★★★★</p>",
+            "show_slide_3": false,
+            "block_heading_3": "Recomended",
+            "text_3": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store. ★★★★★</p>",
+            "color_scheme": "background-1",
+            "slide_padding": 10,
+            "show_border": true,
+            "border_color": "#000000",
+            "slide_wrapper_radius": 6,
+            "slide_img_size": 50,
+            "slide_img_radius": 68,
+            "head_size": 16,
+            "text_size": 12,
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "custom_liquid_n7NfVa": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div id=\"stock-alert-en\" class=\"stock-alert\" style=\"display: block;\">\n  <strong style=\"color: #cc0000;\">UPDATE:</strong> Due to high demand during our exclusive sale, <strong>stock is limited</strong>. The offer is valid while stock lasts.\n</div>\n<style>\n.stock-alert {\n    background-color: #ffeeee;\n    border-radius: 8px;\n    padding: 12px 16px;\n    font-family: 'Harmonia Sans', sans-serif;\n    color: #333;\n    font-size: 15px;\n    line-height: 1.5;\n}\n</style>"
+          }
+        },
+        "collapsible_tab_ptCdTk": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Returns",
+            "icon": "none",
+            "content": "<p>If you're unhappy with your purchase, we'll find a solution for you. Most of our products can be returned within 365 days. All returns are subject to a $9.95 return fee deducted from your refund amount. Returns will be refunded to the original payment method or as a store credit. We do our best to make you comfortable, because let's face it, you're the best.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_EBKNVc": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Additional Details",
+            "icon": "none",
+            "content": "<p>Imported by: Dynamic Exprt & Import<br/>Marketed by: Blissway Commerce<br/>Country of Origin: China<br/>Month & Year of Manufacturing: Printed on Packaging<br/>Count: 1N</p>",
+            "page": ""
+          }
+        },
+        "usp_rbUihm": {
+          "type": "usp",
+          "settings": {
+            "usp_1_text": "Fast Shipping",
+            "usp_1_icon": "truck",
+            "usp_2_text": "24/7 support",
+            "usp_2_icon": "chat_bubble",
+            "usp_3_text": "Free return",
+            "usp_3_icon": "return",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "font_size_desktop": 12,
+            "font_size_mobile": 12,
+            "border_radius": 98,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "border_width": 0,
+            "border_color": "#790ff8"
+          }
+        },
+        "auto_tabs_jVU9Cx": {
+          "type": "auto_tabs",
+          "disabled": true,
+          "settings": {
+            "tabs_color_scheme": "background-1",
+            "auto_tab_heading": 13,
+            "tabs_radius": 8,
+            "padding_top_bottom": 16,
+            "padding_right_left": 0
+          }
+        },
+        "lumin_cross_sells_PdKwRH": {
+          "type": "lumin-cross-sells",
+          "disabled": true,
+          "settings": {
+            "metafield": "custom.cross_sells",
+            "color_scheme": "scheme-1",
+            "container_border_radius": 0,
+            "img_ratio": "ratio-1x1",
+            "img_border_radius": 0,
+            "btn_style": "button--primary",
+            "title": "Frequently Bought Together",
+            "title_font_size": "fs-lg",
+            "title_text_style": "body",
+            "description": "<p>Save up to 50% with one click!</p>",
+            "description_font_size": "fs-sm"
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_aYAn7F",
+        "review_mMj4kD",
+        "title_Fnnnm3",
+        "price",
+        "why_customers_love_it_bf",
+        "feature_bf_1",
+        "feature_bf_2",
+        "feature_bf_3",
+        "feature_bf_4",
+        "feature_bf_5",
+        "fomo_bf",
+        "custom_liquid_GAEVcY",
+        "custom_liquid_YhdhdD",
+        "review_v1_mz6mzj",
+        "inventory_4fpVhP",
+        "variant_picker",
+        "lumin_quantity_break_d9qNcH",
+        "lumin_quantity_break_rdqCtM",
+        "lumin_quantity_break_8xfAAC",
+        "shipping_YPQeeF",
+        "buy_buttons",
+        "payment_pcDBqV",
+        "order_timeline_9VkjVk",
+        "collapsible_tab_MhnGWV",
+        "collapsible_tab_mj7J3N",
+        "collapsible_tab_REGx6b",
+        "testimonial_slider_dHXgpn",
+        "custom_liquid_n7NfVa",
+        "collapsible_tab_ptCdTk",
+        "collapsible_tab_EBKNVc",
+        "usp_rbUihm",
+        "auto_tabs_jVU9Cx",
+        "lumin_cross_sells_PdKwRH"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enable_sticky_info": true,
+        "no_scroll": false,
+        "color_scheme": "background-1",
+        "block_padding": 1.5,
+        "media_size": "large",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "vertical_left",
+        "thumbnail_size": 70,
+        "thumbnail_radius": 8,
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "mobile_thumbnails": "show",
+        "show_full_image": true,
+        "first_image_size": 100,
+        "second_image_size": 0,
+        "show_container": true,
+        "container_bg": "#ffffff",
+        "container_radius": 10,
+        "container_padding": 10,
+        "container_border_color": "#ffffff",
+        "show_container_mb": true,
+        "container_bg_mb": "#ffffff",
+        "container_padding_mb": 16,
+        "container_radius_mb": 0,
+        "container_border_color_mb": "#01d5b2",
+        "container_text": "",
+        "container_text_bg": "#f31515",
+        "container_text_txt": "#f2f2f2",
+        "padding_top": 20,
+        "padding_top_mb": 24,
+        "padding_bottom": 44
+      }
+    },
+    "ss_featured_product_4_k3pdjG": {
+      "type": "ss-featured-product-4",
+      "blocks": {
+        "heading_KQa39W": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Cutting-Edge Design Meets Everyday Ease</h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_accent_custom": false,
+            "heading_accent_font": "josefin_sans_n4",
+            "heading_size": 56,
+            "heading_size_mobile": 32,
+            "heading_advanced": false,
+            "heading_height": 130,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#f2f2f2",
+            "heading_accent_color": "#afafaf"
+          }
+        },
+        "text_enEDKk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Modern bladeless technology creates powerful airflow without noisy chopping blades. It’s sleek, safe, and whisper-quiet — perfect for bedrooms, home offices, and shared spaces. </p><p>Just cool comfort, wherever life takes you.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_advanced": false,
+            "text_height": 150,
+            "text_mt": 20,
+            "text_mt_mobile": 16,
+            "text_color": "#afafaf"
+          }
+        },
+        "author_94YXYV": {
+          "type": "author",
+          "settings": {
+            "use_author_image": true,
+            "author_image": "shopify://shop_images/generate-a-india-model-female-face-good-looking-and-fair-beautiful-smile-like-character-is-frm-metro-cities-of-india.png",
+            "image_width": 80,
+            "image_width_mobile": 64,
+            "image_radius": 50,
+            "image_border_thickness": 0,
+            "text": "<p>\"So quiet, I forget it's running. Perfect for my bedroom.\" </p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 24,
+            "text_size_mobile": 20,
+            "text_advanced": false,
+            "text_height": 150,
+            "author_mt": 24,
+            "author_mt_mobile": 12,
+            "author": "— Anjali Mathur",
+            "author_custom": false,
+            "author_font": "josefin_sans_n4",
+            "author_size": 14,
+            "author_size_mobile": 12,
+            "author_advanced": true,
+            "author_height": 130,
+            "author_name_mt": 16,
+            "author_name_mt_mobile": 12,
+            "text_color": "#f0eeff",
+            "author_color": "#7b7b7b",
+            "image_border_color": "#01d5b2"
+          }
+        },
+        "button_i4T6ze": {
+          "type": "button",
+          "settings": {
+            "button": "Shop now",
+            "url": "",
+            "open_in_new_tab": false,
+            "button_style": "outline",
+            "button_custom": false,
+            "button_font": "josefin_sans_n4",
+            "button_size": 14,
+            "button_size_mobile": 14,
+            "button_advanced": false,
+            "button_height": 100,
+            "button_padding_horizontal": 28,
+            "button_padding_horizontal_mobile": 28,
+            "button_padding_vertical": 16,
+            "button_padding_vertical_mobile": 16,
+            "button_radius": 100,
+            "button_border_thickness": 1,
+            "button_mt": 20,
+            "button_mt_mobile": 16,
+            "button_color": "#121212",
+            "button_hover_color": "#ffffff",
+            "button_bg_color": "#ffffff",
+            "button_bg_hover_color": "#121212",
+            "button_border_color": "#121212",
+            "button_border_hover_color": "#121212"
+          }
+        },
+        "caption_RjaKfy": {
+          "type": "caption",
+          "settings": {
+            "icon": "none",
+            "text": "<p>Just cool comfort, wherever life takes you.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 14,
+            "text_size_mobile": 12,
+            "text_advanced": false,
+            "text_height": 150,
+            "text_mt": 20,
+            "text_mt_mobile": 16,
+            "icon_color": "#121212",
+            "text_color": "#121212"
+          }
+        },
+        "feature_fFmfFF": {
+          "type": "feature",
+          "settings": {
+            "icon": "pin_tack",
+            "text": "Work Comfort",
+            "hide_mobile": false
+          }
+        },
+        "feature_QnQeDY": {
+          "type": "feature",
+          "settings": {
+            "icon": "pin_tack",
+            "text": "Evening Relaxation",
+            "hide_mobile": false
+          }
+        },
+        "feature_B3ADwc": {
+          "type": "feature",
+          "settings": {
+            "icon": "pin_tack",
+            "text": "Travel Essential",
+            "hide_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_KQa39W",
+        "text_enEDKk",
+        "author_94YXYV",
+        "button_i4T6ze",
+        "caption_RjaKfy",
+        "feature_fFmfFF",
+        "feature_QnQeDY",
+        "feature_B3ADwc"
+      ],
+      "name": "SS - Featured product #4",
+      "settings": {
+        "layout": "image_content",
+        "layout_mobile": "content_image",
+        "layout_advanced": false,
+        "image_width": 45,
+        "layout_gap": 80,
+        "layout_gap_mobile": 20,
+        "content_align": "left",
+        "content_align_mobile": "left",
+        "content_vertical_align": "center",
+        "source": "uploaded",
+        "video": "shopify://files/videos/pl67as-h264-hd.mp4",
+        "video_url": "",
+        "video_ratio": "landscape",
+        "video_ratio_mobile": "landscape",
+        "video_radius": 16,
+        "video_border_thickness": 0,
+        "video_autoplay": true,
+        "video_loop": true,
+        "use_controls": true,
+        "play_icon_size": 16,
+        "play_icon_size_mobile": 16,
+        "play_padding": 14,
+        "play_padding_mobile": 14,
+        "play_radius": 100,
+        "play_border_thickness": 0,
+        "first_image": "shopify://shop_images/fan-12.png",
+        "second_image": "shopify://shop_images/2_412172bb-418e-4086-a0dd-562fc308b185.png",
+        "use_third_image": false,
+        "third_image": "shopify://shop_images/3_1279e8e0-f87d-4102-baac-fd8b6aa0bd1b.png",
+        "image_ratio": "square",
+        "image_ratio_mobile": "square",
+        "image_radius": 16,
+        "image_border_thickness": 0,
+        "features_columns": "two",
+        "features_columns_mobile": "two",
+        "features_advanced": false,
+        "features_border_thickness": 1,
+        "features_mt": 20,
+        "features_mt_mobile": 20,
+        "feature_gap": 10,
+        "feature_gap_mobile": 10,
+        "feature_mt": 10,
+        "feature_mt_mobile": 10,
+        "feature_icon_size": 20,
+        "feature_icon_size_mobile": 20,
+        "feature_text_custom": false,
+        "feature_text_font": "josefin_sans_n4",
+        "feature_text_size": 14,
+        "feature_text_size_mobile": 12,
+        "feature_text_height": 150,
+        "feature_icon_color": "#01d5b2",
+        "feature_text_color": "#f2f2f2",
+        "features_border_color": "#dbdbdb",
+        "image_border_color": "#121212",
+        "video_border_color": "#121212",
+        "play_color": "#121212",
+        "play_hover_color": "#121212",
+        "play_bg_color": "#01d5b2",
+        "play_bg_hover_color": "#f3f3f3",
+        "play_border_color": "#121212",
+        "play_border_hover_color": "#121212",
+        "background_style": "solid",
+        "background_color": "#000000",
+        "background_gradient": "linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%)",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "ss_hotspots_9_zgqkWQ": {
+      "type": "ss-hotspots-9",
+      "blocks": {
+        "hotspot_3jYhp4": {
+          "type": "hotspot",
+          "settings": {
+            "title": "Zero-Blade Safety",
+            "text": "<p>No spinning blades means <strong>zero risk for kids, pets, or clumsy mornings.</strong> Leave it running all day without a second thought.</p>",
+            "vertical_position": 39,
+            "vertical_position_mobile": 44,
+            "horizontal_position": 39,
+            "horizontal_position_mobile": 39
+          }
+        },
+        "hotspot_fwQRyG": {
+          "type": "hotspot",
+          "settings": {
+            "title": "Whisper-Quiet Motor",
+            "text": "<p><strong>Three-phase brushless motor</strong> — so quiet you'll forget it's on. Your Zoom calls stay professional. No background fan noise.</p>",
+            "vertical_position": 86,
+            "vertical_position_mobile": 84,
+            "horizontal_position": 50,
+            "horizontal_position_mobile": 50
+          }
+        },
+        "hotspot_yweP8W": {
+          "type": "hotspot",
+          "settings": {
+            "title": "Ambient Night Light",
+            "text": "<p><strong>3-level soft LED night light</strong> works independently of the fan. Your desk looks premium even after sunset.</p>",
+            "vertical_position": 0,
+            "vertical_position_mobile": 2,
+            "horizontal_position": 51,
+            "horizontal_position_mobile": 49
+          }
+        },
+        "hotspot_xGQCPJ": {
+          "type": "hotspot",
+          "settings": {
+            "title": "Survives Power Cuts",
+            "text": "<p>Built-in <strong>3500mAh rechargeable battery.</strong> Works for hours off-grid — because Indian power cuts don't wait for your deadline.</p>",
+            "vertical_position": 58,
+            "vertical_position_mobile": 59,
+            "horizontal_position": 50,
+            "horizontal_position_mobile": 52
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_3jYhp4",
+        "hotspot_fwQRyG",
+        "hotspot_yweP8W",
+        "hotspot_xGQCPJ"
+      ],
+      "name": "SS - Hotspots #9",
+      "settings": {
+        "heading": "<h2>Features You Simply Can’t Ignore</h2>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 44,
+        "heading_size_mobile": 30,
+        "heading_height": 130,
+        "heading_align": "center",
+        "heading_align_mobile": "center",
+        "layout_gap": 30,
+        "layout_gap_mobile": 20,
+        "layout_mt": 40,
+        "layout_mt_mobile": 24,
+        "item_align": "left",
+        "item_align_mobile": "left",
+        "number_custom": false,
+        "number_font": "josefin_sans_n4",
+        "number_size": 16,
+        "number_size_mobile": 16,
+        "number_height": 100,
+        "number_radius": 100,
+        "title_custom": false,
+        "title_font": "josefin_sans_n4",
+        "title_size": 24,
+        "title_size_mobile": 16,
+        "title_height": 100,
+        "title_padding_horizontal": 16,
+        "title_padding_horizontal_mobile": 12,
+        "title_padding_vertical": 6,
+        "title_padding_vertical_mobile": 6,
+        "title_radius": 100,
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 16,
+        "text_size_mobile": 14,
+        "text_height": 150,
+        "text_mt": 8,
+        "text_mt_mobile": 8,
+        "image": "shopify://shop_images/bladeless.png",
+        "image_border_thickness": 0,
+        "image_radius": 0,
+        "image_ratio": "original",
+        "image_ratio_mobile": "original",
+        "hotspot_number_custom": false,
+        "hotspot_number_font": "josefin_sans_n4",
+        "hotspot_number_size": 16,
+        "hotspot_number_size_mobile": 16,
+        "hotspot_number_height": 100,
+        "hotspot_number_radius": 100,
+        "hotspot_number_border_thickness": 1,
+        "number_color": "#000000",
+        "number_bg_color": "#f78f19",
+        "title_color": "#121212",
+        "title_bg_color": "#f3f3f3",
+        "text_color": "#f2f2f2",
+        "hotspot_number_color": "#121212",
+        "hotspot_number_bg_color": "#f78f19",
+        "hotspot_number_border_color": "#f3f3f3",
+        "heading_color": "#f2f2f2",
+        "image_border_color": "#121212",
+        "background_color": "#000000",
+        "background_gradient": "",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "ss_comparison_table_22_MV74Ug": {
+      "type": "ss-comparison-table-22",
+      "blocks": {
+        "heading_aUPHw9": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Why AirLuxe? Let the comparison speak.</h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 40,
+            "heading_size_mobile": 40,
+            "heading_height": 130,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#121212"
+          }
+        },
+        "text_UL8Gqz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Not all fans are built equal. Here's what you're actually getting.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 20,
+            "text_size_mobile": 16,
+            "text_height": 150,
+            "text_mt": 24,
+            "text_mt_mobile": 16,
+            "text_color": "#121212"
+          }
+        },
+        "table_row_GTc7rb": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Safe around kids & pets",
+            "first_column": "No blades",
+            "first_column_icon": "check",
+            "second_column": "Sharp blades",
+            "second_column_icon": "none",
+            "third_column": "Out of reach",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_BPcY8q": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Works during power cuts",
+            "first_column": "5000 mAh battery",
+            "first_column_icon": "check",
+            "second_column": "Needs power",
+            "second_column_icon": "none",
+            "third_column": "Needs power",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_eEA6xi": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Zoom-call friendly (quiet)",
+            "first_column": "Brushless motor",
+            "first_column_icon": "check",
+            "second_column": "Audible hum",
+            "second_column_icon": "none",
+            "third_column": "Wobble noise",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_FJUL8w": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Cool mist humidification",
+            "first_column": "Built-in mist",
+            "first_column_icon": "check",
+            "second_column": "Air only",
+            "second_column_icon": "none",
+            "third_column": "Air only",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_FGeNYJ": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Targeted desk airflow",
+            "first_column": "60° oscillation",
+            "first_column_icon": "check",
+            "second_column": "Partial",
+            "second_column_icon": "none",
+            "third_column": "Whole room",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_AVHeC7": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Night light",
+            "first_column": "3-level LED",
+            "first_column_icon": "check",
+            "second_column": "None",
+            "second_column_icon": "none",
+            "third_column": "None",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_KhbQ9f": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Sleep timer",
+            "first_column": "Up to 8 hours",
+            "first_column_icon": "check",
+            "second_column": "Manual only",
+            "second_column_icon": "none",
+            "third_column": "Rarely",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_VbFLe9": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Electricity cost per hour",
+            "first_column": "~₹0.10 (USB-C)",
+            "first_column_icon": "check",
+            "second_column": "~₹0.50–1.20",
+            "second_column_icon": "none",
+            "third_column": "~₹1.50–3.00",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        }
+      },
+      "block_order": [
+        "heading_aUPHw9",
+        "text_UL8Gqz",
+        "table_row_GTc7rb",
+        "table_row_BPcY8q",
+        "table_row_eEA6xi",
+        "table_row_FJUL8w",
+        "table_row_FGeNYJ",
+        "table_row_AVHeC7",
+        "table_row_KhbQ9f",
+        "table_row_VbFLe9"
+      ],
+      "name": "SS - Comparison table #22",
+      "settings": {
+        "content_max_width": 80,
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "table_columns": 3,
+        "table_radius": 20,
+        "table_mt": 40,
+        "table_mt_mobile": 24,
+        "table_column_border_thickness": 2,
+        "first_heading": "✦ AirLuxe",
+        "first_heading_image": "shopify://shop_images/H05508c8e55de45e69b5f4e3966893a70J.jpg",
+        "first_heading_url": "",
+        "second_heading": "Regular Table Fan",
+        "second_heading_image": "shopify://shop_images/generate-a-260-x-260-pixel-image-of-a-desktop-antique-fan-with-bladles.png",
+        "second_heading_url": "",
+        "third_heading": "Ceiling Fan",
+        "third_heading_image": "shopify://shop_images/generate-a-close-up-of-the-ceiling-fan.png",
+        "third_heading_url": "",
+        "fourth_heading": "Other 3",
+        "fourth_heading_url": "",
+        "fifth_heading": "Other 4",
+        "fifth_heading_url": "",
+        "sixth_heading": "Other 5",
+        "sixth_heading_url": "",
+        "heading_image_size": 100,
+        "heading_image_size_mobile": 100,
+        "heading_image_radius": 0,
+        "heading_image_border_thickness": 0,
+        "use_background_image": true,
+        "column_heading_custom": false,
+        "column_heading_font": "assistant_n4",
+        "column_heading_size": 18,
+        "column_heading_size_mobile": 15,
+        "column_heading_height": 150,
+        "column_heading_align": "center",
+        "column_heading_align_mobile": "center",
+        "column_heading_padding_horizontal": 16,
+        "column_heading_padding_horizontal_mobile": 8,
+        "column_heading_padding_vertical": 24,
+        "column_heading_padding_vertical_mobile": 8,
+        "row_padding_horizontal": 4,
+        "row_padding_horizontal_mobile": 4,
+        "row_padding_vertical": 24,
+        "row_padding_vertical_mobile": 24,
+        "row_border_thickness": 1,
+        "row_heading_custom": false,
+        "row_heading_font": "assistant_n4",
+        "row_heading_size": 18,
+        "row_heading_size_mobile": 15,
+        "row_heading_height": 150,
+        "value_custom": false,
+        "value_font": "assistant_n4",
+        "value_size": 18,
+        "value_size_mobile": 15,
+        "value_height": 150,
+        "value_icon_size": 24,
+        "value_icon_size_mobile": 24,
+        "column_heading_active_color": "#121212",
+        "value_active_color": "#6cb324",
+        "table_column_active_bg_color": "#fcffea",
+        "table_bg_image_active_color": "#c6d182",
+        "table_column_active_border_color": "#9db324",
+        "column_heading_color": "#121212",
+        "value_color": "#ff1616",
+        "table_column_bg_color": "#fff3f3",
+        "table_bg_image_color": "#f1aaaa",
+        "table_column_border_color": "#ff1616",
+        "heading_image_border_color": "#121212",
+        "row_heading_color": "#121212",
+        "row_heading_border_color": "#121212",
+        "value_icon_active_color": "#6cb324",
+        "value_icon_color": "#ff1616",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "lumin_pro_abW9qK": {
+      "type": "lumin-pro",
+      "blocks": {
+        "feature_text_4DcBfC": {
+          "type": "feature-text",
+          "settings": {
+            "text": "<em>★★★★★</em> Excellent <strong>4.8/5 Rated</strong>",
+            "font_size": 19,
+            "text_bg": "#ffffff",
+            "italic_text": "#fac50e",
+            "bold_text": "#4211e3",
+            "border": "#ffffff"
+          }
+        },
+        "heading_rjeUFp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your office has AC.Your home desk doesn't.",
+            "heading_size": "h1"
+          }
+        },
+        "text_JqUDnm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You're on back-to-back Zoom calls. Your ceiling fan just moves hot air around. The AC cools the whole room but kills your electricity bill. And a regular table fan? </p><p><strong>One nudge from your kid or pet and someone gets hurt.</strong> <br/><br/>That's the WFH summer trap most Indians are stuck in. AirLuxe was built to end it. <br/><br/>No blades. No noise. No guilt about your electricity bill. Just clean, steady cool airflow — exactly where you need it, exactly when you need it.</p>",
+            "text_style": "body"
+          }
+        },
+        "add_to_cart_button_MAjAGb": {
+          "type": "add-to-cart-button",
+          "settings": {
+            "custom_text": "Get Yours Today",
+            "custom_text_small": "",
+            "button_style_secondary": false,
+            "button_full": true
+          }
+        },
+        "testimonial_images_JbyeqY": {
+          "type": "testimonial-images",
+          "disabled": true,
+          "settings": {
+            "image_size": 1,
+            "image_space": -11,
+            "hide_img_1": false,
+            "hide_img_2": false,
+            "hide_img_3": false,
+            "hide_img_4": false,
+            "hide_img_5": false,
+            "text_block": "<p>★★★★★ Excellent 4.8 <em> It’s the easiest skincare decision I’ve made.”</em> — <em>Alyssa P.</em></p>",
+            "text_size": 13,
+            "text_style": "body",
+            "block_alignment": "flex-start"
+          }
+        }
+      },
+      "block_order": [
+        "feature_text_4DcBfC",
+        "heading_rjeUFp",
+        "text_JqUDnm",
+        "add_to_cart_button_MAjAGb",
+        "testimonial_images_JbyeqY"
+      ],
+      "name": "Lumin Pro Section",
+      "settings": {
+        "color_scheme_main": "scheme-cfd7bb8e-8fe7-42ea-8907-a8e728ed4619",
+        "full-width": true,
+        "hide_image": false,
+        "content_width": 600,
+        "image": "shopify://shop_images/3327492.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_RJmwwd": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"product-block-liquid pt-3 pb-3\">\n  \n<style>\n  .label-container {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 10px; /* Space between labels */\n  }\n  .label {\n    background-color: #f1f1f1; /* Default background color */\n    color: #333; /* Text color */\n    border-radius: 10px;\n    padding: 5px 15px; /* Adjust padding for spacing */\n    font-size: 14px;\n    display: inline-block; /* Ensure labels stack properly */\n    white-space: normal; /* Allow text to wrap if needed */\n    line-height: 1.5; /* Add line height for better readability */\n  }\n  .label:nth-child(1) { background-color: #FFDDC1; } /* Example color */\n  .label:nth-child(2) { background-color: #FFABAB; } /* Example color */\n  .label:nth-child(3) { background-color: #FFC3A0; } /* Example color */\n  /* Add more colors as needed */\n</style>\n\n<div class=\"label-container\">\n  <div class=\"label\">Most-Recommended</div>\n <div class=\"label\">Most-Sold</div>\n<div class=\"label\">High-In-Demand</div>\n</div>\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_UBygeG": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n.user-benefits-wrapper {\n  background: linear-gradient(135deg, #ffffff, #f9fafb);\n  padding: 44px 20px;\n  border-radius: 20px;\n  max-width: 1100px;\n  margin: 50px auto;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n}\n\n/* Section Header */\n.user-benefits-header {\n  text-align: center;\n  margin-bottom: 38px;\n}\n\n.section-pill {\n  display: inline-block;\n  padding: 10px 22px;\n  background: #111827;\n  color: #ffffff;\n  border-radius: 999px;\n  font-size: 14px;\n  font-weight: 600;\n  letter-spacing: 0.4px;\n  margin-bottom: 16px;\n}\n\n.user-benefits-header h2 {\n  font-size: 30px;\n  font-weight: 700;\n  color: #111827;\n}\n\n/* Grid */\n.user-benefits-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\n  gap: 26px;\n}\n\n/* Cards */\n.user-benefit-card {\n  background: #ffffff;\n  border-radius: 18px;\n  padding: 26px 24px;\n  box-shadow: 0 10px 26px rgba(0,0,0,0.07);\n  transition: transform 0.3s ease;\n}\n\n.user-benefit-card:hover {\n  transform: translateY(-6px);\n}\n\n/* Pills */\n.user-pill {\n  display: inline-block;\n  padding: 6px 14px;\n  background: #ecfeff;\n  color: #155e75;\n  border-radius: 999px;\n  font-size: 13px;\n  font-weight: 600;\n  margin-bottom: 10px;\n}\n\n/* Text */\n.user-benefit-text {\n  font-size: 15px;\n  line-height: 1.65;\n  color: #4b5563;\n}\n\n/* Meta */\n.user-meta {\n  margin-top: 14px;\n  font-size: 13px;\n  color: #6b7280;\n  font-style: italic;\n}\n\n/* Mobile */\n@media (max-width: 768px) {\n  .user-benefits-header h2 {\n    font-size: 24px;\n  }\n}\n</style>\n\n<div class=\"user-benefits-wrapper\">\n  <div class=\"user-benefits-header\">\n    <div class=\"section-pill\">REAL RESULTS</div>\n    <h2>How Users Have Benefitted</h2>\n  </div>\n\n  <div class=\"user-benefits-grid\">\n\n    <div class=\"user-benefit-card\">\n      <div class=\"user-pill\">Office Comfort</div>\n      <div class=\"user-benefit-text\">\n        Users report noticeable relief from neck and shoulder stiffness caused by long hours of desk work and screen time.\n      </div>\n      <div class=\"user-meta\">— IT Professionals & WFH Users</div>\n    </div>\n\n    <div class=\"user-benefit-card\">\n      <div class=\"user-pill\">Better Sleep</div>\n      <div class=\"user-benefit-text\">\n        Evening massage sessions help users unwind faster, release tension, and feel more relaxed before bedtime.\n      </div>\n      <div class=\"user-meta\">— Daily Stress Relief Users</div>\n    </div>\n\n    <div class=\"user-benefit-card\">\n      <div class=\"user-pill\">Reduced Muscle Tightness</div>\n      <div class=\"user-benefit-text\">\n        Regular use helps ease tight shoulder and upper back muscles, especially after long travel or physical activity.\n      </div>\n      <div class=\"user-meta\">— Travelers & Active Individuals</div>\n    </div>\n\n    <div class=\"user-benefit-card\">\n      <div class=\"user-pill\">Quick Relaxation</div>\n      <div class=\"user-benefit-text\">\n        Many users feel calmer and more refreshed within minutes, making it ideal for short breaks during busy days.\n      </div>\n      <div class=\"user-meta\">— Busy Professionals</div>\n    </div>\n\n    <div class=\"user-benefit-card\">\n      <div class=\"user-pill\">Home Therapy</div>\n      <div class=\"user-benefit-text\">\n        Customers love having a convenient massage solution at home without the need for frequent spa visits.\n      </div>\n      <div class=\"user-meta\">— Home Wellness Users</div>\n    </div>\n\n    <div class=\"user-benefit-card\">\n      <div class=\"user-pill\">Thoughtful Gifting</div>\n      <div class=\"user-benefit-text\">\n        Gift recipients often describe it as one of the most useful and relaxing wellness gifts they’ve received.\n      </div>\n      <div class=\"user-meta\">— Gift Buyers</div>\n    </div>\n\n  </div>\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "announcement_bar_scrolling_iYN9yh": {
+      "type": "announcement-bar-scrolling",
+      "blocks": {
+        "announcement_4TqTFB": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>Your Skin — Your Confidence.</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 66,
+            "text_size_mobile": 32,
+            "text_color": "#000000",
+            "use_gradient": true,
+            "gradient_color_1": "#fc7a4b",
+            "gradient_color_2": "#9460d9",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        },
+        "announcement_aAtQdC": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>Clean Ingredients</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 66,
+            "text_size_mobile": 32,
+            "text_color": "#000000",
+            "use_gradient": true,
+            "gradient_color_1": "#9460d9",
+            "gradient_color_2": "#fc7a4b",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        }
+      },
+      "block_order": [
+        "announcement_4TqTFB",
+        "announcement_aAtQdC"
+      ],
+      "disabled": true,
+      "name": "t:sections.announcement-bar.presets.name-scrolling",
+      "settings": {
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "show_line_separator": false,
+        "scroll_speed": 80,
+        "scroll_direction": "1",
+        "mobile_height": 84,
+        "desktop_height": 96
+      }
+    },
+    "bundle_deals_KM7TaF": {
+      "type": "bundle-deals",
+      "blocks": {
+        "product_g8KRyk": {
+          "type": "product",
+          "settings": {
+            "product": "magnetic-car-phone-holder-suction-mount-air-vent"
+          }
+        },
+        "product_8ByGhz": {
+          "type": "product",
+          "settings": {
+            "product": "magcube-3-in-1-cube-wireless-charger-qi2-certified"
+          }
+        }
+      },
+      "block_order": [
+        "product_g8KRyk",
+        "product_8ByGhz"
+      ],
+      "disabled": true,
+      "name": "Bundle deals",
+      "settings": {
+        "width": "full",
+        "max_width": 1200,
+        "container_alignment": "center",
+        "heading": "✨ Glow Together: The Ultimate Skincare Bundle",
+        "heading_tag": "h2",
+        "heading_size": "h1",
+        "text": "<p>Treat your skin (and your savings) to the full experience. Our <strong>[Gloow Bundle ]</strong> brings together our best-selling essentials for a complete routine that <em>works better together</em>—and at a price that’s too good to miss.</p>",
+        "color_scheme": "accent-2",
+        "layout": "horizontal-images-left",
+        "content_alignment": "center",
+        "enable_price_changes": true,
+        "total_price_label": "Total Price:",
+        "btn_label": "Add selected to cart",
+        "bundle_deals_customisation": true,
+        "bundle_deals_compare_price_color": "#fc7a4b",
+        "bundle_deals_background_color": "#ffffff",
+        "bundle_deals_padding": 20,
+        "bundle_deals_border_width": 0,
+        "bundle_deals_border_radius": 26,
+        "bundle_deals_border_color": "#fc7a4b",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "blocks_P6YVAB": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8ed7498_mNBXiw": {
+          "type": "ai_gen_block_8ed7498",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Artboard_1_8074197a-2043-475b-87a2-eb6ad69aef0b.png",
+            "mobile_breakpoint": 760,
+            "image_link": "",
+            "image_fit": "cover",
+            "border_radius": 0,
+            "placeholder_height": 400,
+            "enable_hover_effect": false,
+            "hover_scale": 105,
+            "enable_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "enable_content_overlay": false,
+            "overlay_heading": "",
+            "overlay_text": "",
+            "content_color": "#ffffff",
+            "heading_size": 32,
+            "heading_size_mobile": 24,
+            "text_size": 16,
+            "text_size_mobile": 14
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_8ed7498_mXK8yB": {
+          "type": "ai_gen_block_8ed7498",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Artboard_2_bcfb1786-f16d-4902-94b4-c8fc878b6467.png",
+            "mobile_breakpoint": 760,
+            "image_link": "",
+            "image_fit": "cover",
+            "border_radius": 0,
+            "placeholder_height": 400,
+            "enable_hover_effect": false,
+            "hover_scale": 105,
+            "enable_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "enable_content_overlay": false,
+            "overlay_heading": "",
+            "overlay_text": "",
+            "content_color": "#ffffff",
+            "heading_size": 32,
+            "heading_size_mobile": 24,
+            "text_size": 16,
+            "text_size_mobile": 14
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_8ed7498_WkJfnL": {
+          "type": "ai_gen_block_8ed7498",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Artboard_3_927db0b1-1ef8-4d43-adc1-6bbfe3c32ee9.png",
+            "mobile_breakpoint": 760,
+            "image_link": "",
+            "image_fit": "cover",
+            "border_radius": 0,
+            "placeholder_height": 400,
+            "enable_hover_effect": false,
+            "hover_scale": 105,
+            "enable_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "enable_content_overlay": false,
+            "overlay_heading": "",
+            "overlay_text": "",
+            "content_color": "#ffffff",
+            "heading_size": 32,
+            "heading_size_mobile": 24,
+            "text_size": 16,
+            "text_size_mobile": 14
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_8ed7498_TFBwEn": {
+          "type": "ai_gen_block_8ed7498",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Artboard_4_5cf532fe-c7ec-493a-9159-bf7799a1ef7f.png",
+            "mobile_breakpoint": 760,
+            "image_link": "",
+            "image_fit": "cover",
+            "border_radius": 0,
+            "placeholder_height": 400,
+            "enable_hover_effect": false,
+            "hover_scale": 105,
+            "enable_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "enable_content_overlay": false,
+            "overlay_heading": "",
+            "overlay_text": "",
+            "content_color": "#ffffff",
+            "heading_size": 32,
+            "heading_size_mobile": 24,
+            "text_size": 16,
+            "text_size_mobile": 14
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_8ed7498_Gta373": {
+          "type": "ai_gen_block_8ed7498",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Artboard_5_06cb38b8-4957-436e-8ab5-53e4b72a8ef0.png",
+            "mobile_breakpoint": 760,
+            "image_link": "",
+            "image_fit": "cover",
+            "border_radius": 0,
+            "placeholder_height": 400,
+            "enable_hover_effect": false,
+            "hover_scale": 105,
+            "enable_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "enable_content_overlay": false,
+            "overlay_heading": "",
+            "overlay_text": "",
+            "content_color": "#ffffff",
+            "heading_size": 32,
+            "heading_size_mobile": 24,
+            "text_size": 16,
+            "text_size_mobile": 14
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_8ed7498_tppRPb": {
+          "type": "ai_gen_block_8ed7498",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Artboard_6_28f38b4f-7aee-49e4-911a-187fa0ba6cb3.png",
+            "mobile_breakpoint": 760,
+            "image_link": "",
+            "image_fit": "cover",
+            "border_radius": 0,
+            "placeholder_height": 400,
+            "enable_hover_effect": false,
+            "hover_scale": 105,
+            "enable_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "enable_content_overlay": false,
+            "overlay_heading": "",
+            "overlay_text": "",
+            "content_color": "#ffffff",
+            "heading_size": 32,
+            "heading_size_mobile": 24,
+            "text_size": 16,
+            "text_size_mobile": 14
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_8ed7498_TVfb8R": {
+          "type": "ai_gen_block_8ed7498",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Artboard_7.png",
+            "mobile_breakpoint": 760,
+            "image_link": "",
+            "image_fit": "cover",
+            "border_radius": 0,
+            "placeholder_height": 400,
+            "enable_hover_effect": false,
+            "hover_scale": 105,
+            "enable_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "enable_content_overlay": false,
+            "overlay_heading": "",
+            "overlay_text": "",
+            "content_color": "#ffffff",
+            "heading_size": 32,
+            "heading_size_mobile": 24,
+            "text_size": 16,
+            "text_size_mobile": 14
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8ed7498_mNBXiw",
+        "ai_gen_block_8ed7498_mXK8yB",
+        "ai_gen_block_8ed7498_WkJfnL",
+        "ai_gen_block_8ed7498_TFBwEn",
+        "ai_gen_block_8ed7498_Gta373",
+        "ai_gen_block_8ed7498_tppRPb",
+        "ai_gen_block_8ed7498_TVfb8R"
+      ],
+      "custom_css": [],
+      "name": "Responsive image",
+      "settings": {}
+    },
+    "ss_featured_product_2_9MYJh8": {
+      "type": "ss-featured-product-2",
+      "blocks": {
+        "review_Bejnmp": {
+          "type": "review",
+          "settings": {
+            "stars_count": 5,
+            "stars_size": 18,
+            "stars_size_mobile": 18,
+            "review": "<p>4000+ Reviews</p>",
+            "review_custom": false,
+            "review_font": "josefin_sans_n4",
+            "review_size": 16,
+            "review_size_mobile": 16,
+            "review_height": 130,
+            "review_mt": 0,
+            "review_mt_mobile": 0,
+            "review_color": "#000000",
+            "stars_color": "#ffb800"
+          }
+        },
+        "heading_MRQc7C": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>This summer, your desk deserves better.</h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 44,
+            "heading_size_mobile": 28,
+            "heading_height": 130,
+            "heading_mt": 12,
+            "heading_mt_mobile": 12,
+            "heading_color": "#000000",
+            "heading_accent_color": "#3b8247"
+          }
+        },
+        "feature_gFxKH9": {
+          "type": "feature",
+          "settings": {
+            "icon": "atc",
+            "feature": "Spray mist humidification"
+          }
+        },
+        "feature_wBezVb": {
+          "type": "feature",
+          "settings": {
+            "icon": "atc",
+            "feature": "60° Auto Oscillation"
+          }
+        },
+        "feature_TejDze": {
+          "type": "feature",
+          "settings": {
+            "icon": "atc",
+            "feature": "9 Speed Settings"
+          }
+        },
+        "feature_WhkR46": {
+          "type": "feature",
+          "settings": {
+            "icon": "atc",
+            "feature": "Bladeless"
+          }
+        },
+        "text_kM8hfp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AirLuxe ships within 24 hours. No blades. No noise. No regrets.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 18,
+            "text_size_mobile": 16,
+            "text_height": 150,
+            "text_mt": 20,
+            "text_mt_mobile": 12,
+            "text_length": 10,
+            "text_color": "#000000"
+          }
+        },
+        "button_8VhqGj": {
+          "type": "button",
+          "settings": {
+            "button": "GET YOURS NOW",
+            "button_second": "30-Day satisfaction guarantee",
+            "url": "",
+            "button_custom": false,
+            "button_font": "josefin_sans_n4",
+            "button_size": 16,
+            "button_size_mobile": 16,
+            "button_height": 130,
+            "button_padding_horizontal": 48,
+            "button_padding_horizontal_mobile": 48,
+            "button_padding_vertical": 20,
+            "button_padding_vertical_mobile": 20,
+            "button_radius": 8,
+            "button_border_thickness": 0,
+            "button_mt": 32,
+            "button_mt_mobile": 20,
+            "button_style": "non_outline_arrow",
+            "button_color": "#000000",
+            "button_hover_color": "#000000",
+            "button_bg_color": "#ffe658",
+            "button_bg_hover_color": "#ffe658",
+            "button_border_color": "#000000",
+            "button_border_hover_color": "#000000"
+          }
+        },
+        "tag_Pei8F8": {
+          "type": "tag",
+          "settings": {
+            "tag_padding_horizontal": 20,
+            "tag_padding_horizontal_mobile": 20,
+            "tag_padding_vertical": 10,
+            "tag_padding_vertical_mobile": 10,
+            "tag_gap": 8,
+            "tag_gap_mobile": 8,
+            "tag_radius": 0,
+            "tag_border_thickness": 1,
+            "tag_border_style": "dashed",
+            "use_shadow": true,
+            "icon": "atc",
+            "icon_size": 20,
+            "icon_size_mobile": 20,
+            "tag": "Head's up we are low on stock.",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 16,
+            "text_size_mobile": 16,
+            "text_height": 100,
+            "text_color": "#7c0a0a",
+            "icon_color": "#7c0a0a",
+            "tag_bg_color": "#ffffff",
+            "tag_border_color": "#7c0a0a",
+            "tag_shadow_overlay": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "review_Bejnmp",
+        "heading_MRQc7C",
+        "feature_gFxKH9",
+        "feature_wBezVb",
+        "feature_TejDze",
+        "feature_WhkR46",
+        "text_kM8hfp",
+        "button_8VhqGj",
+        "tag_Pei8F8"
+      ],
+      "name": "SS - Featured product #2",
+      "settings": {
+        "product": "",
+        "body_layout": "image_text",
+        "body_layout_mobile": "text_image",
+        "body_gap": 50,
+        "body_gap_mobile": 20,
+        "content_align": "left",
+        "content_align_mobile": "center",
+        "content_vertical_align": "center",
+        "custom_image": "shopify://shop_images/3327071.png",
+        "image_width": 52,
+        "image_ratio": "square",
+        "image_ratio_mobile": "square",
+        "image_radius": 14,
+        "feature_border_thickness": 1,
+        "feature_body_gap": 10,
+        "feature_body_gap_mobile": 10,
+        "feature_body_mt": 20,
+        "feature_body_mt_mobile": 12,
+        "feature_icon_size": 18,
+        "feature_icon_size_mobile": 18,
+        "feature_gap": 6,
+        "feature_gap_mobile": 6,
+        "feature_text_custom": false,
+        "feature_text_font": "josefin_sans_n4",
+        "feature_text_size": 18,
+        "feature_text_size_mobile": 16,
+        "feature_text_height": 100,
+        "feature_text_color": "#000000",
+        "feature_icon_color": "#3b8247",
+        "feature_border_color": "#afafaf",
+        "background_color": "",
+        "background_gradient": "radial-gradient(rgba(231, 253, 219, 0.8) 15%, rgba(255, 255, 255, 1) 85%)",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 10,
+        "lazy": true
+      }
+    },
+    "custom_liquid_A68LeK": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n   :root {\n    --ink:      #111010;\n    --warm:     #f7f3ee;\n    --fog:      #f0ece6;\n    --orange:   #d94f1e;\n    --gold:     #b8892a;\n    --mist:     #e8f0f5;\n    --rule:     #ddd8d0;\n    --note:     #7a736b;\n    --white:    #ffffff;\n    --green:    #2a6e3f;\n  }\nbody {\n    font-family: 'DM Sans', sans-serif;\n    background: #eceae5;\n    color: var(--ink);\n    font-size: 15px;\n  }\n  /* ── LEGEND ── */\n  .legend {\n    background: var(--ink);\n    color: #ccc;\n    padding: 9px 28px;\n    font-size: 11px;\n    font-family: monospace;\n    display: flex;\n    gap: 20px;\n    flex-wrap: wrap;\n    align-items: center;\n    position: sticky;\n    top: 0;\n    z-index: 200;\n    letter-spacing: 0.5px;\n  }\n  .legend strong { color: #fff; margin-right: 6px; }\n  .pill {\n    padding: 2px 9px;\n    border-radius: 20px;\n    font-size: 10px;\n    font-weight: 600;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n    display: inline-block;\n    margin-bottom: 8px;\n  }\n  .pill-h    { background: #fde8de; color: #c03a0e; }\n  .pill-b    { background: #ddeeff; color: #1a5fa0; }\n  .pill-ui   { background: #ddf0e0; color: #1d6636; }\n  .pill-tip  { background: #fff3cc; color: #7a5c00; border: 1px dashed #c8a020; }\n\n  /* ── WRAPPER ── */\n  .wrapper {\n    max-width: 900px;\n    margin: 0 auto;\n    padding: 40px 24px 120px;\n  }\n\n  /* ── SECTION DIVIDER ── */\n  .sec-label {\n    font-family: monospace;\n    font-size: 10px;\n    letter-spacing: 3px;\n    text-transform: uppercase;\n    color: var(--note);\n    margin: 44px 0 10px;\n    display: flex;\n    align-items: center;\n    gap: 10px;\n  }\n  .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }\n\n  /* ── COPY CARD ── */\n  .card {\n    background: var(--white);\n    border: 1px solid var(--rule);\n    border-radius: 6px;\n    padding: 28px 32px;\n    margin-bottom: 12px;\n  }\n\n  /* ── TIP BOX ── */\n  .tip {\n    background: #fffbea;\n    border: 1px dashed #d4a820;\n    border-radius: 5px;\n    padding: 13px 18px;\n    font-size: 12.5px;\n    color: #6b4f00;\n    line-height: 1.6;\n    margin: 14px 0;\n  }\n  .tip strong { color: #3d2c00; }\n\n  /* ── HEADLINES ── */\n  h1.page-title {\n    font-family: 'Cormorant Garamond', Georgia, serif;\n    font-size: clamp(34px, 6vw, 54px);\n    font-weight: 700;\n    line-height: 1.08;\n    letter-spacing: -1px;\n    color: var(--ink);\n  }\n  h1.page-title em {\n    font-style: italic;\n    color: var(--orange);\n  }\n  .tagline {\n    font-family: 'Syne', sans-serif;\n    font-size: 15px;\n    font-weight: 500;\n    color: var(--note);\n    line-height: 1.6;\n    margin-top: 10px;\n    max-width: 520px;\n  }\n  h2.section-h {\n    font-family: 'Cormorant Garamond', serif;\n    font-size: 28px;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 4px;\n  }\n  h3.block-h {\n    font-family: 'Syne', sans-serif;\n    font-size: 15px;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 6px;\n    text-transform: uppercase;\n    letter-spacing: 0.5px;\n  }\n\n  /* ── PRICE ── */\n  .price-row {\n    display: flex;\n    align-items: baseline;\n    gap: 14px;\n    margin: 18px 0 6px;\n    flex-wrap: wrap;\n  }\n  .price-now {\n    font-family: 'Syne', sans-serif;\n    font-size: 38px;\n    font-weight: 800;\n    color: var(--ink);\n  }\n  .price-was {\n    font-size: 20px;\n    text-decoration: line-through;\n    color: #bbb;\n  }\n  .price-save {\n    background: var(--orange);\n    color: #fff;\n    font-size: 11px;\n    font-weight: 700;\n    padding: 4px 10px;\n    border-radius: 2px;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n  }\n  .price-meta {\n    font-size: 12px;\n    color: var(--note);\n    margin-bottom: 4px;\n  }\n  .emi-chip {\n    display: inline-flex;\n    align-items: center;\n    gap: 6px;\n    background: var(--fog);\n    border: 1px solid var(--rule);\n    border-radius: 3px;\n    padding: 6px 13px;\n    font-size: 12.5px;\n    color: var(--note);\n    margin-top: 6px;\n  }\n\n  /* ── BADGES ── */\n  .badge-row {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 8px;\n    margin: 16px 0;\n  }\n  .badge {\n    display: flex;\n    align-items: center;\n    gap: 7px;\n    border: 1px solid var(--rule);\n    border-radius: 3px;\n    padding: 7px 13px;\n    font-size: 12.5px;\n    background: var(--fog);\n    font-weight: 500;\n  }\n\n  /* ── PRODUCT IMAGE STRIP ── */\n  .img-strip {\n    display: grid;\n    grid-template-columns: 2fr 1fr 1fr;\n    gap: 6px;\n    border-radius: 6px;\n    overflow: hidden;\n    margin: 14px 0;\n  }\n  .img-strip img {\n    width: 100%;\n    height: 200px;\n    object-fit: cover;\n    display: block;\n  }\n  .img-strip img:first-child { height: 100%; }\n  .img-strip .col2 { display: flex; flex-direction: column; gap: 6px; }\n  .img-strip .col2 img { height: 97px; }\n\n  /* ── PAIN HOOK ── */\n  .pain-block {\n    background: var(--ink);\n    color: #f0ece6;\n    padding: 28px 32px;\n    border-radius: 6px;\n    margin: 8px 0;\n  }\n  .pain-block .pain-headline {\n    font-family: 'Cormorant Garamond', serif;\n    font-size: 26px;\n    font-weight: 700;\n    color: #fff;\n    line-height: 1.2;\n    margin-bottom: 12px;\n  }\n  .pain-block p {\n    font-size: 14.5px;\n    line-height: 1.7;\n    color: #c8c0b5;\n    max-width: 600px;\n  }\n  .pain-block p strong { color: #fff; }\n  .pain-block .highlight {\n    display: inline-block;\n    background: var(--orange);\n    color: #fff;\n    padding: 2px 8px;\n    border-radius: 2px;\n    font-weight: 600;\n  }\n\n  /* ── FEATURE GRID ── */\n  .feat-grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n    gap: 12px;\n    margin-top: 10px;\n  }\n  .feat-card {\n    background: var(--fog);\n    border: 1px solid var(--rule);\n    border-radius: 5px;\n    padding: 18px 20px;\n  }\n  .feat-icon { font-size: 26px; margin-bottom: 8px; display: block; }\n  .feat-title {\n    font-family: 'Syne', sans-serif;\n    font-weight: 700;\n    font-size: 13px;\n    text-transform: uppercase;\n    letter-spacing: 0.5px;\n    margin-bottom: 5px;\n    color: var(--ink);\n  }\n  .feat-desc { font-size: 13px; color: var(--note); line-height: 1.5; }\n  .feat-desc strong { color: var(--ink); }\n\n  /* ── VS TABLE ── */\n  .vs-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }\n  .vs-table th {\n    padding: 11px 16px;\n    font-family: 'Syne', sans-serif;\n    font-size: 11px;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n    font-weight: 700;\n    text-align: center;\n  }\n  .vs-table th:first-child { text-align: left; background: var(--fog); }\n  .vs-table th.col-airluxe {\n    background: var(--orange);\n    color: #fff;\n  }\n  .vs-table th.col-regular { background: #ddd; color: #555; }\n  .vs-table td {\n    padding: 10px 16px;\n    border-bottom: 1px solid var(--rule);\n    text-align: center;\n  }\n  .vs-table td:first-child { text-align: left; color: var(--note); font-weight: 500; background: var(--fog); }\n  .vs-table .col-airluxe-td { background: #fff5f2; font-weight: 600; }\n  .vs-table .col-regular-td { background: #f9f9f9; color: #888; }\n  .vs-table tr:last-child td { border-bottom: none; }\n  .yes { color: var(--green); }\n  .no  { color: #c0392b; }\n\n  /* ── BULLET LIST ── */\n  .copy-list { list-style: none; }\n  .copy-list li {\n    display: flex;\n    gap: 10px;\n    padding: 10px 0;\n    border-bottom: 1px solid #f0ece6;\n    font-size: 14px;\n    line-height: 1.55;\n    color: var(--ink);\n  }\n  .copy-list li:last-child { border-bottom: none; }\n  .copy-list .ico { flex-shrink: 0; font-size: 18px; margin-top: 0; }\n\n  /* ── SPEC TABLE ── */\n  .spec-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }\n  .spec-table td { padding: 9px 14px; border-bottom: 1px solid var(--rule); }\n  .spec-table td:first-child { color: var(--note); width: 42%; font-weight: 500; background: var(--fog); }\n  .spec-table tr:last-child td { border-bottom: none; }\n\n  /* ── FAQ ── */\n  .faq { border-top: 1px solid var(--rule); }\n  .faq-item { border-bottom: 1px solid var(--rule); padding: 16px 4px; }\n  .faq-q { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 6px; }\n  .faq-a { font-size: 13.5px; color: var(--note); line-height: 1.65; }\n\n  /* ── REVIEWS ── */\n  .review-grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n    gap: 12px;\n    margin-top: 10px;\n  }\n  .review-card {\n    background: var(--fog);\n    border: 1px solid var(--rule);\n    border-radius: 5px;\n    padding: 16px 18px;\n  }\n  .stars { color: #e8a020; font-size: 15px; margin-bottom: 7px; }\n  .review-text { font-size: 13.5px; line-height: 1.6; color: var(--ink); font-style: italic; margin-bottom: 10px; }\n  .reviewer { font-size: 11.5px; color: var(--note); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }\n  .verified { color: var(--green); font-size: 10.5px; margin-left: 6px; }\n\n  /* ── CTA BUTTONS ── */\n  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }\n  .btn-primary {\n    background: var(--orange);\n    color: #fff;\n    border: none;\n    padding: 16px 36px;\n    font-size: 15px;\n    font-weight: 600;\n    border-radius: 3px;\n    cursor: pointer;\n    font-family: 'Syne', sans-serif;\n    letter-spacing: 0.3px;\n    text-transform: uppercase;\n  }\n  .btn-secondary {\n    background: transparent;\n    color: var(--ink);\n    border: 1.5px solid var(--ink);\n    padding: 15px 28px;\n    font-size: 14px;\n    font-weight: 600;\n    border-radius: 3px;\n    cursor: pointer;\n    font-family: 'Syne', sans-serif;\n    text-transform: uppercase;\n  }\n\n  /* ── SCARCITY BAR ── */\n  .scarcity {\n    background: #fff5f2;\n    border: 1px solid #f4c4b2;\n    border-radius: 4px;\n    padding: 11px 18px;\n    font-size: 13px;\n    color: #8b2c0d;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    margin-top: 14px;\n    font-weight: 500;\n  }\n  .stock-bar { flex: 1; height: 5px; background: #f4c4b2; border-radius: 10px; overflow: hidden; }\n  .stock-fill { height: 100%; width: 22%; background: var(--orange); border-radius: 10px; }\n\n  /* ── STICKY FOOTER ── */\n  .sticky-footer {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background: #fff;\n    border-top: 1px solid var(--rule);\n    padding: 12px 24px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 12px;\n    box-shadow: 0 -6px 24px rgba(0,0,0,0.08);\n    z-index: 150;\n  }\n  .sticky-product { display: flex; align-items: center; gap: 12px; }\n  .sticky-product img { width: 44px; height: 44px; object-fit: cover; border-radius: 4px; border: 1px solid var(--rule); }\n  .sticky-name { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; }\n  .sticky-price { font-size: 12px; color: var(--note); }\n\n  @media (max-width: 600px) {\n    .wrapper { padding: 24px 14px 130px; }\n    .img-strip { grid-template-columns: 1fr; }\n    .img-strip img { height: 240px; }\n    .img-strip .col2 { flex-direction: row; }\n    .img-strip .col2 img { height: 120px; flex: 1; }\n    .card { padding: 20px 18px; }\n    .pain-block { padding: 22px 20px; }\n  }\n</style>\n\n<div class=\"card\">\n<h2 class=\"section-h\">Why AirLuxe? </h2>\n<h3>Let the comparison speak.</h3>\n<p style=\"font-size: 14px; color: var(--note); margin-bottom: 18px;\">Not all fans are built equal. Here's what you're actually getting.</p>\n<div class=\"pill pill-b\">Comparison Table</div>\n<div style=\"overflow-x: auto;\">\n<table class=\"vs-table\" style=\"width: 100.016%; height: 501.241px;\">\n<thead>\n<tr style=\"height: 53.3333px;\">\n<th style=\"text-align: left; background: var(--fog); width: 28.9944%; height: 53.3333px;\">Feature</th>\n<th class=\"col-airluxe\" style=\"width: 24.8804%; height: 53.3333px;\">AirLuxe</th>\n<th class=\"col-regular\" style=\"width: 25.4681%; height: 53.3333px;\">Regular Table Fan</th>\n<th class=\"col-regular\" style=\"width: 20.5704%; height: 53.3333px;\">Ceiling Fan</th>\n</tr>\n</thead>\n<tbody>\n<tr style=\"height: 58.3507px;\">\n<td style=\"width: 28.9944%; height: 58.3507px;\">Safe around kids &amp; pets</td>\n<td class=\"col-airluxe-td\" style=\"width: 24.8804%; height: 58.3507px;\"><span class=\"yes\">✔ No blades</span></td>\n<td class=\"col-regular-td\" style=\"width: 25.4681%; height: 58.3507px;\"><span class=\"no\">✘ Sharp blades</span></td>\n<td class=\"col-regular-td\" style=\"width: 20.5704%; height: 58.3507px;\"><span class=\"no\">✘ Out of reach</span></td>\n</tr>\n<tr style=\"height: 58.3507px;\">\n<td style=\"width: 28.9944%; height: 58.3507px;\">Works during power cuts</td>\n<td class=\"col-airluxe-td\" style=\"width: 24.8804%; height: 58.3507px;\"><span class=\"yes\">✔ 3500mAh battery</span></td>\n<td class=\"col-regular-td\" style=\"width: 25.4681%; height: 58.3507px;\"><span class=\"no\">✘ Needs power</span></td>\n<td class=\"col-regular-td\" style=\"width: 20.5704%; height: 58.3507px;\"><span class=\"no\">✘ Needs power</span></td>\n</tr>\n<tr style=\"height: 58.3507px;\">\n<td style=\"width: 28.9944%; height: 58.3507px;\">Zoom-call friendly (quiet)</td>\n<td class=\"col-airluxe-td\" style=\"width: 24.8804%; height: 58.3507px;\"><span class=\"yes\">✔ Brushless motor</span></td>\n<td class=\"col-regular-td\" style=\"width: 25.4681%; height: 58.3507px;\"><span class=\"no\">✘ Audible hum</span></td>\n<td class=\"col-regular-td\" style=\"width: 20.5704%; height: 58.3507px;\"><span class=\"no\">✘ Wobble noise</span></td>\n</tr>\n<tr style=\"height: 58.3507px;\">\n<td style=\"width: 28.9944%; height: 58.3507px;\">Cool mist humidification</td>\n<td class=\"col-airluxe-td\" style=\"width: 24.8804%; height: 58.3507px;\"><span class=\"yes\">✔ Built-in mist</span></td>\n<td class=\"col-regular-td\" style=\"width: 25.4681%; height: 58.3507px;\"><span class=\"no\">✘ Air only</span></td>\n<td class=\"col-regular-td\" style=\"width: 20.5704%; height: 58.3507px;\"><span class=\"no\">✘ Air only</span></td>\n</tr>\n<tr style=\"height: 58.3507px;\">\n<td style=\"width: 28.9944%; height: 58.3507px;\">Targeted desk airflow</td>\n<td class=\"col-airluxe-td\" style=\"width: 24.8804%; height: 58.3507px;\"><span class=\"yes\">✔ 60° oscillation</span></td>\n<td class=\"col-regular-td\" style=\"width: 25.4681%; height: 58.3507px;\">Partial</td>\n<td class=\"col-regular-td\" style=\"width: 20.5704%; height: 58.3507px;\"><span class=\"no\">✘ Whole room</span></td>\n</tr>\n<tr style=\"height: 39.4531px;\">\n<td style=\"width: 28.9944%; height: 39.4531px;\">Night light</td>\n<td class=\"col-airluxe-td\" style=\"width: 24.8804%; height: 39.4531px;\"><span class=\"yes\">✔ 3-level LED</span></td>\n<td class=\"col-regular-td\" style=\"width: 25.4681%; height: 39.4531px;\"><span class=\"no\">✘ None</span></td>\n<td class=\"col-regular-td\" style=\"width: 20.5704%; height: 39.4531px;\"><span class=\"no\">✘ None</span></td>\n</tr>\n<tr style=\"height: 58.3507px;\">\n<td style=\"width: 28.9944%; height: 58.3507px;\">Sleep timer</td>\n<td class=\"col-airluxe-td\" style=\"width: 24.8804%; height: 58.3507px;\"><span class=\"yes\">✔ Up to 9 hours</span></td>\n<td class=\"col-regular-td\" style=\"width: 25.4681%; height: 58.3507px;\"><span class=\"no\">✘ Manual only</span></td>\n<td class=\"col-regular-td\" style=\"width: 20.5704%; height: 58.3507px;\"><span class=\"no\">✘ Rarely</span></td>\n</tr>\n<tr style=\"height: 58.3507px;\">\n<td style=\"width: 28.9944%; height: 58.3507px;\">Electricity cost per hour</td>\n<td class=\"col-airluxe-td\" style=\"width: 24.8804%; height: 58.3507px;\"><span class=\"yes\">~₹0.10 (USB-C)</span></td>\n<td class=\"col-regular-td\" style=\"width: 25.4681%; height: 58.3507px;\">~₹0.50–1.20</td>\n<td class=\"col-regular-td\" style=\"width: 20.5704%; height: 58.3507px;\">~₹1.50–3.00</td>\n</tr>\n</tbody>\n</table>\n</div>\n</div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "section_divider_7mqAUy": {
+      "type": "section-divider",
+      "disabled": true,
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_2",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "scheme-78d2e301-66be-46b4-8bf3-c85455b81fc4",
+        "use_custom_shape_color": true,
+        "custom_shape_color": "#cad8f8",
+        "background_color": "background-1",
+        "use_custom_background_color": false,
+        "custom_background_color": "#eaede6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "lumin_multicolumns_qkGwrq": {
+      "type": "lumin-multicolumns",
+      "blocks": {
+        "column_HAeVK6": {
+          "type": "column",
+          "settings": {
+            "title": "1 Week",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_kEDigk": {
+          "type": "column",
+          "settings": {
+            "title": "2 Week",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_BLxhJN": {
+          "type": "column",
+          "settings": {
+            "title": "3 Week",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_g7k4nM": {
+          "type": "column",
+          "settings": {
+            "title": "4 Week",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_HAeVK6",
+        "column_kEDigk",
+        "column_BLxhJN",
+        "column_g7k4nM"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Get [<strong>Noticeable]</strong> Results in Less than<strong> [4 Weeks]</strong>",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "image_width": "half",
+        "image_ratio": "circle",
+        "columns_radius": 0,
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "enable_desktop_slider": true,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "accent-1",
+        "background_style": "primary",
+        "color_scheme_2": "accent-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "shoppable_videos_kbcD76": {
+      "type": "shoppable-videos",
+      "blocks": {
+        "slide_rNGEy7": {
+          "type": "slide",
+          "settings": {
+            "video": "shopify://files/videos/pl67as-h264-hd.mp4",
+            "video_autoplay": true,
+            "product": "bladeless-rechargeable-table-fan-air-multiplier",
+            "product_bg_color": "#ffffff",
+            "product_text_color": "#121212",
+            "custom_badge": "NEW",
+            "custom_badge_bg_color": "#5a6c43"
+          }
+        },
+        "slide_VjCRiM": {
+          "type": "slide",
+          "settings": {
+            "video": "shopify://files/videos/24af43441e35b1ade5730532bc63065e_720w.mp4",
+            "video_autoplay": true,
+            "product": "portable-massager-for-neck-and-shoulder",
+            "product_bg_color": "#ffffff",
+            "product_text_color": "#121212",
+            "custom_badge": "NEW",
+            "custom_badge_bg_color": "#5a6c43"
+          }
+        },
+        "slide_EJqwyi": {
+          "type": "slide",
+          "settings": {
+            "video": "shopify://files/videos/0dd5f50362817499218a2ef3a9f48588_720w.mp4",
+            "video_autoplay": true,
+            "product": "portable-massager-for-neck-and-shoulder",
+            "product_bg_color": "#ffffff",
+            "product_text_color": "#121212",
+            "custom_badge": "NEW",
+            "custom_badge_bg_color": "#5a6c43"
+          }
+        },
+        "slide_6pYwi7": {
+          "type": "slide",
+          "settings": {
+            "video": "shopify://files/videos/eda327e0b44b0979d4d9dcdd0ea49cbc_720w.mp4",
+            "video_autoplay": true,
+            "product": "portable-massager-for-neck-and-shoulder",
+            "product_bg_color": "#ffffff",
+            "product_text_color": "#121212",
+            "custom_badge": "NEW",
+            "custom_badge_bg_color": "#5a6c43"
+          }
+        },
+        "slide_AYzWkF": {
+          "type": "slide",
+          "settings": {
+            "video": "shopify://files/videos/b04742b0ae0260f917e339e95d82e9c2_720w.mp4",
+            "video_autoplay": true,
+            "product": "portable-massager-for-neck-and-shoulder",
+            "product_bg_color": "#ffffff",
+            "product_text_color": "#121212",
+            "custom_badge": "NEW",
+            "custom_badge_bg_color": "#5a6c43"
+          }
+        },
+        "slide_aAM9K4": {
+          "type": "slide",
+          "settings": {
+            "video": "shopify://files/videos/60c7ea3428560c634d32bb8b981e68de_720w.mp4",
+            "video_autoplay": true,
+            "product": "portable-massager-for-neck-and-shoulder",
+            "product_bg_color": "#ffffff",
+            "product_text_color": "#121212",
+            "custom_badge": "NEW",
+            "custom_badge_bg_color": "#5a6c43"
+          }
+        }
+      },
+      "block_order": [
+        "slide_rNGEy7",
+        "slide_VjCRiM",
+        "slide_EJqwyi",
+        "slide_6pYwi7",
+        "slide_AYzWkF",
+        "slide_aAM9K4"
+      ],
+      "name": "Shoppable videos",
+      "settings": {
+        "color_scheme": "",
+        "title": "See Our Customers Going Gaga Over Our Products",
+        "heading_size": "h0",
+        "card_color_scheme": "scheme-78d2e301-66be-46b4-8bf3-c85455b81fc4",
+        "card_text_alignment": "left",
+        "card_border_thickness": 1,
+        "card_border_opacity": 25,
+        "card_corner_radius": 6,
+        "columns_desktop": 4,
+        "pt": 36,
+        "pb": 36
+      }
+    },
+    "collapsible_content_kdacf9": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_LxEjjm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is this actually bladeless or is it just covered blades?",
+            "icon": "none",
+            "row_content": "<p>Genuinely bladeless. The airflow is generated inside the base using a brushless motor and amplified through the ring — no hidden blades inside the ring itself. You can put your hand inside the ring safely. This is the same airflow multiplication technology (Air Multiplier design) that premium brands like Dyson pioneered.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9YWRCN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does the battery last on a single charge?",
+            "icon": "none",
+            "row_content": "<p>At medium speed (Speed 5), expect 4–6 hours. At the lowest speed, you can stretch it to 8–9 hours. At full blast, around 2–3 hours. Most WFH users charge it overnight and use it through their workday without any issue.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_f8DF86": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will this actually cool a room, or just the area around my desk?",
+            "icon": "none",
+            "row_content": "<p>Honest answer: it's a personal desk fan, not a room cooler. It excels at cooling the air within 1–2 metres of where it's placed — ideal for a desk setup. If you need to cool an entire room, you need an AC or desert cooler. But for personal comfort while working, it's excellent — especially with the mist function on.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_QxPMia": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is it noisy? I'm on calls all day.",
+            "icon": "none",
+            "row_content": "<p>The brushless motor is genuinely quiet — measurably quieter than standard table fans. On speeds 1–4, most people can't hear it at all on a Zoom call. Speed 9 at maximum is audible but still not disruptive. We use it in our own studio while recording — it doesn't appear on audio.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4gwiRa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if it doesn’t work for me?",
+            "icon": "none",
+            "row_content": "<p>Enjoy the Flexibility of a 30-Day Return Period for Our Products.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jPMXwy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What Included in the box?",
+            "icon": "none",
+            "row_content": "<ul><li>1 Jet Fighter </li><li>1 Charging Cable </li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NE9Uft": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Guarentee?",
+            "icon": "none",
+            "row_content": "<p>Shop with Confidence Knowing that Our Products are Guaranteed to Meet Your Expectations.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9dFaXk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Free Shipping?",
+            "icon": "none",
+            "row_content": "<p>Yep! We offer FREE shipping.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bpFeHU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you provide tracking information?",
+            "icon": "none",
+            "row_content": "<p>Yes, Every order includes a tracking number which will be provided via email once your order is fulfilled. Please ensure to add your mail address during checkout.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_LxEjjm",
+        "collapsible_row_9YWRCN",
+        "collapsible_row_f8DF86",
+        "collapsible_row_QxPMia",
+        "collapsible_row_4gwiRa",
+        "collapsible_row_jPMXwy",
+        "collapsible_row_NE9Uft",
+        "collapsible_row_9dFaXk",
+        "collapsible_row_bpFeHU"
+      ],
+      "settings": {
+        "caption": "FAQs",
+        "heading": "Blissway Q&A",
+        "heading_size": "h0",
+        "heading_alignment": "center",
+        "layout": "section",
+        "color_scheme": "accent-1",
+        "container_color_scheme": "background-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "small",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_with_text_bn6DRL": {
+      "type": "video-with-text",
+      "blocks": {
+        "heading_FLkYMa": {
+          "type": "heading",
+          "settings": {
+            "heading": "Video with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_XyiDGT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_JRWHXU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_FLkYMa",
+        "text_XyiDGT",
+        "button_JRWHXU"
+      ],
+      "disabled": true,
+      "name": "Video with Text",
+      "settings": {
+        "color_scheme_main": "scheme-78d2e301-66be-46b4-8bf3-c85455b81fc4",
+        "layout_width": "grid",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "color_scheme": "scheme-78d2e301-66be-46b4-8bf3-c85455b81fc4",
+        "mobile_content_alignment": "left",
+        "margin_top": 36,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "accent-1",
+        "image_ratio": "adapt",
+        "image_no_crop": false,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_scroll_tags": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "174300570336aa0ded": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "ss_feature_52_tjqghd",
+    "custom_liquid_KUjCKC",
+    "section_divider_cMmnbR",
+    "section_divider_EhKQe4",
+    "main",
+    "ss_featured_product_4_k3pdjG",
+    "ss_hotspots_9_zgqkWQ",
+    "ss_comparison_table_22_MV74Ug",
+    "lumin_pro_abW9qK",
+    "custom_liquid_RJmwwd",
+    "custom_liquid_UBygeG",
+    "announcement_bar_scrolling_iYN9yh",
+    "bundle_deals_KM7TaF",
+    "blocks_P6YVAB",
+    "ss_featured_product_2_9MYJh8",
+    "custom_liquid_A68LeK",
+    "section_divider_7mqAUy",
+    "lumin_multicolumns_qkGwrq",
+    "shoppable_videos_kbcD76",
+    "collapsible_content_kdacf9",
+    "video_with_text_bn6DRL",
+    "related-products",
+    "174300570336aa0ded"
+  ]
+}
+

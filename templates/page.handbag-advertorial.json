@@ -1,0 +1,243 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "advertorial_handbag": {
+      "type": "advertorial",
+      "blocks": {
+        "luxury_css": {
+          "type": "custom_css",
+          "settings": {
+            "css": "/* Luxury Editorial Overrides */\n.content-section {\n  background-color: #FAF9F6;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  color: #1A1A1A;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.content-main-headline {\n  font-family: Georgia, serif;\n  letter-spacing: -0.01em;\n  line-height: 1.15 !important;\n  color: #1A1A1A;\n}\n\n.content-main-headline strong {\n  color: #A68966;\n}\n\n.content-subheadline {\n  font-style: italic;\n  font-family: Georgia, serif;\n  opacity: 0.85;\n  letter-spacing: 0;\n}\n\n.content-block p, .content-block li {\n  line-height: 1.8;\n  font-size: 18px;\n  color: #2D2D2D;\n  margin-bottom: 1.5rem;\n}\n\n.content-block h3 {\n  font-family: Georgia, serif;\n  font-size: 28px !important;\n  margin-top: 3rem !important;\n  color: #1A1A1A;\n  border-bottom: 1px solid #E5E5E5;\n  padding-bottom: 0.75rem;\n}\n\n/* Comparison Grid Styling */\n.block-comparison_table ul {\n  list-style: none !important;\n  padding: 0 !important;\n  margin: 40px 0 !important;\n  border: 1px solid #E5E5E5;\n  background: #FFF;\n}\n\n.block-comparison_table ul li {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  border-bottom: 1px solid #F0F0F0;\n  padding: 15px !important;\n  margin: 0 !important;\n  align-items: center;\n  font-size: 15px;\n}\n\n.block-comparison_table ul li:first-child {\n  background: #1A1A1A;\n  color: #FFF;\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  font-size: 12px;\n}\n\n.block-comparison_table ul li:last-child {\n  border-bottom: none;\n}\n\n@media (max-width: 600px) {\n  .block-comparison_table ul li {\n    grid-template-columns: 1fr;\n    gap: 5px;\n    padding: 20px 15px !important;\n  }\n  .block-comparison_table ul li:first-child {\n    display: none;\n  }\n}\n\n/* Trust Bar Styling */\n.block-trust_badges {\n  margin: 2rem 0 !important;\n}\n.block-trust_badges ul {\n  background: #FFF !important;\n  border: 1px solid #E5E5E5 !important;\n  padding: 1.5rem !important;\n}\n\n/* 6-Month Wear Test Highlight */\n.wear-test-accent {\n  background: #F3F0EB;\n  padding: 2rem;\n  border-left: 4px solid #A68966;\n  margin: 2rem 0;\n}\n"
+          }
+        },
+        "top_header": {
+          "type": "top_header",
+          "settings": {
+            "main_text": "CULTURAL EDITORIAL",
+            "sub_text": "THE ARTISAN SERIES",
+            "trending_text": "Exclusive Feature: The Woven Revolution",
+            "background_color": "#1A1A1A",
+            "main_text_color": "#FFFFFF",
+            "sub_text_color": "#A68966",
+            "trending_text_color": "#FFFFFF"
+          }
+        },
+        "path_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>JOURNAL \\ CURATED FASHION \\ VOLUME IV</p>",
+            "text_size": 12,
+            "text_color": "#999999"
+          }
+        },
+        "main_headline": {
+          "type": "headline",
+          "settings": {
+            "headline": "Is the Era of the <strong>'Status Bag'</strong> Over? Why India's Creative Class is Turning to Quiet Artistry.",
+            "headline_size": 56,
+            "headline_color": "#1A1A1A",
+            "headline_font_weight": "700",
+            "subheadline": "In a world of mass-production, a hand-woven silhouette from the Blissway Artisan Collective is proving that true luxury doesn't need a logo to be heard."
+          }
+        },
+        "author_info": {
+          "type": "author",
+          "settings": {
+            "author_name": "By Ananya Sharma",
+            "verified": true,
+            "date": "April 2026"
+          }
+        },
+        "media_mentions": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>VOGUE  |  ELLE  |  COSMOPOLITAN  |  GRAZIA</strong></p>"
+          }
+        },
+        "trust_badges": {
+          "type": "bullet_points",
+          "settings": {
+            "point_1": "<strong>COD Available Pan-India:</strong> Pay only when the bag reaches your doorstep.",
+            "point_2": "<strong>30-Day \"Heirloom\" Returns:</strong> If you don't love it, we pick it up for free.",
+            "point_3": "<strong>1-Year Quality Warranty:</strong> Covers color fading, gold plating, and integrity.",
+            "point_4": "<strong>Free Express Shipping:</strong> 3-5 day delivery to 25,000+ pin codes.",
+            "list_size": "medium",
+            "background_color": "#FFFFFF",
+            "icon_color": "#A68966"
+          }
+        },
+        "main_image": {
+          "type": "image",
+          "settings": {
+            "image_radius": 0,
+            "rich_text": "<p><em>The Nova Everyday Clutch: Where heritage meets the modern commute.</em></p>",
+            "rich_text_color": "#888888",
+            "rich_text_alignment": "center"
+          }
+        },
+        "educational_intro": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>The Shift Toward Intentional Fashion</h3><p>For years, fashion in India was defined by the 'it-bag'—heavy, logo-laden accessories that often felt more like an anchor than a companion. But as we move into 2026, a new philosophy is emerging. It's called <em>Intentional Fashion</em>.</p><p>It's the idea that what we carry should be a reflection of our values as much as our style. This is why the <strong>Nova Everyday Clutch</strong> has become a quiet sensation. It doesn't scream for attention, yet it commands it through the sheer complexity of its hand-woven texture.</p>",
+            "text_size": 18
+          }
+        },
+        "brand_weaving": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>\"True luxury is the knowledge that your piece was touched by human hands, not just a conveyor belt.\"</h3><p>When Blissway first began collaborating with artisan weavers, the goal was simple: to create a silhouette that felt as at home in a South Delhi brunch as it did at a Mumbai art gallery. The result is a bag that breathes. The crochet-inspired weave allows for a natural flexibility that rigid luxury leathers simply can't offer.</p>",
+            "text_size": 18
+          }
+        },
+        "wear_test_report": {
+          "type": "two_column",
+          "settings": {
+            "image_position": "right",
+            "title": "The 180-Day Wear Test: Why it doesn't 'age' like other bags.",
+            "text": "<p>Most high-street bags begin to peel or lose their shape within 90 days. We tracked a Nova Clutch through a full Indian season—from the scorching 45°C Delhi summer to the 90% humidity of a Mumbai monsoon.</p><p><strong>The result?</strong> The UV-treated fibers didn't fade a single shade, and the weave remained as tight as day one. Unlike leather which cracks in the heat, this silhouette actually softens and moves better with you over time. It is a piece built for longevity, not just a season.</p>",
+            "background_color": "#F3F0EB"
+          }
+        },
+        "capacity_guide": {
+          "type": "two_column",
+          "settings": {
+            "image_position": "right",
+            "title": "A Study in Practical Form",
+            "text": "<h3>Designed for the 'Pro Max' Reality</h3><p>Most luxury clutches are useless because they don't fit modern life. We tested 14 prototypes just to ensure an iPhone 15 Pro Max fits *with* its case, alongside your keys, a power bank, and a curated selection of cosmetics.</p><h3>What It Isn't</h3><p>This is a piece of wearable art, not a utility hauler. It will not fit a laptop. It is designed to keep you light, intentional, and unfettered.</p>",
+            "button_text": "EXPLORE THE SILHOUETTE",
+            "button_color": "#1A1A1A"
+          }
+        },
+        "comparison_table": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>The Benchmark of Quality</h3><ul><li><strong>Feature</strong><strong>Blissway Nova Clutch</strong><strong>Mass Market Luxury</strong></li><li><span>Construction</span><span>Hand-Woven Artisan Weave</span><span>Machine Stitched</span></li><li><span>Durability</span><span>Sustainable Tropical-Proof Fiber</span><span>Fragile Synthetic / Cracking Leather</span></li><li><span>Versatility</span><span>Clutch to Crossbody (Gold Chain)</span><span>Single-purpose Silhouettes</span></li><li><span>Value</span><span>Artisan-Direct Pricing</span><span>High Brand Markups (300%+)</span></li></ul>",
+            "text_size": 16
+          }
+        },
+        "social_status_angle": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Prepare to be asked: \"Where did you get that?\"</h3><p>There is a specific phenomenon our community calls the <strong>'Stranger Stop.'</strong> Because the Nova Clutch lacks a loud, flashy logo, it creates an air of mystery that people are drawn to.</p><p>We’ve had customers report being stopped in airport lounges and wedding receptions by women carrying bags 10x the price, all asking about the texture. It is the ultimate 'If you know, you know' piece—a conversation starter that signals a refined, creative taste rather than just a budget.</p>",
+            "text_size": 18
+          }
+        },
+        "how_to_style": {
+          "type": "bullet_points",
+          "settings": {
+            "point_1": "<strong>The Heritage Look:</strong> Pair Champagne Gold with a silk Kanjeevaram.",
+            "point_2": "<strong>The Modern Minimalist:</strong> Match Ivory with monochromatic linens.",
+            "point_3": "<strong>The After-Hours:</strong> Use Midnight Black as a clutch for evening soirées.",
+            "point_4": "<strong>The Weekend Chic:</strong> Add the gold chain for hands-free crossbody style.",
+            "list_size": "medium",
+            "background_color": "#FAF9F6",
+            "icon_color": "#A68966"
+          }
+        },
+        "trust_and_genuinity": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>The Mark of Genuinity & Coastal Durability</h3><p>In an age of digital filters, the tactile reality of the Blissway weave is its own certification. Because each bag is hand-woven, no two pieces are perfectly identical. These slight variations are the fingerprints of the artisan.</p><p>Our gold hardware is <strong>Triple-Plated</strong> and salt-spray tested. It is specifically engineered not to turn black or green, even in the most humid coastal climates of Mumbai or Chennai. We source only high-grade, sustainable fibers that offer the luster of silk with the ruggedness required for the Indian climate.</p>",
+            "text_size": 17
+          }
+        },
+        "concierge_payment": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>A Seamless Acquisition & COD Verification</h3><p>We believe the experience of acquiring a Blissway piece should be as refined as the bag itself. We trust our artisans so much that we want you to see the work before you pay.</p><p>Use our <strong>Verified COD</strong> service to check the bag's weight and weave at your doorstep before finalizing your investment. For digital transactions, our gateways are secured with 256-bit encryption, ensuring your privacy is as guarded as your style.</p>",
+            "text_size": 17
+          }
+        },
+        "mid_cta": {
+          "type": "button",
+          "settings": {
+            "button_text": "VIEW THE CURRENT CURATION",
+            "button_url": "/products/nova-everyday-clutch",
+            "button_width": "full",
+            "button_background_color": "#1A1A1A",
+            "button_text_color": "#FFFFFF",
+            "button_border_radius": 0
+          }
+        },
+        "faq_editorial": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Concierge Inquiries</h3><p><strong>What if the gold polish fades?</strong><br>It won't. We use a premium anti-tarnish coating. If any fading occurs within 1 year, our 'Heirloom Warranty' ensures we will replace the bag for you.</p><p><strong>Will it fit my large phone with a case?</strong><br>Absolutely. We tested the Nova with the iPhone 15 Pro Max and Samsung S24 Ultra inside standard cases. It clicks shut perfectly.</p><p><strong>Is the COD really hassle-free?</strong><br>Yes. You pay the delivery partner only after the package is in your hands. If you are not satisfied, you can refuse it on the spot.</p><p><strong>What if I want to return it later?</strong><br>Blissway offers a 30-day 'Heirloom Guarantee'. Just WhatsApp our concierge, and we’ll arrange a free reverse-pickup from your home.</p>",
+            "text_size": 16
+          }
+        },
+        "right_sidebar": {
+          "type": "right_column",
+          "settings": {
+            "product_title": "<p>The Nova Everyday Clutch</p>",
+            "cta_text": "DISCOVER THE COLLECTION",
+            "cta_url": "/products/nova-everyday-clutch",
+            "cta_button_background_color": "#1A1A1A",
+            "show_reviews": true,
+            "overall_rating": 5.0,
+            "star_color": "#A68966",
+            "guarantee_text": "30-Day Heirloom Guarantee"
+          }
+        },
+        "social_comments": {
+          "type": "comments",
+          "settings": {
+            "comments_title": "Voices from the Collective",
+            "comment1_text": "Just received my Nova in Midnight Black. I was worried about the humidity here but the gold plating is so high quality. Definitely fits my iPhone Pro Max.",
+            "comment1_author": "Sneha Rao, Mumbai",
+            "comment1_likes": "24",
+            "comment2_text": "I was stopped twice at a wedding last night asking where I got this. The 'Stranger Stop' is real! COD was very smooth too.",
+            "comment2_author": "Ritu Verma, Delhi",
+            "comment3_text": "The 6-month wear test is true. I've been using mine daily for 4 months and it still looks brand new. The gold chain is so elegant.",
+            "comment3_author": "Megha P., Bangalore",
+            "comment_author_color": "#1A1A1A"
+          }
+        },
+        "page_footer": {
+          "type": "footer",
+          "settings": {
+            "footer_text": "<p>© 2026 Blissway Journal. Curating the Future of Artisan Fashion.</p>",
+            "footer_background_color": "#1A1A1A",
+            "footer_text_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": [
+        "luxury_css",
+        "top_header",
+        "path_text",
+        "main_headline",
+        "author_info",
+        "media_mentions",
+        "trust_badges",
+        "main_image",
+        "educational_intro",
+        "brand_weaving",
+        "wear_test_report",
+        "capacity_guide",
+        "comparison_table",
+        "social_status_angle",
+        "how_to_style",
+        "trust_and_genuinity",
+        "concierge_payment",
+        "mid_cta",
+        "faq_editorial",
+        "right_sidebar",
+        "social_comments",
+        "page_footer"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "advertorial_handbag"
+  ]
+}

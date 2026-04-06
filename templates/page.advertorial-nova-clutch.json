@@ -1,0 +1,1002 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "advertorial_nova_clutch": {
+      "type": "advertorial",
+      "blocks": {
+        "nova_css": {
+          "type": "custom_css",
+          "settings": {
+            "css": "/* Nova Clutch Advertorial */\n.content-section { background-color: #FDFAF8; -webkit-font-smoothing: antialiased; }\n.content-main-headline { font-family: Georgia, serif; letter-spacing: -0.02em; line-height: 1.15 !important; }\n.content-main-headline strong { color: #D4527A; }\n.content-subheadline { font-style: italic; font-family: Georgia, serif; line-height: 1.6; opacity: 0.85; }\n.content-block p, .content-block li { line-height: 1.85; font-size: 17px; color: #2D2D2D; margin-bottom: 1.4rem; }\n.content-block h3 { font-family: Georgia, serif; font-size: 26px !important; margin-top: 2.5rem !important; color: #1A1A1A; border-bottom: 2px solid #F2C4D4; padding-bottom: 0.6rem; margin-bottom: 1.2rem !important; }\n.content-block blockquote { border-left: 4px solid #D4527A; background: #FFF0F5; padding: 1.2rem 1.5rem; margin: 2rem 0; font-family: Georgia, serif; font-style: italic; font-size: 19px; color: #3D1A2B; }\n.block-comparison_text ul { list-style: none !important; padding: 0 !important; margin: 2rem 0 !important; border: 1px solid #F2C4D4; background: #FFF; border-radius: 8px; overflow: hidden; }\n.block-comparison_text ul li { display: grid; grid-template-columns: 1.4fr 1fr 1fr; border-bottom: 1px solid #FCE8EF; padding: 14px 18px !important; margin: 0 !important; align-items: center; font-size: 15px; }\n.block-comparison_text ul li:first-child { background: #1A1A1A; color: #FFF; text-transform: uppercase; letter-spacing: 0.08em; font-size: 12px; font-weight: 700; }\n.block-comparison_text ul li:last-child { border-bottom: none; }\n@media (max-width: 600px) { .block-comparison_text ul li { grid-template-columns: 1fr; gap: 4px; padding: 16px 14px !important; } .block-comparison_text ul li:first-child { display: none; } }"
+          }
+        },
+        "top_header": {
+          "type": "top_header",
+          "settings": {
+            "main_text": "STYLE",
+            "sub_text": "GUIDE",
+            "trending_text": "Trending on Instagram Reels",
+            "background_color": "#fff0f5",
+            "main_text_color": "#d4527a",
+            "sub_text_color": "#1a1a1a",
+            "trending_text_color": "#d4527a",
+            "separator_color": "#d4527a",
+            "main_text_size_desktop": 18,
+            "sub_text_size_desktop": 18,
+            "trending_text_size_desktop": 15,
+            "logo_size_desktop": 36,
+            "icon_size_desktop": 20,
+            "main_text_weight": "700",
+            "sub_text_weight": "700",
+            "main_text_size_mobile": 14,
+            "sub_text_size_mobile": 14,
+            "trending_text_size_mobile": 12,
+            "logo_size_mobile": 26,
+            "icon_size_mobile": 16,
+            "padding_vertical": 12,
+            "padding_horizontal": 20,
+            "margin_vertical": 0,
+            "border_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "breadcrumb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Home \\ Fashion \\ Bags & Accessories</p>",
+            "text_size": 12,
+            "text_color": "#888888",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 8,
+            "bottom_padding": 0
+          }
+        },
+        "main_headline": {
+          "type": "headline",
+          "settings": {
+            "headline": "Why 40,000+ Indian Women Are Ditching Their Old Bags for This <strong>Handcrafted Dumpling Clutch</strong>",
+            "headline_size": 48,
+            "headline_color": "#1a1a1a",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "It's the bag that turns heads at brunches, weddings, and Monday morning meetings — and no, it's not from Zara.",
+            "subheadline_size": 20,
+            "subheadline_color": "#4a4a4a",
+            "top_padding": 8,
+            "bottom_padding": 8
+          }
+        },
+        "author_info": {
+          "type": "author",
+          "settings": {
+            "author_name": "By Priya Mehta, Fashion & Lifestyle Editor",
+            "author_name_size": 15,
+            "verified": true,
+            "date": "April 3, 2026",
+            "date_size": 13,
+            "top_padding": 0,
+            "bottom_padding": 8
+          }
+        },
+        "media_logos": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>AS FEATURED IN: &nbsp; ELLE INDIA &nbsp;|&nbsp; VOGUE &nbsp;|&nbsp; GRAZIA &nbsp;|&nbsp; FEMINA</strong></p>",
+            "text_size": 12,
+            "text_color": "#999999",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 0,
+            "bottom_padding": 4
+          }
+        },
+        "rating_top": {
+          "type": "rating_summary",
+          "settings": {
+            "rating": 4.9,
+            "review_count": "6,200+",
+            "stars_size": 18,
+            "rating_text_size": 14,
+            "star_color": "#d4527a",
+            "top_padding": 0,
+            "bottom_padding": 16
+          }
+        },
+        "trust_badges": {
+          "type": "bullet_points",
+          "settings": {
+            "point_1": "<strong>COD Available Pan-India</strong> — Pay only when the bag arrives at your door.",
+            "icon": "check",
+            "point_2": "<strong>7-Day Easy Returns</strong> — Don't love it? Free reverse pickup, zero questions.",
+            "icon_2": "check",
+            "point_3": "<strong>Delivery in 3-5 Days</strong> — Available to 27,000+ pin codes across India.",
+            "icon_3": "check",
+            "point_4": "<strong>Secure Checkout</strong> — UPI, Net Banking, Cards & COD accepted.",
+            "icon_4": "check",
+            "point_5": "",
+            "icon_5": "arrow",
+            "point_6": "",
+            "icon_6": "arrow",
+            "list_size": "small",
+            "background_color": "#fff0f5",
+            "border_color": "#f2c4d4",
+            "border_radius": 8,
+            "icon_color": "#d4527a",
+            "cross_icon_color": "#ff1010",
+            "text_color": "#1a1a1a",
+            "text_size": 14,
+            "top_padding": 0,
+            "bottom_padding": 16
+          }
+        },
+        "hero_lifestyle_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bw-ch-clutch-2.jpg",
+            "image_radius": 8,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>The Nova Everyday Clutch — seen here at a Mumbai rooftop soiree. </em></p>",
+            "rich_text_size": 14,
+            "rich_text_color": "#888888",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 12
+          }
+        },
+        "hook_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Be honest — when was the last time your bag made someone stop and ask: <em>\"Where did you get that?\"</em></p><p>Not a Rs. 15,000 designer knockoff. Not a plain black tote from a mall. Not another synthetic bag that started peeling after two months of Mumbai rains.</p><p>When a close friend came home last Diwali, she wasn't carrying a Zara or a Charles & Keith. She had this <strong>small, round, striped bag</strong> — and it had a quiet confidence that her entire outfit borrowed from.</p><p>\"What's that?\" I had to ask.</p><p><em>\"Nova Everyday Clutch. Gets me stopped everywhere I go. And it costs less than your auto rides in a month.\"</em></p>",
+            "text_size": 17,
+            "text_color": "#2d2d2d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 20,
+            "bottom_padding": 8
+          }
+        },
+        "problem_agitation": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Here's the real problem with most bags under Rs. 2,000</h3><p>We've all been there. You find a bag that looks good in the photo. You order it. It arrives — and in person, it feels cheap. The stitching is uneven. The clasp is flimsy. After three months, the lining starts to tear.</p><p>And if you go the other route — spending Rs. 5,000 to Rs. 10,000 — you're either overpaying for a logo or getting something so safe and boring it disappears into your outfit.</p><p><em>\"Most bags are either too cheap to last or too expensive to feel worth it. There's a gap in the middle — and Nova fills it perfectly.\"</em></p><p>The Indian bag market has never had a product that offered <strong>handcrafted quality + a distinctive silhouette + an accessible price point</strong> — until now.</p>",
+            "text_size": 17,
+            "text_color": "#2d2d2d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 4,
+            "bottom_padding": 8
+          }
+        },
+        "product_reveal_headline": {
+          "type": "headline",
+          "settings": {
+            "headline": "Introducing the <strong>Nova Everyday Clutch</strong> — The Bag That Started a Conversation Everywhere It Went",
+            "headline_size": 38,
+            "headline_color": "#1a1a1a",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "Handcrafted woven dumpling design. Kiss-lock closure. Available in bold, head-turning stripes. Built for real Indian life.",
+            "subheadline_size": 18,
+            "subheadline_color": "#4a4a4a",
+            "top_padding": 16,
+            "bottom_padding": 16
+          }
+        },
+        "hero_product_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bw-ch-clutch-1.jpg",
+            "image_radius": 10,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>The Nova Everyday Clutch. Handcrafted woven striped finish. Gold kiss-lock closure.</em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#888888",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 10
+          }
+        },
+        "product_desc_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Nova Everyday Clutch isn't a mass-produced bag. It's a <strong>carefully designed accessory</strong> built around the specific realities of Indian women's lives — the heat, the travel, the back-to-back occasions, the need for something that works at a noon meeting and a 9pm dinner with no bag change in between.</p><p>Its dumpling silhouette — soft, rounded, structured — has a global sensibility but an unmistakably Indian ease. The bold woven stripes are designed to be a statement on their own, so the outfit around them doesn't need to try harder.</p>",
+            "text_size": 17,
+            "text_color": "#2d2d2d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 12,
+            "bottom_padding": 8
+          }
+        },
+        "benefits_headline": {
+          "type": "headline",
+          "settings": {
+            "headline": "5 Reasons Women <em>Can't Stop</em> Reaching for the Nova",
+            "headline_size": 32,
+            "headline_color": "#1a1a1a",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "",
+            "subheadline_size": 16,
+            "subheadline_color": "#666666",
+            "top_padding": 8,
+            "bottom_padding": 8
+          }
+        },
+        "benefits_bullets": {
+          "type": "bullet_points",
+          "settings": {
+            "point_1": "<strong>It makes every outfit look intentional.</strong> The bold woven stripes create a visual anchor — your outfit suddenly has a story.",
+            "icon": "arrow",
+            "point_2": "<strong>Surprisingly spacious.</strong> Phone, keys, cash, cards, lip colour, earphones — all in. The kiss-lock holds everything securely.",
+            "icon_2": "arrow",
+            "point_3": "<strong>Feather-light even when full.</strong> Soft woven material means zero shoulder fatigue — carry as clutch or loop a chain for crossbody.",
+            "icon_3": "arrow",
+            "point_4": "<strong>Survives Indian weather.</strong> Mumbai monsoons, Delhi summers, Bangalore AC — woven structure breathes and flexes rather than cracking.",
+            "icon_4": "arrow",
+            "point_5": "<strong>The perfect gift.</strong> Available in vibrant colour combos — always lands as the most stylish gift at any occasion.",
+            "icon_5": "arrow",
+            "point_6": "",
+            "icon_6": "arrow",
+            "list_size": "medium",
+            "background_color": "#fff0f5",
+            "border_color": "#f2c4d4",
+            "border_radius": 8,
+            "icon_color": "#d4527a",
+            "cross_icon_color": "#d4527a",
+            "text_color": "#1a1a1a",
+            "text_size": 16,
+            "top_padding": 0,
+            "bottom_padding": 8
+          }
+        },
+        "flatlay_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4b7dad4c37301fe9b82070584798dca2_8e90828f-4b35-4655-9bf7-1110da34b7eb.webp",
+            "image_radius": 8,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>The Nova styled with your everyday essentials. </em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#888888",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 10
+          }
+        },
+        "style_guide_section": {
+          "type": "two_column",
+          "settings": {
+            "image_position": "right",
+            "image": "shopify://shop_images/fe36a8cfe93e2289fbd6f01f6e7a32b6.jpg",
+            "image_border_radius": 8,
+            "title": "One Bag. Every Occasion.",
+            "text": "<p>The Nova doesn't need an occasion to justify itself. Here's how real customers style it:</p><ul><li><strong>Office + Commute:</strong> Pop in your phone, earphones, and lip balm. You're good.</li><li><strong>Dinner or Date Night:</strong> Carry it as a clutch. The gold clasp catches every candle flicker.</li><li><strong>Weddings & Festivals:</strong> Pair with ethnic wear — stripes complement both bold and subtle outfits.</li><li><strong>Gifting:</strong> Buy in any colour and it arrives looking like a boutique gift. Already stunning out of the box.</li></ul>",
+            "button_text": "Learn More",
+            "button_url": "",
+            "background_color": "#fff5f8",
+            "title_color": "#000000",
+            "title_size": 32,
+            "title_weight": "700",
+            "text_color": "#333333",
+            "text_size": 18,
+            "text_line_height": 1.6,
+            "text_alignment": "left",
+            "button_color": "#007bff",
+            "button_text_color": "#ffffff",
+            "button_font_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 24,
+            "button_border_radius": 6,
+            "padding_vertical": 20,
+            "padding_horizontal": 20,
+            "margin_vertical": 28
+          }
+        },
+        "colors_headline": {
+          "type": "headline",
+          "settings": {
+            "headline": "10+ Bold Colour Combinations — <em>So You Can Match Your Mood</em>",
+            "headline_size": 30,
+            "headline_color": "#1a1a1a",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "From classic red-white to statement lavender-coral — there's a Nova for every personality.",
+            "subheadline_size": 16,
+            "subheadline_color": "#666666",
+            "top_padding": 16,
+            "bottom_padding": 12
+          }
+        },
+        "colors_poolside_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/9de140b74784b95a1ad9c54da80cacd9.jpg",
+            "image_radius": 10,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>The Nova family — 10+ vibrant stripe combinations available.</em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#888888",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 10
+          }
+        },
+        "boutique_display_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/64ff35581ca8369c2e86d92c07247d37_438d3bc3-0dc7-4291-94a8-f585ea3f4a3c.jpg",
+            "image_radius": 10,
+            "top_padding": 12,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>\"It looked like a boutique shelf. I couldn't choose just one.\" — Divya S., Pune </em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#888888",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 10
+          }
+        },
+        "capacity_section": {
+          "type": "two_column",
+          "settings": {
+            "image_position": "left",
+            "image": "shopify://shop_images/06d7a255312adddfbd7ad38d4e889e30.jpg",
+            "image_border_radius": 8,
+            "title": "\"Compact Yet Surprisingly Spacious\" — How?",
+            "text": "<p>The Nova's interior is designed with what we call <strong>Intelligent Compact Volume</strong> — its soft woven body flexes to accommodate more than a rigid bag of the same size.</p><p>Real-world test: iPhone 15 Pro Max ✓   AirPods ✓   Cardholder ✓   Lip liner + compact ✓   Keys ✓   Folded Rs.500 notes ✓</p><p>The kiss-lock closure clicks shut firmly over it all — no rummaging, no spillage, no stress.</p>",
+            "button_text": "Learn More",
+            "button_url": "",
+            "background_color": "#fdfaf8",
+            "title_color": "#000000",
+            "title_size": 32,
+            "title_weight": "700",
+            "text_color": "#333333",
+            "text_size": 18,
+            "text_line_height": 1.6,
+            "text_alignment": "left",
+            "button_color": "#007bff",
+            "button_text_color": "#ffffff",
+            "button_font_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 24,
+            "button_border_radius": 6,
+            "padding_vertical": 20,
+            "padding_horizontal": 20,
+            "margin_vertical": 28
+          }
+        },
+        "capacity_detail_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/60c32a0e0b52dfe5736084eede0d6142_a36a91cf-7b52-4397-a82f-b442ea28fe05.jpg",
+            "image_radius": 8,
+            "top_padding": 12,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>Everything fits. Really. </em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#888888",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 10
+          }
+        },
+        "makeup_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3_fe9d8ddf-e579-465f-a7eb-63c2e604c53f.png",
+            "image_radius": 8,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>Your entire makeup kit can live here. </em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#888888",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 10
+          }
+        },
+        "craft_quality": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Handcrafted. Not Just a Word on a Tag.</h3><p>The woven crochet technique used in the Nova takes significantly longer than machine-stitching. Each stripe is built with tension-controlled weaving that gives the bag its signature plush, textured feel — the kind that people reach out to touch when they first see it.</p><p>Run your fingers across the surface and you'll understand immediately why this bag doesn't feel like anything else at this price. It doesn't feel synthetic. It doesn't feel like something that was made in 10 seconds on an assembly line. It feels <em>considered.</em></p>",
+            "text_size": 17,
+            "text_color": "#2d2d2d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 16,
+            "bottom_padding": 8
+          }
+        },
+        "texture_hand_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2ad97d9decc4039b957314227929753b.jpg",
+            "image_radius": 8,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>The woven texture — every stripe, handcrafted. </em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#888888",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 10
+          }
+        },
+        "social_proof_headline": {
+          "type": "headline",
+          "settings": {
+            "headline": "What Indian Women Are Saying About the Nova",
+            "headline_size": 32,
+            "headline_color": "#1a1a1a",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "6,200+ verified purchases across India. Here's what they said.",
+            "subheadline_size": 16,
+            "subheadline_color": "#666666",
+            "top_padding": 24,
+            "bottom_padding": 16
+          }
+        },
+        "rating_mid": {
+          "type": "rating_summary",
+          "settings": {
+            "rating": 4.9,
+            "review_count": "6,200+",
+            "stars_size": 20,
+            "rating_text_size": 15,
+            "star_color": "#d4527a",
+            "top_padding": 0,
+            "bottom_padding": 16
+          }
+        },
+        "review_1": {
+          "type": "customer_review",
+          "settings": {
+            "customer_name": "Neha Agarwal, Delhi",
+            "customer_name_size": 16,
+            "customer_name_color": "#111827",
+            "show_verified": true,
+            "verified_text": "Verified Purchase | Rating:",
+            "verified_text_color": "#6b7280",
+            "verified_icon_color": "#0b9b6b",
+            "rating": 5,
+            "stars_size": 16,
+            "star_color": "#d4527a",
+            "star_empty_color": "#d1d5db",
+            "rating_text_size": 14,
+            "rating_text_color": "#6b7280",
+            "review_title": "Stopped THREE times at a wedding. THREE.",
+            "review_title_size": 19,
+            "review_title_color": "#111827",
+            "review_text": "<p>I carried the red-white Nova to my cousin's wedding in Jaipur. Three different women stopped to ask me where it was from — one of them was carrying a Chanel. I paid Rs.1,299. She clearly paid a lot more. The bag is gorgeous in person and way more premium-feeling than the price suggests. The kiss-lock clicks so satisfyingly. Obsessed.</p>",
+            "review_text_size": 15,
+            "review_text_color": "#374151",
+            "review_size": "medium",
+            "border_radius": 10,
+            "background_color": "#ffffff",
+            "border_color": "#f2c4d4",
+            "shadow_color": "#0000001a",
+            "avatar_background_color": "#f3f4f6",
+            "avatar_icon_color": "#9ca3af",
+            "top_padding": 0,
+            "bottom_padding": 12
+          }
+        },
+        "review_2": {
+          "type": "customer_review",
+          "settings": {
+            "customer_name": "Shruti Rao, Bengaluru",
+            "customer_name_size": 16,
+            "customer_name_color": "#111827",
+            "show_verified": true,
+            "verified_text": "Verified Purchase | Rating:",
+            "verified_text_color": "#6b7280",
+            "verified_icon_color": "#0b9b6b",
+            "rating": 5,
+            "stars_size": 16,
+            "star_color": "#d4527a",
+            "star_empty_color": "#d1d5db",
+            "rating_text_size": 14,
+            "rating_text_color": "#6b7280",
+            "review_title": "The only bag I've used daily for 4 months and it still looks new.",
+            "review_title_size": 19,
+            "review_title_color": "#111827",
+            "review_text": "<p>I am brutal on bags — daily office commute, weekend markets, monsoon walks. Most bags start peeling within weeks. I've been using my Nova every single day for 4 months and it still looks like I just unboxed it. The COD option was what made me try it — paid at the door, no regrets. Now I've ordered two more as Diwali gifts.</p>",
+            "review_text_size": 15,
+            "review_text_color": "#374151",
+            "review_size": "medium",
+            "border_radius": 10,
+            "background_color": "#ffffff",
+            "border_color": "#f2c4d4",
+            "shadow_color": "#0000001a",
+            "avatar_background_color": "#f3f4f6",
+            "avatar_icon_color": "#9ca3af",
+            "top_padding": 0,
+            "bottom_padding": 12
+          }
+        },
+        "indian_lifestyle_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/72bd243d766932be6a6d830eee0722a4.jpg",
+            "image_radius": 10,
+            "top_padding": 12,
+            "bottom_padding": 12,
+            "rich_text": "<p><em>\"It matched my orange co-ord perfectly. The purple stripe pulled it all together.\" — Meera, Hyderabad </em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#888888",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 10
+          }
+        },
+        "review_3": {
+          "type": "customer_review",
+          "settings": {
+            "customer_name": "Ananya Pillai, Mumbai",
+            "customer_name_size": 16,
+            "customer_name_color": "#111827",
+            "show_verified": true,
+            "verified_text": "Verified Purchase | Rating:",
+            "verified_text_color": "#6b7280",
+            "verified_icon_color": "#0b9b6b",
+            "rating": 5,
+            "stars_size": 16,
+            "star_color": "#d4527a",
+            "star_empty_color": "#d1d5db",
+            "rating_text_size": 14,
+            "rating_text_color": "#6b7280",
+            "review_title": "Gifted it to 5 people. All 5 messaged me to say thank you.",
+            "review_title_size": 19,
+            "review_title_color": "#111827",
+            "review_text": "<p>I bulk-ordered 5 as birthday gifts for my friend group in different colours. Every single person messaged me saying it was the most thoughtful gift they'd received in years. \"It looks so expensive!\" — that reaction, five times. The packaging is neat too. Delivery was faster than expected. Will definitely reorder every season.</p>",
+            "review_text_size": 15,
+            "review_text_color": "#374151",
+            "review_size": "medium",
+            "border_radius": 10,
+            "background_color": "#ffffff",
+            "border_color": "#f2c4d4",
+            "shadow_color": "#0000001a",
+            "avatar_background_color": "#f3f4f6",
+            "avatar_icon_color": "#9ca3af",
+            "top_padding": 0,
+            "bottom_padding": 16
+          }
+        },
+        "mid_page_cta": {
+          "type": "promotional",
+          "settings": {
+            "show_rating": true,
+            "review_count": "6,200+",
+            "headline_top": "Selling out fast — limited stock remaining",
+            "font_size_top": 14,
+            "head_text_color": "#ffffff",
+            "head_background_color": "#d4527a",
+            "headline": "Get the Nova Everyday Clutch — <strong>Rs.700 OFF Today</strong>",
+            "headline_subline": "<p>Original price Rs.1,999. You pay only Rs.1,299. That's 35% off — for as long as stock lasts.</p>",
+            "font_size_subline": 16,
+            "headline_subline_color": "#3d1a2b",
+            "button_text": "<strong>Order Now & Pay on Delivery →</strong>",
+            "button_url": "shopify://products/the-citygirl-dumpling-clutch",
+            "guarantee_text": "7-day hassle-free returns · COD available across India",
+            "product_image": "shopify://shop_images/877492d748a21899edf36da8f4af6aa3.jpg",
+            "background_color": "#fff0f5",
+            "highlight_color": "#d4527a",
+            "button_color": "#d4527a",
+            "border_width": 1,
+            "border_style": "solid",
+            "border_color": "#f2c4d4",
+            "border_radius": 12,
+            "enable_shadow": true,
+            "shadow_color": "#d4527a26",
+            "shadow_blur": 24,
+            "shadow_offset_x": 0,
+            "shadow_offset_y": 4,
+            "top_padding": 24,
+            "bottom_padding": 24
+          }
+        },
+        "comparison_headline": {
+          "type": "headline",
+          "settings": {
+            "headline": "Nova vs. The Alternatives — <em>You Decide</em>",
+            "headline_size": 30,
+            "headline_color": "#1a1a1a",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "",
+            "subheadline_size": 16,
+            "subheadline_color": "#666666",
+            "top_padding": 8,
+            "bottom_padding": 8
+          }
+        },
+        "comparison_text": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li><strong>Feature</strong><strong>Nova Everyday Clutch</strong><strong>Generic Bags (Rs.800-2,000)</strong></li><li><span>Build Quality</span><span>Hand-Woven Artisan Crochet</span><span>Machine-made, flimsy seams</span></li><li><span>Durability</span><span>Tested for 6+ months daily use</span><span>Starts peeling in 2-3 months</span></li><li><span>Closure</span><span>Sturdy Gold Kiss-Lock (satisfying click)</span><span>Flap magnets that lose grip fast</span></li><li><span>Style Statement</span><span>Distinctive dumpling shape — people notice</span><span>Forgettable silhouettes</span></li><li><span>Versatility</span><span>Clutch + Shoulder (with chain)</span><span>Single-use, single-look</span></li><li><span>Price</span><span>Rs.1,299 (was Rs.1,999)</span><span>Rs.800-3,000 for less quality</span></li></ul>",
+            "text_size": 15,
+            "text_color": "#1a1a1a",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 0,
+            "bottom_padding": 16
+          }
+        },
+        "offer_section_headline": {
+          "type": "headline",
+          "settings": {
+            "headline": "Here's the Deal — <strong>For Right Now</strong>",
+            "headline_size": 36,
+            "headline_color": "#d4527a",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "800",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "We're running a limited-period offer that drops the Nova to its lowest price ever.",
+            "subheadline_size": 18,
+            "subheadline_color": "#4a4a4a",
+            "top_padding": 16,
+            "bottom_padding": 8
+          }
+        },
+        "pricing_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Regular Price: Rs.1,999 &nbsp;<em>(You save Rs.700)</em></p><h2><strong>Now Rs.1,299</strong></h2><p>+ Free Delivery &nbsp;·&nbsp; COD Available &nbsp;·&nbsp; 7-Day Returns</p>",
+            "text_size": 17,
+            "text_color": "#1a1a1a",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "main_offer_cta": {
+          "type": "promotional",
+          "settings": {
+            "show_rating": true,
+            "review_count": "6,200+",
+            "headline_top": "This offer expires when current stock runs out",
+            "font_size_top": 14,
+            "head_text_color": "#ffffff",
+            "head_background_color": "#1a1a1a",
+            "headline": "Nova Everyday Clutch — <strong>Order Now at Rs.1,299</strong>",
+            "headline_subline": "<p>Choose your colour. Pay at delivery. Free returns if you're not in love.</p>",
+            "font_size_subline": 16,
+            "headline_subline_color": "#3d1a2b",
+            "button_text": "<strong>Order Now — Pay on Delivery →</strong>",
+            "button_url": "shopify://products/the-citygirl-dumpling-clutch",
+            "guarantee_text": "7-Day Return Guarantee · Secure Checkout · COD Pan-India",
+            "product_image": "shopify://shop_images/57e6c0521c15fd515af39a7b7610f27e.jpg",
+            "background_color": "#fff0f5",
+            "highlight_color": "#d4527a",
+            "button_color": "#d4527a",
+            "border_width": 2,
+            "border_style": "solid",
+            "border_color": "#d4527a",
+            "border_radius": 12,
+            "enable_shadow": true,
+            "shadow_color": "#d4527a33",
+            "shadow_blur": 30,
+            "shadow_offset_x": 0,
+            "shadow_offset_y": 6,
+            "top_padding": 16,
+            "bottom_padding": 24
+          }
+        },
+        "guarantee_text": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>The Nova Promise — Zero-Risk Purchase</h3><p>We believe so strongly in the Nova that we've made buying it completely risk-free:</p><ul><li><strong>COD Available:</strong> You don't pay a rupee until the bag is physically in your hands at the door.</li><li><strong>7-Day Returns:</strong> Opened the box and feel it's not quite right? WhatsApp us. We'll arrange a free reverse-pickup from your home. No questions, no hold music.</li><li><strong>Quality Guarantee:</strong> If any craftsmanship issue appears within 90 days of purchase, we replace it. Full stop.</li></ul>",
+            "text_size": 16,
+            "text_color": "#2d2d2d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 8,
+            "bottom_padding": 8
+          }
+        },
+        "faq_section": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Your Questions, Answered Honestly</h3><p><strong>Q: Does COD really work for online orders?</strong><br>Yes — 100%. You place the order, our logistics partner delivers it to your pin code (27,000+ across India), and you pay in cash or UPI at the door. You can inspect the bag before paying.</p><p><strong>Q: How long does delivery take?</strong><br>Typically 3-5 business days. Metro cities (Mumbai, Delhi, Bengaluru, Hyderabad, Chennai) often receive within 2 days. You'll get a tracking link as soon as the order ships.</p><p><strong>Q: Will it fit my iPhone 15 Pro Max?</strong><br>Yes — tested it. Your phone with a standard case, a cardholder, keys, earphones, and basic cosmetics all fit with the kiss-lock clicking shut cleanly.</p><p><strong>Q: Is this really handmade or is that just marketing?</strong><br>The woven crochet technique is genuinely handcrafted. You'll feel the difference the moment you touch it — there's a subtle texture variation that machine-made bags can't replicate.</p><p><strong>Q: Can I return it if I don't like it?</strong><br>Absolutely. 7-day hassle-free returns. WhatsApp the order ID, we send a pickup to your door. No need to visit any post office or courier office.</p><p><strong>Q: Is it available in more colours?</strong><br>Yes — 10+ colour combinations available on the product page. New patterns added seasonally. Some colours sell out fast — check current availability.</p>",
+            "text_size": 16,
+            "text_color": "#2d2d2d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 12,
+            "bottom_padding": 16
+          }
+        },
+        "closing_argument": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>The Bottom Line</h3><p>You can keep waiting for the \"right bag\" — or you can have one delivered to your door in 3 days, pay only when it arrives, and spend the rest of the week getting stopped and asked where you got it from.</p><p>The Nova Everyday Clutch is Rs.1,299 right now. At full price it's Rs.1,999 — and it would still be worth it. But you're here now, the offer is live, and the only question left is: <strong>which colour?</strong></p>",
+            "text_size": 17,
+            "text_color": "#2d2d2d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 8,
+            "bottom_padding": 0
+          }
+        },
+        "final_cta_button": {
+          "type": "button",
+          "settings": {
+            "button_text": "Order the Nova Everyday Clutch — Rs.1,299   <strong>Pay on Delivery →</strong>",
+            "button_url": "shopify://products/the-citygirl-dumpling-clutch",
+            "button_width": "full",
+            "button_font_size": 17,
+            "button_background_color": "#d4527a",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#d4527a",
+            "button_border_width": 0,
+            "button_border_radius": 10,
+            "button_alignment": "center",
+            "top_padding": 12,
+            "bottom_padding": 0
+          }
+        },
+        "final_trust_strip": {
+          "type": "text",
+          "settings": {
+            "text": "<p>COD Pan-India &nbsp;·&nbsp; Free Delivery &nbsp;·&nbsp; 7-Day Returns &nbsp;·&nbsp; Secure Checkout</p>",
+            "text_size": 14,
+            "text_color": "#888888",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 8,
+            "bottom_padding": 24
+          }
+        },
+        "right_sidebar": {
+          "type": "right_column",
+          "settings": {
+            "product_title": "<p><strong>Nova Everyday Clutch</strong></p>",
+            "product_title_size": 20,
+            "product_title_color": "#d4527a",
+            "product_image": "shopify://shop_images/197853a64a21f269ab5e989a2ff97ed1_176ce399-3a88-4e1d-a7ca-111edee03420.jpg",
+            "product_image_radius": 8,
+            "product_image_size": 100,
+            "cta_text": "Order Now — Pay on Delivery →",
+            "cta_url": "shopify://products/the-citygirl-dumpling-clutch",
+            "cta_font_size": 16,
+            "cta_button_radius": 8,
+            "cta_padding_horizontal": 20,
+            "cta_padding_vertical": 14,
+            "cta_button_background_color": "#d4527a",
+            "cta_button_text_color": "#ffffff",
+            "show_reviews": true,
+            "reviews_title_size": 17,
+            "overall_rating": 4.9,
+            "overall_stars_size": 20,
+            "rating_number_size": 16,
+            "star_color": "#d4527a",
+            "star_empty_color": "#dddddd",
+            "star_5_percent": 84,
+            "star_4_percent": 12,
+            "star_3_percent": 3,
+            "star_2_percent": 1,
+            "star_1_percent": 0,
+            "attribute_1_name": "Build Quality",
+            "attribute_1_rating": 4.9,
+            "attribute_2_name": "Looks",
+            "attribute_2_rating": 5,
+            "attribute_3_name": "Value for Money",
+            "attribute_3_rating": 4.8,
+            "attribute_4_name": "Spaciousness",
+            "attribute_4_rating": 4.7,
+            "show_countdown_timer": true,
+            "countdown_title": "Offer ends in — grab your colour now:",
+            "countdown_title_size": 15,
+            "countdown_title_color": "#1a1a1a",
+            "countdown_number_size": 34,
+            "countdown_label_size": 12,
+            "countdown_number_color": "#d4527a",
+            "countdown_label_color": "#666666",
+            "countdown_days": 0,
+            "countdown_hours": 5,
+            "countdown_minutes": 47,
+            "countdown_seconds": 0,
+            "show_day_as_zero": true,
+            "container_background_color": "#ffffff",
+            "container_border_color": "#f2c4d4",
+            "container_border_radius": 14,
+            "container_padding": 20,
+            "container_margin": 16,
+            "show_container_shadow": true,
+            "show_background_overlay": true,
+            "guarantee_text": "7-day hassle-free returns · COD available",
+            "guarantee_text_size": 13,
+            "guarantee_text_color": "#888888"
+          }
+        },
+        "social_comments": {
+          "type": "comments",
+          "settings": {
+            "comments_title": "What the Community Is Saying",
+            "comments_title_size": 22,
+            "comments_title_color": "#1a1a1a",
+            "comment1_text": "I was so unsure about ordering online but the COD option made it easy. The bag arrived in 3 days. It's GORGEOUS. The texture is so rich — nothing like what I expected at this price. Already ordered the green-yellow one for my sister.",
+            "comment1_author": "Pooja Sharma, Jaipur",
+            "comment1_likes": "38",
+            "comment1_timestamp": "14 min",
+            "comment1_reply_show": true,
+            "comment1_reply_author": "Nova Support",
+            "comment1_reply_text": "So glad you loved it, Pooja! The green-yellow is a bestseller this season. Your sister is in for a treat!",
+            "comment1_reply_likes": "12",
+            "comment1_reply_timestamp": "10 min",
+            "comment2_text": "Carried it to a work conference. Got three compliments from senior colleagues. One of them is a fashion blogger! She asked for the link. This bag punches 3x above its price.",
+            "comment2_author": "Divya Krishnamurthy, Chennai",
+            "comment2_likes": "51",
+            "comment2_timestamp": "32 min",
+            "comment2_reply_show": true,
+            "comment2_reply_author": "Nova Support",
+            "comment2_reply_text": "That's the Nova effect! Thank you for sharing, Divya.",
+            "comment2_reply_likes": "9",
+            "comment2_reply_timestamp": "20 min",
+            "comment3_text": "Bought 4 as Rakhi gifts — one for my mom, bhabhi, and two cousins. All four called me on the same day to say how beautiful it was. Best Rs.5,200 I've spent in a long time.",
+            "comment3_author": "Simran Kaur, Chandigarh",
+            "comment3_likes": "67",
+            "comment3_timestamp": "1h",
+            "comment3_show_extra_images": false,
+            "comment3_reply_show": false,
+            "comment3_reply_author": "Support Team",
+            "comment3_reply_text": "We appreciate your business!",
+            "comment3_reply_likes": "3",
+            "comment3_reply_timestamp": "45 min",
+            "comment4_text": "The COD delivery was SO smooth. Paid in cash, bag was properly packed, no damage, looked exactly like the photos. Honestly better than the photos. The colour pops so much in real life.",
+            "comment4_author": "Ritika Bose, Kolkata",
+            "comment4_likes": "29",
+            "comment4_timestamp": "2h",
+            "comment4_reply_show": false,
+            "comment4_reply_author": "Product Team",
+            "comment4_reply_text": "Thank you for the positive feedback! We're glad you're enjoying it.",
+            "comment4_reply_likes": "5",
+            "comment4_reply_timestamp": "1 h",
+            "comment5_text": "Was hesitant because Rs.1,299 felt low for something that looks this good — I kept thinking there must be a catch. There is no catch. The quality is genuinely great. The stitching is tight, the closure clicks perfectly, and it feels light and durable. Already my most-reached-for bag.",
+            "comment5_author": "Kavitha Menon, Kochi",
+            "comment5_likes": "84",
+            "comment5_timestamp": "4h",
+            "comment5_reply_show": true,
+            "comment5_reply_author": "Nova Support",
+            "comment5_reply_text": "No catch, Kavitha — just really good craftsmanship at an honest price! Thank you so much for this beautiful review.",
+            "comment5_reply_likes": "22",
+            "comment5_reply_timestamp": "3h",
+            "comment6_text": "Carried to a Diwali party and literally couldn't stop the compliments. Paired with a cream anarkali — the red-white Nova was the statement piece of the entire evening. Worth every rupee.",
+            "comment6_author": "Aditi Nair, Pune",
+            "comment6_likes": "103",
+            "comment6_timestamp": "6h",
+            "comment6_reply_show": false,
+            "comment6_reply_author": "Quality Team",
+            "comment6_reply_text": "Thank you! We take pride in our quality standards and it shows in your experience.",
+            "comment6_reply_likes": "8",
+            "comment6_reply_timestamp": "4 h",
+            "comments_background_color": "#ffffff",
+            "comment_text_color": "#374151",
+            "comment_author_color": "#d4527a",
+            "comment_text_size": 15,
+            "comment_author_size": 14,
+            "comment_image_size": 48,
+            "comments_padding_vertical": 32
+          }
+        },
+        "page_footer": {
+          "type": "footer",
+          "settings": {
+            "footer_text": "<p>© 2026 Blissway. All rights reserved.</p><h3><strong>Disclaimer</strong></h3><p>The Nova Everyday Clutch is a fashion accessory. All customer reviews shown are from verified purchasers. Individual experiences, styling outcomes, and delivery timelines may vary. Product images show real items — colours may appear slightly different on different screens. COD availability is subject to serviceable pin codes. Returns are accepted within 7 days of delivery in original condition. All product images, trademarks, and brand assets are the property of Blissway.</p>",
+            "footer_background_color": "#1a1a1a",
+            "footer_text_color": "#bbbbbb",
+            "footer_border_color": "#333333",
+            "footer_border_width": 0,
+            "footer_padding_top": 40,
+            "footer_padding_bottom": 40,
+            "footer_text_size": 12,
+            "footer_text_align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "nova_css",
+        "top_header",
+        "breadcrumb",
+        "main_headline",
+        "author_info",
+        "media_logos",
+        "rating_top",
+        "trust_badges",
+        "hero_lifestyle_image",
+        "hook_text",
+        "problem_agitation",
+        "product_reveal_headline",
+        "hero_product_image",
+        "product_desc_text",
+        "benefits_headline",
+        "benefits_bullets",
+        "flatlay_image",
+        "style_guide_section",
+        "colors_headline",
+        "colors_poolside_image",
+        "boutique_display_image",
+        "capacity_section",
+        "capacity_detail_image",
+        "makeup_image",
+        "craft_quality",
+        "texture_hand_image",
+        "social_proof_headline",
+        "rating_mid",
+        "review_1",
+        "review_2",
+        "indian_lifestyle_image",
+        "review_3",
+        "mid_page_cta",
+        "comparison_headline",
+        "comparison_text",
+        "offer_section_headline",
+        "pricing_text",
+        "main_offer_cta",
+        "guarantee_text",
+        "faq_section",
+        "closing_argument",
+        "final_cta_button",
+        "final_trust_strip",
+        "right_sidebar",
+        "social_comments",
+        "page_footer"
+      ],
+      "name": "Nova Everyday Clutch Advertorial",
+      "settings": {
+        "section_color_scheme": "",
+        "max_width": 1020,
+        "section_padding_top": 40,
+        "section_padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "advertorial_nova_clutch"
+  ]
+}

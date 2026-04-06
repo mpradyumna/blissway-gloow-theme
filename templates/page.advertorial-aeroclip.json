@@ -1,0 +1,788 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "advertorial_AcFst1": {
+      "type": "advertorial",
+      "blocks": {
+        "top_header_AcTph": {
+          "type": "top_header",
+          "settings": {
+            "main_text": "SUMMER",
+            "sub_text": "2026",
+            "trending_text": "Trending: #1 Cooling Gadget in India",
+            "background_color": "#eff6ff",
+            "main_text_color": "#2563eb",
+            "sub_text_color": "#333333",
+            "trending_text_color": "#2563eb",
+            "separator_color": "#2563eb",
+            "main_text_size_desktop": 18,
+            "sub_text_size_desktop": 18,
+            "trending_text_size_desktop": 16,
+            "logo_size_desktop": 42,
+            "icon_size_desktop": 20,
+            "main_text_weight": "700",
+            "sub_text_weight": "700",
+            "main_text_size_mobile": 14,
+            "sub_text_size_mobile": 14,
+            "trending_text_size_mobile": 12,
+            "logo_size_mobile": 24,
+            "icon_size_mobile": 16,
+            "padding_vertical": 12,
+            "padding_horizontal": 20,
+            "margin_vertical": 0,
+            "border_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "text_AcBrd3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Home \\ Gadgets \\ Cooling Fans</p>",
+            "text_size": 13,
+            "text_color": "#494949",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#2563eb",
+            "accent_text_background": "#eff6ff",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "headline_AcMHd4": {
+          "type": "headline",
+          "settings": {
+            "headline": "How Thousands of Indians Are Surviving 45°C Summers With This ₹2,499 <em>\"Wearable AC\"</em> That Clips to Your Waist",
+            "headline_size": 40,
+            "headline_color": "#1d1d1d",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "300",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "Bookman, serif",
+            "subheadline": "Hands-free turbo airflow. 10,000mAh battery. Built-in powerbank. This is the fan replacing AC for people on the move.",
+            "subheadline_size": 18,
+            "subheadline_color": "#444444",
+            "top_padding": 0,
+            "bottom_padding": 12
+          }
+        },
+        "author_AcAth5": {
+          "type": "author",
+          "settings": {
+            "author_name": "Staff Writer",
+            "author_name_size": 16,
+            "verified": true,
+            "date": "Thursday, April 3rd, 2026",
+            "date_size": 12,
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "text_AcHkT6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Picture this. It's 11 AM in Delhi. The temperature is already 44°C. You're standing at a DTC bus stop, shirt already soaked through. Your phone battery is at 18%. And you've still got 8 hours ahead of you.</p><p>You've tried the neck fan — the buzz is embarrassing and the breeze barely reaches your face. Handheld fans mean one hand always occupied. Table fans stop working the moment the power goes. And AC? — <em>Only works when you're sitting still indoors.</em></p><p>What if staying cool wasn't a luxury — <strong>but a ₹2,499 clip on your waistband?</strong></p>",
+            "text_size": 16,
+            "text_color": "#1d1d1d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#2563eb",
+            "accent_text_background": "#eff6ff",
+            "top_padding": 26,
+            "bottom_padding": 0
+          }
+        },
+        "bullet_points_AcAgt": {
+          "type": "bullet_points",
+          "settings": {
+            "point_1": "Neck fans don't cool your core — they just push hot air near your face and tangle in your hair",
+            "icon": "cross",
+            "point_2": "Handheld fans = one hand always occupied. Can't work, eat, or use your phone",
+            "icon_2": "cross",
+            "point_3": "Table fans need electricity — useless on buses, autos, construction sites, or power cuts",
+            "icon_3": "cross",
+            "point_4": "AC only helps indoors — 60% of India's workforce works or commutes in open heat every day",
+            "icon_4": "cross",
+            "point_5": "",
+            "icon_5": "arrow",
+            "point_6": "",
+            "icon_6": "arrow",
+            "list_size": "small",
+            "background_color": "#fef2f2",
+            "border_color": "#dc2626",
+            "border_radius": 8,
+            "icon_color": "#dc2626",
+            "cross_icon_color": "#dc2626",
+            "text_color": "#1d1d1d",
+            "text_size": 15,
+            "top_padding": 16,
+            "bottom_padding": 0
+          }
+        },
+        "text_AcStr8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"<em>What is that thing on your belt?</em>\" — That's exactly what Rohit's team asked him one afternoon at a construction site in Noida.</p><p>He unclipped it, held it up, and smiled. \"AeroClip FrostClip. 10,000mAh. Three months, every single day. <strong>Neck fans are a joke compared to this.</strong>\"</p><p>His colleagues placed orders before lunch was over. And within a week, it had spread through the entire team.</p><p>The reason? <strong>When you clip it to your waist, turbo airflow channels upward through your shirt — cooling your entire torso, not just your chin.</strong> Not a gimmick. The cooling is instant and the difference is real.</p>",
+            "text_size": 16,
+            "text_color": "#1d1d1d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#2563eb",
+            "accent_text_background": "#eff6ff",
+            "top_padding": 24,
+            "bottom_padding": 10
+          }
+        },
+        "image_AcHro9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/718eo-5p41l-ac-sl1500-1-1000x1000.webp",
+            "image_radius": 12,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>AeroClip FrostClip — rugged waist clip, LED battery display, USB powerbank output, 5-speed turbo motor</em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#666666",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 8
+          }
+        },
+        "rating_summary_AcRtg": {
+          "type": "rating_summary",
+          "settings": {
+            "rating": 4.8,
+            "review_count": "8,200",
+            "stars_size": 16,
+            "rating_text_size": 14,
+            "star_color": "#f59e0b",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "headline_AcPrd1": {
+          "type": "headline",
+          "settings": {
+            "headline": "What Is the AeroClip FrostClip — And Why Is Everyone Calling It <em>\"India's Best Summer Gadget\"</em>?",
+            "headline_size": 32,
+            "headline_color": "#1d1d1d",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "400",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "Bookman, serif",
+            "subheadline": "",
+            "subheadline_size": 18,
+            "subheadline_color": "#666666",
+            "top_padding": 12,
+            "bottom_padding": 0
+          }
+        },
+        "text_AcPrt2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The AeroClip FrostClip is a hands-free, waist-mounted personal cooling system built around a <strong>10,000mAh industrial battery</strong> — delivering up to <strong>40 hours of uninterrupted cooling</strong> on a single charge.</p><p>Originally designed for <strong>outdoor professionals</strong> — construction workers, delivery riders, factory staff who cannot escape the heat — users quickly discovered something unexpected:</p><p>➡️ <strong>Positioned at the waist, turbo airflow creates a cooling channel through your clothing — dropping perceived body temperature within seconds. Your whole torso cools down, not just your face.</strong></p><p>\\\\Now available for everyone — commuters, students, travellers, workers.//</p>",
+            "text_size": 16,
+            "text_color": "#1d1d1d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#eff6ff",
+            "accent_text_color": "#2563eb",
+            "accent_text_background": "#eff6ff",
+            "top_padding": 10,
+            "bottom_padding": 10
+          }
+        },
+        "image_AcLfs3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/84b4942e25237b6e0e5b101827d5a569_jpg_720x720q80_jpg.webp",
+            "image_radius": 12,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>5 adjustable speed levels — from near-silent gentle breeze to maximum turbo blast. Works outdoors, on the move, anywhere.</em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#666666",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 8
+          }
+        },
+        "headline_AcFtr4": {
+          "type": "headline",
+          "settings": {
+            "headline": "Introducing: <em>AeroClip FrostClip Waist Fan</em>",
+            "headline_size": 40,
+            "headline_color": "#1d1d1d",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "400",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "Bookman, serif",
+            "subheadline": "The 3-in-1 wearable cooling system built for people who live and work in the Indian heat:",
+            "subheadline_size": 16,
+            "subheadline_color": "#1d1d1d",
+            "top_padding": 12,
+            "bottom_padding": 24
+          }
+        },
+        "bullet_points_AcFtB": {
+          "type": "bullet_points",
+          "settings": {
+            "point_1": "Turbo airflow at 5 speed levels — instant full-body cooling from the moment you clip it on",
+            "icon": "arrow",
+            "point_2": "10,000mAh battery — 8 to 40 hours backup depending on speed setting",
+            "icon_2": "arrow",
+            "point_3": "Hands-free waist clip — move freely, work, commute, exercise without holding anything",
+            "icon_3": "arrow",
+            "point_4": "Built-in USB powerbank — charge your phone when you need it most",
+            "icon_4": "arrow",
+            "point_5": "LED battery display — always know your charge level at a glance",
+            "icon_5": "arrow",
+            "point_6": "Drop-proof rugged silicone casing — built for Indian outdoor conditions, dust, humidity, drops",
+            "icon_6": "arrow",
+            "list_size": "small",
+            "background_color": "#eff6ff",
+            "border_color": "#2563eb",
+            "border_radius": 8,
+            "icon_color": "#2563eb",
+            "cross_icon_color": "#dc2626",
+            "text_color": "#1d1d1d",
+            "text_size": 16,
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "text_AcHiW6": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>How It Works — 4 Steps, 10 Seconds to Set Up</strong></h3><p><strong>Step 1:</strong> Clip the FrostClip onto your waistband, belt, or bag strap. Sturdy spring-loaded clip — stays locked all day.</p><p><strong>Step 2:</strong> Press the power button. Select your speed — 1 for quiet comfort, 5 for maximum blast cooling.</p><p><strong>Step 3:</strong> Feel the airflow channel upward through your shirt. Your torso cools down almost immediately.</p><p><strong>Step 4:</strong> Get on with your day. Commute. Work. Walk. Completely hands-free. Plug in your phone via USB if needed.</p>",
+            "text_size": 16,
+            "text_color": "#1d1d1d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#2563eb",
+            "accent_text_background": "#eff6ff",
+            "top_padding": 10,
+            "bottom_padding": 10
+          }
+        },
+        "image_AcPwB7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/d78da7f66f1a62453ade5a529cdc7048_jpg_720x720q80_jpg.webp",
+            "image_radius": 12,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>10,000mAh battery doubles as an emergency USB powerbank — charge your phone when you need it most</em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#666666",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 8
+          }
+        },
+        "promotional_AcPr18": {
+          "type": "promotional",
+          "settings": {
+            "show_rating": true,
+            "review_count": "8,200",
+            "headline_top": "⚡ High demand — limited stock remaining this week",
+            "font_size_top": 14,
+            "head_text_color": "#ffffff",
+            "head_background_color": "#dc2626",
+            "headline": "Stay Cool All Summer — ₹1,000 Off Today. Only ₹2,499",
+            "headline_subline": "<p>✅ Extra 10% OFF on Prepaid  |  ✅ Cash on Delivery Available  |  ✅ 7-Day Returns</p>",
+            "font_size_subline": 14,
+            "headline_subline_color": "#1d1d1d",
+            "button_text": "<strong>Check Availability & Order Now →</strong>",
+            "button_url": "shopify://products/frostclip-turbo-waist-fan-10000mah-portable-cooling",
+            "guarantee_text": "7-Day Hassle-Free Returns • COD Available",
+            "product_image": "shopify://shop_images/3_38db617a-3548-4805-b2c7-c2bd6a6c094d.png",
+            "background_color": "#ffffff",
+            "highlight_color": "#2563eb",
+            "button_color": "#16a34a",
+            "border_width": 1,
+            "border_style": "solid",
+            "border_color": "#2563eb",
+            "border_radius": 12,
+            "enable_shadow": true,
+            "shadow_color": "#0000001a",
+            "shadow_blur": 20,
+            "shadow_offset_x": 0,
+            "shadow_offset_y": 4,
+            "top_padding": 20,
+            "bottom_padding": 40
+          }
+        },
+        "headline_AcWf09": {
+          "type": "headline",
+          "settings": {
+            "headline": "Who Is the FrostClip For?",
+            "headline_size": 36,
+            "headline_color": "#1d1d1d",
+            "headline_font_family": "Bookman, serif",
+            "headline_font_weight": "400",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "",
+            "subheadline_size": 18,
+            "subheadline_color": "#666666",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "bullet_points_AcWfB": {
+          "type": "bullet_points",
+          "settings": {
+            "point_1": "Daily commuters on DTC buses, Metro, autos, shared cabs",
+            "icon": "arrow",
+            "point_2": "Construction workers, security guards, factory & warehouse staff",
+            "icon_2": "arrow",
+            "point_3": "Students walking to college, tuition classes, coaching institutes",
+            "icon_3": "arrow",
+            "point_4": "Delivery agents and field sales professionals on bikes",
+            "icon_4": "arrow",
+            "point_5": "Travellers, hikers, trekkers — anyone outdoors for long hours",
+            "icon_5": "arrow",
+            "point_6": "Anyone who sweats through their clothes before 10 AM",
+            "icon_6": "arrow",
+            "list_size": "small",
+            "background_color": "#ffffff",
+            "border_color": "#ffffff",
+            "border_radius": 6,
+            "icon_color": "#2563eb",
+            "cross_icon_color": "#dc2626",
+            "text_color": "#1d1d1d",
+            "text_size": 16,
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "text_AcCmp1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Then FrostClip is your summer upgrade.</strong></p><h3><strong>How FrostClip Compares to Everything Else You've Tried</strong></h3>",
+            "text_size": 16,
+            "text_color": "#1d1d1d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#2563eb",
+            "accent_text_background": "#eff6ff",
+            "top_padding": 10,
+            "bottom_padding": 0
+          }
+        },
+        "bullet_points_AcCpW": {
+          "type": "bullet_points",
+          "settings": {
+            "point_1": "vs Neck Fan — FrostClip cools your entire torso. Neck fans just push hot air near your face",
+            "icon": "arrow",
+            "point_2": "vs Handheld Fan — FrostClip is 100% hands-free. You can work, eat, and ride simultaneously",
+            "icon_2": "arrow",
+            "point_3": "vs Portable AC units — FrostClip weighs under 500g, runs 40 hours, works anywhere outside",
+            "icon_3": "arrow",
+            "point_4": "vs Wet Towels — FrostClip lasts 40 hours. Wet towels dry in 20 minutes and leave you damp",
+            "icon_4": "arrow",
+            "point_5": "10,000mAh vs 1,500mAh in typical neck fans — over 6x the battery life in a single charge",
+            "icon_5": "arrow",
+            "point_6": "",
+            "icon_6": "arrow",
+            "list_size": "small",
+            "background_color": "#eff6ff",
+            "border_color": "#2563eb",
+            "border_radius": 8,
+            "icon_color": "#2563eb",
+            "cross_icon_color": "#dc2626",
+            "text_color": "#1d1d1d",
+            "text_size": 15,
+            "top_padding": 0,
+            "bottom_padding": 24
+          }
+        },
+        "customer_review_AcRv1": {
+          "type": "customer_review",
+          "settings": {
+            "customer_name": "Vikram T., Delhi",
+            "customer_name_size": 16,
+            "customer_name_color": "#111827",
+            "show_verified": true,
+            "verified_text": "Verified Purchase | Rating:",
+            "verified_text_color": "#6b7280",
+            "verified_icon_color": "#0b9b6b",
+            "rating": 5,
+            "stars_size": 16,
+            "star_color": "#f59e0b",
+            "star_empty_color": "#d1d5db",
+            "rating_text_size": 14,
+            "rating_text_color": "#6b7280",
+            "review_title": "Bought 4 for my team. Ordering 8 more.",
+            "review_title_size": 20,
+            "review_title_color": "#111827",
+            "review_text": "<p>I manage a construction crew in Noida — 8 AM to 6 PM in direct sun. Bought 4 for my senior workers first. The difference in afternoon productivity was visible within 2 days. No more everyone dragging after lunch. The 10000mAh battery genuinely lasts a full shift. Worth every rupee. Ordering 8 more this week.</p>",
+            "review_text_size": 16,
+            "review_text_color": "#374151",
+            "review_size": "medium",
+            "border_radius": 12,
+            "background_color": "#ffffff",
+            "border_color": "#e5e7eb",
+            "shadow_color": "#0000001a",
+            "avatar_background_color": "#eff6ff",
+            "avatar_icon_color": "#2563eb",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "customer_review_AcRv2": {
+          "type": "customer_review",
+          "settings": {
+            "customer_name": "Preethi R., Chennai",
+            "customer_name_size": 16,
+            "customer_name_color": "#111827",
+            "show_verified": true,
+            "verified_text": "Verified Purchase | Rating:",
+            "verified_text_color": "#6b7280",
+            "verified_icon_color": "#0b9b6b",
+            "rating": 5,
+            "stars_size": 16,
+            "star_color": "#f59e0b",
+            "star_empty_color": "#d1d5db",
+            "rating_text_size": 14,
+            "rating_text_color": "#6b7280",
+            "review_title": "Chennai May heat is a different level. This actually works.",
+            "review_title_size": 20,
+            "review_title_color": "#111827",
+            "review_text": "<p>I used to reach office completely drenched after my 40-minute bus commute. Three weeks with the FrostClip — I arrive looking fresh. My colleagues genuinely thought I started taking a cab. Used the powerbank feature twice when my phone died mid-commute. Already recommended it to my whole family group.</p>",
+            "review_text_size": 16,
+            "review_text_color": "#374151",
+            "review_size": "medium",
+            "border_radius": 12,
+            "background_color": "#ffffff",
+            "border_color": "#e5e7eb",
+            "shadow_color": "#0000001a",
+            "avatar_background_color": "#eff6ff",
+            "avatar_icon_color": "#2563eb",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "customer_review_AcRv3": {
+          "type": "customer_review",
+          "settings": {
+            "customer_name": "Arjun S., Pune",
+            "customer_name_size": 16,
+            "customer_name_color": "#111827",
+            "show_verified": true,
+            "verified_text": "Verified Purchase | Rating:",
+            "verified_text_color": "#6b7280",
+            "verified_icon_color": "#0b9b6b",
+            "rating": 5,
+            "stars_size": 16,
+            "star_color": "#f59e0b",
+            "star_empty_color": "#d1d5db",
+            "rating_text_size": 14,
+            "rating_text_color": "#6b7280",
+            "review_title": "Finally a product that does exactly what it says.",
+            "review_title_size": 20,
+            "review_title_color": "#111827",
+            "review_text": "<p>I do food delivery in Pune — riding a bike in 40°C for 10+ hours is exhausting. Was sceptical because I've wasted money on neck fans before. This is completely different. The waist clip holds perfectly while riding. Airflow strong enough to feel through my shirt. Battery lasted 3 full days before needing a charge on medium. The powerbank saved my phone twice. Genuinely impressed.</p>",
+            "review_text_size": 16,
+            "review_text_color": "#374151",
+            "review_size": "medium",
+            "border_radius": 12,
+            "background_color": "#ffffff",
+            "border_color": "#e5e7eb",
+            "shadow_color": "#0000001a",
+            "avatar_background_color": "#eff6ff",
+            "avatar_icon_color": "#2563eb",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "text_AcCta5": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Ready to Stop Sweating and Actually Enjoy Your Summer?</strong></h2><p>✨ <strong>Get the AeroClip FrostClip while stock lasts.</strong><br/>Thousands of Indians have already made this their #1 summer essential this year. <em>Don't spend another week soaking through your clothes.</em></p>",
+            "text_size": 16,
+            "text_color": "#1d1d1d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#2563eb",
+            "accent_text_background": "#eff6ff",
+            "top_padding": 10,
+            "bottom_padding": 10
+          }
+        },
+        "image_AcGry6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/gray-angel-sar-ventilation-accessories-jm32wf89-64_600.png",
+            "image_radius": 12,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "<p><em>Available in Orange and Gunmetal Grey — same powerful specs, both equally rugged</em></p>",
+            "rich_text_size": 13,
+            "rich_text_color": "#666666",
+            "rich_text_alignment": "center",
+            "rich_text_margin_top": 8
+          }
+        },
+        "button_AcBt57": {
+          "type": "button",
+          "settings": {
+            "button_text": "🛒 Order AeroClip FrostClip — <strong>Check Availability & Claim ₹1,000 Off ➔</strong>",
+            "button_url": "shopify://products/frostclip-turbo-waist-fan-10000mah-portable-cooling",
+            "button_width": "full",
+            "button_font_size": 16,
+            "button_background_color": "#16a34a",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#15803d",
+            "button_border_width": 0,
+            "button_border_radius": 8,
+            "button_alignment": "center",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "right_column_AcRtC": {
+          "type": "right_column",
+          "settings": {
+            "product_title": "",
+            "product_title_size": 20,
+            "product_title_color": "#2563eb",
+            "product_image": "shopify://shop_images/718eo-5p41l-ac-sl1500-1-1000x1000.webp",
+            "product_image_radius": 8,
+            "product_image_size": 100,
+            "cta_text": "Save ₹1,000 Today — <strong>Order Now ➔</strong>",
+            "cta_url": "shopify://products/frostclip-turbo-waist-fan-10000mah-portable-cooling",
+            "cta_font_size": 16,
+            "cta_button_radius": 8,
+            "cta_padding_horizontal": 25,
+            "cta_padding_vertical": 15,
+            "cta_button_background_color": "#16a34a",
+            "cta_button_text_color": "#ffffff",
+            "show_reviews": true,
+            "reviews_title_size": 18,
+            "overall_rating": 4.8,
+            "overall_stars_size": 20,
+            "rating_number_size": 16,
+            "star_color": "#f59e0b",
+            "star_empty_color": "#dddddd",
+            "star_5_percent": 85,
+            "star_4_percent": 11,
+            "star_3_percent": 3,
+            "star_2_percent": 1,
+            "star_1_percent": 0,
+            "attribute_1_name": "Cooling Power",
+            "attribute_1_rating": 4.9,
+            "attribute_2_name": "Battery Life",
+            "attribute_2_rating": 4.9,
+            "attribute_3_name": "Portability",
+            "attribute_3_rating": 4.8,
+            "attribute_4_name": "Value for Money",
+            "attribute_4_rating": 5,
+            "show_countdown_timer": true,
+            "countdown_title": "⚡ Sale Ending Soon! ₹1,000 Off — Ends In:",
+            "countdown_title_size": 17,
+            "countdown_title_color": "#dc2626",
+            "countdown_number_size": 36,
+            "countdown_label_size": 13,
+            "countdown_number_color": "#2563eb",
+            "countdown_label_color": "#666666",
+            "countdown_days": 0,
+            "countdown_hours": 4,
+            "countdown_minutes": 30,
+            "countdown_seconds": 0,
+            "show_day_as_zero": false,
+            "container_background_color": "#ffffff",
+            "container_border_color": "#2563eb",
+            "container_border_radius": 16,
+            "container_padding": 20,
+            "container_margin": 20,
+            "show_container_shadow": true,
+            "show_background_overlay": true,
+            "guarantee_text": "✅ COD Available   ✅ 7-Day Easy Returns",
+            "guarantee_text_size": 13,
+            "guarantee_text_color": "#444444"
+          }
+        },
+        "comments_AcCmt": {
+          "type": "comments",
+          "settings": {
+            "comments_title": "",
+            "comments_title_size": 24,
+            "comments_title_color": "#1d1d1d",
+            "comment1_text": "Just received mine in Mumbai. Delivery in 4 days. The airflow is genuinely strong — clipped it on in the auto and the driver asked where I bought it. He ordered one too 😂",
+            "comment1_author": "Rahul M.",
+            "comment1_likes": "47",
+            "comment1_timestamp": "2 h",
+            "comment1_reply_show": true,
+            "comment1_reply_author": "Blissway Support",
+            "comment1_reply_text": "Ha! Love hearing this. Thank you Rahul — enjoy staying cool!",
+            "comment1_reply_likes": "12",
+            "comment1_reply_timestamp": "1 h",
+            "comment2_text": "My husband works as a security guard in Hyderabad — 12-hour outdoor shifts in summer. Got him this as a gift. He called me at noon saying it's the best thing I've ever given him. The battery indicator is very useful too.",
+            "comment2_author": "Sunita K.",
+            "comment2_likes": "38",
+            "comment2_timestamp": "3 h",
+            "comment2_reply_show": true,
+            "comment2_reply_author": "Blissway Support",
+            "comment2_reply_text": "That means everything to us, Sunita. Please pass on our thanks to him!",
+            "comment2_reply_likes": "9",
+            "comment2_reply_timestamp": "2 h",
+            "comment3_text": "I was sceptical because I'd wasted money on neck fans before. This is completely different. The waist position actually makes sense — cooling hits your body not just your face. Night travel on sleeper buses is now comfortable.",
+            "comment3_author": "Neeraj P.",
+            "comment3_likes": "29",
+            "comment3_timestamp": "5 h",
+            "comment3_show_extra_images": false,
+            "comment3_reply_show": false,
+            "comment3_reply_author": "",
+            "comment3_reply_text": "",
+            "comment3_reply_likes": "0",
+            "comment3_reply_timestamp": "",
+            "comment4_text": "Ordered it for my Himachal trek last month. Fan + powerbank combo is perfect for 2-day hikes. LED light at night in the tent is a bonus. Genuinely regret not buying it last summer.",
+            "comment4_author": "Kavita S.",
+            "comment4_likes": "22",
+            "comment4_timestamp": "6 h",
+            "comment4_reply_show": false,
+            "comment4_reply_author": "",
+            "comment4_reply_text": "",
+            "comment4_reply_likes": "0",
+            "comment4_reply_timestamp": "",
+            "comment5_text": "I work at a construction site in Bangalore. Mid-day heat kills afternoon productivity — everyone slows down and gets irritable. After using this I finish tasks faster and feel less drained at end of day. Already showing it off to my whole team.",
+            "comment5_author": "Mohammed F.",
+            "comment5_likes": "35",
+            "comment5_timestamp": "8 h",
+            "comment5_reply_show": true,
+            "comment5_reply_author": "Blissway Support",
+            "comment5_reply_text": "This is exactly what FrostClip is built for. Thank you Mohammed!",
+            "comment5_reply_likes": "11",
+            "comment5_reply_timestamp": "7 h",
+            "comment6_text": "Got mine for commuting from Gurgaon. DTC bus in noon heat used to ruin my mood before I even reached office. Not anymore. And honestly the grey colour looks premium — most people don't even realise it's a fan at first glance.",
+            "comment6_author": "Pooja D.",
+            "comment6_likes": "18",
+            "comment6_timestamp": "10 h",
+            "comment6_reply_show": false,
+            "comment6_reply_author": "",
+            "comment6_reply_text": "",
+            "comment6_reply_likes": "0",
+            "comment6_reply_timestamp": "",
+            "comments_background_color": "#ffffff",
+            "comment_text_color": "#374151",
+            "comment_author_color": "#2563eb",
+            "comment_text_size": 15,
+            "comment_author_size": 14,
+            "comment_image_size": 60,
+            "comments_padding_vertical": 40
+          }
+        },
+        "text_AcFaq0": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Frequently Asked Questions</strong></h2><p><strong>❓ Is Cash on Delivery (COD) available?</strong><br/>Yes. We offer COD across most Indian pin codes. Pay online for an additional 10% prepaid discount.</p><p><strong>❓ How long does delivery take?</strong><br/>3–7 business days depending on your city. Delhi, Mumbai, Bangalore, Chennai, Hyderabad typically 3–4 days.</p><p><strong>❓ Can it actually cool me in 45°C heat?</strong><br/>Yes — it won't replicate 22°C AC, but it significantly drops your <em>perceived body temperature</em> by channelling cool airflow against your core. Most users say the difference is between \"uncomfortable\" and \"totally manageable\".</p><p><strong>❓ How loud is it on different speeds?</strong><br/>Speed 1–2 are near-silent — suitable for offices. Speed 4–5 are audible like a table fan on medium. Most outdoor use is perfect on speed 3.</p><p><strong>❓ What is the return policy?</strong><br/>7-day hassle-free returns. If it doesn't work as described, contact our support and we'll resolve it immediately. No questions asked.</p><p><strong>❓ How do I charge it?</strong><br/>Standard USB-C charging. Fully charged in 3–4 hours. The LED battery display shows your exact charge level at all times.</p>",
+            "text_size": 15,
+            "text_color": "#1d1d1d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#2563eb",
+            "accent_text_background": "#eff6ff",
+            "top_padding": 20,
+            "bottom_padding": 10
+          }
+        },
+        "text_AcCls1": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>The Bottom Line</strong></h2><p>Summer in India is brutal. And it's getting hotter every year.</p><p>You can't always be near an AC. You can't always avoid going outside. But you <em>can</em> stop letting the heat drain you — physically and mentally.</p><p>The AeroClip FrostClip isn't magic. It's engineering. <strong>10,000mAh of power. Turbo airflow aimed where it actually cools. Completely hands-free. Emergency powerbank built in.</strong></p><p>For ₹2,499, this is the most practical summer purchase you'll make this year.</p><p>⚠️ <em>Stock runs low fast during peak summer. If you're seeing this, it's still available — but don't wait until your neighbour has one.</em></p>",
+            "text_size": 16,
+            "text_color": "#1d1d1d",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#2563eb",
+            "accent_text_background": "#eff6ff",
+            "top_padding": 10,
+            "bottom_padding": 10
+          }
+        },
+        "button_AcFnl1": {
+          "type": "button",
+          "settings": {
+            "button_text": "✅ Yes, I Want to Stay Cool — <strong>Order AeroClip FrostClip Now ➔</strong>",
+            "button_url": "shopify://products/frostclip-turbo-waist-fan-10000mah-portable-cooling",
+            "button_width": "full",
+            "button_font_size": 18,
+            "button_background_color": "#16a34a",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#15803d",
+            "button_border_width": 0,
+            "button_border_radius": 8,
+            "button_alignment": "center",
+            "top_padding": 0,
+            "bottom_padding": 24
+          }
+        },
+        "footer_AcFtr2": {
+          "type": "footer",
+          "settings": {
+            "footer_text": "<p>© 2026 Blissway. All rights reserved.</p><h3><strong>Disclosure</strong></h3><p>The AeroClip FrostClip is a portable personal cooling device designed for everyday comfort use. Battery life and runtime specifications are based on manufacturer testing under controlled conditions; actual results may vary depending on speed setting, ambient temperature, and usage pattern.</p><p>This product is not a medical device and is not intended to diagnose, treat, or prevent heat stroke or any heat-related medical condition. In cases of severe heat exposure, please seek medical attention immediately.</p><p>Cash on Delivery is available at select pin codes. Delivery timelines are estimates and may vary. For support queries, contact Blissway customer care.</p><p>All product images shown are of the actual AeroClip FrostClip product. All trademarks and product names remain the property of their respective owners.</p>",
+            "footer_background_color": "#eff6ff",
+            "footer_text_color": "#2563eb",
+            "footer_border_color": "#bfdbfe",
+            "footer_border_width": 1,
+            "footer_padding_top": 40,
+            "footer_padding_bottom": 40,
+            "footer_text_size": 12,
+            "footer_text_align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "top_header_AcTph",
+        "text_AcBrd3",
+        "headline_AcMHd4",
+        "author_AcAth5",
+        "text_AcHkT6",
+        "bullet_points_AcAgt",
+        "text_AcStr8",
+        "image_AcHro9",
+        "rating_summary_AcRtg",
+        "headline_AcPrd1",
+        "text_AcPrt2",
+        "image_AcLfs3",
+        "headline_AcFtr4",
+        "bullet_points_AcFtB",
+        "text_AcHiW6",
+        "image_AcPwB7",
+        "promotional_AcPr18",
+        "headline_AcWf09",
+        "bullet_points_AcWfB",
+        "text_AcCmp1",
+        "bullet_points_AcCpW",
+        "customer_review_AcRv1",
+        "customer_review_AcRv2",
+        "customer_review_AcRv3",
+        "text_AcCta5",
+        "image_AcGry6",
+        "button_AcBt57",
+        "right_column_AcRtC",
+        "comments_AcCmt",
+        "text_AcFaq0",
+        "text_AcCls1",
+        "button_AcFnl1",
+        "footer_AcFtr2"
+      ],
+      "name": "AeroClip FrostClip Advertorial",
+      "settings": {
+        "section_color_scheme": "",
+        "max_width": 1020,
+        "section_padding_top": 40,
+        "section_padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "advertorial_AcFst1"
+  ]
+}

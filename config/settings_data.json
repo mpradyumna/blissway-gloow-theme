@@ -54,20 +54,21 @@
     "sticky_atc_desktop_img_width": 46,
     "sticky_atc_image_radius": 100,
     "show_atc_btn": false,
-    "atc_mb_style": "style_1",
+    "atc_mb_style": "style_2",
     "show_atc_mb_full": false,
     "show_vendor_atc_mb": false,
     "show_title_atc_mb": false,
     "mobile_sticky_top_offset": 0,
     "sticky_atc_mobile_img_width": 51,
     "sticky_atc_mb_image_radius": 100,
-    "atc_background_gradient": "linear-gradient(118deg, rgba(202, 216, 248, 1) 5%, rgba(245, 219, 255, 1) 92%)",
-    "sticky_atc_box_border": "rgba(0,0,0,0)",
+    "atc_background_gradient": "",
+    "sticky_atc_box_border": "#0606ef",
     "atc_button_background_color": "#ffffff",
     "atc_button_text_color": "#000000",
     "atc_button_border_color": "#000000",
+    "atc_button_text": "",
     "sticky_atc_btn_radius": 80,
-    "sticky_atc_box_radius": 80,
+    "sticky_atc_box_radius": 10,
     "sticky_atc_box_radius_mb": 24,
     "sticky_atc_price_font_size": 1.4,
     "buttons_border_thickness": 2,
@@ -409,6 +410,11 @@
       },
       "15181020662106344915": {
         "type": "shopify://apps/judge-me-reviews/blocks/popup_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      },
+      "8838267387977255474": {
+        "type": "shopify://apps/jotform-ai-chatbot/blocks/app-embed/8b752cf5-34d6-4e3e-96cf-8a6ef85fb35a",
         "disabled": false,
         "settings": {}
       }

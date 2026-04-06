@@ -170,7 +170,7 @@
         "heading": "Bestselling Products",
         "cta_label": "View all",
         "cta_link": "",
-        "collection": "frontpage",
+        "collection": "new-arrivals",
         "products_to_show": 4,
         "image_ratio": "square",
         "show_secondary_image": false,

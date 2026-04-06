@@ -759,9 +759,53 @@
                 {% render 'inventory-block', block: block %}
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  <div
+                    class="product__description rte quick-add-hidden"
+                    {% if block.settings.enable_read_more %}data-read-more="{{ block.settings.word_limit | default: 30 }}"{% endif %}
+                    {{ block.shopify_attributes }}
+                  >
                     {{ product.description }}
                   </div>
+                  {%- if block.settings.enable_read_more -%}
+                    <script>
+                      (function(){
+                        var el=document.currentScript.previousElementSibling;
+                        var limit=parseInt(el.dataset.readMore)||30;
+                        var fullHTML=el.innerHTML;
+                        var fullText=el.innerText.trim();
+                        var words=fullText.split(/\s+/);
+                        if(words.length<=limit)return;
+                        var preview=words.slice(0,limit).join(' ');
+                        var hidden=document.createElement('span');
+                        hidden.className='desc-hidden';
+                        hidden.innerHTML=fullHTML;
+                        hidden.style.display='none';
+                        var vis=document.createElement('span');
+                        vis.className='desc-visible';
+                        vis.textContent=preview;
+                        var dots=document.createElement('span');
+                        dots.className='desc-ellipsis';
+                        dots.textContent='... ';
+                        var link=document.createElement('a');
+                        link.href='javascript:void(0)';
+                        link.className='desc-toggle';
+                        link.textContent='Read More';
+                        el.innerHTML='';
+                        el.appendChild(vis);
+                        el.appendChild(dots);
+                        el.appendChild(hidden);
+                        el.appendChild(link);
+                        link.addEventListener('click',function(){
+                          var open=link.dataset.open==='1';
+                          hidden.style.display=open?'none':'inline';
+                          vis.style.display=open?'inline':'none';
+                          dots.style.display=open?'inline':'none';
+                          link.textContent=open?'Read More':'Read Less';
+                          link.dataset.open=open?'0':'1';
+                        });
+                      })();
+                    </script>
+                  {%- endif -%}
                 {%- endif -%}
               {%- when 'sku' -%}
                 <p
@@ -1500,26 +1544,9 @@
         hiddenInput.value = event.currentTarget.value;
       });
     });
+    </script>
 
-    function checkATCScroll() {
-      const stickyAtc = document.querySelector('.sticky-atc');
-      if (!stickyAtc) return;
-      const regularATC = document.querySelector('.atc-button');
-      if (window.scrollY > (regularATC.offsetTop + regularATC.offsetHeight)) {
-          stickyAtc.classList.add('sticky-atc--active')
-      } else {
-          stickyAtc.classList.remove('sticky-atc--active')
-      }
-    }
-
-    checkATCScroll();
-    document.addEventListener('scroll', function() {
-      checkATCScroll();
-    })
-  </script>
-
-    {%- liquid
-      if product.selected_or_first_available_variant.featured_media
+    {%- liquid      if product.selected_or_first_available_variant.featured_media
         assign seo_media = product.selected_or_first_available_variant.featured_media
       else
         assign seo_media = product.featured_media
@@ -6111,7 +6138,25 @@
     {
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_read_more",
+          "label": "Enable Read more / Read less",
+          "default": false,
+          "info": "Shows a word-count truncation with inline Read More link"
+        },
+        {
+          "type": "range",
+          "id": "word_limit",
+          "label": "Words before truncation",
+          "min": 10,
+          "max": 80,
+          "step": 5,
+          "default": 30
+        }
+      ]
     },
     {
       "type": "share",

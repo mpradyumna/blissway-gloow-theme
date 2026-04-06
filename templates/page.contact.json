@@ -23,13 +23,15 @@
       "blocks": {
         "heading_JDKhKC": {
           "type": "heading",
+          "disabled": true,
           "settings": {
-            "heading": "<strong>We’d Love to Hear From You</strong>",
+            "heading": "",
             "heading_size": "h0"
           }
         },
         "text_irrjiy": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Give customers details about the banner image(s) or content on the template.",
             "text_style": "body"
@@ -42,8 +44,9 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
+        "image": "shopify://shop_images/generated_1775285622869.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "xsmall",
+        "image_height": "small",
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",

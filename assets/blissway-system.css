@@ -657,4 +657,29 @@ textarea:focus {
 .bw-text-primary { color: var(--bw-primary) !important; }
 .bw-text-muted   { color: var(--bw-text-muted) !important; }
 .bw-text-display { font-family: var(--bw-font-display) !important; }
+
+/* ─── 24. Judge.me Reviews Tab — brand blue override ──────── */
+/* The yellow rotating tab is a Judge.me app block.
+   Target its generated elements and force brand colours.      */
+.jdgm-widget-tab,
+.jdgm-widget-tab__link,
+[class*="jdgm"][class*="tab"] {
+  background-color: var(--bw-primary) !important;
+  color: #fff !important;
+  border-color: var(--bw-primary-dk) !important;
+}
+.jdgm-widget-tab:hover,
+.jdgm-widget-tab__link:hover {
+  background-color: var(--bw-primary-dk) !important;
+}
+
+/* ─── 25. Benefit checkmarks — green → brand blue ─────────── */
+/* feature block images referencing tick-green-icon get a CSS
+   filter that converts the green to brand electric blue.      */
+img[src*="tick-green-icon"],
+img[src*="tick-green"] {
+  filter: brightness(0) saturate(100%)
+          invert(27%) sepia(96%) saturate(1200%)
+          hue-rotate(215deg) brightness(105%) contrast(97%);
+}
 .bw-text-body    { font-family: var(--bw-font-body) !important; }

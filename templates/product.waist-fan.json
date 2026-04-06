@@ -12,6 +12,27 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "badge_pills": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product-block-liquid pt-3 pb-3\">\n\n<style>\n  .bw-badge-row {\n    display: flex;\n    flex-wrap: wrap;\n    margin-top: 10px;\n    gap: 8px;\n  }\n  .bw-badge {\n    border-radius: 6px;\n    padding: 4px 12px;\n    font-size: 12px;\n    font-weight: 700;\n    letter-spacing: .06em;\n    text-transform: uppercase;\n    display: inline-block;\n    line-height: 1.5;\n  }\n  .bw-badge--dark  { background: #1D1D1D; color: #fff; }\n  .bw-badge--blue  { background: rgba(37,99,235,.1); color: #2563EB; border: 1px solid rgba(37,99,235,.25); }\n  img[src*=\"tick-green-icon\"] {\n    filter: invert(27%) sepia(91%) saturate(1861%) hue-rotate(213deg) brightness(99%) contrast(96%);\n  }\n</style>\n\n<div class=\"bw-badge-row\">\n  <div class=\"bw-badge bw-badge--dark\">Bestseller</div>\n  <div class=\"bw-badge bw-badge--blue\">High-In-Demand</div>\n</div>\n</div>"
+          }
+        },
+        "review_stars": {
+          "type": "review",
+          "settings": {
+            "lrw_text": "4.8 From 1,200+ Reviews",
+            "text_size": 14,
+            "star_style": "star",
+            "star_size": 1,
+            "star_rating": 4.5,
+            "lrw_star_color": "#fec11a",
+            "lrw_star_color_disable": "#eeeeee",
+            "lrw_color": "#000000",
+            "margin_top": 5,
+            "margin_bottom": 10
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -44,7 +65,123 @@
             "enable_price_box": true,
             "price_box_bg": "#f8fafc",
             "price_box_border": "#e2e8f0",
-            "price_box_radius": 16
+            "price_box_radius": 16,
+            "notice_enable": true,
+            "notice_speed": 3,
+            "notice_text_color": "#2563EB",
+            "notice_text_size": 13,
+            "notice_1_text": "No-cost EMI starting at ₹2,999/month",
+            "notice_1_icon": "",
+            "notice_2_text": "COD available with extra Rs 49/-",
+            "notice_2_icon": "",
+            "notice_3_text": "",
+            "notice_3_icon": "",
+            "notice_4_text": "",
+            "notice_4_icon": "",
+            "mrp_text": "MRP incl. of all taxes",
+            "mrp_color": "#6b7280",
+            "mrp_size": 11
+          }
+        },
+        "why_customers_love_it": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Why customers love it</strong>",
+            "text_style": "body",
+            "text_alignment": "left",
+            "text_size_dt": 18,
+            "use_custom_color": true,
+            "text_color": "#626060",
+            "padding_top": 0,
+            "padding_bottom": 8
+          }
+        },
+        "feature_wf_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 24,
+            "heading": "Instant Cooling — Feel it in seconds",
+            "heading_size": 16,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "feature_wf_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 24,
+            "heading": "10,000mAh — All-day battery, no recharge anxiety",
+            "heading_size": 16,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "feature_wf_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 24,
+            "heading": "Hands-Free — Clip on and move freely",
+            "heading_size": 16,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "feature_wf_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 24,
+            "heading": "3 Wind Speeds — Personalised airflow, your way",
+            "heading_size": 16,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "feature_wf_5": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 24,
+            "heading": "Whisper-Quiet — Under 35dB, office & gym safe",
+            "heading_size": 16,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "fomo_wf": {
+          "type": "fomo",
+          "settings": {
+            "fomo_text_before": "Hurry! (x) are viewing this!",
+            "fomo_text_alignment": "left",
+            "text_style": "body",
+            "text_size": 14,
+            "fomo_icon_style": "pill",
+            "fomo_text_color": "#7f1d1d",
+            "fomo_bg_color": "#fff2f2",
+            "fomo_border_color": "#fca5a5",
+            "pill_color": "#dc2626",
+            "fomo_border_activate": true,
+            "fomo_border": 20,
+            "fomo_min": 5,
+            "fomo_max": 9,
+            "fomo_speed": 3,
+            "padding_top": 12,
+            "padding_bottom": 12,
+            "margin_top": 0,
+            "margin_bottom": 0
           }
         },
         "variant_picker": {
@@ -205,53 +342,51 @@
             "button_custom_style": false,
             "button_font_size": 20,
             "button_height": 45,
-            "lm_main_button": "#000000",
+            "lm_main_button": "#2563EB",
             "lm_main_button_gr": "",
             "lm_main_text": "#ffffff"
+          }
+        },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {
+            "badge_1_text": "7-Day Returns",
+            "badge_2_text": "Secure Checkout",
+            "badge_3_text": "1 Year Warranty"
           }
         },
         "description": {
           "type": "description",
           "settings": {}
-        },
-        "collapsible_tab_1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Specifications",
-            "icon": "check_mark",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible_tab_2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Delivery & Returns",
-            "icon": "truck",
-            "content": "",
-            "page": ""
-          }
         }
       },
       "block_order": [
+        "badge_pills",
+        "review_stars",
         "title",
         "price",
+        "why_customers_love_it",
+        "feature_wf_1",
+        "feature_wf_2",
+        "feature_wf_3",
+        "feature_wf_4",
+        "feature_wf_5",
+        "fomo_wf",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "collapsible_tab_1",
-        "collapsible_tab_2"
+        "trust_badges",
+        "description"
       ],
       "settings": {
         "enable_sticky_info": true,
         "no_scroll": false,
         "color_scheme": "",
         "block_padding": 1.5,
-        "media_size": "medium",
+        "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "vertical_left",
+        "gallery_layout": "stacked",
         "thumbnail_size": 70,
         "thumbnail_radius": 4,
         "media_position": "left",
@@ -280,8 +415,48 @@
         "padding_bottom": 36
       }
     },
-    "bw_product_lookbook": {
+    "waist_fan_pdp": {
+      "type": "bw-waist-fan-pdp",
+      "settings": {
+        "product_name": "Blissway Waist Fan",
+        "hiw_heading": "How the Waist Fan Works",
+        "cta_btn": "Get Mine Now →",
+        "cta_sub": "India's summers aren't getting cooler. But you can be. Free shipping. COD available."
+      }
+    },
+    "product_metafield_images_4g3gDw": {
+      "type": "product-metafield-images",
+      "name": "Product Metafield Images",
+      "settings": {
+        "desktop_metafield_key": "desktop_images",
+        "mobile_metafield_key": "mobile_images",
+        "title_metafield_key": "image_titles",
+        "title_font": "assistant_n4",
+        "title_font_size": 16,
+        "title_color": "#1d1d1d",
+        "title_spacing": 10,
+        "image_gap": 20,
+        "image_radius": 20,
+        "color_scheme": "background-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "bw_prepaid_offer_gdXGT7": {
+      "type": "bw-prepaid-offer",
+      "name": "BW Prepaid Offer",
+      "settings": {
+        "color_scheme": "",
+        "eyebrow": "EXCLUSIVE OFFER",
+        "heading": "Extra 5% Off on Prepaid",
+        "text": "Pay via UPI, Cards, or Wallets and unlock instant savings on every order. Cash on Delivery available (but excludes this discount).",
+        "btn_label": "Shop Now & Save",
+        "btn_link": ""
+      }
+    },
+    "bw_product_lookbook_VLVJtR": {
       "type": "bw-product-lookbook",
+      "name": "BW Product Lookbook",
       "settings": {
         "section_label": "Visual Story",
         "heading": "LOOKBOOK",
@@ -290,123 +465,51 @@
         "cta_url": ""
       }
     },
-    "comparison": {
-      "type": "comparison-table",
+    "bw_trust_bar_ibhEyk": {
+      "type": "bw-trust-bar",
       "blocks": {
-        "row_1": {
-          "type": "row",
+        "trust_item_qRycJ6": {
+          "type": "trust_item",
           "settings": {
-            "benefit": "Kid & Pet Safety",
-            "us": true,
-            "others": false
+            "icon_html": "<svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"></path></svg>",
+            "title": "1-Year Warranty",
+            "text": "Hassle-free replacement for any manufacturing defects."
           }
         },
-        "row_2": {
-          "type": "row",
+        "trust_item_aDCrQX": {
+          "type": "trust_item",
           "settings": {
-            "benefit": "Air Purification",
-            "us": true,
-            "others": false
+            "icon_html": "<svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"></rect><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"></polygon><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"></circle><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"></circle></svg>",
+            "title": "Free Shipping",
+            "text": "On all orders above ₹499, delivered to 12,000+ pin codes."
           }
         },
-        "row_3": {
-          "type": "row",
+        "trust_item_9nXMFW": {
+          "type": "trust_item",
           "settings": {
-            "benefit": "Sleep Quality",
-            "us": true,
-            "others": false
+            "icon_html": "<svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"1 4 1 10 7 10\"></polyline><path d=\"M3.51 15a9 9 0 1 0 .49-3.44\"></path></svg>",
+            "title": "7-Day Returns",
+            "text": "Not happy? Send it back within 7 days for a full refund."
           }
         }
       },
       "block_order": [
-        "row_1",
-        "row_2",
-        "row_3"
+        "trust_item_qRycJ6",
+        "trust_item_aDCrQX",
+        "trust_item_9nXMFW"
       ],
+      "name": "BW - Trust Bar",
       "settings": {
-        "title": "How we outshine the rest.",
-        "heading_size": "h1",
-        "text": "<p>Talk about how and why is your brand better than the others.</p>",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "layout": "table_second",
-        "content_center": "left",
-        "color_scheme": "",
-        "logo_width": 90,
-        "mobile_logo_width": 60,
-        "us_label": "",
-        "others_label": "Standard Fan",
-        "benefit_color_scheme": "",
-        "icon_cells_color_scheme": "",
-        "checkmark_color": "#53af01",
-        "x_color": "#000000",
-        "checkmark_active_color": "#53af01",
-        "x_active_color": "#000000",
-        "active_color": "#212121",
-        "active_text_color": "#ffffff",
-        "active_border_color": "#212121",
-        "table_corner_radius": 8,
-        "font_size": 16,
-        "table_shadow_opacity": 15,
-        "table_shadow_horizontal_offset": 0,
-        "table_shadow_vertical_offset": 0,
-        "table_shadow_blur": 0,
-        "table_border_thickness": 1,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "highlight": {
-      "type": "bw-product-highlight",
-      "settings": {
-        "color_scheme": "",
-        "show_reviews": true,
-        "reviews_text": "4000+ Reviews",
-        "title": "Your Go-To for Style and Performance",
-        "text": "Enjoy the perfect balance of aesthetics and functionality. The AirLuxe fan blends seamlessly into modern Indian homes while providing unmatched cooling.",
-        "button_label": "GET YOURS NOW",
-        "button_link": "",
-        "guarantee_text": "30-Day satisfaction guarantee",
-        "scarcity_text": "Head’s up, we’re low on stock!"
-      }
-    },
-    "tech_center": {
-      "type": "bw-center-feature",
-      "settings": {
-        "color_scheme": "",
-        "subheading": "The Core Technology",
-        "title": "Simple science is our secret ingredient"
-      }
-    },
-    "how_it_works": {
-      "type": "bw-timeline",
-      "settings": {
-        "color_scheme": "",
-        "title": "The Blissway Experience",
-        "subtitle": "A simple 3-step process to better living."
-      }
-    },
-    "newsletter": {
-      "type": "bw-newsletter",
-      "settings": {
-        "color_scheme": "",
-        "subheading": "Join the club",
-        "heading": "10% off your first order.",
-        "text": "<p>Drop your email. Get the discount. We only send things worth reading — new launches, restocks, and deals that are actually good.</p>",
-        "placeholder": "your@email.com",
-        "button_label": "Get My 10% Off",
-        "bottom_note": "No spam, ever. Unsubscribe with one click."
+        "color_scheme": ""
       }
     }
   },
   "order": [
     "main",
-    "bw_product_lookbook",
-    "comparison",
-    "highlight",
-    "tech_center",
-    "how_it_works",
-    "newsletter"
+    "waist_fan_pdp",
+    "product_metafield_images_4g3gDw",
+    "bw_prepaid_offer_gdXGT7",
+    "bw_product_lookbook_VLVJtR",
+    "bw_trust_bar_ibhEyk"
   ]
 }

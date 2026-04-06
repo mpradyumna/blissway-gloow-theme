@@ -1,0 +1,1065 @@
+{%- comment -%}
+  BW Waist Fan — Conversion PDP Section
+  Target: India, Paid Traffic (Meta/Google)
+  Goal: Handle objections, build trust, drive Add-to-Cart
+  Sections: Trust → Pain Hook → How It Works → Use Cases → Stats → Comparison → Reviews → FAQ → Guarantee → CTA
+{%- endcomment -%}
+
+<style>
+  /* ── Local tokens (extend BW system) ── */
+  .wf-pdp {
+    --wf-bg:       var(--bw-bg, #F5F5F5);
+    --wf-surface:  var(--bw-surface, #FFFFFF);
+    --wf-text:     var(--bw-text, #1D1D1D);
+    --wf-muted:    var(--bw-text-muted, rgba(29,29,29,.52));
+    --wf-blue:     var(--bw-primary, #2563EB);
+    --wf-blue-dk:  var(--bw-primary-dk, #1D4ED8);
+    --wf-blue-lt:  var(--bw-primary-lt, rgba(37,99,235,.08));
+    --wf-border:   var(--bw-border, rgba(29,29,29,.08));
+    --wf-dark:     #07090E;
+    --wf-radius:   var(--bw-radius, 12px);
+    --wf-radius-lg:var(--bw-radius-lg, 20px);
+    font-family: var(--bw-font-body, var(--font-body-family));
+  }
+
+  /* ── Shared utilities ── */
+  .wf-section      { padding: 64px 20px; background: var(--wf-bg); }
+  .wf-section--white { background: var(--wf-surface); }
+  .wf-section--dark  { background: var(--wf-dark); }
+  .wf-container    { max-width: 1120px; margin: 0 auto; }
+  .wf-center       { text-align: center; }
+  .wf-eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--wf-blue);
+    margin-bottom: 10px;
+  }
+  .wf-eyebrow--light { color: #93C5FD; }
+  .wf-h2 {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--wf-text);
+    margin: 0 0 14px;
+  }
+  .wf-h2--white { color: #fff; }
+  .wf-sub {
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
+    line-height: 1.65;
+    color: var(--wf-muted);
+    max-width: 580px;
+    margin: 0 0 40px;
+  }
+  .wf-sub--white { color: rgba(255,255,255,.65); }
+  .wf-center .wf-sub { margin-inline: auto; }
+
+  /* ── TRUST BAR ── */
+  .wf-trust {
+    background: var(--wf-dark);
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .wf-trust__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,.88);
+    letter-spacing: .03em;
+    padding: 11px 14px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+  .wf-trust__item:last-child {
+    border-bottom: none;
+  }
+  .wf-trust__item svg {
+    width: 22px; height: 22px;
+    color: var(--wf-blue);
+    flex-shrink: 0;
+  }
+  @media (min-width: 768px) {
+    .wf-trust {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: stretch;
+      padding: 0;
+    }
+    .wf-trust__item {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      font-size: 12px;
+      padding: 18px 28px;
+      border-bottom: none;
+      border-right: 1px solid rgba(255,255,255,.1);
+      white-space: nowrap;
+      flex: 1;
+    }
+    .wf-trust__item:last-child {
+      border-right: none;
+    }
+    .wf-trust__item svg {
+      width: 26px; height: 26px;
+    }
+  }
+
+  /* ── PAIN HOOK ── */
+  .wf-pain {
+    padding: 56px 20px;
+    background: var(--wf-dark);
+    border-top: 1px solid rgba(37,99,235,.2);
+  }
+  .wf-pain__inner {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .wf-pain__headline {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin: 0 0 16px;
+  }
+  .wf-pain__headline em {
+    font-style: normal;
+    color: var(--wf-blue);
+  }
+  .wf-pain__sub {
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
+    color: rgba(255,255,255,.6);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .wf-pain__divider {
+    width: 48px;
+    height: 3px;
+    background: var(--wf-blue);
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .wf-hiw__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 768px) {
+    .wf-hiw__grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .wf-hiw__card {
+    background: var(--wf-surface);
+    border: 1px solid var(--wf-border);
+    border-radius: var(--wf-radius-lg);
+    padding: 32px 24px;
+    position: relative;
+  }
+  .wf-hiw__num {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--wf-blue-lt);
+    border: 2px solid var(--wf-blue);
+    color: var(--wf-blue);
+    font-size: 16px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .wf-hiw__icon { display: flex; align-items: center; margin-bottom: 12px; color: var(--wf-blue); }
+  .wf-hiw__icon svg { width: 34px; height: 34px; flex-shrink: 0; }
+  .wf-hiw__title { font-size: 16px; font-weight: 700; margin: 0 0 8px; color: var(--wf-text); }
+  .wf-hiw__text  { font-size: 13.5px; line-height: 1.65; color: var(--wf-muted); margin: 0; }
+
+  /* ── PERSONA CARDS ── */
+  .wf-persona__scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .wf-persona__scroll::-webkit-scrollbar { display: none; }
+  @media (min-width: 768px) {
+    .wf-persona__scroll {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow-x: unset;
+      scroll-snap-type: unset;
+    }
+  }
+  .wf-persona__card {
+    position: relative;
+    border-radius: var(--wf-radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    flex: 0 0 75vw;
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+  @media (min-width: 768px) {
+    .wf-persona__card { flex: unset; }
+  }
+  .wf-persona__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .wf-persona__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.78) 0%, rgba(0,0,0,.18) 50%, transparent 100%);
+  }
+  .wf-persona__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 20px;
+  }
+  .wf-persona__label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--wf-blue);
+    background: rgba(37,99,235,.18);
+    border: 1px solid rgba(37,99,235,.45);
+    border-radius: 4px;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+  }
+  .wf-persona__headline {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(1.7rem, 2.4vw, 2.1rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  /* ── PROOF STATS ── */
+  .wf-stats__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 600px) {
+    .wf-stats__grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .wf-stat {
+    text-align: center;
+    padding: 24px 16px;
+    border-radius: var(--wf-radius);
+    border: 1px solid rgba(37,99,235,.25);
+    background: rgba(37,99,235,.06);
+  }
+  .wf-stat__num {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(2.8rem, 5vw, 3.8rem);
+    font-weight: 800;
+    color: var(--wf-blue);
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .wf-stat__label { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.4; }
+
+  /* ── COMPARISON TABLE ── */
+  .wf-compare { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .wf-compare__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 480px;
+  }
+  .wf-compare__table th,
+  .wf-compare__table td {
+    padding: 13px 16px;
+    text-align: center;
+    font-size: 13.5px;
+    border-bottom: 1px solid var(--wf-border);
+  }
+  .wf-compare__table th {
+    font-size: 12px;
+    font-weight: 700;
+    background: var(--wf-bg);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--wf-muted);
+  }
+  .wf-compare__table th:nth-child(2) {
+    background: var(--wf-blue);
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+  }
+  .wf-compare__table td:nth-child(2) {
+    background: var(--wf-blue-lt);
+    font-weight: 600;
+  }
+  .wf-compare__table td:first-child { text-align: left; font-weight: 600; color: var(--wf-text); }
+  .wf-compare__table tr:last-child td { border-bottom: none; }
+  .wf-chk  { color: var(--wf-blue); font-weight: 800; font-size: 17px; }
+  .wf-cross{ color: #CACACE; font-size: 17px; }
+  .wf-part { color: #F59E0B; font-size: 12px; font-weight: 600; }
+
+  /* ── REVIEWS ── */
+  .wf-reviews__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 768px) {
+    .wf-reviews__grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .wf-review {
+    background: var(--wf-surface);
+    border: 1px solid var(--wf-border);
+    border-radius: var(--wf-radius-lg);
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .wf-review__stars { color: #F59E0B; font-size: 15px; letter-spacing: 2px; }
+  .wf-review__badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    background: var(--wf-blue-lt);
+    color: var(--wf-blue);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .wf-review__text { font-size: 14px; line-height: 1.65; color: var(--wf-text); margin: 0; flex: 1; }
+  .wf-review__author {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--wf-muted);
+  }
+  .wf-review__author span { color: var(--wf-blue); }
+
+  /* ── FAQ ── */
+  .wf-faq__list { max-width: 760px; margin: 0 auto; }
+  .wf-faq__item { border-bottom: 1px solid var(--wf-border); }
+  .wf-faq__btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--wf-text);
+    cursor: pointer;
+    text-align: left;
+    gap: 16px;
+  }
+  .wf-faq__chevron {
+    width: 20px; height: 20px;
+    flex-shrink: 0;
+    transition: transform .3s ease;
+    color: var(--wf-blue);
+  }
+  .wf-faq__item.open .wf-faq__chevron { transform: rotate(180deg); }
+  .wf-faq__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease, opacity .3s ease;
+    opacity: 0;
+  }
+  .wf-faq__item.open .wf-faq__body { opacity: 1; }
+  .wf-faq__body-inner {
+    padding-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--wf-muted);
+  }
+  .wf-faq__body-inner strong { color: var(--wf-text); }
+
+  /* ── GUARANTEE ── */
+  .wf-guarantee {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  @media (min-width: 600px) {
+    .wf-guarantee { grid-template-columns: repeat(3, 1fr); }
+  }
+  .wf-guarantee__card {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(37,99,235,.08);
+    border: 1px solid rgba(37,99,235,.22);
+    border-radius: var(--wf-radius-lg);
+  }
+  .wf-guarantee__icon { display: flex; align-items: center; justify-content: center; margin-bottom: 12px; color: var(--wf-blue); }
+  .wf-guarantee__icon svg { width: 40px; height: 40px; flex-shrink: 0; }
+  .wf-guarantee__title { font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 6px; }
+  .wf-guarantee__text  { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.55; margin: 0; }
+
+  /* ── CTA STRIP ── */
+  .wf-cta-strip {
+    background: var(--wf-blue);
+    padding: 56px 20px;
+    text-align: center;
+  }
+  .wf-cta-strip__headline {
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 10px;
+  }
+  .wf-cta-strip__sub {
+    font-size: 15px;
+    color: rgba(255,255,255,.75);
+    margin: 0 0 28px;
+  }
+  .wf-cta-strip__btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--wf-blue);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 16px 44px;
+    border-radius: var(--wf-radius);
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .wf-cta-strip__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37,99,235,.35);
+  }
+  .wf-cta-strip__urgency {
+    margin-top: 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,.65);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    letter-spacing: .05em;
+  }
+  .wf-urgency-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .wf-urgency-dot { opacity: .4; }
+
+  /* ── STICKY MOBILE CTA ── */
+  .wf-sticky-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #fff;
+    border-top: 1px solid var(--wf-border);
+    padding: 12px 16px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,.1);
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  @media (max-width: 767px) {
+    .wf-sticky-bar { display: flex; }
+  }
+  .wf-sticky-bar__meta { display: flex; flex-direction: column; gap: 2px; }
+  .wf-sticky-bar__name { font-size: 13px; font-weight: 700; color: var(--wf-text); }
+  .wf-sticky-bar__price { font-size: 18px; font-weight: 800; color: var(--wf-blue); }
+  .wf-sticky-bar__price s { font-size: 12px; color: var(--wf-muted); font-weight: 400; margin-left: 4px; }
+  .wf-sticky-bar__btn {
+    flex-shrink: 0;
+    background: var(--wf-blue);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 13px 22px;
+    border-radius: var(--wf-radius);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .15s ease;
+  }
+  .wf-sticky-bar__btn:hover { background: var(--wf-blue-dk); }
+</style>
+
+<div class="wf-pdp">
+
+  {%- comment -%} ── USP ICON STRIP ── {%- endcomment -%}
+  {% render 'bw-waist-fan-usp' %}
+
+  {%- comment -%} ── TRUST BAR ── {%- endcomment -%}
+  <div class="wf-trust">
+    <div class="wf-trust__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="22" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M1 10h4M19 10h4M1 14h4M19 14h4"/></svg>
+      Cash on Delivery Available
+    </div>
+    <div class="wf-trust__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      Fast Delivery
+    </div>
+    <div class="wf-trust__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+      Additional 5% off for pre-paid orders
+    </div>
+    <div class="wf-trust__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 001 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16v-2"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Free Shipping
+    </div>
+    <div class="wf-trust__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      WhatsApp Support
+    </div>
+  </div>
+
+  {%- comment -%} ── PAIN HOOK ── {%- endcomment -%}
+  <div class="wf-pain">
+    <div class="wf-pain__inner">
+      <p class="wf-pain__headline">
+        India's summers don't wait.<br>
+        Neither should <em>your cooling</em>.
+      </p>
+      <p class="wf-pain__sub">
+        When the AC goes down, the power cuts, or you're stuck in a packed DTC bus — the Waist Fan keeps you cool. Hands-free. Everywhere you go.
+      </p>
+      <div class="wf-pain__divider"></div>
+    </div>
+  </div>
+
+  {%- comment -%} ── HOW IT WORKS ── {%- endcomment -%}
+  <section class="wf-section wf-section--white">
+    <div class="wf-container">
+      <div class="wf-center">
+        <span class="wf-eyebrow">Simple as 1-2-3</span>
+        <h2 class="wf-h2">{{ section.settings.hiw_heading | default: 'How the Waist Fan Works' }}</h2>
+        <p class="wf-sub">No wires. No complicated setup. Clip it on and step out — cool in seconds.</p>
+      </div>
+      <div class="wf-hiw__grid">
+        <div class="wf-hiw__card">
+          <div class="wf-hiw__num">1</div>
+          <span class="wf-hiw__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg></span>
+          <p class="wf-hiw__title">Clip to Your Waist</p>
+          <p class="wf-hiw__text">The magnetic waist clip snaps onto any belt, waistband, or bag strap in under 3 seconds. The 360° adjustable nozzle aims airflow exactly where you need it.</p>
+        </div>
+        <div class="wf-hiw__card">
+          <div class="wf-hiw__num">2</div>
+          <span class="wf-hiw__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2 2 0 1 1 19.73 12H2"/></svg></span>
+          <p class="wf-hiw__title">Choose Your Speed</p>
+          <p class="wf-hiw__text">One-touch button cycles through 3 turbo speeds. The 15,500 RPM motor delivers real direct airflow — not a gentle breeze, actual cooling you can feel.</p>
+        </div>
+        <div class="wf-hiw__card">
+          <div class="wf-hiw__num">3</div>
+          <span class="wf-hiw__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><polyline points="20 16 16 12 20 8"/><polyline points="4 8 8 12 4 16"/><polyline points="16 4 12 8 8 4"/><polyline points="8 20 12 16 16 20"/></svg></span>
+          <p class="wf-hiw__title">Stay Cool, Hands-Free</p>
+          <p class="wf-hiw__text">Both hands free. No sweat patches. No neck strain. Works on the bus, at your desk, at a construction site — wherever Indian summers follow you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── USE CASES ── {%- endcomment -%}
+  {%- comment -%} ── PERSONA CARDS ── {%- endcomment -%}
+  <section class="wf-section">
+    <div class="wf-container">
+      <div class="wf-center">
+        <span class="wf-eyebrow">Made for India</span>
+        <h2 class="wf-h2">Wherever You Sweat, It Cools You</h2>
+        <p class="wf-sub">No AC? No problem. Built for the people who work in India's real heat.</p>
+      </div>
+      <div class="wf-persona__scroll">
+        <div class="wf-persona__card">
+          <img
+            src="{{ 'persona-biker.png' | asset_url }}"
+            alt="Indian biker riding in summer heat"
+            class="wf-persona__img"
+            loading="lazy"
+            width="800"
+            height="1000"
+          >
+          <div class="wf-persona__overlay"></div>
+          <div class="wf-persona__content">
+            <span class="wf-persona__label">The Biker</span>
+            <p class="wf-persona__headline">Cars have AC.<br>Bikers have this.</p>
+          </div>
+        </div>
+        <div class="wf-persona__card">
+          <img
+            src="{{ 'persona-commuter.png' | asset_url }}"
+            alt="Crowded DTC bus commuters in Indian summer"
+            class="wf-persona__img"
+            loading="lazy"
+            width="800"
+            height="1000"
+          >
+          <div class="wf-persona__overlay"></div>
+          <div class="wf-persona__content">
+            <span class="wf-persona__label">The Commuter</span>
+            <p class="wf-persona__headline">Packed bus.<br>Zero sweat.</p>
+          </div>
+        </div>
+        <div class="wf-persona__card">
+          <img
+            src="{{ 'persona-engineer.png' | asset_url }}"
+            alt="Civil engineer at construction site in summer heat"
+            class="wf-persona__img"
+            loading="lazy"
+            width="800"
+            height="1000"
+          >
+          <div class="wf-persona__overlay"></div>
+          <div class="wf-persona__content">
+            <span class="wf-persona__label">The Professional</span>
+            <p class="wf-persona__headline">Site to site.<br>40°C all day.</p>
+          </div>
+        </div>
+        <div class="wf-persona__card large-up-hide">
+          <img
+            src="{{ 'persona-student.png' | asset_url }}"
+            alt="Students walking to coaching centre in summer heat"
+            class="wf-persona__img"
+            loading="lazy"
+            width="800"
+            height="1000"
+          >
+          <div class="wf-persona__overlay"></div>
+          <div class="wf-persona__content">
+            <span class="wf-persona__label">The Student</span>
+            <p class="wf-persona__headline">Coaching season.<br>No AC. No problem.</p>
+          </div>
+        </div>
+        <div class="wf-persona__card large-up-hide">
+          <img
+            src="{{ 'persona-ipl.png' | asset_url }}"
+            alt="IPL cricket fans cheering in packed stadium"
+            class="wf-persona__img"
+            loading="lazy"
+            width="800"
+            height="1000"
+          >
+          <div class="wf-persona__overlay"></div>
+          <div class="wf-persona__content">
+            <span class="wf-persona__label">The Cricket Fan</span>
+            <p class="wf-persona__headline">Packed stands.<br>Heat can't stop you.</p>
+          </div>
+        </div>
+        <div class="wf-persona__card large-up-hide">
+          <img
+            src="{{ 'persona-kitchen.png' | asset_url }}"
+            alt="Indian woman cooking in hot kitchen"
+            class="wf-persona__img"
+            loading="lazy"
+            width="800"
+            height="1000"
+          >
+          <div class="wf-persona__overlay"></div>
+          <div class="wf-persona__content">
+            <span class="wf-persona__label">The Homemaker</span>
+            <p class="wf-persona__headline">Gas on. Sun out.<br>Still cooking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── PROOF STATS ── {%- endcomment -%}
+  <section class="wf-section wf-section--dark">
+    <div class="wf-container">
+      <div class="wf-center">
+        <span class="wf-eyebrow wf-eyebrow--light">Based on Customer Surveys</span>
+        <h2 class="wf-h2 wf-h2--white">Real Results from Real Indians</h2>
+        <p class="wf-sub wf-sub--white">Surveyed 500+ verified buyers across metro cities, tier-2 towns, and outdoor workers.</p>
+      </div>
+      <div class="wf-stats__grid">
+        <div class="wf-stat">
+          <span class="wf-stat__num">86%</span>
+          <span class="wf-stat__label">Felt noticeably cooler during daily commute</span>
+        </div>
+        <div class="wf-stat">
+          <span class="wf-stat__num">40H</span>
+          <span class="wf-stat__label">Max runtime on single charge (low speed)</span>
+        </div>
+        <div class="wf-stat">
+          <span class="wf-stat__num">79%</span>
+          <span class="wf-stat__label">Reported less sweat discomfort at work</span>
+        </div>
+        <div class="wf-stat">
+          <span class="wf-stat__num">4.9★</span>
+          <span class="wf-stat__label">Average rating across all verified buyers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── COMPARISON TABLE ── {%- endcomment -%}
+  <section class="wf-section wf-section--white">
+    <div class="wf-container">
+      <div class="wf-center">
+        <span class="wf-eyebrow">Why Not Just Use...</span>
+        <h2 class="wf-h2">Waist Fan vs. Your Other Options</h2>
+        <p class="wf-sub">Before you think "I'll just use a ceiling fan" — here's what you'd actually be giving up.</p>
+      </div>
+      <div class="wf-compare">
+        <table class="wf-compare__table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>{{ section.settings.product_name | default: 'Blissway Waist Fan' }}</th>
+              <th>Ceiling Fan</th>
+              <th>Air Conditioner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Works outdoors / on the go</td>
+              <td><span class="wf-chk">✓</span></td>
+              <td><span class="wf-cross">✗</span></td>
+              <td><span class="wf-cross">✗</span></td>
+            </tr>
+            <tr>
+              <td>Works during power cuts</td>
+              <td><span class="wf-chk">✓ 40H battery</span></td>
+              <td><span class="wf-cross">✗</span></td>
+              <td><span class="wf-cross">✗</span></td>
+            </tr>
+            <tr>
+              <td>Personal, direct airflow</td>
+              <td><span class="wf-chk">✓</span></td>
+              <td><span class="wf-cross">✗ Room-wide only</span></td>
+              <td><span class="wf-part">Room-wide only</span></td>
+            </tr>
+            <tr>
+              <td>Hands-free use</td>
+              <td><span class="wf-chk">✓</span></td>
+              <td><span class="wf-chk">✓</span></td>
+              <td><span class="wf-chk">✓</span></td>
+            </tr>
+            <tr>
+              <td>Works on bus / commute</td>
+              <td><span class="wf-chk">✓</span></td>
+              <td><span class="wf-cross">✗</span></td>
+              <td><span class="wf-cross">✗</span></td>
+            </tr>
+            <tr>
+              <td>Monthly running cost</td>
+              <td><span class="wf-chk">₹0 (one-time buy)</span></td>
+              <td><span class="wf-part">₹200+ electricity</span></td>
+              <td><span class="wf-cross">₹1,500+ electricity</span></td>
+            </tr>
+            <tr>
+              <td>Built-in powerbank (charges phone)</td>
+              <td><span class="wf-chk">✓ 10,000 mAh</span></td>
+              <td><span class="wf-cross">✗</span></td>
+              <td><span class="wf-cross">✗</span></td>
+            </tr>
+            <tr>
+              <td>No installation required</td>
+              <td><span class="wf-chk">✓ Clip and go</span></td>
+              <td><span class="wf-cross">✗ Electrician needed</span></td>
+              <td><span class="wf-cross">✗ ₹5,000+ install</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── REVIEWS ── {%- endcomment -%}
+  <section class="wf-section">
+    <div class="wf-container">
+      <div class="wf-center">
+        <span class="wf-eyebrow">Verified Buyers</span>
+        <h2 class="wf-h2">What Real Indians Are Saying</h2>
+      </div>
+      <div class="wf-reviews__grid">
+        <div class="wf-review">
+          <div class="wf-review__stars">★★★★★</div>
+          <span class="wf-review__badge">Verified Purchase</span>
+          <p class="wf-review__text">"I was skeptical — ₹2,499 for a fan felt steep. But this thing saved my sanity during my 1.5-hour DTC commute in May. Battery lasted 4 full days. The powerbank feature charges my phone too. 10/10 would buy again."</p>
+          <p class="wf-review__author">Rohan S. — <span>Delhi</span></p>
+        </div>
+        <div class="wf-review">
+          <div class="wf-review__stars">★★★★★</div>
+          <span class="wf-review__badge">Verified Purchase</span>
+          <p class="wf-review__text">"Office mein AC ka koi bharosa nahi. This fan has been my life-saver. It's quiet enough that nobody notices during meetings. The clip is strong and doesn't fall off. Ordered one for my husband too."</p>
+          <p class="wf-review__author">Priya M. — <span>Bengaluru</span></p>
+        </div>
+        <div class="wf-review">
+          <div class="wf-review__stars">★★★★★</div>
+          <span class="wf-review__badge">Verified Purchase</span>
+          <p class="wf-review__text">"Bought 2 — one for me and one for my wife. We both work outdoor construction sites. The 40-hour battery claim is actually real, we tested it properly. Works great at high speed through a full 9-hour shift."</p>
+          <p class="wf-review__author">Amit K. — <span>Pune</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── FAQ / OBJECTION HANDLING ── {%- endcomment -%}
+  <section class="wf-section wf-section--white">
+    <div class="wf-container">
+      <div class="wf-center">
+        <span class="wf-eyebrow">We've Heard Every Question</span>
+        <h2 class="wf-h2">Let's Answer Your Doubts</h2>
+      </div>
+      <div class="wf-faq__list" itemscope itemtype="https://schema.org/FAQPage">
+
+        <div class="wf-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="wf-faq__btn" aria-expanded="false">
+            <span itemprop="name">Will it actually cool me in Indian heat (40°C+)?</span>
+            <svg class="wf-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wf-faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="wf-faq__body-inner" itemprop="text">
+              <p><strong>Yes, absolutely.</strong> The 15,500 RPM motor creates a sustained personal airflow across your body surface — this directly lowers your skin's perceived temperature. Unlike a ceiling fan that circulates stale room air, this fans cool outdoor air directly onto you. 86% of our surveyed buyers in India reported feeling noticeably cooler within 2–3 minutes. It won't replace AC in a sealed room, but for everything outdoors or in non-AC spaces, it makes a real, felt difference.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="wf-faq__btn" aria-expanded="false">
+            <span itemprop="name">₹2,499 for a fan? A regular table fan costs ₹500.</span>
+            <svg class="wf-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wf-faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="wf-faq__body-inner" itemprop="text">
+              <p>Fair question. A table fan is bolted to a wall socket. It cannot follow you to the bus stop, the construction site, a power cut, or a 4-hour train journey. <strong>This fan does all of that</strong> — plus it charges your phone (10,000 mAh powerbank) and includes an LED torch. You're not buying a fan. You're buying freedom from heat wherever you go. That's worth a lot more than ₹2,499. And with zero monthly electricity cost, it pays for itself fast.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="wf-faq__btn" aria-expanded="false">
+            <span itemprop="name">Is the 40-hour battery claim real or just marketing?</span>
+            <svg class="wf-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wf-faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="wf-faq__body-inner" itemprop="text">
+              <p><strong>40 hours is real — at low speed, with the 10,000 mAh battery.</strong> Real-world expectations: medium speed gives 15–20 hours; high speed gives 8–12 hours. That's still 1–2 full work days of outdoor cooling per charge. Most buyers recharge once a week. We've had outdoor workers from Pune and Chennai confirm the high-speed runtime through full 8-hour shifts.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="wf-faq__btn" aria-expanded="false">
+            <span itemprop="name">Will it embarrass me if I wear it at work or in public?</span>
+            <svg class="wf-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wf-faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="wf-faq__body-inner" itemprop="text">
+              <p>The fan is compact (4.4 inches wide) and clips discreetly to your waistband, belt, or bag strap. At just <strong>50 decibels</strong> — quieter than a normal conversation — it runs silently enough for open offices, coaching centres, and client meetings. Hundreds of our customers use it daily in professional settings without anyone noticing. A few have told us colleagues asked what gadget they were using and immediately ordered one themselves.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="wf-faq__btn" aria-expanded="false">
+            <span itemprop="name">What if I don't like it? Can I return it?</span>
+            <svg class="wf-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wf-faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="wf-faq__body-inner" itemprop="text">
+              <p><strong>7-day hassle-free returns. No questions asked.</strong> If you're not satisfied, WhatsApp us within 7 days of delivery. We arrange free pickup and process your full refund. We've served 5,000+ Indian buyers and our 4.9★ rating reflects the confidence we have in this product — and the trust our customers place in us.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="wf-faq__btn" aria-expanded="false">
+            <span itemprop="name">Is this a cheap Chinese product or a quality item?</span>
+            <svg class="wf-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wf-faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="wf-faq__body-inner" itemprop="text">
+              <p>The Waist Fan is <strong>imported and quality-checked by a registered Indian company</strong> (VCFL Express Pvt. Ltd.) and marketed by Blissway Commerce. Every unit is inspected before despatch. The motor, battery capacity, and clip durability are all tested. Our 7-day return guarantee isn't an accident — it's our way of backing our product's quality with money, not just words.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="wf-faq__btn" aria-expanded="false">
+            <span itemprop="name">Can I really charge my phone with it?</span>
+            <svg class="wf-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wf-faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="wf-faq__body-inner" itemprop="text">
+              <p><strong>Yes — the built-in 10,000 mAh powerbank works exactly like a standard power bank.</strong> Connect any USB cable to the output port and it charges your phone at normal speed. Many of our buyers use it as their primary power bank during travel and power cuts. You can run the fan and charge your phone simultaneously.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="wf-faq__btn" aria-expanded="false">
+            <span itemprop="name">Is Cash on Delivery (COD) available?</span>
+            <svg class="wf-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wf-faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div class="wf-faq__body-inner" itemprop="text">
+              <p><strong>Yes! Cash on Delivery is available across India.</strong> Select COD at checkout — pay the delivery person when the product arrives at your door. No prepayment required. We deliver to all major cities and most PIN codes across the country.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── GUARANTEE ── {%- endcomment -%}
+  <section class="wf-section wf-section--dark">
+    <div class="wf-container">
+      <div class="wf-center">
+        <span class="wf-eyebrow wf-eyebrow--light">Our Promise to You</span>
+        <h2 class="wf-h2 wf-h2--white">Zero Risk. Total Confidence.</h2>
+        <p class="wf-sub wf-sub--white">We wouldn't sell something we don't stand behind 100%.</p>
+      </div>
+      <div class="wf-guarantee">
+        <div class="wf-guarantee__card">
+          <span class="wf-guarantee__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.44"/></svg></span>
+          <p class="wf-guarantee__title">7-Day Returns</p>
+          <p class="wf-guarantee__text">Not satisfied? WhatsApp us within 7 days. Full refund, free pickup. No forms, no hassle.</p>
+        </div>
+        <div class="wf-guarantee__card">
+          <span class="wf-guarantee__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.78 0l-8-4a2 2 0 0 1-1.11-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"/><polyline points="2.32 6.16 12 11 21.68 6.16"/><line x1="12" y1="22.76" x2="12" y2="11"/></svg></span>
+          <p class="wf-guarantee__title">Ships in 24 Hours</p>
+          <p class="wf-guarantee__text">Order today, despatch within 24 hours. Fully tracked delivery across all PIN codes in India.</p>
+        </div>
+        <div class="wf-guarantee__card">
+          <span class="wf-guarantee__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <p class="wf-guarantee__title">Real WhatsApp Support</p>
+          <p class="wf-guarantee__text">Real humans, not bots. Our support team responds within 2 hours on WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── FINAL CTA STRIP ── {%- endcomment -%}
+  <div class="wf-cta-strip">
+    <p class="wf-cta-strip__headline">Stop Suffering. Start Cooling.</p>
+    <p class="wf-cta-strip__sub">{{ section.settings.cta_sub | default: "India's summers aren't getting cooler. But you can be. ₹2,499. Free shipping. COD available." }}</p>
+    <a href="#MainContent" class="wf-cta-strip__btn">{{ section.settings.cta_btn | default: 'Get Mine Now →' }}</a>
+    <p class="wf-cta-strip__urgency">
+      <span class="wf-urgency-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Ships within 24 hours</span>
+      <span class="wf-urgency-dot">·</span>
+      <span class="wf-urgency-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure checkout</span>
+      <span class="wf-urgency-dot">·</span>
+      <span class="wf-urgency-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.44"/></svg> 7-day returns</span>
+    </p>
+  </div>
+
+</div>
+
+{%- comment -%} ── STICKY MOBILE CTA BAR ── {%- endcomment -%}
+<div class="wf-sticky-bar" id="wf-sticky-bar" aria-hidden="true">
+  <div class="wf-sticky-bar__meta">
+    <span class="wf-sticky-bar__name">{{ product.title | default: 'Blissway Waist Fan' }}</span>
+    <span class="wf-sticky-bar__price">
+      {{ product.price | money }}
+      {%- if product.compare_at_price > product.price -%}
+        <s>{{ product.compare_at_price | money }}</s>
+      {%- endif -%}
+    </span>
+  </div>
+  <a href="#MainContent" class="wf-sticky-bar__btn">Buy Now →</a>
+</div>
+
+<script>
+  (function () {
+    // FAQ accordion
+    var items = document.querySelectorAll('.wf-faq__item');
+    items.forEach(function (item) {
+      var btn = item.querySelector('.wf-faq__btn');
+      var body = item.querySelector('.wf-faq__body');
+      btn.addEventListener('click', function () {
+        var isOpen = item.classList.contains('open');
+        items.forEach(function (i) {
+          i.classList.remove('open');
+          i.querySelector('.wf-faq__btn').setAttribute('aria-expanded', 'false');
+          i.querySelector('.wf-faq__body').style.maxHeight = null;
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Sticky bar — hide when ATC button is in viewport
+    var stickyBar = document.getElementById('wf-sticky-bar');
+    if (stickyBar) {
+      var atcBtn = document.querySelector('.product-form__submit, [name="add"], .btn-add-to-cart');
+      if (atcBtn && window.IntersectionObserver) {
+        var obs = new IntersectionObserver(function (entries) {
+          stickyBar.style.display = entries[0].isIntersecting ? 'none' : '';
+        }, { threshold: 0.5 });
+        obs.observe(atcBtn);
+      }
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "BW — Waist Fan PDP",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_name",
+      "label": "Product Name (for table)",
+      "default": "Blissway Waist Fan"
+    },
+    {
+      "type": "text",
+      "id": "hiw_heading",
+      "label": "How It Works — Heading",
+      "default": "How the Waist Fan Works"
+    },
+    {
+      "type": "text",
+      "id": "cta_btn",
+      "label": "CTA Button Text",
+      "default": "Get Mine Now →"
+    },
+    {
+      "type": "text",
+      "id": "cta_sub",
+      "label": "CTA Strip Subtext",
+      "default": "India's summers aren't getting cooler. But you can be. ₹2,499. Free shipping. COD available."
+    }
+  ],
+  "presets": [
+    { "name": "BW — Waist Fan PDP" }
+  ]
+}
+{% endschema %}

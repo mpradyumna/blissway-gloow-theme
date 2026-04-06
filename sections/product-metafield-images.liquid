@@ -41,14 +41,47 @@
       border-radius: {{ section.settings.image_radius }}px;
     {% endif %}
   }
+
+  {%- if section.settings.title_font != blank -%}
+    {%- assign title_font = section.settings.title_font -%}
+    {{ title_font | font_face: font_display: 'swap' }}
+  {%- endif -%}
+
+  .responsive-gallery-title-{{ section.id }} {
+    display: block;
+    margin-bottom: {{ section.settings.title_spacing }}px;
+    font-size: {{ section.settings.title_font_size }}px;
+    text-align: center;
+    color: {{ section.settings.title_color }};
+    {%- if section.settings.title_font != blank -%}
+      font-family: {{ section.settings.title_font.family }}, {{ section.settings.title_font.fallback_families }};
+      font-weight: {{ section.settings.title_font.weight }};
+      font-style: {{ section.settings.title_font.style }};
+    {%- endif -%}
+  }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- assign desktop_key = section.settings.desktop_metafield_key | default: 'desktop_images' | strip -%}
   {%- assign mobile_key = section.settings.mobile_metafield_key | default: 'mobile_images' | strip -%}
-  
+  {%- assign title_key = section.settings.title_metafield_key | strip -%}
+
   {%- assign desktop_metafield = product.metafields.custom[desktop_key] -%}
   {%- assign mobile_metafield = product.metafields.custom[mobile_key] -%}
+  {%- assign title_metafield = nil -%}
+  {%- if title_key != blank -%}
+    {%- assign title_metafield = product.metafields.custom[title_key] -%}
+  {%- endif -%}
+
+  {%- comment -%} Flatten title values into an array for index-based lookup {%- endcomment -%}
+  {%- assign title_values = nil -%}
+  {%- if title_metafield and title_metafield.value -%}
+    {%- if title_metafield.type contains 'list' -%}
+      {%- assign title_values = title_metafield.value -%}
+    {%- else -%}
+      {%- assign title_values = title_metafield.value | split: '||' -%}
+    {%- endif -%}
+  {%- endif -%}
 
   {%- if desktop_metafield and desktop_metafield.value -%}
 
@@ -60,24 +93,38 @@
 
       {%- if is_desktop_list -%}
         {%- for desktop_img in desktop_metafield.value -%}
-          <div class="responsive-gallery-item">
-            {%- assign mobile_img = nil -%}
-            {%- if mobile_metafield and mobile_metafield.value -%}
-              {%- if mobile_metafield.type contains 'list' -%}
-                {%- assign current_idx = forloop.index0 -%}
-                {%- for m_img in mobile_metafield.value -%}
-                  {%- if forloop.index0 == current_idx -%}
-                    {%- assign mobile_img = m_img -%}
-                    {%- break -%}
-                  {%- endif -%}
-                {%- endfor -%}
-              {%- else -%}
-                {%- if forloop.first -%}
-                  {%- assign mobile_img = mobile_metafield.value -%}
+          {%- assign current_idx = forloop.index0 -%}
+
+          {%- assign mobile_img = nil -%}
+          {%- if mobile_metafield and mobile_metafield.value -%}
+            {%- if mobile_metafield.type contains 'list' -%}
+              {%- for m_img in mobile_metafield.value -%}
+                {%- if forloop.index0 == current_idx -%}
+                  {%- assign mobile_img = m_img -%}
+                  {%- break -%}
                 {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              {%- if forloop.first -%}
+                {%- assign mobile_img = mobile_metafield.value -%}
               {%- endif -%}
             {%- endif -%}
+          {%- endif -%}
 
+          {%- assign image_title = nil -%}
+          {%- if title_values -%}
+            {%- for t in title_values -%}
+              {%- if forloop.index0 == current_idx -%}
+                {%- assign image_title = t -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+
+          <div class="responsive-gallery-item">
+            {%- if image_title != blank -%}
+              <span class="responsive-gallery-title-{{ section.id }}">{{ image_title }}</span>
+            {%- endif -%}
             <picture>
               {%- if mobile_img -%}
                 <source
@@ -100,21 +147,29 @@
           </div>
         {%- endfor -%}
       {%- else -%}
-        <div class="responsive-gallery-item">
-          {%- assign desktop_img = desktop_metafield.value -%}
-          {%- assign mobile_img = nil -%}
-          
-          {%- if mobile_metafield and mobile_metafield.value -%}
-            {%- if mobile_metafield.type contains 'list' -%}
-              {%- for m_img in mobile_metafield.value -%}
-                {%- assign mobile_img = m_img -%}
-                {%- break -%}
-              {%- endfor -%}
-            {%- else -%}
-              {%- assign mobile_img = mobile_metafield.value -%}
-            {%- endif -%}
-          {%- endif -%}
+        {%- assign desktop_img = desktop_metafield.value -%}
+        {%- assign mobile_img = nil -%}
 
+        {%- if mobile_metafield and mobile_metafield.value -%}
+          {%- if mobile_metafield.type contains 'list' -%}
+            {%- for m_img in mobile_metafield.value -%}
+              {%- assign mobile_img = m_img -%}
+              {%- break -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- assign mobile_img = mobile_metafield.value -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- assign image_title = nil -%}
+        {%- if title_values -%}
+          {%- assign image_title = title_values.first -%}
+        {%- endif -%}
+
+        <div class="responsive-gallery-item">
+          {%- if image_title != blank -%}
+            <span class="responsive-gallery-title-{{ section.id }}">{{ image_title }}</span>
+          {%- endif -%}
           <picture>
             {%- if mobile_img -%}
               <source
@@ -145,6 +200,9 @@
           <p>Please ensure you have configured the metafields correctly in Settings > Custom Data > Products.</p>
           <p>Desktop Key: <code>custom.{{ desktop_key }}</code></p>
           <p>Mobile Key: <code>custom.{{ mobile_key }}</code></p>
+          {%- if title_key != blank -%}
+            <p>Title Key: <code>custom.{{ title_key }}</code></p>
+          {%- endif -%}
           <p><em>Note: If you just added the data, you may need to save the product and refresh this page.</em></p>
         </div>
       </div>
@@ -163,21 +221,72 @@
   "settings": [
     {
       "type": "paragraph",
-      "content": "This section displays a list of images from product metafields. You must create two 'List of files' (Images) metafields in Shopify Admin > Settings > Custom Data."
+      "content": "Displays images from product metafields. Create 'List of files' (Images) metafields in Shopify Admin > Settings > Custom Data."
     },
     {
       "type": "text",
       "id": "desktop_metafield_key",
       "label": "Desktop Metafield Key",
-      "info": "Enter the key only (e.g., 'desktop_images' if the full namespace is 'custom.desktop_images')",
+      "info": "Key only, e.g. 'desktop_images' for 'custom.desktop_images'",
       "default": "desktop_images"
     },
     {
       "type": "text",
       "id": "mobile_metafield_key",
       "label": "Mobile Metafield Key",
-      "info": "Enter the key only (e.g., 'mobile_images' if the full namespace is 'custom.mobile_images')",
+      "info": "Key only, e.g. 'mobile_images' for 'custom.mobile_images'",
       "default": "mobile_images"
+    },
+    {
+      "type": "header",
+      "content": "Image Titles"
+    },
+    {
+      "type": "paragraph",
+      "content": "Create a 'List of single line text' metafield in Custom Data and enter its key below. Each title maps to the image at the same position. Clear the key to hide all titles."
+    },
+    {
+      "type": "text",
+      "id": "title_metafield_key",
+      "label": "Title Metafield Key",
+      "info": "Key only, e.g. 'image_titles' for 'custom.image_titles'. Clear to hide titles.",
+      "default": "image_titles"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 10,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Title font size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#1D1D1D"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Space below title",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Image Style"
     },
     {
       "type": "range",
@@ -202,7 +311,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
+      "label": "Section background",
       "default": "background-1"
     },
     {

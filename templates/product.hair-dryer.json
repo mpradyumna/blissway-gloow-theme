@@ -1,0 +1,2606 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ss_hero_44_iz8K8y": {
+      "type": "ss-hero-44",
+      "blocks": {
+        "heading_F6eXMt": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Most Affordable High Speed Hair Dryer</p>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 68,
+            "heading_size_mobile": 30,
+            "heading_advanced": false,
+            "heading_height": 130,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#03d5b2",
+            "heading_accent_color": "#afafaf"
+          }
+        },
+        "text_D4pEJA": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 20,
+            "text_size_mobile": 16,
+            "text_advanced": false,
+            "text_height": 150,
+            "text_mt": 16,
+            "text_mt_mobile": 16,
+            "text_color": "#f2f2f2"
+          }
+        },
+        "button_wzcjg6": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button": "Shop now →",
+            "button_url": "",
+            "open_in_new_tab": false,
+            "button_style": "outline",
+            "button_custom": false,
+            "button_font": "josefin_sans_n4",
+            "button_size": 14,
+            "button_size_mobile": 14,
+            "button_height": 100,
+            "button_padding_advanced": false,
+            "button_padding_horizontal": 24,
+            "button_padding_horizontal_mobile": 24,
+            "button_padding_vertical": 16,
+            "button_padding_vertical_mobile": 16,
+            "button_radius": 10,
+            "button_border_thickness": 1,
+            "button_mt": 24,
+            "button_mt_mobile": 16,
+            "button_color": "#121212",
+            "button_hover_color": "#121212",
+            "button_bg_color": "#f2f2f2",
+            "button_bg_hover_color": "#ffffff",
+            "button_border_color": "#121212",
+            "button_border_hover_color": "#121212"
+          }
+        }
+      },
+      "block_order": [
+        "heading_F6eXMt",
+        "text_D4pEJA",
+        "button_wzcjg6"
+      ],
+      "name": "SS - Hero #44",
+      "settings": {
+        "layout_height": "fixed_height",
+        "layout_fixed_height": 600,
+        "layout_fixed_height_mobile": 300,
+        "content_maxwidth": 80,
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "content_vertical_align": "center",
+        "content_vertical_align_mobile": "center",
+        "use_animation": false,
+        "scrolling_velocity": 40,
+        "scrolling_text": "Hydrating Hair Dryer - Healthy Hair Always.",
+        "animation_text_custom": false,
+        "animation_text_font": "josefin_sans_n4",
+        "left_text_color": "#01d5b2",
+        "right_text_color": "#ffffff",
+        "right_text_bg_color": "#121212",
+        "layout_bg_type": "image",
+        "bg_image": "shopify://shop_images/hair-dryer-hero-banner-3.png",
+        "bg_image_mobile": "shopify://shop_images/14_0e3743db-0ae0-4fd0-a937-83066345e3a5.png",
+        "bg_video_url": "",
+        "background_style": "solid",
+        "background_color": "#ffffff",
+        "background_gradient": "linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%)",
+        "bg_overlay": 0.2,
+        "bg_overlay_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "full",
+        "content_width": 1200,
+        "lazy": false
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "review_mMj4kD": {
+          "type": "review",
+          "settings": {
+            "lrw_text": "<strong>4.9 From 4530 Reviews</strong>",
+            "text_size": 12,
+            "star_style": "star_bg_2",
+            "star_size": 0.9,
+            "star_rating": 4.5,
+            "lrw_star_color": "#fec11a",
+            "lrw_star_color_disable": "#eeeeee",
+            "lrw_color": "#000000",
+            "margin_top": 10,
+            "margin_bottom": 10
+          }
+        },
+        "title_Fnnnm3": {
+          "type": "title",
+          "settings": {
+            "title_size_dt": 34,
+            "title_size_mb": 30,
+            "title_line_height": 1.1
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "hide_tax_shipping": true,
+            "reverse_price": true,
+            "save_text_size": 17,
+            "price_weight": "normal",
+            "price_text_size": 24,
+            "price_text_size_mb": 18,
+            "compare_price": "#e44242",
+            "original_price": "#000000",
+            "show_save_price": false,
+            "save_text": "#ffffff",
+            "save_bg": "#e44242",
+            "save_border": "#f4f4ff",
+            "save_border_thickness": 0,
+            "save_corner_radius": 4,
+            "save_shadow_opacity": 0,
+            "save_shadow_horizontal_offset": 2,
+            "save_shadow_vertical_offset": 2,
+            "save_shadow_blur": 5,
+            "enable_price_box": true,
+            "price_box_bg": "#f8fafc",
+            "price_box_border": "#e2e8f0",
+            "price_box_radius": 16,
+            "notice_enable": true,
+            "notice_speed": 3,
+            "notice_text_color": "#16a34a",
+            "notice_text_size": 13,
+            "notice_1_text": "",
+            "notice_1_icon": "",
+            "notice_2_text": "COD available with extra Rs 49/-",
+            "notice_2_icon": "",
+            "notice_3_text": "",
+            "notice_3_icon": "",
+            "notice_4_text": "",
+            "notice_4_icon": "",
+            "mrp_text": "MRP incl. of all taxes",
+            "mrp_color": "#6b7280",
+            "mrp_size": 11
+          }
+        },
+        "why_customers_love_it_hd": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Why customers love it</strong>",
+            "text_style": "body",
+            "text_alignment": "left",
+            "text_size_dt": 18,
+            "use_custom_color": true,
+            "text_color": "#626060",
+            "padding_top": 0,
+            "padding_bottom": 8
+          }
+        },
+        "feature_PTxJM9": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 30,
+            "heading": "110,000 RPM Brushless motor for ultra-fast drying",
+            "heading_size": 18,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 14,
+            "padding_bottom": 8
+          }
+        },
+        "feature_KdWdnb": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 30,
+            "heading": "+200M Negative IONs for frizz control",
+            "heading_size": 18,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 14,
+            "padding_bottom": 8
+          }
+        },
+        "feature_xUDegV": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 30,
+            "heading": "5 Magnetic attachments for 7 Styling Options",
+            "heading_size": 18,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 20,
+            "padding_bottom": 8
+          }
+        },
+        "feature_VaKWyL": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/tick-green-icon.png",
+            "icon_size": 30,
+            "heading": "3 Speed & 3 Heat Settings with Intelligent Temperature Control",
+            "heading_size": 18,
+            "text": "",
+            "text_size": 16,
+            "padding_top": 14,
+            "padding_bottom": 8
+          }
+        },
+        "badge_pills_hd": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product-block-liquid pt-3 pb-3\">\n\n<style>\n  .label-container {\n    display: flex;\n    flex-wrap: wrap;\n    margin-top: 10px;\n    gap: 10px;\n  }\n  .label {\n    background-color: #f1f1f1;\n    color: #333;\n    border-radius: 10px;\n    padding: 5px 15px;\n    font-size: 14px;\n    display: inline-block;\n    white-space: normal;\n    line-height: 1.5;\n  }\n  .label:nth-child(1) { background-color: #FFDDC1; }\n  .label:nth-child(2) { background-color: #8FCE09; }\n  .label:nth-child(3) { background-color: #FFABAB; }\n</style>\n\n<div class=\"label-container\">\n  <div class=\"label\">Top-Rated</div>\n  <div class=\"label\">High-In-Demand</div>\n</div>\n</div>"
+          }
+        },
+        "fomo_hd": {
+          "type": "fomo",
+          "settings": {
+            "fomo_text_before": "Hurry! (x) are viewing this!",
+            "fomo_text_alignment": "left",
+            "text_style": "body",
+            "text_size": 14,
+            "fomo_icon_style": "pill",
+            "fomo_text_color": "#000000",
+            "fomo_bg_color": "#f9f9f9",
+            "fomo_border_color": "#f2f2f2",
+            "pill_color": "#fd0234",
+            "fomo_border_activate": true,
+            "fomo_border": 20,
+            "fomo_min": 5,
+            "fomo_max": 9,
+            "fomo_speed": 3,
+            "padding_top": 4,
+            "padding_bottom": 12,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "text_benefits_E6jHTD": {
+          "type": "text_benefits",
+          "disabled": true,
+          "settings": {
+            "benefits": "<p></p><p>Stay warm and stylish this winter with our Heated Fleece Scarf, designed to provide comfort on chilly days. Crafted from soft fleece fabric, this scarf is both functional and fashionable. With an adjustable USB-powered heating system, you can enjoy warmth wherever you go, whether outdoors, commuting, or relaxing at home.</p><p></p>"
+          }
+        },
+        "custom_liquid_aYAn7F": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "text_benefits_cpjEUg": {
+          "type": "text_benefits",
+          "disabled": true,
+          "settings": {
+            "benefits": "<p>✨ Benefit</p><p>🌸 Benefit</p><p>❄️ Benefit</p><p></p>"
+          }
+        },
+        "trust_feature_xnRc3U": {
+          "type": "trust-feature",
+          "disabled": true,
+          "settings": {
+            "trust_alignment": "flex-start",
+            "icon_size_1": 36,
+            "heading_1": "Free Shipping",
+            "heading_size_1": 12,
+            "text_1": "<p>First feature description</p>",
+            "text_size_1": 10,
+            "show_background_1": true,
+            "background_1": "#f2eefa",
+            "border_color_1": "#f2eefa",
+            "border_radius_1": 8,
+            "icon_size_2": 36,
+            "heading_2": "24/7 Support",
+            "heading_size_2": 12,
+            "text_2": "<p>Free Global Shipping</p>",
+            "text_size_2": 10,
+            "show_background_2": true,
+            "background_2": "#dbf5f6",
+            "border_color_2": "#dbf5f6",
+            "border_radius_2": 8,
+            "padding_top": 4,
+            "padding_bottom": 24
+          }
+        },
+        "review_v1_mz6mzj": {
+          "type": "review_v1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/people-1.webp",
+            "image_2": "shopify://shop_images/stylish-african-american-woman-smiling_23-2148770405.avif",
+            "image_3": "shopify://shop_images/smiley-woman-posing-close-up_1.webp",
+            "name": "Michelle",
+            "badge": "shopify://shop_images/istockphoto-1320651997-612x612.jpg",
+            "text": "and 758 people purchased",
+            "background_review": "#eeecff",
+            "text_color": "#000000",
+            "verified_badge": "#1c9cef",
+            "border_color": "#7f76c9",
+            "border_style": "dashed",
+            "border_size": 0.2,
+            "font_size": 12,
+            "padding_top": 5,
+            "padding_bottom": 15
+          }
+        },
+        "shipping_DmxyGJ": {
+          "type": "shipping",
+          "settings": {
+            "ship_days": 2,
+            "cut_off_time": 16,
+            "hide_icon": false,
+            "icon_size": 20,
+            "image_ani": "none",
+            "text_size": 10,
+            "text_style": "uppercase",
+            "text": "Order in (timer) and Get delivery By (date)",
+            "hours": "h",
+            "minutes": "m",
+            "date_locale": "en-US",
+            "ship_bg": "rgba(0,0,0,0)",
+            "show_border": false,
+            "ship_border": "#f2f2f2",
+            "border_radius": 0,
+            "padding_top": 12,
+            "padding_bottom": 12,
+            "margin_top": 16,
+            "margin_bottom": 16
+          }
+        },
+        "inventory_4fpVhP": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "text_style": "uppercase",
+            "bar_font_size": 11,
+            "inventory_threshold": 10,
+            "show_inventory_bar": true,
+            "show_inventory_pill": true,
+            "text_soldout": "Unfortunately this item is sold-out!",
+            "text_untracked": "Currently this item has stock!",
+            "text_low_one": "Hurry up! Only 1 item is in stock",
+            "text_low_many": "Hurry up! Only [qty] items are in stock.",
+            "text_normal": "Currently [qty] items are in stock!",
+            "inv_bar_height": 3,
+            "inv_bar_radius": 0,
+            "inv_bar_width_normal": 70,
+            "inv_bar_width_low": 15,
+            "inv_bar_width_untrack": 50,
+            "inv_bar_width_sold": 0,
+            "normal_pill_color": "#5140d6",
+            "normal_color": "#5140d6",
+            "normal_color_2": "#5140d6",
+            "low_pill_color": "#d20982",
+            "low_color": "#d20982",
+            "low_color_2": "#d20982",
+            "untrack_pill_color": "#0acfac",
+            "untrack_background_bar": "#0acfac",
+            "sold_pill_color": "#c8c8c8",
+            "background_bar": "#eff6fc"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button",
+            "label_style": "body",
+            "font_size": 14,
+            "font_style": "normal",
+            "swatch_type": "variant_image",
+            "swatch_shape": "circle",
+            "swatch_size": 3.5,
+            "swatch_image_height": "square",
+            "swatch_image_custom_radius_value": 2,
+            "size_trigger": "",
+            "chart_id": "Size Chart",
+            "size_page": "",
+            "size_icon": "hanger",
+            "spaced_size": false
+          }
+        },
+        "lumin_quantity_break_d9qNcH": {
+          "type": "lumin-quantity-break",
+          "disabled": true,
+          "settings": {
+            "show_on_all_products": true,
+            "selected_product": [],
+            "selected_collection": "",
+            "selected": false,
+            "hide_variant": false,
+            "compare_price_type": "calculated",
+            "discount_type": "percentage",
+            "discount": 0,
+            "fixed_price": 0,
+            "qty": 1,
+            "color_scheme": "scheme-71514112-6a87-4937-a0e0-b16d10e5984c",
+            "title": "<strong>Single</strong>",
+            "title_size": 30,
+            "subtitle": "+ free Shipping",
+            "subtitle_size": 12,
+            "subtitle_bg_color": "#e8e8f7",
+            "subtitle_color_small": "#685fa9",
+            "subtitle_border_color": "rgba(0,0,0,0)",
+            "badge_show": false,
+            "badge": "✨ 20% Off + free Shipping",
+            "badge_size": 14,
+            "badge_style": "lumin-ribbon lumin-top-short",
+            "badge_bg_color": "#0606ef",
+            "badge_background_gradient": "linear-gradient(118deg, rgba(149, 181, 252, 1) 5%, rgba(221, 136, 253, 1) 92%)",
+            "badge_color": "#ffffff",
+            "qty_show_image": false,
+            "qty_image_width": 60,
+            "qty_image_radius": 0,
+            "heading_title_show": true,
+            "heading_title": "",
+            "heading_title_alignment": "center",
+            "heading_title_size": 18,
+            "use_custom_title_color": false,
+            "heading_title_color": "#000000",
+            "bottom_text_show": true,
+            "bottom_image_width": 24,
+            "bottom_image_radius": 0,
+            "bottom_text": "",
+            "bottom_content_alignment": "center",
+            "bottom_text_size": 12,
+            "text_color_bottom": "#ffffff",
+            "bg_color_bottom": "#7947ec",
+            "bottom_background_gradient": "",
+            "border_thickness": 2,
+            "border_radius": 6,
+            "mt": 16,
+            "mb": 12,
+            "custom_color": false,
+            "title_color": "#7947ec",
+            "subtitle_color": "#7947ec",
+            "discount_color": "#df0397",
+            "uncheck_bg_color": "#ffffff",
+            "border_color": "#7947ec",
+            "dot_color": "#eee8ff",
+            "text_color": "#7947ec",
+            "checked_bg_color": "#eee8ff",
+            "checked_border_color": "#7947ec",
+            "dot_check_color": "#7947ec",
+            "checked_text_color": "#7947ec"
+          }
+        },
+        "lumin_quantity_break_rdqCtM": {
+          "type": "lumin-quantity-break",
+          "disabled": true,
+          "settings": {
+            "show_on_all_products": true,
+            "selected_product": [],
+            "selected_collection": "",
+            "selected": true,
+            "hide_variant": false,
+            "compare_price_type": "calculated",
+            "discount_type": "percentage",
+            "discount": 25,
+            "fixed_price": 0,
+            "qty": 2,
+            "color_scheme": "scheme-71514112-6a87-4937-a0e0-b16d10e5984c",
+            "title": "<strong>Duo</strong>",
+            "title_size": 30,
+            "subtitle": "you save 25%",
+            "subtitle_size": 18,
+            "subtitle_bg_color": "#01d5b2",
+            "subtitle_color_small": "#ffffff",
+            "subtitle_border_color": "rgba(0,0,0,0)",
+            "badge_show": true,
+            "badge": "✨Most Popular",
+            "badge_size": 14,
+            "badge_style": "lumin-ribbon lumin-top-short",
+            "badge_bg_color": "#7069bc",
+            "badge_background_gradient": "linear-gradient(118deg, rgba(149, 181, 252, 1) 5%, rgba(221, 136, 253, 1) 92%)",
+            "badge_color": "#ffffff",
+            "qty_show_image": false,
+            "qty_image_width": 60,
+            "qty_image_radius": 0,
+            "heading_title_show": true,
+            "heading_title": "",
+            "heading_title_alignment": "center",
+            "heading_title_size": 18,
+            "use_custom_title_color": false,
+            "heading_title_color": "#000000",
+            "bottom_text_show": false,
+            "bottom_image_width": 24,
+            "bottom_image_radius": 0,
+            "bottom_text": "Free Shipping With This Offer",
+            "bottom_content_alignment": "center",
+            "bottom_text_size": 12,
+            "text_color_bottom": "#ffffff",
+            "bg_color_bottom": "#8262d9",
+            "bottom_background_gradient": "",
+            "border_thickness": 2,
+            "border_radius": 6,
+            "mt": 16,
+            "mb": 12,
+            "custom_color": false,
+            "title_color": "#000000",
+            "subtitle_color": "#000000",
+            "discount_color": "#df0321",
+            "uncheck_bg_color": "#ffffff",
+            "border_color": "#0606ef",
+            "dot_color": "#d9d9fd",
+            "text_color": "#0606ef",
+            "checked_bg_color": "#f5f5ff",
+            "checked_border_color": "#0606ef",
+            "dot_check_color": "#0606ef",
+            "checked_text_color": "#0606ef"
+          }
+        },
+        "lumin_quantity_break_8xfAAC": {
+          "type": "lumin-quantity-break",
+          "disabled": true,
+          "settings": {
+            "show_on_all_products": true,
+            "selected_product": [],
+            "selected_collection": "",
+            "selected": false,
+            "hide_variant": false,
+            "compare_price_type": "calculated",
+            "discount_type": "percentage",
+            "discount": 20,
+            "fixed_price": 0,
+            "qty": 3,
+            "color_scheme": "scheme-71514112-6a87-4937-a0e0-b16d10e5984c",
+            "title": "<strong>Trio</strong>",
+            "title_size": 30,
+            "subtitle": "you save 20%",
+            "subtitle_size": 12,
+            "subtitle_bg_color": "#e8e8f7",
+            "subtitle_color_small": "#685fa9",
+            "subtitle_border_color": "rgba(0,0,0,0)",
+            "badge_show": true,
+            "badge": "✨ 20% Off + free Shipping",
+            "badge_size": 14,
+            "badge_style": "lumin-ribbon lumin-top-short",
+            "badge_bg_color": "#0606ef",
+            "badge_background_gradient": "linear-gradient(118deg, rgba(149, 181, 252, 1) 5%, rgba(221, 136, 253, 1) 92%)",
+            "badge_color": "#ffffff",
+            "qty_show_image": false,
+            "qty_image_width": 60,
+            "qty_image_radius": 0,
+            "heading_title_show": true,
+            "heading_title": "",
+            "heading_title_alignment": "center",
+            "heading_title_size": 18,
+            "use_custom_title_color": false,
+            "heading_title_color": "#000000",
+            "bottom_text_show": true,
+            "bottom_image_width": 24,
+            "bottom_image_radius": 0,
+            "bottom_text": "✦ Best Value + Free Shipping",
+            "bottom_content_alignment": "center",
+            "bottom_text_size": 12,
+            "text_color_bottom": "#ffffff",
+            "bg_color_bottom": "#8262d9",
+            "bottom_background_gradient": "",
+            "border_thickness": 2,
+            "border_radius": 6,
+            "mt": 16,
+            "mb": 12,
+            "custom_color": false,
+            "title_color": "#0606ef",
+            "subtitle_color": "#0606ef",
+            "discount_color": "#df0397",
+            "uncheck_bg_color": "#ffffff",
+            "border_color": "#0606ef",
+            "dot_color": "#d9d9fd",
+            "text_color": "#0606ef",
+            "checked_bg_color": "#f5f5ff",
+            "checked_border_color": "#0606ef",
+            "dot_check_color": "#0606ef",
+            "checked_text_color": "#0606ef"
+          }
+        },
+        "text_benefits_MezAmm": {
+          "type": "text_benefits",
+          "disabled": true,
+          "settings": {
+            "benefits": "<p>✨ <strong>Body Scrub</strong> included for the next <strong>7 </strong>orders!</p>"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "skip_cart": false,
+            "button_custom_style": true,
+            "button_font_size": 24,
+            "button_height": 60,
+            "lm_main_button": "#01d5b2",
+            "lm_main_button_gr": "",
+            "lm_main_text": "#ffffff"
+          }
+        },
+        "payment_pcDBqV": {
+          "type": "payment",
+          "settings": {
+            "original": "custom",
+            "payment_icon": "visa,master,apple_pay,google-pay",
+            "payment_content_alignment": "center",
+            "custom_icon_1_width": 34,
+            "custom_icon_2_width": 34,
+            "custom_icon_3_width": 34
+          }
+        },
+        "order_timeline_9VkjVk": {
+          "type": "order_timeline",
+          "disabled": true,
+          "settings": {
+            "timeline_color_scheme": "scheme-914127ba-0ed4-4eb9-968b-f1cfaca8c83c",
+            "order_within_label": "Order in",
+            "ships_within_label": "Ships",
+            "reset_hour": 16,
+            "shipping_lead_days": 1,
+            "date_locale": "en-US",
+            "label_size": 14,
+            "time_size": 14,
+            "border_width": 1,
+            "border_opacity": 0.1,
+            "border_radius": 10
+          }
+        },
+        "testimonial_slider_dHXgpn": {
+          "type": "testimonial-slider",
+          "disabled": true,
+          "settings": {
+            "block_heading": "Good Quality",
+            "text_1": "<p>Fur Magnet is a lifesaver for Golden Retriever owners like me! 🐾 No more hair all over my sari. It's super easy to use and cleans up in seconds. Trust me, your home will thank you! ★★★★★</p>",
+            "show_slide_2": true,
+            "block_heading_2": "Nice Product",
+            "text_2": "<p>I have two Golden Retrievers, and this tool is magic for their shedding. It's a big help in keeping my home clean. ★★★★★</p>",
+            "show_slide_3": false,
+            "block_heading_3": "Recomended",
+            "text_3": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store. ★★★★★</p>",
+            "color_scheme": "background-1",
+            "slide_padding": 16,
+            "show_border": true,
+            "border_color": "#000000",
+            "slide_wrapper_radius": 6,
+            "slide_img_size": 60,
+            "slide_img_radius": 100,
+            "head_size": 20,
+            "text_size": 12,
+            "padding_top": 20,
+            "padding_bottom": 20
+          }
+        },
+        "collapsible_tab_ptCdTk": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Returns",
+            "icon": "none",
+            "content": "<p>If you're unhappy with your purchase, we'll find a solution for you. Most of our products can be returned within 365 days. All returns are subject to a $9.95 return fee deducted from your refund amount. Returns will be refunded to the original payment method or as a store credit. We do our best to make you comfortable, because let's face it, you're the best.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_EBKNVc": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Additional Details",
+            "icon": "none",
+            "content": "<p>Imported by: VCFL Express Pvt. Ltd<br/>Marketed by: Blissway Commerce<br/>Country of Origin: China <br/>Month & Year of Manufacturing: Printed on Packaging<br/>Count: 1N </p>",
+            "page": ""
+          }
+        },
+        "usp_rbUihm": {
+          "type": "usp",
+          "settings": {
+            "usp_1_text": "Fast Shipping",
+            "usp_1_icon": "truck",
+            "usp_2_text": "24/7 support",
+            "usp_2_icon": "chat_bubble",
+            "usp_3_text": "Free return",
+            "usp_3_icon": "return",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "font_size_desktop": 12,
+            "font_size_mobile": 12,
+            "border_radius": 98,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "border_width": 0,
+            "border_color": "#790ff8"
+          }
+        },
+        "auto_tabs_jVU9Cx": {
+          "type": "auto_tabs",
+          "disabled": true,
+          "settings": {
+            "tabs_color_scheme": "background-1",
+            "auto_tab_heading": 13,
+            "tabs_radius": 8,
+            "padding_top_bottom": 16,
+            "padding_right_left": 0
+          }
+        },
+        "lumin_cross_sells_PdKwRH": {
+          "type": "lumin-cross-sells",
+          "disabled": true,
+          "settings": {
+            "metafield": "custom.cross_sells",
+            "color_scheme": "scheme-1",
+            "container_border_radius": 0,
+            "img_ratio": "ratio-1x1",
+            "img_border_radius": 0,
+            "btn_style": "button--primary",
+            "title": "Frequently Bought Together",
+            "title_font_size": "fs-lg",
+            "title_text_style": "body",
+            "description": "<p>Save up to 50% with one click!</p>",
+            "description_font_size": "fs-sm"
+          }
+        }
+      },
+      "block_order": [
+        "badge_pills_hd",
+        "review_mMj4kD",
+        "title_Fnnnm3",
+        "price",
+        "why_customers_love_it_hd",
+        "feature_PTxJM9",
+        "feature_KdWdnb",
+        "feature_xUDegV",
+        "feature_VaKWyL",
+        "fomo_hd",
+        "text_benefits_E6jHTD",
+        "custom_liquid_aYAn7F",
+        "text_benefits_cpjEUg",
+        "trust_feature_xnRc3U",
+        "review_v1_mz6mzj",
+        "shipping_DmxyGJ",
+        "inventory_4fpVhP",
+        "variant_picker",
+        "lumin_quantity_break_d9qNcH",
+        "lumin_quantity_break_rdqCtM",
+        "lumin_quantity_break_8xfAAC",
+        "text_benefits_MezAmm",
+        "buy_buttons",
+        "payment_pcDBqV",
+        "order_timeline_9VkjVk",
+        "testimonial_slider_dHXgpn",
+        "collapsible_tab_ptCdTk",
+        "collapsible_tab_EBKNVc",
+        "usp_rbUihm",
+        "auto_tabs_jVU9Cx",
+        "lumin_cross_sells_PdKwRH"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enable_sticky_info": true,
+        "no_scroll": false,
+        "color_scheme": "background-1",
+        "block_padding": 1.5,
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "vertical_left",
+        "thumbnail_size": 54,
+        "thumbnail_radius": 0,
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "mobile_thumbnails": "show",
+        "show_full_image": true,
+        "first_image_size": 100,
+        "second_image_size": 0,
+        "show_container": true,
+        "container_bg": "#ffffff",
+        "container_radius": 10,
+        "container_padding": 20,
+        "container_border_color": "#f2f2f2",
+        "show_container_mb": false,
+        "container_bg_mb": "#ffffff",
+        "container_padding_mb": 20,
+        "container_radius_mb": 8,
+        "container_border_color_mb": "#e6e6e6",
+        "container_text": "Extra 10% OFF on UPI",
+        "container_text_bg": "#e0ce57",
+        "container_text_txt": "#000000",
+        "padding_top": 40,
+        "padding_top_mb": 0,
+        "padding_bottom": 64
+      }
+    },
+    "ss_feature_19_LmR6VR": {
+      "type": "ss-feature-19",
+      "blocks": {
+        "feature_dnh383": {
+          "type": "feature",
+          "settings": {
+            "icon": "atc",
+            "custom_icon": "shopify://shop_images/icon-1-salon-black.png",
+            "heading": "<h3><strong>Salon-Quality Results</strong></h3>",
+            "text": "<p>Professional styling at home. Get the same results you'd pay ₹2,000+ for at a salon</p>"
+          }
+        },
+        "feature_VFxifp": {
+          "type": "feature",
+          "settings": {
+            "icon": "atc",
+            "custom_icon": "shopify://shop_images/icon-2-shield-black.png",
+            "heading": "<h2><strong>Healthy Hair, No Damage</strong></h2>",
+            "text": "<p>Intelligent heat control protects your hair from damage. Use daily without worry</p>"
+          }
+        },
+        "feature_fWcdQL": {
+          "type": "feature",
+          "settings": {
+            "icon": "atc",
+            "custom_icon": "shopify://shop_images/icon-3-suitcase-black.png",
+            "heading": "<h2><strong>Freedom to Style Anywhere</strong></h2>",
+            "text": "<p>Lightweight & portable. Perfect for travel, work or styling on the go.</p>"
+          }
+        },
+        "item_XExKq9": {
+          "type": "item",
+          "settings": {
+            "icon": "star",
+            "text": "Professional Results",
+            "hover_text": "<p>Salon quality drying in minutes</p>",
+            "vertical_position": 0,
+            "vertical_position_mobile": 0,
+            "horizontal_position": 30,
+            "horizontal_position_mobile": 30
+          }
+        },
+        "item_YXkRyj": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "text": "Safe for Daily Use",
+            "hover_text": "<p>Ceramic Plate Heating Technology</p>",
+            "vertical_position": 30,
+            "vertical_position_mobile": 30,
+            "horizontal_position": 90,
+            "horizontal_position_mobile": 90
+          }
+        },
+        "item_H6nWjG": {
+          "type": "item",
+          "settings": {
+            "icon": "gift",
+            "text": "Quite Intelligent",
+            "hover_text": "<p>Most silent hair dryer.</p>",
+            "vertical_position": 90,
+            "vertical_position_mobile": 90,
+            "horizontal_position": 10,
+            "horizontal_position_mobile": 10
+          }
+        }
+      },
+      "block_order": [
+        "feature_dnh383",
+        "feature_VFxifp",
+        "feature_fWcdQL",
+        "item_XExKq9",
+        "item_YXkRyj",
+        "item_H6nWjG"
+      ],
+      "name": "SS - Feature #19",
+      "settings": {
+        "body_gap": 54,
+        "body_gap_mobile": 54,
+        "body_layout": "content_image",
+        "body_layout_mobile": "content_image",
+        "heading": "<p>What You Get</p>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 60,
+        "heading_size_mobile": 44,
+        "heading_height": 130,
+        "items_mt": 54,
+        "items_mt_mobile": 32,
+        "items_gap": 32,
+        "items_gap_mobile": 32,
+        "item_gap": 32,
+        "item_gap_mobile": 24,
+        "icon_size": 156,
+        "icon_size_mobile": 40,
+        "item_heading_custom": false,
+        "item_heading_font": "josefin_sans_n4",
+        "item_heading_size": 32,
+        "item_heading_size_mobile": 18,
+        "item_heading_height": 130,
+        "item_text_custom": false,
+        "item_text_font": "josefin_sans_n4",
+        "item_text_size": 16,
+        "item_text_size_mobile": 14,
+        "item_text_height": 150,
+        "image": "shopify://shop_images/product-image.png",
+        "animate_bg": false,
+        "item_width": 360,
+        "item_width_mobile": 200,
+        "item_padding_vertical": 12,
+        "item_padding_vertical_mobile": 12,
+        "item_padding_horizontal": 12,
+        "item_padding_horizontal_mobile": 12,
+        "item_radius": 100,
+        "item_border_thickness": 1,
+        "item_icon_size": 26,
+        "item_icon_size_mobile": 16,
+        "hover_item_text_custom": false,
+        "hover_item_text_font": "josefin_sans_n4",
+        "hover_item_text_size": 18,
+        "hover_item_text_size_mobile": 16,
+        "hover_item_text_height": 150,
+        "hover_item_width": 300,
+        "hover_item_width_mobile": 240,
+        "hover_item_padding_vertical": 24,
+        "hover_item_padding_vertical_mobile": 24,
+        "hover_item_padding_horizontal": 24,
+        "hover_item_padding_horizontal_mobile": 24,
+        "hover_item_radius": 20,
+        "hover_item_border_thickness": 1,
+        "hover_item_hover_text_custom": false,
+        "hover_item_hover_text_font": "josefin_sans_n4",
+        "hover_item_hover_text_size": 16,
+        "hover_item_hover_text_size_mobile": 16,
+        "hover_item_hover_text_height": 150,
+        "item_heading_color": "#f0ede8",
+        "item_text_color": "#f0ede8",
+        "item_bg_color": "#ffffff",
+        "item_border_color": "#000000",
+        "hover_item_text_color": "#000000",
+        "hover_item_hover_text_color": "#000000",
+        "hover_item_bg_color": "#ffffff",
+        "hover_item_border_color": "#000000",
+        "heading_color": "#ffffff",
+        "background_color": "#000000",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 120,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "ss_feature_46_mTqnkj": {
+      "type": "ss-feature-46",
+      "blocks": {
+        "sub_heading_wULqkt": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "<h3>Dyson features - Affordable Price</h3>",
+            "sub_heading_custom": false,
+            "sub_heading_font": "josefin_sans_n4",
+            "sub_heading_size": 40,
+            "sub_heading_size_mobile": 15,
+            "sub_heading_advanced": false,
+            "sub_heading_height": 150,
+            "sub_heading_mt": 0,
+            "sub_heading_mt_mobile": 0,
+            "sub_heading_color": "#01d5b2"
+          }
+        },
+        "heading_HdidFH": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Leafless Supersonic Hair Dryer</h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 40,
+            "heading_size_mobile": 32,
+            "heading_advanced": false,
+            "heading_height": 130,
+            "heading_mt": 12,
+            "heading_mt_mobile": 12,
+            "heading_color": "#121212",
+            "heading_accent_color": "#afafaf"
+          }
+        },
+        "feature_LURPk3": {
+          "type": "feature",
+          "settings": {
+            "column": "first",
+            "image": "shopify://shop_images/motor.png",
+            "title": "110,000 RPM Motor",
+            "text": "<p>Brushless motor generates ultra-high-speed airflow that cuts drying time in half vs. standard dryers.</p>"
+          }
+        },
+        "feature_V3MnTw": {
+          "type": "feature",
+          "settings": {
+            "column": "first",
+            "image": "shopify://shop_images/ion.png",
+            "title": "+200M negative ions",
+            "text": "<p>Neutralises static, seals the cuticle, and tames frizz — leaving hair visibly smoother after every dry.</p>"
+          }
+        },
+        "feature_3prGrM": {
+          "type": "feature",
+          "settings": {
+            "column": "second",
+            "image": "shopify://shop_images/temperature.png",
+            "title": "Intelligent Heat Control",
+            "text": "<p>Temperature sensor monitors heat 40× per second — automatically preventing extreme spikes that cause breakage.</p>"
+          }
+        },
+        "feature_jk7W79": {
+          "type": "feature",
+          "settings": {
+            "column": "second",
+            "image": "shopify://shop_images/quite_6a14d67f-b1c9-4427-b3e7-7c346a721fcb.png",
+            "title": "Ultra-Quiet at 59dB",
+            "text": "<p>Near-silent operation makes it perfect for early mornings, late nights, or drying without waking the house.</p>"
+          }
+        },
+        "sticker_GfXNDL": {
+          "type": "sticker",
+          "settings": {
+            "sticker": "second_sticker",
+            "sticker_color": "#01d5b2",
+            "sticker_width": 150,
+            "vertical_position": 5,
+            "horizontal_position": 21,
+            "rotate": 110
+          }
+        },
+        "sticker_gtymUx": {
+          "type": "sticker",
+          "settings": {
+            "sticker": "second_sticker",
+            "sticker_color": "#01d5b2",
+            "sticker_width": 150,
+            "vertical_position": 100,
+            "horizontal_position": 92,
+            "rotate": 140
+          }
+        },
+        "button_4r8ntU": {
+          "type": "button",
+          "settings": {
+            "button": "Try Now (Save 64%)",
+            "url": "shopify://products/leafless-supersonic™-hair-dryer-fast-drying-no-heat-damage-5-attachments-7-styling-3-speed-3-heat-settings-travel-friendly-unisex-usage-intelligent-heat-control",
+            "open_in_new_tab": false,
+            "button_style": "outline_arrow",
+            "button_custom": false,
+            "button_font": "josefin_sans_n4",
+            "button_size": 18,
+            "button_size_mobile": 18,
+            "button_advanced": false,
+            "button_height": 100,
+            "button_padding": false,
+            "button_padding_horizontal": 36,
+            "button_padding_horizontal_mobile": 36,
+            "button_padding_vertical": 20,
+            "button_padding_vertical_mobile": 20,
+            "button_radius": 20,
+            "button_border_thickness": 1,
+            "button_mt": 40,
+            "button_mt_mobile": 40,
+            "button_color": "#121212",
+            "button_hover_color": "#ffffff",
+            "button_bg_color": "rgba(0,0,0,0)",
+            "button_bg_hover_color": "#121212",
+            "button_border_color": "#121212",
+            "button_border_hover_color": "#121212"
+          }
+        },
+        "review_GdWkWR": {
+          "type": "review",
+          "settings": {
+            "stars_count": 4.5,
+            "stars_size": 16,
+            "stars_size_mobile": 14,
+            "stars_gap": 2,
+            "stars_text": "4.9/5 (4530 Reviews)",
+            "review_custom": false,
+            "review_font": "josefin_sans_n4",
+            "review_size": 16,
+            "review_size_mobile": 14,
+            "review_advanced": false,
+            "review_height": 130,
+            "review_mt": 20,
+            "review_mt_mobile": 16,
+            "count_color": "#121212",
+            "stars_color": "#ffffff",
+            "stars_bg_color": "#00b67a",
+            "stars_bg_half_color": "#dddddd"
+          }
+        }
+      },
+      "block_order": [
+        "sub_heading_wULqkt",
+        "heading_HdidFH",
+        "feature_LURPk3",
+        "feature_V3MnTw",
+        "feature_3prGrM",
+        "feature_jk7W79",
+        "sticker_GfXNDL",
+        "sticker_gtymUx",
+        "button_4r8ntU",
+        "review_GdWkWR"
+      ],
+      "name": "SS - Feature #46",
+      "settings": {
+        "image": "shopify://shop_images/EXTREME_SPEED_110_000_RPM_Motor_26ms_Velocity.png",
+        "image_radius": 10,
+        "image_border_thickness": 0,
+        "image_ratio": "original",
+        "image_ratio_mobile": "landscape",
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "show_line": true,
+        "features_advanced": true,
+        "features_gap": 58,
+        "features_gap_mobile": 30,
+        "features_mt": 60,
+        "features_mt_mobile": 30,
+        "use_slider_mobile": true,
+        "cards_per_row": "1",
+        "dots_show_mobile": true,
+        "dots_size_mobile": 6,
+        "dots_mt": 20,
+        "feature_align": "center",
+        "feature_align_mobile": "center",
+        "feature_image_size": 90,
+        "feature_image_size_mobile": 90,
+        "feature_image_border_thickness": 3,
+        "feature_image_radius": 50,
+        "title_custom": false,
+        "title_font": "josefin_sans_n4",
+        "title_size": 18,
+        "title_size_mobile": 18,
+        "title_advanced": true,
+        "title_height": 130,
+        "title_background": true,
+        "title_padding_horizontal": 36,
+        "title_padding_horizontal_mobile": 36,
+        "title_padding_vertical": 12,
+        "title_padding_vertical_mobile": 12,
+        "title_radius": 8,
+        "title_mt": 20,
+        "title_mt_mobile": 20,
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 16,
+        "text_size_mobile": 16,
+        "text_advanced": true,
+        "text_height": 150,
+        "text_mt": 16,
+        "text_mt_mobile": 16,
+        "feature_image_border_color": "#01d5b2",
+        "title_color": "#000000",
+        "title_bg_color": "#ccfbf3",
+        "text_color": "#ffffff",
+        "image_border_color": "#121212",
+        "line_color": "#000000",
+        "dots_color": "#000000",
+        "background_style": "solid",
+        "background_color": "#ffffff",
+        "background_gradient": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(242, 242, 242, 1) 100%)",
+        "feature_bg_overlay_color": "#ffffff",
+        "feature_bg_overlay": 0,
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 1400,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "lumin_mega_cPHpKT": {
+      "type": "lumin-mega",
+      "blocks": {
+        "heading_MkVqa8": {
+          "type": "heading",
+          "settings": {
+            "heading": "A Complete [<strong>Styling System]</strong>",
+            "heading_size": "h0"
+          }
+        },
+        "fancy_heading_DccQ7z": {
+          "type": "fancy_heading",
+          "settings": {
+            "title": "[5 attachments, 7 looks ]— from sleek blowouts to defined curls, all at home.",
+            "block_heading_color": "",
+            "block_heading_size": 19,
+            "highlight_text_color": "#01d5b2",
+            "highlight_background_color": "#000000",
+            "highlight_heading_size": 22,
+            "highlight_enable_custom_font": false,
+            "highlight_custom_font": "abel_n4",
+            "heading_level": "h2",
+            "custom_css": ".lumin-section__fancy"
+          }
+        },
+        "text_QXF6Gn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✓ 5 Magnetic Attachments<br/>  Diffuser, Concentrator, Smoothing Nozzle, Gentle Air, Wide-Tooth Comb<br/><br/>✓ 7 Styling Options<br/>  Precise control for every hair type<br/><br/>✓ 3 Speed Settings<br/>  Fast drying, Regular, Styling<br/><br/>✓ 3 Heat Levels<br/>  100°C, 80°C, 60°C, Cool Shot<br/><br/>✓ Intelligent Temperature Control<br/>  Prevents extreme heat damage</p>",
+            "text_style": "body"
+          }
+        },
+        "add_to_cart_button_kJqfTk": {
+          "type": "add-to-cart-button",
+          "settings": {
+            "custom_text": "Add To Cart",
+            "custom_text_small": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_MkVqa8",
+        "fancy_heading_DccQ7z",
+        "text_QXF6Gn",
+        "add_to_cart_button_kJqfTk"
+      ],
+      "name": "Lumin Mega Section",
+      "settings": {
+        "color_scheme_main": "scheme-cfd7bb8e-8fe7-42ea-8907-a8e728ed4619",
+        "full-width": true,
+        "image": "shopify://shop_images/product_image.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "scheme-d17161db-fecd-4501-ba12-219e5775dc88",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "ss_steps_12_YzW97q": {
+      "type": "ss-steps-12",
+      "blocks": {
+        "heading_Ar7ryU": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2><strong>Get Professional Results in 3 Steps</strong></h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 48,
+            "heading_size_mobile": 32,
+            "heading_advanced": false,
+            "heading_height": 130,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#121212",
+            "use_gradient": true,
+            "gradient_start": "#939393",
+            "gradient_end": "#121212"
+          }
+        },
+        "text_xBVE3j": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Negative Ion Hair Dryers Are Changing the Way We Dry Our Hair</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 16,
+            "text_size_mobile": 16,
+            "text_advanced": false,
+            "text_height": 150,
+            "text_mt": 12,
+            "text_mt_mobile": 12,
+            "text_color": "#01d5b2"
+          }
+        },
+        "item_mdzhYr": {
+          "type": "item",
+          "settings": {
+            "badge": "Step 1",
+            "icon": "pin_tack",
+            "heading": "<h3><strong>Choose Your Style</strong></h3>",
+            "text": "<p>Select the appropriate attachment for your desired look</p>"
+          }
+        },
+        "item_Vwfcde": {
+          "type": "item",
+          "settings": {
+            "badge": "Step 2",
+            "icon": "sliders",
+            "heading": "<h3><strong>Select Settings</strong></h3>",
+            "text": "<p>Adjust speed and heat levels to match your hair type</p>"
+          }
+        },
+        "item_LyjYbk": {
+          "type": "item",
+          "settings": {
+            "badge": "Step 3",
+            "icon": "shield_check",
+            "heading": "<h3><strong>Get Professional Results</strong></h3>",
+            "text": "<p>Enjoy salon-quality drying and styling quickly and easily</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Ar7ryU",
+        "text_xBVE3j",
+        "item_mdzhYr",
+        "item_Vwfcde",
+        "item_LyjYbk"
+      ],
+      "name": "SS - Steps #12",
+      "settings": {
+        "content_align": "left",
+        "content_align_mobile": "center",
+        "steps_advanced": false,
+        "steps_mt": 40,
+        "steps_mt_mobile": 20,
+        "steps_gap": 40,
+        "step_padding_horizontal": 36,
+        "step_padding_horizontal_mobile": 0,
+        "progress_bar_width": 2,
+        "steps_align": "left",
+        "steps_align_mobile": "center",
+        "icon_size": 32,
+        "icon_size_mobile": 28,
+        "icon_radius": 100,
+        "icon_border_thickness": 0,
+        "badge_custom": false,
+        "badge_font": "josefin_sans_n4",
+        "badge_size": 13,
+        "badge_size_mobile": 13,
+        "badge_advanced": false,
+        "badge_height": 100,
+        "badge_padding_horizontal": 16,
+        "badge_padding_horizontal_mobile": 12,
+        "badge_padding_vertical": 6,
+        "badge_padding_vertical_mobile": 4,
+        "badge_radius": 100,
+        "badge_border_thickness": 1,
+        "step_heading_custom": false,
+        "step_heading_font": "josefin_sans_n4",
+        "step_heading_size": 24,
+        "step_heading_size_mobile": 20,
+        "step_heading_advanced": false,
+        "step_heading_height": 130,
+        "step_heading_mt": 0,
+        "step_heading_mt_mobile": 0,
+        "step_text_custom": false,
+        "step_text_font": "josefin_sans_n4",
+        "step_text_size": 14,
+        "step_text_size_mobile": 14,
+        "step_text_advanced": false,
+        "step_text_height": 150,
+        "step_text_mt": 12,
+        "step_text_mt_mobile": 12,
+        "text_hide_on_mobile": false,
+        "icon_color": "#c9a96e",
+        "icon_bg_color": "#121212",
+        "icon_border_color": "#121212",
+        "badge_text_color": "#121212",
+        "badge_bg_color": "#ffffff",
+        "badge_border_color": "#121212",
+        "step_heading_color": "#121212",
+        "step_text_color": "#121212",
+        "progress_bar_bg": "#121212",
+        "background_style": "solid",
+        "background_color": "#ffffff",
+        "background_gradient": "linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%)",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0
+      }
+    },
+    "custom_liquid_t66wxn": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Extra 10% Off on Prepaid Section - Custom HTML/CSS -->\n<!-- Midnight Luxe Design System -->\n<!-- Place this right below your hero section on homepage -->\n\n<div class=\"blissway-prepaid-incentive\">\n  <div class=\"prepaid-container\">\n    <!-- Left Content -->\n    <div class=\"prepaid-content\">\n      <div class=\"prepaid-badge\">⚡ EXCLUSIVE OFFER</div>\n      <h2 class=\"prepaid-title\">Extra 10% Off on Prepaid</h2>\n      <p class=\"prepaid-description\">Pay via UPI, Cards, or Wallets and unlock instant savings on every order</p>\n      \n      <!-- Payment Methods -->\n      <div class=\"payment-methods\">\n        <div class=\"payment-method\">\n          <svg class=\"payment-icon\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n            <path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z\"/>\n          </svg>\n          <span>UPI</span>\n        </div>\n        <div class=\"payment-method\">\n          <svg class=\"payment-icon\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n            <rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\" ry=\"2\"/>\n            <line x1=\"2\" y1=\"10\" x2=\"22\" y2=\"10\"/>\n          </svg>\n          <span>Cards</span>\n        </div>\n        <div class=\"payment-method\">\n          <svg class=\"payment-icon\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n            <path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z\"/>\n          </svg>\n          <span>Wallets</span>\n        </div>\n      </div>\n\n      <!-- Savings Highlight -->\n      <div class=\"savings-highlight\">\n        <div class=\"savings-item\">\n          <span class=\"savings-label\">Average Savings</span>\n          <span class=\"savings-amount\">₹499</span>\n        </div>\n        <div class=\"savings-divider\"></div>\n        <div class=\"savings-item\">\n          <span class=\"savings-label\">On ₹4999 Order</span>\n          <span class=\"savings-amount\">10%</span>\n        </div>\n      </div>\n\n      <!-- CTA Button -->\n      <a href=\"/collections/all\" class=\"prepaid-cta\">Shop Now & Save</a>\n    </div>\n\n    <!-- Right Visual -->\n    <div class=\"prepaid-visual\">\n      <div class=\"visual-card\">\n        <div class=\"card-chip\"></div>\n        <div class=\"card-number\">•••• •••• •••• 4242</div>\n        <div class=\"card-holder\">\n          <span class=\"card-label\">CARDHOLDER</span>\n          <span class=\"card-name\">Amit Kumar</span>\n        </div>\n      </div>\n      <div class=\"visual-badge\">\n        <span class=\"badge-text\">SAVE 10%</span>\n        <span class=\"badge-amount\">₹499</span>\n      </div>\n    </div>\n  </div>\n\n  <!-- Trust Line -->\n  <div class=\"prepaid-trust\">\n    <div class=\"trust-line-item\">\n      <svg class=\"trust-line-icon\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n        <path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"/>\n      </svg>\n      <span>Secure & Encrypted</span>\n    </div>\n    <div class=\"trust-line-item\">\n      <svg class=\"trust-line-icon\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n        <path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"/>\n      </svg>\n      <span>Instant Discount Applied</span>\n    </div>\n    <div class=\"trust-line-item\">\n      <svg class=\"trust-line-icon\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n        <path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"/>\n      </svg>\n      <span>No Code Required</span>\n    </div>\n  </div>\n</div>\n\n<style>\n  /* Midnight Luxe Color Palette */\n  :root {\n    --color-bg: #0F0F14;\n    --color-surface: #1A1A22;\n    --color-text-primary: #F0EDE8;\n    --color-text-secondary: #8A8A95;\n    --color-accent: #00D4AA;\n    --color-accent-dark: #00A080;\n    --color-gold: #C9A96E;\n    --color-border: rgba(255, 255, 255, 0.08);\n    --color-coral: #FF6B6B;\n  }\n\n  /* Main Container */\n  .blissway-prepaid-incentive {\n    background: linear-gradient(135deg, #1A1A22 0%, #0F0F14 100%);\n    padding: 60px 20px;\n    margin: 0;\n    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;\n  }\n\n  .prepaid-container {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 60px;\n    align-items: center;\n  }\n\n  /* Left Content */\n  .prepaid-content {\n    display: flex;\n    flex-direction: column;\n    gap: 24px;\n  }\n\n  /* Badge */\n  .prepaid-badge {\n    display: inline-block;\n    background: rgba(255, 107, 107, 0.15);\n    border: 1px solid rgba(255, 107, 107, 0.3);\n    color: var(--color-coral);\n    padding: 8px 16px;\n    border-radius: 24px;\n    font-size: 11px;\n    font-weight: 700;\n    letter-spacing: 0.15em;\n    text-transform: uppercase;\n    width: fit-content;\n  }\n\n  /* Title */\n  .prepaid-title {\n    font-size: clamp(28px, 4vw, 42px);\n    font-weight: 700;\n    color: var(--color-text-primary);\n    margin: 0;\n    letter-spacing: -0.02em;\n    line-height: 1.1;\n  }\n\n  /* Description */\n  .prepaid-description {\n    font-size: 16px;\n    color: var(--color-text-secondary);\n    margin: 0;\n    line-height: 1.6;\n    max-width: 500px;\n  }\n\n  /* Payment Methods */\n  .payment-methods {\n    display: flex;\n    gap: 24px;\n    flex-wrap: wrap;\n  }\n\n  .payment-method {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding: 12px 16px;\n    background: rgba(0, 212, 170, 0.08);\n    border: 1px solid rgba(0, 212, 170, 0.2);\n    border-radius: 8px;\n    transition: all 0.3s ease;\n  }\n\n  .payment-method:hover {\n    background: rgba(0, 212, 170, 0.15);\n    border-color: var(--color-accent);\n  }\n\n  .payment-icon {\n    width: 20px;\n    height: 20px;\n    color: var(--color-accent);\n  }\n\n  .payment-method span {\n    font-size: 13px;\n    font-weight: 600;\n    color: var(--color-text-primary);\n    letter-spacing: 0.05em;\n  }\n\n  /* Savings Highlight */\n  .savings-highlight {\n    display: flex;\n    align-items: center;\n    gap: 32px;\n    padding: 24px;\n    background: rgba(201, 169, 110, 0.08);\n    border: 1px solid rgba(201, 169, 110, 0.2);\n    border-radius: 12px;\n    margin: 16px 0;\n  }\n\n  .savings-item {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n  }\n\n  .savings-label {\n    font-size: 12px;\n    color: var(--color-text-secondary);\n    letter-spacing: 0.05em;\n    text-transform: uppercase;\n    font-weight: 600;\n  }\n\n  .savings-amount {\n    font-size: 24px;\n    font-weight: 700;\n    color: var(--color-gold);\n    letter-spacing: -0.01em;\n  }\n\n  .savings-divider {\n    width: 1px;\n    height: 40px;\n    background: rgba(201, 169, 110, 0.3);\n  }\n\n  /* CTA Button */\n  .prepaid-cta {\n    display: inline-block;\n    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);\n    color: #0F0F14;\n    padding: 16px 40px;\n    border-radius: 8px;\n    font-size: 14px;\n    font-weight: 700;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    text-decoration: none;\n    transition: all 0.3s ease;\n    border: none;\n    cursor: pointer;\n    width: fit-content;\n    box-shadow: 0 4px 16px rgba(0, 212, 170, 0.2);\n  }\n\n  .prepaid-cta:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 8px 24px rgba(0, 212, 170, 0.3);\n  }\n\n  /* Right Visual */\n  .prepaid-visual {\n    position: relative;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 300px;\n  }\n\n  /* Credit Card Visual */\n  .visual-card {\n    width: 100%;\n    max-width: 320px;\n    height: 200px;\n    background: linear-gradient(135deg, #00D4AA 0%, #00A080 100%);\n    border-radius: 16px;\n    padding: 24px;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    box-shadow: 0 20px 60px rgba(0, 212, 170, 0.3);\n    position: relative;\n    overflow: hidden;\n  }\n\n  .visual-card::before {\n    content: '';\n    position: absolute;\n    top: -50%;\n    right: -50%;\n    width: 300px;\n    height: 300px;\n    background: rgba(255, 255, 255, 0.1);\n    border-radius: 50%;\n    filter: blur(40px);\n  }\n\n  .card-chip {\n    width: 50px;\n    height: 40px;\n    background: rgba(255, 255, 255, 0.3);\n    border-radius: 6px;\n    position: relative;\n    z-index: 1;\n  }\n\n  .card-chip::before {\n    content: '';\n    position: absolute;\n    inset: 6px;\n    background: repeating-linear-gradient(\n      90deg,\n      rgba(255, 255, 255, 0.2) 0px,\n      rgba(255, 255, 255, 0.2) 4px,\n      transparent 4px,\n      transparent 8px\n    );\n    border-radius: 3px;\n  }\n\n  .card-number {\n    font-size: 18px;\n    font-weight: 600;\n    color: rgba(15, 15, 20, 0.8);\n    letter-spacing: 2px;\n    position: relative;\n    z-index: 1;\n  }\n\n  .card-holder {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n    position: relative;\n    z-index: 1;\n  }\n\n  .card-label {\n    font-size: 10px;\n    font-weight: 700;\n    color: rgba(15, 15, 20, 0.6);\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n  }\n\n  .card-name {\n    font-size: 16px;\n    font-weight: 700;\n    color: rgba(15, 15, 20, 0.9);\n    letter-spacing: 0.05em;\n  }\n\n  /* Badge on Card */\n  .visual-badge {\n    position: absolute;\n    top: -20px;\n    right: -20px;\n    width: 140px;\n    height: 140px;\n    background: linear-gradient(135deg, var(--color-gold) 0%, #B8956A 100%);\n    border-radius: 50%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 12px 32px rgba(201, 169, 110, 0.3);\n    animation: float 3s ease-in-out infinite;\n  }\n\n  .badge-text {\n    font-size: 11px;\n    font-weight: 700;\n    color: #0F0F14;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n  }\n\n  .badge-amount {\n    font-size: 24px;\n    font-weight: 700;\n    color: #0F0F14;\n    letter-spacing: -0.01em;\n  }\n\n  @keyframes float {\n    0%, 100% {\n      transform: translateY(0px);\n    }\n    50% {\n      transform: translateY(-12px);\n    }\n  }\n\n  /* Trust Line */\n  .prepaid-trust {\n    display: flex;\n    justify-content: center;\n    gap: 40px;\n    margin-top: 60px;\n    padding-top: 40px;\n    border-top: 1px solid var(--color-border);\n    flex-wrap: wrap;\n  }\n\n  .trust-line-item {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n  }\n\n  .trust-line-icon {\n    width: 20px;\n    height: 20px;\n    color: var(--color-accent);\n    flex-shrink: 0;\n  }\n\n  .trust-line-item span {\n    font-size: 13px;\n    color: var(--color-text-secondary);\n    font-weight: 500;\n  }\n\n  /* Mobile Responsive */\n  @media (max-width: 768px) {\n    .blissway-prepaid-incentive {\n      padding: 40px 16px;\n    }\n\n    .prepaid-container {\n      grid-template-columns: 1fr;\n      gap: 40px;\n    }\n\n    .prepaid-visual {\n      height: 250px;\n    }\n\n    .prepaid-title {\n      font-size: 28px;\n    }\n\n    .payment-methods {\n      gap: 12px;\n    }\n\n    .payment-method {\n      flex: 1;\n      justify-content: center;\n    }\n\n    .savings-highlight {\n      gap: 16px;\n      padding: 16px;\n    }\n\n    .savings-divider {\n      display: none;\n    }\n\n    .savings-item {\n      flex: 1;\n      text-align: center;\n    }\n\n    .prepaid-trust {\n      gap: 20px;\n      margin-top: 40px;\n      padding-top: 30px;\n    }\n\n    .trust-line-item span {\n      font-size: 12px;\n    }\n  }\n\n  /* Tablet */\n  @media (max-width: 1024px) {\n    .prepaid-container {\n      gap: 40px;\n    }\n\n    .prepaid-visual {\n      height: 280px;\n    }\n  }\n\n  /* Dark Mode Support */\n  @media (prefers-color-scheme: dark) {\n    .blissway-prepaid-incentive {\n      background: linear-gradient(135deg, #1A1A22 0%, #0F0F14 100%);\n    }\n  }\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "ss_comparison_table_22_gPYRNE": {
+      "type": "ss-comparison-table-22",
+      "blocks": {
+        "heading_wcLxCF": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2><strong>Why Leafless Supersonic?</strong></h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 40,
+            "heading_size_mobile": 40,
+            "heading_height": 130,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#121212"
+          }
+        },
+        "text_FbG88Q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A conventional hair dryer does one thing: it blasts hot air at your wet hair until the water evaporates. Inside OUR dryer, a built-in ion generator emits millions of negatively charged particles into the airflow. These negative ions interact directly with the water molecules clinging to your hair — which carry a positive charge.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 20,
+            "text_size_mobile": 16,
+            "text_height": 150,
+            "text_mt": 24,
+            "text_mt_mobile": 16,
+            "text_color": "#121212"
+          }
+        },
+        "table_row_NnEDUL": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Motor Speed",
+            "first_column": "110,000 RPM",
+            "first_column_icon": "none",
+            "second_column": "<50,000 RPM",
+            "second_column_icon": "none",
+            "third_column": "80,000 RPM",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_mHMd4G": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Noise Level",
+            "first_column": "Ultra-Quiet",
+            "first_column_icon": "check",
+            "second_column": "Loud",
+            "second_column_icon": "none",
+            "third_column": "Moderate",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_9jtccg": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Attachments",
+            "first_column": "5 Magnetic",
+            "first_column_icon": "check",
+            "second_column": "2-3 Standard",
+            "second_column_icon": "none",
+            "third_column": "1 Standard",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_YBmTbY": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Ionic Technology",
+            "first_column": "+100M Negative Ions",
+            "first_column_icon": "check",
+            "second_column": "None",
+            "second_column_icon": "none",
+            "third_column": "None",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_AXQf4P": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Price",
+            "first_column": "₹4,999",
+            "first_column_icon": "check",
+            "second_column": "₹6999",
+            "second_column_icon": "none",
+            "third_column": "₹2999",
+            "third_column_icon": "none",
+            "fourth_column": "",
+            "fourth_column_icon": "cross",
+            "fifth_column": "",
+            "fifth_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wcLxCF",
+        "text_FbG88Q",
+        "table_row_NnEDUL",
+        "table_row_mHMd4G",
+        "table_row_9jtccg",
+        "table_row_YBmTbY",
+        "table_row_AXQf4P"
+      ],
+      "name": "SS - Comparison table #22",
+      "settings": {
+        "content_max_width": 80,
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "table_columns": 3,
+        "table_radius": 20,
+        "table_mt": 40,
+        "table_mt_mobile": 24,
+        "table_column_border_thickness": 2,
+        "first_heading": "Blissway",
+        "first_heading_image": "shopify://shop_images/standalone-product.png",
+        "first_heading_url": "",
+        "second_heading": "Other 1",
+        "second_heading_image": "shopify://shop_images/4_15f1535c-a88b-455c-8f8b-2c724bb859de.png",
+        "second_heading_url": "",
+        "third_heading": "Other 2",
+        "third_heading_image": "shopify://shop_images/3_2be50ae5-71cd-4c2b-a69c-a4c79e4e5891.png",
+        "third_heading_url": "",
+        "fourth_heading": "Other 3",
+        "fourth_heading_url": "",
+        "fifth_heading": "Other 4",
+        "fifth_heading_url": "",
+        "sixth_heading": "Other 5",
+        "sixth_heading_url": "",
+        "heading_image_size": 100,
+        "heading_image_size_mobile": 100,
+        "heading_image_radius": 0,
+        "heading_image_border_thickness": 0,
+        "use_background_image": true,
+        "column_heading_custom": false,
+        "column_heading_font": "assistant_n4",
+        "column_heading_size": 18,
+        "column_heading_size_mobile": 15,
+        "column_heading_height": 150,
+        "column_heading_align": "center",
+        "column_heading_align_mobile": "center",
+        "column_heading_padding_horizontal": 16,
+        "column_heading_padding_horizontal_mobile": 8,
+        "column_heading_padding_vertical": 24,
+        "column_heading_padding_vertical_mobile": 8,
+        "row_padding_horizontal": 4,
+        "row_padding_horizontal_mobile": 4,
+        "row_padding_vertical": 24,
+        "row_padding_vertical_mobile": 24,
+        "row_border_thickness": 1,
+        "row_heading_custom": false,
+        "row_heading_font": "assistant_n4",
+        "row_heading_size": 18,
+        "row_heading_size_mobile": 15,
+        "row_heading_height": 150,
+        "value_custom": false,
+        "value_font": "assistant_n4",
+        "value_size": 18,
+        "value_size_mobile": 15,
+        "value_height": 150,
+        "value_icon_size": 24,
+        "value_icon_size_mobile": 24,
+        "column_heading_active_color": "#121212",
+        "value_active_color": "#6cb324",
+        "table_column_active_bg_color": "#fcffea",
+        "table_bg_image_active_color": "#c6d182",
+        "table_column_active_border_color": "#9db324",
+        "column_heading_color": "#121212",
+        "value_color": "#ff1616",
+        "table_column_bg_color": "#fff3f3",
+        "table_bg_image_color": "#f1aaaa",
+        "table_column_border_color": "#ff1616",
+        "heading_image_border_color": "#121212",
+        "row_heading_color": "#121212",
+        "row_heading_border_color": "#121212",
+        "value_icon_active_color": "#6cb324",
+        "value_icon_color": "#ff1616",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "collapsible_content_BqUzyT": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_yMUnFB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is it suitable for all hair types?",
+            "icon": "question_mark",
+            "row_content": "<p>Yes. Its multiple heat and speed settings, combined with various attachments, make it perfect for fine, curly, straight, thick, and all other hair types.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_3Bfa6Y": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does it take to dry?",
+            "icon": "question_mark",
+            "row_content": "<p> Depending on hair thickness and length, the powerful 110,000 RPM motor can significantly reduce drying time compared to conventional hair dryers. Most users report 50% faster drying.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cg4apQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is it safe for daily use?",
+            "icon": "question_mark",
+            "row_content": "<p>Absolutely. The intelligent heat control prevents extreme heat damage, making it safe for daily use to protect your hair's natural shine and health.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Xh8cEy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's included in the box?",
+            "icon": "question_mark",
+            "row_content": "<p> Hair dryer unit + 5 magnetic attachments (Diffuser, Concentrator, Smoothing Nozzle, Gentle Air, Wide-Tooth Comb) + travel pouch + instruction manual + warranty card.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zUA6EX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does it work with COD?",
+            "icon": "question_mark",
+            "row_content": "<p>Yes! We offer multiple payment options including UPI, Cards, Wallets, and Cash on Delivery. However, pay with UPI to get an extra 10% discount instantly!</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YrmxMX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's your return policy?",
+            "icon": "question_mark",
+            "row_content": "<p>We offer 7-day easy returns, no questions asked. If you're not satisfied with your purchase, simply return it for a full refund. We want you to be 100% happy.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_yMUnFB",
+        "collapsible_row_3Bfa6Y",
+        "collapsible_row_cg4apQ",
+        "collapsible_row_Xh8cEy",
+        "collapsible_row_zUA6EX",
+        "collapsible_row_YrmxMX"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "scheme-d17161db-fecd-4501-ba12-219e5775dc88",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "lumin_review_A66RpG": {
+      "type": "Lumin-review",
+      "blocks": {
+        "review_CwAhCn": {
+          "type": "review",
+          "settings": {
+            "star_rating": 5,
+            "name_text": "Johan D.",
+            "date_text": "June 2025",
+            "review_head": "Nice Product",
+            "review_text": "Nice Product. I'm happy with my purchase.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_REUDt8": {
+          "type": "review",
+          "settings": {
+            "star_rating": 5,
+            "name_text": "Johan D.",
+            "date_text": "June 2025",
+            "review_head": "Nice Product",
+            "review_text": "Nice Product. I'm happy with my purchase.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_qTkBYr": {
+          "type": "review",
+          "settings": {
+            "star_rating": 5,
+            "name_text": "Johan D.",
+            "date_text": "June 2025",
+            "review_head": "Nice Product",
+            "review_text": "Nice Product. I'm happy with my purchase.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_gNGLz7": {
+          "type": "review",
+          "settings": {
+            "star_rating": 5,
+            "name_text": "Johan D.",
+            "date_text": "June 2025",
+            "review_head": "Nice Product",
+            "review_text": "Nice Product. I'm happy with my purchase.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        }
+      },
+      "block_order": [
+        "review_CwAhCn",
+        "review_REUDt8",
+        "review_qTkBYr",
+        "review_gNGLz7"
+      ],
+      "disabled": true,
+      "name": "Lumin Review",
+      "settings": {
+        "editing": true,
+        "color_scheme": "scheme-d17161db-fecd-4501-ba12-219e5775dc88",
+        "header_text": "Frequently Asked Questions",
+        "show_top": true,
+        "rating_text": "4.9",
+        "rating_range": 4.5,
+        "star_size_top": 1,
+        "rating_count": "Based on 16 Reviews",
+        "review_column_mobile": 1,
+        "review_column_tab": 1,
+        "review_column_desk": 1,
+        "review_load": 4,
+        "load_text": "Load More",
+        "rw_img_size": 140,
+        "rw_img_radius": 0,
+        "block_name_size": 20,
+        "date_size": 16,
+        "block_head_size": 20,
+        "block_text_size": 14,
+        "star_style": "star_bg",
+        "star_size": 1.1,
+        "star_radius": 0,
+        "feature_svg_color": "#01d5b2",
+        "inactive_star_color": "#e2e2e2",
+        "show_border": true,
+        "rw_border": "#f2f2f2",
+        "border_radius": 0,
+        "section_bg3": "#ffffff",
+        "section_bg2": "#01d5b2",
+        "verify_text": "Verified Buyer",
+        "review_bg": "#1d1e1e",
+        "feature_acc_color": "#000000",
+        "review_pd": 20,
+        "review_pd_m": 20,
+        "show_footer": true,
+        "show_product": true,
+        "like_text": "Was this helpful?",
+        "rw_margin": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "announcement_bar_scrolling_iYN9yh": {
+      "type": "announcement-bar-scrolling",
+      "blocks": {
+        "announcement_4TqTFB": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>Smooth Skin, Confident You.</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 66,
+            "text_size_mobile": 32,
+            "text_color": "#000000",
+            "use_gradient": true,
+            "gradient_color_1": "#fc7a4b",
+            "gradient_color_2": "#9460d9",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        },
+        "announcement_aAtQdC": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>!-Say Goodbye to Back Acne-!</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 66,
+            "text_size_mobile": 32,
+            "text_color": "#000000",
+            "use_gradient": true,
+            "gradient_color_1": "#9460d9",
+            "gradient_color_2": "#fc7a4b",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        }
+      },
+      "block_order": [
+        "announcement_4TqTFB",
+        "announcement_aAtQdC"
+      ],
+      "disabled": true,
+      "name": "t:sections.announcement-bar.presets.name-scrolling",
+      "settings": {
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "show_line_separator": false,
+        "scroll_speed": 80,
+        "scroll_direction": "1",
+        "mobile_height": 84,
+        "desktop_height": 96
+      }
+    },
+    "autoplay_video_KP3tET": {
+      "type": "autoplay-video",
+      "blocks": {
+        "heading_iXpwJ6": {
+          "type": "heading",
+          "settings": {
+            "title": "",
+            "block_heading_color": "",
+            "block_heading_size": "",
+            "enable_custom_font": false,
+            "custom_font": "abel_n4",
+            "heading_level": "h2"
+          }
+        },
+        "text_xmU6Yh": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_iXpwJ6",
+        "text_xmU6Yh"
+      ],
+      "disabled": true,
+      "name": "Autoplay video",
+      "settings": {
+        "video": "shopify://files/videos/scarf_e884e841-420d-4867-9a32-53e19a80a414.mp4",
+        "loop": true,
+        "image_crop": "1200:400",
+        "aspect_ratio": "4:3",
+        "text_size": 100,
+        "text_alignment": "center",
+        "text_position": "center center",
+        "text_width": 600,
+        "text_color": "#121212",
+        "text_background_color": "",
+        "image_overlay_color": "radial-gradient(rgba(207, 205, 205, 0.8) 97%)",
+        "animation": "none",
+        "max_width": "800",
+        "outer_margin_top": 40,
+        "outer_margin_bottom": 40,
+        "custom_css": "padding: 500px;",
+        "mobile_custom_css": "",
+        "override_theme_font": false,
+        "heading_font": "serif",
+        "main_font": "system_ui_n4"
+      }
+    },
+    "lumin_hero_X7CKKT": {
+      "type": "lumin-hero",
+      "blocks": {
+        "hero_chxY48": {
+          "type": "hero",
+          "settings": {
+            "image": "shopify://shop_images/d259fc7ae6cb1525ff2f103a09642ef2.jpg",
+            "use_video": false,
+            "main_image_width": 520,
+            "show_1": true,
+            "head_1": "Safe, certified heating technology",
+            "text_1": "Heating Element: Safe carbon fiber technology",
+            "show_2": true,
+            "head_2": "Lightweight and portable",
+            "text_2": "Ideal for Outdoor activities and travel",
+            "show_3": true,
+            "head_3": "Easy to clean and maintain",
+            "text_3": "Remove the battery before washing",
+            "show_4": true,
+            "head_4": "Compatible with standard portable power banks",
+            "text_4": "Instant warmth in 30-60 seconds",
+            "show_5": false,
+            "head_5": "Dual-Handle Ergonomics",
+            "text_5": "Prevent breakouts by removing excess oil and bacteria",
+            "show_6": false,
+            "head_6": "Reduces Inflammation",
+            "text_6": "Help reduce inflammation and soothe the skin."
+          }
+        }
+      },
+      "block_order": [
+        "hero_chxY48"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "color_scheme_2": "background-1",
+        "title": "<strong>Stay Cozy Anywhere, Anytime with Smart Heating Technology</strong>",
+        "heading_size": "h1",
+        "column_alignment": "center",
+        "column_alignment_dt": "center",
+        "column_alignment_mb": "center",
+        "head_text": "Give the gift of warmth this winter! Ideal for parents, loved ones, colleagues, or anyone who deserves comfort during the cold season.",
+        "feature_image": 40,
+        "feature_image_mb": 40,
+        "gap_section_top": 0,
+        "gap_section_bottom": 0,
+        "pad_section_top": 60,
+        "pad_section_bottom": 45
+      }
+    },
+    "logo_scroll_EBBFp8": {
+      "type": "Logo-scroll",
+      "blocks": {
+        "image_DhBEnU": {
+          "type": "image",
+          "settings": {
+            "logo_image": "shopify://shop_images/tiktok.png",
+            "logo_image_width": 134
+          }
+        },
+        "image_d4hnnF": {
+          "type": "image",
+          "settings": {
+            "logo_image": "shopify://shop_images/temu.png",
+            "logo_image_width": 134
+          }
+        },
+        "image_ghx6rQ": {
+          "type": "image",
+          "settings": {
+            "logo_image": "shopify://shop_images/pinterest.png",
+            "logo_image_width": 134
+          }
+        },
+        "image_hCFjWJ": {
+          "type": "image",
+          "settings": {
+            "logo_image": "shopify://shop_images/instagram2.png",
+            "logo_image_width": 134
+          }
+        },
+        "image_tyyTUF": {
+          "type": "image",
+          "settings": {
+            "logo_image": "shopify://shop_images/facebook-logo.png",
+            "logo_image_width": 134
+          }
+        }
+      },
+      "block_order": [
+        "image_DhBEnU",
+        "image_d4hnnF",
+        "image_ghx6rQ",
+        "image_hCFjWJ",
+        "image_tyyTUF"
+      ],
+      "disabled": true,
+      "name": "Brand Slider",
+      "settings": {
+        "scroll_speed": 15,
+        "color_scheme": "accent-2",
+        "fade": false,
+        "background_color": "#ffffff",
+        "announcement_head": "Featured Everywhere",
+        "announcement_head_d": 18,
+        "announcement_head_m": 15,
+        "announcement_color": "#212121",
+        "padding_desktop": 16,
+        "padding_mobile": 8,
+        "padding_item_desktop": 36,
+        "padding_item_mobile": 24,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "lumin_cards_kPYWij": {
+      "type": "lumin-cards",
+      "blocks": {
+        "card_EmL46L": {
+          "type": "card",
+          "settings": {
+            "large_up_hide": false,
+            "grid_width_desktop": "33.3333333",
+            "medium_hide": false,
+            "grid_width_tablet": "33.3333333",
+            "small_hide": false,
+            "grid_width_mobile": "100",
+            "desktop_card_height": "auto",
+            "padding_size": 30,
+            "padding_size_mobile": 30,
+            "padding_left_mobile": 30,
+            "text_border": 0,
+            "icon": "shopify://shop_images/61G6q8s6djL._AC_SL1500.jpg",
+            "use_video": false,
+            "media_ratio": "100%",
+            "icon_size": 100,
+            "icon_corner": 0,
+            "head": "Image with text",
+            "use_body_font": false,
+            "head_size_d": 30,
+            "head_size_m": 24,
+            "margin_bottom": 15,
+            "subtitle": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size_d": 16,
+            "text_size_m": 14,
+            "button-text": "button",
+            "button_link": "",
+            "show_secondary": false,
+            "desktop_content_alignment": "center",
+            "show_border": true,
+            "border_color": "#eeeeee",
+            "bg_color": "#aba0cc",
+            "head_color": "#ffffff",
+            "text_color": "#ffffff"
+          }
+        },
+        "card_yUaRC8": {
+          "type": "card",
+          "settings": {
+            "large_up_hide": false,
+            "grid_width_desktop": "33.3333333",
+            "medium_hide": false,
+            "grid_width_tablet": "33.3333333",
+            "small_hide": false,
+            "grid_width_mobile": "100",
+            "desktop_card_height": "auto",
+            "padding_size": 30,
+            "padding_size_mobile": 30,
+            "padding_left_mobile": 30,
+            "text_border": 0,
+            "icon": "shopify://shop_images/pimg_0247f8c9070a5a0f3bb4.webp",
+            "use_video": false,
+            "media_ratio": "100%",
+            "icon_size": 100,
+            "icon_corner": 0,
+            "head": "Image with text",
+            "use_body_font": false,
+            "head_size_d": 30,
+            "head_size_m": 24,
+            "margin_bottom": 15,
+            "subtitle": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size_d": 16,
+            "text_size_m": 14,
+            "button-text": "button",
+            "button_link": "",
+            "show_secondary": false,
+            "desktop_content_alignment": "center",
+            "show_border": true,
+            "border_color": "#eeeeee",
+            "bg_color": "#afa7d9",
+            "head_color": "#212121",
+            "text_color": "#212121"
+          }
+        },
+        "card_TETajk": {
+          "type": "card",
+          "settings": {
+            "large_up_hide": false,
+            "grid_width_desktop": "33.3333333",
+            "medium_hide": false,
+            "grid_width_tablet": "33.3333333",
+            "small_hide": false,
+            "grid_width_mobile": "100",
+            "desktop_card_height": "auto",
+            "padding_size": 30,
+            "padding_size_mobile": 30,
+            "padding_left_mobile": 30,
+            "text_border": 0,
+            "icon": "shopify://shop_images/61EHS8vU2EL._AC_SL1500.jpg",
+            "use_video": false,
+            "media_ratio": "100%",
+            "icon_size": 100,
+            "icon_corner": 0,
+            "head": "Image with text",
+            "use_body_font": false,
+            "head_size_d": 30,
+            "head_size_m": 24,
+            "margin_bottom": 15,
+            "subtitle": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size_d": 16,
+            "text_size_m": 14,
+            "button-text": "button",
+            "button_link": "",
+            "show_secondary": false,
+            "desktop_content_alignment": "center",
+            "show_border": true,
+            "border_color": "#eeeeee",
+            "bg_color": "#c6a487",
+            "head_color": "#ffffff",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "card_EmL46L",
+        "card_yUaRC8",
+        "card_TETajk"
+      ],
+      "disabled": true,
+      "name": "Lumin Cards",
+      "settings": {
+        "video_border": 14,
+        "zoom_hover": true,
+        "loading_color": "#f2f2f2",
+        "grid_gap": 18,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "margin_top": 36,
+        "margin_bottom": 36
+      }
+    },
+    "lumin_mega_3mmN6A": {
+      "type": "lumin-mega",
+      "blocks": {
+        "heading_AqBDtx": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>[Deep Cleans, Gently Exfoliates, and Revives]</strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text_wXEqEA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Say goodbye to surface-level cleansing.<br/><br/>This brush reaches where loofahs can’t—lifting away sweat, oil, and buildup from deep within your pores.<br/><br/>Its ultra-soft bristles exfoliate without irritation, revealing smoother, healthier-looking skin.<br/><br/>Every shower becomes a full-body refresh, leaving you revived, recharged, and radiant.</p>",
+            "text_style": "body"
+          }
+        },
+        "divider_7TU6hV": {
+          "type": "divider",
+          "settings": {
+            "base_width": 50,
+            "thickness": 1,
+            "style": "solid",
+            "divider_color": "#ffffff",
+            "padding_top": 15,
+            "padding_bottom": 15
+          }
+        },
+        "icons_zABpE3": {
+          "type": "icons",
+          "settings": {
+            "padding_top": 12,
+            "padding_bottom": 12,
+            "gap": 20,
+            "image_size": 25,
+            "icon_width": 25,
+            "icon_layout": "top",
+            "icon_alignment": "default",
+            "mobile_image_width": 25,
+            "mobile_icon_width": 25,
+            "mobile_icon_layout": "top",
+            "icon_old_1": "truck",
+            "heading_1": "Faster Shipping",
+            "text_1": "",
+            "link_1": "",
+            "icon_old_2": "plant",
+            "heading_2": "Eco-Friendly",
+            "text_2": "",
+            "link_2": "",
+            "icon_old_3": "star",
+            "heading_3": "4.7/5",
+            "text_3": "",
+            "link_3": "",
+            "icon_old_4": "stopwatch",
+            "heading_4": "Easy Return",
+            "text_4": "",
+            "link_4": "",
+            "icon_old_5": "none",
+            "heading_5": "",
+            "text_5": "",
+            "link_5": "",
+            "icon_old_6": "none",
+            "heading_6": "",
+            "text_6": "",
+            "link_6": ""
+          }
+        },
+        "divider_GpRfVj": {
+          "type": "divider",
+          "settings": {
+            "base_width": 50,
+            "thickness": 1,
+            "style": "solid",
+            "divider_color": "#ffffff",
+            "padding_top": 15,
+            "padding_bottom": 15
+          }
+        },
+        "collapsible_content_4gGeNK": {
+          "type": "collapsible_content",
+          "settings": {
+            "title": "Shipping information",
+            "text": "<p>We offer tracked and insured shipping for all of our orders. Order processing takes 1-3 business days before shipment.</p>",
+            "icon_style": "plus_minus_square",
+            "show_open": false
+          }
+        },
+        "divider_k3AB8J": {
+          "type": "divider",
+          "settings": {
+            "base_width": 50,
+            "thickness": 1,
+            "style": "solid",
+            "divider_color": "#ffffff",
+            "padding_top": 15,
+            "padding_bottom": 15
+          }
+        },
+        "text_columns_F6R4HE": {
+          "type": "text_columns",
+          "settings": {
+            "gap": 20,
+            "text_alignment": "left",
+            "heading_1": "💥 Your Skin Deserves This—Now, Not Later",
+            "column_1": "<p>Thousands are switching from loofahs to deep-rotating skincare.<br/><br/>Why wait for breakouts or dull skin to tell you something’s wrong?<br/><br/><strong>Stock is running low—secure yours before it’s gone again.</strong></p><p></p>",
+            "heading_2": "🚿 10,000+ Women Have Already Upgraded Their Shower Routine",
+            "column_2": "<p>I don’t know how I lived without this!” – Verified Customer<br/><br/>While you're still using a basic sponge, others are enjoying:</p><p>👉 Don’t be the last to switch. Glow is just one shower away.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AqBDtx",
+        "text_wXEqEA",
+        "divider_7TU6hV",
+        "icons_zABpE3",
+        "divider_GpRfVj",
+        "collapsible_content_4gGeNK",
+        "divider_k3AB8J",
+        "text_columns_F6R4HE"
+      ],
+      "disabled": true,
+      "name": "Lumin Mega Section",
+      "settings": {
+        "color_scheme_main": "accent-1",
+        "full-width": false,
+        "image": "shopify://shop_images/71mA1tJXFEL._AC_SL1500.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "lumin_review_Bn3WBa": {
+      "type": "Lumin-review",
+      "blocks": {
+        "review_ramNVA": {
+          "type": "review",
+          "settings": {
+            "star_rating": 5,
+            "name_text": "Shaambhavi Raval",
+            "date_text": "June 2026",
+            "review_head": "Soft Bristles, Strong Results",
+            "review_text": "Great tool for daily self-care. The brush heads are surprisingly gentle and I love the two-speed setting. Charging is quick too!",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_pcUEPe": {
+          "type": "review",
+          "settings": {
+            "star_rating": 4,
+            "name_text": "Ruvani Talpade",
+            "date_text": "June 2026",
+            "review_head": "Finally found the one",
+            "review_text": "I've tried so many products, but this one actually delivers. No irritation, no breakouts—just healthy, glowing skin.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_C8YwWK": {
+          "type": "review",
+          "settings": {
+            "star_rating": 4,
+            "name_text": "Yuvati Nimbalkar",
+            "date_text": "Feb 2026",
+            "review_head": "Wore My Saree with Confidence!",
+            "review_text": "My back looks so clean and glowing now. No more feeling conscious wearing deep-back blouses at weddings!",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_yGBJ8d": {
+          "type": "review",
+          "settings": {
+            "star_rating": 4.5,
+            "name_text": "Indulekha Vichare",
+            "date_text": "April 2026",
+            "review_head": "Ditch Your Loofah, Seriously!",
+            "review_text": "I feel so fresh after every use. Loofahs never cleaned this deep. My skin has never felt this smooth.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_r9cXTw": {
+          "type": "review",
+          "settings": {
+            "star_rating": 3.5,
+            "name_text": "Prakriti Yagnik",
+            "date_text": "June 2026",
+            "review_head": "Salon Results at Home",
+            "review_text": "Earlier I used to go for body scrubs. This brush saves money and time. Totally worth the investment.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_igrMPx": {
+          "type": "review",
+          "settings": {
+            "star_rating": 4,
+            "name_text": "Tanirika Velicharla",
+            "date_text": "June 2025",
+            "review_head": "Finally, a Back-Care Essential!",
+            "review_text": "Back acne was always a problem for me during summers. This brush worked wonders! My skin feels so clean and calm now.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_zJfx6A": {
+          "type": "review",
+          "settings": {
+            "star_rating": 4,
+            "name_text": "Amara D",
+            "date_text": "May 2026",
+            "review_head": "Game-changer for sensitive skin",
+            "review_text": "My skin is super sensitive, but this product is incredibly gentle. No redness, no irritation—just calm, balanced skin",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_PyC4kh": {
+          "type": "review",
+          "settings": {
+            "star_rating": 4,
+            "name_text": "Kshirja Naorem",
+            "date_text": "June 2025",
+            "review_head": "Great for Sensitive Skin",
+            "review_text": "My skin usually reacts badly, but this brush is super gentle. Silicone head is the best one for me.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_EbAMPx": {
+          "type": "review",
+          "settings": {
+            "star_rating": 5,
+            "name_text": "Shailee Rajpurohit",
+            "date_text": "June 2026",
+            "review_head": "Perfect for Traditional Outfits",
+            "review_text": "This helped me prep my back for a backless lehenga function. Really brings out the natural glow with exfoliation.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        },
+        "review_9QC3tA": {
+          "type": "review",
+          "settings": {
+            "star_rating": 4.5,
+            "name_text": "Nidhima Pamidighantam",
+            "date_text": "June 2026",
+            "review_head": "Best Gift I’ve Received!",
+            "review_text": "I gifted this to myself and now I’m gifting it to my mom too. Back and shoulders feel fresh and soft daily.",
+            "like_size": 0,
+            "dislike_size": 0,
+            "feature_font_size": 16
+          }
+        }
+      },
+      "block_order": [
+        "review_ramNVA",
+        "review_pcUEPe",
+        "review_C8YwWK",
+        "review_yGBJ8d",
+        "review_r9cXTw",
+        "review_igrMPx",
+        "review_zJfx6A",
+        "review_PyC4kh",
+        "review_EbAMPx",
+        "review_9QC3tA"
+      ],
+      "disabled": true,
+      "name": "Lumin Review",
+      "settings": {
+        "editing": true,
+        "color_scheme": "scheme-d2c03d0e-5ca5-439d-bdf5-e393d9582cf0",
+        "header_text": "what our [customers] !-say about us-!",
+        "show_top": true,
+        "rating_text": "4.7",
+        "rating_range": 4.5,
+        "star_size_top": 1,
+        "rating_count": "Join <strong>thousands</strong> of glowing customers who <strong>have transformed their skin</strong> with our products.",
+        "review_column_mobile": 1,
+        "review_column_tab": 2,
+        "review_column_desk": 2,
+        "review_load": 6,
+        "load_text": "Load More",
+        "rw_img_size": 130,
+        "rw_img_radius": 6,
+        "block_name_size": 32,
+        "date_size": 12,
+        "block_head_size": 20,
+        "block_text_size": 14,
+        "star_style": "star_bg_2",
+        "star_size": 0.6,
+        "star_radius": 0,
+        "feature_svg_color": "#573599",
+        "inactive_star_color": "#e2e2e2",
+        "show_border": false,
+        "rw_border": "#e6e6e6",
+        "border_radius": 10,
+        "section_bg3": "#000000",
+        "section_bg2": "#06a48f",
+        "verify_text": "Verified Buyer",
+        "review_bg": "#ffffff",
+        "feature_acc_color": "#000000",
+        "review_pd": 20,
+        "review_pd_m": 20,
+        "show_footer": true,
+        "show_product": true,
+        "like_text": "Was this helpful?",
+        "rw_margin": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "accent-1",
+        "image_ratio": "adapt",
+        "image_no_crop": false,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_scroll_tags": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "174300570336aa0ded": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "ss_hero_44_iz8K8y",
+    "main",
+    "ss_feature_19_LmR6VR",
+    "ss_feature_46_mTqnkj",
+    "lumin_mega_cPHpKT",
+    "ss_steps_12_YzW97q",
+    "custom_liquid_t66wxn",
+    "ss_comparison_table_22_gPYRNE",
+    "collapsible_content_BqUzyT",
+    "lumin_review_A66RpG",
+    "announcement_bar_scrolling_iYN9yh",
+    "autoplay_video_KP3tET",
+    "lumin_hero_X7CKKT",
+    "logo_scroll_EBBFp8",
+    "lumin_cards_kPYWij",
+    "lumin_mega_3mmN6A",
+    "lumin_review_Bn3WBa",
+    "related-products",
+    "174300570336aa0ded"
+  ]
+}

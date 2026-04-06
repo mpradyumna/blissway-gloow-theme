@@ -46,7 +46,7 @@
             "price_text_size_mb": 18,
             "compare_price": "#f50000",
             "original_price": "#000000",
-            "show_save_price": true,
+            "show_save_price": false,
             "save_text": "#000bde",
             "save_bg": "#e8e8f7",
             "save_border": "#f4f4ff",
