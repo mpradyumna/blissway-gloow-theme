@@ -210,6 +210,16 @@
 }
 {%- endstyle -%}
 
+{%- comment -%} Preload the first slide's image — it is the LCP element on the homepage {%- endcomment -%}
+{%- assign _hero_first = section.blocks | first -%}
+{%- if _hero_first.settings.image != blank -%}
+  <link rel="preload" as="image"
+    href="{{ _hero_first.settings.image | image_url: width: 1920 }}"
+    imagesrcset="{{ _hero_first.settings.image | image_url: width: 768 }} 768w, {{ _hero_first.settings.image | image_url: width: 1440 }} 1440w, {{ _hero_first.settings.image | image_url: width: 1920 }} 1920w"
+    imagesizes="100vw"
+    fetchpriority="high">
+{%- endif -%}
+
 <section class="bw-hero-slider color-{{ section.settings.color_scheme }} gradient" id="bw-hero-slider-{{ section.id }}" aria-label="Featured products slideshow">
   <div class="bw-hero-slider__track">
     {%- for block in section.blocks -%}

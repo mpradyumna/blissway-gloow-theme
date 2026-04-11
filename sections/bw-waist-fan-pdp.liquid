@@ -282,42 +282,295 @@
   }
   .wf-stat__label { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.4; }
 
-  /* ── COMPARISON TABLE ── */
-  .wf-compare { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .wf-compare__table {
+  /* ── COMPARISON TABLE (v3 — Advanced Design) ── */
+  :root {
+    /* Semantic for Table */
+    --ct-brand:          oklch(51% 0.220 264);
+    --ct-brand-deep:     oklch(38% 0.220 264);
+    --ct-brand-mid:      oklch(94.5% 0.028 264);
+    --ct-brand-border:   oklch(62%   0.140 264 / 28%);
+    --ct-brand-icon-bg:  oklch(51%   0.220 264 / 12%);
+    --ct-check-other:    oklch(48% 0.170 152);
+    --ct-check-other-bg: oklch(48% 0.170 152 / 10%);
+    --ct-cross-color:    oklch(68% 0.010 264);
+    --ct-cross-bg:       oklch(68% 0.010 264 / 8%);
+    --ct-amber:          oklch(68% 0.160 78);
+    --ct-amber-dim:      oklch(62% 0.110 78 / 85%);
+    --ct-surface:        #FFFFFF;
+    --ct-surface-alt:    oklch(99%   0.003 264);
+    --ct-border:         oklch(91.5% 0.008 264);
+    --ct-text-100:       oklch(13%   0.010 264);
+    --ct-text-200:       oklch(35%   0.018 264);
+    --ct-text-300:       oklch(52%   0.014 264);
+    --ct-text-400:       oklch(68%   0.009 264);
+  }
+
+  .ct-table-wrap {
+    background: var(--ct-surface);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px var(--ct-border),
+      0 4px 16px oklch(0% 0 0 / 5%),
+      0 16px 48px oklch(0% 0 0 / 7%),
+      0 0 0 4px oklch(51% 0.22 264 / 4%);
+    margin-top: 40px;
+  }
+
+  .ct-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 480px;
+    table-layout: fixed;
   }
-  .wf-compare__table th,
-  .wf-compare__table td {
-    padding: 13px 16px;
-    text-align: center;
-    font-size: 13.5px;
-    border-bottom: 1px solid var(--wf-border);
-  }
-  .wf-compare__table th {
-    font-size: 12px;
-    font-weight: 700;
-    background: var(--wf-bg);
-    text-transform: uppercase;
-    letter-spacing: .07em;
-    color: var(--wf-muted);
-  }
-  .wf-compare__table th:nth-child(2) {
-    background: var(--wf-blue);
-    color: #fff;
-    border-radius: 10px 10px 0 0;
-  }
-  .wf-compare__table td:nth-child(2) {
-    background: var(--wf-blue-lt);
+
+  .ct-table col:nth-child(1) { width: 34%; }
+  .ct-table col:nth-child(2) { width: 22%; }
+  .ct-table col:nth-child(3) { width: 22%; }
+  .ct-table col:nth-child(4) { width: 22%; }
+
+  .ct-table thead th {
+    padding: 1.15rem 1rem;
+    font-family: var(--bw-font-display, inherit);
+    font-size: 11px;
     font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ct-text-400);
+    text-align: center;
+    background: var(--ct-surface);
+    border-bottom: 1px solid var(--ct-border);
+    vertical-align: middle;
   }
-  .wf-compare__table td:first-child { text-align: left; font-weight: 600; color: var(--wf-text); }
-  .wf-compare__table tr:last-child td { border-bottom: none; }
-  .wf-chk  { color: var(--wf-blue); font-weight: 800; font-size: 17px; }
-  .wf-cross{ color: #CACACE; font-size: 17px; }
-  .wf-part { color: #F59E0B; font-size: 12px; font-weight: 600; }
+
+  .ct-table thead th:first-child {
+    text-align: left;
+    padding-left: 1.75rem;
+  }
+
+  .ct-table thead th.col-featured {
+    background: linear-gradient(160deg, var(--ct-brand-deep) 0%, var(--ct-brand) 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: 1.35rem 1rem 1.2rem;
+  }
+
+  .ct-table thead th.col-featured::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      180deg,
+      transparent 0px, transparent 3px,
+      oklch(100% 0 0 / 5%) 3px, oklch(100% 0 0 / 5%) 4px
+    );
+    pointer-events: none;
+  }
+
+  .ct-table thead th.col-featured::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 8%; right: 8%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, oklch(100% 0 0 / 50%), transparent);
+  }
+
+  .col-featured-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .col-featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--bw-font-body, inherit);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: oklch(100% 0 0 / 95%);
+    background: oklch(100% 0 0 / 15%);
+    border: 1px solid oklch(100% 0 0 / 25%);
+    border-radius: 99px;
+    padding: 3px 9px 3px 7px;
+  }
+
+  .ct-table tbody tr {
+    border-bottom: 1px solid var(--ct-border);
+    transition: background 0.15s ease;
+  }
+  .ct-table tbody tr:last-child { border-bottom: none; }
+
+  .ct-table tbody tr:nth-child(even) td:not(.col-featured) {
+    background: var(--ct-surface-alt);
+  }
+
+  .ct-table tbody tr:hover td:not(.col-featured) {
+    background: oklch(97.5% 0.012 264);
+  }
+  .ct-table tbody tr:hover td.col-featured {
+    background: oklch(92.5% 0.040 264);
+  }
+
+  .ct-table tbody td {
+    padding: 1.05rem 1rem;
+    text-align: center;
+    vertical-align: middle;
+    font-family: var(--bw-font-body, inherit);
+    font-size: 14px;
+    color: var(--ct-text-200);
+    transition: background 0.15s ease;
+  }
+
+  .ct-table tbody td:first-child {
+    text-align: left;
+    padding-left: 1.75rem;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ct-text-100);
+  }
+
+  .ct-table tbody td.col-featured {
+    background: var(--ct-brand-mid);
+    position: relative;
+  }
+
+  .ct-table tbody td.col-featured::before,
+  .ct-table tbody td.col-featured::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 1px;
+  }
+  .ct-table tbody td.col-featured::before {
+    left: 0;
+    background: linear-gradient(to bottom, transparent, var(--ct-brand-border) 25%, var(--ct-brand-border) 75%, transparent);
+  }
+  .ct-table tbody td.col-featured::after {
+    right: 0;
+    background: linear-gradient(to bottom, transparent, var(--ct-brand-border) 25%, var(--ct-brand-border) 75%, transparent);
+  }
+
+  .icon-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--ct-check-other-bg);
+    color: var(--ct-check-other);
+    flex-shrink: 0;
+  }
+
+  .col-featured .icon-check {
+    background: var(--ct-brand-icon-bg);
+    color: var(--ct-brand);
+  }
+
+  .icon-cross {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--ct-cross-bg);
+    color: var(--ct-cross-color);
+    flex-shrink: 0;
+  }
+
+  .icon-cross-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--ct-cross-bg);
+    color: var(--ct-cross-color);
+    flex-shrink: 0;
+  }
+
+  .icon-check-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--ct-brand-icon-bg);
+    color: var(--ct-brand);
+    flex-shrink: 0;
+  }
+
+  .val-featured {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--bw-font-display, inherit);
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--ct-brand);
+    background: oklch(51% 0.22 264 / 9%);
+    border: 1px solid oklch(51% 0.22 264 / 18%);
+    border-radius: 8px;
+    padding: 5px 10px 5px 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .val-neg {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ct-text-400);
+    line-height: 1.35;
+  }
+
+  .val-roomwide {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ct-amber-dim);
+    font-style: italic;
+  }
+
+  .val-cost-free {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--bw-font-display, inherit);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ct-brand);
+    background: oklch(51% 0.22 264 / 9%);
+    border: 1px solid oklch(51% 0.22 264 / 18%);
+    border-radius: 8px;
+    padding: 5px 10px 5px 6px;
+  }
+
+  .val-cost-warning {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ct-amber);
+  }
+
+  .val-cost-dim {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ct-text-400);
+  }
+
+  @media (max-width: 767px) {
+    .ct-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .ct-table { min-width: 600px; }
+    .ct-table col:nth-child(1) { width: 40%; }
+    .ct-table col:nth-child(2) { width: 30%; }
+    .ct-table col:nth-child(3) { width: 30%; }
+    .ct-table col:nth-child(4) { width: 30%; }
+  }
 
   /* ── REVIEWS ── */
   .wf-reviews__grid {
@@ -723,7 +976,8 @@
     </div>
   </section>
 
-  {%- comment -%} ── COMPARISON TABLE ── {%- endcomment -%}
+  {%- comment -%}
+  ── COMPARISON TABLE v1 (commented out — replaced by v3 Advanced Design below) ──
   <section class="wf-section wf-section--white">
     <div class="wf-container">
       <div class="wf-center">
@@ -795,6 +1049,253 @@
       </div>
     </div>
   </section>
+  {%- endcomment -%}
+
+  {%- comment -%} ── COMPARISON TABLE v3 (Advanced Design) ── {%- endcomment -%}
+  <section class="wf-section wf-section--white">
+    <div class="wf-container">
+      <div class="wf-center">
+        <span class="wf-eyebrow">Why not just use…</span>
+        <h2 class="wf-h2">Waist Fan vs. <em>Your Other Options</em></h2>
+        <p class="wf-sub">Before you think "I'll just use a ceiling fan" — here's what you'd actually be giving up.</p>
+      </div>
+
+      <div class="ct-table-wrap">
+        <table class="ct-table" role="table">
+          <colgroup><col><col><col><col></colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col" class="col-featured">
+                <span class="col-featured-inner">
+                  <span class="col-featured-badge">Recommended</span>
+                  {{ section.settings.product_name | default: 'Blissway Waist Fan' }}
+                </span>
+              </th>
+              <th scope="col">Ceiling Fan</th>
+              <th scope="col">Air Conditioner</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- 1 -->
+            <tr>
+              <td>Works outdoors / on the go</td>
+              <td class="col-featured">
+                <span class="icon-check" aria-label="Yes">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross" aria-label="No">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross" aria-label="No">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+
+            <!-- 2 -->
+            <tr>
+              <td>Works during power cuts</td>
+              <td class="col-featured">
+                <span class="val-featured">
+                  <span class="icon-check-sm" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  40H battery
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross" aria-label="No">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross" aria-label="No">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+
+            <!-- 3 -->
+            <tr>
+              <td>Personal, direct airflow</td>
+              <td class="col-featured">
+                <span class="icon-check" aria-label="Yes">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </td>
+              <td>
+                <span class="val-neg" aria-label="No — Room-wide only">
+                  <span class="icon-cross-sm" aria-hidden="true">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none">
+                      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  Room-wide only
+                </span>
+              </td>
+              <td>
+                <span class="val-roomwide">Room-wide only</span>
+              </td>
+            </tr>
+
+            <!-- 4 -->
+            <tr>
+              <td>Hands-free use</td>
+              <td class="col-featured">
+                <span class="icon-check" aria-label="Yes">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </td>
+              <td>
+                <span class="icon-check" aria-label="Yes">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </td>
+              <td>
+                <span class="icon-check" aria-label="Yes">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+
+            <!-- 5 -->
+            <tr>
+              <td>Works on bus / commute</td>
+              <td class="col-featured">
+                <span class="icon-check" aria-label="Yes">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross" aria-label="No">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross" aria-label="No">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+
+            <!-- 6 -->
+            <tr>
+              <td>Monthly running cost</td>
+              <td class="col-featured">
+                <span class="val-cost-free">
+                  <span class="icon-check-sm" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  ₹0 (one-time buy)
+                </span>
+              </td>
+              <td><span class="val-cost-warning">₹200+ electricity</span></td>
+              <td><span class="val-cost-dim">₹1,500+ electricity</span></td>
+            </tr>
+
+            <!-- 7 -->
+            <tr>
+              <td>Built-in powerbank (charges phone)</td>
+              <td class="col-featured">
+                <span class="val-featured">
+                  <span class="icon-check-sm" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  10,000 mAh
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross" aria-label="No">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross" aria-label="No">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </td>
+            </tr>
+
+            <!-- 8 -->
+            <tr>
+              <td>No installation required</td>
+              <td class="col-featured">
+                <span class="val-featured">
+                  <span class="icon-check-sm" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  Clip and go
+                </span>
+              </td>
+              <td>
+                <span class="val-neg">
+                  <span class="icon-cross-sm" aria-hidden="true">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none">
+                      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  Electrician needed
+                </span>
+              </td>
+              <td>
+                <span class="val-neg">
+                  <span class="icon-cross-sm" aria-hidden="true">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none">
+                      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  ₹5,000+ install
+                </span>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
   {%- comment -%} ── REVIEWS ── {%- endcomment -%}
   <section class="wf-section">
@@ -849,12 +1350,12 @@
 
         <div class="wf-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="wf-faq__btn" aria-expanded="false">
-            <span itemprop="name">₹2,499 for a fan? A regular table fan costs ₹500.</span>
+            <span itemprop="name">₹2,749 for a fan? A regular table fan costs ₹500.</span>
             <svg class="wf-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="wf-faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div class="wf-faq__body-inner" itemprop="text">
-              <p>Fair question. A table fan is bolted to a wall socket. It cannot follow you to the bus stop, the construction site, a power cut, or a 4-hour train journey. <strong>This fan does all of that</strong> — plus it charges your phone (10,000 mAh powerbank) and includes an LED torch. You're not buying a fan. You're buying freedom from heat wherever you go. That's worth a lot more than ₹2,499. And with zero monthly electricity cost, it pays for itself fast.</p>
+              <p>Fair question. A table fan is bolted to a wall socket. It cannot follow you to the bus stop, the construction site, a power cut, or a 4-hour train journey. <strong>This fan does all of that</strong> — plus it charges your phone (10,000 mAh powerbank) and includes an LED torch. You're not buying a fan. You're buying freedom from heat wherever you go. That's worth a lot more than ₹2,749. And with zero monthly electricity cost, it pays for itself fast.</p>
             </div>
           </div>
         </div>
@@ -977,20 +1478,6 @@
     </p>
   </div>
 
-</div>
-
-{%- comment -%} ── STICKY MOBILE CTA BAR ── {%- endcomment -%}
-<div class="wf-sticky-bar" id="wf-sticky-bar" aria-hidden="true">
-  <div class="wf-sticky-bar__meta">
-    <span class="wf-sticky-bar__name">{{ product.title | default: 'Blissway Waist Fan' }}</span>
-    <span class="wf-sticky-bar__price">
-      {{ product.price | money }}
-      {%- if product.compare_at_price > product.price -%}
-        <s>{{ product.compare_at_price | money }}</s>
-      {%- endif -%}
-    </span>
-  </div>
-  <a href="#MainContent" class="wf-sticky-bar__btn">Buy Now →</a>
 </div>
 
 <script>

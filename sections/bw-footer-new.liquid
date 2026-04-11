@@ -1,5 +1,6 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
-{{ 'section-bw-footer-new.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'section-bw-footer-new.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ 'section-bw-footer-new.css' | asset_url }}"></noscript>
 
 <style>
 .footer {

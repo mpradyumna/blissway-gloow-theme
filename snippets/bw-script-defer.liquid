@@ -1,0 +1,117 @@
+{%- comment -%}
+  bw-script-defer.liquid
+
+  Intercepts third-party marketing/analytics scripts that are dynamically injected
+  by app stubs (second-wave loads) and defers them until first user interaction or
+  3 seconds — whichever comes first.
+
+  IMPORTANT: This only catches scripts added to the DOM via JavaScript (appendChild,
+  insertBefore, etc.). Scripts that are statically written by content_for_header
+  are parsed before any JS runs and cannot be intercepted here.
+
+  Place this snippet BEFORE {{ content_for_header }} in theme.liquid.
+{%- endcomment -%}
+
+<script>
+(function () {
+  // Partial URL patterns for scripts to defer.
+  // Add or remove based on which apps are installed and which matter for interaction.
+  var DEFER = [
+    'getsitecontrol.com',
+    'connect.facebook.net/en_US/fbevents.js',
+    'trusted.site/widget',
+    'static.otpless.app',
+    'otpless.com/otpless.js',
+    'wigzo.com',
+    'wetracked.io',
+    'qikify.com',
+    // Judge.me widget JS — dynamically injected by the judgeme_core/popup_widget/reviews_tab
+    // app embed stubs after content_for_header runs. CSS loads normally (no parse-blocking risk).
+    'cdn.judge.me/assets/widget.min.js',
+    'cdn.judge.me/assets/reviews_tab.min.js',
+    'cdn.judge.me/assets/popup.min.js',
+    // Cloudflare beacon is tiny (4KB) and async — optionally defer:
+    // 'beacon.cloudflare.com/beacon.min.js',
+  ];
+
+  var _queue = [];
+  var _flushed = false;
+  var _observer;
+
+  function _matches(src) {
+    for (var i = 0; i < DEFER.length; i++) {
+      if (src.indexOf(DEFER[i]) !== -1) return true;
+    }
+    return false;
+  }
+
+  function _flush() {
+    if (_flushed) return;
+    _flushed = true;
+    if (_observer) _observer.disconnect();
+    ['scroll', 'touchstart', 'mousemove', 'keydown'].forEach(function (ev) {
+      window.removeEventListener(ev, _flush, { passive: true });
+    });
+    var _hasJudgeMe = false;
+    for (var i = 0; i < _queue.length; i++) {
+      var item = _queue[i];
+      var s = document.createElement('script');
+      s.src = item.src;
+      if (item.async) s.async = true;
+      if (item.crossOrigin) s.crossOrigin = item.crossOrigin;
+      if (item.src.indexOf('cdn.judge.me') !== -1) _hasJudgeMe = true;
+      document.head.appendChild(s);
+    }
+    _queue = [];
+    // Re-trigger JudgeMe widget rendering — its core ran before widget JS was available.
+    if (_hasJudgeMe) {
+      setTimeout(function () {
+        if (window.JDGM && JDGM.tryAutoInstall) JDGM.tryAutoInstall();
+      }, 300);
+    }
+  }
+
+  function _intercept(node) {
+    if (
+      node.nodeName === 'SCRIPT' &&
+      node.src &&
+      _matches(node.src) &&
+      node.parentNode
+    ) {
+      var src = node.src;
+      var async = node.async !== false;
+      var crossOrigin = node.crossOrigin || null;
+      node.parentNode.removeChild(node);
+      _queue.push({ src: src, async: async, crossOrigin: crossOrigin });
+      return true;
+    }
+    return false;
+  }
+
+  try {
+    _observer = new MutationObserver(function (mutations) {
+      if (_flushed) { _observer.disconnect(); return; }
+      for (var i = 0; i < mutations.length; i++) {
+        var added = mutations[i].addedNodes;
+        for (var j = 0; j < added.length; j++) {
+          _intercept(added[j]);
+        }
+      }
+    });
+    _observer.observe(document.documentElement, { childList: true, subtree: true });
+  } catch (e) {
+    // MutationObserver not supported — skip interception, let scripts load normally
+    return;
+  }
+
+  ['scroll', 'touchstart', 'mousemove', 'keydown'].forEach(function (ev) {
+    window.addEventListener(ev, _flush, { passive: true, once: true });
+  });
+
+  // Hard fallback: 3 seconds after page load event (not DOMContentLoaded —
+  // we want the critical path fully clear first)
+  window.addEventListener('load', function () {
+    setTimeout(_flush, 3000);
+  }, { once: true });
+})();
+</script>

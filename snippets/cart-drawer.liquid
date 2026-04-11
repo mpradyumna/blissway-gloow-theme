@@ -116,10 +116,13 @@
 }
 </style>
 
-{{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'quantity-popover.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ 'quantity-popover.css' | asset_url }}"></noscript>
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}"></noscript>
 {% if settings.enable_cart_upsell_product %}
-  {{ 'cart-upsell.css' | asset_url | stylesheet_tag }}
+  <link rel="stylesheet" href="{{ 'cart-upsell.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ 'cart-upsell.css' | asset_url }}"></noscript>
   <script src="{{ 'cart-upsell.js' | asset_url }}" defer="defer"></script>
 {% endif %}
 

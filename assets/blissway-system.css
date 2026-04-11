@@ -2,11 +2,12 @@
    BLISSWAY DESIGN SYSTEM v1.0 — Gloow-16-5-2
    Style: Liquid Glass + Futuristic Premium
    Inspiration: Alpine-level product clarity + futuristic tech
-   Typography: Orbitron (display) + Exo 2 (body)
+   Typography: Satoshi (display) + DM Sans (body)
    ═══════════════════════════════════════════════════════════ */
 
-/* ─── 1. Google Fonts ─────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+/* ─── 1. Fonts — loaded via theme.liquid <link> tags ─────── */
+/* Satoshi: https://api.fontshare.com (loaded in theme.liquid) */
+/* DM Sans: Google Fonts (loaded in theme.liquid)              */
 
 /* ─── 2. Design Tokens ────────────────────────────────────── */
 :root {

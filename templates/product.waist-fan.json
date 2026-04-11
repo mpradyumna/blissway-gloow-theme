@@ -38,13 +38,14 @@
           "settings": {
             "title_size_dt": 40,
             "title_size_mb": 32,
-            "title_line_height": 1.5
+            "title_line_height": 1.5,
+            "show_squiggle": true
           }
         },
         "price": {
           "type": "price",
           "settings": {
-            "hide_tax_shipping": false,
+            "hide_tax_shipping": true,
             "reverse_price": false,
             "save_text_size": 14,
             "price_weight": "normal",
@@ -54,8 +55,8 @@
             "original_price": "#4caf50",
             "show_save_price": false,
             "save_text": "#14a627",
-            "save_bg": "#f2f2f2",
-            "save_border": "#f2f2f2",
+            "save_bg": "#ffffff",
+            "save_border": "#2f62d4",
             "save_border_thickness": 1,
             "save_corner_radius": 0,
             "save_shadow_opacity": 0,
@@ -63,20 +64,20 @@
             "save_shadow_vertical_offset": 0,
             "save_shadow_blur": 0,
             "enable_price_box": true,
-            "price_box_bg": "#f8fafc",
+            "price_box_bg": "#ffffff",
             "price_box_border": "#e2e8f0",
             "price_box_radius": 16,
             "notice_enable": true,
             "notice_speed": 3,
-            "notice_text_color": "#2563EB",
+            "notice_text_color": "#2563eb",
             "notice_text_size": 13,
-            "notice_1_text": "No-cost EMI starting at ₹2,999/month",
+            "notice_1_text": "COD available with extra Rs 49/-",
             "notice_1_icon": "",
-            "notice_2_text": "COD available with extra Rs 49/-",
+            "notice_2_text": "Unlock 5% Extra Savings with Prepaid",
             "notice_2_icon": "",
-            "notice_3_text": "",
+            "notice_3_text": "Order Today, Dispatch Within 24 Hours",
             "notice_3_icon": "",
-            "notice_4_text": "",
+            "notice_4_text": "Try Risk-Free — Easy Replacement Available",
             "notice_4_icon": "",
             "mrp_text": "MRP incl. of all taxes",
             "mrp_color": "#6b7280",
@@ -206,14 +207,14 @@
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
-            "enable_quantity_discounts": false,
+            "enable_quantity_discounts": true,
             "show_on_all_products": true,
             "selected_product": [],
             "selected_collection": "",
             "quantity_style": "vertical",
             "columns_block": "25",
             "option_height": "auto",
-            "preselected": "2",
+            "preselected": "none",
             "discount_type": "percentage",
             "show_strikethrough_price": "calculated",
             "hide_checkbox": false,
@@ -227,7 +228,8 @@
             "badge_background_gradient": "",
             "badge_font_color": "#ffffff",
             "option_1_show_label": true,
-            "option_1_show_image": false,
+            "option_1_show_image": true,
+            "option_1_image": "shopify://shop_images/1_093b3de8-0f24-4179-9f66-6c95e2dfcef6.png",
             "option_1_label": "1 Pack",
             "option_1_quantity": 1,
             "option_1_fixed_discount": "0",
@@ -237,8 +239,10 @@
             "option_1_unit_label": "($)/Pcs",
             "option_1_save_text": "Save (%)",
             "option_1_promo": "",
+            "option_1_bottom_image": "shopify://shop_images/2_87a3f9c5-8b2a-4d7d-84ca-103e1f0d052e.png",
             "option_2_show_label": true,
-            "option_2_show_image": false,
+            "option_2_show_image": true,
+            "option_2_image": "shopify://shop_images/2_87a3f9c5-8b2a-4d7d-84ca-103e1f0d052e.png",
             "option_2_label": "2 Pack",
             "option_2_quantity": 2,
             "option_2_fixed_discount": "5",
@@ -249,7 +253,8 @@
             "option_2_save_text": "Save (%)",
             "option_2_promo": "",
             "option_3_show_label": true,
-            "option_3_show_image": false,
+            "option_3_show_image": true,
+            "option_3_image": "shopify://shop_images/3_81ba3abe-fef3-4d64-ba13-91958c6e66ea.png",
             "option_3_label": "3 Pack",
             "option_3_quantity": 3,
             "option_3_fixed_discount": "10",
@@ -298,8 +303,8 @@
             "title_text_align": "center",
             "quantity_title_text": "Bundle & Save",
             "quantity_subtitle_text": "",
-            "title_font_size": 1.8,
-            "subtitle_font_size": 1.3,
+            "title_font_size": 1.5,
+            "subtitle_font_size": 1.2,
             "title_color": "#333333",
             "subtitle_color": "#333333",
             "title_line_color": "#e6e6e6",
@@ -312,8 +317,8 @@
             "promo_border_color": "#000000",
             "border_radius": 0.5,
             "option_bottom_spacing": 2.5,
-            "option_height_spacing": 1.8,
-            "label_font_size": 2,
+            "option_height_spacing": 1.6,
+            "label_font_size": 1.5,
             "compare_price_font_size": 1.3,
             "final_price_font_size": 1.5,
             "per_unit_font_size": 1,
@@ -336,28 +341,47 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
             "skip_cart": false,
             "button_custom_style": false,
             "button_font_size": 20,
             "button_height": 45,
-            "lm_main_button": "#2563EB",
+            "lm_main_button": "#2563eb",
             "lm_main_button_gr": "",
             "lm_main_text": "#ffffff"
           }
         },
         "trust_badges": {
           "type": "trust_badges",
+          "disabled": true,
           "settings": {
             "badge_1_text": "7-Day Returns",
             "badge_2_text": "Secure Checkout",
             "badge_3_text": "1 Year Warranty"
           }
         },
+        "icon_with_text_QyAjcd": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "return",
+            "image_1": "shopify://shop_images/returns.png",
+            "heading_1": "7-Day Returns",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/secure-checkout.png",
+            "heading_2": "Secure Checkout",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/warranty.png",
+            "heading_3": "1 Year Warranty"
+          }
+        },
         "description": {
           "type": "description",
-          "settings": {}
+          "settings": {
+            "enable_read_more": true,
+            "word_limit": 20
+          }
         }
       },
       "block_order": [
@@ -376,6 +400,7 @@
         "quantity_selector",
         "buy_buttons",
         "trust_badges",
+        "icon_with_text_QyAjcd",
         "description"
       ],
       "settings": {
@@ -386,7 +411,7 @@
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "thumbnail_size": 70,
         "thumbnail_radius": 4,
         "media_position": "left",
@@ -413,6 +438,82 @@
         "padding_top": 36,
         "padding_top_mb": 0,
         "padding_bottom": 36
+      }
+    },
+    "ss_image_with_text_11_YWemqm": {
+      "type": "ss-image-with-text-11",
+      "blocks": {
+        "item_DHA7fE": {
+          "type": "item",
+          "settings": {
+            "heading": "<p><strong>Cool Waist Fan Features</strong></p>",
+            "icon": "shopify://shop_images/icon-trust-checkout.jpg",
+            "text": "3-in-1 multifunctional design waist fan, LED flashlight, and power bank Massive 10000mAh rechargeable battery with up to 40 hours of cooling",
+            "image": "shopify://shop_images/waist_fan_blowing.webp",
+            "image_mobile": "shopify://shop_images/waist_fan_blowing.webp"
+          }
+        },
+        "item_LagJ79": {
+          "type": "item",
+          "settings": {
+            "heading": "<p>3 Different Cooling Modes</p>",
+            "icon": "shopify://shop_images/2_7e67a3f8-ae2e-4064-8ad4-854bfc144aac.png",
+            "text": "Clip the Waist Fan to your belt or hang it around your neck for instant relief from the heat. Fast-charging capability ensures you're always ready to go.",
+            "image": "shopify://shop_images/waist_fan_modes.webp",
+            "image_mobile": "shopify://shop_images/waist_fan_modes.webp"
+          }
+        }
+      },
+      "block_order": [
+        "item_DHA7fE",
+        "item_LagJ79"
+      ],
+      "name": "SS - Image With Text #11",
+      "settings": {
+        "body_gap": 20,
+        "body_gap_mobile": 20,
+        "content_horizontal_align": "start",
+        "content_horizontal_align_mobile": "center",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 13,
+        "heading_size_mobile": 13,
+        "heading_height": 130,
+        "icon_width": 60,
+        "icon_width_mobile": 60,
+        "icon_mt": 16,
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 42,
+        "text_size_mobile": 30,
+        "text_height": 130,
+        "text_mt": 16,
+        "images_width": 55,
+        "images_position": "right",
+        "images_radius": 0,
+        "images_border_thickness": 0,
+        "image_ratio": "square",
+        "image_ratio_mobile": "square",
+        "heading_color": "#1d252d",
+        "text_color": "#bbbdc0",
+        "text_active_color": "#1d252d",
+        "images_border_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 3,
+        "margin_horizontal_mobile": 1.5,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": false,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true,
+        "section_radius": 0
       }
     },
     "waist_fan_pdp": {
@@ -506,6 +607,7 @@
   },
   "order": [
     "main",
+    "ss_image_with_text_11_YWemqm",
     "waist_fan_pdp",
     "product_metafield_images_4g3gDw",
     "bw_prepaid_offer_gdXGT7",

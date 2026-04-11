@@ -26,11 +26,16 @@
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 {%- unless skip_styles -%}
-  {{ 'component-rating.css' | asset_url | stylesheet_tag }}
-  {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
-  {{ 'component-price.css' | asset_url | stylesheet_tag }}
-  {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
-  {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+  <link rel="stylesheet" href="{{ 'component-rating.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ 'component-rating.css' | asset_url }}"></noscript>
+  <link rel="stylesheet" href="{{ 'component-volume-pricing.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ 'component-volume-pricing.css' | asset_url }}"></noscript>
+  <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}"></noscript>
+  <link rel="stylesheet" href="{{ 'quick-order-list.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ 'quick-order-list.css' | asset_url }}"></noscript>
+  <link rel="stylesheet" href="{{ 'quantity-popover.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ 'quantity-popover.css' | asset_url }}"></noscript>
   <script src="{{ 'component-product-card-swatches.js' | asset_url }}" defer="defer"></script>
 {%- endunless -%}
 {%- style -%}
@@ -439,9 +444,12 @@
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
             {%- if card_product.has_only_default_variant == false and settings.show_swatches -%}
-              {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
-              {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
-              {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
+              <link rel="stylesheet" href="{{ 'component-product-variant-picker.css' | asset_url }}" media="print" onload="this.media='all'">
+              <noscript><link rel="stylesheet" href="{{ 'component-product-variant-picker.css' | asset_url }}"></noscript>
+              <link rel="stylesheet" href="{{ 'component-swatch.css' | asset_url }}" media="print" onload="this.media='all'">
+              <noscript><link rel="stylesheet" href="{{ 'component-swatch.css' | asset_url }}"></noscript>
+              <link rel="stylesheet" href="{{ 'component-swatch-input.css' | asset_url }}" media="print" onload="this.media='all'">
+              <noscript><link rel="stylesheet" href="{{ 'component-swatch-input.css' | asset_url }}"></noscript>
               <style>
                 .product-form__input--lumin-swatch {
                   display: flex;

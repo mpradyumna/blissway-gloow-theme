@@ -18,7 +18,7 @@
     "highlight_background_color": "linear-gradient(90deg, rgba(37, 99, 235, 1), rgba(59, 130, 246, 1) 50%, rgba(96, 165, 250, 1) 100%)",
     "logo": "shopify://shop_images/logo-blissway.svg",
     "logo_width": 90,
-    "favicon": "shopify://shop_images/favicon-blissway.svg",
+    "favicon": "shopify://shop_images/favicon_blissway.jpg",
     "swatch_colors": "",
     "type_header_font": "space_grotesk_n5",
     "heading_line_height": 64,
@@ -53,7 +53,7 @@
     "show_atc_desktop_full": false,
     "sticky_atc_desktop_img_width": 46,
     "sticky_atc_image_radius": 100,
-    "show_atc_btn": false,
+    "show_atc_btn": true,
     "atc_mb_style": "style_2",
     "show_atc_mb_full": false,
     "show_vendor_atc_mb": false,
@@ -67,7 +67,7 @@
     "atc_button_text_color": "#000000",
     "atc_button_border_color": "#000000",
     "atc_button_text": "",
-    "sticky_atc_btn_radius": 80,
+    "sticky_atc_btn_radius": 4,
     "sticky_atc_box_radius": 10,
     "sticky_atc_box_radius_mb": 24,
     "sticky_atc_price_font_size": 1.4,
@@ -401,20 +401,30 @@
         "disabled": false,
         "settings": {}
       },
+      "13375938897875554821": {
+        "type": "shopify://apps/qikify-sales-pop-up/blocks/app-embed/688dd516-1cdc-4008-8329-23089a1c4e24",
+        "disabled": false,
+        "settings": {}
+      },
+      "15181020662106344915": {
+        "type": "shopify://apps/judge-me-reviews/blocks/popup_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": true,
+        "settings": {}
+      },
       "12120936241911852800": {
         "type": "shopify://apps/judge-me-reviews/blocks/reviews_tab/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {
-          "position": "right"
+          "position": "left"
         }
       },
-      "15181020662106344915": {
-        "type": "shopify://apps/judge-me-reviews/blocks/popup_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+      "17844675666580048712": {
+        "type": "shopify://apps/razorpay-cod-magic-checkout/blocks/sso-script/c13c688d-5c45-4054-b95f-1edd63faa705",
         "disabled": false,
         "settings": {}
       },
-      "8838267387977255474": {
-        "type": "shopify://apps/jotform-ai-chatbot/blocks/app-embed/8b752cf5-34d6-4e3e-96cf-8a6ef85fb35a",
+      "3557650678667880288": {
+        "type": "shopify://apps/razorpay-cod-magic-checkout/blocks/magicx-script/c13c688d-5c45-4054-b95f-1edd63faa705",
         "disabled": false,
         "settings": {}
       }

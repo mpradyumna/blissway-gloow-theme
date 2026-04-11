@@ -156,7 +156,8 @@
           "settings": {
             "title_size_dt": 34,
             "title_size_mb": 30,
-            "title_line_height": 1.1
+            "title_line_height": 1.1,
+            "show_squiggle": false
           }
         },
         "text_pVaCaC": {
@@ -295,12 +296,12 @@
             "save_shadow_vertical_offset": 2,
             "save_shadow_blur": 5,
             "enable_price_box": true,
-            "price_box_bg": "#f8fafc",
+            "price_box_bg": "#ffffff",
             "price_box_border": "#e2e8f0",
             "price_box_radius": 16,
             "notice_enable": true,
             "notice_speed": 3,
-            "notice_text_color": "#2563EB",
+            "notice_text_color": "#2563eb",
             "notice_text_size": 13,
             "notice_1_text": "No-cost EMI starting at ₹2,999/month",
             "notice_1_icon": "",
@@ -773,7 +774,7 @@
             "button_custom_style": false,
             "button_font_size": 20,
             "button_height": 45,
-            "lm_main_button": "#2563EB",
+            "lm_main_button": "#2563eb",
             "lm_main_button_gr": "",
             "lm_main_text": "#ffffff"
           }

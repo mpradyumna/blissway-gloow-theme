@@ -1,24 +1,41 @@
 {%- comment -%}
-  Optimized CSS loader that combines multiple CSS files and loads them efficiently
-  Usage: {% render 'optimized-css-loader', files: 'file1.css,file2.css', critical: true %}
+  Optimized CSS loader — three loading modes:
+
+  critical: true   → preloaded blocking stylesheet (for above-fold, render-critical CSS)
+  deferred: true   → media="print" swap trick — downloads without blocking paint, then applies
+                     Same pattern already used in header.liquid. Best for below-fold CSS.
+  (default)        → normal blocking stylesheet (fallback, avoid where possible)
+
+  Usage:
+    {% render 'optimized-css-loader', files: 'file.css', critical: true %}
+    {% render 'optimized-css-loader', files: 'a.css,b.css', deferred: true %}
 {%- endcomment -%}
 
 {%- liquid
   assign files = files | split: ','
   assign critical = critical | default: false
+  assign deferred = deferred | default: false
   assign media = media | default: 'all'
 -%}
 
 {%- if critical -%}
-  {%- comment -%} Load critical CSS immediately {%- endcomment -%}
   {%- for file in files -%}
     {%- assign file = file | strip -%}
     {%- if file != blank -%}
       {{ file | asset_url | stylesheet_tag: preload: true }}
     {%- endif -%}
   {%- endfor -%}
+
+{%- elsif deferred -%}
+  {%- for file in files -%}
+    {%- assign file = file | strip -%}
+    {%- if file != blank -%}
+      <link rel="stylesheet" href="{{ file | asset_url }}" media="print" onload="this.media='all'">
+      <noscript><link rel="stylesheet" href="{{ file | asset_url }}"></noscript>
+    {%- endif -%}
+  {%- endfor -%}
+
 {%- else -%}
-  {%- comment -%} Load non-critical CSS normally {%- endcomment -%}
   {%- for file in files -%}
     {%- assign file = file | strip -%}
     {%- if file != blank -%}

@@ -68,7 +68,7 @@
             "save_shadow_vertical_offset": 0,
             "save_shadow_blur": 0,
             "enable_price_box": true,
-            "price_box_bg": "#f8fafc",
+            "price_box_bg": "#ffffff",
             "price_box_border": "#e2e8f0",
             "price_box_radius": 16,
             "notice_enable": true,
@@ -87,6 +87,10 @@
             "mrp_color": "#6b7280",
             "mrp_size": 11
           }
+        },
+        "razorpay_affordability_widget_affordability_block_PTjd9z": {
+          "type": "shopify://apps/razorpay-affordability-widget/blocks/affordability-block/5bf9b115-5933-4c1b-ade0-ef564b250852",
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -285,7 +289,10 @@
         "description": {
           "type": "description",
           "disabled": true,
-          "settings": {}
+          "settings": {
+            "enable_read_more": false,
+            "word_limit": 30
+          }
         },
         "bw_product_drawers_kVaaMN": {
           "type": "bw-product-drawers",
@@ -383,6 +390,7 @@
         "title",
         "review_ALwzxD",
         "price",
+        "razorpay_affordability_widget_affordability_block_PTjd9z",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
@@ -451,6 +459,16 @@
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 40
+      }
+    },
+    "bw_product_lookbook": {
+      "type": "bw-product-lookbook",
+      "settings": {
+        "section_label": "Visual Story",
+        "heading": "LOOKBOOK",
+        "subtitle": "In the Wild",
+        "cta_label": "View Full Lookbook",
+        "cta_url": ""
       }
     },
     "17750222206e38cea0": {
@@ -552,16 +570,6 @@
       ],
       "disabled": true,
       "settings": {}
-    },
-    "bw_product_lookbook": {
-      "type": "bw-product-lookbook",
-      "settings": {
-        "section_label": "Visual Story",
-        "heading": "LOOKBOOK",
-        "subtitle": "In the Wild",
-        "cta_label": "View Full Lookbook",
-        "cta_url": ""
-      }
     },
     "comparison": {
       "type": "comparison-table",

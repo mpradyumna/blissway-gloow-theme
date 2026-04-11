@@ -122,6 +122,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "badge_pills_hd": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product-block-liquid pt-3 pb-3\">\n\n<style>\n  .label-container {\n    display: flex;\n    flex-wrap: wrap;\n    margin-top: 10px;\n    gap: 10px;\n  }\n  .label {\n    background-color: #f1f1f1;\n    color: #333;\n    border-radius: 10px;\n    padding: 5px 15px;\n    font-size: 14px;\n    display: inline-block;\n    white-space: normal;\n    line-height: 1.5;\n  }\n  .label:nth-child(1) { background-color: #FFDDC1; }\n  .label:nth-child(2) { background-color: #8FCE09; }\n  .label:nth-child(3) { background-color: #FFABAB; }\n</style>\n\n<div class=\"label-container\">\n  <div class=\"label\">Top-Rated</div>\n  <div class=\"label\">High-In-Demand</div>\n</div>\n</div>"
+          }
+        },
         "review_mMj4kD": {
           "type": "review",
           "settings": {
@@ -142,7 +148,8 @@
           "settings": {
             "title_size_dt": 34,
             "title_size_mb": 30,
-            "title_line_height": 1.1
+            "title_line_height": 1.1,
+            "show_squiggle": false
           }
         },
         "price": {
@@ -250,12 +257,6 @@
             "text_size": 16,
             "padding_top": 14,
             "padding_bottom": 8
-          }
-        },
-        "badge_pills_hd": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"product-block-liquid pt-3 pb-3\">\n\n<style>\n  .label-container {\n    display: flex;\n    flex-wrap: wrap;\n    margin-top: 10px;\n    gap: 10px;\n  }\n  .label {\n    background-color: #f1f1f1;\n    color: #333;\n    border-radius: 10px;\n    padding: 5px 15px;\n    font-size: 14px;\n    display: inline-block;\n    white-space: normal;\n    line-height: 1.5;\n  }\n  .label:nth-child(1) { background-color: #FFDDC1; }\n  .label:nth-child(2) { background-color: #8FCE09; }\n  .label:nth-child(3) { background-color: #FFABAB; }\n</style>\n\n<div class=\"label-container\">\n  <div class=\"label\">Top-Rated</div>\n  <div class=\"label\">High-In-Demand</div>\n</div>\n</div>"
           }
         },
         "fomo_hd": {
@@ -630,10 +631,10 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
+            "show_dynamic_checkout": true,
             "show_gift_card_recipient": true,
             "skip_cart": false,
-            "button_custom_style": true,
+            "button_custom_style": false,
             "button_font_size": 24,
             "button_height": 60,
             "lm_main_button": "#01d5b2",
@@ -649,7 +650,11 @@
             "payment_content_alignment": "center",
             "custom_icon_1_width": 34,
             "custom_icon_2_width": 34,
-            "custom_icon_3_width": 34
+            "custom_icon_3_width": 34,
+            "custom_icon_4_width": 34,
+            "custom_icon_5_width": 34,
+            "custom_icon_6_width": 34,
+            "custom_icon_7_width": 34
           }
         },
         "order_timeline_9VkjVk": {
@@ -1759,8 +1764,11 @@
         "review_CwAhCn": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 5,
             "name_text": "Johan D.",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2025",
             "review_head": "Nice Product",
             "review_text": "Nice Product. I'm happy with my purchase.",
@@ -1772,8 +1780,11 @@
         "review_REUDt8": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 5,
             "name_text": "Johan D.",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2025",
             "review_head": "Nice Product",
             "review_text": "Nice Product. I'm happy with my purchase.",
@@ -1785,8 +1796,11 @@
         "review_qTkBYr": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 5,
             "name_text": "Johan D.",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2025",
             "review_head": "Nice Product",
             "review_text": "Nice Product. I'm happy with my purchase.",
@@ -1798,8 +1812,11 @@
         "review_gNGLz7": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 5,
             "name_text": "Johan D.",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2025",
             "review_head": "Nice Product",
             "review_text": "Nice Product. I'm happy with my purchase.",
@@ -1826,6 +1843,12 @@
         "rating_range": 4.5,
         "star_size_top": 1,
         "rating_count": "Based on 16 Reviews",
+        "show_customer_images": true,
+        "show_country_flags": true,
+        "customer_image_size": 40,
+        "customer_image_radius": 30,
+        "customer_initials_bg": "#ffd700",
+        "customer_initials_color": "#000000",
         "review_column_mobile": 1,
         "review_column_tab": 1,
         "review_column_desk": 1,
@@ -1854,10 +1877,45 @@
         "review_pd_m": 20,
         "show_footer": true,
         "show_product": true,
+        "product_image_radius": 4,
         "like_text": "Was this helpful?",
+        "show_add_review_button": true,
+        "review_cta_heading": "Review this product",
+        "review_cta_subtext": "Share your thoughts with other customers",
+        "add_review_button_text": "Add Your Review",
+        "review_cta_heading_color": "#333333",
+        "review_cta_subtext_color": "#666666",
+        "add_review_button_bg": "#000000",
+        "add_review_button_text_color": "#ffffff",
+        "modal_title": "Write Your Review",
+        "name_label": "Your Name",
+        "rating_label": "Rating",
+        "title_label": "Review Title",
+        "review_label": "Your Review",
+        "email_label": "Your Email",
+        "date_format": "detailed",
+        "cancel_button_text": "Cancel",
+        "submit_button_text": "Submit Review",
+        "success_message_title": "Thank you for your review!",
+        "success_message_body": "Your review has been submitted successfully and will be forwarded to our team.",
+        "success_message_duration": "3",
+        "success_message_bg": "#4caf50",
+        "success_message_text": "#ffffff",
+        "success_message_position": "top-right",
+        "success_message_font_size": 16,
+        "success_message_show_icon": true,
+        "email_subject": "New Review Submitted",
+        "email_method": "real_form",
         "rw_margin": 0,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "enable_review_popup": true,
+        "popup_helpful_text": "Was this helpful?",
+        "show_popup_helpful_buttons": true,
+        "show_popup_product_info": true,
+        "popup_image_quality": "800",
+        "popup_customer_image_size": 60,
+        "enable_image_enlarge": true
       }
     },
     "announcement_bar_scrolling_iYN9yh": {
@@ -2370,8 +2428,11 @@
         "review_ramNVA": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 5,
             "name_text": "Shaambhavi Raval",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2026",
             "review_head": "Soft Bristles, Strong Results",
             "review_text": "Great tool for daily self-care. The brush heads are surprisingly gentle and I love the two-speed setting. Charging is quick too!",
@@ -2383,8 +2444,11 @@
         "review_pcUEPe": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 4,
             "name_text": "Ruvani Talpade",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2026",
             "review_head": "Finally found the one",
             "review_text": "I've tried so many products, but this one actually delivers. No irritation, no breakouts—just healthy, glowing skin.",
@@ -2396,8 +2460,11 @@
         "review_C8YwWK": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 4,
             "name_text": "Yuvati Nimbalkar",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "Feb 2026",
             "review_head": "Wore My Saree with Confidence!",
             "review_text": "My back looks so clean and glowing now. No more feeling conscious wearing deep-back blouses at weddings!",
@@ -2409,8 +2476,11 @@
         "review_yGBJ8d": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 4.5,
             "name_text": "Indulekha Vichare",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "April 2026",
             "review_head": "Ditch Your Loofah, Seriously!",
             "review_text": "I feel so fresh after every use. Loofahs never cleaned this deep. My skin has never felt this smooth.",
@@ -2422,8 +2492,11 @@
         "review_r9cXTw": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 3.5,
             "name_text": "Prakriti Yagnik",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2026",
             "review_head": "Salon Results at Home",
             "review_text": "Earlier I used to go for body scrubs. This brush saves money and time. Totally worth the investment.",
@@ -2435,8 +2508,11 @@
         "review_igrMPx": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 4,
             "name_text": "Tanirika Velicharla",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2025",
             "review_head": "Finally, a Back-Care Essential!",
             "review_text": "Back acne was always a problem for me during summers. This brush worked wonders! My skin feels so clean and calm now.",
@@ -2448,8 +2524,11 @@
         "review_zJfx6A": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 4,
             "name_text": "Amara D",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "May 2026",
             "review_head": "Game-changer for sensitive skin",
             "review_text": "My skin is super sensitive, but this product is incredibly gentle. No redness, no irritation—just calm, balanced skin",
@@ -2461,8 +2540,11 @@
         "review_PyC4kh": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 4,
             "name_text": "Kshirja Naorem",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2025",
             "review_head": "Great for Sensitive Skin",
             "review_text": "My skin usually reacts badly, but this brush is super gentle. Silicone head is the best one for me.",
@@ -2474,8 +2556,11 @@
         "review_EbAMPx": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 5,
             "name_text": "Shailee Rajpurohit",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2026",
             "review_head": "Perfect for Traditional Outfits",
             "review_text": "This helped me prep my back for a backless lehenga function. Really brings out the natural glow with exfoliation.",
@@ -2487,8 +2572,11 @@
         "review_9QC3tA": {
           "type": "review",
           "settings": {
+            "selected_product": "",
             "star_rating": 4.5,
             "name_text": "Nidhima Pamidighantam",
+            "country_code": "US",
+            "show_country_flag": true,
             "date_text": "June 2026",
             "review_head": "Best Gift I’ve Received!",
             "review_text": "I gifted this to myself and now I’m gifting it to my mom too. Back and shoulders feel fresh and soft daily.",
@@ -2521,6 +2609,12 @@
         "rating_range": 4.5,
         "star_size_top": 1,
         "rating_count": "Join <strong>thousands</strong> of glowing customers who <strong>have transformed their skin</strong> with our products.",
+        "show_customer_images": true,
+        "show_country_flags": true,
+        "customer_image_size": 40,
+        "customer_image_radius": 30,
+        "customer_initials_bg": "#ffd700",
+        "customer_initials_color": "#000000",
         "review_column_mobile": 1,
         "review_column_tab": 2,
         "review_column_desk": 2,
@@ -2549,10 +2643,45 @@
         "review_pd_m": 20,
         "show_footer": true,
         "show_product": true,
+        "product_image_radius": 4,
         "like_text": "Was this helpful?",
+        "show_add_review_button": true,
+        "review_cta_heading": "Review this product",
+        "review_cta_subtext": "Share your thoughts with other customers",
+        "add_review_button_text": "Add Your Review",
+        "review_cta_heading_color": "#333333",
+        "review_cta_subtext_color": "#666666",
+        "add_review_button_bg": "#000000",
+        "add_review_button_text_color": "#ffffff",
+        "modal_title": "Write Your Review",
+        "name_label": "Your Name",
+        "rating_label": "Rating",
+        "title_label": "Review Title",
+        "review_label": "Your Review",
+        "email_label": "Your Email",
+        "date_format": "detailed",
+        "cancel_button_text": "Cancel",
+        "submit_button_text": "Submit Review",
+        "success_message_title": "Thank you for your review!",
+        "success_message_body": "Your review has been submitted successfully and will be forwarded to our team.",
+        "success_message_duration": "3",
+        "success_message_bg": "#4caf50",
+        "success_message_text": "#ffffff",
+        "success_message_position": "top-right",
+        "success_message_font_size": 16,
+        "success_message_show_icon": true,
+        "email_subject": "New Review Submitted",
+        "email_method": "real_form",
         "rw_margin": 0,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "enable_review_popup": true,
+        "popup_helpful_text": "Was this helpful?",
+        "show_popup_helpful_buttons": true,
+        "show_popup_product_info": true,
+        "popup_image_quality": "800",
+        "popup_customer_image_size": 60,
+        "enable_image_enlarge": true
       }
     },
     "related-products": {
