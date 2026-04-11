@@ -1,0 +1,484 @@
+{%- comment -%}
+  BW Specs Table — Product Specifications Section
+  Design: Split panel — dark hero stats + glass spec table
+  Supports up to 12 rows. Empty rows are suppressed.
+{%- endcomment -%}
+
+<style>
+  /* ── Tokens ── */
+  .bw-specs {
+    --sp-bg:         #F5F5F5;
+    --sp-surface:    #FFFFFF;
+    --sp-dark:       #07090E;
+    --sp-dark-card:  #0F172A;
+    --sp-text:       #1D1D1D;
+    --sp-muted:      rgba(29,29,29,.48);
+    --sp-blue:       #2563EB;
+    --sp-blue-lt:    rgba(37,99,235,.08);
+    --sp-blue-mid:   rgba(37,99,235,.18);
+    --sp-border:     rgba(29,29,29,.07);
+    --sp-radius:     20px;
+    --sp-shadow:     0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -2px rgba(0,0,0,.04), 0 0 0 1px rgba(29,29,29,.06);
+    --sp-shadow-blue:0 0 0 1px rgba(37,99,235,.12), 0 8px 32px rgba(37,99,235,.08);
+    font-family: var(--bw-font-body, var(--font-body-family));
+    background: var(--sp-bg);
+    padding: 80px 20px;
+  }
+
+  /* ── Layout ── */
+  .bw-specs__container {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+  .bw-specs__header {
+    margin-bottom: 44px;
+  }
+  .bw-specs__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--sp-blue);
+    margin-bottom: 12px;
+  }
+  .bw-specs__eyebrow::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--sp-blue);
+    border-radius: 2px;
+  }
+  .bw-specs__heading {
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 700;
+    color: var(--sp-text);
+    margin: 0 0 10px;
+    line-height: 1.2;
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    letter-spacing: -.02em;
+  }
+  .bw-specs__sub {
+    font-size: 15px;
+    color: var(--sp-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ── Split grid ── */
+  .bw-specs__grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  @media (max-width: 767px) {
+    .bw-specs__grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── Hero stats panel (dark) ── */
+  .bw-specs__hero {
+    background: var(--sp-dark-card);
+    border-radius: var(--sp-radius);
+    padding: 32px 28px;
+    position: sticky;
+    top: 100px;
+    overflow: hidden;
+  }
+  .bw-specs__hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(37,99,235,.35) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .bw-specs__hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(37,99,235,.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .bw-specs__hero-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .bw-specs__hero-label::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sp-blue);
+    box-shadow: 0 0 0 3px rgba(37,99,235,.25);
+    animation: bw-spec-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes bw-spec-pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(37,99,235,.25); }
+    50%       { box-shadow: 0 0 0 6px rgba(37,99,235,.08); }
+  }
+  .bw-specs__stat {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    position: relative;
+    z-index: 1;
+  }
+  .bw-specs__stat:last-child { border-bottom: none; }
+  .bw-specs__stat-value {
+    font-size: 30px;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1;
+    letter-spacing: -.03em;
+    font-family: var(--bw-font-display, var(--font-heading-family));
+    margin-bottom: 5px;
+    background: linear-gradient(135deg, #fff 60%, rgba(37,99,235,.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bw-specs__stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,.45);
+    font-weight: 500;
+    letter-spacing: .01em;
+  }
+
+  /* ── Spec table card ── */
+  .bw-specs__card {
+    background: var(--sp-surface);
+    border-radius: var(--sp-radius);
+    box-shadow: var(--sp-shadow);
+    overflow: hidden;
+  }
+  .bw-specs__card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: var(--sp-blue-lt);
+    border-bottom: 1px solid var(--sp-border);
+  }
+  .bw-specs__card-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--sp-blue);
+  }
+  .bw-specs__card-count {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--sp-muted);
+    background: rgba(29,29,29,.06);
+    border-radius: 20px;
+    padding: 3px 10px;
+    letter-spacing: .04em;
+  }
+
+  /* ── Rows ── */
+  .bw-specs__row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--sp-border);
+    position: relative;
+    transition: background 200ms ease;
+    opacity: 0;
+    transform: translateY(6px);
+    animation: bw-spec-row-in 400ms ease forwards;
+  }
+  .bw-specs__row:last-child { border-bottom: none; }
+  .bw-specs__row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--sp-blue);
+    border-radius: 0 2px 2px 0;
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 200ms ease;
+  }
+  .bw-specs__row:hover {
+    background: var(--sp-blue-lt);
+  }
+  .bw-specs__row:hover::before {
+    transform: scaleY(1);
+  }
+  @keyframes bw-spec-row-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Stagger delay per row */
+  .bw-specs__row:nth-child(1)  { animation-delay:  60ms; }
+  .bw-specs__row:nth-child(2)  { animation-delay: 100ms; }
+  .bw-specs__row:nth-child(3)  { animation-delay: 140ms; }
+  .bw-specs__row:nth-child(4)  { animation-delay: 180ms; }
+  .bw-specs__row:nth-child(5)  { animation-delay: 220ms; }
+  .bw-specs__row:nth-child(6)  { animation-delay: 260ms; }
+  .bw-specs__row:nth-child(7)  { animation-delay: 300ms; }
+  .bw-specs__row:nth-child(8)  { animation-delay: 340ms; }
+  .bw-specs__row:nth-child(9)  { animation-delay: 380ms; }
+  .bw-specs__row:nth-child(10) { animation-delay: 420ms; }
+  .bw-specs__row:nth-child(11) { animation-delay: 460ms; }
+  .bw-specs__row:nth-child(12) { animation-delay: 500ms; }
+
+  .bw-specs__row-label {
+    flex: 0 0 220px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sp-muted);
+    letter-spacing: .01em;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .bw-specs__row-label::before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--sp-blue);
+    flex-shrink: 0;
+    opacity: .5;
+    transition: opacity 200ms;
+  }
+  .bw-specs__row:hover .bw-specs__row-label::before { opacity: 1; }
+  .bw-specs__row-value {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--sp-text);
+    line-height: 1.4;
+  }
+
+  /* ── Card footer ── */
+  .bw-specs__card-foot {
+    padding: 12px 24px;
+    border-top: 1px solid var(--sp-border);
+    background: rgba(29,29,29,.02);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .bw-specs__card-foot svg {
+    width: 13px;
+    height: 13px;
+    color: var(--sp-muted);
+    flex-shrink: 0;
+  }
+  .bw-specs__card-foot-text {
+    font-size: 11.5px;
+    color: var(--sp-muted);
+    line-height: 1.4;
+  }
+
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .bw-specs__row { animation: none; opacity: 1; transform: none; }
+    .bw-specs__row::before { transition: none; }
+    .bw-specs__hero-label::before { animation: none; }
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 767px) {
+    .bw-specs { padding: 56px 16px; }
+    .bw-specs__hero { position: static; margin-bottom: 0; padding: 24px 20px; }
+    .bw-specs__hero::before, .bw-specs__hero::after { display: none; }
+    .bw-specs__stat { padding: 14px 0; }
+    .bw-specs__stat-value { font-size: 24px; }
+    .bw-specs__row { padding: 14px 16px; gap: 10px; }
+    .bw-specs__row-label { flex: 0 0 160px; font-size: 12px; }
+    .bw-specs__row-value { font-size: 13px; }
+    .bw-specs__card-head { padding: 14px 16px; }
+    .bw-specs__card-foot { padding: 10px 16px; }
+  }
+  @media (max-width: 479px) {
+    .bw-specs__row { flex-direction: column; gap: 3px; }
+    .bw-specs__row-label { flex: none; }
+  }
+</style>
+
+{%- liquid
+  assign row_count = 0
+  for i in (1..12)
+    assign label_key = 'row_' | append: i | append: '_label'
+    assign value_key = 'row_' | append: i | append: '_value'
+    if section.settings[label_key] != blank and section.settings[value_key] != blank
+      assign row_count = row_count | plus: 1
+    endif
+  endfor
+-%}
+
+<section class="bw-specs color-{{ section.settings.color_scheme }} gradient" aria-label="{{ section.settings.heading }}">
+  <div class="bw-specs__container">
+
+    <div class="bw-specs__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="bw-specs__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="bw-specs__heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subtext != blank -%}
+        <p class="bw-specs__sub">{{ section.settings.subtext }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="bw-specs__grid">
+
+      <!-- Dark hero stats panel -->
+      <div class="bw-specs__hero" aria-hidden="true">
+        <p class="bw-specs__hero-label">Key Specs</p>
+
+        <div class="bw-specs__stat">
+          <div class="bw-specs__stat-value">15,500</div>
+          <div class="bw-specs__stat-label">RPM Motor Speed</div>
+        </div>
+        <div class="bw-specs__stat">
+          <div class="bw-specs__stat-value">10,000</div>
+          <div class="bw-specs__stat-label">mAh Battery Capacity</div>
+        </div>
+        <div class="bw-specs__stat">
+          <div class="bw-specs__stat-value">360g</div>
+          <div class="bw-specs__stat-label">Ultra-Lightweight</div>
+        </div>
+        <div class="bw-specs__stat">
+          <div class="bw-specs__stat-value">&lt;35dB</div>
+          <div class="bw-specs__stat-label">Whisper Quiet</div>
+        </div>
+      </div>
+
+      <!-- Spec table card -->
+      <div class="bw-specs__card">
+        <div class="bw-specs__card-head">
+          <span class="bw-specs__card-title">Full Specifications</span>
+          <span class="bw-specs__card-count">{{ row_count }} specs</span>
+        </div>
+
+        <div role="table" aria-label="{{ section.settings.heading }}">
+          {%- for i in (1..12) -%}
+            {%- liquid
+              assign label_key = 'row_' | append: i | append: '_label'
+              assign value_key = 'row_' | append: i | append: '_value'
+              assign row_label = section.settings[label_key]
+              assign row_value = section.settings[value_key]
+            -%}
+            {%- if row_label != blank and row_value != blank -%}
+              <div class="bw-specs__row" role="row">
+                <span class="bw-specs__row-label" role="rowheader">{{ row_label }}</span>
+                <span class="bw-specs__row-value" role="cell">{{ row_value }}</span>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        <div class="bw-specs__card-foot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <span class="bw-specs__card-foot-text">Specifications certified by manufacturer. Actual performance may vary with usage.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BW — Specs Table",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        { "value": "background-1", "label": "Background 1" },
+        { "value": "background-2", "label": "Background 2" },
+        { "value": "inverse",      "label": "Inverse" }
+      ],
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "Technical Details"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Product Specifications"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Detailed product information"
+    },
+    { "type": "header", "content": "Row 1" },
+    { "type": "text", "id": "row_1_label",  "label": "Label", "default": "Power Source" },
+    { "type": "text", "id": "row_1_value",  "label": "Value", "default": "Battery Powered" },
+    { "type": "header", "content": "Row 2" },
+    { "type": "text", "id": "row_2_label",  "label": "Label", "default": "Product Dimensions" },
+    { "type": "text", "id": "row_2_value",  "label": "Value", "default": "1.8\"D x 4.4\"W x 3.4\"H" },
+    { "type": "header", "content": "Row 3" },
+    { "type": "text", "id": "row_3_label",  "label": "Label", "default": "Special Feature" },
+    { "type": "text", "id": "row_3_value",  "label": "Value", "default": "LED Light, Neck Fan, Power Bank, Table Fan" },
+    { "type": "header", "content": "Row 4" },
+    { "type": "text", "id": "row_4_label",  "label": "Label", "default": "Noise Level" },
+    { "type": "text", "id": "row_4_value",  "label": "Value", "default": "50 Decibels" },
+    { "type": "header", "content": "Row 5" },
+    { "type": "text", "id": "row_5_label",  "label": "Label", "default": "Speed" },
+    { "type": "text", "id": "row_5_value",  "label": "Value", "default": "15500 RPM" },
+    { "type": "header", "content": "Row 6" },
+    { "type": "text", "id": "row_6_label",  "label": "Label", "default": "Item Weight" },
+    { "type": "text", "id": "row_6_value",  "label": "Value", "default": "360 Grams" },
+    { "type": "header", "content": "Row 7" },
+    { "type": "text", "id": "row_7_label",  "label": "Label", "default": "Control Method" },
+    { "type": "text", "id": "row_7_value",  "label": "Value", "default": "Touch" },
+    { "type": "header", "content": "Row 8" },
+    { "type": "text", "id": "row_8_label",  "label": "Label", "default": "Number of Power Levels" },
+    { "type": "text", "id": "row_8_value",  "label": "Value", "default": "3" },
+    { "type": "header", "content": "Row 9" },
+    { "type": "text", "id": "row_9_label",  "label": "Label", "default": "Indoor/Outdoor Usage" },
+    { "type": "text", "id": "row_9_value",  "label": "Value", "default": "Indoor, Outdoor" },
+    { "type": "header", "content": "Row 10" },
+    { "type": "text", "id": "row_10_label", "label": "Label", "default": "Wattage" },
+    { "type": "text", "id": "row_10_value", "label": "Value", "default": "5 watts" },
+    { "type": "header", "content": "Row 11" },
+    { "type": "text", "id": "row_11_label", "label": "Label" },
+    { "type": "text", "id": "row_11_value", "label": "Value" },
+    { "type": "header", "content": "Row 12" },
+    { "type": "text", "id": "row_12_label", "label": "Label" },
+    { "type": "text", "id": "row_12_value", "label": "Value" }
+  ],
+  "presets": [
+    {
+      "name": "BW — Specs Table"
+    }
+  ]
+}
+{% endschema %}

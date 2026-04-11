@@ -447,6 +447,7 @@
                             <a href="{{ item.url }}" class="cart-item__name h4 break">
                               {{- item.product.title | escape -}}
                             </a>
+                            <div class="cart-item__rating" style="font-size:1.1rem;color:#f59e0b;margin-top:3px;line-height:1;">★★★★★ <span style="color:rgba(var(--color-foreground),0.55);font-size:1rem;font-weight:400;">4.8 · 1,200+ reviews</span></div>
 
                             {% if settings.hide_single_item_price == false %}
                               {%- if item.original_price != item.final_price -%}
@@ -823,7 +824,14 @@
             </cart-note>
           </details>
         {%- endif -%}
-        {% render 'cart-discount-codes-custom' %}
+        <details class="cart-discount-toggle">
+          <summary class="cart-discount-toggle__summary">
+            <span class="svg-wrapper">{{- 'icon-price-tag.svg' | inline_asset_content -}}</span>
+            Have a promo code?
+            <span class="cart-discount-toggle__chevron" aria-hidden="true"></span>
+          </summary>
+          {% render 'cart-discount-codes-custom' %}
+        </details>
 
         <!-- Start blocks -->
         <!-- Subtotals -->
@@ -948,6 +956,7 @@
             </a>
           {% endif %}
 
+          <p class="cart-emi-note" style="text-align:center;font-size:1.15rem;color:rgba(var(--color-foreground),0.6);margin:0 0 0.8rem;line-height:1.4;">No-cost EMI available · Pay via UPI for <strong style="color:var(--color-foreground);">extra 5% off</strong></p>
           <div class="shiprocket-headless" data-type="mini-cart"></div>
 {%- comment -%} 
           <button

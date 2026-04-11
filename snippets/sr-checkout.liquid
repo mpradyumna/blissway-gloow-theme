@@ -6,31 +6,8 @@ checkoutBuyer = "https://fastrr-boost-ui.pickrr.com/";
 <link rel="stylesheet" href="https://fastrr-boost-ui.pickrr.com/assets/styles/shopify.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fastrr-boost-ui.pickrr.com/assets/styles/shopify.css"></noscript>
 
-<script>
-(function () {
-  var _fLoaded = false;
-  function _loadFastrr() {
-    if (_fLoaded) return;
-    _fLoaded = true;
-    ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function (ev) {
-      window.removeEventListener(ev, _loadFastrr, { passive: true });
-    });
-    var s1 = document.createElement('script');
-    s1.src = 'https://fastrr-boost-ui.pickrr.com/assets/js/channels/shopify.js';
-    s1.defer = true;
-    document.head.appendChild(s1);
-    var s2 = document.createElement('script');
-    s2.src = 'https://fastrr-boost-ui.pickrr.com/assets/js/channels/shiprocketMarketing.js';
-    s2.defer = true;
-    document.head.appendChild(s2);
-  }
-  ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function (ev) {
-    window.addEventListener(ev, _loadFastrr, { passive: true, once: true });
-  });
-  // Fallback: load after 5 s regardless (covers bots, prerender, slow-interaction users)
-  setTimeout(_loadFastrr, 5000);
-})();
-</script>
+<script src="https://fastrr-boost-ui.pickrr.com/assets/js/channels/shopify.js" defer></script>
+<script src="https://fastrr-boost-ui.pickrr.com/assets/js/channels/shiprocketMarketing.js" defer></script>
 <input type="hidden" value="rz" id="template"/>
 <input type="hidden" value="percent" id="discountType"/>
 <input type="hidden" value="5" id="discValue"/>

@@ -3,8 +3,8 @@
   https://www.lumintheme.com
 */
 
-
-
+// Module-level cache: avoids re-fetching product.json on every bundle variant click
+const _luminProductCache = new Map();
 
 class LuminProductQtyBreak extends HTMLElement {
   constructor() {
@@ -47,9 +47,16 @@ class LuminProductQtyBreak extends HTMLElement {
       (select) => {
         select.addEventListener("change", async () => {
           try {
-            const response = await fetch(`${this.dataset.productUrl}.js`);
-            if (!response.ok) throw new Error('Network response was not ok');
-            const productData = await response.json();
+            const productUrl = `${this.dataset.productUrl}.js`;
+            let productData;
+            if (_luminProductCache.has(productUrl)) {
+              productData = _luminProductCache.get(productUrl);
+            } else {
+              const response = await fetch(productUrl);
+              if (!response.ok) throw new Error('Network response was not ok');
+              productData = await response.json();
+              _luminProductCache.set(productUrl, productData);
+            }
 
             let totalPrice = 0;
             const discount = Number(this.dataset.discount);

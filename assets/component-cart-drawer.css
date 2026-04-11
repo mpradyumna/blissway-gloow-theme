@@ -408,3 +408,104 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
     margin-left: 0;
   }
 }
+
+/* ─── Promo Code Toggle ─────────────────────────────────────── */
+
+/* Strip the cart-note card styling — !important beats any inline or
+   out-of-order rules, and .cart-discount-toggle specificity beats
+   the .drawer__footer > details rule in all cases */
+.drawer__footer > details.cart-discount-toggle {
+  border: none !important;
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: inherit;
+}
+.drawer__footer > details.cart-discount-toggle[open] {
+  padding-bottom: 0 !important;
+}
+
+/* Clean trigger row — full selector chain beats .drawer__footer summary (0,1,1) */
+.drawer__footer > details.cart-discount-toggle > summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.6);
+  transition: color 150ms ease;
+  position: static; /* prevent icon-caret absolute positioning from base.css */
+}
+.drawer__footer > details.cart-discount-toggle > summary::-webkit-details-marker { display: none; }
+.drawer__footer > details.cart-discount-toggle > summary::marker { content: ''; }
+.drawer__footer > details.cart-discount-toggle > summary:hover {
+  color: rgba(var(--color-foreground), 0.9);
+}
+
+/* SVG tag icon — brand blue */
+.drawer__footer > details.cart-discount-toggle > summary .svg-wrapper {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+.drawer__footer > details.cart-discount-toggle > summary .svg-wrapper svg {
+  width: 100%;
+  height: 100%;
+  fill: #2563EB;
+}
+
+/* Pure-CSS chevron — avoids icon-caret.svg's global position:absolute rule */
+.cart-discount-toggle__chevron {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-0.15rem);
+  transition: transform 200ms ease;
+}
+.cart-discount-toggle[open] .cart-discount-toggle__chevron {
+  transform: rotate(-135deg) translateY(0.15rem);
+}
+
+/* Flush the discount form — no extra top gap */
+.cart-discount-toggle #discount-code-container {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Override button to brand blue */
+.cart-discount-toggle #apply-discount-btn {
+  background-color: #2563EB !important;
+  color: #fff !important;
+}
+.cart-discount-toggle #apply-discount-btn:hover {
+  background-color: #1d4ed8 !important;
+  filter: none;
+}
+
+/* ─────────────────────────────────────────────────────────────── */
+
+/* Optimistic UI: subtle pulse while cart/add is in-flight */
+cart-drawer.cart-updating .drawer__inner {
+  position: relative;
+}
+cart-drawer.cart-updating .drawer__inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+  animation: cart-updating-pulse 0.9s ease-in-out infinite alternate;
+  z-index: 10;
+}
+@keyframes cart-updating-pulse {
+  from { opacity: 0.3; }
+  to   { opacity: 0.7; }
+}

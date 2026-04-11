@@ -1652,6 +1652,59 @@
     <script type="application/ld+json">
       {{ product | structured_data }}
     </script>
+
+    {%- if product.metafields.reviews.rating != blank -%}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "url": "{{ shop.url }}{{ product.url }}",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ product.metafields.reviews.rating.rating }}",
+        "reviewCount": "{{ product.metafields.reviews.rating_count }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+    {%- endif -%}
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ shop.url }}"
+        }
+        {%- if product.collections.first -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ product.collections.first.title | escape }}",
+          "item": "{{ shop.url }}/collections/{{ product.collections.first.handle }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ product.title | escape }}",
+          "item": "{{ shop.url }}{{ product.url }}"
+        }
+        {%- else -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ product.title | escape }}",
+          "item": "{{ shop.url }}{{ product.url }}"
+        }
+        {%- endif -%}
+      ]
+    }
+    </script>
   </div>
 </product-info>
 

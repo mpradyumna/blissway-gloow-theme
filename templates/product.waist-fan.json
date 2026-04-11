@@ -15,7 +15,7 @@
         "badge_pills": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"product-block-liquid pt-3 pb-3\">\n\n<style>\n  .bw-badge-row {\n    display: flex;\n    flex-wrap: wrap;\n    margin-top: 10px;\n    gap: 8px;\n  }\n  .bw-badge {\n    border-radius: 6px;\n    padding: 4px 12px;\n    font-size: 12px;\n    font-weight: 700;\n    letter-spacing: .06em;\n    text-transform: uppercase;\n    display: inline-block;\n    line-height: 1.5;\n  }\n  .bw-badge--dark  { background: #1D1D1D; color: #fff; }\n  .bw-badge--blue  { background: rgba(37,99,235,.1); color: #2563EB; border: 1px solid rgba(37,99,235,.25); }\n  img[src*=\"tick-green-icon\"] {\n    filter: invert(27%) sepia(91%) saturate(1861%) hue-rotate(213deg) brightness(99%) contrast(96%);\n  }\n</style>\n\n<div class=\"bw-badge-row\">\n  <div class=\"bw-badge bw-badge--dark\">Bestseller</div>\n  <div class=\"bw-badge bw-badge--blue\">High-In-Demand</div>\n</div>\n</div>"
+            "custom_liquid": "<div class=\"product-block-liquid pt-3 pb-3\">\n\n<style>\n  .bw-badge-row {\n    display: flex;\n    flex-wrap: wrap;\n    margin-top: 10px;\n    gap: 8px;\n  }\n  .bw-badge {\n    border-radius: 6px;\n    padding: 4px 12px;\n    font-size: 12px;\n    font-weight: 700;\n    letter-spacing: .06em;\n    text-transform: uppercase;\n    display: inline-block;\n    line-height: 1.5;\n  }\n  .bw-badge--dark  { background: #1D1D1D; color: #fff; }\n  .bw-badge--blue  { background: rgba(37,99,235,.1); color: #2563EB; border: 1px solid rgba(37,99,235,.25); }\n  [class*=\"qa-feature\"] svg {\n    color: #2563EB;\n  }\n</style>\n\n<div class=\"bw-badge-row\">\n  <div class=\"bw-badge bw-badge--dark\">Bestseller</div>\n  <div class=\"bw-badge bw-badge--blue\">High-In-Demand</div>\n</div>\n</div>"
           }
         },
         "review_stars": {
@@ -100,8 +100,8 @@
         "feature_wf_1": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/tick-green-icon.png",
-            "icon_size": 24,
+            "icon": "",
+            "icon_size": 20,
             "heading": "Instant Cooling — Feel it in seconds",
             "heading_size": 16,
             "text": "",
@@ -113,8 +113,8 @@
         "feature_wf_2": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/tick-green-icon.png",
-            "icon_size": 24,
+            "icon": "",
+            "icon_size": 20,
             "heading": "10,000mAh — All-day battery, no recharge anxiety",
             "heading_size": 16,
             "text": "",
@@ -126,8 +126,8 @@
         "feature_wf_3": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/tick-green-icon.png",
-            "icon_size": 24,
+            "icon": "",
+            "icon_size": 20,
             "heading": "Hands-Free — Clip on and move freely",
             "heading_size": 16,
             "text": "",
@@ -139,8 +139,8 @@
         "feature_wf_4": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/tick-green-icon.png",
-            "icon_size": 24,
+            "icon": "",
+            "icon_size": 20,
             "heading": "3 Wind Speeds — Personalised airflow, your way",
             "heading_size": 16,
             "text": "",
@@ -152,8 +152,8 @@
         "feature_wf_5": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/tick-green-icon.png",
-            "icon_size": 24,
+            "icon": "",
+            "icon_size": 20,
             "heading": "Whisper-Quiet — Under 35dB, office & gym safe",
             "heading_size": 16,
             "text": "",
@@ -338,6 +338,37 @@
             "compare_font_color": "#e71717"
           }
         },
+        "icon_with_text_QyAjcd": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "return",
+            "image_1": "shopify://shop_images/returns.png",
+            "heading_1": "7-Day Returns",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/secure-checkout.png",
+            "heading_2": "Secure Checkout",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/warranty.png",
+            "heading_3": "1 Year Warranty"
+          }
+        },
+        "order_timeline_9EtnKB": {
+          "type": "order_timeline",
+          "settings": {
+            "timeline_color_scheme": "background-1",
+            "order_within_label": "Order within",
+            "ships_within_label": "Ships within",
+            "reset_hour": 16,
+            "shipping_lead_days": 1,
+            "date_locale": "en-US",
+            "label_size": 14,
+            "time_size": 16,
+            "border_width": 2,
+            "border_opacity": 0.1,
+            "border_radius": 16
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -361,26 +392,11 @@
             "badge_3_text": "1 Year Warranty"
           }
         },
-        "icon_with_text_QyAjcd": {
-          "type": "icon-with-text",
-          "settings": {
-            "layout": "horizontal",
-            "icon_1": "return",
-            "image_1": "shopify://shop_images/returns.png",
-            "heading_1": "7-Day Returns",
-            "icon_2": "return",
-            "image_2": "shopify://shop_images/secure-checkout.png",
-            "heading_2": "Secure Checkout",
-            "icon_3": "truck",
-            "image_3": "shopify://shop_images/warranty.png",
-            "heading_3": "1 Year Warranty"
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
             "enable_read_more": true,
-            "word_limit": 20
+            "word_limit": 80
           }
         }
       },
@@ -398,9 +414,10 @@
         "fomo_wf",
         "variant_picker",
         "quantity_selector",
+        "icon_with_text_QyAjcd",
+        "order_timeline_9EtnKB",
         "buy_buttons",
         "trust_badges",
-        "icon_with_text_QyAjcd",
         "description"
       ],
       "settings": {
@@ -525,6 +542,40 @@
         "cta_sub": "India's summers aren't getting cooler. But you can be. Free shipping. COD available."
       }
     },
+    "bw_specs_table": {
+      "type": "bw-specs-table",
+      "name": "BW — Specs Table",
+      "settings": {
+        "color_scheme": "background-1",
+        "eyebrow": "Technical Details",
+        "heading": "Product Specifications",
+        "subtext": "Detailed product information",
+        "row_1_label": "Power Source",
+        "row_1_value": "Battery Powered",
+        "row_2_label": "Product Dimensions",
+        "row_2_value": "1.8\"D x 4.4\"W x 3.4\"H",
+        "row_3_label": "Special Feature",
+        "row_3_value": "LED Light, Neck Fan, Power Bank, Table Fan",
+        "row_4_label": "Noise Level",
+        "row_4_value": "50 Decibels",
+        "row_5_label": "Speed",
+        "row_5_value": "15500 RPM",
+        "row_6_label": "Item Weight",
+        "row_6_value": "360 Grams",
+        "row_7_label": "Control Method",
+        "row_7_value": "Touch",
+        "row_8_label": "Number of Power Levels",
+        "row_8_value": "3",
+        "row_9_label": "Indoor/Outdoor Usage",
+        "row_9_value": "Indoor, Outdoor",
+        "row_10_label": "Wattage",
+        "row_10_value": "5 watts",
+        "row_11_label": "",
+        "row_11_value": "",
+        "row_12_label": "",
+        "row_12_value": ""
+      }
+    },
     "product_metafield_images_4g3gDw": {
       "type": "product-metafield-images",
       "name": "Product Metafield Images",
@@ -609,6 +660,7 @@
     "main",
     "ss_image_with_text_11_YWemqm",
     "waist_fan_pdp",
+    "bw_specs_table",
     "product_metafield_images_4g3gDw",
     "bw_prepaid_offer_gdXGT7",
     "bw_product_lookbook_VLVJtR",

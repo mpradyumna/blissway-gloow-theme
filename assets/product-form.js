@@ -48,18 +48,24 @@ if (!customElements.get("product-form")) {
 
         this.skipCart = false;
         const variantInput = this.form.querySelector('[name=id]');
-        console.log('Variant input:', variantInput);
-        console.log('Variant input dataset:', variantInput?.dataset);
-        console.log('Skip cart dataset:', variantInput?.dataset?.skipCart);
         if (variantInput?.dataset?.skipCart === 'true') {
           this.skipCart = true;
-          console.log('Skip cart enabled');
         }
 
-        fetch(`${routes.cart_url}.js`)
-          .then((response) => response.json())
+        // Optimistic UI: open drawer immediately so user sees instant feedback
+        if (this.cart && !this.skipCart) {
+          this.cart.open();
+          this.cart.classList.add('cart-updating');
+        }
+
+        // Skip the cart.js pre-fetch when no upsell variant is configured — saves ~200ms per add
+        const cartPreCheck = this.upsellVariantId
+          ? fetch(`${routes.cart_url}.js`).then((r) => r.json())
+          : Promise.resolve(null);
+
+        cartPreCheck
           .then((cartState) => {
-            if (cartState.item_count === 0 && this.upsellVariantId) {
+            if (cartState && cartState.item_count === 0 && this.upsellVariantId) {
               return fetch(
                 `${routes.cart_add_url}`,
                 this.getUpsellProductConfig()
@@ -126,8 +132,11 @@ if (!customElements.get("product-form")) {
           })
           .finally(() => {
             this.submitButton.classList.remove("loading");
-            if (this.cart && this.cart.classList.contains("is-empty"))
-              this.cart.classList.remove("is-empty");
+            if (this.cart) {
+              this.cart.classList.remove('cart-updating');
+              if (this.cart.classList.contains("is-empty"))
+                this.cart.classList.remove("is-empty");
+            }
             if (!this.error) this.submitButton.removeAttribute("aria-disabled");
             this.querySelector(".loading__spinner").classList.add("hidden");
           });

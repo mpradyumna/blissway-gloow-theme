@@ -52,27 +52,38 @@
     function listenCartDrawer() {
       const element = document.querySelector('cart-drawer')
       if (!element) return
-  
-      let timer 
-       
-      const observer = new MutationObserver((mutations) => { 
+
+      let timer
+      let updating = false
+
+      const observer = new MutationObserver((mutations) => {
+        if (updating) return
         if (timer) clearTimeout(timer)
 
         timer = setTimeout(async () => {
-          const respoonse = await fetch(window.location.href)
-          const text = await respoonse.text()
-          const newDocument = new DOMParser().parseFromString(text, 'text/html')
+          updating = true
+          observer.disconnect()
+          try {
+            const respoonse = await fetch(window.location.href)
+            const text = await respoonse.text()
+            const newDocument = new DOMParser().parseFromString(text, 'text/html')
 
-          document.querySelector('#cart-drawer-upsell-wrapper')
-            .replaceWith(newDocument.querySelector('#cart-drawer-upsell-wrapper'))
- 
+            document.querySelector('#cart-drawer-upsell-wrapper')
+              .replaceWith(newDocument.querySelector('#cart-drawer-upsell-wrapper'))
+
             insertSectionCartDrawer()
+          } catch (e) {
+            console.error(e)
+          } finally {
+            updating = false
+            observer.observe(element, { attributes: true, childList: true, subtree: true })
+          }
         }, 250)
       })
 
-      observer.observe(element, {  
-        attributes: true, 
-        childList: true, 
+      observer.observe(element, {
+        attributes: true,
+        childList: true,
         subtree: true
       });
     }
@@ -83,25 +94,36 @@
       if (!element) return
 
       let timer
-      
-      const observer = new MutationObserver((mutations) => { 
+      let updating = false
+
+      const observer = new MutationObserver((mutations) => {
+        if (updating) return
         if (timer) clearTimeout(timer)
 
         timer = setTimeout(async () => {
-          const respoonse = await fetch(window.location.href)
-          const text = await respoonse.text()
-          const newDocument = new DOMParser().parseFromString(text, 'text/html')
+          updating = true
+          observer.disconnect()
+          try {
+            const respoonse = await fetch(window.location.href)
+            const text = await respoonse.text()
+            const newDocument = new DOMParser().parseFromString(text, 'text/html')
 
-          document.querySelector('#cart-drawer-upsell-wrapper')
-            .replaceWith(newDocument.querySelector('#cart-drawer-upsell-wrapper'))
+            document.querySelector('#cart-drawer-upsell-wrapper')
+              .replaceWith(newDocument.querySelector('#cart-drawer-upsell-wrapper'))
 
             insertSectionCartPage()
+          } catch (e) {
+            console.error(e)
+          } finally {
+            updating = false
+            observer.observe(element, { attributes: true, childList: true, subtree: true })
+          }
         }, 250)
       })
 
-      observer.observe(element, { 
-        attributes: true, 
-        childList: true, 
+      observer.observe(element, {
+        attributes: true,
+        childList: true,
         subtree: true
       });
     }

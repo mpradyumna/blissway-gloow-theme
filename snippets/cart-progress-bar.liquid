@@ -167,21 +167,25 @@
 
          
                 {% assign image_icon_url = image_icon %}
-                {% unless preload_images contains image_icon_url %}
-                  {% if preload_images != '' %}
-                    {% assign preload_images = preload_images | append: ',' %}
-                  {% endif %}
-                  {% assign preload_images = preload_images | append: image_icon_url %}
-                {% endunless %}
-            
-              
+                {% if image_icon_url contains '/' %}
+                  {% unless preload_images contains image_icon_url %}
+                    {% if preload_images != '' %}
+                      {% assign preload_images = preload_images | append: ',' %}
+                    {% endif %}
+                    {% assign preload_images = preload_images | append: image_icon_url %}
+                  {% endunless %}
+                {% endif %}
+
+
                 {% assign image_icon_reached_url = image_icon_reached %}
-                {% unless preload_images contains image_icon_reached_url %}
-                  {% if preload_images != '' %}
-                    {% assign preload_images = preload_images | append: ',' %}
-                  {% endif %}
-                  {% assign preload_images = preload_images | append: image_icon_reached_url %}
-                {% endunless %}
+                {% if image_icon_reached_url contains '/' %}
+                  {% unless preload_images contains image_icon_reached_url %}
+                    {% if preload_images != '' %}
+                      {% assign preload_images = preload_images | append: ',' %}
+                    {% endif %}
+                    {% assign preload_images = preload_images | append: image_icon_reached_url %}
+                  {% endunless %}
+                {% endif %}
           
 
               <div
